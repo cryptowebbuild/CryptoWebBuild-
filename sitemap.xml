@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://cryptowebbuild.pages.dev/</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>1.00</priority>
+</url>
+
+<url>
+  <loc>https://cryptowebbuild.pages.dev/about.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/services.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/projects.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/videos.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/blog.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/contact.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://cryptowebbuild.pages.dev/post-1.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/post-2.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://cryptowebbuild.pages.dev/post-3.html</loc>
+  <lastmod>2025-11-04T16:00:00+06:00</lastmod>
+  <priority>0.90</priority>
+</url>
+
+</urlset>
