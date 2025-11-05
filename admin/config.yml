@@ -1,12 +1,9 @@
-# === এটি আপনার আপডেটেড, সঠিক এবং পরিষ্কার কনফিগারেশন ===
+# === এটি আপনার সবচেয়ে সহজ (Simplest) কনফিগারেশন ===
 
 backend:
   name: github
   repo: cryptowebbuild/CryptoWebBuild-  # এটি আপনার সঠিক রিপোর নাম
   branch: main # আপনার প্রধান ব্রাঞ্চ
-  
-# Cloudflare Pages-এর সাথে কাজ করার জন্য
-publish_mode: editorial_workflow
 
 # ছবিগুলো কোথায় সেভ হবে
 media_folder: "images/uploads"
@@ -14,17 +11,12 @@ public_folder: "/images/uploads"
 
 # আপনি কী কী এডিট করতে চান (Collections)
 collections:
-  # ১. ব্লগ পোস্ট এডিট করার সেকশন
-  - name: "blog"
-    label: "Blog Posts" # <-- বাংলা লেখা মুছে ফেলা হয়েছে
-    label_singular: "Blog Post"
+  - name: "blog" # ব্লগ পোস্টের কালেকশন
+    label: "Blog Posts" # অ্যাডমিন প্যানেলে কী নাম দেখাবে
     folder: "_posts" # সব নতুন ব্লগ পোস্ট এই ফোল্ডারে সেভ হবে
     create: true
-    slug: "{{slug}}" # ফাইলের নাম হবে টাইটেলের ওপর ভিত্তি করে
     
-    # নতুন পোস্টের ফরম্যাট কেমন হবে
+    # পোস্টের ফরম্যাট কেমন হবে
     fields:
-      - { label: "Title", name: "title", widget: "string" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
-      - { label: "Publish Date", name: "date", widget: "datetime" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
-      - { label: "Featured Image", name: "image", widget: "image", required: false } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
-      - { label: "Body", name: "body", widget: "markdown" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
