@@ -1,15 +1,15 @@
-# === এটি আপনার অ্যাডমিন প্যানেলের প্রধান কনফিগারেশন (শুধু ব্লগের জন্য) ===
+# === এটি আপনার আপডেটেড, সঠিক কনফিগারেশন ===
 
 backend:
   name: github
-  repo: cryptowebbuild/cryptowebbuild  # আপনার GitHub ইউজারনেম/রিপোর নাম
+  repo: cryptowebbuild/CryptoWebBuild-  # <-- ভুলটি এখানে ঠিক করা হয়েছে
   branch: main # আপনার প্রধান ব্রাঞ্চ (main)
   
 # Cloudflare Pages-এর সাথে কাজ করার জন্য
 publish_mode: editorial_workflow
 
 # ছবিগুলো কোথায় সেভ হবে
-media_folder: "images/uploads" # নতুন ছবিগুলো এই ফোল্ডারে সেভ হবে
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 # আপনি কী কী এডিট করতে চান (Collections)
@@ -19,7 +19,7 @@ collections:
     label: "Blog Posts (ব্লগ পোস্ট)"
     label_singular: "Blog Post"
     folder: "_posts" # সব নতুন ব্লগ পোস্ট এই ফোল্ডারে সেভ হবে
-    create: true # নতুন পোস্ট তৈরি করার অনুমতি দেবে
+    create: true
     slug: "{{slug}}" # ফাইলের নাম হবে টাইটেলের ওপর ভিত্তি করে
     
     # নতুন পোস্টের ফরম্যাট কেমন হবে
