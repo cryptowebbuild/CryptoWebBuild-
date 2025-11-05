@@ -1,9 +1,9 @@
-# === এটি আপনার আপডেটেড, সঠিক কনফিগারেশন ===
+# === এটি আপনার আপডেটেড, সঠিক এবং পরিষ্কার কনফিগারেশন ===
 
 backend:
   name: github
-  repo: cryptowebbuild/CryptoWebBuild-  # <-- ভুলটি এখানে ঠিক করা হয়েছে
-  branch: main # আপনার প্রধান ব্রাঞ্চ (main)
+  repo: cryptowebbuild/CryptoWebBuild-  # এটি আপনার সঠিক রিপোর নাম
+  branch: main # আপনার প্রধান ব্রাঞ্চ
   
 # Cloudflare Pages-এর সাথে কাজ করার জন্য
 publish_mode: editorial_workflow
@@ -16,7 +16,7 @@ public_folder: "/images/uploads"
 collections:
   # ১. ব্লগ পোস্ট এডিট করার সেকশন
   - name: "blog"
-    label: "Blog Posts (ব্লগ পোস্ট)"
+    label: "Blog Posts" # <-- বাংলা লেখা মুছে ফেলা হয়েছে
     label_singular: "Blog Post"
     folder: "_posts" # সব নতুন ব্লগ পোস্ট এই ফোল্ডারে সেভ হবে
     create: true
@@ -24,7 +24,7 @@ collections:
     
     # নতুন পোস্টের ফরম্যাট কেমন হবে
     fields:
-      - { label: "Title (শিরোনাম)", name: "title", widget: "string" }
-      - { label: "Publish Date (তারিখ)", name: "date", widget: "datetime" }
-      - { label: "Featured Image (প্রধান ছবি)", name: "image", widget: "image", required: false }
-      - { label: "Body (লেখা)", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
+      - { label: "Publish Date", name: "date", widget: "datetime" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
+      - { label: "Featured Image", name: "image", widget: "image", required: false } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
+      - { label: "Body", name: "body", widget: "markdown" } # <-- বাংলা লেখা মুছে ফেলা হয়েছে
