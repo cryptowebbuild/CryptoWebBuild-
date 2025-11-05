@@ -2,8 +2,5 @@
 User-agent: *
 Allow: /
 
-# Block Google from crawling the admin panel
-Disallow: /admin/
-
 # Provide the location of the sitemap
 Sitemap: https://cryptowebbuild.pages.dev/sitemap.xml
