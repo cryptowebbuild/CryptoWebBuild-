@@ -1,6 +1,3 @@
-# Tell all search engines that they can crawl the entire site
 User-agent: *
 Allow: /
-
-# Provide the location of the sitemap
 Sitemap: https://cryptowebbuild.pages.dev/sitemap.xml
