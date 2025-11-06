@@ -1,10 +1,24 @@
----
-title: 'Crypto Web Build '
-timezone: UTC
+# This file is a "map" for the Siteleaf admin panel
+
+# ১. Siteleaf-কে বলুন আপনার প্রধান পেজগুলো কোথায় আছে
 collections:
-  posts:
-    title: Posts
-    output: true
-  uploads:
-    title: Uploads
-    output: true
+  - name: pages
+    label: "Main Pages"
+    path: "/"
+    glob: 
+      - "index.html"
+      - "about.html"
+      - "services.html"
+      - "projects.html"
+      - "videos.html"
+      - "contact.html"
+      - "blog.html"
+
+  # ২. Siteleaf-কে বলুন আপনার ব্লগ পোস্টগুলো কোথায় আছে
+  - name: posts
+    label: "Blog Posts"
+    path: "/"
+    glob:
+      - "post-1.html"
+      - "post-2.html"
+      - "post-3.html"
