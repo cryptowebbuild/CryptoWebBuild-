@@ -1,0 +1,14 @@
+{
+  "name": "cryptowebbuild",
+  "version": "1.0.0",
+  "description": "Portfolio of Sagor Ahamed",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "author": "Sagor Ahamed",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
