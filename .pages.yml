@@ -1,0 +1,20 @@
+media:
+  input: "images/uploads"
+  output: "/images/uploads"
+
+collections:
+  - name: blog
+    label: "Blog Posts"
+    folder: "_posts"
+    extension: md
+    create: true
+    fields:
+      - name: title
+        label: "Title"
+        widget: string
+      - name: date
+        label: "Publish Date"
+        widget: date
+      - name: body
+        label: "Body"
+        widget: markdown
