@@ -5,6 +5,8 @@
     "branch": "main"
   },
   "site_url": "https://cryptowebbuild.pages.dev",
+  "media_folder": "",
+  "public_folder": "",
   "collections": [
     {
       "name": "blog",
@@ -13,11 +15,40 @@
       "format": "html",
       "extension": "html",
       "create": true,
+      "path": "post-{{year}}-{{month}}-{{day}}-{{slug}}.html",
+      "slug": "{{slug}}",
       "fields": [
-        {"name":"title","label":"Title","widget":"string"},
-        {"name":"description","label":"Description","widget":"string","required": false},
-        {"name":"body","label":"Body","widget":"markdown","required": false}
+        {
+          "name": "title",
+          "label": "Title",
+          "widget": "string"
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "widget": "string",
+          "required": false
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "widget": "datetime",
+          "required": false
+        },
+        {
+          "name": "body",
+          "label": "Body (Markdown or HTML)",
+          "widget": "markdown",
+          "required": false
+        },
+        {
+          "name": "raw_html",
+          "label": "Raw HTML (optional)",
+          "widget": "text",
+          "required": false,
+          "hint": "If you need to paste full HTML, use this field."
+        }
       ]
     }
   ]
-}
+        }
