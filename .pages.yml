@@ -1,23 +1,36 @@
-{
-  "backend": {
-    "name": "github",
-    "repo": "cryptowebbuild/CryptoWebBuild-",
-    "branch": "main"
-  },
-  "site_url": "https://cryptowebbuild.pages.dev",
-  "collections": [
-    {
-      "name": "blog",
-      "label": "Blog Posts",
-      "match": "post-*.html",
-      "format": "html",
-      "extension": "html",
-      "create": true,
-      "fields": [
-        {"name":"title","label":"Title","widget":"string"},
-        {"name":"description","label":"Description","widget":"string","required": false},
-        {"name":"body","label":"Body","widget":"markdown","required": false}
-      ]
-    }
-  ]
-}
+# .pages.yml
+# Cloudflare Pages deploy settings + SEO friendly headers & redirects
+build:
+  command: ""
+  directory: "/"
+
+# Add common security & SEO HTTP headers for all paths
+headers:
+  - path: /*
+    headers:
+      - name: X-Robots-Tag
+        value: "index, follow"
+      - name: Referrer-Policy
+        value: "no-referrer-when-downgrade"
+      - name: X-Content-Type-Options
+        value: "nosniff"
+      - name: X-Frame-Options
+        value: "SAMEORIGIN"
+      - name: Strict-Transport-Security
+        value: "max-age=31536000; includeSubDomains; preload"
+      - name: Cache-Control
+        # static assets can be cached long; HTML should be revalidated by browser (you can tune this)
+        value: "public, max-age=0, must-revalidate"
+
+# Useful redirects (example: canonicalize /index.html -> /)
+redirects:
+  - source: /index.html
+    destination: /
+    status: 301
+
+# Optionally you can add more redirects for old paths if needed:
+#  - source: /old-page.html
+#    destination: /new-page
+#    status: 301
+
+# If you later want to add custom routes for assets, add them here.
