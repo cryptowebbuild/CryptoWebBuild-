@@ -685,3 +685,27 @@ main section:last-of-type {
     text-align: center;
     opacity: 0.9;
 }
+/* === Blog Table Styling (NEW FIX) === */
+.blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.blog-content th, 
+.blog-content td {
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    text-align: left;
+    color: var(--text-light);
+}
+
+.blog-content th {
+    background-color: rgba(0, 191, 255, 0.15);
+    color: #fff;
+    font-family: var(--header-font);
+}
