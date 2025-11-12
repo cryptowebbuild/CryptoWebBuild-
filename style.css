@@ -1,10 +1,11 @@
 :root {
     --bg-dark: #0a0a1a;
-    --primary-blue: #00BFFF; /* Deep Sky Blue */
-    --secondary-purple: #8A2BE2; /* Blue Violet */
+    --primary-blue: #00BFFF;
+    --secondary-purple: #8A2BE2;
     --text-light: #e0e0e0;
     --text-dark: #333;
     --card-bg: #10102a;
+    --border-color: rgba(0, 191, 255, 0.2); /* ✅ FIX ADDED */
     --header-font: 'Chakra Petch', sans-serif;
     --body-font: 'Poppins', sans-serif;
 }
