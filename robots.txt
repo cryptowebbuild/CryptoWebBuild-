@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://cryptowebbuild.pages.dev/sitemap.xml
+
+Sitemap: https://cryptowebbuild.com/sitemap.xml
