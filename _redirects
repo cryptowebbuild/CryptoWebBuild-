@@ -1,0 +1,29 @@
+##############################################
+# REDIRECT OLD BLOG POST URLS → NEW SEO URLS
+##############################################
+
+/post-1                    /crypto-project-website            301
+/post-2                    /meme-coin-website-features         301
+/post-3                    /crypto-website-cost                301
+/post-4                    /static-vs-dynamic-website          301
+
+
+##########################################################
+# FORCE pages.dev → cryptowebbuild.com  (FULL DOMAIN)
+##########################################################
+
+https://cryptowebbuild.pages.dev/*    https://cryptowebbuild.com/:splat    301
+
+
+##########################################################
+# FORCE www → non-www  (avoid duplicate domain)
+##########################################################
+
+/*   https://cryptowebbuild.com/:splat    301    host:www.cryptowebbuild.com
+
+
+##########################################################
+# FORCE HTTPS + PRIMARY DOMAIN (GLOBAL FallBack)
+##########################################################
+
+http://cryptowebbuild.com/*      https://cryptowebbuild.com/:splat     301
