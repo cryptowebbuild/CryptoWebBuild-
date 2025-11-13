@@ -3,19 +3,4 @@
 /post-3    /crypto-website-cost         301
 /post-4    /static-vs-dynamic-website   301
 
-https://cryptowebbuild.pages.dev/          https://cryptowebbuild.com/                     301
-https://cryptowebbuild.pages.dev/blog      https://cryptowebbuild.com/blog                301
-https://cryptowebbuild.pages.dev/projects  https://cryptowebbuild.com/projects            301
-https://cryptowebbuild.pages.dev/services  https://cryptowebbuild.com/services            301
-https://cryptowebbuild.pages.dev/contact   https://cryptowebbuild.com/contact             301
-https://cryptowebbuild.pages.dev/videos    https://cryptowebbuild.com/videos              301
-https://cryptowebbuild.pages.dev/about     https://cryptowebbuild.com/about               301
-
-# Blog pages (new slugs)
-https://cryptowebbuild.pages.dev/crypto-project-website       https://cryptowebbuild.com/crypto-project-website        301
-https://cryptowebbuild.pages.dev/meme-coin-website-features   https://cryptowebbuild.com/meme-coin-website-features    301
-https://cryptowebbuild.pages.dev/crypto-website-cost          https://cryptowebbuild.com/crypto-website-cost           301
-https://cryptowebbuild.pages.dev/static-vs-dynamic-website    https://cryptowebbuild.com/static-vs-dynamic-website     301
-
-# Fallback rule — any other page.dev path
-https://cryptowebbuild.pages.dev/*  https://cryptowebbuild.com/:splat   301
+/*    https://cryptowebbuild.com/:splat    301    domain:cryptowebbuild.pages.dev
