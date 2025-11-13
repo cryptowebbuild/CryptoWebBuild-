@@ -1,8 +1,11 @@
-# Always redirect from pages.dev → cryptowebbuild.com
+# 1) Specific old post → new slug (keep these first)
+ /post-1    /crypto-project-website                301
+ /post-2    /meme-coin-website-features           301
+ /post-3    /crypto-website-cost                  301
+ /post-4    /static-vs-dynamic-website           301
+
+# 2) pages.dev → .com (redirect any pages.dev request to .com)
 https://cryptowebbuild.pages.dev/*   https://cryptowebbuild.com/:splat   301
 
-# Force www → non-www (canonical domain)
-/*   https://cryptowebbuild.com/:splat   301  host:www.cryptowebbuild.com
-
-# Force HTTPS and primary domain (global)
-/*   https://cryptowebbuild.com/:splat   301
+# 3) www → non-www (only applies when host is www.cryptowebbuild.com)
+ /*   https://cryptowebbuild.com/:splat   301  host=www.cryptowebbuild.com
