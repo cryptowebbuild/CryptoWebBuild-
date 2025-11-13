@@ -3,4 +3,5 @@
 /post-3    /crypto-website-cost         301
 /post-4    /static-vs-dynamic-website   301
 
-/*    https://cryptowebbuild.com/:splat    301    domain:cryptowebbuild.pages.dev
+# Redirect ANY pages.dev URL → same path on .com
+/*   https://cryptowebbuild.com/:splat   301   domain:cryptowebbuild.pages.dev
