@@ -1,9 +1,3 @@
-# Redirect old post URLs to new SEO URLs
-/post-1  /crypto-project-website  301
-/post-2  /meme-coin-website-features 301
-/post-3  /crypto-website-cost 301
-/post-4  /static-vs-dynamic-website 301
-
 # Always redirect from pages.dev → cryptowebbuild.com
 https://cryptowebbuild.pages.dev/*   https://cryptowebbuild.com/:splat   301
 
