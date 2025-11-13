@@ -1,10 +1,5 @@
-/post-1    /crypto-project-website            301
-/post-2    /meme-coin-website-features        301
-/post-3    /crypto-website-cost               301
-/post-4    /static-vs-dynamic-website         301
-
-# pages.dev → .com
-/*    https://cryptowebbuild.com/:splat    301    domain:cryptowebbuild.pages.dev
-
-# www → non-www
-/*    https://cryptowebbuild.com/:splat    301    host:www.cryptowebbuild.com
+/post-1 /crypto-project-website 301
+/post-2 /meme-coin-website-features 301
+/post-3 /crypto-website-cost 301
+/post-4 /static-vs-dynamic-website 301
+https://cryptowebbuild.pages.dev/* https://cryptowebbuild.com/:splat 301
