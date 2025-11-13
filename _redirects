@@ -1,5 +1,9 @@
-/post-1 /crypto-project-website 301
-/post-2 /meme-coin-website-features 301
-/post-3 /crypto-website-cost 301
-/post-4 /static-vs-dynamic-website 301
-https://cryptowebbuild.pages.dev/* https://cryptowebbuild.com/:splat 301
+# Specific old post -> new SEO slugs (301)
+ /post-1    /crypto-project-website                 301
+ /post-2    /meme-coin-website-features            301
+ /post-3    /crypto-website-cost                   301
+ /post-4    /static-vs-dynamic-website             301
+
+# Optional internal fallback (keep same path on this custom domain)
+# This makes sure internal path rewrites still work on the .com site
+/*   /:splat   200
