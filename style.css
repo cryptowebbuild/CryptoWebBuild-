@@ -428,3 +428,20 @@ body {
     border-radius: 10px;
   }
 }
+/* ====== Projects heading color + optional gradient ====== */
+
+/* Solid premium blue (recommended) */
+.section-title.projects-title {
+  color: #00b4ff; /* premium bright blue */
+}
+
+/* Optional gradient style — uncomment if you prefer premium gradient */
+.section-title.projects-title.gradient {
+  background: linear-gradient(90deg, #00b4ff 0%, #4dc9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Small spacing tweak so case study headings look tidy */
+.case-study h4, .case-study h5 { margin-top: 12px; margin-bottom: 8px; }
+.case-study ul { margin-left: 18px; }
