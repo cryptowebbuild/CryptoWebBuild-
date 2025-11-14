@@ -1,178 +1,271 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CryptoWebBuild — Crypto Website Developer for Web3, Meme Coins & Startups</title>
 
-    <title>Crypto Website Developer | Web3, Meme Coin & Startup Websites</title>
-    <meta name="description" content="Professional Crypto Website Developer building SEO-optimized, mobile-first websites for Web3, meme coins, crypto tokens and startups. Fast, secure & conversion-focused.">
+  <!-- Primary SEO -->
+  <meta name="description" content="CryptoWebBuild — Professional crypto & Web3 website developer. Fast landing pages, meme coin sites, token launch pages, and eCommerce for blockchain projects. SEO-optimized, lightweight, and conversion-focused." />
+  <link rel="canonical" href="https://cryptowebbuild.com/" />
 
-    <link rel="canonical" href="https://cryptowebbuild.com/">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="CryptoWebBuild" />
+  <meta property="og:title" content="CryptoWebBuild — Crypto Website Developer for Web3, Meme Coins & Startups" />
+  <meta property="og:description" content="I build fast, SEO-friendly Web3 and meme coin websites — landing pages, token docs, exchanges integrations, and eCommerce for crypto startups." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cryptowebbuild.com/" />
+  <meta property="og:image" content="https://cryptowebbuild.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CryptoWebBuild — Crypto Website Developer" />
+  <meta name="twitter:description" content="Fast, secure, SEO-first websites for Web3 projects, meme coins & startups." />
+  <meta name="twitter:image" content="https://cryptowebbuild.com/og-image.jpg" />
 
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Crypto Website Developer for Web3, Meme Coins & Startups">
-    <meta property="og:description" content="Get a high-performing, SEO-optimized crypto or Web3 website that builds trust and drives conversions.">
-    <meta property="og:image" content="https://cryptowebbuild.com/og-home.jpg">
-    <meta property="og:url" content="https://cryptowebbuild.com/">
-    <meta property="og:type" content="website">
+  <!-- Structured Data (Organization + LocalBusiness-lite) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"CryptoWebBuild",
+    "url":"https://cryptowebbuild.com/",
+    "logo":"https://cryptowebbuild.com/favicon-96x96.png",
+    "sameAs":[
+      "https://github.com/cryptowebbuild",
+      "https://www.youtube.com/@cryptowebbuild"
+    ],
+    "contactPoint":[{"@type":"ContactPoint","contactType":"customer support","url":"https://cryptowebbuild.com/contact"}]
+  }
+  </script>
 
-    <!-- Preload -->
-    <link rel="preload" href="/og-home.jpg" as="image">
+  <!-- Minimal CSS (inlined for single-file) -->
+  <style>
+    :root{
+      --bg:#0f1724; --accent:#00b4d8; --muted:#94a3b8; --card:#0b1220; --glass: rgba(255,255,255,0.03);
+      --max-w:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071024 0%, #071b2a 100%);
+      color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .wrap{max-width:var(--max-w); margin:28px auto; padding:18px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:56px;height:56px;border-radius:14px;object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
+    .brand h1{font-size:18px;margin:0}
+    nav a{color:var(--muted); text-decoration:none;margin-left:16px;font-size:15px}
+    nav a:hover{color:white}
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" 
-          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@400;600&display=swap" 
-          media="print" onload="this.media='all'">
+    /* Hero */
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:36px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:28px;border-radius:14px;box-shadow:0 8px 40px rgba(2,6,23,0.6);
+    }
+    .hero-left{padding-right:8px}
+    .eyebrow{color:var(--accent);font-weight:600;font-size:13px;margin-bottom:10px}
+    .headline{
+      font-size:28px; margin:0 0 12px; line-height:1.08; letter-spacing:-0.02em;
+      background: linear-gradient(90deg, #fff, #bfefff); -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .sub{color:var(--muted); margin:0 0 18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#022; font-weight:700;text-decoration:none;
+      box-shadow:0 8px 30px rgba(0,180,216,0.12);transition:transform .12s ease;
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .btn:active{transform:translateY(1px)}
 
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-          media="print" 
-          onload="this.media='all'">
+    /* Hero right avatar */
+    .hero-right{display:flex;flex-direction:column;align-items:center;gap:14px}
+    .avatar{
+      width:240px;height:240px;border-radius:20px;overflow:hidden;background:var(--glass);display:flex;align-items:center;justify-content:center;position:relative;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .6s cubic-bezier(.2,.9,.2,1);}
 
-    <link rel="stylesheet" href="/style.css">
-</head>
+    /* Animated tag line (small) */
+    .ticker{font-weight:700;color:var(--accent);margin-top:8px;font-size:13px}
 
-<body>
+    /* Features / services */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+    /* Projects */
+    .projects{margin-top:28px;display:grid;gap:14px}
+    .project{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.01)}
+    .project img{width:120px;height:80px;object-fit:cover;border-radius:8px}
 
-<header class="header">
-    <nav class="navbar container">
-        <a href="/" class="nav-logo">SA</a>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
-            <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </div>
-    </nav>
-</header>
+    footer{margin-top:44px;padding:18px 8px;text-align:center;color:var(--muted);font-size:13px}
 
-
-
-<main id="main-content">
-
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero section">
-        <div class="container hero-content">
-
-            <!-- HERO IMAGE (same filename kept) -->
-            <img src="/og-home.jpg"
-                 alt="Professional Crypto Website Developer for Web3 & Meme Coin Projects"
-                 class="hero-avatar"
-                 width="150" height="150"
-                 loading="lazy">
-
-            <h1>Crypto Website Developer</h1>
-
-            <p class="subtitle">
-                <span id="typing-text"></span><span class="typing-cursor">|</span>
-            </p>
-
-            <p style="max-width:720px; margin:15px auto;">
-                I design and develop blazing-fast, secure and SEO-optimized websites 
-                for crypto tokens, Web3 startups, meme coins and blockchain platforms.
-                Perfect for ranking higher & converting visitors into holders.
-            </p>
-
-            <div style="margin-top:20px;">
-                <a href="/services" class="cta-button">Get a Free Quote</a>
-                <a href="/projects" class="cta-button cta-secondary">View Portfolio</a>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ================= SERVICES ================= -->
-    <section class="section" id="services">
-        <div class="container">
-            <h2 class="section-title fade-in">My Crypto Development Services</h2>
-
-            <div class="services-grid fade-in">
-
-                <div class="service-card">
-                    <i class="fa-solid fa-globe service-icon"></i>
-                    <h3>Crypto Website Development</h3>
-                    <p>High-performance websites built specifically for tokens, crypto launches & Web3 brands.</p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-coins service-icon"></i>
-                    <h3>Meme Coin Website Design</h3>
-                    <p>Modern meme coin websites with roadmap, tokenomics & community-focused UI.</p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fa-solid fa-chart-line service-icon"></i>
-                    <h3>Web3 Startup Landing Pages</h3>
-                    <p>SEO-first landing pages optimized to convert investors and build brand credibility.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- ================= PROJECTS ================= -->
-    <section class="section" id="projects">
-        <div class="container">
-            <h2 class="section-title fade-in">Recent Projects</h2>
-
-            <div class="projects-grid fade-in">
-                <p style="text-align:center; opacity:0.75;">New projects are being updated…</p>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-social">
-            <a href="https://x.com/WebBuildDev" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com/@cryptowebbuild" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://t.me/CryptoWebBuild" target="_blank"><i class="fab fa-telegram"></i></a>
-        </div>
-        <p>&copy; 2025 Sagor Ahamed. All Rights Reserved.</p>
-    </div>
-</footer>
-
-
-
-<!-- ================= TYPING EFFECT ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const text = "Crypto Website Developer for Web3, Meme Coins & Startups";
-    const speed = 70;
-    let index = 0;
-
-    function typeEffect() {
-        if (index < text.length) {
-            document.getElementById("typing-text").textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, speed);
-        }
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .hero-right{order:-1}
+      .avatar{width:180px;height:180px;margin:0 auto}
     }
 
-    typeEffect();
-});
-</script>
+    /* small animation for hero avatar on load */
+    .avatar.loaded img{transform:scale(1.03) rotate(-1deg);}
+    /* tiny typewriter for headline highlight */
+    .typewrap{display:inline-block;position:relative;vertical-align:middle}
+    .typewrap .cursor{display:inline-block;width:2px;height:1.2em;background:var(--accent);margin-left:6px;vertical-align:middle;animation:blink .8s steps(1) infinite}
+    @keyframes blink{50%{opacity:.1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="hero-avatar.webp" alt="CryptoWebBuild avatar — fast crypto website developer" />
+        <div>
+          <h1>CryptoWebBuild</h1>
+          <div style="color:var(--muted);font-size:13px;margin-top:6px">Web3 • Meme Coins • Startups</div>
+        </div>
+      </div>
 
-<script src="/script.js" defer></script>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <div class="eyebrow">Crypto & Web3 Website Development — SEO First</div>
+
+        <h2 id="hero-heading" class="headline">
+          Crypto Website Developer for Web3, <span class="typewrap"><span id="typed">Meme Coins & Startups</span><span class="cursor" aria-hidden="true"></span></span>
+        </h2>
+
+        <p class="sub">
+          I build fast, conversion-focused websites for token launches, meme coins, NFT drops, and crypto startups. Lightweight, secure, SEO-optimized, and mobile-first.
+        </p>
+
+        <div class="cta-row" role="group" aria-label="Call to action">
+          <a class="btn" href="contact.html">Get a Quote</a>
+          <a class="btn secondary" href="services.html">My Services</a>
+        </div>
+
+        <div style="margin-top:18px" class="muted">
+          <strong>Specialties:</strong> Landing pages, token docs, contract audits integration, exchange-ready pages, fast SEO content.
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="false">
+        <div class="avatar" id="heroAvatar">
+          <img src="hero-avatar.webp" alt="Hero image — crypto website example: minimalist Web3 landing page" />
+        </div>
+        <div class="ticker" aria-hidden="true">Trusted by Web3 projects • Fast deployments • Mobile-first</div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section aria-labelledby="services">
+      <h2 id="services" style="margin-top:26px;font-size:18px">What I build</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3>Token & Launch Pages</h3>
+          <p class="muted">High-converting token pages with buy links, contract info, and social proof — optimized for indexing and shareability.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Meme Coin Websites</h3>
+          <p class="muted">Fun, viral-ready pages for meme coin launches with analytics, socials, and quick mint/buy flows.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Web3 Services & Integrations</h3>
+          <p class="muted">Connect wallets, token approvals, analytics, and smart contract calls — securely and simply.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>SEO & Content</h3>
+          <p class="muted">On-page SEO, structured data, fast sitemaps and optimized content to get your pages ranking fast.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" style="margin-top:20px">Selected projects</h2>
+
+      <div class="project">
+        <img src="solana-project-new.webp" alt="Solana project: landing page preview — crypto website" />
+        <div>
+          <h3 style="margin:0">Solana Project Landing</h3>
+          <p class="muted">Fast Solana landing with tokenomics, roadmap, and wallet connect. SEO-optimized title and meta for token discovery.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="BNBCHAIN-project-new.webp" alt="BNB Chain project preview — meme coin website design" />
+        <div>
+          <h3 style="margin:0">BNB Chain / Meme Coin</h3>
+          <p class="muted">Meme coin website with viral elements, socials, and quick buy steps — designed to convert and share.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="ecommerce-project-new.webp" alt="Ecommerce for crypto projects — NFT storefront or merch" />
+        <div>
+          <h3 style="margin:0">E-commerce for crypto projects</h3>
+          <p class="muted">Merch & NFT storefronts with payments, lightweight product pages, and SEO-ready product metadata.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div style="margin-top:26px" class="card">
+      <h3 style="margin:0 0 6px">Ready to launch?</h3>
+      <p class="muted" style="margin:0 0 10px">Tell me your idea — token name, chain, and desired features. I’ll send a fast plan and quote.</p>
+      <a class="btn" href="contact.html">Contact Me</a>
+    </div>
+
+    <footer>
+      © <span id="year"></span> CryptoWebBuild — Fast Web3 & crypto websites · <a href="sitemap.xml" style="color:var(--muted);text-decoration:underline">Sitemap</a>
+    </footer>
+  </div>
+
+  <!-- Small JS: animations + accessibility -->
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Avatar load animation
+    const avatar = document.getElementById('heroAvatar');
+    const img = avatar.querySelector('img');
+    if (img && img.complete) avatar.classList.add('loaded');
+    img.addEventListener('load', () => avatar.classList.add('loaded'));
+
+    // Small typed-like cycle (keeps simple & SEO friendly)
+    (function(){
+      const words = [
+        'Meme Coins & Startups',
+        'Token Launch Pages',
+        'Landing Pages for Web3',
+        'SEO-first Crypto Sites'
+      ];
+      let i=0, el = document.getElementById('typed');
+      if(!el) return;
+      setInterval(()=>{
+        i = (i+1) % words.length;
+        el.textContent = words[i];
+      }, 3000);
+    })();
+  </script>
 </body>
 </html>
