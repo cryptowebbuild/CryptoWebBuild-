@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Sagor Ahamed — Crypto Website Developer | CryptoWebBuild</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Sagor Ahamed (CryptoWebBuild) builds fast, secure, and SEO-first websites for Web3 projects, meme coins and crypto startups. Landing pages, token docs, integrations and conversion-focused design." />
+  <meta name="description" content="Sagor Ahamed (CryptoWebBuild) builds fast, secure and SEO-first websites for Web3 projects, meme coins and crypto startups. Landing pages, token docs, wallet integrations and conversion-focused designs." />
   <link rel="canonical" href="https://cryptowebbuild.com/" />
 
   <!-- Open Graph -->
@@ -49,8 +50,9 @@
   }
   </script>
 
-  <!-- Preload important image -->
+  <!-- Preload important image (uses existing hero image) -->
   <link rel="preload" href="/hero-avatar.webp" as="image">
+  <link rel="preload" href="/og-image.jpg" as="image">
 
   <!-- Verification / Analytics (keep yours) -->
   <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
@@ -68,90 +70,187 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 
-  <!-- Fonts -->
+  <!-- Fonts (load performance friendly) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="/style.css">
 
   <meta name="robots" content="index, follow" />
 
-  <!-- Small, non-intrusive inline style just for hero H1 highlight -->
+  <!-- Inline H1 highlight (fixed selector & accessible colors) -->
   <style>
-    .hero h1 {
+    /* Strong, visible H1 highlight inside hero-content */
+    .hero-content h1 {
       display: inline-block;
-      background: linear-gradient(90deg, rgba(255,223,102,0.16), rgba(255,223,102,0.08));
-      color: #0b1220;
-      padding: 0.42rem 0.9rem;
-      border-radius: 999px;
+      background: rgba(255,223,102,0.12);   /* subtle yellow glow */
+      color: #ffdf66;                        /* bright yellow text for contrast */
+      padding: 0.45rem 1rem;
+      border-radius: 14px;
       font-weight: 700;
-      box-shadow: 0 10px 24px rgba(11,18,32,0.06);
+      text-shadow: 0 6px 18px rgba(0,0,0,0.45), 0 0 10px rgba(255,223,102,0.18);
       line-height: 1.15;
+      margin: 0.6rem 0;
     }
-    @media (max-width:600px){
-      .hero h1 { font-size: 1.4rem; padding: 0.35rem 0.7rem; }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 1.4rem;
+        padding: 0.35rem 0.7rem;
+      }
     }
+
+    /* Make sure hero text remains readable on dark background */
+    .hero-content p.muted { color: rgba(255,255,255,0.78); }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="header">
-    <nav class="navbar container">
-      <a href="/" class="nav-logo">SA</a>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+  <!-- header: kept same structure and accessibility attributes -->
+  <header class="header" role="banner" aria-label="Top">
+    <nav class="navbar container" role="navigation" aria-label="Primary">
+      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
+
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li class="nav-item" role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+        <li class="nav-item" role="none"><a href="/crypto-project-website" class="nav-link" role="menuitem">Why a Crypto Website</a></li>
+        <li class="nav-item" role="none"><a href="/meme-coin-website-features" class="nav-link" role="menuitem">Meme Coin Features</a></li>
+        <li class="nav-item" role="none"><a href="/crypto-website-cost" class="nav-link" role="menuitem">Pricing</a></li>
+        <li class="nav-item" role="none"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item" role="none"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li class="nav-item" role="none"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
+        <li class="nav-item" role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
-      <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </nav>
   </header>
-  <main id="main-content">
-    <section id="home" class="hero">
+
+  <main id="main-content" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" role="region" aria-labelledby="hero-heading">
+      <div class="container hero-content fade-in">
+        <!-- Responsive hero image; uses existing hero-avatar.webp (no new upload) -->
+        <picture>
+          <source srcset="/hero-avatar.webp" type="image/webp">
+          <source srcset="/hero-avatar.webp" type="image/jpeg">
+          <img src="/hero-avatar.webp"
+               alt="Sagor Ahamed - CryptoWebBuild founder and crypto web developer"
+               class="hero-avatar"
+               width="150" height="150"
+               loading="lazy" decoding="async">
+        </picture>
+
+        <p class="blog-date muted">Trusted by Web3 projects • Fast deployments • Mobile-first</p>
+
+        <!-- single, accessible H1 (highlighted and visible) -->
+        <h1 id="hero-heading">Sagor Ahamed — Crypto Website Developer</h1>
+
+        <h2 class="subtitle" aria-hidden="true">
+          <span id="typing-text"></span>
+          <span class="typing-cursor" aria-hidden="true"></span>
+        </h2>
+
+        <p>
+          I build <strong>fast</strong>, <strong>secure</strong>, and <strong>SEO-first</strong> websites for token launches, meme coins, NFT drops and crypto startups.
+          Landing pages, token docs, wallet integrations and analytics — all optimized for search and conversion.
+        </p>
+
+        <p class="muted">
+          Services: Token landing pages, token docs, wallet integrations (WalletConnect), staking dashboards, and on-page SEO for crypto projects.
+        </p>
+
+        <div class="cta-box" role="region" aria-label="Primary calls to action">
+          <a href="/contact" class="cta-button" role="button">Get a Quote</a>
+          <a href="/services" class="cta-button cta-secondary" role="button">View Services</a>
+        </div>
+
+        <ul class="quick-links" aria-hidden="false">
+          <li><a href="/crypto-project-website" class="incore-link">Why your crypto project needs a website</a></li>
+          <li><a href="/meme-coin-website-features" class="incore-link">Meme coin website checklist</a></li>
+          <li><a href="/crypto-website-cost" class="incore-link">How much a crypto website costs</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Services (short) -->
+    <section class="section fade-in" aria-labelledby="services-title">
       <div class="container">
-        <div class="hero-content">
-          <!-- use existing hero-avatar.webp in a picture tag (no new uploads) -->
-          <picture>
-            <source srcset="/hero-avatar.webp" type="image/webp">
-            <source srcset="/hero-avatar.webp" type="image/jpeg">
-            <img src="/hero-avatar.webp" alt="Sagor Ahamed - Web3 and Crypto Developer" class="hero-avatar" width="150" height="150" loading="lazy" decoding="async">
-          </picture>
+        <h2 id="services-title" class="section-title">Services — What I Do</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🧩</div>
+            <h3>Landing Pages & Token Sites</h3>
+            <p>High-converting landing pages, token docs and presale pages with SEO & analytics.</p>
+          </article>
 
-          <h1>Sagor Ahamed — Crypto Website Developer</h1>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🔗</div>
+            <h3>Integrations & Dashboards</h3>
+            <p>Wallet connect, price API integration (CoinGecko/DexScreener), and staking dashboards.</p>
+          </article>
 
-          <h2 class="subtitle"><span id="typing-text"></span><span class="typing-cursor"></span></h2>
-
-          <p>I build <strong>fast</strong>, <strong>secure</strong> and <strong>SEO-first</strong> websites for token launches, meme coins, NFT drops and Web3 startups. I focus on mobile-first, accessible, and conversion-optimized landing pages and documentation sites.</p>
-
-          <!-- SEO-friendly short paragraphs (you can expand later) -->
-          <p class="muted">Services: Token landing pages, token docs, wallet integrations, staking dashboards, and on-page SEO for crypto projects.</p>
-
-          <div>
-            <a href="/projects" class="cta-button" role="button">View My Work</a>
-            <a href="/contact" class="cta-button cta-secondary" role="button">Get in Touch</a>
-          </div>
-
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✍️</div>
+            <h3>SEO & Content</h3>
+            <p>On-page SEO, structured data, sitemaps, and optimized content for target keywords.</p>
+          </article>
         </div>
       </div>
     </section>
+
+    <!-- Blog preview (keeps using existing images if present) -->
+    <section id="blog" class="section fade-in" aria-labelledby="blog-title">
+      <div class="container">
+        <h2 id="blog-title" class="section-title">Latest Posts</h2>
+
+        <div class="blog-list-container">
+          <article class="blog-card">
+            <div class="blog-card-content">
+              <p class="blog-date">November 12, 2025</p>
+              <h3><a href="/static-vs-dynamic-website">Static vs Dynamic Websites — Which grows your business faster?</a></h3>
+              <p>Speed, SEO and when to choose static, dynamic or hybrid for crypto projects.</p>
+              <a href="/static-vs-dynamic-website" class="cta-button cta-secondary">Read more</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-content">
+              <p class="blog-date">November 04, 2025</p>
+              <h3><a href="/crypto-website-cost">How Much Does a Crypto Website Cost? (Developer breakdown)</a></h3>
+              <p>Pricing for Basic, Professional, and Custom DApp websites.</p>
+              <a href="/crypto-website-cost" class="cta-button cta-secondary">Read more</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section fade-in" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Ready to launch?</h2>
+        <p class="muted">Schedule a free consultation — I help token teams turn ideas into secure, high-converting websites.</p>
+        <a href="/contact" class="cta-button">Get a Free Consultation</a>
+      </div>
+    </section>
   </main>
-  <footer class="footer">
+
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-social">
         <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
         <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
       </div>
-      <p>&copy; 2025 Sagor Ahamed. All Rights Reserved.</p>
+      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
     </div>
   </footer>
 
+  <!-- main script (kept same) -->
   <script src="/script.js" defer></script>
 </body>
 </html>
