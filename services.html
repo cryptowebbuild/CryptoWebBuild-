@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Crypto Web Development Services — Token Sites, Integrations & SEO | CryptoWebBuild</title>
 
-  <meta name="description" content="CryptoWebBuild delivers focused crypto web development services: token landing pages, token docs, WalletConnect, price feeds, staking dashboards and SEO-first builds to help token teams launch and rank." />
+  <!-- Primary SEO -->
+  <meta name="description" content="CryptoWebBuild builds fast, secure and SEO-first websites for token launches, meme coins and Web3 startups. Services: token landing pages, token docs, WalletConnect integration, price feeds and staking dashboards." />
   <link rel="canonical" href="https://cryptowebbuild.com/services.html" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Crypto Web Development Services | CryptoWebBuild" />
   <meta property="og:description" content="Token landing pages, wallet integrations, staking dashboards and SEO-first websites for crypto projects." />
@@ -17,55 +17,75 @@
   <meta property="og:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
   <meta property="og:image:alt" content="CryptoWebBuild services" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Crypto Web Development Services | CryptoWebBuild" />
   <meta name="twitter:description" content="Launch fast with token landing pages, WalletConnect, price APIs and SEO-first websites." />
   <meta name="twitter:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
 
-  <!-- Structured data: Organization -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"CryptoWebBuild",
     "url":"https://cryptowebbuild.com",
-    "logo":"https://cryptowebbuild.com/favicon-192x192.png",
-    "sameAs":["https://github.com/your-github","https://www.youtube.com/yourchannel"]
+    "logo":"https://cryptowebbuild.com/favicon-192x192.png"
   }
   </script>
 
+  <!-- Use your main stylesheet (keeps design identical) -->
   <link rel="stylesheet" href="/style.css">
-  <meta name="robots" content="index, follow">
 
-  <!-- Small page-specific H1 styling to match site highlight -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- small page-specific tweaks to match home hero look -->
   <style>
-    .page-hero {
+    /* ensure hero visuals match home page */
+    .hero {
       padding: 48px 0;
       text-align: center;
     }
-    .page-hero .hero-heading {
-      display:inline-block;
-      background: rgba(255,223,102,0.10);
+    .hero-avatar {
+      border-radius: 50%;
+      border: 3px solid var(--primary-blue);
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 18px;
+    }
+    .hero-content h1 {
+      display: inline-block;
+      background: linear-gradient(90deg, rgba(255,223,102,0.14), rgba(255,223,102,0.06));
       color: #ffdf66;
-      padding: 0.5rem 1.1rem;
-      border-radius: 14px;
-      font-family: 'Chakra Petch', sans-serif;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
       font-weight:700;
-      font-size: 1.9rem;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      box-shadow: 0 10px 24px rgba(11,18,32,0.06);
+      line-height:1.15;
+      margin: 10px 0 18px;
+    }
+    .lead {
+      max-width: 900px;
+      margin: 0 auto 18px;
+      color: rgba(255,255,255,0.9);
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-      gap: 22px;
-      margin-top: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
     }
-    .service-card p { margin: 10px 0; color: var(--text-light); }
-    .service-card ul { margin: 8px 0 0 20px; color: var(--text-light); }
-    .trust-row { display:flex; gap:14px; align-items:center; justify-content:center; margin-top:18px; flex-wrap:wrap; color: rgba(255,255,255,0.9);}
-    .lead { max-width:920px; margin: 12px auto 0; color: rgba(255,255,255,0.88); }
-    @media (max-width:600px){
-      .page-hero .hero-heading { font-size:1.3rem; padding:0.35rem 0.8rem; }
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .service-card h3 { font-family: 'Chakra Petch', sans-serif; margin-bottom:8px; }
+    .cta-box { margin-top: 18px; }
+    @media (max-width:600px) {
+      .hero-content h1 { font-size: 1.35rem; padding: 0.35rem 0.8rem; }
     }
   </style>
 </head>
@@ -73,6 +93,7 @@
   <header class="header" role="banner" aria-label="Top">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
+
       <ul class="nav-menu" id="navMenu" role="menubar">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
@@ -80,6 +101,7 @@
         <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
+
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
@@ -87,127 +109,116 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <!-- Page hero -->
-    <section class="page-hero fade-in" aria-labelledby="services-heading">
-      <div class="container">
-        <!-- existing avatar used -->
-        <picture aria-hidden="true">
+    <!-- HERO (home-style) -->
+    <section class="hero" role="region" aria-labelledby="services-hero">
+      <div class="container hero-content fade-in">
+        <!-- use your existing hero avatar — identical to home -->
+        <picture>
           <source srcset="/hero-avatar.webp" type="image/webp">
-          <img src="/hero-avatar.webp" alt="CryptoWebBuild" width="120" height="120" loading="lazy" decoding="async" style="border-radius:12px;">
+          <source srcset="/hero-avatar.webp" type="image/jpeg">
+          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="150" height="150" loading="lazy" decoding="async">
         </picture>
 
-        <h1 id="services-heading" class="hero-heading">Crypto Web Development Services</h1>
+        <p class="blog-date muted">Trusted by Web3 projects • Fast deployments • Mobile-first</p>
+
+        <h1 id="services-hero">Crypto Web Development Services</h1>
+
+        <h2 class="subtitle" aria-hidden="true"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span></h2>
 
         <p class="lead">
-          I build focused, secure and search-optimized websites for token launches, meme coins and Web3 startups.
-          From high-converting landing pages and token docs to WalletConnect integrations and staking dashboards — I deliver production-ready sites that load fast and convert.
+          I design and build fast, secure and SEO-first websites for token launches, meme coins, NFT drops and Web3 startups.
+          From high-converting token landing pages and clear token docs to WalletConnect integration and staking dashboards — I deliver production-ready sites that rank and convert.
         </p>
 
-        <div class="trust-row" aria-hidden="true">
-          <span>Trusted by token teams • Fast deployments • Mobile-first</span>
-        </div>
-
-        <div style="margin-top:18px;">
+        <div class="cta-box">
           <a href="/contact" class="cta-button">Get a Quote</a>
           <a href="/projects" class="cta-button cta-secondary">See Portfolio</a>
         </div>
+
       </div>
     </section>
 
-    <!-- Services list -->
-    <section class="section container fade-in" aria-labelledby="what-heading">
-      <h2 id="what-heading" class="section-title">What I offer</h2>
+    <!-- Services content -->
+    <section class="section fade-in" aria-labelledby="services-heading">
+      <div class="container">
+        <h2 id="services-heading" class="section-title">What I offer</h2>
 
-      <div class="services-grid" role="list">
-        <article class="service-card" role="listitem" aria-labelledby="s1">
-          <h3 id="s1">Token Landing Pages & Presale Sites</h3>
-          <p>Focused landing pages for token launches that prioritize speed, trust signals, and conversion paths (presale timers, buy links, KYC badges, analytics).</p>
-          <ul>
-            <li>Fast static architecture (CDN served)</li>
-            <li>Conversion-focused layouts with analytics</li>
-            <li>SEO-friendly content structure and JSON-LD</li>
+        <div class="services-grid" role="list">
+          <article class="service-card" role="listitem" aria-labelledby="s1">
+            <h3 id="s1">Token Landing Pages & Presale Sites</h3>
+            <p>Fast, conversion-focused landing pages with presale timers, buy flows and analytics — designed to turn visitors into holders.</p>
+          </article>
+
+          <article class="service-card" role="listitem" aria-labelledby="s2">
+            <h3 id="s2">Token Docs & Tokenomics Pages</h3>
+            <p>Readable, SEO-friendly documentation pages and tokenomics sections that make it easy for investors to understand your project.</p>
+          </article>
+
+          <article class="service-card" role="listitem" aria-labelledby="s3">
+            <h3 id="s3">Wallet Integration & Price Feeds</h3>
+            <p>WalletConnect, MetaMask onboarding, and live price widgets (CoinGecko/DexScreener) so users can interact with confidence.</p>
+          </article>
+
+          <article class="service-card" role="listitem" aria-labelledby="s4">
+            <h3 id="s4">Staking Dashboards & DApp UI</h3>
+            <p>Simple, secure dashboards to show balances, staking info and APY — minimal UI, maximum clarity.</p>
+          </article>
+
+          <article class="service-card" role="listitem" aria-labelledby="s5">
+            <h3 id="s5">SEO, Analytics & Structured Data</h3>
+            <p>On-page SEO, JSON-LD, sitemaps, and GSC setup so your pages have a better chance to rank and to show enhanced search snippets.</p>
+          </article>
+
+          <article class="service-card" role="listitem" aria-labelledby="s6">
+            <h3 id="s6">Cloudflare Pages & Fast Deploys</h3>
+            <p>GitHub → Cloudflare Pages workflow for rapid, repeatable deployments and global CDN edge delivery.</p>
+          </article>
+        </div>
+
+        <div style="margin-top:28px;">
+          <h3 style="text-align:center;">Benefits clients see</h3>
+          <ul style="max-width:900px;margin:12px auto 0;">
+            <li>Launch faster with static builds and CDN delivery.</li>
+            <li>Higher conversion through focused UX and analytics.</li>
+            <li>Better search visibility with SEO-first templates.</li>
+            <li>Lower ongoing cost and easy Git-based updates.</li>
           </ul>
-        </article>
+        </div>
 
-        <article class="service-card" role="listitem" aria-labelledby="s2">
-          <h3 id="s2">Token Docs & Tokenomics Pages</h3>
-          <p>Clear, searchable token docs and whitepaper pages that explain roadmap, tokenomics, and contract details — structured for users and search engines.</p>
-        </article>
+        <section aria-labelledby="process-heading" style="margin-top:28px;">
+          <h2 id="process-heading" class="section-title">Simple process</h2>
+          <ol>
+            <li><strong>Plan</strong> — define business goal, primary keyword and CTA.</li>
+            <li><strong>Design</strong> — mobile-first wireframe and content outline.</li>
+            <li><strong>Build</strong> — fast static site, integrations and analytics.</li>
+            <li><strong>Launch</strong> — Cloudflare deploy, sitemap and GSC submission.</li>
+            <li><strong>Support</strong> — small updates and monitoring available.</li>
+          </ol>
+        </section>
 
-        <article class="service-card" role="listitem" aria-labelledby="s3">
-          <h3 id="s3">Wallet Integration & Price Feeds</h3>
-          <p>WalletConnect & MetaMask integration, live price widgets (CoinGecko/DexScreener) and secure front-end patterns so users can interact safely.</p>
-        </article>
+        <section aria-labelledby="cta-2" style="text-align:center;margin-top:28px;">
+          <h2 id="cta-2" class="section-title">Want to start?</h2>
+          <p class="muted">Book a free call and I’ll give a clear roadmap and estimate for your token project.</p>
+          <a href="/contact" class="cta-button">Get a Quote</a>
+        </section>
 
-        <article class="service-card" role="listitem" aria-labelledby="s4">
-          <h3 id="s4">Staking Dashboards & Basic DApp UI</h3>
-          <p>Lightweight dashboards to display balances, staking status and APY; secure, minimal UI that focuses on clarity and reliability.</p>
-        </article>
-
-        <article class="service-card" role="listitem" aria-labelledby="s5">
-          <h3 id="s5">SEO, Analytics & Structured Data</h3>
-          <p>On-page SEO, metadata, sitemaps, Google Search Console setup, and JSON-LD so your pages have the best chance to rank and show rich results.</p>
-        </article>
-
-        <article class="service-card" role="listitem" aria-labelledby="s6">
-          <h3 id="s6">Cloudflare Pages & Fast Deploys</h3>
-          <p>Simple GitHub workflows, Cloudflare Pages deployment, and CDN configuration for rapid, cost-effective launches.</p>
-        </article>
+        <p class="muted" style="margin-top:20px;">Primary keyword: <strong>crypto web development services</strong></p>
       </div>
-
-      <!-- Benefits/Proof -->
-      <section aria-labelledby="benefits-heading" style="margin-top:28px;">
-        <h2 id="benefits-heading" class="section-title">Benefits clients see</h2>
-        <ul>
-          <li>Faster time-to-launch: static builds ready in days</li>
-          <li>Better conversion: focused UX and analytics</li>
-          <li>Improved discoverability: SEO-first structure</li>
-          <li>Lower maintenance: simple GitHub based updates</li>
-        </ul>
-      </section>
-
-      <!-- Process -->
-      <section aria-labelledby="process-heading" style="margin-top:28px;">
-        <h2 id="process-heading" class="section-title">How we work (simple)</h2>
-        <ol>
-          <li><strong>Plan:</strong> scope, primary keyword, CTA and timeline.</li>
-          <li><strong>Design:</strong> mobile-first wireframes and content outline.</li>
-          <li><strong>Build:</strong> static HTML/CSS/JS, integrations and analytics.</li>
-          <li><strong>Launch:</strong> Cloudflare deploy, sitemap, and GSC submission.</li>
-          <li><strong>Support:</strong> small updates, monitoring and optimization.</li>
-        </ol>
-      </section>
-
-      <!-- FAQ to add helpful content and increase word count -->
-      <section aria-labelledby="faq-heading" style="margin-top:28px;">
-        <h2 id="faq-heading" class="section-title">Frequently asked questions</h2>
-
-        <h3>How long does a token landing page take?</h3>
-        <p>Typical delivery is 3–10 business days depending on scope (content readiness, integrations). I focus on fast, iterative delivery.</p>
-
-        <h3>Will you write content for SEO?</h3>
-        <p>I provide SEO guidance and short page copy as part of the build. For extensive content creation we can add a content package.</p>
-
-        <h3>Do you support updates after launch?</h3>
-        <p>Yes — small updates are handled quickly via GitHub commits. I provide deployment instructions and a simple handover checklist.</p>
-      </section>
-
-      <section aria-labelledby="cta-heading" style="margin-top:32px; text-align:center;">
-        <h2 id="cta-heading" class="section-title">Ready to launch your token?</h2>
-        <p class="lead">Book a free consultation and I’ll share a simple roadmap, timeline and a clear estimate tailored to your token project.</p>
-        <p><a href="/contact" class="cta-button">Get a Quote</a> <a href="/projects" class="cta-button cta-secondary">See Examples</a></p>
-      </section>
-
-      <p class="muted" style="margin-top:18px;">Primary keyword for this page: <strong>crypto web development services</strong></p>
     </section>
   </main>
 
   <footer class="footer" role="contentinfo">
     <div class="container">
+      <div class="footer-social">
+        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      </div>
       <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
     </div>
   </footer>
 
+  <!-- keep your existing JS file (hamburger, typing effect, fade-in) -->
   <script src="/script.js" defer></script>
 </body>
 </html>
