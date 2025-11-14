@@ -3,213 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Crypto Website Developer — Web3, Meme Coins & Startups | CryptoWebBuild</title>
-
-  <!-- Primary SEO -->
-  <meta name="description" content="CryptoWebBuild builds fast, secure and SEO-first websites for Web3 projects, meme coins and crypto startups. Landing pages, token docs, integrations and on-page SEO." />
+  <title>CryptoWebBuild — Crypto Website Developer for Web3, Meme Coins & Startups</title>
+  <meta name="description" content="I build fast, secure, SEO-first websites for token launches, meme coins, NFT drops and crypto startups. Landing pages, token docs, contract integrations and analytics." />
   <link rel="canonical" href="https://cryptowebbuild.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
   <meta property="og:title" content="CryptoWebBuild — Crypto Website Developer for Web3 & Meme Coins" />
-  <meta property="og:description" content="Fast, secure, SEO-first websites for token launches, meme coins and crypto startups." />
+  <meta property="og:description" content="Fast, SEO-first websites for token launches, meme coins and crypto startups." />
+  <meta property="og:image" content="/og-image.jpg" />
   <meta property="og:url" content="https://cryptowebbuild.com/" />
-  <meta property="og:image" content="https://cryptowebbuild.com/og-image.jpg" />
-  <meta property="og:image:alt" content="CryptoWebBuild — hero image" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CryptoWebBuild — Crypto Website Developer" />
-  <meta name="twitter:description" content="Mobile-first, SEO-first websites for tokens, meme coins and crypto startups." />
-  <meta name="twitter:image" content="https://cryptowebbuild.com/og-image.jpg" />
-
-  <!-- Structured Data: Organization + WebSite -->
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Preload critical fonts or images if you want -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"CryptoWebBuild",
-    "url":"https://cryptowebbuild.com",
-    "logo":"https://cryptowebbuild.com/favicon-192x192.png",
-    "sameAs":["https://github.com/your-github","https://www.youtube.com/yourchannel"]
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CryptoWebBuild",
+    "url": "https://cryptowebbuild.com/",
+    "logo": "https://cryptowebbuild.com/og-image.jpg",
+    "description": "SEO-first Web3 & meme coin websites — landing pages, token docs, NFTs.",
+    "sameAs": []
   }
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "url":"https://cryptowebbuild.com",
-    "name":"CryptoWebBuild",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://cryptowebbuild.com/?s={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- Preload important image -->
-  <link rel="preload" href="/hero-avatar.webp" as="image">
-
-  <!-- Verification / Analytics (keep yours) -->
-  <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR5864CTR8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YR5864CTR8', { 'anonymize_ip': true });
-  </script>
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="/style.css">
-
-  <!-- sitemap hint -->
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
-  <meta name="robots" content="index, follow" />
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="header" role="banner" aria-label="Top">
-    <nav class="navbar container" role="navigation" aria-label="Primary">
-      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
+  <!-- HEADER -->
+  <header class="header" role="banner">
+    <div class="navbar container">
+      <a class="nav-logo" href="/">SA</a>
 
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li class="nav-item" role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
-        <li class="nav-item" role="none"><a href="/crypto-project-website" class="nav-link" role="menuitem">Why a Crypto Website</a></li>
-        <li class="nav-item" role="none"><a href="/meme-coin-website-features" class="nav-link" role="menuitem">Meme Coin Features</a></li>
-        <li class="nav-item" role="none"><a href="/crypto-website-cost" class="nav-link" role="menuitem">Pricing</a></li>
-        <li class="nav-item" role="none"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
-        <li class="nav-item" role="none"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
-        <li class="nav-item" role="none"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
-        <li class="nav-item" role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
-      </ul>
+      <nav id="navMenu" class="nav-menu" aria-label="Main Navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/#why">Why a Crypto Website</a>
+        <a class="nav-link" href="/meme-coin-website-features">Meme coin features</a>
+        <a class="nav-link" href="/pricing">Pricing</a>
+        <a class="nav-link" href="/blog">Blog</a>
+        <a class="nav-link" href="/projects">Projects</a>
+        <a class="nav-link" href="/services">Services</a>
+        <a class="nav-link" href="/contact">Contact</a>
+      </nav>
 
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </button>
-    </nav>
+    </div>
   </header>
 
-  <main id="main-content" tabindex="-1">
+  <!-- MAIN -->
+  <main id="main" class="container" role="main">
     <!-- HERO -->
-    <section class="hero" role="region" aria-labelledby="hero-heading">
-      <div class="container hero-content fade-in">
-        <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="150" height="150" loading="lazy">
-        <p class="blog-date muted">Trusted by Web3 projects • Fast deployments • Mobile-first</p>
-
-        <h1 id="hero-heading">Crypto Website Developer for Web3, Meme Coins & Startups</h1>
-
-        <h2 class="subtitle" aria-hidden="true">
-          <span id="typing-text"></span>
-          <span class="typing-cursor" aria-hidden="true"></span>
-        </h2>
-
-        <p>
-          I build <strong>fast</strong>, <strong>secure</strong>, and <strong>SEO-first</strong> websites for token launches, meme coins, NFT drops and crypto startups.
-          Landing pages, token docs, contract integrations and analytics — all optimized for conversion and search.
-        </p>
-
-        <div class="cta-box">
-          <a href="/contact" class="cta-button">Get a Quote</a>
-          <a href="/services" class="cta-button cta-secondary">View Services</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <div class="enter fade-in">
+          <img src="/hero-avatar.webp" alt="Sagor Ahamed avatar" class="hero-avatar" />
         </div>
 
-        <ul class="quick-links">
-          <li><a href="/crypto-project-website" class="incore-link">Why your crypto project needs a website</a></li>
-          <li><a href="/meme-coin-website-features" class="incore-link">Meme coin website checklist</a></li>
-          <li><a href="/crypto-website-cost" class="incore-link">How much a crypto website costs</a></li>
+        <p class="eyebrow fade-in">Trusted by Web3 projects • Fast deployments • Mobile-first</p>
+
+        <h1 id="hero-title" class="enter">Crypto Website Developer for Web3, <br/>Meme Coins &amp; Startups</h1>
+
+        <!-- typing subtitle -->
+        <div class="subtitle enter">
+          <span id="typing-text" aria-hidden="true">Web3 Website Developer</span>
+          <span class="typing-cursor" aria-hidden="true"></span>
+        </div>
+
+        <p class="fade-in">I build <strong>fast</strong>, <strong>secure</strong>, and <strong>SEO-first</strong> websites for token launches, meme coins, NFT drops and crypto startups. Landing pages, token docs, contract integrations and analytics — all optimized for conversion and search.</p>
+
+        <div class="cta-box fade-in">
+          <a class="cta-button" href="/contact">Get a Quote</a>
+          <a class="cta-button cta-secondary" href="/services">View Services</a>
+        </div>
+
+        <ul class="quick-links fade-in">
+          <li><a href="/why-your-crypto-project-needs-a-website">Why your crypto project needs a website</a></li>
+          <li><a href="/meme-coin-website-checklist">Meme coin website checklist</a></li>
+          <li><a href="/how-much-a-crypto-website-costs">How much a crypto website costs</a></li>
         </ul>
       </div>
+
+      <aside class="hero-right fade-in" aria-hidden="true">
+        <div class="avatar">
+          <img src="/hero-avatar.webp" alt="Sagor avatar" class="hero-avatar" />
+        </div>
+      </aside>
     </section>
 
-    <!-- Services (short) -->
-    <section class="section fade-in" aria-labelledby="services-title">
-      <div class="container">
-        <h2 id="services-title" class="section-title">Services — What I Do</h2>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🧩</div>
-            <h3>Landing Pages & Token Sites</h3>
-            <p>High-converting landing pages, token docs and presale pages with SEO & analytics.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">🔗</div>
-            <h3>Integrations & Dashboards</h3>
-            <p>Wallet connect, price API integration (CoinGecko/DexScreener), and staking dashboards.</p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✍️</div>
-            <h3>SEO & Content</h3>
-            <p>On-page SEO, structured data, sitemaps, and optimized content for target keywords.</p>
-          </article>
+    <!-- Services sample section -->
+    <section id="services" class="section">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <h3>Landing Pages & Token Sites</h3>
+          <p>High-converting landing pages for token launches and presales with SEO & analytics.</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>Integration & Wallet</h3>
+          <p>Connect wallets, token contracts, and deploy secure flows.</p>
+        </div>
+        <div class="service-card fade-in">
+          <h3>SEO & Content</h3>
+          <p>Fast on-page SEO: structured data, sitemaps, and optimized content for ranking.</p>
         </div>
       </div>
     </section>
 
-    <!-- Blog preview -->
-    <section id="blog" class="section fade-in" aria-labelledby="blog-title">
-      <div class="container">
-        <h2 id="blog-title" class="section-title">Latest Posts</h2>
-
-        <div class="blog-list-container">
-          <article class="blog-card">
-            <div class="blog-card-content">
-              <p class="blog-date">November 12, 2025</p>
-              <h3><a href="/static-vs-dynamic-website">Static vs Dynamic Websites — Which grows your business faster?</a></h3>
-              <p>Speed, SEO and when to choose static, dynamic or hybrid for crypto projects.</p>
-              <a href="/static-vs-dynamic-website" class="cta-button cta-secondary">Read more</a>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-card-content">
-              <p class="blog-date">November 04, 2025</p>
-              <h3><a href="/crypto-website-cost">How Much Does a Crypto Website Cost? (Developer breakdown)</a></h3>
-              <p>Pricing for Basic, Professional, and Custom DApp websites.</p>
-              <a href="/crypto-website-cost" class="cta-button cta-secondary">Read more</a>
-            </div>
-          </article>
-        </div>
+    <!-- Projects preview -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card fade-in">
+          <div class="project-image"><img src="/solana-project-new.webp" alt="Solana meme coin website screenshot" /></div>
+          <div class="project-content">
+            <h3>Solana Meme Coin Website</h3>
+            <p class="muted">HTML5, CSS3, JavaScript</p>
+            <p>A futuristic single-page site for a Solana-based meme coin.</p>
+            <div class="project-links"><a class="btn btn-demo" href="#">Live Demo</a></div>
+          </div>
+        </article>
+        <!-- add more cards similarly -->
       </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section class="section fade-in" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 id="contact-title" class="section-title">Ready to launch?</h2>
-        <p class="muted">Schedule a free consultation — I help token teams turn ideas into secure, high-converting websites.</p>
-        <a href="/contact" class="cta-button">Get a Free Consultation</a>
-      </div>
-    </section>
+    <!-- footer -->
+    <footer class="footer">
+      <p>© 2025 Sagor Ahamed. All Rights Reserved.</p>
+    </footer>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-social">
-        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
-        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-      </div>
-      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- main script -->
   <script src="/script.js" defer></script>
 </body>
 </html>
