@@ -351,3 +351,62 @@ body {
   .typing-box { font-size: 1.0rem; min-height: 30px; }
   .typing-cursor { width: 8px; height: 1.12em; }
 }
+/* ---------- Projects page: responsive image and CTA fixes ---------- */
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+/* Card */
+.project-card {
+  background: var(--card-bg, rgba(255,255,255,0.02));
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: transform .28s ease, box-shadow .28s ease;
+  border: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,0.48); }
+
+/* Image container */
+.project-media { display:block; width:100%; text-decoration:none; }
+.project-img { display:block; width:100%; height:auto; object-fit:cover; }
+
+/* Body */
+.project-body { padding: 18px; display:flex; flex-direction:column; gap:12px; }
+.project-body h3 { margin:0; font-size:1.15rem; }
+.tech-stack { color: rgba(255,255,255,0.6); font-size:0.92rem; margin:0; }
+
+/* Links row */
+.project-links { display:flex; gap:10px; align-items:center; margin-top:auto; }
+
+/* Live demo button (visible + accessible) */
+.btn-demo {
+  display:inline-block;
+  background: var(--primary-blue, #00bfff);
+  color: #001018;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow: 0 8px 20px rgba(0,191,255,0.10);
+  transition: transform .14s ease, box-shadow .14s ease, opacity .14s ease;
+}
+.btn-demo:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(0,191,255,0.14); opacity:0.98; }
+
+/* Fallback link style */
+.link-underline { color: var(--link, #45c0ff); text-decoration:underline; font-weight:600; }
+
+/* Responsive tweaks */
+@media (max-width:760px) {
+  .project-body { padding: 14px; }
+  .project-card { border-radius:10px; }
+  .section-title { font-size:1.5rem; }
+  .lead { font-size:0.98rem; }
+}
