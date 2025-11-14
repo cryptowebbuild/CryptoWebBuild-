@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Developer Services — Crypto, Web3, E-commerce & Business Websites | CryptoWebBuild</title>
-  <meta name="description" content="Full-stack web development for Crypto/Web3 projects, meme coins, fast e-commerce stores, custom business websites and personal blogs. Fast, SEO-first and conversion-focused." />
+  <meta name="description" content="Full-stack developer services: fast, secure and SEO-first websites for crypto/web3 projects, e-commerce stores, custom business sites and static blogs. Clear process, fast delivery and conversion-focused design." />
   <link rel="canonical" href="https://cryptowebbuild.com/services.html" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Developer Services — Crypto, Web3, E-commerce & Business Websites | CryptoWebBuild" />
-  <meta property="og:description" content="Full-stack web development: token landing pages, WalletConnect, e-commerce stores, custom business sites and SEO-first blogs." />
+  <meta property="og:description" content="Full-stack developer services: token landing pages, wallet integrations, e-commerce stores, SEO-first blogs and business sites." />
   <meta property="og:url" content="https://cryptowebbuild.com/services.html" />
   <meta property="og:image" content="https://cryptowebbuild.com/og-image.jpg" />
-  <meta property="og:image:alt" content="CryptoWebBuild — developer services" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://cryptowebbuild.com/og-image.jpg" />
 
-  <!-- Structured Data -->
+  <!-- Structured Data: Service -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -30,31 +29,34 @@
       "name":"Sagor Ahamed",
       "url":"https://cryptowebbuild.com"
     },
-    "areaServed":"Worldwide",
-    "description":"Full-stack web development for token sites, e-commerce, business websites and SEO-first blogs."
+    "description":"Full-stack web development and SEO-first builds for token launches, e-commerce, custom business sites and static blogs."
   }
   </script>
 
-  <!-- keep your main stylesheet and script -->
   <link rel="stylesheet" href="/style.css">
   <meta name="robots" content="index, follow" />
 
-  <!-- small page-specific tweaks for card layout & icons -->
+  <!-- Page-specific small styles (keeps existing design) -->
   <style>
-    .page-hero { padding:48px 0 18px; text-align:center; }
-    .hero-avatar { width:120px; height:120px; border-radius:14px; object-fit:cover; border:3px solid var(--primary-blue); display:inline-block; }
-    .hero-h1 {
+    .hero-min { padding:48px 0 16px; text-align:center; }
+    .hero-title {
       display:inline-block;
-      background: linear-gradient(90deg, rgba(255,223,102,0.12), rgba(255,223,102,0.06));
+      background: linear-gradient(90deg, rgba(255,223,102,0.10), rgba(255,223,102,0.04));
       color: #ffdf66;
       padding: 0.45rem 1rem;
       border-radius: 999px;
       font-weight:700;
-      margin-top:12px;
       box-shadow: 0 10px 24px rgba(11,18,32,0.06);
+      margin-bottom: 12px;
+      line-height:1.05;
     }
-    .page-lead { max-width:900px; margin:12px auto 0; color:rgba(255,255,255,0.9); line-height:1.6; }
-    .services-grid { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin-top:28px; }
+    .hero-lead { max-width:920px; margin:12px auto 0; color: rgba(255,255,255,0.9); line-height:1.6; }
+    .services-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+      margin-top:26px;
+    }
     .service-card {
       background: var(--card-bg);
       border: 1px solid rgba(255,255,255,0.03);
@@ -63,16 +65,18 @@
       min-height:170px;
       transition: transform .16s ease, box-shadow .16s ease;
     }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(0,0,0,0.55); }
     .service-icon { width:56px; height:56px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; margin-bottom:12px; background: rgba(6,176,255,0.04); }
-    .service-card h3 { margin:8px 0; font-family:'Chakra Petch',sans-serif; font-size:1.12rem; }
+    .service-card h3 { margin:8px 0; font-family:'Chakra Petch',sans-serif; font-size:1.1rem; }
     .service-card p { margin:0; color: rgba(255,255,255,0.88); line-height:1.55; }
     .cta-row { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    @media (max-width:600px){ .hero-h1 { font-size:1.25rem; padding:0.35rem 0.8rem; } .service-icon{ width:48px;height:48px;} }
+    @media (max-width:600px){
+      .hero-title { font-size:1.25rem; padding:0.35rem 0.8rem; }
+      .service-icon { width:48px; height:48px; }
+    }
   </style>
 </head>
 <body>
-  <!-- header -->
   <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
@@ -92,19 +96,14 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <!-- hero -->
-    <section class="page-hero fade-in" aria-labelledby="services-hero">
+    <!-- HERO (no images) -->
+    <section class="hero-min fade-in" aria-labelledby="services-hero">
       <div class="container center">
-        <picture>
-          <source srcset="/hero-avatar.webp" type="image/webp">
-          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild" class="hero-avatar" width="120" height="120" loading="lazy" decoding="async">
-        </picture>
+        <h1 id="services-hero" class="hero-title">Developer Services — Crypto, Web3, E-commerce & Business</h1>
 
-        <h1 id="services-hero" class="hero-h1">Developer Services — Crypto, Web3, E-commerce & Business</h1>
-
-        <p class="page-lead">
-          I build full-stack, production-ready websites — not only for Crypto & Web3 projects, but also for e-commerce stores, local businesses and personal blogs.
-          Fast, secure, SEO-first, and designed to convert visitors into customers.
+        <p class="hero-lead">
+          I build fast, secure and SEO-first websites — not only for Crypto & Web3 projects, but also for e-commerce stores, local businesses and personal blogs.
+          Clean code, fast deploys, and clear SEO intent so your project ranks and converts.
         </p>
 
         <div class="cta-row" role="group" aria-label="Primary calls to action">
@@ -114,104 +113,105 @@
       </div>
     </section>
 
-    <!-- services -->
+    <!-- SERVICES -->
     <section class="section fade-in" aria-labelledby="what-i-offer">
       <div class="container">
         <h2 id="what-i-offer" class="section-title">Core Services</h2>
 
         <div class="services-grid" role="list">
-          <!-- 1: Crypto & Web3 Platforms -->
+          <!-- 1: Crypto & Web3 Platforms (text upgraded) -->
           <article class="service-card" role="listitem" aria-labelledby="svc-crypto">
-            <div class="service-icon" aria-hidden="true">
-              <!-- bitcoin-like svg -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <div class="service-icon" aria-hidden="true" title="Crypto & Web3">
+              <!-- simple SVG icon (no external image) -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <circle cx="12" cy="12" r="10" fill="#061323" />
-                <path d="M9.5 6L14 5v2.5L11 9.5 14 10.5v2.5l-4.5.5" stroke="#06B0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.5 6L14 5v2.5L11 9.5 14 10.5v2.5l-4.5.5" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
+
             <h3 id="svc-crypto">Crypto & Web3 Platforms</h3>
             <p>
-              I build high-performance, secure landing pages and token sites for Crypto, Web3 and <strong>Meme Coin</strong> projects. Includes roadmap, tokenomics, contract links and live price/chart integrations.
+              High-performance, secure landing pages and token sites for Crypto, Web3 and Meme Coin projects. I deliver clear token docs, tokenomics sections, roadmap blocks, social proofs and live price/chart integrations — all optimized for speed and search.
             </p>
           </article>
 
-          <!-- 2: E-Commerce Stores -->
+          <!-- 2: E-Commerce Stores (text upgraded) -->
           <article class="service-card" role="listitem" aria-labelledby="svc-ecom">
-            <div class="service-icon" aria-hidden="true">
-              <!-- store svg -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 7h18v11H3z" fill="#061323"/><path d="M7 7v-2a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v2" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="service-icon" aria-hidden="true" title="E-Commerce">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="14" fill="#061323"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
+
             <h3 id="svc-ecom">E-Commerce Stores</h3>
             <p>
-              Fast, modern e-commerce sites with JavaScript carts, product pages and payment gateway integrations — optimized for performance, user flow and SEO.
+              Fast, modern e-commerce websites with product pages, JavaScript carts and secure payment gateway integration. I focus on performance, conversion funnels, and SEO-friendly product markup for organic discovery.
             </p>
           </article>
 
-          <!-- 3: Custom Business Websites -->
+          <!-- 3: Custom Business Websites (text upgraded) -->
           <article class="service-card" role="listitem" aria-labelledby="svc-business">
-            <div class="service-icon" aria-hidden="true">
-              <!-- briefcase svg -->
+            <div class="service-icon" aria-hidden="true" title="Business sites">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="12" fill="#061323"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
+
             <h3 id="svc-business">Custom Business Websites</h3>
             <p>
-              Need a fast, professional website for a local business or startup? I deliver responsive, <strong>SEO-optimized</strong> sites that attract customers and perform on mobile.
+              Professional websites for local businesses and startups. Responsive design, conversion-focused pages, and on-page SEO so your site attracts customers and ranks better in local and organic search.
             </p>
           </article>
 
-          <!-- 4: Personal Blogs & Portfolios -->
+          <!-- 4: Personal Blogs & Portfolios (text upgraded) -->
           <article class="service-card" role="listitem" aria-labelledby="svc-blog">
-            <div class="service-icon" aria-hidden="true">
-              <!-- pen nib svg -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2l6 6-10 10-4 2 2-4 10-10 0 0L12 2z" fill="#061323"/><path d="M7 17l2 2" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <div class="service-icon" aria-hidden="true" title="Blogs/portfolio">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2l6 6-10 10-4 2 2-4 10-10z" fill="#061323"/><path d="M7 17l2 2" stroke="#06B0FF" stroke-width="1.4" stroke-linecap="round"/></svg>
             </div>
+
             <h3 id="svc-blog">Personal Blogs & Portfolios</h3>
             <p>
-              Static HTML blogs and portfolio sites for personal branding — fast, crawlable, and built to attract <strong>organic traffic from Google</strong>.
+              Lightweight static blogs and portfolio sites that load instantly and are crawlable by search engines. Perfect for personal branding, case studies, and attracting organic traffic from Google.
             </p>
           </article>
         </div>
 
         <!-- benefits + process -->
-        <div style="margin-top:30px;">
+        <div style="margin-top:28px;">
           <h3 class="section-title">Why clients choose me</h3>
           <ul class="check-list">
-            <li>Full-stack builds: design → build → deploy.</li>
-            <li>SEO-first architecture to rank on Google and AI search.</li>
-            <li>Clear keyword mapping to avoid cannibalization across pages.</li>
-            <li>Faster deployments using Cloudflare Pages or similar CDNs.</li>
-            <li>Simple handover with GitHub-based updates and docs.</li>
+            <li>End-to-end builds: design → code → deploy → handover.</li>
+            <li>SEO-first structure with clear primary keywords per page (avoid cannibalization).</li>
+            <li>Fast static/CDN-first architecture for global speed.</li>
+            <li>Conversion UX and analytics setup so you can measure impact.</li>
+            <li>Simple GitHub-based updates and deployment docs.</li>
           </ul>
         </div>
 
         <div style="margin-top:28px;">
           <h3 class="section-title">Process (short)</h3>
           <ol>
-            <li><strong>Plan</strong> — goals, CTA, and the primary keyword for the page.</li>
-            <li><strong>Design</strong> — mobile-first wireframes and content outline.</li>
-            <li><strong>Build</strong> — static HTML/CSS/JS, integrations and analytics.</li>
-            <li><strong>Launch</strong> — deploy, sitemap update, GSC inspection & index request.</li>
-            <li><strong>Support</strong> — quick updates and monitoring available.</li>
+            <li><strong>Plan</strong> — goals, primary keyword, content plan and CTA map.</li>
+            <li><strong>Design</strong> — mobile-first layout and content hierarchy.</li>
+            <li><strong>Build</strong> — fast static HTML/CSS/JS, integrations and metadata.</li>
+            <li><strong>Launch</strong> — deploy, update sitemap, GSC inspection & index request.</li>
+            <li><strong>Support</strong> — small updates, monitoring and SEO tweaks.</li>
           </ol>
         </div>
 
-        <section style="margin-top:28px;text-align:center;">
-          <h2 class="section-title">Ready to build?</h2>
-          <p class="muted">Book a free consultation and I’ll give a clear roadmap and estimate for your project.</p>
+        <section style="margin-top:32px;text-align:center;">
+          <h2 class="section-title">Ready to start?</h2>
+          <p class="muted">Book a quick consultation — I’ll share a roadmap, timeline and a transparent estimate for your project.</p>
           <div class="cta-row">
             <a href="/contact" class="cta-button">Get a Quote</a>
             <a href="/projects" class="cta-button cta-secondary">See Portfolio</a>
           </div>
         </section>
 
-        <p class="muted" style="margin-top:18px;font-size:0.9rem;">Primary page keyword: <strong>developer services</strong> — avoid using the exact same phrase as the primary keyword on other pages to prevent cannibalization.</p>
+        <p class="muted" style="margin-top:18px;font-size:0.9rem;">Primary page keyword: <strong>developer services</strong> — keep distinct primary keywords on other pages to avoid cannibalization.</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container center">
-      <div class="footer-social">
+      <div class="footer-social" aria-hidden="true" style="margin-bottom:10px;">
         <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
         <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
         <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
