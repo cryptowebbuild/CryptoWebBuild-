@@ -1,241 +1,199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary SEO (page-level, unique to avoid cannibalization) -->
-  <title>Crypto Website Portfolio — Selected Projects & Case Studies | CryptoWebBuild</title>
-  <meta name="description" content="Portfolio: selected crypto, Web3 and business websites built by Sagor Ahamed. Case studies include token launches, meme coin landing pages and fast e-commerce stores — performance, SEO and conversion focused." />
-  <link rel="canonical" href="https://cryptowebbuild.com/projects" />
-  <meta name="robots" content="index, follow" />
+    <!-- SEO Title — short, strong, keyword-focused -->
+    <title>Web Development Projects – Crypto, Web3, E-commerce | Sagor Ahamed</title>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Crypto Website Portfolio — Selected Projects & Case Studies | CryptoWebBuild" />
-  <meta property="og:description" content="Selected case studies: token landing pages, presale flows, e-commerce stores and business sites built for speed, search visibility and conversions." />
-  <meta property="og:url" content="https://cryptowebbuild.com/projects" />
-  <meta property="og:image" content="https://cryptowebbuild.com/og-image-projects.jpg" />
-  <meta property="og:image:alt" content="CryptoWebBuild portfolio snapshot" />
+    <!-- Meta Description (unique page keyword, no cannibalization) -->
+    <meta name="description" content="Explore professional Web3, crypto, and e-commerce website projects built by Sagor Ahamed. See live demos of Solana meme coin sites, BNB chain launches, and modern e-commerce stores.">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Crypto Website Portfolio — CryptoWebBuild" />
-  <meta name="twitter:description" content="Selected projects: token landing pages, e-commerce stores and business websites built with SEO and performance in mind." />
-  <meta name="twitter:image" content="https://cryptowebbuild.com/og-image-projects.jpg" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://cryptowebbuild.com/projects">
 
-  <!-- Organization + ItemList structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "name":"CryptoWebBuild",
-        "url":"https://cryptowebbuild.com",
-        "logo":"https://cryptowebbuild.com/favicon-192x192.png",
-        "sameAs":[
-          "https://github.com/your-github",
-          "https://youtube.com/@cryptowebbuild",
-          "https://x.com/WebBuildDev"
-        ]
-      },
-      {
-        "@type":"ItemList",
-        "name":"CryptoWebBuild Portfolio",
-        "itemListElement":[
-          { "@type":"ListItem","position":1,"url":"https://cryptowebbuild.com/projects#project-tokenlaunch","name":"TokenLaunch — Landing & Presale" },
-          { "@type":"ListItem","position":2,"url":"https://cryptowebbuild.com/projects#project-memecoin","name":"MemeCoinSite — Launch Landing" },
-          { "@type":"ListItem","position":3,"url":"https://cryptowebbuild.com/projects#project-shopfast","name":"ShopFast — E-commerce Store" }
-        ]
-      }
-    ]
-  }
-  </script>
+    <!-- Preload hero image -->
+    <link rel="preload" href="solana-project-new.webp" as="image">
 
-  <!-- Fonts & CSS (keeps your style) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+    <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE"/>
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR5864CTR8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YR5864CTR8');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@400;600&display=swap">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Structured Data — SEO Boost -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Web Development Projects",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Solana Meme Coin Website",
+          "url": "https://solana-troll-site.pages.dev/",
+          "description": "A high-performance Solana meme coin landing page with tokenomics and presale layout."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "BNB Chain Meme Coin Website",
+          "url": "https://1bnbdemop.pages.dev/",
+          "description": "A glowing neon-style BNB Chain meme coin site optimized for conversion and clarity."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Modern E-Commerce Store",
+          "url": "https://e-commercesagor.pages.dev/",
+          "description": "A complete e-commerce store with cart system, product layout, and SEO-first structure."
+        }
+      ]
+    }
+    </script>
 </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Header / Nav (keeps existing classes for CSS & JS) -->
-  <header class="header" role="banner">
-    <nav class="navbar container" role="navigation" aria-label="Primary">
-      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
+<header class="header">
+    <nav class="navbar container">
+        <a href="/" class="nav-logo">SA</a>
 
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li class="nav-item"><a href="/" class="nav-link" role="menuitem">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link active" role="menuitem">Projects</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link" role="menuitem">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
-      </ul>
-
-      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-    </nav>
-  </header>
-
-  <main id="main-content" tabindex="-1">
-    <!-- HERO (single H1 - page primary keyword: "crypto website portfolio") -->
-    <section class="section hero fade-in" aria-labelledby="projects-hero">
-      <div class="container">
-        <h1 id="projects-hero" class="section-title">Crypto Website Portfolio — Selected Projects & Case Studies</h1>
-        <p class="lead">
-          Real examples of token landing pages, meme-coin launches and fast e-commerce builds. Each case study focuses on performance, SEO and conversion improvements so you can see measurable results before hiring.
-        </p>
-
-        <div class="cta-row" style="margin-top:14px;">
-          <a href="/contact" class="cta-button">Request a Proposal</a>
-          <a href="/services" class="cta-button cta-secondary">See Services</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects grid -->
-    <section id="portfolio" class="section fade-in" aria-labelledby="portfolio-title">
-      <div class="container">
-        <h2 id="portfolio-title" class="section-title">Featured projects</h2>
-        <p class="muted">Click any card to open the live demo or case study — images are optimized and lazy-loaded for performance.</p>
-
-        <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px;">
-          <!-- Project 1 -->
-          <article id="project-tokenlaunch" class="project-card fade-in" itemscope itemtype="https://schema.org/CreativeWork">
-            <a class="project-media" href="https://solana-troll-site.pages.dev/" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="/images/tokenlaunch-400.webp 400w, /images/tokenlaunch-800.webp 800w, /images/tokenlaunch-1200.webp 1200w" type="image/webp">
-                <source srcset="/images/tokenlaunch-400.jpg 400w, /images/tokenlaunch-800.jpg 800w, /images/tokenlaunch-1200.jpg 1200w" type="image/jpeg">
-                <img src="/images/tokenlaunch-800.webp"
-                     alt="TokenLaunch — crypto token landing page screenshot"
-                     loading="lazy" decoding="async"
-                     width="800" height="450"
-                     sizes="(max-width:600px) 100vw, 45vw" style="width:100%;height:auto;border-radius:8px;">
-              </picture>
-            </a>
-
-            <div class="project-body">
-              <h3 itemprop="name">TokenLaunch — Landing & Presale</h3>
-              <p itemprop="description">High-converting token landing page with tokenomics, roadmap and presale flow. Integrated live price feeds and analytics to track presale signups.</p>
-              <p class="tech-stack"><strong>Tech:</strong> Static HTML, Cloudflare Pages, CoinGecko API, WalletConnect</p>
-              <div class="project-links">
-                <a href="https://solana-troll-site.pages.dev/" target="_blank" rel="noopener noreferrer" class="link-underline">Live demo</a>
-                <a href="/projects/tokenlaunch" class="link-underline" aria-label="TokenLaunch case study">Case study →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article id="project-memecoin" class="project-card fade-in" itemscope itemtype="https://schema.org/CreativeWork">
-            <a class="project-media" href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="/images/memecoin-400.webp 400w, /images/memecoin-800.webp 800w, /images/memecoin-1200.webp 1200w" type="image/webp">
-                <source srcset="/images/memecoin-400.jpg 400w, /images/memecoin-800.jpg 800w, /images/memecoin-1200.jpg 1200w" type="image/jpeg">
-                <img src="/images/memecoin-800.webp"
-                     alt="MemeCoinSite — launch landing page screenshot"
-                     loading="lazy" decoding="async"
-                     width="800" height="450"
-                     sizes="(max-width:600px) 100vw, 45vw" style="width:100%;height:auto;border-radius:8px;">
-              </picture>
-            </a>
-
-            <div class="project-body">
-              <h3 itemprop="name">MemeCoinSite — Launch Landing</h3>
-              <p itemprop="description">Conversion-first landing page with social proof, countdown and analytics — built to maximize presale signups.</p>
-              <p class="tech-stack"><strong>Result:</strong> +45% presale signups vs previous version; Lighthouse perf improvements on critical pages.</p>
-              <div class="project-links">
-                <a href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer" class="link-underline">Live demo</a>
-                <a href="/projects/memecoinsite" class="link-underline">Case study →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article id="project-shopfast" class="project-card fade-in" itemscope itemtype="https://schema.org/CreativeWork">
-            <a class="project-media" href="https://e-commercesagor.pages.dev/" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="/images/shopfast-400.webp 400w, /images/shopfast-800.webp 800w, /images/shopfast-1200.webp 1200w" type="image/webp">
-                <source srcset="/images/shopfast-400.jpg 400w, /images/shopfast-800.jpg 800w, /images/shopfast-1200.jpg 1200w" type="image/jpeg">
-                <img src="/images/shopfast-800.webp"
-                     alt="ShopFast — e-commerce store screenshot with shopping cart"
-                     loading="lazy" decoding="async"
-                     width="800" height="450"
-                     sizes="(max-width:600px) 100vw, 45vw" style="width:100%;height:auto;border-radius:8px;">
-              </picture>
-            </a>
-
-            <div class="project-body">
-              <h3 itemprop="name">ShopFast — E-commerce Store</h3>
-              <p itemprop="description">Fast product listing pages, client-side cart and Stripe/PayPal checkout. SEO product markup and structured data included.</p>
-              <p class="tech-stack"><strong>Tech:</strong> Static site with client-side cart, optimized images and sitemap</p>
-              <div class="project-links">
-                <a href="https://e-commercesagor.pages.dev/" target="_blank" rel="noopener noreferrer" class="link-underline">Live demo</a>
-                <a href="/projects/shopfast" class="link-underline">Case study →</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Learn more / Contact CTA -->
-        <div style="margin-top:22px; text-align:center;">
-          <a href="/contact" class="cta-button">Get a Quote for a Project</a>
-          <a href="/services" class="cta-button cta-secondary">See my services</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Short process + trust -->
-    <section class="section fade-in" aria-labelledby="how-i-work">
-      <div class="container">
-        <h2 id="how-i-work" class="section-title">How I deliver results</h2>
-        <ul class="check-list">
-          <li>Keyword-informed content & page structure to avoid cannibalization</li>
-          <li>Performance-first builds (image optimization, CDN, preconnect)</li>
-          <li>Conversion tracking & analytics for measurable growth</li>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="/projects" class="nav-link active">Projects</a></li>
+            <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
+            <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
-      </div>
+
+        <div class="hamburger">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<main id="main-content">
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h1 class="section-title fade-in">My Web Development Projects</h1>
+
+            <p class="section-subtitle fade-in">
+                A collection of crypto, Web3 and e-commerce websites I built — optimized for speed,
+                security, SEO and conversions. Every project is hand-coded for performance.
+            </p>
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="solana-project-new.webp"
+                             alt="Solana meme coin website project developed by Sagor Ahamed"
+                             loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-content">
+                        <h3>Solana Meme Coin Website</h3>
+                        <p class="tech-stack">HTML, CSS, JavaScript</p>
+                        <p>A futuristic Solana meme coin landing page with roadmap, tokenomics and presale UX.</p>
+
+                        <div class="project-links">
+                            <a href="https://solana-troll-site.pages.dev/" target="_blank" class="btn-demo">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="BNBCHAIN-project-new.webp"
+                             alt="BNB chain meme coin website designed by Sagor Ahamed"
+                             loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-content">
+                        <h3>BNB Chain Meme Coin Website</h3>
+                        <p class="tech-stack">HTML, CSS, JavaScript</p>
+                        <p>A neon-glow BNB Chain meme coin website crafted for smooth UX and strong branding.</p>
+
+                        <div class="project-links">
+                            <a href="https://1bnbdemop.pages.dev/" target="_blank" class="btn-demo">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="ecommerce-project-new.webp"
+                             alt="E-commerce website project with functional JavaScript cart system"
+                             loading="lazy" decoding="async">
+                    </div>
+                    <div class="project-content">
+                        <h3>Modern E-Commerce Store</h3>
+                        <p class="tech-stack">HTML, CSS, JavaScript</p>
+                        <p>A complete e-commerce website with shopping cart, product system and clean UI.</p>
+
+                        <div class="project-links">
+                            <a href="https://e-commercesagor.pages.dev/" target="_blank" class="btn-demo">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
     </section>
 
-    <!-- Optional Testimonials -->
-    <section class="section fade-in" aria-labelledby="testimonials">
-      <div class="container">
-        <h2 id="testimonials" class="section-title">Client feedback</h2>
-        <blockquote>
-          <p>“Sagor delivered our token landing page on time and improved our presale conversions — highly recommended.” — TokenLaunch</p>
-        </blockquote>
-      </div>
+    <section class="section fade-in">
+        <div class="container center">
+            <h2 class="section-title">Want a website like these?</h2>
+            <p class="muted">I build custom websites for crypto tokens, startups, and businesses.</p>
+            <a href="/contact" class="cta-button">Get a Quote</a>
+        </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section class="section fade-in" aria-labelledby="projects-contact">
-      <div class="container center">
-        <h2 id="projects-contact" class="section-title">Want similar results?</h2>
-        <p class="muted">Share your brief and I’ll send a tailored plan showing timeline, deliverables and price.</p>
-        <a href="/contact" class="cta-button">Request a Proposal</a>
-      </div>
-    </section>
-  </main>
+</main>
 
-  <footer class="footer" role="contentinfo">
+<footer class="footer">
     <div class="container">
-      <div class="footer-social">
-        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
-        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
-        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
-      </div>
-      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
+        <div class="footer-social">
+            <a href="https://x.com/WebBuildDev" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@cryptowebbuild" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://t.me/CryptoWebBuild" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+        <p>&copy; 2025 Sagor Ahamed. All Rights Reserved.</p>
     </div>
-  </footer>
+</footer>
 
-  <!-- Keep your site JS for hamburger / typing / fade-in -->
-  <script src="/script.js" defer></script>
+<script src="/script.js" defer></script>
+
 </body>
 </html>
