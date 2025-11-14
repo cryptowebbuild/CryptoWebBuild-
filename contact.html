@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — CryptoWebBuild</title>
 
-  <meta name="description" content="Get in touch with Sagor Ahamed for Web3, Crypto, Meme Coin, and Business website development. Fast response. Professional service.">
+  <meta name="description" content="Contact Sagor Ahamed for Web3, Crypto, Meme Coin, E-commerce and Business website development. Fast response and full support.">
   <link rel="canonical" href="https://cryptowebbuild.com/contact">
 
   <link rel="stylesheet" href="/style.css">
@@ -19,13 +19,14 @@
 
     .contact-title {
       text-align: center;
-      margin-bottom: 12px;
     }
+
     .contact-title h1 {
       font-size: 2rem;
       font-weight: 700;
       color: #fff;
     }
+
     .contact-title p {
       color: #b7c3ff;
       max-width: 600px;
@@ -33,32 +34,40 @@
       font-size: 1rem;
     }
 
+    /* BOX STYLE */
     .form-box {
       background: #0e1324;
       padding: 30px;
-      border-radius: 14px;
+      border-radius: 18px;
       margin-top: 30px;
       border: 1px solid #1f2942;
+      box-shadow: 0 0 25px rgba(0, 150, 255, 0.05);
     }
 
     label {
       display: block;
       color: #a8b7ff;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin-bottom: 6px;
       font-weight: 500;
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
-      padding: 14px;
-      border-radius: 10px;
+      padding: 15px;
+      border-radius: 14px;
       border: 1px solid #222e4d;
-      background: #111a2e;
+      background: #10192f;
       color: #fff;
       font-size: 1rem;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #00eaff;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
     }
 
     textarea {
@@ -68,18 +77,20 @@
 
     .submit-btn {
       width: 100%;
-      padding: 14px;
-      font-size: 1.05rem;
+      padding: 15px;
+      font-size: 1.1rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 14px;
       background: #00c8ff;
       color: #00121f;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.25s;
     }
+
     .submit-btn:hover {
       background: #14d1ff;
+      transform: translateY(-1px);
     }
 
     .contact-info {
@@ -88,6 +99,7 @@
       color: #b7c3ff;
       font-size: 0.95rem;
     }
+
     .contact-info b {
       color: #00eaff;
     }
@@ -118,7 +130,7 @@
     
     <div class="contact-title">
       <h1>Contact Me</h1>
-      <p>Have a project in mind? Send me a message — I usually reply within 1–6 hours.</p>
+      <p>Send your project details — I usually reply within 1–6 hours.</p>
     </div>
 
     <div class="form-box">
@@ -126,23 +138,40 @@
         <input type="hidden" name="access_key" value="75fafb45-1a1e-41ee-86b7-4637bbd35224">
         <input type="hidden" name="redirect" value="https://cryptowebbuild.com/thank-you">
 
+        <!-- NAME -->
         <label>Your Name</label>
         <input type="text" name="name" required placeholder="Enter your name">
 
-        <label>Email Address</label>
+        <!-- EMAIL -->
+        <label>Your Email</label>
         <input type="email" name="email" required placeholder="Enter your email">
 
-        <label>Your Message</label>
-        <textarea name="message" required placeholder="Tell me about your project..."></textarea>
+        <!-- CATEGORY -->
+        <label>Project Category</label>
+        <select name="category" required>
+          <option value="" disabled selected>Select a project type</option>
+          <option>Web3 & Crypto Website</option>
+          <option>Meme Coin Landing Page</option>
+          <option>Token Presale Website</option>
+          <option>Business/Company Website</option>
+          <option>E-commerce Store</option>
+          <option>Portfolio Website</option>
+          <option>Custom Web Project</option>
+        </select>
 
+        <!-- MESSAGE -->
+        <label>Your Message</label>
+        <textarea name="message" required placeholder="Describe your project..."></textarea>
+
+        <!-- SUBMIT -->
         <button class="submit-btn">Send Message</button>
       </form>
     </div>
 
     <div class="contact-info">
-      <p>Email me directly:</p>
+      <p>You can email me directly:</p>
       <p><b>hello@cryptowebbuild.com</b></p>
-      <p><b>cryptowebbuild@gmail.com</b> (reply will come from this account)</p>
+      <p><b>cryptowebbuild@gmail.com</b> (Replies come from this mail)</p>
     </div>
 
   </div>
