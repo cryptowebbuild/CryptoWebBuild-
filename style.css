@@ -315,3 +315,39 @@ body {
     color: #fff;
     font-family: var(--header-font);
 }
+/* Typing text styling (bigger, readable) */
+.typing-box {
+  margin-top: 12px;
+  font-size: 1.14rem;
+  color: rgba(255,255,255,0.95);
+  min-height: 34px;
+  font-weight: 500;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  letter-spacing: 0.15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Visible block cursor aligned to text height */
+.typing-cursor {
+  width: 10px;
+  height: 1.18em;
+  background: #ffdf66;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 2px 8px rgba(255,223,102,0.15);
+  animation: cursorBlink 1000ms steps(2, start) infinite;
+}
+
+@keyframes cursorBlink {
+  0%   { opacity: 1; transform: scaleY(1); }
+  50%  { opacity: 0; transform: scaleY(0.92); }
+  100% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width:760px) {
+  .typing-box { font-size: 1.0rem; min-height: 30px; }
+  .typing-cursor { width: 8px; height: 1.12em; }
+}
