@@ -59,9 +59,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
 
-  <!-- Inline styles: typing size & block cursor -->
+  <!-- Inline styles: hero H1 emphasis (safe) -->
   <style>
-    /* Hero H1 pill — high contrast, sharp and premium (kept) */
     .hero .hero-heading {
       display:inline-block;
       background: #ffdf66;
@@ -74,52 +73,8 @@
       line-height: 1.06;
       margin-top: 12px;
     }
-
-    /* Typing box improved size + spacing */
-    .typing-box {
-      margin-top: 12px;
-      font-size: 1.12rem;             /* slightly larger for readability */
-      color: rgba(255,255,255,0.94);
-      min-height: 28px;
-      letter-spacing: 0.2px;
-      font-weight: 500;
-      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    /* Block cursor (more visible), matches text height */
-    .typing-cursor {
-      display:inline-block;
-      width: 10px;
-      height: 1.16em;                 /* relative to text size */
-      margin-left: 8px;
-      background: #ffdf66;
-      border-radius: 2px;
-      vertical-align: middle;
-      transform-origin: center;
-      animation: cursorBlink 1s steps(2, start) infinite, cursorPulse 1500ms ease-in-out infinite;
-      box-shadow: 0 2px 6px rgba(255,223,102,0.15);
-    }
-
-    @keyframes cursorBlink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes cursorPulse {
-      0% { transform: scaleY(1); }
-      50% { transform: scaleY(0.92); }
-      100% { transform: scaleY(1); }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 760px) {
-      .hero .hero-heading { font-size: 1.32rem; padding: 0.42rem 0.85rem; }
-      .typing-box { font-size: 1rem; }
-      .typing-cursor { width: 8px; height: 1.12em; margin-left:6px; }
-    }
-
-    /* small helper */
     .lead { max-width: 920px; margin: 12px auto 0; color: rgba(255,255,255,0.9); line-height:1.6; }
+    @media (max-width:760px){ .hero .hero-heading { font-size:1.32rem; padding:0.42rem 0.85rem; } }
   </style>
 </head>
 <body>
@@ -154,7 +109,7 @@
 
         <h1 id="hero-heading" class="hero-heading">Professional Website Developer — Sagor Ahamed</h1>
 
-        <!-- Typing animation area: text + block cursor -->
+        <!-- typing area (no inline script here; script.js handles it) -->
         <div class="typing-box" aria-live="polite" aria-atomic="true">
           <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
         </div>
@@ -177,7 +132,7 @@
       </div>
     </section>
 
-    <!-- (rest of the page unchanged — services preview, why choose, portfolio CTA, contact CTA) -->
+    <!-- services preview -->
     <section class="section fade-in" aria-labelledby="services-preview">
       <div class="container">
         <h2 id="services-preview" class="section-title">Services I Provide</h2>
@@ -247,65 +202,7 @@
     </div>
   </footer>
 
-  <!-- Keep your main script file -->
+  <!-- main script (defer) -->
   <script src="/script.js" defer></script>
-
-  <!-- Updated typing animation script (slower, smoother, better pauses) -->
-  <script>
-  (function(){
-    const typingText = document.getElementById("typing-text");
-    const cursorEl = document.querySelector(".typing-cursor");
-    const phrases = [
-      "I build Crypto & Web3 websites.",
-      "I build fast E-commerce stores.",
-      "I create Business websites.",
-      "I build Static blogs & Portfolios.",
-      "SEO-first, Mobile-first, Conversion-focused."
-    ];
-
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    // Timing settings (tuned for smooth readable speed)
-    const TYPING_SPEED = 90;      // ms per char when typing
-    const DELETING_SPEED = 45;    // ms per char when deleting
-    const PAUSE_AFTER_FULL = 1200; // ms pause after full phrase
-    const PAUSE_BEFORE_TYPING = 300; // small delay before typing next
-
-    function tick(){
-      const current = phrases[phraseIndex];
-      if(!deleting){
-        // typing
-        charIndex++;
-        typingText.textContent = current.substring(0, charIndex);
-        if(charIndex >= current.length){
-          // full word typed
-          deleting = true;
-          setTimeout(tick, PAUSE_AFTER_FULL);
-          return;
-        }
-        setTimeout(tick, TYPING_SPEED);
-      } else {
-        // deleting
-        charIndex--;
-        typingText.textContent = current.substring(0, charIndex);
-        if(charIndex === 0){
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(tick, PAUSE_BEFORE_TYPING);
-          return;
-        }
-        setTimeout(tick, DELETING_SPEED);
-      }
-    }
-
-    // Start after a short delay so initial paint is smooth
-    setTimeout(tick, 700);
-
-    // Accessibility: announce changes for screen readers (only when changes happen)
-    // Keep aria-live on typing-box; this is sufficient for most AT users.
-  })();
-  </script>
 </body>
 </html>
