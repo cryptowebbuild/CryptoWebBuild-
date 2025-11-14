@@ -1,57 +1,79 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // NAV TOGGLE
+// script.js - nav toggle, typing effect, intersection reveal
+document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
+
+  // NAV TOGGLE: open/close mobile menu, block background pointer events
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-      const active = navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active', active);
-      hamburger.setAttribute('aria-expanded', active ? 'true' : 'false');
+      const opened = navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active', opened);
+      hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+      // prevent background interactions when menu open
+      document.body.style.overflow = opened ? 'hidden' : '';
     });
-    // close on link click
-    navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navMenu.classList.remove('active'); hamburger.classList.remove('active'); hamburger.setAttribute('aria-expanded','false');
-    }));
+
+    // close menu on link click
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
   }
 
-  // TYPING EFFECT (robust)
+  // TYPING EFFECT (robust, cycles)
   (function typing() {
     const el = document.getElementById('typing-text');
     if (!el) return;
-    const items = ["Full-Stack Developer", "Web3 Website Developer", "Meme Coin & Token Sites"];
-    let i = 0, j = 0, forward = true;
-    function step() {
-      const txt = items[i];
+    const list = [
+      "Full-Stack Developer",
+      "Web3 Website Developer",
+      "Meme Coin & Token Sites"
+    ];
+    let idx = 0, ch = 0, forward = true;
+    function tick() {
+      const text = list[idx];
       if (forward) {
-        if (j < txt.length) { el.textContent += txt[j++]; setTimeout(step, 80); }
-        else { forward = false; setTimeout(step, 1500); }
+        if (ch < text.length) {
+          el.textContent += text[ch++];
+          setTimeout(tick, 70);
+        } else {
+          forward = false;
+          setTimeout(tick, 1200);
+        }
       } else {
-        if (j > 0) { el.textContent = txt.slice(0, --j); setTimeout(step, 40); }
-        else { forward = true; i = (i + 1) % items.length; setTimeout(step, 350); }
+        if (ch > 0) {
+          el.textContent = text.slice(0, --ch);
+          setTimeout(tick, 40);
+        } else {
+          forward = true;
+          idx = (idx + 1) % list.length;
+          setTimeout(tick, 300);
+        }
       }
     }
-    step();
+    tick();
   })();
 
-  // INTERSECTION OBSERVER: fade-in & image reveal
-  const appearOpts = { threshold: 0.12, rootMargin: '0px 0px -10px 0px' };
-  const appearOnScroll = new IntersectionObserver((entries, obs) => {
+  // INTERSECTION OBSERVER for fade-in elements + img reveal
+  const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
       obs.unobserve(entry.target);
     });
-  }, appearOpts);
+  }, { threshold: 0.12 });
 
-  document.querySelectorAll('.fade-in').forEach(el => appearOnScroll.observe(el));
+  document.querySelectorAll('.fade-in, .enter').forEach(el => io.observe(el));
 
-  // Image lazy reveal
-  const imgObserver = new IntersectionObserver((entries, obs) => {
+  const imgIo = new IntersectionObserver((entries, obs) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         const img = e.target;
         img.classList.add('img-visible');
-        // if data-src used for lazy-load, swap:
         if (img.dataset && img.dataset.src) img.src = img.dataset.src;
         obs.unobserve(img);
       }
@@ -59,42 +81,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.05 });
 
   document.querySelectorAll('img').forEach(img => {
-    // give initial hidden class for reveal animation
     img.classList.add('img-hidden');
-    // observe
-    imgObserver.observe(img);
-    // safe onload animation
+    imgIo.observe(img);
+    // ensure fallback visible after load
     img.addEventListener('load', () => img.classList.add('img-visible'));
-    // ensure object-fit for non-CSS-friendly environments
-    img.style.objectFit = img.style.objectFit || 'cover';
   });
 
-  // HERO entrance (make text appear)
-  const heroTargets = document.querySelectorAll('.hero .enter, .hero .fade-in');
-  heroTargets.forEach(t => {
-    // if already visible, add immediately
-    if (t.getBoundingClientRect().top < window.innerHeight) t.classList.add('visible');
-    else {
-      // else observe
-      const hObs = new IntersectionObserver((entries, o) => {
-        entries.forEach(en => {
-          if (en.isIntersecting) {
-            en.target.classList.add('visible');
-            o.unobserve(en.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      hObs.observe(t);
-    }
-  });
-
-  // AVATAR loaded fancy
-  const avatar = document.querySelector('.hero-avatar');
-  if (avatar) {
-    if (avatar.complete) avatar.classList.add('img-visible');
-    else avatar.addEventListener('load', () => avatar.classList.add('img-visible'));
-  }
-
-  // remove no-js class if present
+  // safety: remove no-js marker if used
   document.documentElement.classList.remove('no-js');
 });
