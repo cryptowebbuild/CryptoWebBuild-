@@ -4,24 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Web Development Services — Crypto, Web3, E-commerce | Sagor Ahamed</title>
-  <meta name="description" content="Professional web development services for Crypto/Web3, meme coins, e-commerce stores and business websites. SEO-first, mobile-first, conversion-focused builds by Sagor Ahamed.">
+  <title>Web Development Services — Crypto, Web3 & E-commerce | Sagor Ahamed</title>
+  <meta name="description" content="Professional web development services for Crypto/Web3, meme coins, e-commerce stores and business websites. SEO-first, mobile-first, conversion-focused builds by Sagor Ahamed." />
   <link rel="canonical" href="https://cryptowebbuild.com/services" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Web Development Services — Crypto, Web3 & Business" />
-  <meta property="og:description" content="Web3, crypto and e-commerce website development — SEO-first and mobile-optimized." />
-  <meta property="og:image" content="https://cryptowebbuild.com/images/services-hero-800.webp" />
-
-  <!-- Twitter -->
+  <meta property="og:title" content="Web Development Services — Crypto, Web3 & Business | CryptoWebBuild" />
+  <meta property="og:description" content="SEO-first, mobile-first web development for token launches, e-commerce stores and businesses." />
+  <meta property="og:image" content="https://cryptowebbuild.com/services-hero-800.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Web Development Services — Sagor Ahamed" />
-  <meta name="twitter:description" content="I build fast, secure, SEO-first websites for crypto projects, e-commerce stores and businesses." />
-  <meta name="twitter:image" content="https://cryptowebbuild.com/images/services-hero-800.webp" />
+  <meta name="twitter:description" content="I build fast, secure and SEO-first websites for crypto projects, e-commerce stores and businesses." />
+  <meta name="twitter:image" content="https://cryptowebbuild.com/services-hero-800.webp" />
 
-  <!-- Schema (Service) -->
+  <!-- Service structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -30,7 +28,7 @@
     "provider": {"@type":"Person","name":"Sagor Ahamed","url":"https://cryptowebbuild.com"},
     "serviceType":"Web Development",
     "areaServed":"Worldwide",
-    "description":"SEO-first websites for token launches, meme coins, storefronts and business websites."
+    "description":"SEO-first websites for crypto token launches, Web3 projects, e-commerce stores and business sites."
   }
   </script>
 
@@ -43,13 +41,13 @@
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
 
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link active">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li class="nav-item"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+        <li class="nav-item"><a href="/services" class="nav-link active" role="menuitem">Services</a></li>
+        <li class="nav-item"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li class="nav-item"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link" role="menuitem">About</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
 
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -63,10 +61,10 @@
     <section class="hero section fade-in" aria-labelledby="services-hero-title">
       <div class="container center">
         <picture>
-          <!-- single hero image (you requested this exact name) -->
-          <source srcset="/images/services-hero-800.webp 800w" type="image/webp">
-          <img src="/images/services-hero-800.webp"
-               alt="Web development hero image showing abstract blockchain UI and dashboards"
+          <!-- root image path (single hero image) -->
+          <source srcset="/services-hero-800.webp 800w" type="image/webp">
+          <img src="/services-hero-800.webp"
+               alt="Abstract Web3 dashboard and blockchain illustration — hero image"
                width="800" height="450"
                loading="lazy" decoding="async"
                class="hero-illustration">
@@ -88,47 +86,46 @@
       </div>
     </section>
 
-    <!-- SERVICES GRID -->
-    <section class="section fade-in">
+    <!-- Services grid -->
+    <section class="section fade-in" aria-labelledby="services-list">
       <div class="container">
-        <h2 class="section-title">What I Offer</h2>
+        <h2 id="services-list" class="section-title">What I Offer</h2>
 
-        <div class="services-grid">
-          <article class="service-card">
+        <div class="services-grid" role="list">
+          <article class="service-card" role="listitem">
             <div class="service-icon" aria-hidden="true">🧩</div>
             <h3>Crypto & Web3 Platforms</h3>
-            <p>Landing pages, token docs, presale flows, contract links and live chart integrations — optimized for token launches.</p>
+            <p>Token landing pages, tokenomics, presale flows, WalletConnect and price integrations — optimized for trust and conversions.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="listitem">
             <div class="service-icon" aria-hidden="true">🛒</div>
             <h3>E-Commerce Stores</h3>
-            <p>SEO-optimized product pages, JavaScript carts and secure payment integrations for fast conversions.</p>
+            <p>Fast product pages, lightweight carts and secure payment gateway integration for high-converting online stores.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="listitem">
             <div class="service-icon" aria-hidden="true">🏢</div>
             <h3>Business Websites</h3>
-            <p>Professional, mobile-first websites for small businesses and startups with SEO-focused content and clear CTAs.</p>
+            <p>Professional, mobile-first websites for local businesses and startups with SEO-optimized content and clear CTAs.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" role="listitem">
             <div class="service-icon" aria-hidden="true">✍️</div>
             <h3>Blogs & Portfolios</h3>
-            <p>Fast static blogs and portfolios for personal branding and organic traffic from Google.</p>
+            <p>Static blogs and portfolios for personal branding and organic traffic growth.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section fade-in center">
+    <section class="section fade-in center" aria-labelledby="services-cta">
       <div class="container">
-        <h2 class="section-title">Ready to start?</h2>
+        <h2 id="services-cta" class="section-title">Ready to start?</h2>
         <p class="muted">Book a free consultation and I'll share a roadmap and estimate tailored to your project.</p>
         <a href="/contact" class="cta-button">Get a Free Consultation</a>
       </div>
     </section>
-
   </main>
 
   <footer class="footer" role="contentinfo">
