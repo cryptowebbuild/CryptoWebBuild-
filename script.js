@@ -1,11 +1,12 @@
 // script.js — Complete site script (vanilla JS)
 // Features:
 // - Accessible hamburger menu (toggle, close on link/outside click)
-// - Typing effect for hero subtitle (configurable phrases)
+// - Typing effect for hero subtitle (configurable phrases, smooth & readable)
 // - Smooth internal anchor scrolling
 // - Fade-in IntersectionObserver for elements with .fade-in
+// - Back-to-top button
 // - Defensive checks (no errors if an element is missing)
-
+// - Respect prefers-reduced-motion and document visibility
 (function () {
   'use strict';
 
@@ -15,7 +16,7 @@
        Helpers
     ------------------------- */
     const $ = (selector, ctx = document) => ctx.querySelector(selector);
-    const $$ = (selector, ctx = document) => Array.from(ctx.querySelectorAll(selector));
+    const $$ = (selector, ctx = document) => Array.from((ctx || document).querySelectorAll(selector));
     const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
     /* -------------------------
@@ -32,9 +33,7 @@
         const expanded = typeof force === 'boolean' ? force : !hamburger.classList.contains('active');
         hamburger.classList.toggle('active', expanded);
         navMenu.classList.toggle('active', expanded);
-        // keep aria state correct
         hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        // prevent body scroll when open on mobile
         document.documentElement.classList.toggle('nav-open', expanded);
       }
 
@@ -48,7 +47,7 @@
       navMenu.addEventListener('click', function (e) {
         const link = e.target.closest('a');
         if (!link) return;
-        // If the link is an internal anchor or page link, close
+        // If link is a regular nav link, close menu
         toggleMenu(false);
       });
 
@@ -76,74 +75,108 @@
 
 
     /* -------------------------
-       Typing effect (hero subtitle)
-       - Targets element with id="typing-text"
-       - Cursor is element with class .typing-cursor (optional)
+       Typing effect (hero subtitle) - improved and robust
+       - targets #typing-text and .typing-cursor (cursor optional)
+       - uses setTimeout with human-like jitter
+       - pauses/resumes on document visibility change
     ------------------------- */
     (function initTypingEffect() {
       const typingEl = document.getElementById('typing-text');
       const cursorEl = document.querySelector('.typing-cursor');
 
-      if (!typingEl) return;
+      if (!typingEl) return; // nothing to do
 
+      // Editable phrases — adjust as needed
       const phrases = [
-        'Landing pages for token launches',
-        'SEO-first websites for meme coins',
-        'Fast, secure Web3 site builds',
-        'Token docs, presales & dashboards'
+        'I build Crypto & Web3 websites.',
+        'I build fast E-commerce stores.',
+        'I create Business websites.',
+        'I build Static blogs & Portfolios.',
+        'SEO-first, Mobile-first, Conversion-focused.'
       ];
 
-      // config
-      const typeSpeed = 60;      // ms per char
-      const deleteSpeed = 35;    // ms per char when deleting
-      const holdDelay = 1600;    // ms to hold a full phrase
-      const loop = true;
-
+      // Config (tweak for speed)
+      const TYPE_SPEED = 90;       // ms per char typing
+      const DELETE_SPEED = 45;     // ms per char deleting
+      const HOLD_DELAY = 1400;     // pause after a phrase fully typed
+      const START_DELAY = 500;     // initial delay
+      const BETWEEN_DELAY = 300;   // pause between phrases before typing
+      const JITTER_MAX = 35;       // ms random jitter for human-like timing
       let phraseIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
-
-      function tick() {
-        const current = phrases[phraseIndex % phrases.length];
-        if (!isDeleting) {
-          // typing
-          typingEl.textContent = current.slice(0, charIndex + 1);
-          charIndex++;
-          if (charIndex >= current.length) {
-            isDeleting = true;
-            setTimeout(tick, holdDelay);
-            setCursorBlink(true);
-            return;
-          }
-        } else {
-          // deleting
-          typingEl.textContent = current.slice(0, charIndex - 1);
-          charIndex--;
-          if (charIndex <= 0) {
-            isDeleting = false;
-            phraseIndex++;
-            setCursorBlink(false);
-          }
-        }
-        const delay = isDeleting ? deleteSpeed : typeSpeed;
-        setTimeout(tick, delay + randomJitter());
-      }
+      let typingTimer = null;
+      let isHidden = document.hidden;
 
       function randomJitter() {
-        return Math.floor(Math.random() * 40); // small human-like variance
+        return Math.floor(Math.random() * JITTER_MAX);
       }
 
       function setCursorBlink(enabled) {
         if (!cursorEl) return;
-        if (enabled) {
-          cursorEl.classList.add('typing-blink');
-        } else {
-          cursorEl.classList.remove('typing-blink');
-        }
+        cursorEl.classList.toggle('typing-blink', enabled);
       }
 
-      // start after a small delay so page can render
-      setTimeout(tick, 400);
+      function tick() {
+        if (isHidden) {
+          // Do not progress while hidden; schedule a quick retry
+          clearTimeout(typingTimer);
+          typingTimer = setTimeout(tick, 500);
+          return;
+        }
+
+        const current = phrases[phraseIndex % phrases.length];
+
+        if (!isDeleting) {
+          // typing
+          charIndex++;
+          typingEl.textContent = current.slice(0, charIndex);
+
+          if (charIndex >= current.length) {
+            // finished typing
+            setCursorBlink(true);
+            isDeleting = true;
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(tick, HOLD_DELAY);
+            return;
+          }
+        } else {
+          // deleting
+          charIndex--;
+          typingEl.textContent = current.slice(0, charIndex);
+
+          if (charIndex <= 0) {
+            isDeleting = false;
+            setCursorBlink(false);
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(tick, BETWEEN_DELAY);
+            return;
+          }
+        }
+
+        const delay = isDeleting ? DELETE_SPEED : TYPE_SPEED;
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(tick, delay + randomJitter());
+      }
+
+      // Pause/resume on visibilitychange to avoid jumps & CPU waste
+      document.addEventListener('visibilitychange', function () {
+        isHidden = document.hidden;
+        if (!isHidden) {
+          // resume after short delay to avoid instant jump
+          clearTimeout(typingTimer);
+          typingTimer = setTimeout(tick, 400);
+        } else {
+          clearTimeout(typingTimer);
+        }
+      });
+
+      // Start with small delay to allow layout paint
+      typingTimer = setTimeout(tick, START_DELAY);
+
+      // expose for debugging (optional)
+      // window._typingControl = { start: () => (typingTimer = setTimeout(tick, 100)), stop: () => clearTimeout(typingTimer) };
     })();
 
 
@@ -151,23 +184,24 @@
        Smooth internal anchor scrolling
     ------------------------- */
     (function initSmoothScroll() {
-      // only intercept same-page anchor links
-      const links = $$('a[href^="#"], a[href^="/#"]');
+      // select same-page anchors only
+      const links = $$('a[href*="#"]');
 
       links.forEach(link => {
+        // ignore links that are full external or don't have hash target
         link.addEventListener('click', function (e) {
-          // allow external or full-page reloads to proceed
-          const href = link.getAttribute('href');
-          if (!href || href === '#' || href.startsWith('/#') === false && !href.startsWith('#')) return;
+          const href = link.getAttribute('href') || '';
+          // if it's only a hash or page anchor
+          if (href === '#' || href.indexOf('#') === -1) return;
 
-          // if it's a same-page anchor
-          const hash = href.indexOf('#') >= 0 ? href.slice(href.indexOf('#')) : null;
-          if (!hash) return;
-
+          // compute hash part
+          const hash = href.slice(href.indexOf('#'));
           const target = document.querySelector(hash);
-          if (!target) return;
+          if (!target) return; // let default happen if no anchor
 
+          // if anchor exists on same page, intercept
           e.preventDefault();
+
           // close mobile menu if open
           const hamburger = document.querySelector('.hamburger');
           const navMenu = document.querySelector('.nav-menu');
@@ -179,7 +213,7 @@
           target.setAttribute('tabindex', '-1');
           target.focus({ preventScroll: true });
 
-          // smooth scroll with offset for sticky header
+          // adjust for sticky header height
           const header = document.querySelector('.header');
           const headerHeight = header ? header.getBoundingClientRect().height : 0;
           const targetY = window.scrollY + target.getBoundingClientRect().top - headerHeight - 12;
@@ -200,6 +234,13 @@
       const elements = Array.from(document.querySelectorAll('.fade-in'));
       if (!elements.length) return;
 
+      // respect reduced motion
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        elements.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -216,7 +257,7 @@
 
 
     /* -------------------------
-       Small UI niceties
+       Small UI niceties: reduced motion, external links, back-to-top
     ------------------------- */
     (function miscUI() {
       // Reduce motion preference respect
@@ -238,19 +279,34 @@
         }
       });
 
-      // back-to-top shortcut: add if not present
+      // back-to-top button: add if not present
       if (!document.querySelector('.back-to-top')) {
         const btn = document.createElement('button');
         btn.className = 'back-to-top hidden';
         btn.setAttribute('aria-label', 'Back to top');
         btn.innerHTML = '↑';
-        btn.style.cssText = 'position:fixed;right:18px;bottom:18px;padding:10px 12px;border-radius:8px;background:var(--primary-blue);color:#fff;border:none;cursor:pointer;z-index:1000;box-shadow:0 8px 20px rgba(0,191,255,0.12);';
+        btn.style.cssText = [
+          'position:fixed',
+          'right:18px',
+          'bottom:18px',
+          'padding:10px 12px',
+          'border-radius:8px',
+          'background:var(--primary-blue)',
+          'color:#fff',
+          'border:none',
+          'cursor:pointer',
+          'z-index:1000',
+          'box-shadow:0 8px 20px rgba(0,191,255,0.12)',
+          'transition:opacity .28s ease, transform .28s ease'
+        ].join(';');
         btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
         document.body.appendChild(btn);
 
         // show/hide logic
+        let lastKnownScroll = 0;
         window.addEventListener('scroll', () => {
-          const show = window.scrollY > 400;
+          lastKnownScroll = window.scrollY;
+          const show = lastKnownScroll > 400;
           btn.classList.toggle('hidden', !show);
           btn.style.opacity = show ? '1' : '0';
           btn.style.transform = show ? 'translateY(0)' : 'translateY(12px)';
