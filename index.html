@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Professional Website Developer — Crypto, Web3, E-commerce & Business | Sagor Ahamed</title>
+  <title>Professional Website Developer — Sagor Ahamed | CryptoWebBuild</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Professional Website Developer — I build fast, secure and SEO-first websites for Crypto/Web3 projects, meme coins, e-commerce stores, local businesses and personal blogs. Mobile-first, conversion-focused and deploy-ready." />
+  <meta name="description" content="Professional Website Developer — I build fast, secure and SEO-first websites for Crypto/Web3, meme coins, e-commerce stores, businesses and personal blogs. Mobile-first, conversion-focused and deploy-ready." />
   <link rel="canonical" href="https://cryptowebbuild.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Professional Website Developer — Crypto, Web3 & E-commerce | CryptoWebBuild" />
+  <meta property="og:title" content="Professional Website Developer — Sagor Ahamed | CryptoWebBuild" />
   <meta property="og:description" content="Full-stack and static-first websites for token launches, e-commerce stores, business sites and blogs. Fast, secure and SEO-optimized." />
   <meta property="og:url" content="https://cryptowebbuild.com/" />
   <meta property="og:image" content="https://cryptowebbuild.com/og-image.jpg" />
@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="I build fast, SEO-first websites for crypto projects, e-commerce stores, businesses and personal brands." />
   <meta name="twitter:image" content="https://cryptowebbuild.com/og-image.jpg" />
 
-  <!-- Structured Data: Organization + WebSite -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -33,8 +33,7 @@
         "@type":"Organization",
         "name":"CryptoWebBuild",
         "url":"https://cryptowebbuild.com",
-        "logo":"https://cryptowebbuild.com/favicon-192x192.png",
-        "sameAs":["https://github.com/your-github","https://youtube.com/@cryptowebbuild"]
+        "logo":"https://cryptowebbuild.com/favicon-192x192.png"
       },
       {
         "@type":"WebSite",
@@ -50,45 +49,63 @@
   }
   </script>
 
-  <!-- Prefetch/Fonts/Assets -->
+  <!-- Fonts / CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Main stylesheet & favicon (keep your existing file) -->
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
 
-  <!-- Lightweight page-specific style for highlighted H1 -->
+  <!-- Inline styles: improved H1 visibility + typing box -->
   <style>
-    /* Highlighted hero H1 pill */
+    /* Hero H1 pill — high contrast, sharp and premium */
     .hero .hero-heading {
       display:inline-block;
-      background: linear-gradient(90deg, rgba(255,223,102,0.16), rgba(255,223,102,0.06));
-      color: #0b1220;
-      padding: 0.42rem 0.9rem;
-      border-radius: 999px;
-      font-weight:700;
-      box-shadow: 0 10px 24px rgba(11,18,32,0.06);
-      line-height: 1.08;
+      background: #ffdf66;            /* solid visible pill background */
+      color: #041025;                 /* dark readable text */
+      padding: 0.55rem 1.15rem;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1.75rem;
+      box-shadow: 0 12px 30px rgba(4,8,16,0.18);
+      line-height: 1.06;
+      margin-top: 12px;
     }
-    .hero { padding: 40px 0 28px; text-align:center; }
-    .hero-avatar { width:140px; height:140px; border-radius:50%; border:3px solid var(--primary-blue); object-fit:cover; margin-bottom:12px; }
-    .lead { max-width:920px; margin:12px auto 0; color: rgba(255,255,255,0.9); line-height:1.6; }
-    .quick-links { display:flex; gap:12px; justify-content:center; margin-top:16px; flex-wrap:wrap; }
-    .services-grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); margin-top:26px; }
-    .service-card { padding:18px; border-radius:12px; background:var(--card-bg); border:1px solid rgba(255,255,255,0.03); min-height:150px; }
-    .service-card h3 { font-family:'Chakra Petch',sans-serif; margin-bottom:8px; }
-    .muted { color: rgba(255,255,255,0.7); }
-    @media (max-width:600px){ .hero .hero-heading { font-size:1.35rem; padding:0.35rem 0.7rem; } }
+
+    /* Typing box below H1 */
+    .typing-box {
+      margin-top: 12px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.92);
+      min-height: 28px;
+      letter-spacing: 0.1px;
+    }
+    .typing-box .cursor {
+      display:inline-block;
+      margin-left:6px;
+      font-weight:700;
+      color: #ffdf66;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink { 50% { opacity:0; } }
+
+    /* Responsive adjustments */
+    @media (max-width: 760px) {
+      .hero .hero-heading { font-size: 1.32rem; padding: 0.42rem 0.85rem; }
+      .typing-box { font-size: 1rem; }
+    }
+
+    /* small helper to keep layout tidy if your CSS lacks these */
+    .lead { max-width: 920px; margin: 12px auto 0; color: rgba(255,255,255,0.9); line-height:1.6; }
+    .quick-links { display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <!-- Header / Nav (keeps existing structure) -->
+  <!-- skip-link removed earlier on request? you can re-add if needed -->
+  <!-- header -->
   <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">SA</a>
@@ -112,16 +129,22 @@
     <!-- HERO -->
     <section class="hero" role="region" aria-labelledby="hero-heading">
       <div class="container hero-content fade-in">
-        <!-- hero avatar (kept for trust) -->
+        <!-- hero avatar (trust signal). remove <picture> if you want image-less hero -->
         <picture aria-hidden="true">
           <source srcset="/hero-avatar.webp" type="image/webp">
-          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="140" height="140" loading="lazy" decoding="async">
+          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="140" height="140" loading="lazy" decoding="async" style="border-radius:50%; border:3px solid var(--primary-blue);">
         </picture>
 
         <p class="muted">Trusted by token teams • Fast deployments • Mobile-first</p>
 
-        <!-- SINGLE H1 (primary homepage keyword) -->
+        <!-- Improved H1 -->
         <h1 id="hero-heading" class="hero-heading">Professional Website Developer — Sagor Ahamed</h1>
+
+        <!-- Typing animation text -->
+        <div class="typing-box" aria-hidden="false">
+          <span id="typing-text" aria-live="polite"></span>
+          <span class="cursor">|</span>
+        </div>
 
         <p class="lead">
           I build fast, secure and SEO-first websites for Crypto/Web3 projects, meme coins, e-commerce stores, local businesses and personal blogs.
@@ -141,36 +164,36 @@
       </div>
     </section>
 
-    <!-- Services summary cards (homepage preview) -->
+    <!-- Services preview -->
     <section class="section fade-in" aria-labelledby="services-preview">
       <div class="container">
         <h2 id="services-preview" class="section-title">Services I Provide</h2>
 
-        <div class="services-grid" role="list">
+        <div class="services-grid" role="list" style="margin-top:18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
           <article class="service-card" role="listitem" aria-labelledby="s-home-crypto">
             <h3 id="s-home-crypto">Crypto & Web3 Sites</h3>
-            <p>Token landing pages, tokenomics pages, presale flows, contract integrations and on-page SEO tailored for token launches.</p>
+            <p>Token landing pages, tokenomics, presale flows, contract links and on-page SEO tailored for token launches.</p>
           </article>
 
           <article class="service-card" role="listitem" aria-labelledby="s-home-ecom">
             <h3 id="s-home-ecom">E-Commerce Stores</h3>
-            <p>Modern e-commerce sites with product pages, JavaScript carts and secure payment gateways — optimized for speed and conversion.</p>
+            <p>Product pages, JavaScript carts and secure payment gateways — optimized for speed, UX and SEO.</p>
           </article>
 
           <article class="service-card" role="listitem" aria-labelledby="s-home-business">
             <h3 id="s-home-business">Business Websites</h3>
-            <p>Custom responsive websites for local businesses and startups with SEO-focused content and clear CTAs to attract customers.</p>
+            <p>Responsive websites for local businesses and startups with SEO-focused content and clear CTAs.</p>
           </article>
 
           <article class="service-card" role="listitem" aria-labelledby="s-home-blog">
             <h3 id="s-home-blog">Blogs & Portfolios</h3>
-            <p>Fast static blogs and portfolio sites for personal brands and case studies — built to rank and convert readers into leads.</p>
+            <p>Fast static blogs and portfolios for personal branding, case studies and organic traffic growth.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Why choose section -->
+    <!-- Why choose -->
     <section class="section fade-in" aria-labelledby="why-choose">
       <div class="container">
         <h2 id="why-choose" class="section-title">Why choose me</h2>
@@ -178,24 +201,22 @@
           <li>Speed-first static/CDN architecture for global performance</li>
           <li>SEO-first templates, JSON-LD and sitemaps for Google & AI</li>
           <li>Single primary keyword per page to avoid cannibalization</li>
-          <li>Conversion-focused layouts and analytics for measurable growth</li>
+          <li>Conversion-focused CTAs and analytics for measurable growth</li>
           <li>Clear GitHub + Cloudflare deployment workflow</li>
         </ul>
       </div>
     </section>
 
-    <!-- Featured projects CTA -->
+    <!-- Portfolio CTA -->
     <section class="section fade-in" aria-labelledby="featured-projects">
       <div class="container center">
         <h2 id="featured-projects" class="section-title">Recent Projects</h2>
-        <p class="muted">A few recent token launches, landing pages and client sites — see the portfolio for full case studies.</p>
-        <div style="margin-top:16px;">
-          <a href="/projects" class="cta-button">View Portfolio</a>
-        </div>
+        <p class="muted">A few recent token launches and client sites — see the portfolio for full case studies.</p>
+        <div style="margin-top:14px;"><a href="/projects" class="cta-button">View Portfolio</a></div>
       </div>
     </section>
 
-    <!-- Contact / Lead CTA -->
+    <!-- Contact CTA -->
     <section class="section fade-in" aria-labelledby="contact-cta">
       <div class="container center">
         <h2 id="contact-cta" class="section-title">Ready to build?</h2>
@@ -208,15 +229,52 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-social">
-        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">X</a> ·
-        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a> ·
-        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
+        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
+        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
+        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
       </div>
       <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- Keep your existing site JS (hamburger, typing, animations) -->
+  <!-- Keep your main script file for hamburger and other effects -->
   <script src="/script.js" defer></script>
+
+  <!-- Inline typing animation (executed after script.js loads) -->
+  <script>
+    (function(){
+      const typingText = document.getElementById("typing-text");
+      const words = [
+        "I build Crypto & Web3 websites.",
+        "I build fast E-commerce stores.",
+        "I create Business websites.",
+        "I build Static blogs & Portfolios.",
+        "SEO-first, Mobile-first, Conversion-focused."
+      ];
+      let w = 0, c = 0, deleting = false;
+      function tick(){
+        const word = words[w];
+        if(!deleting){
+          c++;
+          typingText.textContent = word.substring(0, c);
+          if(c >= word.length + 8){ // pause before deleting
+            deleting = true;
+            setTimeout(tick, 700);
+            return;
+          }
+        } else {
+          c--;
+          typingText.textContent = word.substring(0, c);
+          if(c <= 0){
+            deleting = false;
+            w = (w + 1) % words.length;
+          }
+        }
+        setTimeout(tick, deleting ? 40 : 70);
+      }
+      // Start after small delay so page paint is smooth
+      setTimeout(tick, 600);
+    })();
+  </script>
 </body>
 </html>
