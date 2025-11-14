@@ -410,3 +410,21 @@ body {
   .section-title { font-size:1.5rem; }
   .lead { font-size:0.98rem; }
 }
+/* Fix hero image responsive sizing (services-hero-800.webp) */
+.hero-illustration {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Mobile tweak */
+@media (max-width: 600px) {
+  .hero-illustration {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
