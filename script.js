@@ -337,3 +337,72 @@
     });
   });
 })();
+/* ============================
+   Hamburger: ensure bars + toggle accessible menu
+   Paste at end of script.js
+   ============================ */
+(function(){
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.querySelector('.hamburger');
+    var navMenu = document.querySelector('.nav-menu') || document.querySelector('.nav-menu-panel');
+
+    if (!hamburger) return;
+
+    // if hamburger is empty or doesn't have .bars container, create a nice bars container
+    if (!hamburger.querySelector('.bars')) {
+      // clear contents then create
+      hamburger.innerHTML = '';
+      var barsWrap = document.createElement('span');
+      barsWrap.className = 'bars';
+      for (var i = 0; i < 3; i++) {
+        var s = document.createElement('span');
+        s.className = 'bar';
+        barsWrap.appendChild(s);
+      }
+      hamburger.appendChild(barsWrap);
+    }
+
+    // ensure attributes
+    if (!hamburger.hasAttribute('aria-label')) hamburger.setAttribute('aria-label','Toggle menu');
+    if (!hamburger.hasAttribute('role')) hamburger.setAttribute('role','button');
+    if (!hamburger.hasAttribute('tabindex')) hamburger.setAttribute('tabindex','0');
+    if (!hamburger.hasAttribute('aria-expanded')) hamburger.setAttribute('aria-expanded','false');
+
+    // toggle function
+    function toggleMenu(force) {
+      var panel = document.querySelector('.nav-menu') || document.querySelector('.nav-menu-panel');
+      if (!panel) return;
+      var willOpen = (typeof force === 'boolean') ? force : !panel.classList.contains('active');
+      panel.classList.toggle('active', willOpen);
+      hamburger.classList.toggle('active', willOpen);
+      hamburger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      document.documentElement.classList.toggle('nav-open', willOpen);
+    }
+
+    // click / enter / space handlers
+    hamburger.addEventListener('click', function(e){ e.stopPropagation(); toggleMenu(); });
+    hamburger.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); toggleMenu(); }
+    });
+
+    // close on click outside or on nav link click
+    document.addEventListener('click', function (e) {
+      var panel = document.querySelector('.nav-menu.active, .nav-menu-panel.active');
+      if (!panel) return;
+      if (e.target.closest('.nav-menu') || e.target.closest('.hamburger') || e.target.closest('.nav-menu-panel')) {
+        // clicked inside menu or hamburger -> ignore (or link handler will close)
+        var link = e.target.closest('.nav-menu a, .nav-menu-panel a');
+        if (link) toggleMenu(false);
+        return;
+      }
+      // else clicked outside
+      toggleMenu(false);
+    }, {passive:true});
+
+    // close on escape
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && document.querySelector('.nav-menu.active, .nav-menu-panel.active')) toggleMenu(false);
+    });
+  });
+})();
