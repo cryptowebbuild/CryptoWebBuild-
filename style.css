@@ -896,3 +896,14 @@ h1, h2, h3, .section-title {
     inset 0 2px 6px rgba(255, 255, 255, 0.45),
     inset 0 -2px 6px rgba(0, 0, 0, 0.08);
 }
+
+/* Push animation line lower (safe desktop fix) */
+.hero-heading::after {
+  margin-top: 14px !important;
+  transform: translateY(10px) !important;
+}
+
+/* Prevent touching text */
+.hero-heading {
+  padding-bottom: 26px !important;
+}
