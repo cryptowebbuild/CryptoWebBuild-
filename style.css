@@ -554,3 +554,98 @@ h1, .section-title, .hero-heading, .case-title {
   .section-title { font-size:1.6rem; }
   .quick-links { gap:8px; }
 }
+
+/* === UI fixes: hamburger size, hero badge, CTA empty handling, box contrast === */
+
+/* 1) hamburger smaller & consistent (restore) */
+.hamburger {
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  padding:8px;
+  background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.85));
+  border: 1px solid rgba(0,191,255,0.06);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.hamburger .bars { gap:4px; }
+.hamburger .bar { width:22px; height:4px; border-radius:4px; }
+
+/* reduce active transform for subtlety */
+.hamburger.active { transform: translateY(-1px) scale(0.98); }
+
+/* 2) hero badge (Professional Website Developer) - restore pill yellow style */
+.hero-badge, .hero-heading.badge {
+  display:inline-block;
+  background: linear-gradient(180deg,#ffdf66,#ffd24a);
+  color:#041025;
+  padding:0.5rem 1rem;
+  border-radius:14px;
+  font-weight:800;
+  box-shadow: 0 10px 30px rgba(4,8,16,0.14);
+  font-family: var(--header-font);
+  letter-spacing:0.2px;
+  margin: 12px 0;
+  max-width: 100%;
+  text-align:center;
+}
+
+/* ensure hero-badge scales on small screens */
+@media(max-width:720px){
+  .hero-badge { font-size:0.95rem; padding: .45rem .85rem; border-radius:12px; }
+}
+
+/* 3) CTA group: ensure buttons align and no empty box visible */
+/* primary */
+.cta-button { min-height:44px; padding:10px 18px; font-weight:800; }
+
+/* outline button visible text color fix */
+.cta-button.cta-secondary, .btn-outline {
+  color: var(--primary-blue) !important;
+  border: 2px solid rgba(0,180,255,0.9);
+  background: transparent;
+  min-width: 140px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* hide empty CTA buttons (no text / whitespace-only) */
+.cta-button:empty,
+.cta-button:empty::before {
+  display:none !important;
+  visibility:hidden !important;
+  width:0 !important;
+  height:0 !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+}
+
+/* 4) restore simple boxes / quick links contrast (prevent text blending) */
+.simple-box, .quick-box, .quick-links a, .service-card {
+  background: linear-gradient(180deg, rgba(12,14,28,0.96), rgba(8,10,20,0.96));
+  color: #eafcff !important;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* bullet lists inside dark boxes: better contrast */
+.case-panel ul li, .blog-content ul li {
+  color: rgba(235,245,255,0.92);
+  margin: 8px 0;
+}
+
+/* 5) heading contrast ensure */
+h1, .section-title, .hero-heading {
+  color:#fff !important;
+  text-shadow: none !important;
+}
+
+/* 6) minor spacing adjust for hero CTA row */
+.hero-cta-row { display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:18px; }
+.hero-cta-row .cta-button { min-width:160px; }
+
+/* 7) ensure the empty outlined box you circled won't appear as ghost:
+   if HTML has an anchor with class cta-secondary but text missing, it will be hidden by .cta-button:empty rule above.
+   If you prefer a default label, see JS section below which can insert default text.*/
