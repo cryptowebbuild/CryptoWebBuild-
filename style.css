@@ -629,3 +629,160 @@ a.button {
   text-decoration: none !important;
   text-shadow: none !important;
 }
+/* -----------------------------
+   GLOBAL FIX — CLEAN TEXT
+------------------------------*/
+a {
+  color: #00d1ff;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: #00faff;
+  text-decoration: underline;
+}
+
+/* STOP LINK EFFECT INSIDE BUTTONS */
+.btn a,
+.button a,
+a.btn,
+a.button {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* -----------------------------
+   BUTTON FIX (ALL BUTTONS)
+------------------------------*/
+button,
+.btn,
+.button,
+a.btn,
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #ffffff !important;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+a.btn:hover,
+a.button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #00e1ff, #0090ff);
+  color: #ffffff !important;
+}
+
+/* Disabled / Ghost Buttons */
+.btn-outline,
+.button-outline {
+  background: transparent;
+  border: 2px solid #00c6ff;
+  color: #00c6ff !important;
+}
+
+.btn-outline:hover,
+.button-outline:hover {
+  background: rgba(0, 198, 255, 0.12);
+  color: #00faff !important;
+}
+
+/* -----------------------------
+   INPUT / TEXTAREA / SELECT FIX
+------------------------------*/
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.25s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #00d1ff;
+  background: rgba(0,209,255,0.08);
+  outline: none;
+}
+
+/* Placeholder fix */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+/* -----------------------------
+   CARD / BOX CLEAN FIX
+------------------------------*/
+.box,
+.card,
+.container-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+}
+
+/* -----------------------------
+   ENHANCE INTERNAL LINKS (Encore style)
+------------------------------*/
+.internal-link {
+  font-weight: 600;
+  color: #00d1ff;
+}
+
+.internal-link:hover {
+  color: #00faff;
+}
+
+/* -----------------------------
+   SOCIAL ICONS FIX
+------------------------------*/
+.social-icons {
+  display: flex;
+  gap: 14px;
+  padding-top: 20px;
+}
+
+.icon-link {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  color: #00d1ff;
+  transition: .15s ease;
+}
+
+.icon-link:hover {
+  background: rgba(0,209,255,0.18);
+  transform: translateY(-4px);
+  color: #00faff;
+}
+
+.icon-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
