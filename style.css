@@ -662,3 +662,169 @@ h1, .section-title, .hero-heading {
     font-weight: 800 !important;
     text-shadow: none !important;
 }
+
+/* ---------- CryptoWebBuild — Mobile + Desktop UI fixes (paste at END of style.css) ---------- */
+
+/* 1) Hamburger — larger, clearer, neon style */
+.hamburger {
+  width:50px;
+  height:50px;
+  padding:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9));
+  border: 1px solid rgba(0,191,255,0.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s;
+}
+.hamburger:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(0,0,0,0.55); }
+
+/* ensure the three bars are visible and big */
+.hamburger .bar {
+  display:block;
+  width:26px;
+  height:4px;
+  border-radius:4px;
+  margin:3px 0;
+  background: linear-gradient(90deg, #5ef0ff, #00b4ff);
+  box-shadow: 0 4px 18px rgba(0,180,255,0.08);
+  transition: transform .12s ease, opacity .12s;
+}
+
+/* smaller active transform — subtle */
+.hamburger.active { transform: translateY(-1px) scale(0.98); }
+
+/* 2) Restore hero badge pill (yellow) — high contrast text on yellow */
+.hero-badge,
+.hero-heading.badge,
+.hero-badge .badge-title,
+.badge-title,
+.hero-title-badge,
+.section-badge {
+  display:inline-block !important;
+  background: linear-gradient(180deg,#ffdf66 0%, #ffd24a 100%) !important;
+  color: #041025 !important; /* dark text on yellow */
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: 800 !important;
+  padding: .56rem 1.05rem !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 30px rgba(4,8,16,0.12) !important;
+  text-align: center !important;
+  letter-spacing: .2px !important;
+  margin: 12px 0 !important;
+  max-width: 98% !important;
+  line-height: 1.1 !important;
+  font-size: 1.03rem !important;
+}
+
+/* fix if text was forced white by other rules */
+.hero-badge * { color: inherit !important; }
+
+/* 3) Badge on small screens: reduce padding and font-size */
+@media (max-width:420px) {
+  .hero-badge, .hero-heading.badge {
+    padding: .44rem .7rem !important;
+    font-size: .96rem !important;
+  }
+}
+
+/* 4) CTA buttons — ensure outline has visible text (fix empty/hidden label look) */
+.cta-button {
+  min-height:46px;
+  padding: 10px 18px !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: .2px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* primary filled */
+.cta-button { color: #001018 !important; }
+
+/* outline / secondary */
+.cta-button.cta-secondary,
+.cta-button.btn-outline,
+.button-outline,
+.btn-outline {
+  background: transparent !important;
+  border: 3px solid rgba(0,180,255,0.28) !important;
+  color: #9be6ff !important;
+  padding: 10px 18px !important;
+  box-shadow: 0 8px 28px rgba(0,180,255,0.04) inset, 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* If outline button looks empty (no text) — show placeholder label (for safety) */
+.cta-button:empty::after {
+  content: "View Services";
+  display:inline-block;
+  font-weight:800;
+  color: #9be6ff;
+  padding: 0 6px;
+}
+
+/* 5) Fix confusing empty box (border-only) by forcing visible border + padding */
+.cta-button[style*="background:transparent"] {
+  border: 3px solid rgba(0,180,255,0.28) !important;
+  min-width: 140px !important;
+  min-height: 44px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+/* 6) Restore dark transparent box cards that disappeared — ensure contrast */
+.card, .case-panel, .service-card, .project-card, .box, .thank-card, .blog-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45) inset, 0 8px 24px rgba(0,0,0,0.45);
+  padding: 16px !important;
+  border-radius: 12px !important;
+}
+
+/* 7) Project / service list buttons (restore pill items look) */
+.services-grid .service-card, .projects-grid .project-card {
+  border-radius: 14px !important;
+  padding: 18px !important;
+}
+
+/* 8) Hero text / paragraph contrast fix — ensure text not blending with background */
+.hero-heading, .lead, .muted, .blog-content p {
+  color: var(--text-light) !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* 9) Fix H1/H2 contrast if any were dark (example: services H1) */
+h1, h2, h3, .section-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45) !important;
+}
+
+/* 10) Footer quick-links / small text color fix */
+.footer-col a, .footer-social a, .muted, small {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* 11) Accessibility: increase tappable target for menu and CTAs */
+.hamburger, .cta-button, .icon-link { min-width:44px; min-height:44px; }
+
+/* 12) Defensive: override other high specificity rules (use important where needed) */
+.nav-menu a, .nav-menu-panel a, .nav-menu a:link, .nav-menu a:visited {
+  color: rgba(245,250,255,0.95) !important;
+  font-weight: 700 !important;
+}
+
+/* 13) Small screens: center hero elements and reduce wide margins */
+@media (max-width:560px) {
+  .hero { padding: 40px 16px; }
+  .hero-badge { display:block; margin: 12px auto !important; }
+  .cta-box { display:flex; gap:10px; flex-direction:row; justify-content:center; flex-wrap:wrap; }
+  .services-grid { gap:14px; grid-template-columns: 1fr; }
+}
+
+/* ---------------- End overrides ---------------- */
