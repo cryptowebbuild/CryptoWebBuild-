@@ -176,17 +176,40 @@
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo" aria-label="Footer">
-    <div class="container center">
-      <div class="footer-social" aria-hidden="true">
-        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
-        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
-        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
-      </div>
-      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
-    </div>
-  </footer>
+  <footer class="site-footer footer" role="contentinfo" aria-label="Footer">
+  <div class="container footer-grid" style="grid-template-columns:1fr; gap:12px; text-align:center;">
+    <div>
+      <div class="social-icons" role="navigation" aria-label="Social links" style="justify-content:center;">
+        <a class="icon-link" href="https://x.com/WebBuildDev" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+          <!-- X / Twitter SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg>
+        </a>
 
+        <a class="icon-link" href="https://youtube.com/@cryptowebbuild" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+          <!-- YouTube SVG -->
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg>
+        </a>
+
+        <a class="icon-link" href="https://t.me/CryptoWebBuild" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+          <!-- Telegram SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg>
+        </a>
+
+        <a class="icon-link" href="https://github.com/cryptowebbuild" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <!-- GitHub SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg>
+        </a>
+
+        <a class="icon-link" href="mailto:hello@cryptowebbuild.com" aria-label="Email hello@cryptowebbuild.com">
+          <!-- Email (mail) SVG -->
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.5l-8 5-8-5V6h16zM4 18V8.7l7.4 4.63c.36.22.77.22 1.13 0L20 8.7V18H4z"/></svg>
+        </a>
+      </div>
+
+      <p class="small muted" style="margin-top:10px;">© <span id="footer-year"></span> CryptoWebBuild — Sagor Ahamed</p>
+    </div>
+  </div>
+</footer>
   <!-- main script (keeps your site interactions like hamburger + typing) -->
   <script src="/script.js" defer></script>
 </body>
