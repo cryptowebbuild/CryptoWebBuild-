@@ -897,3 +897,65 @@ h1, h2, h3, .section-title {
     inset 0 -2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* ============================
+   FIX: Hero Heading + Typing Box Spacing (Final)
+   ============================ */
+
+/* Make space under H1 so typing text never overlaps */
+.hero-heading {
+  display: inline-block !important;
+  margin-bottom: 34px !important;      /* enough space for typing line */
+  padding-bottom: 6px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+/* Desktop spacing little larger */
+@media(min-width:900px){
+  .hero-heading {
+    margin-bottom: 42px !important;
+  }
+}
+
+/* STABILIZE TYPING BOX */
+.typing-box {
+  margin-top: -12px !important;        /* pull slightly upward for balance */
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+/* TYPING TEXT STYLE */
+#typing-text {
+  font-size: 1.22rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  font-family: "Poppins", sans-serif !important;
+  letter-spacing: 0.2px !important;
+  white-space: nowrap !important;
+}
+
+/* CURSOR FIX */
+.typing-cursor {
+  width: 10px !important;
+  height: 1.2em !important;
+  background: #ffdf66 !important;
+  border-radius: 2px !important;
+  animation: blink 0.8s infinite !important;
+}
+
+@keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+/* Extra fix for mobile */
+@media(max-width:600px){
+  #typing-text { font-size: 1.05rem !important; }
+  .typing-box { margin-top: -10px !important; }
+}
