@@ -446,63 +446,94 @@ body {
 .case-study h4, .case-study h5 { margin-top: 12px; margin-bottom: 8px; }
 .case-study ul { margin-left: 18px; }
 
-/* ===========================
-   MENU COLOR + MOBILE FIX
-   Keep nav links consistent on all pages
-   =========================== */
+/* ===========================================
+   ULTRA MODERN NAVIGATION (GLASS + NEON)
+   =========================================== */
 
-/* Base menu link color (normal / visited / active) */
-.nav-menu a,
-.nav-menu a:visited,
-.nav-menu a:active {
-  color: #e9f6ff !important;      /* subtle light-blue / off-white */
-  text-decoration: none !important;
-  font-weight: 500;
-  transition: color 180ms ease, letter-spacing 180ms ease;
+/* NAVBAR BASE */
+header {
+  background: rgba(8, 10, 24, 0.65) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 4px 35px rgba(0,0,0,0.35);
+  z-index: 9999;
 }
 
-/* Hover / focus (keyboard accessible) */
+/* LOGO */
+.logo a {
+  color: #19d4ff !important;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: 250ms ease;
+}
+.logo a:hover {
+  color: #5ee3ff !important;
+}
+
+/* MENU PANEL (MOBILE) */
+.nav-menu {
+  background: rgba(6, 8, 18, 0.92) !important;
+  backdrop-filter: blur(12px);
+  padding: 1.4rem;
+  border-radius: 16px;
+  margin-top: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* MENU LINKS */
+.nav-menu a,
+.nav-menu a:visited {
+  color: #f2f8ff !important; /* Premium light */
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 0.7rem 0;
+  display: block;
+  transition: all 240ms ease;
+}
+
+/* HOVER — NEON BLUE ACCENT */
 .nav-menu a:hover,
 .nav-menu a:focus {
-  color: #00cfff !important;      /* neon-blue accent on hover */
-  letter-spacing: 0.3px;
-  outline: none;
+  color: #34e7ff !important;
+  text-shadow: 0 0 6px rgba(52, 231, 255, 0.45);
+  letter-spacing: 0.6px;
 }
 
-/* Make sure mobile menu panel uses same background + subtle blur */
-.nav-menu {
-  background: rgba(6, 8, 18, 0.96) !important;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 10px 40px rgba(2,8,20,0.45);
+/* ACTIVE PAGE (auto highlighting) */
+.nav-menu a.active {
+  color: #34e7ff !important;
+  font-weight: 600;
 }
 
-/* Remove default list markers and enforce spacing */
+/* MOBILE SPACING */
 .nav-menu li {
+  margin: 0.2rem 0;
   list-style: none !important;
-  margin: 0;
-  padding: 0.28rem 0;
 }
 
-/* Mobile menu links bigger & tappable */
+/* HAMBURGER ICON */
+.hamburger .bar {
+  background: #eaffff !important;
+  transition: 300ms ease;
+}
+.hamburger.active .bar {
+  background: #34e7ff !important;
+}
+
+/* TOUCH OPTIMIZED MOBILE MENU */
 @media (max-width: 900px) {
   .nav-menu a {
-    display: block;
-    padding: 0.9rem 1.1rem;
-    font-size: 1.05rem;
+    padding: 1rem 0.4rem !important;
+    font-size: 1.08rem !important;
   }
 }
 
-/* Ensure hamburger aria style consistent */
-.hamburger.active .bar {
-  background: #00cfff; /* bar color when open */
-}
-
-/* Optional: avoid browser 'visited' color leaks by forcing link color precedence */
-a.nav-link { color: inherit !important; }
-
-/* Small accessibility improvement: visible focus ring for keyboard users */
+/* KEYPRESS ACCESSIBILITY */
 .nav-menu a:focus-visible {
-  box-shadow: 0 0 0 3px rgba(0,207,255,0.12);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 231, 255, 0.25);
   border-radius: 6px;
 }
