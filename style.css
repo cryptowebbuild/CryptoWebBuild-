@@ -618,3 +618,14 @@ main a:hover,
   color: #00faff !important;
   text-decoration-color: #00faff;
 }
+/* Fix for buttons being affected by link styles */
+.btn,
+.button,
+button,
+a.btn,
+a.button {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+}
