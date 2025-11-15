@@ -446,28 +446,63 @@ body {
 .case-study h4, .case-study h5 { margin-top: 12px; margin-bottom: 8px; }
 .case-study ul { margin-left: 18px; }
 
-/* FIX: Menu links color broken only on Contact page */
+/* ===========================
+   MENU COLOR + MOBILE FIX
+   Keep nav links consistent on all pages
+   =========================== */
+
+/* Base menu link color (normal / visited / active) */
 .nav-menu a,
 .nav-menu a:visited,
 .nav-menu a:active {
-  color: #f5f7ff !important;   /* clean white-blue */
+  color: #e9f6ff !important;      /* subtle light-blue / off-white */
   text-decoration: none !important;
+  font-weight: 500;
+  transition: color 180ms ease, letter-spacing 180ms ease;
 }
 
-/* Hover effect */
-.nav-menu a:hover {
-  color: #00d4ff !important;   /* neon blue hover */
+/* Hover / focus (keyboard accessible) */
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: #00cfff !important;      /* neon-blue accent on hover */
   letter-spacing: 0.3px;
-  transition: 0.2s ease;
+  outline: none;
 }
 
-/* Menu background same for all pages */
+/* Make sure mobile menu panel uses same background + subtle blur */
 .nav-menu {
-  background: rgba(10, 14, 33, 0.96) !important;
-  backdrop-filter: blur(8px);
+  background: rgba(6, 8, 18, 0.96) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(2,8,20,0.45);
 }
 
-/* Remove bullet dots */
+/* Remove default list markers and enforce spacing */
 .nav-menu li {
   list-style: none !important;
+  margin: 0;
+  padding: 0.28rem 0;
+}
+
+/* Mobile menu links bigger & tappable */
+@media (max-width: 900px) {
+  .nav-menu a {
+    display: block;
+    padding: 0.9rem 1.1rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Ensure hamburger aria style consistent */
+.hamburger.active .bar {
+  background: #00cfff; /* bar color when open */
+}
+
+/* Optional: avoid browser 'visited' color leaks by forcing link color precedence */
+a.nav-link { color: inherit !important; }
+
+/* Small accessibility improvement: visible focus ring for keyboard users */
+.nav-menu a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,207,255,0.12);
+  border-radius: 6px;
 }
