@@ -406,3 +406,45 @@
     });
   });
 })();
+/* === Fixes: hide/replace empty CTA buttons & ensure hamburger bars exist === */
+(function(){
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function(){
+
+    // 1) If any .cta-button (link/button) has no visible text, either hide it or set default
+    var ctas = Array.from(document.querySelectorAll('.cta-button, a.cta-button, button.cta-button'));
+    ctas.forEach(function(el){
+      // get visible text trimmed
+      var txt = (el.textContent || '').trim();
+      var hasChildText = false;
+      // also check visible children text nodes
+      if (txt.length > 0) hasChildText = true;
+      if (!hasChildText) {
+        // Option A: hide empty CTA (uncomment to hide)
+        el.style.display = 'none';
+
+        // Option B: OR set default text (uncomment if you prefer default)
+        // el.style.display='inline-flex';
+        // el.textContent = 'Learn more';
+      }
+    });
+
+    // 2) Ensure hamburger has bars (this duplicates earlier init safely)
+    var hamburger = document.querySelector('.hamburger');
+    if (hamburger && !hamburger.querySelector('.bars')) {
+      hamburger.innerHTML = '';
+      var wrap = document.createElement('span');
+      wrap.className = 'bars';
+      for (var i=0;i<3;i++){
+        var b = document.createElement('span');
+        b.className = 'bar';
+        wrap.appendChild(b);
+      }
+      hamburger.appendChild(wrap);
+    }
+
+    // 3) Optional: reduce hamburger clickable area margin if it's too close to right edge
+    // (safe tweak) - nothing to change unless you request
+
+  });
+})();
