@@ -1,92 +1,85 @@
-// script.js — Complete site script (vanilla JS)
-// Features:
-// - Accessible hamburger menu (toggle, close on link/outside click)
-// - Typing effect for hero subtitle (configurable phrases, smooth & readable)
-// - Smooth internal anchor scrolling
-// - Fade-in IntersectionObserver for elements with .fade-in
-// - Back-to-top button
-// - Defensive checks (no errors if an element is missing)
-// - Respect prefers-reduced-motion and document visibility
+/* =========================================================================
+   CryptoWebBuild — Cleaned & Fixed JS (final)
+   Paste/replace your current script.js with this file.
+   - Vanilla JS, defensive checks, accessible behavior
+   ========================================================================= */
+
 (function () {
   'use strict';
 
+  // quick helpers
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from((ctx || document).querySelectorAll(sel));
+
+  // safe DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function () {
 
     /* -------------------------
-       Helpers
-    ------------------------- */
-    const $ = (selector, ctx = document) => ctx.querySelector(selector);
-    const $$ = (selector, ctx = document) => Array.from((ctx || document).querySelectorAll(selector));
-    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-
-    /* -------------------------
-       Hamburger / Mobile menu
+       NAV / HAMBURGER MENU
     ------------------------- */
     (function initMobileMenu() {
       const hamburger = $('.hamburger');
-      const navMenu = $('.nav-menu');
+      const navMenu = $('.nav-menu') || $('.nav-menu-panel');
 
       if (!hamburger || !navMenu) return;
 
-      // Toggle function
-      function toggleMenu(force) {
-        const expanded = typeof force === 'boolean' ? force : !hamburger.classList.contains('active');
-        hamburger.classList.toggle('active', expanded);
-        navMenu.classList.toggle('active', expanded);
-        hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        document.documentElement.classList.toggle('nav-open', expanded);
+      function setAria(open) {
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
       }
 
-      // Click hamburger
+      function toggleMenu(force) {
+        const willOpen = (typeof force === 'boolean') ? force : !navMenu.classList.contains('active');
+        navMenu.classList.toggle('active', willOpen);
+        hamburger.classList.toggle('active', willOpen);
+        setAria(willOpen);
+        document.documentElement.classList.toggle('nav-open', willOpen);
+
+        // prevent body scroll when open on mobile
+        if (willOpen) document.body.style.overflow = 'hidden';
+        else document.body.style.overflow = '';
+      }
+
       hamburger.addEventListener('click', function (e) {
         e.stopPropagation();
         toggleMenu();
       });
 
-      // Close menu when clicking a nav link
+      // close on click link inside
       navMenu.addEventListener('click', function (e) {
         const link = e.target.closest('a');
         if (!link) return;
-        // If link is a regular nav link, close menu
         toggleMenu(false);
       });
 
-      // Close when clicking outside the menu
+      // close when clicking outside
       document.addEventListener('click', function (e) {
         if (!navMenu.classList.contains('active')) return;
         const target = e.target;
-        if (!target.closest('.nav-menu') && !target.closest('.hamburger')) {
+        if (!target.closest('.nav-menu') && !target.closest('.nav-menu-panel') && !target.closest('.hamburger')) {
           toggleMenu(false);
         }
-      });
+      }, { passive: true });
 
-      // Close on Escape key
+      // close on Escape
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          toggleMenu(false);
-        }
+        if ((e.key === 'Escape' || e.key === 'Esc') && navMenu.classList.contains('active')) toggleMenu(false);
       });
 
-      // Ensure aria-expanded initial state
-      if (!hamburger.hasAttribute('aria-expanded')) {
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
+      if (!hamburger.hasAttribute('aria-expanded')) hamburger.setAttribute('aria-expanded', 'false');
+
     })();
 
 
     /* -------------------------
-       Typing effect (hero subtitle) - improved and robust
-       - targets #typing-text and .typing-cursor (cursor optional)
-       - uses setTimeout with human-like jitter
-       - pauses/resumes on document visibility change
+       TYPING EFFECT (hero)
+       - targets #typing-text and .typing-cursor
     ------------------------- */
     (function initTypingEffect() {
       const typingEl = document.getElementById('typing-text');
       const cursorEl = document.querySelector('.typing-cursor');
 
-      if (!typingEl) return; // nothing to do
+      if (!typingEl) return;
 
-      // Editable phrases — adjust as needed
       const phrases = [
         'I build Crypto & Web3 websites.',
         'I build fast E-commerce stores.',
@@ -95,178 +88,155 @@
         'SEO-first, Mobile-first, Conversion-focused.'
       ];
 
-      // Config (tweak for speed)
-      const TYPE_SPEED = 90;       // ms per char typing
-      const DELETE_SPEED = 45;     // ms per char deleting
-      const HOLD_DELAY = 1400;     // pause after a phrase fully typed
-      const START_DELAY = 500;     // initial delay
-      const BETWEEN_DELAY = 300;   // pause between phrases before typing
-      const JITTER_MAX = 35;       // ms random jitter for human-like timing
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-      let typingTimer = null;
+      const TYPE_SPEED = 90;
+      const DELETE_SPEED = 45;
+      const HOLD_DELAY = 1400;
+      const START_DELAY = 500;
+      const BETWEEN_DELAY = 300;
+      const JITTER_MAX = 35;
+
+      let phraseIndex = 0, charIndex = 0, isDeleting = false, timer = null;
       let isHidden = document.hidden;
 
-      function randomJitter() {
-        return Math.floor(Math.random() * JITTER_MAX);
-      }
-
-      function setCursorBlink(enabled) {
-        if (!cursorEl) return;
-        cursorEl.classList.toggle('typing-blink', enabled);
-      }
+      function jitter() { return Math.floor(Math.random() * JITTER_MAX); }
+      function setCursorBlink(on) { if (!cursorEl) return; cursorEl.style.opacity = on ? '1' : '0.6'; }
 
       function tick() {
-        if (isHidden) {
-          // Do not progress while hidden; schedule a quick retry
-          clearTimeout(typingTimer);
-          typingTimer = setTimeout(tick, 500);
-          return;
-        }
+        if (document.hidden) { timer = setTimeout(tick, 600); return; }
 
         const current = phrases[phraseIndex % phrases.length];
 
         if (!isDeleting) {
-          // typing
           charIndex++;
           typingEl.textContent = current.slice(0, charIndex);
-
           if (charIndex >= current.length) {
-            // finished typing
-            setCursorBlink(true);
             isDeleting = true;
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(tick, HOLD_DELAY);
+            setCursorBlink(true);
+            clearTimeout(timer);
+            timer = setTimeout(tick, HOLD_DELAY);
             return;
           }
         } else {
-          // deleting
           charIndex--;
           typingEl.textContent = current.slice(0, charIndex);
-
           if (charIndex <= 0) {
             isDeleting = false;
             setCursorBlink(false);
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(tick, BETWEEN_DELAY);
+            clearTimeout(timer);
+            timer = setTimeout(tick, BETWEEN_DELAY);
             return;
           }
         }
 
         const delay = isDeleting ? DELETE_SPEED : TYPE_SPEED;
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(tick, delay + randomJitter());
+        clearTimeout(timer);
+        timer = setTimeout(tick, delay + jitter());
       }
 
-      // Pause/resume on visibilitychange to avoid jumps & CPU waste
       document.addEventListener('visibilitychange', function () {
-        isHidden = document.hidden;
-        if (!isHidden) {
-          // resume after short delay to avoid instant jump
-          clearTimeout(typingTimer);
-          typingTimer = setTimeout(tick, 400);
+        if (!document.hidden) {
+          clearTimeout(timer);
+          timer = setTimeout(tick, 400);
         } else {
-          clearTimeout(typingTimer);
+          clearTimeout(timer);
         }
       });
 
-      // Start with small delay to allow layout paint
-      typingTimer = setTimeout(tick, START_DELAY);
-
-      // expose for debugging (optional)
-      // window._typingControl = { start: () => (typingTimer = setTimeout(tick, 100)), stop: () => clearTimeout(typingTimer) };
+      timer = setTimeout(tick, START_DELAY);
     })();
 
 
     /* -------------------------
-       Smooth internal anchor scrolling
+       SMOOTH SCROLL for same-page anchors (adjust for sticky header)
     ------------------------- */
-    (function initSmoothScroll() {
-      // select same-page anchors only
-      const links = $$('a[href*="#"]');
+    (function initSmoothAnchors() {
+      const header = $('.header');
+      const offsetHeight = () => (header ? header.getBoundingClientRect().height : 0) + 12;
 
-      links.forEach(link => {
-        // ignore links that are full external or don't have hash target
-        link.addEventListener('click', function (e) {
-          const href = link.getAttribute('href') || '';
-          // if it's only a hash or page anchor
+      $$('a[href*="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          const href = a.getAttribute('href') || '';
           if (href === '#' || href.indexOf('#') === -1) return;
-
-          // compute hash part
           const hash = href.slice(href.indexOf('#'));
           const target = document.querySelector(hash);
-          if (!target) return; // let default happen if no anchor
+          if (!target) return;
+          // same-page anchor
+          if (location.pathname === a.pathname || !a.pathname) {
+            e.preventDefault();
+            // close menu if open
+            const hamburger = $('.hamburger'), navMenu = $('.nav-menu');
+            if (hamburger && navMenu && navMenu.classList.contains('active')) hamburger.click();
 
-          // if anchor exists on same page, intercept
-          e.preventDefault();
+            // focus for accessibility
+            target.setAttribute('tabindex', '-1');
+            target.focus({ preventScroll: true });
 
-          // close mobile menu if open
-          const hamburger = document.querySelector('.hamburger');
-          const navMenu = document.querySelector('.nav-menu');
-          if (hamburger && navMenu && navMenu.classList.contains('active')) {
-            hamburger.click();
+            const targetY = window.scrollY + target.getBoundingClientRect().top - offsetHeight();
+            window.scrollTo({ top: Math.max(0, Math.round(targetY)), behavior: 'smooth' });
           }
-
-          // focus target for accessibility
-          target.setAttribute('tabindex', '-1');
-          target.focus({ preventScroll: true });
-
-          // adjust for sticky header height
-          const header = document.querySelector('.header');
-          const headerHeight = header ? header.getBoundingClientRect().height : 0;
-          const targetY = window.scrollY + target.getBoundingClientRect().top - headerHeight - 12;
-
-          window.scrollTo({
-            top: Math.max(0, Math.round(targetY)),
-            behavior: 'smooth'
-          });
         });
       });
     })();
 
 
     /* -------------------------
-       IntersectionObserver fade-in (for .fade-in)
+       FADE-IN Observer for elements with .fade-in
     ------------------------- */
-    (function initFadeInObserver() {
-      const elements = Array.from(document.querySelectorAll('.fade-in'));
-      if (!elements.length) return;
+    (function initFadeIn() {
+      const nodes = Array.from(document.querySelectorAll('.fade-in'));
+      if (!nodes.length) return;
 
-      // respect reduced motion
       const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) {
-        elements.forEach(el => el.classList.add('is-visible'));
+        nodes.forEach(n => n.classList.add('is-visible'));
         return;
       }
 
-      const observer = new IntersectionObserver((entries, obs) => {
+      const io = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             obs.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.08
-      });
+      }, { threshold: 0.08 });
 
-      elements.forEach(el => observer.observe(el));
+      nodes.forEach(n => io.observe(n));
     })();
 
 
     /* -------------------------
-       Small UI niceties: reduced motion, external links, back-to-top
+       Back-to-top button (created dynamically)
     ------------------------- */
-    (function miscUI() {
-      // Reduce motion preference respect
-      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) {
-        document.documentElement.classList.add('reduce-motion');
-      }
+    (function initBackToTop() {
+      if (document.querySelector('.back-to-top')) return;
+      const btn = document.createElement('button');
+      btn.className = 'back-to-top hidden';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.innerHTML = '↑';
+      Object.assign(btn.style, {
+        position: 'fixed', right: '18px', bottom: '18px',
+        padding: '10px 12px', borderRadius: '8px', background: 'var(--primary-blue)',
+        color: '#fff', border: 'none', cursor: 'pointer', zIndex: 1000,
+        boxShadow: '0 8px 20px rgba(0,191,255,0.12)', transition: 'opacity .28s, transform .28s'
+      });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      document.body.appendChild(btn);
 
-      // Make external links open in new tab by default (if not set)
+      window.addEventListener('scroll', function () {
+        const show = window.scrollY > 400;
+        btn.style.opacity = show ? '1' : '0';
+        btn.style.transform = show ? 'translateY(0)' : 'translateY(12px)';
+        btn.classList.toggle('hidden', !show);
+      }, { passive: true });
+    })();
+
+
+    /* -------------------------
+       External links autoset target rel (defensive)
+    ------------------------- */
+    (function externalLinks() {
       $$('a[href]').forEach(a => {
         try {
           const url = new URL(a.href, location.href);
@@ -274,142 +244,34 @@
             a.setAttribute('target', '_blank');
             a.setAttribute('rel', 'noopener noreferrer');
           }
-        } catch (err) {
-          // ignore invalid URLs
-        }
+        } catch (err) { /* ignore bad URLs */ }
       });
+    })();
 
-      // back-to-top button: add if not present
-      if (!document.querySelector('.back-to-top')) {
-        const btn = document.createElement('button');
-        btn.className = 'back-to-top hidden';
-        btn.setAttribute('aria-label', 'Back to top');
-        btn.innerHTML = '↑';
-        btn.style.cssText = [
-          'position:fixed',
-          'right:18px',
-          'bottom:18px',
-          'padding:10px 12px',
-          'border-radius:8px',
-          'background:var(--primary-blue)',
-          'color:#fff',
-          'border:none',
-          'cursor:pointer',
-          'z-index:1000',
-          'box-shadow:0 8px 20px rgba(0,191,255,0.12)',
-          'transition:opacity .28s ease, transform .28s ease'
-        ].join(';');
-        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        document.body.appendChild(btn);
 
-        // show/hide logic
-        let lastKnownScroll = 0;
-        window.addEventListener('scroll', () => {
-          lastKnownScroll = window.scrollY;
-          const show = lastKnownScroll > 400;
-          btn.classList.toggle('hidden', !show);
-          btn.style.opacity = show ? '1' : '0';
-          btn.style.transform = show ? 'translateY(0)' : 'translateY(12px)';
-        }, { passive: true });
+    /* -------------------------
+       Footer helpers: year + copy-email
+    ------------------------- */
+    (function footerHelpers() {
+      const fy = document.getElementById('footer-year');
+      if (fy) fy.textContent = new Date().getFullYear();
+
+      const copyBtn = document.querySelector('.copy-email');
+      const emailLink = document.getElementById('footer-email');
+      const email = emailLink ? emailLink.getAttribute('href').replace('mailto:', '') : 'hello@cryptowebbuild.com';
+
+      if (copyBtn && navigator.clipboard) {
+        copyBtn.addEventListener('click', function () {
+          navigator.clipboard.writeText(email).then(function () {
+            const old = copyBtn.innerHTML;
+            copyBtn.innerHTML = '✓';
+            setTimeout(() => { copyBtn.innerHTML = old; }, 1200);
+          }).catch(() => { /* ignore */ });
+        });
       }
     })();
 
-    // End of DOMContentLoaded
+    /* END DOMContentLoaded */
   });
 
 })();
-// footer helpers
-document.addEventListener('DOMContentLoaded', function () {
-  // year
-  var fy = document.getElementById('footer-year');
-  if (fy) fy.textContent = new Date().getFullYear();
-
-  // copy email button
-  var copyBtn = document.querySelector('.copy-email');
-  var emailLink = document.getElementById('footer-email');
-  var email = emailLink ? emailLink.getAttribute('href').replace('mailto:','') : 'hello@cryptowebbuild.com';
-  if (copyBtn && navigator.clipboard) {
-    copyBtn.addEventListener('click', function () {
-      navigator.clipboard.writeText(email).then(function () {
-        var old = copyBtn.innerHTML;
-        copyBtn.innerHTML = '✓';
-        setTimeout(function () { copyBtn.innerHTML = old; }, 1200);
-      });
-    });
-  }
-});
-<script>
-(function(){
-  'use strict';
-
-  // elements
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu'); // your markup uses .nav-menu
-  const mobilePanel = document.querySelector('.nav-menu-panel'); // optional if you used nav-menu-panel
-
-  // defensive checks
-  if (!hamburger || (!navMenu && !mobilePanel)) return;
-
-  // helper to get the panel we should toggle (prefer existing one)
-  function getPanel() {
-    return navMenu || mobilePanel;
-  }
-
-  function setAria(expanded) {
-    hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  }
-
-  function toggleMenu(force) {
-    const panel = getPanel();
-    if (!panel) return;
-    const willOpen = typeof force === 'boolean' ? force : !panel.classList.contains('active');
-
-    // toggle classes on both places to be safe
-    panel.classList.toggle('active', willOpen);
-    hamburger.classList.toggle('active', willOpen);
-    setAria(willOpen);
-
-    // lock body scroll on mobile when open
-    document.documentElement.classList.toggle('nav-open', willOpen);
-  }
-
-  // click hamburger
-  hamburger.addEventListener('click', function(e){
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  // close when clicking outside
-  document.addEventListener('click', function(e){
-    const panel = getPanel();
-    if (!panel) return;
-    if (!panel.classList.contains('active')) return;
-
-    const target = e.target;
-    if (!target.closest('.nav-menu') && !target.closest('.nav-menu-panel') && !target.closest('.hamburger')) {
-      toggleMenu(false);
-    }
-  }, { passive: true });
-
-  // close on escape
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' || e.key === 'Esc') {
-      const panel = getPanel();
-      if (panel && panel.classList.contains('active')) toggleMenu(false);
-    }
-  });
-
-  // close when clicking a nav link (good UX)
-  document.addEventListener('click', function(e){
-    const link = e.target.closest('.nav-menu a, .nav-menu-panel a');
-    if (link) {
-      // small delay so the link navigation can start; but we close immediately for mobile UX
-      toggleMenu(false);
-    }
-  });
-
-  // ensure correct initial aria
-  if (!hamburger.hasAttribute('aria-expanded')) setAria(false);
-
-})();
-</script>
