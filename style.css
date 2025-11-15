@@ -649,3 +649,12 @@ h1, .section-title, .hero-heading {
 /* 7) ensure the empty outlined box you circled won't appear as ghost:
    if HTML has an anchor with class cta-secondary but text missing, it will be hidden by .cta-button:empty rule above.
    If you prefer a default label, see JS section below which can insert default text.*/
+
+h1.hero-badge,
+h1.badge,
+h2.hero-badge,
+h2.badge {
+    color: #0A1220 !important;
+    font-family: "Chakra Petch", sans-serif !important;
+    font-weight: 800 !important;
+}
