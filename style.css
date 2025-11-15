@@ -221,4 +221,191 @@ a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid r
   border:1px solid rgba(255,255,255,0.04);box-shadow:0 18px 40px rgba(2,10,30,0.65);flex-direction:column;gap:6px;
 }
 
-/* End of style.css */
+/* =========================
+   Quick fixes for mobile menu, buttons, contrast, services H1
+   Paste this at the end of your style.css
+   ========================= */
+
+/* Force hamburger to always have 3 bars and be visible */
+.hamburger {
+  width:48px;
+  height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: transparent;
+  border-radius:10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  padding:6px;
+  box-sizing:border-box;
+  z-index:2001;
+}
+
+/* ensure bars exist and visible (if spans missing, JS will add) */
+.hamburger .bar {
+  display:block;
+  width:20px;
+  height:3px;
+  margin:3px 0;
+  border-radius:2px;
+  background: linear-gradient(90deg,#c8fbff,#19d4ff);
+  transition: transform .22s ease, opacity .18s ease;
+}
+
+/* when open -> animate slightly */
+.hamburger.active .bar:nth-child(1) { transform: translateY(1px) rotate(0deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0.0; transform: scaleX(0); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-1px) rotate(0deg); }
+
+/* Make mobile panel visually separated and readable */
+.nav-menu.active,
+.nav-menu-panel.active {
+  position: absolute;
+  right: 14px;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  max-width: 92vw;
+  background: linear-gradient(180deg, rgba(8,10,20,0.98), rgba(12,14,26,0.99));
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 30px 60px rgba(2,8,18,0.6);
+  backdrop-filter: blur(8px);
+  z-index:2000;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* higher contrast for mobile menu links */
+.nav-menu a,
+.nav-menu-panel a {
+  color: rgba(250,250,255,0.96) !important;
+  font-weight:700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 1.02rem;
+}
+
+/* hover + focus for menu items */
+.nav-menu a:hover,
+.nav-menu-panel a:hover,
+.nav-menu a:focus,
+.nav-menu-panel a:focus {
+  background: rgba(52,231,255,0.06);
+  color: #34e7ff !important;
+  transform: translateX(4px);
+  box-shadow: 0 8px 30px rgba(16,200,255,0.05);
+}
+
+/* Ensure nav-menu sits above content on mobile */
+.nav-menu { z-index:2000; }
+
+/* CTA button readability fix (mobile & desktop) */
+.cta-button {
+  color: #001018 !important; /* dark text on bright button */
+  font-weight:800;
+  text-shadow: none !important;
+  -webkit-text-stroke: 0px transparent;
+}
+
+/* In case background gradient too bright and text looks washed:
+   force contrast with subtle inner shadow on button */
+.cta-button::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 -8px 24px rgba(0,0,0,0.08);
+}
+
+/* Make sure .cta-button is position relative so pseudo element works */
+.cta-button { position: relative; }
+
+/* Fix low-contrast CTA when big rounded and heavy box-shadow overlaps text */
+.cta-button[disabled],
+.cta-button.disabled {
+  opacity: 0.9;
+  filter: none;
+}
+
+/* Improve readability inside cards / boxes */
+.service-card p,
+.service-card li,
+.project-desc,
+.blog-card-content p,
+.blog-content p {
+  color: var(--text-light);
+  opacity: 0.96;
+  line-height:1.65;
+}
+
+/* darker card background for improved contrast */
+.service-card, .project-card, .blog-card, .case-panel, .box {
+  background: linear-gradient(180deg, rgba(16,16,38,0.9), rgba(12,12,30,0.9));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Specific: services page hero heading — force high contrast */
+.hero-heading,
+.section-title.services-hero,
+.section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+/* If you used inline yellow background on hero-heading, keep readable text */
+.hero-heading { color: #041025 !important; }
+
+/* H1 / big headings across site should always be very readable on dark bg */
+h1, .section-title, .case-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+/* For any headings accidentally set to dark color: force white on specific pages */
+body.page-services h1,
+body.page-services .hero-heading,
+body.page-services .section-title {
+  color: #fff !important;
+}
+
+/* Improve footer quick-links contrast */
+.footer .footer-social a,
+.footer .footer-col a,
+.site-footer .muted {
+  color: rgba(230,240,255,0.88);
+}
+
+/* Fix rounded button small-screen min-height issue (so text not hidden) */
+.cta-button, .btn, .button {
+  min-height: 44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 18px;
+  line-height:1;
+}
+
+/* Ensure project images keep designed height but responsive */
+.project-img { width:100%; height:auto; max-height: 420px; object-fit:cover; }
+
+/* Raise z-index of floating back-to-top so it doesn't get hidden behind menu */
+.back-to-top { z-index: 2100 !important; }
+
+/* small tweak - list bullets color */
+ul li { color: var(--text-light); }
+
+/* Accessibility: focus visible style for menu items */
+.nav-menu a:focus, .nav-menu-panel a:focus {
+  outline: 3px solid rgba(0,209,255,0.12);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* final small mobile tweak for the 3-dot issue area: make that right-side control square transparent */
+.header .three-dot-area, .header .menu-more {
+  background: transparent !important;
+  border: none !important;
+}
