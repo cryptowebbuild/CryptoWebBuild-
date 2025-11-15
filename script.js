@@ -318,3 +318,23 @@
   });
 
 })();
+// footer helpers
+document.addEventListener('DOMContentLoaded', function () {
+  // year
+  var fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = new Date().getFullYear();
+
+  // copy email button
+  var copyBtn = document.querySelector('.copy-email');
+  var emailLink = document.getElementById('footer-email');
+  var email = emailLink ? emailLink.getAttribute('href').replace('mailto:','') : 'hello@cryptowebbuild.com';
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(email).then(function () {
+        var old = copyBtn.innerHTML;
+        copyBtn.innerHTML = '✓';
+        setTimeout(function () { copyBtn.innerHTML = old; }, 1200);
+      });
+    });
+  }
+});
