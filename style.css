@@ -429,3 +429,23 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 /* -------------------------
    End of CSS
    ------------------------- */
+
+/* Ensure .nav-menu (the menu in your HTML) becomes visible when .active is set */
+.nav-menu.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  display: flex !important; /* for mobile where .nav-menu is normally hidden */
+  position: absolute;
+  right: 18px;
+  top: calc(100% + 10px);
+  min-width: 220px;
+  max-width: 86vw;
+  background: linear-gradient(180deg, rgba(6,8,18,0.96), rgba(8,10,24,0.98));
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 18px 40px rgba(2,10,30,0.65);
+  flex-direction: column;
+  gap: 6px;
+}
