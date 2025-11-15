@@ -445,3 +445,29 @@ body {
 /* Small spacing tweak so case study headings look tidy */
 .case-study h4, .case-study h5 { margin-top: 12px; margin-bottom: 8px; }
 .case-study ul { margin-left: 18px; }
+
+/* FIX: Menu links color broken only on Contact page */
+.nav-menu a,
+.nav-menu a:visited,
+.nav-menu a:active {
+  color: #f5f7ff !important;   /* clean white-blue */
+  text-decoration: none !important;
+}
+
+/* Hover effect */
+.nav-menu a:hover {
+  color: #00d4ff !important;   /* neon blue hover */
+  letter-spacing: 0.3px;
+  transition: 0.2s ease;
+}
+
+/* Menu background same for all pages */
+.nav-menu {
+  background: rgba(10, 14, 33, 0.96) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Remove bullet dots */
+.nav-menu li {
+  list-style: none !important;
+}
