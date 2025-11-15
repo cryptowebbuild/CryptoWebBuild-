@@ -3,153 +3,91 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — CryptoWebBuild</title>
+  <meta name="description" content="Contact Sagor Ahamed for Crypto, Web3, e-commerce and business websites. Fast replies and free consult." />
+  <link rel="canonical" href="https://cryptowebbuild.com/contact">
 
-  <title>Contact — CryptoWebBuild | Hire a Web3 & Professional Website Developer</title>
-  <meta name="description" content="Contact Sagor Ahamed (CryptoWebBuild) for Web3, crypto, meme coin, e-commerce and business website development. Fast replies and launch-ready websites." />
-  <link rel="canonical" href="https://cryptowebbuild.com/contact" />
-  <meta name="robots" content="index, follow" />
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact — CryptoWebBuild" />
-  <meta property="og:description" content="Contact Sagor Ahamed for Web3, crypto, meme coin, e-commerce and business website development." />
-  <meta property="og:url" content="https://cryptowebbuild.com/contact" />
-  <meta property="og:image" content="https://cryptowebbuild.com/favicon-192x192.png" />
-
-  <!-- Structured data: ContactPoint -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"CryptoWebBuild",
-    "url":"https://cryptowebbuild.com",
-    "contactPoint":[
-      {
-        "@type":"ContactPoint",
-        "email":"hello@cryptowebbuild.com",
-        "contactType":"customer support",
-        "areaServed":"Worldwide",
-        "availableLanguage":["English"]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Fonts + site CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- Page-scoped styles (keeps main stylesheet intact, small overrides) -->
   <style>
-    :root { --form-bg: rgba(255,255,255,0.02); --input-bg: rgba(16,25,47,1); }
-    .contact-wrapper { max-width:900px; margin:80px auto 60px; padding:0 18px; }
+    /* page-scoped contact styles (keeps global style.css intact) */
+    .contact-wrapper { max-width:880px; margin:80px auto; padding:18px; }
     .contact-title { text-align:center; margin-bottom:18px; }
-    .contact-title h1 { font-size:1.9rem; margin:0 0 6px; }
-    .contact-sub { color: rgba(255,255,255,0.72); margin:0 0 6px; font-weight:600; }
-    .form-box { background: var(--form-bg); padding:28px; border-radius:14px; border:1px solid rgba(255,255,255,0.04); box-shadow: 0 6px 30px rgba(0,0,0,0.45); }
-    label { display:block; font-weight:600; color: rgba(255,255,255,0.86); margin-bottom:8px; }
-    input, textarea, select { width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:var(--input-bg); color:#fff; font-size:1rem; margin-bottom:14px; }
-    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.36); }
-    input:focus, textarea:focus, select:focus { outline: 3px solid rgba(0,198,255,0.10); border-color: #00d1ff; box-shadow: 0 6px 24px rgba(0,209,255,0.06); }
-    textarea { min-height:140px; resize: vertical; }
-    .grid-2 { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px; }
-    @media (max-width:720px) { .grid-2 { grid-template-columns: 1fr; } }
+    .contact-title h1{font-size:1.8rem;margin:0}
+    .contact-title p{color:rgba(255,255,255,0.78);margin-top:8px}
+    .form-box{ background:#0e1324;padding:26px;border-radius:16px;border:1px solid rgba(255,255,255,0.04); box-shadow:0 8px 30px rgba(0,0,0,0.45); }
+    label{display:block;color:rgba(255,255,255,0.88);font-weight:600;margin-bottom:6px}
+    input, textarea, select{ width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff; margin-bottom:16px; font-size:1rem; }
+    input:focus, textarea:focus, select:focus{ outline:none; box-shadow:0 6px 20px rgba(0,209,255,0.06); border-color:#00d1ff; }
+    .submit-btn{ width:100%; padding:14px; border-radius:12px; background:linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; font-weight:700; border:none; cursor:pointer; font-size:1.05rem }
+    .submit-btn:active{ transform:translateY(1px) }
+    .contact-bottom { display:flex; gap:18px; align-items:center; justify-content:center; margin-top:20px; flex-wrap:wrap; }
 
-    .submit-btn { display:inline-block; width:100%; padding:13px 16px; border-radius:12px; background:linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; font-weight:800; border:none; cursor:pointer; font-size:1rem; }
-    .submit-btn[disabled] { opacity:0.6; cursor:not-allowed; transform:none; }
-    .muted { color: rgba(255,255,255,0.66); }
+    /* footer icons (same look as other pages) */
+    .footer-icons { display:flex; gap:12px; align-items:center; justify-content:center; margin-top:28px; }
+    .icon-link { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:10px; background:rgba(255,255,255,0.02); color:#00d1ff; text-decoration:none; transition:transform .12s ease, background .12s ease; }
+    .icon-link:hover{ transform:translateY(-4px); background:rgba(0,209,255,0.06) }
+    .icon-link svg{ width:20px; height:20px; fill:currentColor; display:block; }
 
-    .contact-info { text-align:center; margin-top:18px; color: rgba(255,255,255,0.78); font-size:0.95rem; }
-    .contact-info b { color: #00eaff; font-weight:700; }
-
-    .form-note { margin-top:12px; color: rgba(255,255,255,0.62); font-size:0.95rem; }
-
-    /* inline feedback */
-    .form-success { display:none; background: rgba(34,197,94,0.12); color:#bff3d1; padding:12px; border-radius:10px; border:1px solid rgba(34,197,94,0.18); margin-bottom:14px; }
-    .form-error { display:none; background: rgba(255,99,99,0.06); color:#ffd6d6; padding:12px; border-radius:10px; border:1px solid rgba(255,99,99,0.08); margin-bottom:14px; }
-
-    /* small helper for icon links */
-    .contact-links a { color: #00eaff; font-weight:700; text-decoration:none; }
+    /* small note */
+    .small-muted { color:rgba(255,255,255,0.66); font-size:0.95rem; text-align:center; margin-top:8px; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header" role="banner">
-    <nav class="navbar container" role="navigation" aria-label="Primary">
-      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
-
-      <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main menu">
+  <header class="header">
+    <nav class="navbar container">
+      <a href="/" class="nav-logo">CWB</a>
+      <ul class="nav-menu">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="/videos" class="nav-link">Videos</a></li>
         <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
         <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link active" aria-current="page">Contact</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link active">Contact</a></li>
       </ul>
-
-      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
-      </button>
+      <button class="hamburger" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
     </nav>
   </header>
 
-  <!-- Main -->
-  <main id="main-content" tabindex="-1">
+  <main>
     <div class="contact-wrapper">
       <div class="contact-title">
         <h1>Contact Me</h1>
-        <p class="contact-sub">Send your project details — I typically reply within a few hours.</p>
+        <p>Tell me about your project — I usually reply within a few hours.</p>
       </div>
 
-      <div class="form-box" role="region" aria-label="Contact form">
-        <!-- inline status messages -->
-        <div id="formSuccess" class="form-success" role="status">Thanks — your message was sent. I’ll reply shortly.</div>
-        <div id="formError" class="form-error" role="alert">Unable to send. Please try again or email hello@cryptowebbuild.com directly.</div>
-
-        <!-- Web3Forms integration -->
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-          <!-- required key (keep private) -->
+      <div class="form-box" aria-labelledby="contact-form">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- REQUIRED: your access key -->
           <input type="hidden" name="access_key" value="75fafb45-1a1e-41ee-86b7-4637bbd35224">
-          <!-- redirect (Web3Forms will redirect on success) -->
-          <input type="hidden" name="redirect" value="https://cryptowebbuild.com/thank-you">
+          <!-- redirect after success -->
+          <input type="hidden" name="redirect" value="/thank-you">
 
-          <!-- HONEYPOT (reduce spam) -->
-          <label class="hidden" style="display:none!important">Leave this field empty
-            <input type="text" name="honeypot" style="display:none!important" tabindex="-1" autocomplete="off">
-          </label>
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
 
-          <!-- Name + Email -->
-          <div class="grid-2">
-            <div>
-              <label for="name">Your Name</label>
-              <input id="name" name="name" type="text" required placeholder="Enter your name" aria-required="true">
-            </div>
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
-            <div>
-              <label for="email">Your Email</label>
-              <input id="email" name="email" type="email" required placeholder="name@example.com" aria-required="true">
-            </div>
-          </div>
-
-          <!-- Project category -->
           <label for="category">Project Category</label>
-          <select id="category" name="category" required aria-required="true">
+          <select id="category" name="category" required>
             <option value="" disabled selected>Select a project type</option>
             <option>Web3 & Crypto Website</option>
             <option>Meme Coin Landing Page</option>
             <option>Token Presale Website</option>
-            <option>Business / Company Website</option>
+            <option>Business/Company Website</option>
             <option>E-commerce Store</option>
             <option>Portfolio / Blog</option>
             <option>Custom Web Project</option>
           </select>
 
-          <!-- Budget -->
           <label for="budget">Project Budget</label>
-          <select id="budget" name="budget" required aria-required="true">
+          <select id="budget" name="budget" required>
             <option value="" disabled selected>Select your budget</option>
             <option>$50 – $150 (Small pages / fixes)</option>
             <option>$150 – $300 (Starter website)</option>
@@ -158,116 +96,58 @@
             <option>$1200+ (Custom project / Full DApp)</option>
           </select>
 
-          <!-- Message -->
           <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="Describe the project, deadline, or a link to assets..." required aria-required="true"></textarea>
+          <textarea id="message" name="message" placeholder="Describe your project..." required></textarea>
 
-          <!-- Optional contact method -->
-          <label for="phone">Phone (optional)</label>
-          <input id="phone" name="phone" type="tel" placeholder="+88...">
-
-          <!-- Submit -->
-          <button id="submitBtn" type="submit" class="submit-btn">Send Message</button>
+          <button type="submit" class="submit-btn">Send Message</button>
         </form>
-
-        <p class="form-note">By submitting you agree I may contact you about your request. If you prefer, email directly: <span style="font-weight:700; color:#00eaff;">hello@cryptowebbuild.com</span></p>
       </div>
 
-      <div class="contact-info" aria-hidden="false" style="margin-top:18px;">
-        <p><b>hello@cryptowebbuild.com</b></p>
-        <p><b>cryptowebbuild@gmail.com</b> — replies may be sent from this address (see notes below).</p>
-
-        <p style="margin-top:12px;">Message on Telegram: <a class="contact-links" href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">@CryptoWebBuild</a></p>
+      <div class="contact-bottom">
+        <div class="small-muted">Prefer a direct message? Reach me on Telegram or email.</div>
       </div>
+
+      <!-- Footer icons only (no plain email text) -->
+      <div class="footer-icons" role="navigation" aria-label="Social links">
+        <!-- X / Twitter -->
+        <a class="icon-link" href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg>
+        </a>
+
+        <!-- YouTube -->
+        <a class="icon-link" href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg>
+        </a>
+
+        <!-- Telegram -->
+        <a class="icon-link" href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg>
+        </a>
+
+        <!-- GitHub -->
+        <a class="icon-link" href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg>
+        </a>
+
+        <!-- Email (mailto) -->
+        <a class="icon-link" href="mailto:hello@cryptowebbuild.com" aria-label="Email hello@cryptowebbuild.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 5.5A2 2 0 0 1 4.5 4h15a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-15a2 2 0 0 1-2-2v-11zm2 .5v10h15v-10l-7.5 5L4.5 6z"/></svg>
+        </a>
+      </div>
+
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer footer" role="contentinfo">
-    <div class="container">
-      <div style="text-align:center;">
-        <div class="social-icons" style="justify-content:center;">
-          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
-          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-
-        <p style="margin-top:14px;" class="muted">© <span id="footer-year"></span> CryptoWebBuild — All Rights Reserved.</p>
-      </div>
+  <footer class="footer" role="contentinfo" aria-label="Footer">
+    <div class="container" style="text-align:center;margin-top:28px;">
+      <p style="color:rgba(255,255,255,0.6);margin:0;">© <span id="footer-year">2025</span> CryptoWebBuild — Sagor Ahamed</p>
     </div>
   </footer>
 
-  <!-- Main script -->
   <script src="/script.js" defer></script>
-
-  <!-- Inline JS: friendly UX for form submit (fallback + accessibility) -->
   <script>
-  (function () {
-    // footer year
-    try {
-      var fy = document.getElementById('footer-year');
-      if (fy) fy.textContent = new Date().getFullYear();
-    } catch (e){}
-
-    // intercept form submit to show inline success/failure when redirect blocked (Cloudflare Pages, CSP or popup blockers)
-    var form = document.getElementById('contactForm');
-    var btn = document.getElementById('submitBtn');
-    var success = document.getElementById('formSuccess');
-    var error = document.getElementById('formError');
-
-    if (!form) return;
-
-    form.addEventListener('submit', function (ev) {
-      // simple client-side validation (HTML will enforce but this improves UX)
-      if (!form.checkValidity()) {
-        // let native validation show — no preventDefault
-        return;
-      }
-
-      // Show loading state
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-
-      // Use fetch as a progressive enhancement to submit in the background;
-      // If fetch fails or CORS blocks it, let the form submit normally (the action redirect will work).
-      var action = form.getAttribute('action');
-
-      try {
-        // Collect form data
-        var data = new FormData(form);
-
-        // send as form-encoded to Web3Forms
-        fetch(action, {
-          method: 'POST',
-          body: data,
-          mode: 'cors',
-        }).then(function (res) {
-          // On success, Web3Forms often returns 200 or a redirect. Show success message.
-          if (res.ok) {
-            success.style.display = 'block';
-            error.style.display = 'none';
-            form.reset();
-          } else {
-            // If server returns an error, fallback to default redirect (or show error)
-            error.style.display = 'block';
-          }
-        }).catch(function (err) {
-          // Network or CORS error — allow normal form submit to proceed (do nothing).
-          // A normal submit will redirect to the 'redirect' URL provided in the form.
-          // But we still re-enable the button for usability.
-          setTimeout(function(){ btn.disabled = false; btn.textContent = 'Send Message'; }, 600);
-        }).finally(function(){
-          setTimeout(function(){ btn.disabled = false; btn.textContent = 'Send Message'; }, 800);
-        });
-
-        // Prevent default to avoid double-submit only when fetch is used successfully
-        ev.preventDefault();
-      } catch (e) {
-        // If any error occurs, let the form behave normally (submit + redirect)
-      }
-    }, false);
-  })();
+    // Footer year fallback
+    (function(){ try { var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear(); } catch(e){} })();
   </script>
 </body>
 </html>
