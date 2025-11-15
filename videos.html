@@ -1,111 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <title>My Videos - Sagor Ahamed | Web Development & AI</title>
-    <meta name="description" content="Watch my YouTube tutorials on web development, AI tools, mobile app building, and no-code development.">
+  <title>Android App on Mobile (AI + No-Code) — Video Tutorial | Sagor Ahamed</title>
+  <meta name="description" content="Watch a step-by-step tutorial: build an Android app on mobile using AI & no-code tools. Practical demo, download links and contact for hire." />
+  <link rel="canonical" href="https://cryptowebbuild.com/videos" />
 
-    <!-- ✅ FIXED CANONICAL -->
-    <link rel="canonical" href="https://cryptowebbuild.com/videos">
+  <!-- Open Graph / Twitter (video-ready) -->
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="Android App on Mobile (AI + No-Code) — Video Tutorial | Sagor Ahamed" />
+  <meta property="og:description" content="Learn how to build a working Android app on your phone using no-code tools and AI. Demo, resources and hire me for app or web builds." />
+  <meta property="og:url" content="https://cryptowebbuild.com/videos" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
+  <meta property="og:image:alt" content="How to Create Android App on Mobile — thumbnail" />
+  <meta property="og:video" content="https://www.youtube.com/embed/nRlcTomEEqc" />
+  <meta property="og:video:type" content="text/html" />
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:title" content="Android App on Mobile (AI + No-Code)" />
+  <meta name="twitter:description" content="Watch a mobile-first demo: build an Android app with AI + no-code tools. Hire me to build your project." />
+  <meta name="twitter:image" content="https://i.ytimg.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
+  <meta name="twitter:player" content="https://www.youtube.com/embed/nRlcTomEEqc" />
 
-    <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
+  <!-- Favicons (files expected in site root) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR5864CTR8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YR5864CTR8');
-    </script>
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
+  <!-- Styles & fonts (keeps your /style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" media="print" onload="this.media='all'">
-
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- JSON-LD FIXED -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "How to Create Android App on Mobile (AI + No Code)",
-      "description": "Learn how to build a fully functional Android app directly on your mobile using no-code tools & AI.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/nRlcTomEEqc/maxresdefault.jpg",
-      "uploadDate": "2024-10-27",
-      "embedUrl": "https://www.youtube.com/embed/nRlcTomEEqc",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Sagor Ahamed",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://cryptowebbuild.com/favicon-192x192.png"
+  <!-- Structured data: VideoObject + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "VideoObject",
+        "name": "How to Create Android App on Mobile (AI + No Code)",
+        "description": "Step-by-step demo: build an Android app entirely on mobile using no-code tools and AI assistants. Includes practical tips and resources.",
+        "thumbnailUrl": "https://i.ytimg.com/vi/nRlcTomEEqc/maxresdefault.jpg",
+        "uploadDate": "2024-10-27",
+        "duration": "PT12M34S",
+        "contentUrl": "https://www.youtube.com/watch?v=nRlcTomEEqc",
+        "embedUrl": "https://www.youtube.com/embed/nRlcTomEEqc",
+        "publisher": {
+          "@type": "Organization",
+          "name": "CryptoWebBuild",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cryptowebbuild.com/favicon-192x192.png"
+          }
         }
+      },
+      {
+        "@type": "Organization",
+        "name": "CryptoWebBuild",
+        "url": "https://cryptowebbuild.com",
+        "logo": "https://cryptowebbuild.com/favicon-192x192.png",
+        "sameAs": [
+          "https://github.com/your-github",
+          "https://www.youtube.com/@cryptowebbuild",
+          "https://x.com/WebBuildDev"
+        ]
       }
+    ]
+  }
+  </script>
+
+  <!-- Analytics (keep yours) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YR5864CTR8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YR5864CTR8', { 'anonymize_ip': true });
+  </script>
+
+  <style>
+    /* small local tweaks so page looks good even without editing your main css */
+    .video-embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(3,10,22,0.5);
+      background: #000;
     }
-    </script>
+    .video-embed-container iframe {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      border-radius: 12px;
+    }
+    .video-meta { margin-top: 12px; color: rgba(255,255,255,0.92); line-height:1.6; max-width:880px; }
+    .video-actions { margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; }
+    .video-actions .cta { display:inline-block; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600; }
+    .cta-primary { background:var(--primary-blue); color:#fff; box-shadow:0 8px 18px rgba(0,191,255,0.12); }
+    .cta-outline { border:2px solid rgba(0,191,255,0.18); color:var(--primary-blue); background:transparent; }
+    .transcript { margin-top:14px; background: rgba(255,255,255,0.02); padding:12px; border-radius:8px; max-width:920px; }
+    .muted { color: rgba(255,255,255,0.6); }
+    @media (max-width:700px){ .video-meta{ padding: 0 12px } .video-actions { padding: 0 12px } }
+  </style>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="header">
-        <nav class="navbar container">
-            <a href="/" class="nav-logo">SA</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="/videos" class="nav-link active">Videos</a></li>
-                <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-        </nav>
-    </header>
+  <header class="header" role="banner">
+    <nav class="navbar container" role="navigation" aria-label="Primary">
+      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
 
-    <main id="main-content">
-        <section id="videos" class="section">
-            <div class="container">
-                
-                <h1 class="section-title fade-in">My YouTube Videos</h1>
+      <ul class="nav-menu" id="navMenu" role="menubar">
+        <li class="nav-item"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+        <li class="nav-item"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
+        <li class="nav-item"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li class="nav-item"><a href="/videos" class="nav-link active" role="menuitem">Videos</a></li>
+        <li class="nav-item"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
 
-                <div class="videos-grid">
-                    <article class="video-card fade-in">
-                        <div class="video-embed-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/nRlcTomEEqc"
-                                title="YouTube video"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <h3>How to Create Android App on Mobile (AI + No Code)</h3>
-                    </article>
-                </div>
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </nav>
+  </header>
 
+  <main id="main-content" tabindex="-1">
+    <section id="videos" class="section">
+      <div class="container">
+        <h1 class="section-title fade-in">YouTube — Mobile App & Web Tutorials</h1>
+        <p class="muted fade-in" style="max-width:820px;">
+          Practical tutorials showing fast, mobile-first workflows: app prototyping on mobile, no-code + AI tools, and bite-sized web development guides. Watch, follow along, and hire me to build your project.
+        </p>
+
+        <div class="video-card fade-in" style="margin-top:18px; max-width:920px;">
+          <div class="video-embed-container" aria-hidden="false">
+            <!-- accessible iframe; YouTube embed -->
+            <iframe title="How to Create Android App on Mobile (AI + No Code) — CryptoWebBuild"
+                    src="https://www.youtube.com/embed/nRlcTomEEqc"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-meta">
+            <h2 style="margin:10px 0 6px;">How to Create Android App on Mobile (AI + No-Code)</h2>
+            <p class="muted" style="margin:0 0 8px;">Step-by-step mobile-first demo. Time: ~12min — Tools: no-code builders, AI assistant, and a basic FTP/deploy flow.</p>
+
+            <div class="video-actions">
+              <a class="cta cta-primary" href="/contact" title="Hire me to build your app">Get a quote — I build apps</a>
+              <a class="cta cta-outline" href="https://youtu.be/nRlcTomEEqc" target="_blank" rel="noopener">Open on YouTube</a>
+              <a class="cta" href="/projects" title="See related projects">See related projects</a>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-         <div class="container">
-            <div class="footer-social">
-                <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
-                <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            </div>
-            <p>&copy; 2025 Sagor Ahamed. All Rights Reserved.</p>
+            <!-- Short transcript toggle -->
+            <details class="transcript" aria-label="Video transcript">
+              <summary style="cursor:pointer; font-weight:600;">Show short transcript & key steps</summary>
+              <div style="margin-top:8px; color:rgba(255,255,255,0.92); line-height:1.55;">
+                <strong>Key steps:</strong>
+                <ol>
+                  <li>Choose a mobile no-code builder and optional AI plugin.</li>
+                  <li>Design screens, connect navigation & add basic logic.</li>
+                  <li>Test on-device, integrate analytics and export APK or publish flow.</li>
+                  <li>Optional: link with web-backend or Firebase for data.</li>
+                </ol>
+                <p class="muted">Want the full repo or a ready-to-launch build? <a href="/contact">Book a consultation</a> — I deliver production-ready apps and websites.</p>
+              </div>
+            </details>
+          </div>
         </div>
-    </footer>
 
-    <script src="/script.js" defer></script>
+        <!-- Related videos or playlist (small grid) -->
+        <h3 style="margin-top:28px;">Related videos & playlists</h3>
+        <ul class="muted" style="max-width:920px; padding-left:18px;">
+          <li><a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener">CryptoWebBuild YouTube channel — full playlist</a></li>
+          <li><a href="/blog" rel="noopener">Dev tips & guides (text tutorials)</a></li>
+        </ul>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-social">
+        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">X</a> ·
+        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a> ·
+        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Telegram">Telegram</a>
+      </div>
+      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
 </body>
 </html>
