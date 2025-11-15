@@ -567,3 +567,54 @@ body {
   }
   .nav-menu a:hover { transform:none; color:#34e7ff; text-shadow:none; }
 }
+/* --- Footer Social Icons --- */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  padding-top: 10px;
+}
+
+.icon-link {
+  height: 44px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  color: #00d1ff;
+  transition: .15s ease;
+}
+
+.icon-link:hover {
+  background: rgba(0,209,255,0.16);
+  transform: translateY(-4px);
+  color: #00faff;
+}
+
+.icon-link svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+
+/* --- Internal Link (Encore blue highlight) Fix --- */
+main a,
+.content a,
+.article-body a,
+.blog-content a {
+  color: #00d1ff !important;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: .2s ease;
+}
+
+main a:hover,
+.content a:hover,
+.article-body a:hover,
+.blog-content a:hover {
+  color: #00faff !important;
+  text-decoration-color: #00faff;
+}
