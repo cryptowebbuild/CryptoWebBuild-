@@ -5,62 +5,119 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Web Development Projects — Case Studies: Crypto, Web3 & E-commerce | Sagor Ahamed</title>
-  <meta name="description" content="Case studies and live demos of web development projects by Sagor Ahamed: token launch landing pages, meme-coin sites and an e-commerce store. See goals, technical approach and outcomes." />
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Android/Chrome Icons -->
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
+  <meta name="description" content="Case studies and live demos by Sagor Ahamed (CryptoWebBuild): token launch landing pages, meme-coin sites and a fast e-commerce store. See goals, approach and live demos." />
   <link rel="canonical" href="https://cryptowebbuild.com/projects" />
   <meta name="robots" content="index, follow" />
 
-  <link rel="stylesheet" href="/style.css">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Selected Projects & Case Studies — CryptoWebBuild" />
+  <meta property="og:description" content="Selected case studies and live demos: token launches, meme coin landing pages and e-commerce projects." />
+  <meta property="og:url" content="https://cryptowebbuild.com/projects" />
+  <meta property="og:image" content="https://cryptowebbuild.com/solana-project-new.webp" />
+
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Structured Data: projects ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"url":"https://cryptowebbuild.com/tokenlaunch","name":"TokenLaunch — Landing & Presale"},
+      {"@type":"ListItem","position":2,"url":"https://cryptowebbuild.com/memecoinsite","name":"MemeCoinSite — Launch Landing"},
+      {"@type":"ListItem","position":3,"url":"https://cryptowebbuild.com/shopfast","name":"ShopFast — E-commerce Store"}
+    ]
+  }
+  </script>
+
+  <!-- Fonts + main CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Page-specific small overrides -->
+  <style>
+    /* Heading color requested: premium bright blue */
+    .projects-hero { text-align:center; padding:28px 0 8px; }
+    .projects-hero .projects-title { color: #00b4ff; font-weight:700; font-size:1.6rem; margin:0 0 8px; }
+    .projects-hero .lead { max-width:980px; margin:10px auto 0; color: rgba(255,255,255,0.85); }
+
+    /* Projects grid - ensure balanced spacing */
+    .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:22px; margin-top:18px; align-items:start; }
+
+    .project-card { background: var(--card-bg); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,0.04); transition: transform .28s ease, box-shadow .28s ease; }
+    .project-card:hover { transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.6); }
+
+    .project-media { display:block; width:100%; overflow:hidden; }
+    .project-img { width:100%; height:220px; object-fit:cover; display:block; transition: transform .5s ease; }
+    .project-card:hover .project-img { transform: scale(1.03); }
+
+    .project-body { padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+    .project-body h3 { margin:0; font-size:1.12rem; font-family:var(--header-font); color: #eafcff; }
+    .tech-stack { font-size:0.92rem; color: rgba(255,255,255,0.66); margin:0; }
+    .project-desc { margin:0; color: rgba(255,255,255,0.86); line-height:1.5; }
+
+    .project-links { display:flex; gap:10px; align-items:center; margin-top:auto; }
+    .btn-demo { display:inline-block; background: linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 8px 20px rgba(0,191,255,0.10); }
+    .btn-demo:focus, .btn-demo:hover { transform: translateY(-3px); }
+
+    .link-underline { color:#9be6ff; text-decoration:underline; font-weight:600; margin-left:6px; }
+
+    @media (max-width:720px) {
+      .project-img { height:160px; }
+      .projects-hero .projects-title { font-size:1.25rem; }
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
+  <!-- Header -->
+  <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
-      <a href="/" class="nav-logo">CWB</a>
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link active">Projects</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
+
+      <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main menu">
+        <li class="nav-item" role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+        <li class="nav-item" role="none"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
+        <li class="nav-item" role="none"><a href="/projects" class="nav-link active" aria-current="page" role="menuitem">Projects</a></li>
+        <li class="nav-item" role="none"><a href="/videos" class="nav-link" role="menuitem">Videos</a></li>
+        <li class="nav-item" role="none"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item" role="none"><a href="/about" class="nav-link" role="menuitem">About</a></li>
+        <li class="nav-item" role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
+
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
       </button>
     </nav>
   </header>
 
-        <!-- Use 'projects-title' class. Add 'gradient' if you want gradient style. -->
-        <h1 id="projects-hero" class="section-title projects-title" style="margin-top:20px;">
-          Selected Projects & Case Studies
-        </h1>
-
-        <p class="lead"> Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click any case study to see the full page with goals, actions and measurable outcomes. </p>
-
+  <main id="main-content" tabindex="-1">
+    <!-- Hero / heading -->
+    <section class="projects-hero section" aria-labelledby="projects-hero-heading">
+      <div class="container">
+        <h1 id="projects-hero-heading" class="projects-title section-title">Selected Projects & Case Studies</h1>
+        <p class="lead">Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click any case study to open the full case study page with goals, approach and outcomes.</p>
       </div>
     </section>
+
+    <!-- Projects grid -->
     <section class="section fade-in" aria-labelledby="featured-projects">
       <div class="container">
         <h2 id="featured-projects" class="section-title">Featured projects</h2>
 
-        <div class="projects-grid">
+        <div class="projects-grid" role="list" aria-label="Featured projects list">
+
           <!-- TokenLaunch -->
-          <article id="project-tokenlaunch" class="project-card fade-in">
+          <article id="project-tokenlaunch" class="project-card" role="listitem" aria-labelledby="tokenlaunch-title">
             <a class="project-media" href="/tokenlaunch" aria-label="Open TokenLaunch case study">
               <picture>
-                <source srcset="/solana-project-new.webp 800w" type="image/webp">
+                <source srcset="/solana-project-new.webp 800w, /solana-project-new-1200.webp 1200w" type="image/webp">
                 <img src="/solana-project-new.webp"
                      alt="TokenLaunch landing page screenshot"
                      width="1200" height="675"
@@ -69,10 +126,12 @@
                      class="project-img">
               </picture>
             </a>
+
             <div class="project-body">
-              <h3>TokenLaunch — Landing & Presale</h3>
+              <h3 id="tokenlaunch-title">TokenLaunch — Landing & Presale</h3>
               <p class="tech-stack">Static HTML • Cloudflare Pages • CoinGecko API</p>
-              <p class="project-desc">High-converting token landing page focused on presale signups and clear token docs.</p>
+              <p class="project-desc">High-converting token landing page focused on presale signups, token docs and fast indexing.</p>
+
               <div class="project-links">
                 <a class="btn-demo" href="https://solana-troll-site.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="link-underline" href="/tokenlaunch">Read full case study →</a>
@@ -81,35 +140,36 @@
           </article>
 
           <!-- MemeCoinSite -->
-          <article id="project-memecoin" class="project-card fade-in">
+          <article id="project-memecoin" class="project-card" role="listitem" aria-labelledby="memecoin-title">
             <a class="project-media" href="/memecoinsite" aria-label="Open MemeCoinSite case study">
               <picture>
-                <source srcset="/BNBCHAIN-project-new.webp 800w" type="image/webp">
+                <source srcset="/BNBCHAIN-project-new.webp 800w, /BNBCHAIN-project-new-1200.webp 1200w" type="image/webp">
                 <img src="/BNBCHAIN-project-new.webp"
-                     alt="MemeCoinSite landing page screenshot"
+                     alt="MemeCoin landing page screenshot"
                      width="1200" height="675"
                      loading="lazy" decoding="async"
                      sizes="(max-width:600px) 100vw, 45vw"
                      class="project-img">
               </picture>
             </a>
+
             <div class="project-body">
-              <h3>MemeCoinSite — Launch Landing</h3>
+              <h3 id="memecoin-title">MemeCoinSite — Launch Landing</h3>
               <p class="tech-stack">Static HTML • Countdown • Analytics</p>
-              <p class="project-desc">Conversion-first landing page with social proof and countdown timers to drive urgency.</p>
+              <p class="project-desc">Conversion-first landing page with social proof and countdown timers to drive urgency and signups.</p>
+
               <div class="project-links">
-                <a class="btn-demo" href=" 
-https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a class="btn-demo" href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="link-underline" href="/memecoinsite">Read full case study →</a>
               </div>
             </div>
           </article>
 
           <!-- ShopFast -->
-          <article id="project-shopfast" class="project-card fade-in">
+          <article id="project-shopfast" class="project-card" role="listitem" aria-labelledby="shopfast-title">
             <a class="project-media" href="/shopfast" aria-label="Open ShopFast case study">
               <picture>
-                <source srcset="/ecommerce-project-new.webp 800w" type="image/webp">
+                <source srcset="/ecommerce-project-new.webp 800w, /ecommerce-project-new-1200.webp 1200w" type="image/webp">
                 <img src="/ecommerce-project-new.webp"
                      alt="ShopFast e-commerce screenshot"
                      width="1200" height="675"
@@ -118,16 +178,19 @@ https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">Live Dem
                      class="project-img">
               </picture>
             </a>
+
             <div class="project-body">
-              <h3>ShopFast — E-commerce Store</h3>
+              <h3 id="shopfast-title">ShopFast — E-commerce Store</h3>
               <p class="tech-stack">Static frontend • Client-side cart • Stripe/PayPal</p>
-              <p class="project-desc">Fast product pages, light cart and optimized checkout flow for SMB stores.</p>
+              <p class="project-desc">Fast product pages, light cart and optimized checkout flow for SMB stores — focused on conversion and performance.</p>
+
               <div class="project-links">
                 <a class="btn-demo" href="https://e-commercesagor.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
                 <a class="link-underline" href="/shopfast">Read full case study →</a>
               </div>
             </div>
           </article>
+
         </div> <!-- /.projects-grid -->
 
         <div style="margin-top:22px;text-align:center;">
@@ -138,12 +201,25 @@ https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">Live Dem
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container center">
-      <p>&copy; 2025 CryptoWebBuild — Sagor Ahamed</p>
+  <footer class="site-footer footer" role="contentinfo">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="social-icons" aria-label="Social links" style="justify-content:center;">
+          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+
+        <p style="margin-top:12px;" class="muted">© <span id="footer-year"></span> CryptoWebBuild — Sagor Ahamed</p>
+      </div>
     </div>
   </footer>
 
   <script src="/script.js" defer></script>
+  <script>
+    // footer year fallback
+    (function(){ try { var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear(); } catch(e){} })();
+  </script>
 </body>
 </html>
