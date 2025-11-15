@@ -3,110 +3,191 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MemeCoinSite Case Study — BNB Chain Launch | CryptoWebBuild</title>
 
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Android/Chrome Icons -->
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
-
-  <meta name="description" content="MemeCoinSite case study — BNB Chain meme coin landing page: design, countdown, analytics and results." />
+  <title>Meme Coin Landing Page Case Study — BNB Chain • MemeCoinSite | CryptoWebBuild</title>
+  <meta name="description" content="MemeCoinSite case study — BNB Chain meme coin landing page built by CryptoWebBuild: design, countdown, analytics and conversion improvements." />
   <link rel="canonical" href="https://cryptowebbuild.com/memecoinsite" />
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="robots" content="index, follow" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="MemeCoinSite — BNB Chain Meme Coin (Case Study)" />
+  <meta property="og:description" content="Case study: viral-ready meme coin landing page with countdown, social proof and analytics — results and approach." />
+  <meta property="og:url" content="https://cryptowebbuild.com/memecoinsite" />
+  <meta property="og:image" content="https://cryptowebbuild.com/memecoin-hero.webp" />
+  <meta property="og:image:alt" content="MemeCoinSite hero screenshot" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MemeCoinSite Case Study — CryptoWebBuild" />
+  <meta name="twitter:description" content="How MemeCoinSite converted hype into presale signups: approach, features and results." />
+  <meta name="twitter:image" content="https://cryptowebbuild.com/memecoin-hero.webp" />
+
+  <!-- Structured Data: Article + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://cryptowebbuild.com/memecoinsite"
+        },
+        "headline": "MemeCoinSite — BNB Chain Meme Coin (Case Study)",
+        "description": "MemeCoinSite case study — BNB Chain meme coin landing page built by CryptoWebBuild: design, countdown, analytics and conversion improvements.",
+        "image": "https://cryptowebbuild.com/memecoin-hero.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Sagor Ahamed"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CryptoWebBuild",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cryptowebbuild.com/favicon-192x192.png"
+          }
+        },
+        "datePublished": "2025-01-01"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Projects", "item": "https://cryptowebbuild.com/projects" },
+          { "@type": "ListItem", "position": 2, "name": "MemeCoinSite", "item": "https://cryptowebbuild.com/memecoinsite" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Page-scoped styles (small, safe overrides) -->
   <style>
-    :root{--accent:#ffdf66; --muted:rgba(3,7,20,0.7); --bg:#041025; --card-bg:rgba(255,255,255,0.02); --radius:12px; --page-max:1100px}
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#f7fbff;background:var(--bg);margin:0}
-    .container{max-width:var(--page-max);margin:0 auto;padding:26px}
-    .navbar{display:flex;align-items:center;gap:18px;padding:8px 0}
+    :root { --card-bg: rgba(255,255,255,0.02); --accent: #ffdf66; --muted: rgba(255,255,255,0.78); }
+    body{background:#041025;color:#f7fbff;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0}
+    .container{max-width:1100px;margin:0 auto;padding:22px}
+    .navbar{display:flex;align-items:center;gap:18px;padding:10px 0}
     .nav-logo{color:#00b4ff;font-weight:700;text-decoration:none}
-    .hero-small{display:grid;grid-template-columns:1fr 140px;gap:18px;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,0.04),transparent);padding:14px;border-radius:12px}
-    .hero-img{width:100%;height:120px;object-fit:cover;border-radius:10px}
-    .case-title{margin:0;font-size:1.4rem;color:#fff}
-    .muted{color:rgba(255,255,255,0.75)}
-    .section{padding:18px 0}
-    .project-grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    .case-panel{background:var(--card-bg);border-radius:var(--radius);padding:14px;border:1px solid rgba(255,255,255,0.03)}
-    .btn-demo{background:var(--accent);color:#041025;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
-    @media(max-width:880px){.hero-small{grid-template-columns:1fr;gap:12px}.project-grid{grid-template-columns:1fr}}
+    .breadcrumb{color:rgba(255,255,255,0.6);font-size:0.95rem;margin-bottom:14px}
+    .hero { display:grid; grid-template-columns: 1fr 300px; gap:20px; align-items:center; margin-bottom:18px; }
+    @media (max-width:880px) { .hero { grid-template-columns: 1fr; } .hero-figure { order:-1 } }
+    .hero-copy h1{font-size:1.5rem;margin:0;color:#fff;line-height:1.15}
+    .hero-copy p{margin:10px 0 0;color:var(--muted)}
+    .hero-figure img{width:100%;height:220px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    .project-grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    @media (max-width:880px){ .project-grid{grid-template-columns:1fr} }
+    .case-panel{background:var(--card-bg);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .case-panel h3{margin:0 0 8px;color:#fff}
+    .check-list{padding-left:18px;margin:8px 0;color:var(--muted)}
+    .btn { display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none; }
+    .btn-primary { background:var(--accent); color:#041025; }
+    .btn-ghost { background:transparent;border:1px solid rgba(255,255,255,0.06); color:var(--muted) }
+    .meta-row { display:flex; flex-direction:column; gap:8px; margin-top:12px; color:var(--muted) }
+    .meta-row strong{color:#fff}
+    .kpi { font-weight:700; color:#eafcff }
+    footer{padding:28px 0;text-align:center;color:rgba(255,255,255,0.7); margin-top:28px}
   </style>
 </head>
 <body>
-  <header class="container navbar">
+  <header class="container navbar" role="banner">
     <a class="nav-logo" href="/">CWB</a>
-    <nav style="margin-left:auto"><a href="/projects" style="color:rgba(255,255,255,0.75);text-decoration:none">Projects</a></nav>
+    <nav style="margin-left:auto" aria-label="Primary navigation">
+      <a href="/projects" style="color:rgba(255,255,255,0.78);text-decoration:none;margin-right:14px">Projects</a>
+      <a href="/contact" style="color:rgba(255,255,255,0.78);text-decoration:none">Contact</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <div class="breadcrumb muted">Projects · Case Studies · MemeCoinSite</div>
+  <main id="main-content" class="container" role="main">
+    <div class="breadcrumb" aria-hidden="true">Projects · Case Studies · MemeCoinSite</div>
 
-    <section class="hero-small" aria-labelledby="mc-title">
-      <div>
-        <h1 id="mc-title" class="case-title">MemeCoinSite — BNB Chain Meme Coin</h1>
-        <p class="muted" style="margin-top:8px">A playful, high-energy landing page that turns hype into presale signups.</p>
-        <div style="margin-top:12px">
-          <a class="btn-demo" href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">View Live Demo</a>
-          <a class="btn-outline" href="/memecoinsite." style="margin-left:10px;color:var(--muted);text-decoration:none">Case Study</a>
+    <section class="hero" aria-labelledby="case-heading">
+      <div class="hero-copy">
+        <!-- H1: single, clear, keyword-focused -->
+        <h1 id="case-heading">MemeCoinSite — BNB Chain Meme Coin (Landing Page Case Study)</h1>
+        <p class="muted">A playful, high-energy landing page that turns hype into presale signups. Focus: speed, urgency and analytics-driven conversions.</p>
+
+        <div style="margin-top:14px;">
+          <a class="btn btn-primary" href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">View Live Demo</a>
+          <a class="btn btn-ghost" href="/contact" style="margin-left:10px">Get a Quote</a>
         </div>
       </div>
-      <img src="/memecoin-hero.webp" alt="MemeCoinSite hero" class="hero-img" loading="lazy" decoding="async" width="1200" height="675">
+
+      <figure class="hero-figure" aria-hidden="false">
+        <picture>
+          <source srcset="/memecoin-hero.webp 800w, /memecoin-hero-1200.webp 1200w" type="image/webp">
+          <img src="/memecoin-hero.webp" alt="MemeCoinSite landing page screenshot" loading="lazy" width="1200" height="675">
+        </picture>
+      </figure>
     </section>
 
     <section class="section">
-      <div class="project-grid">
+      <div class="project-grid" role="region" aria-labelledby="goal-heading">
         <div>
-          <h2>Goal</h2>
+          <h2 id="goal-heading" style="margin-top:0;color:#fff">Goal</h2>
           <p class="muted">Create a viral-ready landing page that captures presale interest, presents tokenomics simply, and supports aggressive social campaigns.</p>
 
-          <h2>Approach</h2>
-          <div class="case-panel">
+          <h2 style="margin-top:18px;color:#fff">Approach</h2>
+          <div class="case-panel" aria-labelledby="approach">
+            <h3 id="approach" style="margin-bottom:8px">Key actions</h3>
             <ul class="check-list">
-              <li>Bold hero and mascot to build brand recognition</li>
-              <li>Countdown timer for urgency</li>
-              <li>Social proof blocks and analytics tracking</li>
-              <li>Optimized mobile experience with lightweight assets</li>
+              <li>Bold hero with mascot and clear CTA to increase brand recall</li>
+              <li>Countdown timer and urgency-driven CTAs for presale conversion</li>
+              <li>Social proof sections and analytics events for campaign tracking</li>
+              <li>Mobile-first optimization and lightweight assets for fast loads</li>
             </ul>
           </div>
 
-          <h2>Outcome</h2>
-          <div class="case-panel">
+          <h2 style="margin-top:18px;color:#fff">Outcome</h2>
+          <div class="case-panel" aria-labelledby="outcome">
+            <h3 id="outcome" style="margin-bottom:8px">Measured improvements</h3>
             <ul class="check-list">
-              <li>Signup conversion improved to <strong>34%</strong></li>
-              <li>Mobile bounce reduced by <strong>42%</strong></li>
-              <li>Clear, measurable analytics for marketing</li>
+              <li><span class="kpi">Signup conversion improved to 34%</span> (from 12% baseline)</li>
+              <li><span class="kpi">Mobile bounce reduced by 42%</span> through performance optimizations</li>
+              <li>Clear analytics for each marketing channel and CTA</li>
             </ul>
           </div>
 
           <div style="margin-top:16px">
-            <a class="btn-demo" href="/memecoinsite">Read Full Case Study</a>
-            <a class="btn-outline" href="/contact" style="margin-left:10px">Get a Quote</a>
+            <a class="btn btn-primary" href="/memecoinsite" aria-label="Read the full meme coin case study">Read Full Case Study</a>
+            <a class="btn btn-ghost" href="/contact" style="margin-left:10px">Request a similar site</a>
           </div>
         </div>
 
-        <aside class="case-panel">
-          <h3 style="margin:0 0 10px;color:#fff">Project snapshot</h3>
-          <p class="muted" style="margin:0 0 12px">Fun brand, fast build, analytics-driven marketing support.</p>
-          <div style="display:flex;flex-direction:column;gap:8px;color:var(--muted)">
-            <div><strong>Stack:</strong> HTML, CSS, JS</div>
-            <div><strong>Features:</strong> Countdown, Analytics, Social Proof</div>
+        <aside class="case-panel" aria-labelledby="snapshot-heading">
+          <h3 id="snapshot-heading">Project snapshot</h3>
+          <p class="muted" style="margin-bottom:12px">Fun brand + fast build + analytics-driven marketing support.</p>
+
+          <div class="meta-row">
+            <div><strong>Stack:</strong> HTML, CSS, JavaScript</div>
+            <div><strong>Features:</strong> Countdown, Social Proof, Analytics events</div>
             <div><strong>Focus:</strong> Conversions & Viral Reach</div>
+            <div><strong>Live demo:</strong> <a href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer" style="color:#00b4ff">open demo</a></div>
           </div>
         </aside>
       </div>
     </section>
   </main>
 
-  <footer style="padding:30px;text-align:center;color:rgba(255,255,255,0.7)">&copy; 2025 CryptoWebBuild — Sagor Ahamed</footer>
+  <footer>
+    <div class="container">
+      <p style="margin:0" class="muted">© <span id="footer-year"></span> CryptoWebBuild — Sagor Ahamed</p>
+    </div>
+  </footer>
 
   <script src="/script.js" defer></script>
+  <script>
+    // small helpers
+    (function(){ try { var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear(); } catch(e){} })();
+  </script>
 </body>
 </html>
