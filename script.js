@@ -338,3 +338,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+<script>
+(function(){
+  'use strict';
+
+  // elements
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu'); // your markup uses .nav-menu
+  const mobilePanel = document.querySelector('.nav-menu-panel'); // optional if you used nav-menu-panel
+
+  // defensive checks
+  if (!hamburger || (!navMenu && !mobilePanel)) return;
+
+  // helper to get the panel we should toggle (prefer existing one)
+  function getPanel() {
+    return navMenu || mobilePanel;
+  }
+
+  function setAria(expanded) {
+    hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+
+  function toggleMenu(force) {
+    const panel = getPanel();
+    if (!panel) return;
+    const willOpen = typeof force === 'boolean' ? force : !panel.classList.contains('active');
+
+    // toggle classes on both places to be safe
+    panel.classList.toggle('active', willOpen);
+    hamburger.classList.toggle('active', willOpen);
+    setAria(willOpen);
+
+    // lock body scroll on mobile when open
+    document.documentElement.classList.toggle('nav-open', willOpen);
+  }
+
+  // click hamburger
+  hamburger.addEventListener('click', function(e){
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function(e){
+    const panel = getPanel();
+    if (!panel) return;
+    if (!panel.classList.contains('active')) return;
+
+    const target = e.target;
+    if (!target.closest('.nav-menu') && !target.closest('.nav-menu-panel') && !target.closest('.hamburger')) {
+      toggleMenu(false);
+    }
+  }, { passive: true });
+
+  // close on escape
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      const panel = getPanel();
+      if (panel && panel.classList.contains('active')) toggleMenu(false);
+    }
+  });
+
+  // close when clicking a nav link (good UX)
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('.nav-menu a, .nav-menu-panel a');
+    if (link) {
+      // small delay so the link navigation can start; but we close immediately for mobile UX
+      toggleMenu(false);
+    }
+  });
+
+  // ensure correct initial aria
+  if (!hamburger.hasAttribute('aria-expanded')) setAria(false);
+
+})();
+</script>
