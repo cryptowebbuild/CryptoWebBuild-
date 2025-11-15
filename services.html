@@ -5,25 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Web Development Services — Crypto, Web3 & E-commerce | Sagor Ahamed</title>
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Android/Chrome Icons -->
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
-  <meta name="description" content="Professional web development services for Crypto/Web3, meme coins, e-commerce stores and business websites. SEO-first, mobile-first, conversion-focused builds by Sagor Ahamed." />
+  <meta name="description" content="Web development services by Sagor Ahamed — SEO-first, mobile-first builds for crypto/Web3 token launches, meme coins, e-commerce stores and business websites." />
   <link rel="canonical" href="https://cryptowebbuild.com/services" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Web Development Services — Crypto, Web3 & Business | CryptoWebBuild"/>
+  <meta property="og:title" content="Web Development Services — Crypto, Web3 & Business | CryptoWebBuild" />
   <meta property="og:description" content="SEO-first, mobile-first web development for token launches, e-commerce stores and businesses." />
   <meta property="og:image" content="https://cryptowebbuild.com/services-hero-800.webp" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -44,48 +32,90 @@
   }
   </script>
 
+  <!-- main CSS -->
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
+
+  <!-- Small inline hero polish — keeps main CSS intact -->
+  <style>
+    /* Hero H1 pill (keeps it visible and clean) */
+    .hero-heading-pill {
+      display:inline-block;
+      background: linear-gradient(90deg, rgba(255,223,102,0.18), rgba(255,223,102,0.06));
+      color: #041025;
+      padding: 0.5rem 1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(4,8,16,0.06);
+      line-height:1.06;
+      margin-top:10px;
+    }
+
+    /* hero illustration responsive fallback */
+    .hero-illustration {
+      width:100%;
+      height:auto;
+      max-width:1100px;
+      display:block;
+      margin: 0 auto 14px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+
+    @media (max-width:760px) {
+      .hero-heading-pill { font-size:1.14rem; padding:0.45rem 0.8rem; }
+      .hero-illustration { border-radius:10px; }
+    }
+  </style>
 </head>
 <body>
   <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
 
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li class="nav-item"><a href="/" class="nav-link" role="menuitem">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link active" role="menuitem">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link" role="menuitem">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
+      <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main menu">
+        <li class="nav-item" role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+        <li class="nav-item" role="none"><a href="/services" class="nav-link active" role="menuitem" aria-current="page">Services</a></li>
+        <li class="nav-item" role="none"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li class="nav-item" role="none"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item" role="none"><a href="/about" class="nav-link" role="menuitem">About</a></li>
+        <li class="nav-item" role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
 
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
       </button>
     </nav>
   </header>
-  <main id="main-content"tabindex="-1">
+
+  <main id="main-content" tabindex="-1">
     <!-- HERO -->
     <section class="hero section fade-in" aria-labelledby="services-hero-title">
       <div class="container center">
+
         <picture>
-          <!-- root image path (single hero image) --> <source srcset="/services-hero-800.webp 800w" type="image/webp">
-          <img src="/services-hero-800.webp"
+          <!-- you only have services-hero-800.webp in root; I include srcset using same file so browsers still treat it correctly -->
+          <source srcset="services-hero-800.webp 800w" type="image/webp">
+          <img src="services-hero-800.webp"
                alt="Abstract Web3 dashboard and blockchain illustration — hero image"
                width="800" height="450"
                loading="lazy" decoding="async"
                class="hero-illustration">
         </picture>
-        <h1 id="services-hero-title" class="hero-heading" style="margin-top:10px;">Web Development Services — Crypto, Web3 & Business</h1>      <p class="lead">
-          I build secure, SEO-first websites for token launches, meme coins, Web3 startups, e-commerce stores and business websites.
-          Static-first landing pages, token docs, integrations, and conversion-optimized layouts — mobile-first and deploy-ready.
+
+        <h1 id="services-hero-title" class="hero-heading-pill">Web Development Services — Crypto, Web3 & Business</h1>
+
+        <p class="lead" style="margin-top:12px;">
+          I build secure, SEO-first, mobile-first websites for token launches, meme coins, Web3 startups, e-commerce stores and businesses.
+          Static-first landing pages, token docs, WalletConnect & price integrations, and conversion-optimized layouts — ready for launch.
         </p>
+
         <div class="cta-box" style="margin-top:18px;">
-          <a href="/contact" class="cta-button">Get a Quote</a>
-          <a href="/projects" class="cta-button cta-secondary">See Projects</a>
+          <a href="/contact" class="cta-button" aria-label="Get a quote">Get a Quote</a>
+          <a href="/projects" class="cta-button cta-secondary" aria-label="See projects">See Projects</a>
         </div>
       </div>
     </section>
@@ -95,46 +125,60 @@
       <div class="container">
         <h2 id="services-list" class="section-title">What I Offer</h2>
 
-        <div class="services-grid" role="list">
-          <article class="service-card" role="listitem">
+        <div class="services-grid" role="list" aria-label="Services list">
+          <article class="service-card" role="listitem" aria-labelledby="s-crypto">
             <div class="service-icon" aria-hidden="true">🧩</div>
-            <h3>Crypto & Web3 Platforms</h3>
-            <p>Token landing pages, tokenomics, presale flows, WalletConnect and price integrations — optimized for trust and conversions.</p>
+            <h3 id="s-crypto">Crypto & Web3 Platforms</h3>
+            <p>Token landing pages, tokenomics, presale flows, WalletConnect, and price integrations (CoinGecko/DexScreener). Built for trust, conversions and fast indexing.</p>
           </article>
 
-          <article class="service-card" role="listitem">
+          <article class="service-card" role="listitem" aria-labelledby="s-ecom">
             <div class="service-icon" aria-hidden="true">🛒</div>
-            <h3>E-Commerce Stores</h3>
-            <p>Fast product pages, lightweight carts and secure payment gateway integration for high-converting online stores.</p>
+            <h3 id="s-ecom">E-Commerce Stores</h3>
+            <p>Fast product pages, lightweight JavaScript carts and secure payment gateway setup (Stripe/PayPal). Optimized for UX and SEO to drive sales.</p>
           </article>
 
-          <article class="service-card" role="listitem">
+          <article class="service-card" role="listitem" aria-labelledby="s-business">
             <div class="service-icon" aria-hidden="true">🏢</div>
-            <h3>Business Websites</h3>
-            <p>Professional, mobile-first websites for local businesses and startups with SEO-optimized content and clear CTAs.</p>
+            <h3 id="s-business">Business & Agency Websites</h3>
+            <p>Professional, mobile-first websites for local businesses and startups with SEO-focused content, clear CTAs and analytics for growth tracking.</p>
           </article>
 
-          <article class="service-card" role="listitem">
+          <article class="service-card" role="listitem" aria-labelledby="s-blog">
             <div class="service-icon" aria-hidden="true">✍️</div>
-            <h3>Blogs & Portfolios</h3>
-            <p>Static blogs and portfolios for personal branding and organic traffic growth.</p>
+            <h3 id="s-blog">Blogs & Portfolios</h3>
+            <p>Static blogs and portfolios to showcase your work, case studies and help you attract organic traffic from Google and AI search.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Short process / why choose -->
+    <section class="section fade-in" aria-labelledby="why-choose">
+      <div class="container">
+        <h2 id="why-choose" class="section-title">How I work</h2>
+        <ul class="check-list">
+          <li>Single primary keyword per page + on-page SEO to avoid keyword cannibalization.</li>
+          <li>Speed-first architecture (static + CDN) for global performance and better rankings.</li>
+          <li>Schema (JSON-LD), sitemaps and semantic markup for Google & AI indexing.</li>
+          <li>Conversion-focused layouts, tracking and measurable growth plans.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="section fade-in center" aria-labelledby="services-cta">
       <div class="container">
         <h2 id="services-cta" class="section-title">Ready to start?</h2>
         <p class="muted">Book a free consultation and I'll share a roadmap and estimate tailored to your project.</p>
-        <a href="/contact" class="cta-button">Get a Free Consultation</a>
+        <a href="/contact" class="cta-button" aria-label="Book free consultation">Get a Free Consultation</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
+  <footer class="footer" role="contentinfo" aria-label="Footer">
     <div class="container center">
-      <div class="footer-social">
+      <div class="footer-social" aria-hidden="true">
         <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
         <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
         <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -143,6 +187,7 @@
     </div>
   </footer>
 
+  <!-- main script (keeps your site interactions like hamburger + typing) -->
   <script src="/script.js" defer></script>
 </body>
 </html>
