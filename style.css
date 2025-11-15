@@ -828,3 +828,33 @@ h1, h2, h3, .section-title {
 }
 
 /* ---------------- End overrides ---------------- */
+
+/* ============================================
+   FIX: Hero Badge & About Badge Text Styling
+   ============================================ */
+
+/* Home Page: Professional Website Developer — Sagor Ahamed */
+.hero-badge,
+.hero-heading.badge {
+  background: linear-gradient(180deg,#ffdf66,#ffd24a);
+  color: #0a0a0a !important;  /* Pure Black Text */
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.2px;
+}
+
+/* About Page Badge */
+.about-badge,
+.about-heading.badge {
+  background: linear-gradient(180deg,#ffdf66,#ffd24a);
+  color: #000000 !important; /* Black text */
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 12px 20px;
+  border-radius: 14px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(255,223,102,0.18);
+}
