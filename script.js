@@ -275,3 +275,65 @@
   });
 
 })();
+
+// ---------- small hamburger sanity + ensure 3 bars exist ----------
+(function(){
+  'use strict';
+  document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.querySelector('.hamburger');
+    var navMenu = document.querySelector('.nav-menu') || document.querySelector('.nav-menu-panel');
+
+    if (!hamburger) return;
+
+    // ensure the hamburger contains 3 .bar spans (defensive)
+    if (hamburger.querySelectorAll('.bar').length < 3) {
+      hamburger.innerHTML = ''; // clear
+      for (var i=0;i<3;i++){
+        var s = document.createElement('span');
+        s.className = 'bar';
+        hamburger.appendChild(s);
+      }
+    }
+
+    // ensure aria attributes
+    if (!hamburger.hasAttribute('aria-expanded')) hamburger.setAttribute('aria-expanded','false');
+    if (!hamburger.hasAttribute('aria-label')) hamburger.setAttribute('aria-label','Toggle menu');
+
+    // Toggle function (keeps existing site behavior)
+    function toggleMenu(force) {
+      var panel = document.querySelector('.nav-menu') || document.querySelector('.nav-menu-panel');
+      if (!panel) return;
+      var willOpen = (typeof force === 'boolean') ? force : !panel.classList.contains('active');
+      panel.classList.toggle('active', willOpen);
+      hamburger.classList.toggle('active', willOpen);
+      hamburger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      document.documentElement.classList.toggle('nav-open', willOpen);
+    }
+
+    // attach
+    hamburger.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // close when a nav link is clicked (mobile)
+    document.addEventListener('click', function(e){
+      var link = e.target.closest('.nav-menu a, .nav-menu-panel a');
+      if (link) {
+        toggleMenu(false);
+      }
+      // close when clicking outside
+      var panel = document.querySelector('.nav-menu.active, .nav-menu-panel.active');
+      if (panel && !e.target.closest('.nav-menu') && !e.target.closest('.hamburger') && !e.target.closest('.nav-menu-panel')) {
+        toggleMenu(false);
+      }
+    }, {passive:true});
+
+    // close on escape
+    document.addEventListener('keydown', function(e){
+      if ((e.key === 'Escape' || e.key === 'Esc') && document.querySelector('.nav-menu.active, .nav-menu-panel.active')) {
+        toggleMenu(false);
+      }
+    });
+  });
+})();
