@@ -43,12 +43,10 @@
 
   <!-- Page-specific small overrides -->
   <style>
-    /* Heading color requested: premium bright blue */
     .projects-hero { text-align:center; padding:28px 0 8px; }
     .projects-hero .projects-title { color: #00b4ff; font-weight:700; font-size:1.6rem; margin:0 0 8px; }
     .projects-hero .lead { max-width:980px; margin:10px auto 0; color: rgba(255,255,255,0.85); }
 
-    /* Projects grid - ensure balanced spacing */
     .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:22px; margin-top:18px; align-items:start; }
 
     .project-card { background: var(--card-bg); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,0.04); transition: transform .28s ease, box-shadow .28s ease; }
@@ -63,7 +61,7 @@
     .tech-stack { font-size:0.92rem; color: rgba(255,255,255,0.66); margin:0; }
     .project-desc { margin:0; color: rgba(255,255,255,0.86); line-height:1.5; }
 
-    .project-links { display:flex; gap:10px; align-items:center; margin-top:auto; }
+    .project-links { display:flex; gap:10px; align-items:center; margin-top:auto; flex-wrap:wrap }
     .btn-demo { display:inline-block; background: linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 8px 20px rgba(0,191,255,0.10); }
     .btn-demo:focus, .btn-demo:hover { transform: translateY(-3px); }
 
@@ -73,6 +71,9 @@
       .project-img { height:160px; }
       .projects-hero .projects-title { font-size:1.25rem; }
     }
+
+    /* Ensure CTA buttons visible on small widths */
+    .projects-grid .project-links a { white-space:nowrap; }
   </style>
 </head>
 <body>
@@ -102,7 +103,7 @@
     <section class="projects-hero section" aria-labelledby="projects-hero-heading">
       <div class="container">
         <h1 id="projects-hero-heading" class="projects-title section-title">Selected Projects & Case Studies</h1>
-        <p class="lead">Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click any case study to open the full case study page with goals, approach and outcomes.</p>
+        <p class="lead">Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click any case study to open the full page with goals, approach and outcomes.</p>
       </div>
     </section>
 
@@ -145,7 +146,7 @@
               <picture>
                 <source srcset="/BNBCHAIN-project-new.webp 800w, /BNBCHAIN-project-new-1200.webp 1200w" type="image/webp">
                 <img src="/BNBCHAIN-project-new.webp"
-                     alt="MemeCoin landing page screenshot"
+                     alt="MemeCoinSite landing page screenshot"
                      width="1200" height="675"
                      loading="lazy" decoding="async"
                      sizes="(max-width:600px) 100vw, 45vw"
