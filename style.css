@@ -858,3 +858,22 @@ h1, h2, h3, .section-title {
   text-align: center;
   box-shadow: 0 12px 32px rgba(255,223,102,0.18);
 }
+
+/* Fix hero headings color + premium font */
+.hero-heading {
+  color: #000 !important;                  /* Black text */
+  font-family: "Poppins", "Inter", sans-serif !important;  
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+/* Add yellow badge background behind both headings */
+.hero-heading {
+  display: inline-block;
+  background: linear-gradient(180deg, #ffdf66, #ffd24a);
+  padding: 12px 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(255, 210, 74, 0.25);
+  margin: 14px auto;
+}
