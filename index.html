@@ -6,22 +6,10 @@
 
   <title>Professional Website Developer — Sagor Ahamed | CryptoWebBuild</title>
 
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Android/Chrome Icons -->
-<link rel="manifest" href="site.webmanifest">
-<link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
-
   <!-- Primary SEO -->
   <meta name="description" content="Professional Website Developer — I build fast, secure and SEO-first websites for Crypto/Web3, meme coins, e-commerce stores, businesses and personal blogs. Mobile-first, conversion-focused and deploy-ready." />
   <link rel="canonical" href="https://cryptowebbuild.com/" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -37,100 +25,128 @@
   <meta name="twitter:description" content="I build fast, SEO-first websites for crypto projects, e-commerce stores, businesses and personal brands." />
   <meta name="twitter:image" content="https://cryptowebbuild.com/og-image.jpg" />
 
-  <!-- Structured Data -->
+  <!-- Verification -->
+  <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
+
+  <!-- Favicons (keep your files in root) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png">
+
+  <!-- Structured Data (Organization + Website + Person) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@graph":[
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@type":"Organization",
-        "name":"CryptoWebBuild",
-        "url":"https://cryptowebbuild.com",
-        "logo":"https://cryptowebbuild.com/favicon-192x192.png"
+        "@type": "Organization",
+        "name": "CryptoWebBuild",
+        "url": "https://cryptowebbuild.com",
+        "logo": "https://cryptowebbuild.com/favicon-192x192.png",
+        "sameAs": [
+          "https://github.com/cryptowebbuild",
+          "https://youtube.com/@cryptowebbuild",
+          "https://x.com/WebBuildDev",
+          "https://t.me/CryptoWebBuild"
+        ]
       },
       {
-        "@type":"WebSite",
-        "url":"https://cryptowebbuild.com",
-        "name":"CryptoWebBuild",
-        "potentialAction":{
-          "@type":"SearchAction",
-          "target":"https://cryptowebbuild.com/?s={search_term_string}",
-          "query-input":"required name=search_term_string"
+        "@type": "WebSite",
+        "url": "https://cryptowebbuild.com",
+        "name": "CryptoWebBuild",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://cryptowebbuild.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "Person",
+        "name": "Sagor Ahamed",
+        "url": "https://cryptowebbuild.com",
+        "sameAs": [
+          "https://github.com/cryptowebbuild",
+          "https://youtube.com/@cryptowebbuild",
+          "https://x.com/WebBuildDev"
+        ]
       }
     ]
   }
   </script>
 
-  <!-- Fonts / CSS -->
+  <!-- Fonts + CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="K9L0YmH3u7aMUFU977PvADi5kSjPIF1_Zz-QK_tENoE" />
 
-  <!-- Inline styles: hero H1 emphasis (safe) -->
+  <!-- Preload hero avatar for speed -->
+  <link rel="preload" href="/hero-avatar.webp" as="image">
+
+  <!-- small inline style to keep hero H1 pill safe and visible -->
   <style>
     .hero .hero-heading {
       display:inline-block;
       background: #ffdf66;
       color: #041025;
-      padding: 0.55rem 1.15rem;
-      border-radius: 14px;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
       font-weight: 700;
-      font-size: 1.75rem;
-      box-shadow: 0 12px 30px rgba(4,8,16,0.18);
-      line-height: 1.06;
-      margin-top: 12px;
+      font-size: 1.6rem;
+      box-shadow: 0 10px 24px rgba(4,8,16,0.12);
+      line-height: 1.05;
+      margin-top: 10px;
     }
-    .lead { max-width: 920px; margin: 12px auto 0; color: rgba(255,255,255,0.9); line-height:1.6; }
-    @media (max-width:760px){ .hero .hero-heading { font-size:1.32rem; padding:0.42rem 0.85rem; } }
+    @media (max-width:760px){ .hero .hero-heading { font-size:1.25rem; padding:0.4rem 0.8rem; } }
   </style>
 </head>
 <body>
+  <!-- Header (global header kept minimal + accessible) -->
   <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
 
-      <ul class="nav-menu" id="navMenu" role="menubar">
-        <li class="nav-item"><a href="/" class="nav-link active" role="menuitem">Home</a></li>
-        <li class="nav-item"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
-        <li class="nav-item"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
-        <li class="nav-item"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link" role="menuitem">About</a></li>
-        <li class="nav-item"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
+      <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main menu">
+        <li class="nav-item" role="none"><a href="/" class="nav-link active" role="menuitem" aria-current="page">Home</a></li>
+        <li class="nav-item" role="none"><a href="/services" class="nav-link" role="menuitem">Services</a></li>
+        <li class="nav-item" role="none"><a href="/projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li class="nav-item" role="none"><a href="/blog" class="nav-link" role="menuitem">Blog</a></li>
+        <li class="nav-item" role="none"><a href="/about" class="nav-link" role="menuitem">About</a></li>
+        <li class="nav-item" role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
 
       <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
       </button>
     </nav>
   </header>
 
+  <!-- Main -->
   <main id="main-content" tabindex="-1">
+    <!-- HERO -->
     <section class="hero" role="region" aria-labelledby="hero-heading">
       <div class="container hero-content fade-in">
         <picture aria-hidden="true">
           <source srcset="/hero-avatar.webp" type="image/webp">
-          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="140" height="140" loading="lazy" decoding="async" style="border-radius:50%; border:3px solid var(--primary-blue);">
+          <img src="/hero-avatar.webp" alt="Sagor Ahamed — CryptoWebBuild avatar" class="hero-avatar" width="140" height="140" loading="lazy" decoding="async">
         </picture>
 
-        <p class="muted" 
-   style="font-size:1rem; font-weight:500; letter-spacing:0.2px; color:#28e07f;">
-  Fast, Secure & SEO-first websites
-</p>
+        <!-- small tagline (short & readable) -->
+        <p class="muted" style="font-size:1rem; font-weight:500; letter-spacing:0.2px; color:#28e07f;">
+          Fast, Secure & SEO-first websites
+        </p>
 
+        <!-- Single clear H1 — primary keyword: "Professional Website Developer" -->
         <h1 id="hero-heading" class="hero-heading">Professional Website Developer — Sagor Ahamed</h1>
 
-
-        <!-- typing area (no inline script here; script.js handles it) -->
+        <!-- Typing area (controlled by /script.js) -->
         <div class="typing-box" aria-live="polite" aria-atomic="true">
           <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
         </div>
-
 
         <p class="lead">
           I build fast, secure and SEO-first websites for Crypto/Web3 projects, meme coins, e-commerce stores, local businesses and personal blogs.
@@ -150,12 +166,12 @@
       </div>
     </section>
 
-    <!-- services preview -->
+    <!-- Services preview -->
     <section class="section fade-in" aria-labelledby="services-preview">
       <div class="container">
         <h2 id="services-preview" class="section-title">Services I Provide</h2>
 
-        <div class="services-grid" role="list" style="margin-top:18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <div class="services-grid" role="list" aria-label="Services list" style="margin-top:18px;">
           <article class="service-card" role="listitem" aria-labelledby="s-home-crypto">
             <h3 id="s-home-crypto">Crypto & Web3 Sites</h3>
             <p>Token landing pages, tokenomics, presale flows, contract links and on-page SEO tailored for token launches.</p>
@@ -179,6 +195,7 @@
       </div>
     </section>
 
+    <!-- Why choose -->
     <section class="section fade-in" aria-labelledby="why-choose">
       <div class="container">
         <h2 id="why-choose" class="section-title">Why choose me</h2>
@@ -192,6 +209,7 @@
       </div>
     </section>
 
+    <!-- Projects CTA -->
     <section class="section fade-in" aria-labelledby="featured-projects">
       <div class="container center">
         <h2 id="featured-projects" class="section-title">Recent Projects</h2>
@@ -200,6 +218,7 @@
       </div>
     </section>
 
+    <!-- Contact CTA -->
     <section class="section fade-in" aria-labelledby="contact-cta">
       <div class="container center">
         <h2 id="contact-cta" class="section-title">Ready to build?</h2>
@@ -209,18 +228,74 @@
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-social">
-        <a href="https://x.com/WebBuildDev" target="_blank" rel="noopener noreferrer">X</a> ·
-        <a href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">YouTube</a> ·
-        <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer">Telegram</a>
+  <!-- Footer: simple with icons + email + GitHub -->
+  <footer class="site-footer" role="contentinfo" aria-label="Footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="/" class="brand-compact">CWB</a>
+        <p class="muted small">Fast, secure &amp; SEO-first websites — token launches, e-commerce &amp; business sites.</p>
       </div>
-      <p>&copy; 2025 CryptoWebBuild — All Rights Reserved.</p>
+
+      <div class="footer-col links-col">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/videos">Videos</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>Contact</h4>
+        <p class="small">Email: <a id="footer-email" href="mailto:hello@cryptowebbuild.com">hello@cryptowebbuild.com</a></p>
+        <p class="small">Also: <a href="mailto:cryptowebbuild@gmail.com">cryptowebbuild@gmail.com</a></p>
+
+        <div class="social-icons" aria-label="Social links">
+          <!-- X -->
+          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg>
+          </a>
+
+          <!-- Telegram -->
+          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg>
+          </a>
+
+          <!-- Email link (mailto) -->
+          <a href="mailto:hello@cryptowebbuild.com" class="icon-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1 0 2-.9 2-2V6c0-1.1-1-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="small muted">© <span id="footer-year"></span> CryptoWebBuild — All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- main script (defer) -->
   <script src="/script.js" defer></script>
+
+  <!-- tiny footer helpers: footer year & copy email UX (defensive) -->
+  <script>
+    (function(){
+      try {
+        var fy = document.getElementById('footer-year');
+        if (fy) fy.textContent = new Date().getFullYear();
+      } catch(e){ /* ignore */ }
+    })();
+  </script>
 </body>
 </html>
