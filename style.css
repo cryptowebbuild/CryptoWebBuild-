@@ -451,34 +451,6 @@ body {
    Replace previous nav/menu CSS with this block
    ----------------------------- */
 
-header {
-  background: rgba(7,9,20,0.64);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 6px 28px rgba(2,6,20,0.55);
-  z-index: 9999;
-}
-
-/* container alignment */
-.navbar.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 18px;
-}
-
-/* logo */
-.nav-logo {
-  color: #14d0ff;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  font-size: 1.18rem;
-  transition: color .22s ease;
-}
-.nav-logo:hover { color: #6ef0ff; }
-
 /* HAMBURGER */
 .hamburger {
   width: 44px;
