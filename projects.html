@@ -4,17 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Web Development Projects — Case Studies: Crypto, Web3 & E-commerce | Sagor Ahamed</title>
-  <meta name="description" content="Case studies and live demos by Sagor Ahamed (CryptoWebBuild): token launch landing pages, meme-coin sites and a fast e-commerce store. See goals, approach and live demos." />
+  <title>Selected Projects & Case Studies — CryptoWebBuild</title>
+  <meta name="description" content="Selected case studies & live demos by Sagor Ahamed — token launches, meme-coin landing pages and fast e-commerce stores. View goals, technical approach and results." />
   <link rel="canonical" href="https://cryptowebbuild.com/projects" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Selected Projects & Case Studies — CryptoWebBuild" />
-  <meta property="og:description" content="Selected case studies and live demos: token launches, meme coin landing pages and e-commerce projects." />
+  <meta property="og:description" content="Selected case studies & live demos: token launches, meme coin landing pages and e-commerce projects." />
   <meta property="og:url" content="https://cryptowebbuild.com/projects" />
-  <meta property="og:image" content="https://cryptowebbuild.com/solana-project-new.webp" />
+  <meta property="og:image" content="https://cryptowebbuild.com/tokenlaunch-og.webp" />
+  <meta property="og:image:alt" content="Project screenshots — CryptoWebBuild" />
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -22,12 +23,12 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Structured Data: projects ItemList -->
+  <!-- Structured Data: ItemList for projects -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
       {"@type":"ListItem","position":1,"url":"https://cryptowebbuild.com/tokenlaunch","name":"TokenLaunch — Landing & Presale"},
       {"@type":"ListItem","position":2,"url":"https://cryptowebbuild.com/memecoinsite","name":"MemeCoinSite — Launch Landing"},
       {"@type":"ListItem","position":3,"url":"https://cryptowebbuild.com/shopfast","name":"ShopFast — E-commerce Store"}
@@ -41,39 +42,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- Page-specific small overrides -->
+  <!-- Small page-specific CSS to ensure image sizing & CTA visibility -->
   <style>
+    /* Projects page overrides to ensure consistent responsive image sizing */
     .projects-hero { text-align:center; padding:28px 0 8px; }
-    .projects-hero .projects-title { color: #00b4ff; font-weight:700; font-size:1.6rem; margin:0 0 8px; }
-    .projects-hero .lead { max-width:980px; margin:10px auto 0; color: rgba(255,255,255,0.85); }
+    .projects-hero .projects-title { color:#00b4ff; font-weight:700; font-size:1.6rem; margin:0 0 8px; }
+    .projects-hero .lead { max-width:980px; margin:10px auto 0; color: rgba(255,255,255,0.9); }
 
-    .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:22px; margin-top:18px; align-items:start; }
+    .projects-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap:22px;
+      margin-top:18px;
+      align-items:start;
+    }
 
-    .project-card { background: var(--card-bg); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,0.04); transition: transform .28s ease, box-shadow .28s ease; }
-    .project-card:hover { transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.6); }
+    .project-card {
+      background: var(--card-bg, rgba(255,255,255,0.02));
+      border-radius:12px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      border:1px solid rgba(255,255,255,0.04);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
 
     .project-media { display:block; width:100%; overflow:hidden; }
-    .project-img { width:100%; height:220px; object-fit:cover; display:block; transition: transform .5s ease; }
+    /* responsive cropping height while preserving aspect ratio with object-fit */
+    .project-img {
+      width:100%;
+      height:260px;           /* default desktop height */
+      object-fit:cover;
+      display:block;
+      transition: transform .45s ease;
+    }
     .project-card:hover .project-img { transform: scale(1.03); }
 
-    .project-body { padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
-    .project-body h3 { margin:0; font-size:1.12rem; font-family:var(--header-font); color: #eafcff; }
-    .tech-stack { font-size:0.92rem; color: rgba(255,255,255,0.66); margin:0; }
-    .project-desc { margin:0; color: rgba(255,255,255,0.86); line-height:1.5; }
-
-    .project-links { display:flex; gap:10px; align-items:center; margin-top:auto; flex-wrap:wrap }
-    .btn-demo { display:inline-block; background: linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; box-shadow:0 8px 20px rgba(0,191,255,0.10); }
-    .btn-demo:focus, .btn-demo:hover { transform: translateY(-3px); }
-
-    .link-underline { color:#9be6ff; text-decoration:underline; font-weight:600; margin-left:6px; }
-
-    @media (max-width:720px) {
-      .project-img { height:160px; }
+    /* mobile smaller image height */
+    @media (max-width:760px) {
+      .project-img { height:180px; }
       .projects-hero .projects-title { font-size:1.25rem; }
     }
 
-    /* Ensure CTA buttons visible on small widths */
-    .projects-grid .project-links a { white-space:nowrap; }
+    .project-body { padding:16px 18px; display:flex; flex-direction:column; gap:10px; }
+    .project-body h3 { margin:0; font-size:1.12rem; font-family:var(--header-font); color:#eafcff; }
+    .tech-stack { font-size:0.92rem; color: rgba(255,255,255,0.66); margin:0; }
+    .project-desc { margin:0; color: rgba(255,255,255,0.88); line-height:1.5; }
+
+    .project-links { display:flex; gap:10px; align-items:center; margin-top:auto; flex-wrap:wrap; }
+    .btn-demo {
+      display:inline-block;
+      background: linear-gradient(90deg,#00c6ff,#0072ff);
+      color:#001018;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(0,191,255,0.10);
+    }
+    .btn-demo:focus, .btn-demo:hover { transform: translateY(-3px); outline: none; }
+
+    .link-underline { color:#9be6ff; text-decoration:underline; font-weight:600; }
+
+    /* make CTA group centered on small view */
+    .projects-cta { margin-top:26px; text-align:center; }
   </style>
 </head>
 <body>
@@ -103,7 +136,7 @@
     <section class="projects-hero section" aria-labelledby="projects-hero-heading">
       <div class="container">
         <h1 id="projects-hero-heading" class="projects-title section-title">Selected Projects & Case Studies</h1>
-        <p class="lead">Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click any case study to open the full page with goals, approach and outcomes.</p>
+        <p class="lead">Below are short case studies and live demos of selected crypto, Web3 and e-commerce projects. Click a card to open the full case study or view the live demo.</p>
       </div>
     </section>
 
@@ -118,8 +151,9 @@
           <article id="project-tokenlaunch" class="project-card" role="listitem" aria-labelledby="tokenlaunch-title">
             <a class="project-media" href="/tokenlaunch" aria-label="Open TokenLaunch case study">
               <picture>
-                <source srcset="/solana-project-new.webp 800w, /solana-project-new-1200.webp 1200w" type="image/webp">
-                <img src="/solana-project-new.webp"
+                <!-- use root-file names (you gave these) -->
+                <source srcset="tokenlaunch-og.webp 800w" type="image/webp">
+                <img src="tokenlaunch-og.webp"
                      alt="TokenLaunch landing page screenshot"
                      width="1200" height="675"
                      loading="lazy" decoding="async"
@@ -131,7 +165,7 @@
             <div class="project-body">
               <h3 id="tokenlaunch-title">TokenLaunch — Landing & Presale</h3>
               <p class="tech-stack">Static HTML • Cloudflare Pages • CoinGecko API</p>
-              <p class="project-desc">High-converting token landing page focused on presale signups, token docs and fast indexing.</p>
+              <p class="project-desc">High-converting token landing page focused on presale signups, token docs and fast indexing for search engines.</p>
 
               <div class="project-links">
                 <a class="btn-demo" href="https://solana-troll-site.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -144,8 +178,8 @@
           <article id="project-memecoin" class="project-card" role="listitem" aria-labelledby="memecoin-title">
             <a class="project-media" href="/memecoinsite" aria-label="Open MemeCoinSite case study">
               <picture>
-                <source srcset="/BNBCHAIN-project-new.webp 800w, /BNBCHAIN-project-new-1200.webp 1200w" type="image/webp">
-                <img src="/BNBCHAIN-project-new.webp"
+                <source srcset="memecoin-og.webp 800w" type="image/webp">
+                <img src="memecoin-og.webp"
                      alt="MemeCoinSite landing page screenshot"
                      width="1200" height="675"
                      loading="lazy" decoding="async"
@@ -157,7 +191,7 @@
             <div class="project-body">
               <h3 id="memecoin-title">MemeCoinSite — Launch Landing</h3>
               <p class="tech-stack">Static HTML • Countdown • Analytics</p>
-              <p class="project-desc">Conversion-first landing page with social proof and countdown timers to drive urgency and signups.</p>
+              <p class="project-desc">Conversion-first landing page with social proof and countdown timers to drive urgency and presale signups.</p>
 
               <div class="project-links">
                 <a class="btn-demo" href="https://1bnbdemop.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -170,8 +204,8 @@
           <article id="project-shopfast" class="project-card" role="listitem" aria-labelledby="shopfast-title">
             <a class="project-media" href="/shopfast" aria-label="Open ShopFast case study">
               <picture>
-                <source srcset="/ecommerce-project-new.webp 800w, /ecommerce-project-new-1200.webp 1200w" type="image/webp">
-                <img src="/ecommerce-project-new.webp"
+                <source srcset="shopfast-og.webp 800w" type="image/webp">
+                <img src="shopfast-og.webp"
                      alt="ShopFast e-commerce screenshot"
                      width="1200" height="675"
                      loading="lazy" decoding="async"
@@ -183,7 +217,7 @@
             <div class="project-body">
               <h3 id="shopfast-title">ShopFast — E-commerce Store</h3>
               <p class="tech-stack">Static frontend • Client-side cart • Stripe/PayPal</p>
-              <p class="project-desc">Fast product pages, light cart and optimized checkout flow for SMB stores — focused on conversion and performance.</p>
+              <p class="project-desc">Fast product pages, light cart and optimized checkout flow — focused on conversions and low bounce rates.</p>
 
               <div class="project-links">
                 <a class="btn-demo" href="https://e-commercesagor.pages.dev/" target="_blank" rel="noopener noreferrer">Live Demo</a>
@@ -194,7 +228,7 @@
 
         </div> <!-- /.projects-grid -->
 
-        <div style="margin-top:22px;text-align:center;">
+        <div class="projects-cta">
           <a href="/contact" class="cta-button">Get a Quote</a>
           <a href="/services" class="cta-button cta-secondary">See Services</a>
         </div>
@@ -202,25 +236,26 @@
     </section>
   </main>
 
-  <footer class="site-footer footer" role="contentinfo">
-    <div class="container">
-      <div style="text-align:center;">
-        <div class="social-icons" aria-label="Social links" style="justify-content:center;">
-          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
-          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-
-        <p style="margin-top:12px;" class="muted">© <span id="footer-year"></span> CryptoWebBuild — Sagor Ahamed</p>
+  <!-- footer: icon-only -->
+  <footer class="site-footer footer" role="contentinfo" aria-label="Footer">
+    <div class="container" style="text-align:center;">
+      <div class="social-icons" aria-label="Social links" style="justify-content:center; margin-bottom:12px;">
+        <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@cryptowebbuild.com" class="icon-link" aria-label="Email hello@cryptowebbuild.com">Email</a>
       </div>
+
+      <p style="color:rgba(255,255,255,0.6);margin:8px 0 0;">© <span id="footer-year"></span> CryptoWebBuild — Sagor Ahamed</p>
     </div>
   </footer>
 
-  <script src="/script.js" defer></script>
   <script>
-    // footer year fallback
-    (function(){ try { var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear(); } catch(e){} })();
+    // set footer year
+    try { document.getElementById('footer-year').textContent = new Date().getFullYear(); } catch(e){}
   </script>
+
+  <script src="/script.js" defer></script>
 </body>
 </html>
