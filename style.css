@@ -897,13 +897,24 @@ h1, h2, h3, .section-title {
     inset 0 -2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Push animation line lower (safe desktop fix) */
-.hero-heading::after {
-  margin-top: 14px !important;
-  transform: translateY(10px) !important;
+/* FORCE FIX hero heading animation line position */
+.hero-heading {
+  position: relative !important;
+  padding-bottom: 40px !important;    /* space for the line */
 }
 
-/* Prevent touching text */
-.hero-heading {
-  padding-bottom: 26px !important;
+/* Move animated line downward for desktop */
+.hero-heading::after {
+  position: absolute !important;
+  bottom: -16px !important;           /* pushes line lower */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Also fix ::before if animation uses both */
+.hero-heading::before {
+  position: absolute !important;
+  bottom: -22px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
