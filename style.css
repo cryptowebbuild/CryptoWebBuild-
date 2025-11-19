@@ -192,34 +192,40 @@ h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !importan
   .cta-button { width: 100%; }
 }
 
-/* === Single Responsive Hero Image (For 1 Image Use Case) === */
-.blog-post-image {
-  width: 100%;
-  height: auto;
-  max-width: 1600px;   /* desktop large size */
-  display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Prevents CLS by reserving space */
-.hero-single-img[width][height] {
+/* PAGE-SPECIFIC FIX: only for /best-website-developer page */
+body.page-best-webdev .blog-post-container,
+body.page-best-webdev .blog-header,
+body.page-best-webdev .blog-content {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
   box-sizing: border-box;
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-  .hero-single-img {
-    border-radius: 10px;
-    max-height: 60vh;    /* Phone screen fit */
-    object-fit: cover;
-  }
+/* hero image responsive and constrained to article width */
+body.page-best-webdev .blog-header img.blog-post-image {
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:980px;
+  margin:0 auto 22px;
+  border-radius:12px;
+  object-fit:cover;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .hero-single-img {
-    max-width: 100%;
+/* toc/box alignment */
+body.page-best-webdev nav[aria-label="Table of contents"],
+body.page-best-webdev .box {
+  max-width:920px;
+  margin: 12px auto;
+}
+
+/* mobile tweak: keep hero height reasonable */
+@media (max-width:900px) {
+  body.page-best-webdev .blog-header img.blog-post-image {
+    max-height:56vh;
   }
+  body.page-best-webdev .blog-content { padding-left:14px; padding-right:14px; }
 }
