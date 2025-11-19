@@ -1,288 +1,193 @@
 /* ===================================================================
-   CryptoWebBuild — Complete Styles (Original + All Fixes)
+   CryptoWebBuild — Final CSS (Social Icons Added)
    =================================================================== */
 
-:root{
-  --bg-dark:#0a0a1a;
-  --primary-blue:#00BFFF;
-  --primary-blue-2:#00d1ff;
-  --accent-2:#4dc9ff;
-  --secondary-purple:#8A2BE2;
-  --text-light:#e0e0e0;
-  --muted:rgba(255,255,255,0.66);
-  --card-bg:#10102a;
-  --border-color:rgba(0,191,255,0.18);
-  --header-font:'Chakra Petch',sans-serif;
-  --body-font:'Poppins',sans-serif;
-  --glass:rgba(255,255,255,0.03);
-  --glass-strong:rgba(255,255,255,0.06);
-  --max-width:1200px;
+:root {
+  --bg-dark: #0a0a1a;
+  --primary-blue: #00BFFF;
+  --primary-blue-2: #00d1ff;
+  --accent-2: #4dc9ff;
+  --secondary-purple: #8A2BE2;
+  --text-light: #e0e0e0;
+  --muted: rgba(255,255,255,0.66);
+  --card-bg: #10102a;
+  --border-color: rgba(255,255,255,0.05);
+  --header-font: 'Chakra Petch', sans-serif;
+  --body-font: 'Poppins', sans-serif;
+  --max-width: 1200px;
 }
 
-/* Base */
-*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-html{scroll-behavior:smooth}
-body{
-  margin:0;padding:0;
-  background-color:var(--bg-dark);
-  color:var(--text-light);
-  font-family:var(--body-font);
-  line-height:1.6;
-  -webkit-tap-highlight-color:transparent;
+/* --- PART 1: BASE STYLES --- */
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--body-font);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
-
-/* Container */
-.container{width:min(var(--max-width),92%);margin:0 auto}
+.container { width: min(var(--max-width), 92%); margin: 0 auto; }
 
 /* Typography */
-h1,h2,h3,h4,h5{font-family:var(--header-font);color:#fff;margin:0}
-p{margin:0 0 1rem 0;color:var(--text-light)}
-.lead{max-width:920px;margin:12px auto 0;color:var(--muted);line-height:1.6}
-.muted{color:var(--muted)}
-small{color:rgba(255,255,255,0.52)}
-
-/* Header / Nav */
-.header{
-  background:var(--bg-dark);
-  position:sticky;top:0;z-index:1000;padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,0.03);
+h1, h2, h3, h4, h5, .section-title {
+  font-family: var(--header-font);
+  color: #fff; margin: 0 0 1rem;
 }
-.navbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.nav-logo,.brand-compact{
-  font-family:var(--header-font);font-weight:800;color:var(--primary-blue);
-  font-size:20px;text-decoration:none;letter-spacing:0.8px;
-}
+p { margin-bottom: 1rem; opacity: 0.9; }
+a { color: var(--primary-blue-2); text-decoration: none; transition: 0.2s; }
+a:hover { color: #fff; }
 
-/* Nav menu (Desktop Base) */
-.nav-menu{display:flex;gap:18px;list-style:none;padding:0;margin:0}
-.nav-menu a{color:rgba(245,250,255,0.94);font-weight:600;text-decoration:none;padding:6px 8px;border-radius:8px;display:inline-block;transition:.18s}
-.nav-menu a:hover{color:#34e7ff}
+/* Header */
+.header {
+  background: rgba(10,10,26,0.95);
+  position: sticky; top: 0; z-index: 1000;
+  padding: 12px 0; border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+}
+.navbar { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; }
+
+/* Menu */
+.nav-menu { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.nav-menu a { color: #f5faff; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+.nav-menu a:hover { color: var(--primary-blue); background: rgba(0,191,255,0.08); }
 
 /* Hero */
-.hero{padding:72px 0;text-align:center}
-.hero-avatar{border-radius:50%;border:3px solid var(--primary-blue);margin-bottom:18px;width:140px;height:140px;object-fit:cover}
+.hero { padding: 72px 0 60px; text-align: center; }
+.hero-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary-blue); object-fit: cover; margin-bottom: 18px; }
 
-/* NOTE: Hero Heading Style is overwritten in the Fixes section below for Gold Badge */
-.hero-heading{display:inline-block;background:#ffdf66;color:#041025;padding:.5rem 1.05rem;border-radius:12px;font-weight:700;font-size:1.6rem;box-shadow:0 12px 30px rgba(4,8,16,0.12);margin:12px 0}
-
-/* Typing box */
-.typing-box{margin-top:12px;font-size:1.14rem;color:rgba(255,255,255,0.95);min-height:34px;font-weight:500;letter-spacing:0.15px;display:inline-flex;align-items:center;gap:10px}
-.typing-cursor{width:10px;height:1.18em;background:#ffdf66;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 2px 8px rgba(255,223,102,0.15);animation:cursorBlink 1000ms steps(2,start) infinite}
-@keyframes cursorBlink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
-
-/* CTA buttons */
-.cta-box{margin:22px 0}
-.cta-button{
-  padding:12px 20px;background:linear-gradient(90deg,var(--primary-blue-2),var(--primary-blue));
-  color:#001018;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;
-  box-shadow:0 10px 26px rgba(0,191,255,0.06);transition:transform .18s,box-shadow .18s,opacity .12s;
+/* Typing */
+.typing-box { 
+  margin-top: -10px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 32px;
 }
-.cta-button:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,191,255,0.12);opacity:.98}
-.cta-secondary{background:transparent;border:2px solid var(--primary-blue);color:var(--primary-blue);padding:10px 18px;border-radius:10px}
-.cta-secondary:hover{background:rgba(0,191,255,0.06);color:#00f6ff}
+#typing-text { font-size: 1.2rem; font-weight: 700; color: #fff; }
+.typing-cursor { width: 10px; height: 1.2em; background: #ffdf66; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-/* Quick links */
-.quick-links{list-style:none;padding:0;margin-top:16px;display:flex;flex-direction:column;gap:8px;align-items:center}
-.quick-links a{color:var(--primary-blue);font-weight:600}
-
-/* Sections */
-.section{padding:54px 0}
-.section-title{font-size:2rem;margin-bottom:18px;text-align:center;color:#fff}
+/* Buttons */
+.cta-box { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.cta-button, .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 24px; border-radius: 12px; font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-blue-2), var(--primary-blue));
+  color: #001018 !important; border: none; cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,191,255,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); }
 
 /* Cards */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.service-card{background:var(--card-bg);padding:20px;border-radius:12px;text-align:center;border:1px solid var(--border-color);transition:transform .24s,box-shadow .24s}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,191,255,0.08)}
-.service-icon{font-size:36px;margin-bottom:10px}
-
-/* Projects */
-.projects-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
-.project-card{background:var(--card-bg);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.03);transition:transform .28s,box-shadow .28s}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.5)}
-.project-img{width:100%;height:auto;object-fit:cover;display:block}
-.project-body{padding:16px;display:flex;flex-direction:column;gap:10px}
-
-/* Blog & Others */
-.blog-list-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.blog-card{background:var(--card-bg);padding:18px;border-radius:12px;border:1px solid var(--border-color)}
-.box,.card{background:var(--glass);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px)}
-
-/* Forms */
-input,textarea,select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:#fff;font-size:1rem;transition:border-color .16s,background .16s}
+.services-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.service-card, .project-card, .box {
+  background: var(--card-bg); padding: 20px; border-radius: 14px;
+  border: 1px solid var(--border-color); transition: 0.3s;
+}
+.project-img { width: 100%; height: auto; max-height: 240px; object-fit: cover; border-radius: 8px; }
+.service-icon { font-size: 32px; color: var(--primary-blue); margin-bottom: 12px; }
 
 /* Footer */
-.site-footer{padding:34px 0 20px;background:#050614;color:rgba(255,255,255,0.78);border-top:1px solid rgba(255,255,255,0.02)}
-.footer-grid{display:grid;grid-template-columns:1fr 180px 240px;gap:22px;max-width:1120px;margin:0 auto;padding:0 18px;align-items:start}
-.footer-col h4{color:#DCEEFF;margin:0 0 12px;font-size:1rem}
-.footer-col a{color:rgba(255,255,255,0.78);text-decoration:none}
-.footer-col a:hover{color:var(--primary-blue-2);text-decoration:underline}
+.site-footer { background: #050614; padding: 40px 0 20px; border-top: 1px solid var(--border-color); font-size: 0.9rem; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+.copy-email { cursor: pointer; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; color: var(--primary-blue); }
 
-/* SOCIAL ICONS (THIS WAS MISSING) */
+/* --- SOCIAL ICONS (FIXED & RESTORED) --- */
 .social-icons {
-  display: flex; gap: 12px; align-items: center; margin-top: 10px; flex-wrap: wrap;
+  display: flex; gap: 12px; align-items: center; margin-top: 14px; flex-wrap: wrap;
 }
 .icon-link {
   display: inline-flex; align-items: center; justify-content: center;
   height: 44px; width: 44px; border-radius: 12px;
-  background: rgba(255,255,255,0.02); color: var(--primary-blue-2);
-  text-decoration: none; transition: transform .12s, background .12s, color .12s;
+  background: rgba(255,255,255,0.05); color: var(--primary-blue-2);
+  text-decoration: none; transition: transform .2s, background .2s, color .2s;
   border: 1px solid rgba(255,255,255,0.05);
 }
 .icon-link svg, .icon-link i {
-  width: 20px; height: 20px; fill: currentColor; display: block; font-size: 20px;
+  width: 20px; height: 20px; font-size: 20px; fill: currentColor; display: block;
 }
 .icon-link:hover {
-  transform: translateY(-4px); background: rgba(0,209,255,0.06); color: #00f0ff; border-color: var(--primary-blue);
+  transform: translateY(-4px);
+  background: rgba(0,209,255,0.1);
+  color: #fff;
+  border-color: var(--primary-blue);
 }
 
-/* Copy Email */
-.copy-email{cursor:pointer;border:none;background:rgba(255,255,255,0.02);color:#bfefff;padding:8px;border-radius:10px}
-.copy-email:hover{background:rgba(0,209,255,0.06);color:#00f0ff}
+/* --- PART 2: CRITICAL FIXES (!important) --- */
 
-/* Fade-in */
-.fade-in{opacity:0;transform:translateY(6px);animation:fadeIn .6s ease forwards}
-@keyframes fadeIn{to{opacity:1;transform:none}}
-
-
-/* ===================================================================
-   PART 2: THE FIXES (Neon, Gold Badge, Dark UI)
-   These rules use !important to ensure they override anything above
-   and provide the exact look you wanted.
-   =================================================================== */
-
-/* 1. PREMIUM HERO BADGE (Gold Gradient + Black Text) */
-.hero-heading, .hero-badge, .hero-heading.badge {
+/* 1. HERO BADGE: GOLD & BLACK */
+.hero-heading, .hero-badge {
   display: inline-block !important;
-  color: #000000 !important; /* PURE BLACK TEXT */
+  color: #000000 !important; /* Force Black */
   font-family: 'Poppins', sans-serif !important;
   font-weight: 900 !important;
-  letter-spacing: 0.4px !important;
-  text-align: center !important;
-  
-  /* Gold Gradient */
   background: linear-gradient(180deg, #ffe37a 0%, #ffd048 40%, #f8c734 100%) !important;
-  
-  /* Shape */
   padding: 14px 28px !important;
   border-radius: 18px !important;
-  
-  /* Borders & Shadows */
   border: 2px solid rgba(255, 215, 60, 0.65) !important;
   box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4) !important;
-  
   margin-bottom: 40px !important;
-  position: relative !important;
-  z-index: 5 !important;
-}
-.hero-heading:hover {
-  transform: translateY(-2px) !important;
+  position: relative; z-index: 5;
 }
 
-/* 2. NEON HAMBURGER MENU (Large, Gradient, Glow) */
+/* 2. HAMBURGER: NEON STYLE */
 .hamburger {
-  display: none; /* Hidden on desktop */
-  width: 54px !important;
-  height: 54px !important;
+  display: none; width: 50px !important; height: 50px !important;
   align-items: center; justify-content: center;
-  border-radius: 14px !important;
+  border-radius: 12px !important;
   background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9)) !important;
   border: 1px solid rgba(0,191,255,0.08) !important;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;
-  padding: 8px !important;
-  cursor: pointer; z-index: 2200;
+  padding: 8px; cursor: pointer; z-index: 2200;
 }
-.hamburger:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6) !important;
-}
+.hamburger:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.6) !important; }
 
-/* Force the bars container */
-.hamburger .bars {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 5px !important;
-  align-items: center !important;
-  justify-content: center !important;
+.hamburger .bars { 
+  display: flex !important; flex-direction: column !important; 
+  gap: 5px !important; align-items: center !important; justify-content: center !important;
 }
-
-/* The Bars */
 .hamburger .bar {
-  width: 26px !important;
-  height: 4px !important;
-  border-radius: 4px !important;
-  display: block !important;
+  width: 26px !important; height: 4px !important; border-radius: 4px !important; 
+  display: block !important; margin: 0 !important;
   background: linear-gradient(90deg, #5ef0ff, #00b4ff) !important;
-  box-shadow: 0 0 10px rgba(0,191,255,0.4) !important; /* Neon Glow */
-  transition: transform 0.25s, opacity 0.2s !important;
-  margin: 0 !important;
+  box-shadow: 0 0 10px rgba(0,191,255,0.4) !important;
 }
 
-/* Hamburger Active State */
-.hamburger.active { transform: scale(0.95) !important; }
-.hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg) !important; }
-.hamburger.active .bar:nth-child(2) { opacity: 0 !important; transform: scale(0.1) !important; }
-.hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg) !important; }
+.hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; transform: scale(0.1); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* 3. MOBILE MENU PANEL (Styling) */
+/* 3. MOBILE MENU */
 @media (max-width: 900px) {
   .nav-menu {
-    display: none;
-    position: absolute !important;
-    top: 100% !important; right: 16px !important;
-    min-width: 240px !important;
-    flex-direction: column !important;
-    gap: 8px !important;
+    display: none; position: absolute !important; top: 100% !important; right: 16px !important; 
+    min-width: 240px !important; flex-direction: column !important; gap: 8px !important;
     background: linear-gradient(180deg, rgba(8,10,24,0.99), rgba(6,8,18,0.99)) !important;
-    padding: 16px !important;
-    border-radius: 14px !important;
+    padding: 16px !important; border-radius: 14px !important;
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 25px 50px rgba(0,0,0,0.75) !important;
   }
-  .nav-menu.active { display: flex !important; animation: fadeInMenu 0.2s ease-out forwards !important; }
+  .nav-menu.active { display: flex !important; }
   .hamburger { display: inline-flex !important; }
-  
-  .nav-menu a {
-    color: #fff !important;
-    font-size: 1.05rem !important;
-    padding: 10px !important;
-  }
+  .nav-menu a { color: #fff !important; }
 }
-@keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* 4. CTA & CARD CONTRAST FIXES */
-/* Hide empty CTA */
-.cta-button:empty { display: none !important; }
-
-/* Secondary Outline Button */
+/* 4. GENERAL FIXES */
 .cta-secondary, .btn-outline {
-  background: transparent !important;
-  border: 2px solid rgba(0,180,255,0.5) !important;
-  color: #9be6ff !important;
-  min-width: 140px !important;
-  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  background: transparent !important; border: 2px solid rgba(0,180,255,0.5) !important; color: #9be6ff !important;
 }
-.cta-secondary:hover {
-  background: rgba(0,191,255,0.05) !important;
-  color: #fff !important;
-}
-
-/* Darker Cards for readability */
-.service-card, .project-card, .box, .simple-box {
+.service-card, .project-card, .box {
   background: linear-gradient(180deg, rgba(16,16,38,0.95), rgba(12,12,30,0.95)) !important;
   border: 1px solid rgba(255,255,255,0.06) !important;
   box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important;
 }
+h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !important; }
 
-/* Ensure Headings are White */
-h1, h2, h3, .section-title, .case-title {
-  color: #ffffff !important;
-  text-shadow: none !important;
-}
-
-/* Responsive tweaks */
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .social-icons { justify-content: center; }
   .cta-box { flex-direction: column; width: 100%; }
   .cta-button { width: 100%; }
-  .social-icons { justify-content: center; }
 }
