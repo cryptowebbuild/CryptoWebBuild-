@@ -1,6 +1,6 @@
-/* =========================================================================
-   CryptoWebBuild — Final Style (Includes Neon, Gold Badge & Fixes)
-   ========================================================================= */
+/* ===================================================================
+   CryptoWebBuild — Consolidated Styles (All Fixes Included)
+   =================================================================== */
 
 :root {
   --bg-dark: #0a0a1a;
@@ -10,8 +10,8 @@
   --secondary-purple: #8A2BE2;
   --text-light: #e0e0e0;
   --muted: rgba(255,255,255,0.66);
-  /* Updated Card BG from fixes */
-  --card-bg: linear-gradient(180deg, rgba(16,16,38,0.9), rgba(12,12,30,0.9));
+  /* Updated Card BG for better contrast */
+  --card-bg: linear-gradient(180deg, rgba(16,16,38,0.95), rgba(12,12,30,0.95)); 
   --border-color: rgba(255,255,255,0.05);
   --header-font: 'Chakra Petch', sans-serif;
   --body-font: 'Poppins', sans-serif;
@@ -19,7 +19,7 @@
   --max-width: 1200px;
 }
 
-/* --- Base Setup --- */
+/* --- Base & Reset --- */
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 body {
@@ -28,25 +28,26 @@ body {
   color: var(--text-light);
   font-family: var(--body-font);
   line-height: 1.6;
-  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .container { width: min(var(--max-width), 92%); margin: 0 auto; }
 
-/* --- Typography (High Contrast Force) --- */
+/* --- Typography (Forcing High Contrast) --- */
 h1, h2, h3, h4, h5, .section-title, .case-title {
   font-family: var(--header-font);
-  color: #ffffff !important; /* Force White */
+  color: #ffffff !important; /* Ensure headings are white */
   text-shadow: none !important;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
 }
-p, li { color: var(--text-light); opacity: 0.96; }
+p, li { color: var(--text-light); opacity: 0.96; margin-bottom: 1rem; }
 a { color: var(--primary-blue-2); text-decoration: none; transition: 0.2s; }
 a:hover { color: #fff; }
+.lead { max-width: 920px; margin: 12px auto 0; color: var(--muted); font-size: 1.05rem; }
 
 /* --- Header --- */
 .header {
-  background: rgba(10,10,26,0.95);
+  background: rgba(10,10,26,0.96);
   position: sticky; top: 0; z-index: 1000;
   padding: 12px 0; border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
@@ -55,17 +56,17 @@ a:hover { color: #fff; }
 .nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; letter-spacing: 0.8px; }
 
 /* --- Desktop Menu --- */
-.nav-menu { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.nav-menu { display: flex; gap: 18px; list-style: none; padding: 0; margin: 0; }
 .nav-menu a { 
-  color: rgba(250,250,255,0.95) !important; 
+  color: rgba(250,250,255,0.96) !important; 
   font-weight: 700; padding: 8px 12px; 
   border-radius: 8px; transition: 0.2s; 
 }
 .nav-menu a:hover { color: #34e7ff !important; background: rgba(52,231,255,0.08); }
 
-/* --- HAMBURGER: PREMIUM NEON STYLE (From your last fix) --- */
+/* --- HAMBURGER: PREMIUM NEON STYLE (Your Requested Fix) --- */
 .hamburger {
-  display: none; /* Hidden on desktop */
+  display: none; /* Desktop hidden */
   width: 50px; height: 50px;
   align-items: center; justify-content: center;
   border-radius: 12px;
@@ -74,6 +75,7 @@ a:hover { color: #fff; }
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   padding: 8px; cursor: pointer; z-index: 2200;
   transition: transform .15s, box-shadow .15s;
+  position: relative;
 }
 .hamburger:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
 
@@ -85,13 +87,13 @@ a:hover { color: #fff; }
   transition: transform 0.25s, opacity 0.2s;
 }
 
-/* Active State (X Shape) */
+/* Active State (X Animation) */
 .hamburger.active { transform: scale(0.95); }
 .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .hamburger.active .bar:nth-child(2) { opacity: 0; transform: scale(0.1); }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* --- Mobile Menu Panel (Styled from fixes) --- */
+/* --- Mobile Menu Panel (Dark & Glass) --- */
 @media (max-width: 900px) {
   .nav-menu {
     display: none; /* Standard hide */
@@ -107,14 +109,14 @@ a:hover { color: #fff; }
 }
 @keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- HERO SECTION (Gold Logic) --- */
+/* --- HERO SECTION --- */
 .hero { padding: 80px 0 60px; text-align: center; }
 .hero-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary-blue); object-fit: cover; margin-bottom: 20px; }
 
-/* HERO BADGE: GOLD & BLACK (Fix applied) */
+/* GOLD BADGE HERO HEADING (Premium Style Fix) */
 .hero-heading, .hero-badge {
   display: inline-block !important;
-  color: #000000 !important; /* Black text */
+  color: #000000 !important; /* Black Text */
   font-family: 'Poppins', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.4px;
@@ -124,22 +126,22 @@ a:hover { color: #fff; }
   border-radius: 18px;
   border: 2px solid rgba(255, 215, 60, 0.65);
   box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4);
-  margin-bottom: 40px !important;
+  margin-bottom: 40px !important; /* Space for typing */
   position: relative; z-index: 5;
 }
 .hero-heading:hover { transform: translateY(-2px); }
 
-/* Typing Text */
+/* Typing Box */
 .typing-box { 
   margin-top: -15px; margin-bottom: 24px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 32px;
+  min-height: 34px;
 }
 #typing-text { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
 .typing-cursor { width: 10px; height: 1.2em; background: #ffdf66; animation: blink 0.9s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* --- Buttons (CTA) --- */
+/* --- CTA Buttons (Fixed & Clean) --- */
 .cta-box { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
 
 .cta-button, .btn {
@@ -150,11 +152,11 @@ a:hover { color: #fff; }
   border-radius: 12px; border: none; cursor: pointer;
   box-shadow: 0 10px 30px rgba(0,191,255,0.15);
   transition: transform 0.2s, box-shadow 0.2s;
-  font-size: 1rem;
+  font-size: 1rem; text-decoration: none;
 }
-.cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); }
+.cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); opacity: 0.98; }
 
-/* Secondary Button (Fix for Empty Box) */
+/* Outline / Secondary Button Fix */
 .cta-secondary, .btn-outline {
   background: transparent !important;
   border: 2px solid rgba(0,180,255,0.5) !important;
@@ -163,13 +165,11 @@ a:hover { color: #fff; }
 }
 .cta-secondary:hover { background: rgba(0,191,255,0.05) !important; border-color: #00d1ff !important; color: #fff !important; }
 
-/* Safety: Hide truly empty buttons */
-.cta-button:empty { display: none !important; }
-
-/* --- Cards (Darker Transparent Fix) --- */
+/* --- Cards (Services, Projects, Simple Boxes) --- */
 .services-grid, .projects-grid, .blog-list-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
 
-.service-card, .project-card, .blog-card, .box {
+/* Unified Dark Card Style */
+.service-card, .project-card, .blog-card, .box, .simple-box, .quick-box {
   background: var(--card-bg) !important;
   border: 1px solid var(--border-color) !important;
   padding: 22px; border-radius: 16px;
@@ -180,10 +180,15 @@ a:hover { color: #fff; }
   transform: translateY(-6px);
   border-color: rgba(0,191,255,0.3) !important;
 }
-.service-icon { font-size: 36px; margin-bottom: 14px; color: var(--primary-blue); }
 
+.service-icon { font-size: 36px; margin-bottom: 14px; color: var(--primary-blue); }
 .project-img { width: 100%; height: auto; max-height: 250px; object-fit: cover; border-radius: 8px; display: block; }
 .project-body { padding-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+/* Quick Links / Simple Boxes Text */
+.simple-box, .quick-box, .quick-links a {
+  color: #eafcff !important; text-decoration: none; font-weight: 700; display: block;
+}
 
 /* --- Footer --- */
 .site-footer { background: #050614; padding: 40px 0 20px; border-top: 1px solid var(--border-color); font-size: 0.92rem; margin-top: 60px; }
@@ -191,17 +196,29 @@ a:hover { color: #fff; }
 .footer-col h4 { color: #fff; margin-bottom: 16px; font-size: 1.1rem; }
 .footer-col a, .muted { color: rgba(255,255,255,0.65) !important; display: block; margin-bottom: 8px; }
 .footer-col a:hover { color: var(--primary-blue) !important; text-decoration: underline; }
-.copy-email { cursor: pointer; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; color: var(--primary-blue); font-size: 0.85rem; }
 
-/* --- Animation & Utils --- */
+.copy-email { 
+  cursor: pointer; background: rgba(255,255,255,0.05); 
+  padding: 6px 12px; border-radius: 6px; 
+  color: var(--primary-blue); font-size: 0.85rem; border: none; 
+}
+
+/* --- Animation & Utilities --- */
 .fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.6s, transform 0.6s; }
 .fade-in.is-visible { opacity: 1; transform: none; }
+.back-to-top { z-index: 2500 !important; }
+input, textarea, select {
+  width: 100%; padding: 14px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
+  color: #fff; margin-bottom: 12px;
+}
 
-/* Mobile Responsive Tweaks */
+/* --- Mobile Tweaks --- */
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-heading { font-size: 1.1rem; padding: 12px 20px; }
   .section-title { font-size: 1.7rem; }
   .cta-box { flex-direction: column; width: 100%; align-items: stretch; }
   .cta-button { width: 100%; }
+  .quick-links { display: flex; flex-direction: column; gap: 10px; }
 }
