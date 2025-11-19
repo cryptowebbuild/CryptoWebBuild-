@@ -1,49 +1,68 @@
 (function () {
   'use strict';
 
-  const $ = (sel, ctx = document) => ctx.querySelector(sel);
-  const $$ = (sel, ctx = document) => Array.from((ctx || document).querySelectorAll(sel));
-
   document.addEventListener('DOMContentLoaded', function () {
 
-    /* --- 1. MOBILE MENU (Consolidated & Robust) --- */
-    const hamburger = $('.hamburger');
-    const navMenu = $('.nav-menu') || $('.nav-menu-panel');
+    /* --- 1. HEADER & HAMBURGER (Merged: Neon Style + Accessibility + Auto-fix) --- */
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu') || document.querySelector('.nav-menu-panel');
 
     if (hamburger && navMenu) {
-      // Ensure bars exist
+      // Fix: Ensure 3 bars exist for the Neon animation
       if (!hamburger.querySelector('.bar')) {
-        hamburger.innerHTML = '<div class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>';
+        hamburger.innerHTML = ''; 
+        const barsWrap = document.createElement('div');
+        barsWrap.className = 'bars'; // Wrapper for alignment
+        for (let i = 0; i < 3; i++) {
+          const s = document.createElement('span');
+          s.className = 'bar';
+          barsWrap.appendChild(s);
+        }
+        hamburger.appendChild(barsWrap);
       }
-      // Accessibility
+
+      // Accessibility Attributes
       hamburger.setAttribute('aria-label', 'Toggle menu');
+      hamburger.setAttribute('role', 'button');
       hamburger.setAttribute('aria-expanded', 'false');
 
-      const toggleMenu = (force) => {
+      // Toggle Function
+      function toggleMenu(force) {
         const willOpen = (typeof force === 'boolean') ? force : !navMenu.classList.contains('active');
         navMenu.classList.toggle('active', willOpen);
         hamburger.classList.toggle('active', willOpen);
-        hamburger.setAttribute('aria-expanded', willOpen);
+        hamburger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         document.documentElement.classList.toggle('nav-open', willOpen);
-        document.body.style.overflow = willOpen ? 'hidden' : ''; // Prevent scroll
-      };
+        
+        // Prevent body scroll on mobile when open
+        document.body.style.overflow = willOpen ? 'hidden' : '';
+      }
 
+      // Event Listeners
       hamburger.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
       
-      // Close on link click or click outside
+      // Close when clicking a link
+      navMenu.addEventListener('click', (e) => {
+        if (e.target.closest('a')) toggleMenu(false);
+      });
+
+      // Close when clicking outside
       document.addEventListener('click', (e) => {
-        if (!navMenu.classList.contains('active')) return;
-        if (e.target.closest('a') || (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger'))) {
+        if (navMenu.classList.contains('active') && 
+            !e.target.closest('.nav-menu') && 
+            !e.target.closest('.nav-menu-panel') && 
+            !e.target.closest('.hamburger')) {
           toggleMenu(false);
         }
-      }, { passive: true });
+      });
 
+      // Close on Escape key
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) toggleMenu(false);
+        if (e.key === 'Escape') toggleMenu(false);
       });
     }
 
-    /* --- 2. TYPING EFFECT --- */
+    /* --- 2. TYPING EFFECT (Original Logic Preserved) --- */
     const typingEl = document.getElementById('typing-text');
     if (typingEl) {
       const phrases = [
@@ -53,37 +72,88 @@
         'I build Static blogs & Portfolios.',
         'SEO-first, Mobile-first, Conversion-focused.'
       ];
-      let phraseIdx = 0, charIdx = 0, isDeleting = false, timer = null;
+      let phraseIndex = 0, charIndex = 0, isDeleting = false, timer = null;
       
-      const tick = () => {
+      function tick() {
         if (document.hidden) { timer = setTimeout(tick, 500); return; }
-        const current = phrases[phraseIdx % phrases.length];
-        
+        const current = phrases[phraseIndex % phrases.length];
+
         if (!isDeleting) {
-          typingEl.textContent = current.slice(0, ++charIdx);
-          if (charIdx >= current.length) {
+          typingEl.textContent = current.slice(0, ++charIndex);
+          if (charIndex >= current.length) {
             isDeleting = true;
-            timer = setTimeout(tick, 1400); // Hold
+            timer = setTimeout(tick, 1400); // Pause at end
           } else {
-            timer = setTimeout(tick, 90); // Type speed
+            timer = setTimeout(tick, 90); // Typing speed
           }
         } else {
-          typingEl.textContent = current.slice(0, --charIdx);
-          if (charIdx === 0) {
+          typingEl.textContent = current.slice(0, --charIndex);
+          if (charIndex === 0) {
             isDeleting = false;
-            phraseIdx++;
-            timer = setTimeout(tick, 300); // Pause before new
+            phraseIndex++;
+            timer = setTimeout(tick, 300);
           } else {
-            timer = setTimeout(tick, 45); // Delete speed
+            timer = setTimeout(tick, 45); // Deleting speed
           }
         }
-      };
+      }
       timer = setTimeout(tick, 500);
     }
 
-    /* --- 3. UI HELPERS (Fade In, Smooth Scroll, BackToTop) --- */
-    // Fade In
-    const faders = $$('.fade-in');
+    /* --- 3. CTA BUTTON FIXES (Hide empty buttons) --- */
+    const ctas = document.querySelectorAll('.cta-button, a.cta-button, button.cta-button');
+    ctas.forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (txt.length === 0) {
+        // Safety: If button is empty, add default text OR hide it. 
+        // Based on your code, hiding is safer, or adding "View"
+        el.style.display = 'none'; 
+      }
+    });
+
+    /* --- 4. SMOOTH SCROLL & BACK TO TOP --- */
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const headerOffset = (document.querySelector('.header')?.offsetHeight || 0) + 10;
+          window.scrollTo({ top: target.offsetTop - headerOffset, behavior: 'smooth' });
+          // Close menu if open
+          if (hamburger && hamburger.classList.contains('active')) toggleMenu(false);
+        }
+      });
+    });
+
+    // Back to Top Button
+    const btnTop = document.createElement('button');
+    btnTop.className = 'back-to-top hidden';
+    btnTop.innerHTML = '↑';
+    btnTop.setAttribute('aria-label', 'Back to top');
+    btnTop.style.cssText = "position:fixed; right:20px; bottom:20px; padding:10px 14px; background:var(--primary-blue); color:#fff; border:none; border-radius:8px; cursor:pointer; z-index:2500; transition:0.3s; opacity:0; pointer-events:none;";
+    
+    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.appendChild(btnTop);
+
+    window.addEventListener('scroll', () => {
+      const show = window.scrollY > 400;
+      btnTop.style.opacity = show ? '1' : '0';
+      btnTop.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
+      btnTop.style.pointerEvents = show ? 'all' : 'none';
+    }, { passive: true });
+
+    /* --- 5. UTILS: External Links & Fade In --- */
+    // External links safety
+    document.querySelectorAll('a[href^="http"]').forEach(a => {
+      if (a.origin !== location.origin) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+
+    // Fade In Observer
+    const faders = document.querySelectorAll('.fade-in');
     if (faders.length) {
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(e => {
@@ -93,56 +163,15 @@
       faders.forEach(n => observer.observe(n));
     }
 
-    // Smooth Scroll for Anchors
-    $$('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function (e) {
-        const target = $(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const headerH = ($('.header')?.offsetHeight || 0) + 12;
-          window.scrollTo({ top: target.offsetTop - headerH, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Back To Top
-    const btnTop = document.createElement('button');
-    btnTop.className = 'back-to-top hidden';
-    btnTop.innerHTML = '↑';
-    btnTop.setAttribute('aria-label', 'Back to top');
-    btnTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.body.appendChild(btnTop);
+    // Footer Year
+    const fy = document.getElementById('footer-year');
+    if (fy) fy.textContent = new Date().getFullYear();
     
-    window.addEventListener('scroll', () => {
-      const show = window.scrollY > 400;
-      btnTop.style.opacity = show ? '1' : '0';
-      btnTop.style.transform = show ? 'translateY(0)' : 'translateY(10px)';
-      btnTop.style.pointerEvents = show ? 'all' : 'none';
-    }, { passive: true });
-
-    /* --- 4. CLEANUP & DEFENSIVE --- */
-    // External Links
-    $$('a[href^="http"]').forEach(a => {
-      if (a.origin !== location.origin) { a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener noreferrer'); }
-    });
-
-    // CTA Cleanups (Hide empty buttons or add default text)
-    $$('.cta-button').forEach(btn => {
-      if (!btn.textContent.trim()) {
-        // Either hide: btn.style.display = 'none';
-        // Or add default:
-        btn.textContent = "View Details";
-      }
-    });
-
-    // Footer Year & Copy Email
-    const yearEl = $('#footer-year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-    
-    const copyBtn = $('.copy-email');
+    // Copy Email
+    const copyBtn = document.querySelector('.copy-email');
     if (copyBtn) {
       copyBtn.addEventListener('click', () => {
-        const email = ($('#footer-email')?.href || '').replace('mailto:', '') || 'hello@cryptowebbuild.com';
+        const email = document.getElementById('footer-email')?.getAttribute('href').replace('mailto:', '') || 'hello@cryptowebbuild.com';
         navigator.clipboard.writeText(email);
         const old = copyBtn.innerHTML;
         copyBtn.innerHTML = '✓';
