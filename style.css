@@ -1,5 +1,5 @@
 /* ===================================================================
-   CryptoWebBuild — Final CSS (Merged & Exact)
+   CryptoWebBuild — Final CSS (Social Icons Added)
    =================================================================== */
 
 :root {
@@ -10,14 +10,14 @@
   --secondary-purple: #8A2BE2;
   --text-light: #e0e0e0;
   --muted: rgba(255,255,255,0.66);
-  --card-bg: #10102a; /* Fallback */
+  --card-bg: #10102a;
   --border-color: rgba(255,255,255,0.05);
   --header-font: 'Chakra Petch', sans-serif;
   --body-font: 'Poppins', sans-serif;
   --max-width: 1200px;
 }
 
-/* --- PART 1: MAIN CSS (Base) --- */
+/* --- PART 1: BASE STYLES --- */
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 body {
@@ -49,7 +49,7 @@ a:hover { color: #fff; }
 .navbar { display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; }
 
-/* Menu (Base) */
+/* Menu */
 .nav-menu { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
 .nav-menu a { color: #f5faff; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
 .nav-menu a:hover { color: var(--primary-blue); background: rgba(0,191,255,0.08); }
@@ -94,110 +94,100 @@ a:hover { color: #fff; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
 .copy-email { cursor: pointer; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; color: var(--primary-blue); }
 
-/* Utils */
-.fade-in { opacity: 0; transform: translateY(12px); transition: 0.6s; }
-.fade-in.is-visible { opacity: 1; transform: none; }
+/* --- SOCIAL ICONS (FIXED & RESTORED) --- */
+.social-icons {
+  display: flex; gap: 12px; align-items: center; margin-top: 14px; flex-wrap: wrap;
+}
+.icon-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 44px; width: 44px; border-radius: 12px;
+  background: rgba(255,255,255,0.05); color: var(--primary-blue-2);
+  text-decoration: none; transition: transform .2s, background .2s, color .2s;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.icon-link svg, .icon-link i {
+  width: 20px; height: 20px; font-size: 20px; fill: currentColor; display: block;
+}
+.icon-link:hover {
+  transform: translateY(-4px);
+  background: rgba(0,209,255,0.1);
+  color: #fff;
+  border-color: var(--primary-blue);
+}
 
-/* --- PART 2: FIXES & OVERRIDES (The "Hubuhu Same" Logic) --- */
-/* This section contains your specific "Fix" CSS. The !important tags ensure they work. */
+/* --- PART 2: CRITICAL FIXES (!important) --- */
 
-/* 1. HERO BADGE: GOLD GLOSSY & BLACK TEXT */
+/* 1. HERO BADGE: GOLD & BLACK */
 .hero-heading, .hero-badge {
   display: inline-block !important;
-  color: #000000 !important; /* Force Black Text */
+  color: #000000 !important; /* Force Black */
   font-family: 'Poppins', sans-serif !important;
   font-weight: 900 !important;
-  letter-spacing: 0.4px;
-  /* The Gold Gradient */
   background: linear-gradient(180deg, #ffe37a 0%, #ffd048 40%, #f8c734 100%) !important;
   padding: 14px 28px !important;
   border-radius: 18px !important;
   border: 2px solid rgba(255, 215, 60, 0.65) !important;
   box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4) !important;
-  margin-bottom: 40px !important; /* Ensure space for typing */
+  margin-bottom: 40px !important;
   position: relative; z-index: 5;
 }
-.hero-heading:hover { transform: translateY(-2px); }
 
-/* 2. HAMBURGER: NEON STYLE (Large, Gradient, Glow) */
+/* 2. HAMBURGER: NEON STYLE */
 .hamburger {
-  display: none; /* Hidden on desktop */
-  width: 50px !important; height: 50px !important;
+  display: none; width: 50px !important; height: 50px !important;
   align-items: center; justify-content: center;
   border-radius: 12px !important;
   background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9)) !important;
   border: 1px solid rgba(0,191,255,0.08) !important;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;
   padding: 8px; cursor: pointer; z-index: 2200;
-  transition: transform .15s, box-shadow .15s;
 }
 .hamburger:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.6) !important; }
 
-/* Ensure the bars column aligns correctly */
 .hamburger .bars { 
-  display: flex !important; 
-  flex-direction: column !important; 
-  gap: 5px !important; 
-  align-items: center !important; 
-  justify-content: center !important;
+  display: flex !important; flex-direction: column !important; 
+  gap: 5px !important; align-items: center !important; justify-content: center !important;
 }
-
-/* The Neon Bars */
 .hamburger .bar {
-  width: 26px !important; height: 4px !important; 
-  border-radius: 4px !important; display: block !important;
+  width: 26px !important; height: 4px !important; border-radius: 4px !important; 
+  display: block !important; margin: 0 !important;
   background: linear-gradient(90deg, #5ef0ff, #00b4ff) !important;
-  box-shadow: 0 0 10px rgba(0,191,255,0.4) !important; /* Neon Glow */
-  transition: transform 0.25s, opacity 0.2s;
-  margin: 0 !important; /* Remove default margins if any */
+  box-shadow: 0 0 10px rgba(0,191,255,0.4) !important;
 }
 
-/* Active State (X) */
-.hamburger.active { transform: scale(0.95); }
 .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .hamburger.active .bar:nth-child(2) { opacity: 0; transform: scale(0.1); }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* 3. MOBILE MENU PANEL (Fix) */
+/* 3. MOBILE MENU */
 @media (max-width: 900px) {
   .nav-menu {
-    display: none;
-    position: absolute !important; top: 100% !important; right: 16px !important; 
+    display: none; position: absolute !important; top: 100% !important; right: 16px !important; 
     min-width: 240px !important; flex-direction: column !important; gap: 8px !important;
     background: linear-gradient(180deg, rgba(8,10,24,0.99), rgba(6,8,18,0.99)) !important;
     padding: 16px !important; border-radius: 14px !important;
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 25px 50px rgba(0,0,0,0.75) !important;
   }
-  .nav-menu.active { display: flex !important; animation: fadeInMenu 0.2s ease-out forwards; }
+  .nav-menu.active { display: flex !important; }
   .hamburger { display: inline-flex !important; }
-  
-  .nav-menu a { color: #fff !important; font-size: 1.05rem !important; }
+  .nav-menu a { color: #fff !important; }
 }
-@keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* 4. CTA & CARD FIXES (Hide Empty / Better Contrast) */
+/* 4. GENERAL FIXES */
 .cta-secondary, .btn-outline {
-  background: transparent !important;
-  border: 2px solid rgba(0,180,255,0.5) !important;
-  color: #9be6ff !important;
+  background: transparent !important; border: 2px solid rgba(0,180,255,0.5) !important; color: #9be6ff !important;
 }
-.cta-secondary:hover { background: rgba(0,191,255,0.05) !important; color: #fff !important; }
-
-/* Card Darker Background Fix */
-.service-card, .project-card, .box, .simple-box {
+.service-card, .project-card, .box {
   background: linear-gradient(180deg, rgba(16,16,38,0.95), rgba(12,12,30,0.95)) !important;
   border: 1px solid rgba(255,255,255,0.06) !important;
   box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important;
 }
-.service-card:hover, .project-card:hover { border-color: rgba(0,191,255,0.3) !important; }
-
-/* Headings Force White */
 h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !important; }
 
-/* Responsive Footer */
 @media (max-width: 768px) {
   .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .social-icons { justify-content: center; }
   .cta-box { flex-direction: column; width: 100%; }
   .cta-button { width: 100%; }
 }
