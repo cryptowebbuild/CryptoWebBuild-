@@ -192,3 +192,86 @@ h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !importan
   .cta-button { width: 100%; }
 }
 
+/* ===== Blog hero & post image responsive rules (global) ===== */
+
+/* make sure article container is constrained, centered */
+.blog-post-container,
+.blog-header,
+.blog-content {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+  box-sizing: border-box;
+}
+
+/* responsive hero / main post image */
+.blog-header img.blog-post-image {
+  display: block;
+  width: 100%;
+  height: auto;               /* allow natural aspect ratio */
+  max-width: 980px;           /* don't grow above article width */
+  margin: 0 auto 22px;
+  border-radius: 12px;
+  object-fit: cover;          /* preserves crop if container smaller */
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  transition: transform .28s ease;
+}
+
+/* optional subtle zoom on hover for desktop */
+@media (hover: hover) and (min-width: 900px) {
+  .blog-header img.blog-post-image:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+/* force image container to preserve aspect ratio (avoid CLS) */
+.blog-header .blog-image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #0b0c14; /* placeholder while image loads */
+}
+
+/* if you want fixed aspect (16:9) box for consistent look */
+.blog-header .blog-image-wrap.aspect-16-9 {
+  padding-top: 56.25%; /* 9/16 = 56.25% */
+}
+.blog-header .blog-image-wrap.aspect-16-9 img.blog-post-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* mobile height guard (so hero doesn't become huge) */
+@media (max-width: 900px) {
+  .blog-header img.blog-post-image {
+    max-height: 56vh;    /* keep hero inside viewport */
+  }
+}
+
+/* ensure small thumbnails inside blog-list don't use hero rules */
+.blog-list-container img.blog-card-image,
+.blog-card img {
+  height: auto;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Improve text flow and prevent overflow */
+.blog-content { word-wrap: break-word; overflow-wrap: break-word; }
+.blog-content pre.wp-block-code { white-space: pre-wrap; word-break: break-word; }
+
+/* Ensure TOC / box does not overflow */
+nav[aria-label="Table of contents"], .box { max-width: 920px; margin: 12px auto; }
+
+/* Small screens adjustments */
+@media (max-width: 560px) {
+  .blog-post-container { padding-left:14px; padding-right:14px; }
+  .blog-header img.blog-post-image { border-radius:10px; }
+  .blog-list-container img.blog-card-image { max-height:180px; }
+}
