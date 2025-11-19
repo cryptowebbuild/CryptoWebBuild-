@@ -91,25 +91,66 @@
 
         <div class="blog-list-container" style="margin-top:20px; display:grid; gap:20px;">
 
-<div class="blog-card">
-  <a href="/best-website-developer">
-    <img src="/og-best-webdev.jpg" alt="How to Find the Best Website Developer" loading="lazy">
-  </a>
+<!-- Single blog card (paste inside your .blog-list-container or similar) -->
+<article class="blog-card fade-in" role="article" aria-labelledby="post-static-dynamic" itemscope itemtype="https://schema.org/Article">
+  <div class="blog-card-content card">
+    <p class="blog-date" itemprop="datePublished">November 12, 2025</p>
 
-  <div class="blog-card-content">
-    <h3>
-      <a href="/best-website-developer">
-        How to Find the Best Website Developer in 2026 (Complete Guide)
-      </a>
+    <!-- Title (use unique id per post) -->
+    <h3 id="post-static-dynamic" itemprop="headline">
+      <a href="/static-vs-dynamic-website" class="internal-link" itemprop="url">Static vs Dynamic Websites — Explained for Clients (2026)</a>
     </h3>
 
-    <p class="small-muted">
-      Learn how to hire the best website developer — pricing, skills, SEO, vetting, and avoiding mistakes.
+    <!-- Short excerpt -->
+    <p itemprop="description">
+      Speed, SEO and when to choose static, dynamic or hybrid architectures for Web3 and business sites.
     </p>
 
-    <a href="/best-website-developer" class="blog-read-more">Read More →</a>
+    <!-- Optional meta: reading time / author -->
+    <p class="small muted" aria-hidden="true">By Sagor Ahamed · 6 min read</p>
+
+    <!-- CTA / Read more (visually clear button) -->
+    <div style="margin-top:10px;">
+      <a href="/static-vs-dynamic-website" class="cta-button cta-secondary" aria-label="Read full article: Static vs Dynamic Websites">Read Article</a>
+    </div>
   </div>
-</div>
+</article>
+
+<!-- Example: multiple cards inside a grid container -->
+<section class="section">
+  <div class="container blog-list-container">
+    <!-- Repeat the article block above for each post (ensure unique ids) -->
+    <!-- Card 1 -->
+    <article class="blog-card fade-in" role="article" aria-labelledby="post-static-dynamic" itemscope itemtype="https://schema.org/Article">
+      <div class="blog-card-content card">
+        <p class="blog-date" itemprop="datePublished">November 12, 2025</p>
+        <h3 id="post-static-dynamic" itemprop="headline">
+          <a href="/static-vs-dynamic-website" class="internal-link" itemprop="url">Static vs Dynamic Websites — Explained for Clients (2026)</a>
+        </h3>
+        <p itemprop="description">Speed, SEO and when to choose static, dynamic or hybrid architectures for Web3 and business sites.</p>
+        <div style="margin-top:10px;">
+          <a href="/static-vs-dynamic-website" class="cta-button cta-secondary">Read Article</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 (example) -->
+    <article class="blog-card fade-in" role="article" aria-labelledby="post-best-webdev" itemscope itemtype="https://schema.org/Article">
+      <div class="blog-card-content card">
+        <p class="blog-date" itemprop="datePublished">November 16, 2025</p>
+        <h3 id="post-best-webdev" itemprop="headline">
+          <a href="/best-website-developer" class="internal-link" itemprop="url">How to Find the Best Website Developer in 2026 — Complete Guide</a>
+        </h3>
+        <p itemprop="description">A practical, no-fluff guide to hiring a developer who delivers speed, SEO and conversions.</p>
+        <div style="margin-top:10px;">
+          <a href="/best-website-developer" class="cta-button cta-secondary">Read Article</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Add more cards as needed -->
+  </div>
+</section>
 
           <!-- Post: static-vs-dynamic-website -->
           <article class="blog-card fade-in" role="article" aria-labelledby="post-static-dynamic">
