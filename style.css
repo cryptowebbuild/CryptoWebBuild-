@@ -1,6 +1,6 @@
-/* ===================================================================
-   CryptoWebBuild — Complete & Minimized (Includes Gold Badge & Neon Fixes)
-   =================================================================== */
+/* =========================================================================
+   CryptoWebBuild — Final Style (Includes Neon, Gold Badge & Fixes)
+   ========================================================================= */
 
 :root {
   --bg-dark: #0a0a1a;
@@ -10,8 +10,8 @@
   --secondary-purple: #8A2BE2;
   --text-light: #e0e0e0;
   --muted: rgba(255,255,255,0.66);
-  /* Updated Card BG from fixes: Darker & Transparent */
-  --card-bg: linear-gradient(180deg, rgba(16,16,38,0.9), rgba(12,12,30,0.9)); 
+  /* Updated Card BG from fixes */
+  --card-bg: linear-gradient(180deg, rgba(16,16,38,0.9), rgba(12,12,30,0.9));
   --border-color: rgba(255,255,255,0.05);
   --header-font: 'Chakra Petch', sans-serif;
   --body-font: 'Poppins', sans-serif;
@@ -19,7 +19,7 @@
   --max-width: 1200px;
 }
 
-/* --- Base --- */
+/* --- Base Setup --- */
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 body {
@@ -28,19 +28,19 @@ body {
   color: var(--text-light);
   font-family: var(--body-font);
   line-height: 1.6;
-  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  overflow-x: hidden;
 }
 
 .container { width: min(var(--max-width), 92%); margin: 0 auto; }
 
-/* --- Typography (Forcing Contrast based on your fixes) --- */
+/* --- Typography (High Contrast Force) --- */
 h1, h2, h3, h4, h5, .section-title, .case-title {
   font-family: var(--header-font);
-  color: #ffffff !important; /* Force White Headings */
+  color: #ffffff !important; /* Force White */
   text-shadow: none !important;
   margin: 0 0 1rem 0;
 }
-p, li { color: var(--text-light); opacity: 0.95; }
+p, li { color: var(--text-light); opacity: 0.96; }
 a { color: var(--primary-blue-2); text-decoration: none; transition: 0.2s; }
 a:hover { color: #fff; }
 
@@ -48,25 +48,22 @@ a:hover { color: #fff; }
 .header {
   background: rgba(10,10,26,0.95);
   position: sticky; top: 0; z-index: 1000;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0; border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
 }
 .navbar { display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; }
+.nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; letter-spacing: 0.8px; }
 
-/* --- Navigation Menu (Desktop) --- */
+/* --- Desktop Menu --- */
 .nav-menu { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
 .nav-menu a { 
-  color: rgba(250,250,255,0.96) !important; 
-  font-weight: 700; 
-  padding: 8px 12px; 
-  border-radius: 8px; 
-  transition: 0.2s;
+  color: rgba(250,250,255,0.95) !important; 
+  font-weight: 700; padding: 8px 12px; 
+  border-radius: 8px; transition: 0.2s; 
 }
 .nav-menu a:hover { color: #34e7ff !important; background: rgba(52,231,255,0.08); }
 
-/* --- HAMBURGER: PREMIUM NEON STYLE (Merged from your latest fix) --- */
+/* --- HAMBURGER: PREMIUM NEON STYLE (From your last fix) --- */
 .hamburger {
   display: none; /* Hidden on desktop */
   width: 50px; height: 50px;
@@ -94,10 +91,10 @@ a:hover { color: #fff; }
 .hamburger.active .bar:nth-child(2) { opacity: 0; transform: scale(0.1); }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* --- Mobile Menu Panel --- */
+/* --- Mobile Menu Panel (Styled from fixes) --- */
 @media (max-width: 900px) {
   .nav-menu {
-    display: none; /* Standard flex hide */
+    display: none; /* Standard hide */
     position: absolute; top: 100%; right: 16px; 
     min-width: 240px; flex-direction: column; gap: 8px;
     background: linear-gradient(180deg, rgba(8,10,24,0.99), rgba(6,8,18,0.99));
@@ -110,14 +107,14 @@ a:hover { color: #fff; }
 }
 @keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- HERO SECTION (Premium Gold Logic) --- */
+/* --- HERO SECTION (Gold Logic) --- */
 .hero { padding: 80px 0 60px; text-align: center; }
 .hero-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary-blue); object-fit: cover; margin-bottom: 20px; }
 
-/* HERO BADGE: GOLD GLOSSY (Final Fix) */
+/* HERO BADGE: GOLD & BLACK (Fix applied) */
 .hero-heading, .hero-badge {
   display: inline-block !important;
-  color: #000000 !important; /* Black Text */
+  color: #000000 !important; /* Black text */
   font-family: 'Poppins', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.4px;
@@ -127,7 +124,7 @@ a:hover { color: #fff; }
   border-radius: 18px;
   border: 2px solid rgba(255, 215, 60, 0.65);
   box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4);
-  margin-bottom: 40px !important; /* Spacing for typing text */
+  margin-bottom: 40px !important;
   position: relative; z-index: 5;
 }
 .hero-heading:hover { transform: translateY(-2px); }
@@ -142,9 +139,10 @@ a:hover { color: #fff; }
 .typing-cursor { width: 10px; height: 1.2em; background: #ffdf66; animation: blink 0.9s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* --- CTA Buttons --- */
+/* --- Buttons (CTA) --- */
 .cta-box { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-.cta-button {
+
+.cta-button, .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 48px; padding: 10px 24px;
   background: linear-gradient(90deg, var(--primary-blue-2), var(--primary-blue));
@@ -156,7 +154,7 @@ a:hover { color: #fff; }
 }
 .cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); }
 
-/* Secondary Outline Button (Fix for empty box) */
+/* Secondary Button (Fix for Empty Box) */
 .cta-secondary, .btn-outline {
   background: transparent !important;
   border: 2px solid rgba(0,180,255,0.5) !important;
@@ -165,11 +163,11 @@ a:hover { color: #fff; }
 }
 .cta-secondary:hover { background: rgba(0,191,255,0.05) !important; border-color: #00d1ff !important; color: #fff !important; }
 
-/* Hide empty buttons (Safety) */
+/* Safety: Hide truly empty buttons */
 .cta-button:empty { display: none !important; }
 
-/* --- Cards (Services / Projects) - Darker & Bordered --- */
-.services-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+/* --- Cards (Darker Transparent Fix) --- */
+.services-grid, .projects-grid, .blog-list-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
 
 .service-card, .project-card, .blog-card, .box {
   background: var(--card-bg) !important;
@@ -195,10 +193,9 @@ a:hover { color: #fff; }
 .footer-col a:hover { color: var(--primary-blue) !important; text-decoration: underline; }
 .copy-email { cursor: pointer; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; color: var(--primary-blue); font-size: 0.85rem; }
 
-/* --- Utilities & Helpers --- */
+/* --- Animation & Utils --- */
 .fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.6s, transform 0.6s; }
 .fade-in.is-visible { opacity: 1; transform: none; }
-.back-to-top { z-index: 2500 !important; }
 
 /* Mobile Responsive Tweaks */
 @media (max-width: 768px) {
