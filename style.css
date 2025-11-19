@@ -191,3 +191,35 @@ h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !importan
   .cta-box { flex-direction: column; width: 100%; }
   .cta-button { width: 100%; }
 }
+
+/* === Single Responsive Hero Image (For 1 Image Use Case) === */
+.blog-post-image {
+  width: 100%;
+  height: auto;
+  max-width: 1600px;   /* desktop large size */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Prevents CLS by reserving space */
+.hero-single-img[width][height] {
+  box-sizing: border-box;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-single-img {
+    border-radius: 10px;
+    max-height: 60vh;    /* Phone screen fit */
+    object-fit: cover;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero-single-img {
+    max-width: 100%;
+  }
+}
