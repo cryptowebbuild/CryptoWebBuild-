@@ -1,961 +1,202 @@
 /* ===================================================================
-   CryptoWebBuild — Cleaned & Fixed CSS (final)
-   Paste/replace your current style.css with this file.
+   CryptoWebBuild — Final Unified Stylesheet (Cleaned)
    =================================================================== */
 
-:root{
-  --bg-dark:#0a0a1a;
-  --primary-blue:#00BFFF;
-  --primary-blue-2:#00d1ff;
-  --accent-2:#4dc9ff;
-  --secondary-purple:#8A2BE2;
-  --text-light:#e0e0e0;
-  --muted:rgba(255,255,255,0.66);
-  --card-bg:#10102a;
-  --border-color:rgba(0,191,255,0.18);
-  --header-font:'Chakra Petch',sans-serif;
-  --body-font:'Poppins',sans-serif;
-  --glass:rgba(255,255,255,0.03);
-  --glass-strong:rgba(255,255,255,0.06);
-  --max-width:1200px;
+:root {
+  --bg-dark: #0a0a1a;
+  --primary-blue: #00BFFF;
+  --primary-blue-2: #00d1ff;
+  --accent: #4dc9ff;
+  --text-light: #e0e0e0;
+  --muted: rgba(255, 255, 255, 0.66);
+  --card-bg: #10102a;
+  --border-color: rgba(0, 191, 255, 0.18);
+  --header-font: 'Chakra Petch', sans-serif;
+  --body-font: 'Poppins', sans-serif;
+  --glass: rgba(255, 255, 255, 0.03);
+  --max-width: 1200px;
 }
 
-/* Base */
-*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-html{scroll-behavior:smooth}
-body{
-  margin:0;padding:0;
-  background-color:var(--bg-dark);
-  color:var(--text-light);
-  font-family:var(--body-font);
-  line-height:1.6;
-  -webkit-tap-highlight-color:transparent;
+/* Base Reset */
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--body-font);
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Container */
-.container{width:min(var(--max-width),92%);margin:0 auto}
+.container { width: min(var(--max-width), 92%); margin: 0 auto; }
 
 /* Typography */
-h1,h2,h3,h4,h5{font-family:var(--header-font);color:#fff;margin:0}
-p{margin:0 0 1rem 0;color:var(--text-light)}
-.lead{max-width:920px;margin:12px auto 0;color:var(--muted);line-height:1.6}
-.muted{color:var(--muted)}
-small{color:rgba(255,255,255,0.52)}
-
-/* Header / Nav */
-.header{
-  background:var(--bg-dark);
-  position:sticky;top:0;z-index:1000;padding:12px 0;
-  border-bottom:1px solid rgba(255,255,255,0.03);
-}
-.navbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.nav-logo,.brand-compact{
-  font-family:var(--header-font);font-weight:800;color:var(--primary-blue);
-  font-size:20px;text-decoration:none;letter-spacing:0.8px;
-}
-
-/* Nav menu */
-.nav-menu{display:flex;gap:18px;list-style:none;padding:0;margin:0}
-.nav-menu a{color:rgba(245,250,255,0.94);font-weight:600;text-decoration:none;padding:6px 8px;border-radius:8px;display:inline-block;transition:.18s}
-.nav-menu a:hover{color:#34e7ff}
-
-/* Mobile nav panel styles (used when .active) */
-.nav-menu-panel{
-  position:absolute;right:18px;top:calc(100% + 10px);
-  min-width:220px;max-width:86vw;
-  background:linear-gradient(180deg,rgba(6,8,18,0.96),rgba(8,10,24,0.98));
-  border-radius:14px;padding:12px 14px;border:1px solid rgba(255,255,255,0.04);
-  box-shadow:0 18px 40px rgba(2,10,30,0.65);
-  transform-origin:top right;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.995);
-  transition:opacity 260ms cubic-bezier(.2,.9,.2,1),transform 260ms,visibility 260ms;
-}
-.nav-menu-panel.active{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
-
-/* Hamburger */
-.hamburger{
-  width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;
-  background:transparent;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:background .18s,transform .18s;
-}
-.hamburger:hover{background:rgba(255,255,255,0.02);transform:translateY(-1px)}
-.hamburger .bar{width:22px;height:2.6px;border-radius:2px;background:linear-gradient(90deg,#c8fbff,#19d4ff);display:block;margin:3px 0}
-
-/* Responsive nav */
-@media (max-width:900px){
-  .nav-menu{display:none}
-  .hamburger{display:inline-flex}
-}
-@media (min-width:901px){
-  .nav-menu{display:flex;align-items:center}
-  .nav-menu-panel{display:none}
-  .hamburger{display:none}
-}
-
-/* Hero */
-.hero{padding:72px 0;text-align:center}
-.hero-avatar{border-radius:50%;border:3px solid var(--primary-blue);margin-bottom:18px;width:140px;height:140px;object-fit:cover}
-.hero-heading{display:inline-block;background:#ffdf66;color:#041025;padding:.5rem 1.05rem;border-radius:12px;font-weight:700;font-size:1.6rem;box-shadow:0 12px 30px rgba(4,8,16,0.12);margin:12px 0}
-
-/* Typing box */
-.typing-box{margin-top:12px;font-size:1.14rem;color:rgba(255,255,255,0.95);min-height:34px;font-weight:500;letter-spacing:0.15px;display:inline-flex;align-items:center;gap:10px}
-.typing-cursor{width:10px;height:1.18em;background:#ffdf66;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 2px 8px rgba(255,223,102,0.15);animation:cursorBlink 1000ms steps(2,start) infinite}
-@keyframes cursorBlink{0%{opacity:1}50%{opacity:0}100%{opacity:1}}
-
-/* CTA buttons */
-.cta-box{margin:22px 0}
-.cta-button{
-  padding:12px 20px;background:linear-gradient(90deg,var(--primary-blue-2),var(--primary-blue));
-  color:#001018;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;
-  box-shadow:0 10px 26px rgba(0,191,255,0.06);transition:transform .18s,box-shadow .18s,opacity .12s;
-}
-.cta-button:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,191,255,0.12);opacity:.98}
-.cta-secondary{background:transparent;border:2px solid var(--primary-blue);color:var(--primary-blue);padding:10px 18px;border-radius:10px}
-.cta-secondary:hover{background:rgba(0,191,255,0.06);color:#00f6ff}
-
-/* Quick links */
-.quick-links{list-style:none;padding:0;margin-top:16px;display:flex;flex-direction:column;gap:8px;align-items:center}
-.quick-links a{color:var(--primary-blue);font-weight:600}
-
-/* Sections */
-.section{padding:54px 0}
-.section-title{font-size:2rem;margin-bottom:18px;text-align:center;color:#fff}
-
-/* Services */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.service-card{background:var(--card-bg);padding:20px;border-radius:12px;text-align:center;border:1px solid var(--border-color);transition:transform .24s,box-shadow .24s}
-.service-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,191,255,0.08)}
-.service-icon{font-size:36px;margin-bottom:10px}
-
-/* Blog cards */
-.blog-list-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.blog-card{background:var(--card-bg);padding:18px;border-radius:12px;border:1px solid var(--border-color)}
-
-/* Projects */
-.projects-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
-.project-card{background:var(--card-bg);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.03);transition:transform .28s,box-shadow .28s}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,0.5)}
-.project-media{display:block;width:100%}
-.project-img{width:100%;height:auto;object-fit:cover;display:block}
-.project-body{padding:16px;display:flex;flex-direction:column;gap:10px}
-.tech-stack{color:rgba(255,255,255,0.62);font-size:0.92rem}
-.project-links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
-.btn-demo{background:var(--primary-blue);color:#001018;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;box-shadow:0 8px 20px rgba(0,191,255,0.1)}
-
-/* Hero illustration responsive */
-.hero-illustration{width:100%;height:auto;max-width:900px;margin:18px auto;border-radius:12px;object-fit:cover}
-
-/* Forms */
-input,textarea,select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:#fff;font-size:1rem;transition:border-color .16s,background .16s}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.45)}
-input:focus,textarea:focus,select:focus{border-color:var(--primary-blue-2);background:rgba(0,209,255,0.06);outline:none}
-select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 18px) calc(1em + 2px),calc(100% - 13px) calc(1em + 2px);background-size:6px 6px,6px 6px;background-repeat:no-repeat}
-
-/* Buttons global */
-button,.btn,.button,a.btn,a.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;background:linear-gradient(90deg,var(--primary-blue-2),var(--primary-blue));color:#001018!important;border:none;cursor:pointer;transition:transform .18s,box-shadow .18s;text-decoration:none}
-button:hover,.btn:hover,a.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,191,255,0.08)}
-.btn-outline{background:transparent;border:2px solid var(--primary-blue-2);color:var(--primary-blue-2)}
-.btn-outline:hover{background:rgba(0,209,255,0.06);color:#00faff}
-
-/* Links / internal link styles */
-a{color:var(--primary-blue-2);text-decoration:underline;text-underline-offset:3px;transition:color .18s}
-a:hover{color:#00faff}
-main a,.content a,.article-body a,.blog-content a{color:var(--primary-blue-2)!important;font-weight:500;text-decoration:underline}
-.btn a,.button a,a.btn,a.button{color:inherit!important;text-decoration:none!important}
-
-/* Cards / glass */
-.box,.card,.container-box{background:var(--glass);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px)}
-
-/* Social icons */
-.social-icons{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap}
-.icon-link{display:inline-flex;align-items:center;justify-content:center;height:44px;width:44px;border-radius:12px;background:rgba(255,255,255,0.02);color:var(--primary-blue-2);text-decoration:none;transition:transform .12s,background .12s,color .12s}
-.icon-link svg{width:20px;height:20px;fill:currentColor;display:block}
-.icon-link:hover{transform:translateY(-4px);background:rgba(0,209,255,0.06);color:#00f0ff}
-
-/* copy-email */
-.copy-email{cursor:pointer;border:none;background:rgba(255,255,255,0.02);color:#bfefff;padding:8px;border-radius:10px}
-.copy-email:hover{background:rgba(0,209,255,0.06);color:#00f0ff}
-
-/* Footer */
-.site-footer{padding:34px 0 20px;background:#050614;color:rgba(255,255,255,0.78);border-top:1px solid rgba(255,255,255,0.02)}
-.footer-grid{display:grid;grid-template-columns:1fr 180px 240px;gap:22px;max-width:1120px;margin:0 auto;padding:0 18px;align-items:start}
-.footer-col h4{color:#DCEEFF;margin:0 0 12px;font-size:1rem}
-.footer-col a{color:rgba(255,255,255,0.78);text-decoration:none}
-.footer-col a:hover{color:var(--primary-blue-2);text-decoration:underline}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.02);padding-top:12px;margin-top:16px;text-align:center;font-size:0.95rem}
-
-/* Fade-in */
-.fade-in{opacity:0;transform:translateY(6px);animation:fadeIn .6s ease forwards}
-@keyframes fadeIn{to{opacity:1;transform:none}}
-
-/* Blog content */
-.blog-content p{color:var(--text-light);margin:12px 0;line-height:1.6}
-.blog-content img{max-width:100%;border-radius:8px;margin:18px 0;display:block}
-.blog-content table{width:100%;border-collapse:collapse;margin:18px 0}
-.blog-content th,.blog-content td{border:1px solid var(--border-color);padding:12px 14px;color:var(--text-light)}
-.blog-content th{background:rgba(0,191,255,0.08);color:#fff;font-family:var(--header-font)}
-
-/* Projects title color helper */
-.section-title.projects-title{color:#00b4ff}
-.section-title.projects-title.gradient{background:linear-gradient(90deg,#00b4ff 0%,#4dc9ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-
-/* Responsive tweaks */
-@media (max-width:760px){
-  .hero{padding:48px 0}
-  .hero-heading{font-size:1.2rem;padding:.4rem .8rem}
-  .section-title{font-size:1.5rem}
-  .container{width:94%}
-  .footer-grid{grid-template-columns:1fr;padding:0 14px}
-}
-@media (max-width:420px){
-  .cta-button{padding:10px 14px}
-  .nav-logo{font-size:18px}
-}
-
-/* Accessibility focus */
-a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(0,209,255,0.14);outline-offset:3px;border-radius:8px}
-
-/* Ensure nav-menu visible when .active (mobile friendly) */
-.nav-menu.active{
-  opacity:1!important;visibility:visible!important;transform:translateY(0) scale(1)!important;display:flex!important;
-  position:absolute;right:18px;top:calc(100% + 10px);min-width:220px;max-width:86vw;
-  background:linear-gradient(180deg,rgba(6,8,18,0.96),rgba(8,10,24,0.98));border-radius:14px;padding:12px 14px;
-  border:1px solid rgba(255,255,255,0.04);box-shadow:0 18px 40px rgba(2,10,30,0.65);flex-direction:column;gap:6px;
-}
-
-/* =========================
-   Quick fixes for mobile menu, buttons, contrast, services H1
-   Paste this at the end of your style.css
-   ========================= */
-
-/* Force hamburger to always have 3 bars and be visible */
-.hamburger {
-  width:48px;
-  height:44px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background: transparent;
-  border-radius:10px;
-  border: 1px solid rgba(255,255,255,0.03);
-  padding:6px;
-  box-sizing:border-box;
-  z-index:2001;
-}
-
-/* ensure bars exist and visible (if spans missing, JS will add) */
-.hamburger .bar {
-  display:block;
-  width:20px;
-  height:3px;
-  margin:3px 0;
-  border-radius:2px;
-  background: linear-gradient(90deg,#c8fbff,#19d4ff);
-  transition: transform .22s ease, opacity .18s ease;
-}
-
-/* when open -> animate slightly */
-.hamburger.active .bar:nth-child(1) { transform: translateY(1px) rotate(0deg); }
-.hamburger.active .bar:nth-child(2) { opacity: 0.0; transform: scaleX(0); }
-.hamburger.active .bar:nth-child(3) { transform: translateY(-1px) rotate(0deg); }
-
-/* Make mobile panel visually separated and readable */
-.nav-menu.active,
-.nav-menu-panel.active {
-  position: absolute;
-  right: 14px;
-  top: calc(100% + 10px);
-  min-width: 220px;
-  max-width: 92vw;
-  background: linear-gradient(180deg, rgba(8,10,20,0.98), rgba(12,14,26,0.99));
-  border-radius: 14px;
-  padding: 10px;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 30px 60px rgba(2,8,18,0.6);
-  backdrop-filter: blur(8px);
-  z-index:2000;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-/* higher contrast for mobile menu links */
-.nav-menu a,
-.nav-menu-panel a {
-  color: rgba(250,250,255,0.96) !important;
-  font-weight:700;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-size: 1.02rem;
-}
-
-/* hover + focus for menu items */
-.nav-menu a:hover,
-.nav-menu-panel a:hover,
-.nav-menu a:focus,
-.nav-menu-panel a:focus {
-  background: rgba(52,231,255,0.06);
-  color: #34e7ff !important;
-  transform: translateX(4px);
-  box-shadow: 0 8px 30px rgba(16,200,255,0.05);
-}
-
-/* Ensure nav-menu sits above content on mobile */
-.nav-menu { z-index:2000; }
-
-/* CTA button readability fix (mobile & desktop) */
-.cta-button {
-  color: #001018 !important; /* dark text on bright button */
-  font-weight:800;
-  text-shadow: none !important;
-  -webkit-text-stroke: 0px transparent;
-}
-
-/* In case background gradient too bright and text looks washed:
-   force contrast with subtle inner shadow on button */
-.cta-button::after {
-  content: '';
-  position: absolute;
-  pointer-events: none;
-  inset: 0;
-  border-radius: 10px;
-  box-shadow: inset 0 -8px 24px rgba(0,0,0,0.08);
-}
-
-/* Make sure .cta-button is position relative so pseudo element works */
-.cta-button { position: relative; }
-
-/* Fix low-contrast CTA when big rounded and heavy box-shadow overlaps text */
-.cta-button[disabled],
-.cta-button.disabled {
-  opacity: 0.9;
-  filter: none;
-}
-
-/* Improve readability inside cards / boxes */
-.service-card p,
-.service-card li,
-.project-desc,
-.blog-card-content p,
-.blog-content p {
-  color: var(--text-light);
-  opacity: 0.96;
-  line-height:1.65;
-}
-
-/* darker card background for improved contrast */
-.service-card, .project-card, .blog-card, .case-panel, .box {
-  background: linear-gradient(180deg, rgba(16,16,38,0.9), rgba(12,12,30,0.9));
-  border: 1px solid rgba(255,255,255,0.04);
-}
-
-/* Specific: services page hero heading — force high contrast */
-.hero-heading,
-.section-title.services-hero,
-.section-title {
-  color: #ffffff !important;
-  text-shadow: none;
-}
-
-/* If you used inline yellow background on hero-heading, keep readable text */
-.hero-heading { color: #041025 !important; }
-
-/* H1 / big headings across site should always be very readable on dark bg */
-h1, .section-title, .case-title {
-  color: #ffffff !important;
-  text-shadow: none;
-}
-
-/* For any headings accidentally set to dark color: force white on specific pages */
-body.page-services h1,
-body.page-services .hero-heading,
-body.page-services .section-title {
-  color: #fff !important;
-}
-
-/* Improve footer quick-links contrast */
-.footer .footer-social a,
-.footer .footer-col a,
-.site-footer .muted {
-  color: rgba(230,240,255,0.88);
-}
-
-/* Fix rounded button small-screen min-height issue (so text not hidden) */
-.cta-button, .btn, .button {
-  min-height: 44px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 10px 18px;
-  line-height:1;
-}
-
-/* Ensure project images keep designed height but responsive */
-.project-img { width:100%; height:auto; max-height: 420px; object-fit:cover; }
-
-/* Raise z-index of floating back-to-top so it doesn't get hidden behind menu */
-.back-to-top { z-index: 2100 !important; }
-
-/* small tweak - list bullets color */
-ul li { color: var(--text-light); }
-
-/* Accessibility: focus visible style for menu items */
-.nav-menu a:focus, .nav-menu-panel a:focus {
-  outline: 3px solid rgba(0,209,255,0.12);
-  outline-offset: 4px;
-  border-radius: 8px;
-}
-
-/* final small mobile tweak for the 3-dot issue area: make that right-side control square transparent */
-.header .three-dot-area, .header .menu-more {
-  background: transparent !important;
-  border: none !important;
-}
-
-/* ===========================
-   Fixes: nicer hamburger icon + simple boxes + contrast
-   Paste at end of style.css
-   =========================== */
-
-/* --- Hamburger: round square with 3 bars --- */
-.hamburger {
-  width:54px;
-  height:54px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:14px;           /* round square */
-  background: linear-gradient(180deg, rgba(6,8,18,0.6), rgba(8,10,20,0.7));
-  border: 1px solid rgba(0,191,255,0.06);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  padding:8px;
-  transition: transform .18s ease, box-shadow .18s ease;
-  position: relative;
-  z-index: 2200;
-}
-
-/* ensure there are three small rounded bars inside */
-.hamburger .bar {
-  width:26px;
-  height:6px;
-  border-radius:6px;
-  margin:3px 0;
-  display:block;
-  background: linear-gradient(90deg,#7ef0ff,#00b4ff);
-  box-shadow: 0 4px 14px rgba(0,180,255,0.12), inset 0 -2px 6px rgba(0,0,0,0.14);
-  transition: transform .22s cubic-bezier(.2,.9,.2,1), opacity .18s;
-}
-
-/* stack bars vertically inside a flex column container */
-.hamburger .bars {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-}
-
-/* open state animation -> transform into X-like subtle */
-.hamburger.active { transform: translateY(-1px); box-shadow: 0 22px 40px rgba(0,0,0,0.6); }
-.hamburger.active .bar:nth-child(1) { transform: translateY(6px) rotate(40deg); }
-.hamburger.active .bar:nth-child(2) { opacity:0; transform: scaleX(0.2); }
-.hamburger.active .bar:nth-child(3) { transform: translateY(-6px) rotate(-40deg); }
-
-/* --- Mobile menu panel styling (readable) --- */
-.nav-menu-panel, .nav-menu {
-  background: linear-gradient(180deg, rgba(6,8,18,0.98), rgba(10,12,22,0.99));
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 30px 60px rgba(2,8,18,0.6);
-  padding: 10px;
-}
-
-/* ensure links look like pill buttons (quick comfortable tap targets) */
-.nav-menu a, .nav-menu-panel a {
-  display:block;
-  padding: 12px 14px;
-  margin: 6px 0;
-  border-radius: 10px;
-  color: #eafcff !important;
-  font-weight:700;
-  text-decoration:none;
-}
-
-/* hover / focus */
-.nav-menu a:hover, .nav-menu a:focus,
-.nav-menu-panel a:hover, .nav-menu-panel a:focus {
-  background: rgba(0,180,255,0.06);
-  color: #00f0ff !important;
-  transform: translateX(6px);
-}
-
-/* --- Simple quick boxes (restore missing simple boxes) --- */
-.simple-box, .quick-box, .quick-links a {
-  display:block;
-  background: linear-gradient(180deg, rgba(12,14,28,0.95), rgba(10,12,22,0.95));
-  border: 1px solid rgba(255,255,255,0.03);
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #eafcff !important;
-  text-decoration: none;
-  font-weight:700;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
-}
-
-/* quick-links container show as column of boxes on mobile */
-.quick-links { display:flex; flex-direction:column; gap:10px; align-items:stretch; }
-
-/* small lighter style for secondary simple boxes */
-.quick-box.secondary { background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); color: rgba(230,240,255,0.92); font-weight:600; }
-
-/* --- CTA button readability: ensure text visible even with heavy gradient --- */
-.cta-button {
-  position: relative;
-  min-height:44px;
-  padding: 10px 18px;
-  font-weight:800;
-  color: #001018 !important;
-  text-shadow: none;
-}
-
-/* prevent inner glow hiding text */
-.cta-button::after { content:''; position:absolute; inset:0; border-radius:12px; pointer-events:none; box-shadow: inset 0 -8px 24px rgba(0,0,0,0.08); }
-
-/* --- Headings contrast fixes --- */
-h1, .section-title, .hero-heading, .case-title {
-  color: #ffffff !important;
-  text-shadow: none !important;
-}
-
-/* --- Project / Service cards restore visible border & padding --- */
-.service-card, .project-card, .blog-card, .case-panel {
-  background: linear-gradient(180deg, rgba(14,16,30,0.92), rgba(8,10,20,0.94));
-  padding: 18px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.03);
-}
-
-/* --- ensure images keep aspect and not collapse --- */
-.blog-post-image, .project-img, .hero-illustration {
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:12px;
-  object-fit:cover;
-  max-height: 520px;
-}
-
-/* --- back to top visibility --- */
-.back-to-top { z-index: 2300 !important; }
-
-/* small screens */
-@media (max-width:720px) {
-  .hamburger { width:52px; height:52px; border-radius:12px; }
-  .hamburger .bar { width:22px; height:5px; border-radius:5px; }
-  .hero-heading { font-size: 1.05rem; padding:.35rem .6rem; }
-  .section-title { font-size:1.6rem; }
-  .quick-links { gap:8px; }
-}
-
-/* === UI fixes: hamburger size, hero badge, CTA empty handling, box contrast === */
-
-/* 1) hamburger smaller & consistent (restore) */
-.hamburger {
-  width:44px;
-  height:44px;
-  border-radius:10px;
-  padding:8px;
-  background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.85));
-  border: 1px solid rgba(0,191,255,0.06);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-.hamburger .bars { gap:4px; }
-.hamburger .bar { width:22px; height:4px; border-radius:4px; }
-
-/* reduce active transform for subtlety */
-.hamburger.active { transform: translateY(-1px) scale(0.98); }
-
-/* 2) hero badge (Professional Website Developer) - restore pill yellow style */
-.hero-badge, .hero-heading.badge {
-  display:inline-block;
-  background: linear-gradient(180deg,#ffdf66,#ffd24a);
-  color:#041025;
-  padding:0.5rem 1rem;
-  border-radius:14px;
-  font-weight:800;
-  box-shadow: 0 10px 30px rgba(4,8,16,0.14);
+h1, h2, h3, h4, h5, .section-title, .hero-heading, .case-title {
   font-family: var(--header-font);
-  letter-spacing:0.2px;
-  margin: 12px 0;
-  max-width: 100%;
-  text-align:center;
-}
-
-/* ensure hero-badge scales on small screens */
-@media(max-width:720px){
-  .hero-badge { font-size:0.95rem; padding: .45rem .85rem; border-radius:12px; }
-}
-
-/* 3) CTA group: ensure buttons align and no empty box visible */
-/* primary */
-.cta-button { min-height:44px; padding:10px 18px; font-weight:800; }
-
-/* outline button visible text color fix */
-.cta-button.cta-secondary, .btn-outline {
-  color: var(--primary-blue) !important;
-  border: 2px solid rgba(0,180,255,0.9);
-  background: transparent;
-  min-width: 140px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* hide empty CTA buttons (no text / whitespace-only) */
-.cta-button:empty,
-.cta-button:empty::before {
-  display:none !important;
-  visibility:hidden !important;
-  width:0 !important;
-  height:0 !important;
-  padding:0 !important;
-  margin:0 !important;
-  border:0 !important;
-}
-
-/* 4) restore simple boxes / quick links contrast (prevent text blending) */
-.simple-box, .quick-box, .quick-links a, .service-card {
-  background: linear-gradient(180deg, rgba(12,14,28,0.96), rgba(8,10,20,0.96));
-  color: #eafcff !important;
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
-
-/* bullet lists inside dark boxes: better contrast */
-.case-panel ul li, .blog-content ul li {
-  color: rgba(235,245,255,0.92);
-  margin: 8px 0;
-}
-
-/* 5) heading contrast ensure */
-h1, .section-title, .hero-heading {
-  color:#fff !important;
+  color: #ffffff !important;
+  margin: 0 0 1rem 0;
   text-shadow: none !important;
 }
+p { margin: 0 0 1rem 0; color: var(--text-light); opacity: 0.96; }
+.lead { max-width: 920px; margin: 12px auto 0; color: var(--muted); font-size: 1.05rem; }
+.muted, small { color: rgba(255, 255, 255, 0.66) !important; }
 
-/* 6) minor spacing adjust for hero CTA row */
-.hero-cta-row { display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:18px; }
-.hero-cta-row .cta-button { min-width:160px; }
+/* Links */
+a { color: var(--primary-blue-2); text-decoration: underline; text-underline-offset: 3px; transition: color .18s; }
+a:hover { color: #00faff; }
 
-/* 7) ensure the empty outlined box you circled won't appear as ghost:
-   if HTML has an anchor with class cta-secondary but text missing, it will be hidden by .cta-button:empty rule above.
-   If you prefer a default label, see JS section below which can insert default text.*/
-
-/* YELLOW BADGE TEXT FIX */
-.hero-badge,
-.hero-badge h1,
-.hero-badge span,
-.badge-title,
-.section-badge,
-.hero-title-badge {
-    color: #0A1220 !important;          /* premium dark navy */
-    font-family: "Chakra Petch", sans-serif !important;
-    font-weight: 800 !important;
-    text-shadow: none !important;
+/* Header & Nav */
+.header {
+  background: rgba(10, 10, 26, 0.95);
+  position: sticky; top: 0; z-index: 1000; padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+}
+.navbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.nav-logo {
+  font-family: var(--header-font); font-weight: 800; color: var(--primary-blue);
+  font-size: 22px; text-decoration: none; letter-spacing: 0.8px;
 }
 
-/* ---------- CryptoWebBuild — Mobile + Desktop UI fixes (paste at END of style.css) ---------- */
+/* Desktop Menu */
+.nav-menu { display: flex; gap: 18px; list-style: none; padding: 0; margin: 0; }
+.nav-menu a {
+  color: rgba(245, 250, 255, 0.95) !important;
+  font-weight: 700; text-decoration: none;
+  padding: 8px 12px; border-radius: 8px; transition: .2s;
+}
+.nav-menu a:hover, .nav-menu a.active {
+  background: rgba(0, 180, 255, 0.1); color: #34e7ff !important;
+}
 
-/* 1) Hamburger — larger, clearer, neon style */
+/* Mobile Menu Panel */
+.nav-menu-panel, .nav-menu.active {
+  background: linear-gradient(180deg, rgba(6,8,18,0.98), rgba(10,12,22,0.99));
+  border-radius: 14px; border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 30px 60px rgba(2,8,18,0.6);
+  padding: 12px; display: flex; flex-direction: column; gap: 8px;
+  position: absolute; right: 18px; top: calc(100% + 10px);
+  min-width: 220px; z-index: 2000;
+}
+
+/* Hamburger (Neon Style) */
 .hamburger {
-  width:50px;
-  height:50px;
-  padding:8px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:12px;
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px;
   background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9));
   border: 1px solid rgba(0,191,255,0.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.5);
-  transition: transform .15s ease, box-shadow .15s ease, background .15s;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+  cursor: pointer; transition: transform .15s;
+  padding: 8px;
 }
-.hamburger:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(0,0,0,0.55); }
-
-/* ensure the three bars are visible and big */
+.hamburger:hover { transform: translateY(-2px); }
 .hamburger .bar {
-  display:block;
-  width:26px;
-  height:4px;
-  border-radius:4px;
-  margin:3px 0;
+  display: block; width: 24px; height: 3px; border-radius: 3px; margin: 4px 0;
   background: linear-gradient(90deg, #5ef0ff, #00b4ff);
-  box-shadow: 0 4px 18px rgba(0,180,255,0.08);
-  transition: transform .12s ease, opacity .12s;
+  transition: all 0.2s ease;
+}
+.hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hero Section */
+.hero { padding: 80px 0; text-align: center; }
+.hero-avatar {
+  border-radius: 50%; border: 3px solid var(--primary-blue);
+  margin-bottom: 18px; width: 140px; height: 140px; object-fit: cover;
 }
 
-/* smaller active transform — subtle */
-.hamburger.active { transform: translateY(-1px) scale(0.98); }
-
-/* 2) Restore hero badge pill (yellow) — high contrast text on yellow */
-.hero-badge,
-.hero-heading.badge,
-.hero-badge .badge-title,
-.badge-title,
-.hero-title-badge,
-.section-badge {
-  display:inline-block !important;
-  background: linear-gradient(180deg,#ffdf66 0%, #ffd24a 100%) !important;
-  color: #041025 !important; /* dark text on yellow */
-  font-family: 'Chakra Petch', sans-serif !important;
-  font-weight: 800 !important;
-  padding: .56rem 1.05rem !important;
-  border-radius: 14px !important;
-  box-shadow: 0 12px 30px rgba(4,8,16,0.12) !important;
-  text-align: center !important;
-  letter-spacing: .2px !important;
-  margin: 12px 0 !important;
-  max-width: 98% !important;
-  line-height: 1.1 !important;
-  font-size: 1.03rem !important;
-}
-
-/* fix if text was forced white by other rules */
-.hero-badge * { color: inherit !important; }
-
-/* 3) Badge on small screens: reduce padding and font-size */
-@media (max-width:420px) {
-  .hero-badge, .hero-heading.badge {
-    padding: .44rem .7rem !important;
-    font-size: .96rem !important;
-  }
-}
-
-/* 4) CTA buttons — ensure outline has visible text (fix empty/hidden label look) */
-.cta-button {
-  min-height:46px;
-  padding: 10px 18px !important;
-  border-radius: 12px !important;
-  font-weight: 800 !important;
-  font-family: 'Poppins', sans-serif !important;
-  letter-spacing: .2px !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
-
-/* primary filled */
-.cta-button { color: #001018 !important; }
-
-/* outline / secondary */
-.cta-button.cta-secondary,
-.cta-button.btn-outline,
-.button-outline,
-.btn-outline {
-  background: transparent !important;
-  border: 3px solid rgba(0,180,255,0.28) !important;
-  color: #9be6ff !important;
-  padding: 10px 18px !important;
-  box-shadow: 0 8px 28px rgba(0,180,255,0.04) inset, 0 6px 18px rgba(0,0,0,0.35);
-}
-
-/* If outline button looks empty (no text) — show placeholder label (for safety) */
-.cta-button:empty::after {
-  content: "View Services";
-  display:inline-block;
-  font-weight:800;
-  color: #9be6ff;
-  padding: 0 6px;
-}
-
-/* 5) Fix confusing empty box (border-only) by forcing visible border + padding */
-.cta-button[style*="background:transparent"] {
-  border: 3px solid rgba(0,180,255,0.28) !important;
-  min-width: 140px !important;
-  min-height: 44px !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
-
-/* 6) Restore dark transparent box cards that disappeared — ensure contrast */
-.card, .case-panel, .service-card, .project-card, .box, .thank-card, .blog-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
-  border: 1px solid rgba(255,255,255,0.03) !important;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.45) inset, 0 8px 24px rgba(0,0,0,0.45);
-  padding: 16px !important;
-  border-radius: 12px !important;
-}
-
-/* 7) Project / service list buttons (restore pill items look) */
-.services-grid .service-card, .projects-grid .project-card {
-  border-radius: 14px !important;
-  padding: 18px !important;
-}
-
-/* 8) Hero text / paragraph contrast fix — ensure text not blending with background */
-.hero-heading, .lead, .muted, .blog-content p {
-  color: var(--text-light) !important;
-  text-shadow: none !important;
-  opacity: 1 !important;
-}
-
-/* 9) Fix H1/H2 contrast if any were dark (example: services H1) */
-h1, h2, h3, .section-title {
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.45) !important;
-}
-
-/* 10) Footer quick-links / small text color fix */
-.footer-col a, .footer-social a, .muted, small {
-  color: rgba(255,255,255,0.85) !important;
-}
-
-/* 11) Accessibility: increase tappable target for menu and CTAs */
-.hamburger, .cta-button, .icon-link { min-width:44px; min-height:44px; }
-
-/* 12) Defensive: override other high specificity rules (use important where needed) */
-.nav-menu a, .nav-menu-panel a, .nav-menu a:link, .nav-menu a:visited {
-  color: rgba(245,250,255,0.95) !important;
-  font-weight: 700 !important;
-}
-
-/* 13) Small screens: center hero elements and reduce wide margins */
-@media (max-width:560px) {
-  .hero { padding: 40px 16px; }
-  .hero-badge { display:block; margin: 12px auto !important; }
-  .cta-box { display:flex; gap:10px; flex-direction:row; justify-content:center; flex-wrap:wrap; }
-  .services-grid { gap:14px; grid-template-columns: 1fr; }
-}
-
-/* ---------------- End overrides ---------------- */
-
-/* ============================================
-   FIX: Hero Badge & About Badge Text Styling
-   ============================================ */
-
-/* Home Page: Professional Website Developer — Sagor Ahamed */
-.hero-badge,
-.hero-heading.badge {
-  background: linear-gradient(180deg,#ffdf66,#ffd24a);
-  color: #0a0a0a !important;  /* Pure Black Text */
-  font-family: 'Chakra Petch', sans-serif !important;
-  font-weight: 800;
-  font-size: 1.3rem;
-  letter-spacing: 0.2px;
-}
-
-/* About Page Badge */
-.about-badge,
-.about-heading.badge {
-  background: linear-gradient(180deg,#ffdf66,#ffd24a);
-  color: #000000 !important; /* Black text */
-  font-family: 'Chakra Petch', sans-serif !important;
-  font-weight: 800;
-  font-size: 1.3rem;
-  padding: 12px 20px;
-  border-radius: 14px;
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 12px 32px rgba(255,223,102,0.18);
-}
-
-/* PREMIUM HERO BADGE — Ultra Clean, Gold, Modern */
-.hero-heading {
-  display: inline-block;
-  color: #000 !important;
-  font-family: "Poppins", "Inter", sans-serif !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.4px;
-  text-align: center;
-
-  /* Gold glossy background */
-  background: linear-gradient(180deg, #ffe37a 0%, #ffd048 40%, #f8c734 100%);
-  
-  /* Premium padding & shape */
-  padding: 14px 28px;
-  border-radius: 18px;
-
-  /* Thin gold border stroke */
-  border: 2px solid rgba(255, 215, 60, 0.65);
-
-  /* Soft glowing shadow */
-  box-shadow:
-    0 8px 24px rgba(255, 205, 50, 0.28),
-    inset 0 2px 6px rgba(255, 255, 255, 0.35),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.06);
-
-  /* Smooth animation */
-  transition: all 0.25s ease;
-}
-
-/* Hover effect (professional smooth) */
-.hero-heading:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 10px 28px rgba(255, 210, 50, 0.33),
-    inset 0 2px 6px rgba(255, 255, 255, 0.45),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* ============================
-   FIX: Hero Heading + Typing Box Spacing (Final)
-   ============================ */
-
-/* Make space under H1 so typing text never overlaps */
-.hero-heading {
+/* Premium Hero Heading (Gold/Yellow Badge) */
+.hero-heading, .hero-heading-pill, .hero-badge {
   display: inline-block !important;
-  margin-bottom: 34px !important;      /* enough space for typing line */
-  padding-bottom: 6px !important;
-  position: relative !important;
-  z-index: 5 !important;
+  background: linear-gradient(180deg, #ffe37a 0%, #f8c734 100%) !important;
+  color: #041025 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 900 !important;
+  padding: 14px 28px !important;
+  border-radius: 18px !important;
+  border: 2px solid rgba(255, 215, 60, 0.65);
+  box-shadow: 0 10px 30px rgba(255, 205, 50, 0.28);
+  text-shadow: none !important;
+  margin-bottom: 30px !important;
+  line-height: 1.2;
+  font-size: 1.8rem;
 }
 
-/* Desktop spacing little larger */
-@media(min-width:900px){
-  .hero-heading {
-    margin-bottom: 42px !important;
-  }
-}
-
-/* STABILIZE TYPING BOX */
+/* Typing Text */
 .typing-box {
-  margin-top: -12px !important;        /* pull slightly upward for balance */
-  margin-bottom: 12px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  position: relative !important;
-  z-index: 4 !important;
+  margin-top: -15px; margin-bottom: 20px;
+  font-size: 1.2rem; color: #fff; font-weight: 700;
+  display: flex; justify-content: center; gap: 5px;
+}
+.typing-cursor { width: 8px; height: 1.2em; background: #ffdf66; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Buttons (CTA) */
+.cta-button, .btn-demo {
+  padding: 12px 24px; border-radius: 12px;
+  background: linear-gradient(90deg, var(--primary-blue-2), var(--primary-blue));
+  color: #001018 !important; font-weight: 800; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 26px rgba(0,191,255,0.15);
+  transition: transform .18s; border: none;
+  min-height: 48px;
+}
+.cta-button:hover { transform: translateY(-3px); }
+
+.cta-secondary, .btn-outline {
+  background: transparent !important;
+  border: 2px solid var(--primary-blue);
+  color: #9be6ff !important;
 }
 
-/* TYPING TEXT STYLE */
-#typing-text {
-  font-size: 1.22rem !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;
-  font-family: "Poppins", sans-serif !important;
-  letter-spacing: 0.2px !important;
-  white-space: nowrap !important;
+/* Cards (Glassmorphism) */
+.service-card, .project-card, .blog-card, .case-panel, .thank-card {
+  background: linear-gradient(180deg, rgba(14,16,30,0.9), rgba(10,10,26,0.95));
+  padding: 24px; border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.service-card:hover, .project-card:hover { transform: translateY(-8px); border-color: var(--primary-blue); }
+
+/* Grids */
+.services-grid, .projects-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
 }
 
-/* CURSOR FIX */
-.typing-cursor {
-  width: 10px !important;
-  height: 1.2em !important;
-  background: #ffdf66 !important;
-  border-radius: 2px !important;
-  animation: blink 0.8s infinite !important;
+/* Footer */
+.site-footer {
+  padding: 40px 0 20px; background: #050614; border-top: 1px solid rgba(255,255,255,0.03);
+  text-align: center;
 }
-
-@keyframes blink {
-  0% { opacity: 1 }
-  50% { opacity: 0 }
-  100% { opacity: 1 }
+.social-icons { display: flex; gap: 14px; justify-content: center; margin: 15px 0; }
+.icon-link {
+  width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.05); color: var(--primary-blue-2); border-radius: 12px;
+  transition: 0.3s;
 }
+.icon-link:hover { background: var(--primary-blue); color: #000; transform: translateY(-3px); }
 
-/* Extra fix for mobile */
-@media(max-width:600px){
-  #typing-text { font-size: 1.05rem !important; }
-  .typing-box { margin-top: -10px !important; }
+/* Forms */
+input, textarea, select {
+  width: 100%; padding: 14px; border-radius: 12px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+  color: #fff; margin-bottom: 16px; font-family: inherit;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--primary-blue); }
+
+/* Responsive */
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .nav-menu-panel { display: none; }
+}
+@media (max-width: 900px) {
+  .nav-menu { display: none; } /* Hide desktop menu */
+  .hamburger { display: inline-flex; }
+  .hero-heading { font-size: 1.3rem; padding: 12px 20px !important; }
+  .two-col { grid-template-columns: 1fr !important; }
 }
