@@ -1,5 +1,5 @@
 /* ===================================================================
-   CryptoWebBuild — Consolidated Styles (All Fixes Included)
+   CryptoWebBuild — Final CSS (Merged & Exact)
    =================================================================== */
 
 :root {
@@ -10,16 +10,14 @@
   --secondary-purple: #8A2BE2;
   --text-light: #e0e0e0;
   --muted: rgba(255,255,255,0.66);
-  /* Updated Card BG for better contrast */
-  --card-bg: linear-gradient(180deg, rgba(16,16,38,0.95), rgba(12,12,30,0.95)); 
+  --card-bg: #10102a; /* Fallback */
   --border-color: rgba(255,255,255,0.05);
   --header-font: 'Chakra Petch', sans-serif;
   --body-font: 'Poppins', sans-serif;
-  --glass: rgba(255,255,255,0.03);
   --max-width: 1200px;
 }
 
-/* --- Base & Reset --- */
+/* --- PART 1: MAIN CSS (Base) --- */
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
 body {
@@ -28,197 +26,178 @@ body {
   color: var(--text-light);
   font-family: var(--body-font);
   line-height: 1.6;
-  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
-
 .container { width: min(var(--max-width), 92%); margin: 0 auto; }
 
-/* --- Typography (Forcing High Contrast) --- */
-h1, h2, h3, h4, h5, .section-title, .case-title {
+/* Typography */
+h1, h2, h3, h4, h5, .section-title {
   font-family: var(--header-font);
-  color: #ffffff !important; /* Ensure headings are white */
-  text-shadow: none !important;
-  margin: 0 0 1rem;
+  color: #fff; margin: 0 0 1rem;
 }
-p, li { color: var(--text-light); opacity: 0.96; margin-bottom: 1rem; }
+p { margin-bottom: 1rem; opacity: 0.9; }
 a { color: var(--primary-blue-2); text-decoration: none; transition: 0.2s; }
 a:hover { color: #fff; }
-.lead { max-width: 920px; margin: 12px auto 0; color: var(--muted); font-size: 1.05rem; }
 
-/* --- Header --- */
+/* Header */
 .header {
-  background: rgba(10,10,26,0.96);
+  background: rgba(10,10,26,0.95);
   position: sticky; top: 0; z-index: 1000;
   padding: 12px 0; border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
 }
 .navbar { display: flex; align-items: center; justify-content: space-between; }
-.nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; letter-spacing: 0.8px; }
+.nav-logo { font-family: var(--header-font); font-weight: 800; color: var(--primary-blue); font-size: 20px; }
 
-/* --- Desktop Menu --- */
-.nav-menu { display: flex; gap: 18px; list-style: none; padding: 0; margin: 0; }
-.nav-menu a { 
-  color: rgba(250,250,255,0.96) !important; 
-  font-weight: 700; padding: 8px 12px; 
-  border-radius: 8px; transition: 0.2s; 
+/* Menu (Base) */
+.nav-menu { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; }
+.nav-menu a { color: #f5faff; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+.nav-menu a:hover { color: var(--primary-blue); background: rgba(0,191,255,0.08); }
+
+/* Hero */
+.hero { padding: 72px 0 60px; text-align: center; }
+.hero-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary-blue); object-fit: cover; margin-bottom: 18px; }
+
+/* Typing */
+.typing-box { 
+  margin-top: -10px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 32px;
 }
-.nav-menu a:hover { color: #34e7ff !important; background: rgba(52,231,255,0.08); }
+#typing-text { font-size: 1.2rem; font-weight: 700; color: #fff; }
+.typing-cursor { width: 10px; height: 1.2em; background: #ffdf66; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-/* --- HAMBURGER: PREMIUM NEON STYLE (Your Requested Fix) --- */
+/* Buttons */
+.cta-box { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.cta-button, .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 24px; border-radius: 12px; font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-blue-2), var(--primary-blue));
+  color: #001018 !important; border: none; cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,191,255,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); }
+
+/* Cards */
+.services-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.service-card, .project-card, .box {
+  background: var(--card-bg); padding: 20px; border-radius: 14px;
+  border: 1px solid var(--border-color); transition: 0.3s;
+}
+.project-img { width: 100%; height: auto; max-height: 240px; object-fit: cover; border-radius: 8px; }
+.service-icon { font-size: 32px; color: var(--primary-blue); margin-bottom: 12px; }
+
+/* Footer */
+.site-footer { background: #050614; padding: 40px 0 20px; border-top: 1px solid var(--border-color); font-size: 0.9rem; margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+.copy-email { cursor: pointer; background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 6px; color: var(--primary-blue); }
+
+/* Utils */
+.fade-in { opacity: 0; transform: translateY(12px); transition: 0.6s; }
+.fade-in.is-visible { opacity: 1; transform: none; }
+
+/* --- PART 2: FIXES & OVERRIDES (The "Hubuhu Same" Logic) --- */
+/* This section contains your specific "Fix" CSS. The !important tags ensure they work. */
+
+/* 1. HERO BADGE: GOLD GLOSSY & BLACK TEXT */
+.hero-heading, .hero-badge {
+  display: inline-block !important;
+  color: #000000 !important; /* Force Black Text */
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.4px;
+  /* The Gold Gradient */
+  background: linear-gradient(180deg, #ffe37a 0%, #ffd048 40%, #f8c734 100%) !important;
+  padding: 14px 28px !important;
+  border-radius: 18px !important;
+  border: 2px solid rgba(255, 215, 60, 0.65) !important;
+  box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4) !important;
+  margin-bottom: 40px !important; /* Ensure space for typing */
+  position: relative; z-index: 5;
+}
+.hero-heading:hover { transform: translateY(-2px); }
+
+/* 2. HAMBURGER: NEON STYLE (Large, Gradient, Glow) */
 .hamburger {
-  display: none; /* Desktop hidden */
-  width: 50px; height: 50px;
+  display: none; /* Hidden on desktop */
+  width: 50px !important; height: 50px !important;
   align-items: center; justify-content: center;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9));
-  border: 1px solid rgba(0,191,255,0.08);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  border-radius: 12px !important;
+  background: linear-gradient(180deg, rgba(6,8,18,0.75), rgba(8,10,20,0.9)) !important;
+  border: 1px solid rgba(0,191,255,0.08) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;
   padding: 8px; cursor: pointer; z-index: 2200;
   transition: transform .15s, box-shadow .15s;
-  position: relative;
 }
-.hamburger:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.6); }
+.hamburger:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.6) !important; }
 
-.hamburger .bars { display: flex; flex-direction: column; gap: 5px; align-items: center; }
+/* Ensure the bars column aligns correctly */
+.hamburger .bars { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  gap: 5px !important; 
+  align-items: center !important; 
+  justify-content: center !important;
+}
+
+/* The Neon Bars */
 .hamburger .bar {
-  width: 26px; height: 4px; border-radius: 4px; display: block;
-  background: linear-gradient(90deg, #5ef0ff, #00b4ff);
-  box-shadow: 0 0 10px rgba(0,191,255,0.4); /* Neon Glow */
+  width: 26px !important; height: 4px !important; 
+  border-radius: 4px !important; display: block !important;
+  background: linear-gradient(90deg, #5ef0ff, #00b4ff) !important;
+  box-shadow: 0 0 10px rgba(0,191,255,0.4) !important; /* Neon Glow */
   transition: transform 0.25s, opacity 0.2s;
+  margin: 0 !important; /* Remove default margins if any */
 }
 
-/* Active State (X Animation) */
+/* Active State (X) */
 .hamburger.active { transform: scale(0.95); }
 .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .hamburger.active .bar:nth-child(2) { opacity: 0; transform: scale(0.1); }
 .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-/* --- Mobile Menu Panel (Dark & Glass) --- */
+/* 3. MOBILE MENU PANEL (Fix) */
 @media (max-width: 900px) {
   .nav-menu {
-    display: none; /* Standard hide */
-    position: absolute; top: 100%; right: 16px; 
-    min-width: 240px; flex-direction: column; gap: 8px;
-    background: linear-gradient(180deg, rgba(8,10,24,0.99), rgba(6,8,18,0.99));
-    padding: 16px; border-radius: 14px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.75);
+    display: none;
+    position: absolute !important; top: 100% !important; right: 16px !important; 
+    min-width: 240px !important; flex-direction: column !important; gap: 8px !important;
+    background: linear-gradient(180deg, rgba(8,10,24,0.99), rgba(6,8,18,0.99)) !important;
+    padding: 16px !important; border-radius: 14px !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.75) !important;
   }
-  .nav-menu.active { display: flex; animation: fadeInMenu 0.2s ease-out forwards; }
-  .hamburger { display: inline-flex; }
+  .nav-menu.active { display: flex !important; animation: fadeInMenu 0.2s ease-out forwards; }
+  .hamburger { display: inline-flex !important; }
+  
+  .nav-menu a { color: #fff !important; font-size: 1.05rem !important; }
 }
 @keyframes fadeInMenu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- HERO SECTION --- */
-.hero { padding: 80px 0 60px; text-align: center; }
-.hero-avatar { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--primary-blue); object-fit: cover; margin-bottom: 20px; }
-
-/* GOLD BADGE HERO HEADING (Premium Style Fix) */
-.hero-heading, .hero-badge {
-  display: inline-block !important;
-  color: #000000 !important; /* Black Text */
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.4px;
-  /* Gold Gradient */
-  background: linear-gradient(180deg, #ffe37a 0%, #ffd048 40%, #f8c734 100%);
-  padding: 14px 28px;
-  border-radius: 18px;
-  border: 2px solid rgba(255, 215, 60, 0.65);
-  box-shadow: 0 8px 24px rgba(255, 205, 50, 0.28), inset 0 2px 6px rgba(255,255,255,0.4);
-  margin-bottom: 40px !important; /* Space for typing */
-  position: relative; z-index: 5;
-}
-.hero-heading:hover { transform: translateY(-2px); }
-
-/* Typing Box */
-.typing-box { 
-  margin-top: -15px; margin-bottom: 24px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 34px;
-}
-#typing-text { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
-.typing-cursor { width: 10px; height: 1.2em; background: #ffdf66; animation: blink 0.9s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-
-/* --- CTA Buttons (Fixed & Clean) --- */
-.cta-box { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-
-.cta-button, .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: 48px; padding: 10px 24px;
-  background: linear-gradient(90deg, var(--primary-blue-2), var(--primary-blue));
-  color: #001018 !important; font-weight: 800; 
-  border-radius: 12px; border: none; cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,191,255,0.15);
-  transition: transform 0.2s, box-shadow 0.2s;
-  font-size: 1rem; text-decoration: none;
-}
-.cta-button:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,191,255,0.25); opacity: 0.98; }
-
-/* Outline / Secondary Button Fix */
+/* 4. CTA & CARD FIXES (Hide Empty / Better Contrast) */
 .cta-secondary, .btn-outline {
   background: transparent !important;
   border: 2px solid rgba(0,180,255,0.5) !important;
   color: #9be6ff !important;
-  box-shadow: none;
 }
-.cta-secondary:hover { background: rgba(0,191,255,0.05) !important; border-color: #00d1ff !important; color: #fff !important; }
+.cta-secondary:hover { background: rgba(0,191,255,0.05) !important; color: #fff !important; }
 
-/* --- Cards (Services, Projects, Simple Boxes) --- */
-.services-grid, .projects-grid, .blog-list-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-
-/* Unified Dark Card Style */
-.service-card, .project-card, .blog-card, .box, .simple-box, .quick-box {
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border-color) !important;
-  padding: 22px; border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  transition: transform 0.3s, border-color 0.3s;
+/* Card Darker Background Fix */
+.service-card, .project-card, .box, .simple-box {
+  background: linear-gradient(180deg, rgba(16,16,38,0.95), rgba(12,12,30,0.95)) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important;
 }
-.service-card:hover, .project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0,191,255,0.3) !important;
-}
+.service-card:hover, .project-card:hover { border-color: rgba(0,191,255,0.3) !important; }
 
-.service-icon { font-size: 36px; margin-bottom: 14px; color: var(--primary-blue); }
-.project-img { width: 100%; height: auto; max-height: 250px; object-fit: cover; border-radius: 8px; display: block; }
-.project-body { padding-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+/* Headings Force White */
+h1, h2, h3, .section-title { color: #fff !important; text-shadow: none !important; }
 
-/* Quick Links / Simple Boxes Text */
-.simple-box, .quick-box, .quick-links a {
-  color: #eafcff !important; text-decoration: none; font-weight: 700; display: block;
-}
-
-/* --- Footer --- */
-.site-footer { background: #050614; padding: 40px 0 20px; border-top: 1px solid var(--border-color); font-size: 0.92rem; margin-top: 60px; }
-.footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 1fr; gap: 30px; margin-bottom: 30px; }
-.footer-col h4 { color: #fff; margin-bottom: 16px; font-size: 1.1rem; }
-.footer-col a, .muted { color: rgba(255,255,255,0.65) !important; display: block; margin-bottom: 8px; }
-.footer-col a:hover { color: var(--primary-blue) !important; text-decoration: underline; }
-
-.copy-email { 
-  cursor: pointer; background: rgba(255,255,255,0.05); 
-  padding: 6px 12px; border-radius: 6px; 
-  color: var(--primary-blue); font-size: 0.85rem; border: none; 
-}
-
-/* --- Animation & Utilities --- */
-.fade-in { opacity: 0; transform: translateY(12px); transition: opacity 0.6s, transform 0.6s; }
-.fade-in.is-visible { opacity: 1; transform: none; }
-.back-to-top { z-index: 2500 !important; }
-input, textarea, select {
-  width: 100%; padding: 14px; border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);
-  color: #fff; margin-bottom: 12px;
-}
-
-/* --- Mobile Tweaks --- */
+/* Responsive Footer */
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr; text-align: center; }
-  .hero-heading { font-size: 1.1rem; padding: 12px 20px; }
-  .section-title { font-size: 1.7rem; }
-  .cta-box { flex-direction: column; width: 100%; align-items: stretch; }
+  .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .cta-box { flex-direction: column; width: 100%; }
   .cta-button { width: 100%; }
-  .quick-links { display: flex; flex-direction: column; gap: 10px; }
 }
