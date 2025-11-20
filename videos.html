@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>AI Coding Projects — Mobile Apps & Game Dev — CryptoWebBuild</title>
-  <meta name="description" content="Watch AI coding tutorials: Building Android apps on mobile without a laptop and challenging AI (ChatGPT vs Claude) to recreate GTA 6." />
+  <title>AI Coding Video — Mobile Apps & Game Dev — CryptoWebBuild</title>
+  <meta name="description" content="Watch AI coding videos: Building Android apps on mobile without a laptop and challenging AI (ChatGPT vs Claude) to recreate GTA 6." />
   <link rel="canonical" href="https://cryptowebbuild.com/videos" />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="AI Coding Projects — CryptoWebBuild" />
+  <meta property="og:title" content="AI Coding Video — CryptoWebBuild" />
   <meta property="og:description" content="Tutorials on mobile app building with AI and an AI game dev showdown: ChatGPT vs Claude building GTA 6." />
   <meta property="og:url" content="https://cryptowebbuild.com/videos" />
   <meta property="og:image" content="https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
@@ -64,7 +64,7 @@
       font-size: 0.95rem;
     }
 
-    /* Highlights List Style */
+    /* Highlights Box */
     .highlights-box {
       margin-top: 15px;
       padding: 15px;
@@ -76,7 +76,7 @@
     .highlights-box ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
     .highlights-box li { margin-bottom: 4px; }
 
-    /* New Beautiful Buttons */
+    /* Buttons */
     .cta-row { 
       margin-top:20px; 
       display:flex; 
@@ -96,7 +96,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
-    /* YouTube Button (Red Gradient) */
+    /* YouTube Button */
     .btn-yt {
       background: linear-gradient(135deg, #ff0000 0%, #c20000 100%);
       color: #fff;
@@ -104,7 +104,7 @@
     }
     .btn-yt:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5); }
     
-    /* Subscribe Button (Glass/Outline) */
+    /* Subscribe Button */
     .btn-sub {
       background: rgba(255,255,255,0.1);
       color: #fff;
@@ -113,17 +113,61 @@
     }
     .btn-sub:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
-    /* Icons in buttons */
     .btn-icon { width: 18px; height: 18px; fill: currentColor; }
-
     .spacer-block { height: 60px; }
     .muted { color: rgba(255,255,255,0.66); }
+
+    /* --- NEW HIRE ME SECTION STYLES --- */
+    .hire-cta-section {
+      max-width: 980px;
+      margin: 80px auto 0;
+      padding: 50px 20px;
+      background: linear-gradient(180deg, rgba(0,198,255,0.08) 0%, rgba(0,114,255,0.02) 100%);
+      border: 1px solid rgba(0,198,255,0.15);
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hire-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hire-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 12px; font-family: 'Chakra Petch', sans-serif; }
+    .hire-text { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem; }
+    
+    .btn-hire {
+      display: inline-block;
+      padding: 16px 42px;
+      background: #fff;
+      color: #000;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-hire:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255,255,255,0.4);
+      background: #f0f0f0;
+    }
     
     @media (max-width:720px){ 
       .video-player { margin:15px; } 
       .video-meta { text-align: center; }
       .cta-row { justify-content: center; }
       .highlights-box { text-align: left; }
+      .hire-cta-section { margin: 60px 15px 0; padding: 40px 15px; }
+      .hire-title { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -150,7 +194,7 @@
   <main id="main-content" tabindex="-1">
     <section class="videos-hero fade-in" aria-labelledby="video-heading">
       <div class="container">
-        <h1 id="video-heading" class="section-title">AI Coding Projects</h1>
+        <h1 id="video-heading" class="section-title">AI Coding Video</h1>
         <p class="muted">Experimental coding challenges: Mobile Apps & Game Development with AI.</p>
 
         <div class="video-player" role="region" aria-label="Video: Mobile App Build">
@@ -204,7 +248,7 @@
             <h2 class="video-title">I Challenged AI to Build GTA 6 (ChatGPT vs Claude)</h2>
             <p class="video-desc">I challenged both ChatGPT and Claude to build GTA 6 from scratch. See the results: ChatGPT attempts a 3D environment while Claude builds a polished 2D top-down shooter with working police chase mechanics.</p>
 
-             <div class="highlights-box">
+            <div class="highlights-box">
               <h4>Key Takeaways</h4>
               <ul>
                 <li>ChatGPT's 3D generation attempt</li>
@@ -223,6 +267,12 @@
               </a>
             </div>
           </div>
+        </div>
+
+        <div class="hire-cta-section">
+          <h2 class="hire-title">Need a Custom Website or App?</h2>
+          <p class="hire-text">I build professional crypto websites, mobile apps, and AI-integrated solutions. Let's bring your idea to life.</p>
+          <a href="/contact" class="btn-hire">Hire Me</a>
         </div>
 
       </div>
