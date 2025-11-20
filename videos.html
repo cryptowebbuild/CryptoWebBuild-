@@ -4,77 +4,130 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Token Launch Walkthrough — Video — CryptoWebBuild</title>
-  <meta name="description" content="Watch the Token Launch Walkthrough by CryptoWebBuild — step-by-step demo of a token launch website, presale pages and integrations." />
+  <title>AI Coding Projects — Mobile Apps & Game Dev — CryptoWebBuild</title>
+  <meta name="description" content="Watch AI coding tutorials: Building Android apps on mobile without a laptop and challenging AI (ChatGPT vs Claude) to recreate GTA 6." />
   <link rel="canonical" href="https://cryptowebbuild.com/videos" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="Token Launch Walkthrough — CryptoWebBuild" />
-  <meta property="og:description" content="Step-by-step token launch walkthrough: landing page, tokenomics and presale flow by CryptoWebBuild." />
+  <meta property="og:title" content="AI Coding Projects — CryptoWebBuild" />
+  <meta property="og:description" content="Tutorials on mobile app building with AI and an AI game dev showdown: ChatGPT vs Claude building GTA 6." />
   <meta property="og:url" content="https://cryptowebbuild.com/videos" />
   <meta property="og:image" content="https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
-  <meta property="og:image:alt" content="Token Launch Walkthrough thumbnail" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="player" />
-  <meta name="twitter:title" content="Token Launch Walkthrough — CryptoWebBuild" />
-  <meta name="twitter:description" content="Step-by-step token launch walkthrough: landing page, tokenomics and presale flow." />
-  <meta name="twitter:image" content="https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
-
-  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Structured Data: VideoObject for the main video -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    "name": "Token Launch Walkthrough — CryptoWebBuild",
-    "description": "Quick walkthrough of a token launch site built by CryptoWebBuild: landing page, tokenomics, presale flow and integrations.",
-    "thumbnailUrl": "https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg",
-    "uploadDate": "2025-01-15",
-    "duration": "PT8M12S",
-    "contentUrl": "https://youtu.be/nRlcTomEEqc",
-    "embedUrl": "https://www.youtube.com/embed/nRlcTomEEqc",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CryptoWebBuild",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/favicon-192x192.png"
-      }
-    }
-  }
-  </script>
-
-  <!-- Fonts + global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 
   <style>
-    /* Page-specific minor styles */
-    .videos-hero { padding:56px 0; text-align:center; }
-    .video-player { max-width:980px; margin:22px auto; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 8px 30px rgba(0,0,0,0.5); }
+    /* Page-specific styles */
+    .videos-hero { padding:60px 0; text-align:center; }
+    
+    .video-player { 
+      max-width:980px; 
+      margin:30px auto; 
+      border-radius:16px; 
+      overflow:hidden; 
+      background:#0b0e11; 
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:0 12px 40px rgba(0,0,0,0.6); 
+    }
+    
     .video-responsive { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
     .video-responsive iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-    .video-meta { padding:14px; background:rgba(255,255,255,0.02); color:var(--text-light); }
-    .video-title { margin:0 0 6px; font-size:1.15rem; font-weight:700; }
-    .video-desc { margin:6px 0 0; color:rgba(255,255,255,0.78); line-height:1.55; }
-    .cta-row { margin-top:14px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
-    .btn-visit { padding:10px 16px; border-radius:10px; font-weight:700; background:linear-gradient(90deg,#00c6ff,#0072ff); color:#001018; text-decoration:none; }
+    
+    .video-meta { 
+      padding:20px 24px; 
+      background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,1) 100%);
+      color:var(--text-light); 
+      text-align: left;
+    }
+    
+    .video-title { 
+      margin:0 0 8px; 
+      font-size:1.3rem; 
+      font-weight:700; 
+      color: #fff;
+      font-family: 'Chakra Petch', sans-serif;
+    }
+    
+    .video-desc { 
+      margin:0 0 16px; 
+      color:rgba(255,255,255,0.7); 
+      line-height:1.6; 
+      font-size: 0.95rem;
+    }
+
+    /* Highlights List Style */
+    .highlights-box {
+      margin-top: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      border-left: 3px solid #00c6ff;
+    }
+    .highlights-box h4 { margin: 0 0 8px; color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+    .highlights-box ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .highlights-box li { margin-bottom: 4px; }
+
+    /* New Beautiful Buttons */
+    .cta-row { 
+      margin-top:20px; 
+      display:flex; 
+      gap:12px; 
+      flex-wrap:wrap; 
+    }
+    
+    .btn-action { 
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding:10px 20px; 
+      border-radius:50px; 
+      font-weight:600; 
+      font-size: 0.9rem;
+      text-decoration:none; 
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    /* YouTube Button (Red Gradient) */
+    .btn-yt {
+      background: linear-gradient(135deg, #ff0000 0%, #c20000 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    }
+    .btn-yt:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5); }
+    
+    /* Subscribe Button (Glass/Outline) */
+    .btn-sub {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+    }
+    .btn-sub:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    /* Icons in buttons */
+    .btn-icon { width: 18px; height: 18px; fill: currentColor; }
+
+    .spacer-block { height: 60px; }
     .muted { color: rgba(255,255,255,0.66); }
-    @media (max-width:720px){ .video-player { margin:12px; } }
+    
+    @media (max-width:720px){ 
+      .video-player { margin:15px; } 
+      .video-meta { text-align: center; }
+      .cta-row { justify-content: center; }
+      .highlights-box { text-align: left; }
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header" role="banner">
     <nav class="navbar container" role="navigation" aria-label="Primary">
       <a href="/" class="nav-logo" aria-label="CryptoWebBuild home">CWB</a>
@@ -97,65 +150,98 @@
   <main id="main-content" tabindex="-1">
     <section class="videos-hero fade-in" aria-labelledby="video-heading">
       <div class="container">
-        <h1 id="video-heading" class="section-title">Token Launch Walkthrough</h1>
-        <p class="muted">Step-by-step demo: landing page, tokenomics, presale and integrations.</p>
+        <h1 id="video-heading" class="section-title">AI Coding Projects</h1>
+        <p class="muted">Experimental coding challenges: Mobile Apps & Game Development with AI.</p>
 
-        <!-- Main video player (single embedded video) -->
-        <div class="video-player" role="region" aria-label="Featured video: Token Launch Walkthrough">
+        <div class="video-player" role="region" aria-label="Video: Mobile App Build">
           <div class="video-responsive">
             <iframe
               src="https://www.youtube.com/embed/nRlcTomEEqc?rel=0&modestbranding=1"
-              title="Token Launch Walkthrough — CryptoWebBuild"
+              title="Build an Android App on Mobile (No Laptop!)"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           </div>
 
           <div class="video-meta">
-            <h2 class="video-title">Token Launch Walkthrough — CryptoWebBuild</h2>
-            <p class="video-desc">In this walkthrough I demonstrate a typical token launch website: tokenomics section, presale form, analytics and important integrations (WalletConnect, price API). Watch for deployment tips and SEO setup for faster indexing.</p>
+            <h2 class="video-title">Build Android App on Mobile (No Laptop!) | AI + No Code</h2>
+            <p class="video-desc">I demonstrate how to create a functional homework solver app using just a mobile phone. We use Claude AI to generate the code, Quick Editor to build it, and Infinity Free for hosting—plus how to monetize with AdsTerra.</p>
+
+            <div class="highlights-box">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Full mobile dev workflow (No PC needed)</li>
+                <li>Generating app code with Claude AI</li>
+                <li>Free hosting setup & Monetization</li>
+              </ul>
+            </div>
 
             <div class="cta-row" role="group" aria-label="Video actions">
-              <a class="btn-visit" href="https://youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
-              <a class="btn-visit" href="/contact">Request a similar site</a>
+              <a class="btn-action btn-yt" href="https://youtu.be/nRlcTomEEqc" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                Watch on YouTube
+              </a>
+              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+                Subscribe
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Short transcript / highlights (helps SEO & accessibility) -->
-        <div style="max-width:920px;margin:18px auto;text-align:left;">
-          <h3 style="margin-top:0;">Highlights</h3>
-          <ul class="muted">
-            <li>Landing page structure & speed best practices</li>
-            <li>Tokenomics layout and on-page copy that converts</li>
-            <li>Presale flow, form security and analytics</li>
-            <li>Integration with price APIs and WalletConnect</li>
-          </ul>
+        <div class="spacer-block"></div>
 
-          <p class="muted" style="margin-top:12px;">Prefer a private walkthrough or a custom demo for your token? <a href="/contact" class="internal-link">Contact me</a> — I’ll prepare a tailored plan.</p>
+        <div class="video-player" role="region" aria-label="Video: AI GTA 6 Challenge">
+          <div class="video-responsive">
+            <iframe
+              src="https://www.youtube.com/embed/v2ypUO0cr7Q?rel=0&modestbranding=1"
+              title="I Challenged AI to Build GTA 6"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="video-meta">
+            <h2 class="video-title">I Challenged AI to Build GTA 6 (ChatGPT vs Claude)</h2>
+            <p class="video-desc">I challenged both ChatGPT and Claude to build GTA 6 from scratch. See the results: ChatGPT attempts a 3D environment while Claude builds a polished 2D top-down shooter with working police chase mechanics.</p>
+
+             <div class="highlights-box">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>ChatGPT's 3D generation attempt</li>
+                <li>Claude's advanced 2D game logic</li>
+                <li>"Wanted" level system implementation</li>
+              </ul>
+            </div>
+
+            <div class="cta-row" role="group" aria-label="Video actions">
+              <a class="btn-action btn-yt" href="https://youtu.be/v2ypUO0cr7Q" target="_blank" rel="noopener noreferrer">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                Watch on YouTube
+              </a>
+              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+                Subscribe
+              </a>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer: social icons + copyright (no quick links or email shown here) -->
   <footer class="site-footer" role="contentinfo" aria-label="Footer">
     <div class="container footer-grid" style="grid-template-columns:1fr; gap:12px;">
       <div style="text-align:center;">
         <div class="social-icons" aria-label="Social links" style="justify-content:center;">
           <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-            <!-- svg icon -->
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg>
           </a>
-
           <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg>
           </a>
-
           <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg>
           </a>
-
           <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg>
           </a>
@@ -168,7 +254,6 @@
     </div>
   </footer>
 
-  <!-- Main script -->
   <script src="/script.js" defer></script>
 
   <script>
