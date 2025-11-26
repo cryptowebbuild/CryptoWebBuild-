@@ -4,21 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>AI Coding Video — Mobile Apps & Game Dev — CryptoWebBuild</title>
-  <meta name="description" content="Watch AI coding videos: Building Android apps on mobile without a laptop and challenging AI (ChatGPT vs Claude) to recreate GTA 6." />
+  <title>AI Coding Video — Mobile Apps, Game Dev & Sora 2 — CryptoWebBuild</title>
+  <meta name="description" content="Watch AI coding videos: Building Android apps, challenging AI to recreate GTA 6, and testing Sora 2 for game generation." />
   <link rel="canonical" href="https://cryptowebbuild.com/videos" />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="video.other" />
   <meta property="og:title" content="AI Coding Video — CryptoWebBuild" />
-  <meta property="og:description" content="Tutorials on mobile app building with AI and an AI game dev showdown: ChatGPT vs Claude building GTA 6." />
+  <meta property="og:description" content="Tutorials on mobile app building, AI game dev showdowns, and Sora 2 game generation experiments." />
   <meta property="og:url" content="https://cryptowebbuild.com/videos" />
-  <meta property="og:image" content="https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg" />
+  <meta property="og:image" content="https://img.youtube.com/vi/erslja3K9TI/maxresdefault.jpg" />
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Build an Android App on Mobile (No Laptop!)",
+      "description": "Full guide on creating a homework solver app using only a mobile phone and AI tools like Claude.",
+      "thumbnailUrl": "https://img.youtube.com/vi/nRlcTomEEqc/maxresdefault.jpg",
+      "uploadDate": "2025-11-04",
+      "duration": "PT4M57S",
+      "contentUrl": "https://youtu.be/nRlcTomEEqc",
+      "embedUrl": "https://www.youtube.com/embed/nRlcTomEEqc",
+      "publisher": { "@type": "Organization", "name": "CryptoWebBuild", "logo": { "@type": "ImageObject", "url": "https://cryptowebbuild.com/favicon-192x192.png" } }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "I Challenged AI to Build GTA 6 From Scratch",
+      "description": "A coding battle between ChatGPT and Claude AI to see who can build a better version of GTA 6.",
+      "thumbnailUrl": "https://img.youtube.com/vi/v2ypUO0cr7Q/maxresdefault.jpg",
+      "uploadDate": "2025-11-20",
+      "duration": "PT4M46S",
+      "contentUrl": "https://youtu.be/v2ypUO0cr7Q",
+      "embedUrl": "https://www.youtube.com/embed/v2ypUO0cr7Q",
+      "publisher": { "@type": "Organization", "name": "CryptoWebBuild", "logo": { "@type": "ImageObject", "url": "https://cryptowebbuild.com/favicon-192x192.png" } }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "I Asked Sora 2 to Make Video Games (Scary Real)",
+      "description": "Testing Sora 2 AI to generate realistic gameplay footage for Minecraft, Roblox, GTA, and more.",
+      "thumbnailUrl": "https://img.youtube.com/vi/erslja3K9TI/maxresdefault.jpg",
+      "uploadDate": "2025-11-26",
+      "duration": "PT10M17S",
+      "contentUrl": "https://youtu.be/erslja3K9TI",
+      "embedUrl": "https://www.youtube.com/embed/erslja3K9TI",
+      "publisher": { "@type": "Organization", "name": "CryptoWebBuild", "logo": { "@type": "ImageObject", "url": "https://cryptowebbuild.com/favicon-192x192.png" } }
+    }
+  ]
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,23 +118,12 @@
     .highlights-box li { margin-bottom: 4px; }
 
     /* Buttons */
-    .cta-row { 
-      margin-top:20px; 
-      display:flex; 
-      gap:12px; 
-      flex-wrap:wrap; 
-    }
+    .cta-row { margin-top:20px; display:flex; gap:12px; flex-wrap:wrap; }
     
     .btn-action { 
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding:10px 20px; 
-      border-radius:50px; 
-      font-weight:600; 
-      font-size: 0.9rem;
-      text-decoration:none; 
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding:10px 20px; border-radius:50px; font-weight:600; font-size: 0.9rem;
+      text-decoration:none; transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
     /* YouTube Button */
@@ -106,10 +136,8 @@
     
     /* Subscribe Button */
     .btn-sub {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(4px);
+      background: rgba(255,255,255,0.1); color: #fff;
+      border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);
     }
     .btn-sub:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
@@ -117,55 +145,31 @@
     .spacer-block { height: 60px; }
     .muted { color: rgba(255,255,255,0.66); }
 
-    /* --- NEW HIRE ME SECTION STYLES --- */
+    /* --- HIRE ME SECTION --- */
     .hire-cta-section {
-      max-width: 980px;
-      margin: 80px auto 0;
-      padding: 50px 20px;
+      max-width: 980px; margin: 80px auto 0; padding: 50px 20px;
       background: linear-gradient(180deg, rgba(0,198,255,0.08) 0%, rgba(0,114,255,0.02) 100%);
-      border: 1px solid rgba(0,198,255,0.15);
-      border-radius: 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(0,198,255,0.15); border-radius: 20px;
+      text-align: center; position: relative; overflow: hidden;
     }
     .hire-cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 70%);
-      pointer-events: none;
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(0,198,255,0.1) 0%, transparent 70%); pointer-events: none;
     }
     .hire-title { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 12px; font-family: 'Chakra Petch', sans-serif; }
     .hire-text { color: rgba(255,255,255,0.75); margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.05rem; }
     
     .btn-hire {
-      display: inline-block;
-      padding: 16px 42px;
-      background: #fff;
-      color: #000;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 25px rgba(255,255,255,0.15);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      display: inline-block; padding: 16px 42px; background: #fff; color: #000;
+      font-weight: 700; border-radius: 50px; text-decoration: none;
+      transition: all 0.3s ease; box-shadow: 0 0 25px rgba(255,255,255,0.15);
+      text-transform: uppercase; letter-spacing: 1px;
     }
-    .btn-hire:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255,255,255,0.4);
-      background: #f0f0f0;
-    }
+    .btn-hire:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,255,255,0.4); background: #f0f0f0; }
     
     @media (max-width:720px){ 
-      .video-player { margin:15px; } 
-      .video-meta { text-align: center; }
-      .cta-row { justify-content: center; }
-      .highlights-box { text-align: left; }
+      .video-player { margin:15px; } .video-meta { text-align: center; }
+      .cta-row { justify-content: center; } .highlights-box { text-align: left; }
       .hire-cta-section { margin: 60px 15px 0; padding: 40px 15px; }
       .hire-title { font-size: 1.6rem; }
     }
@@ -195,22 +199,15 @@
     <section class="videos-hero fade-in" aria-labelledby="video-heading">
       <div class="container">
         <h1 id="video-heading" class="section-title">AI Coding Video</h1>
-        <p class="muted">Experimental coding challenges: Mobile Apps & Game Development with AI.</p>
+        <p class="muted">Experimental coding challenges: Mobile Apps, Game Dev & Generative AI.</p>
 
         <div class="video-player" role="region" aria-label="Video: Mobile App Build">
           <div class="video-responsive">
-            <iframe
-              src="https://www.youtube.com/embed/nRlcTomEEqc?rel=0&modestbranding=1"
-              title="Build an Android App on Mobile (No Laptop!)"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/nRlcTomEEqc?rel=0&modestbranding=1" title="Build Android App" loading="lazy" allowfullscreen></iframe>
           </div>
-
           <div class="video-meta">
             <h2 class="video-title">Build Android App on Mobile (No Laptop!) | AI + No Code</h2>
-            <p class="video-desc">I demonstrate how to create a functional homework solver app using just a mobile phone. We use Claude AI to generate the code, Quick Editor to build it, and Infinity Free for hosting—plus how to monetize with AdsTerra.</p>
-
+            <p class="video-desc">Creating a functional homework solver app using just a mobile phone with Claude AI and Infinity Free hosting.</p>
             <div class="highlights-box">
               <h4>Key Takeaways</h4>
               <ul>
@@ -219,35 +216,24 @@
                 <li>Free hosting setup & Monetization</li>
               </ul>
             </div>
-
-            <div class="cta-row" role="group" aria-label="Video actions">
-              <a class="btn-action btn-yt" href="https://youtu.be/nRlcTomEEqc" target="_blank" rel="noopener noreferrer">
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
-                Watch on YouTube
+            <div class="cta-row">
+              <a class="btn-action btn-yt" href="https://youtu.be/nRlcTomEEqc" target="_blank">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg> Watch on YouTube
               </a>
-              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-                Subscribe
-              </a>
+              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank">Subscribe</a>
             </div>
           </div>
         </div>
 
         <div class="spacer-block"></div>
 
-        <div class="video-player" role="region" aria-label="Video: AI GTA 6 Challenge">
+        <div class="video-player" role="region" aria-label="Video: GTA 6 Challenge">
           <div class="video-responsive">
-            <iframe
-              src="https://www.youtube.com/embed/v2ypUO0cr7Q?rel=0&modestbranding=1"
-              title="I Challenged AI to Build GTA 6"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/v2ypUO0cr7Q?rel=0&modestbranding=1" title="GTA 6 AI Challenge" loading="lazy" allowfullscreen></iframe>
           </div>
-
           <div class="video-meta">
             <h2 class="video-title">I Challenged AI to Build GTA 6 (ChatGPT vs Claude)</h2>
-            <p class="video-desc">I challenged both ChatGPT and Claude to build GTA 6 from scratch. See the results: ChatGPT attempts a 3D environment while Claude builds a polished 2D top-down shooter with working police chase mechanics.</p>
-
+            <p class="video-desc">Coding battle: ChatGPT attempts a 3D environment while Claude builds a polished 2D top-down shooter with police mechanics.</p>
             <div class="highlights-box">
               <h4>Key Takeaways</h4>
               <ul>
@@ -256,15 +242,37 @@
                 <li>"Wanted" level system implementation</li>
               </ul>
             </div>
+            <div class="cta-row">
+              <a class="btn-action btn-yt" href="https://youtu.be/v2ypUO0cr7Q" target="_blank">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg> Watch on YouTube
+              </a>
+              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank">Subscribe</a>
+            </div>
+          </div>
+        </div>
 
-            <div class="cta-row" role="group" aria-label="Video actions">
-              <a class="btn-action btn-yt" href="https://youtu.be/v2ypUO0cr7Q" target="_blank" rel="noopener noreferrer">
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
-                Watch on YouTube
+        <div class="spacer-block"></div>
+
+        <div class="video-player" role="region" aria-label="Video: Sora 2 Game Dev">
+          <div class="video-responsive">
+            <iframe src="https://www.youtube.com/embed/erslja3K9TI?rel=0&modestbranding=1" title="Sora 2 Game Gen" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="video-meta">
+            <h2 class="video-title">I Asked Sora 2 to Make Video Games (Scary Real)</h2>
+            <p class="video-desc">Using the new Sora 2 AI to generate realistic gameplay footage. We test it on Minecraft, Roblox, GTA, and more to see how close it gets to the real thing.</p>
+            <div class="highlights-box">
+              <h4>Key Takeaways</h4>
+              <ul>
+                <li>Sora 2 Generating Minecraft & Roblox Gameplay</li>
+                <li>Comparison: Real vs AI Generated</li>
+                <li>Rating the AI's "Dream" Engine capabilities</li>
+              </ul>
+            </div>
+            <div class="cta-row">
+              <a class="btn-action btn-yt" href="https://youtu.be/erslja3K9TI" target="_blank">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg> Watch on YouTube
               </a>
-              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
-                Subscribe
-              </a>
+              <a class="btn-action btn-sub" href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" target="_blank">Subscribe</a>
             </div>
           </div>
         </div>
@@ -282,21 +290,12 @@
   <footer class="site-footer" role="contentinfo" aria-label="Footer">
     <div class="container footer-grid" style="grid-template-columns:1fr; gap:12px;">
       <div style="text-align:center;">
-        <div class="social-icons" aria-label="Social links" style="justify-content:center;">
-          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg>
-          </a>
-          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg>
-          </a>
-          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg>
-          </a>
-          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg>
-          </a>
+        <div class="social-icons" style="justify-content:center;">
+          <a href="https://x.com/WebBuildDev" class="icon-link" aria-label="X (Twitter)" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 5.92c-.66.29-1.37.48-2.13.57.77-.46 1.36-1.18 1.64-2.04-.72.42-1.52.72-2.38.88A4.02 4.02 0 0 0 12.5 9.5c0 .31.03.61.1.9-3.34-.17-6.3-1.77-8.28-4.2-.35.6-.55 1.28-.55 2.01 0 1.39.71 2.61 1.79 3.33-.66-.02-1.27-.2-1.81-.5v.05c0 1.93 1.37 3.54 3.18 3.9-.33.09-.68.14-1.04.14-.25 0-.5-.03-.74-.07.5 1.57 1.95 2.71 3.67 2.75A8.07 8.07 0 0 1 3 19.54 11.4 11.4 0 0 0 9.56 21c7.18 0 11.1-5.94 11.1-11.1v-.51c.77-.56 1.43-1.27 1.96-2.07-.7.31-1.45.52-2.22.62z"/></svg></a>
+          <a href="https://youtube.com/@cryptowebbuild" class="icon-link" aria-label="YouTube" target="_blank"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19.5 4.6 12 4.6 12 4.6s-7.5 0-8.9.5A3 3 0 0 0 .9 7.6C.5 9.1.5 12 .5 12s0 2.9.4 4.4a3 3 0 0 0 2.2 2.1c1.4.5 8.9.5 8.9.5s7.5 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.5.5-4.4.5-4.4s0-2.9-.5-4.4zM9.8 15V9l5.2 3-5.2 3z"/></svg></a>
+          <a href="https://t.me/CryptoWebBuild" class="icon-link" aria-label="Telegram" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.3 3.2L2.7 10.6c-.9.35-.9 1.2-.17 1.47l4.2 1.3 1.6 5.27c.3.96.8 1.06 1.4.62L12 15l4.3 3.1c.7.4 1.5-.1 1.4-.9L19 9 21 3z"/></svg></a>
+          <a href="https://github.com/cryptowebbuild" class="icon-link" aria-label="GitHub" target="_blank"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.7.5.9 5.4.9 11.6c0 4.8 3.1 8.9 7.5 10.3.5.1.7-.2.7-.5v-2c-3 .6-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.4-2.4-.3-5-1.2-5-5.4 0-1.2.4-2.2 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 1-.3 3.1 1.1.9-.3 1.9-.4 2.9-.4s1.9.1 2.9.4c2.1-1.4 3.1-1.1 3.1-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5 5.4.4.4.7 1.1.7 2.1v3c0 .3.2.6.7.5 4.4-1.4 7.5-5.5 7.5-10.3C23 5.4 18.2.5 12 .5z"/></svg></a>
         </div>
-
         <div style="margin-top:12px;">
           <p class="small muted">© <span id="footer-year"></span> CryptoWebBuild — All Rights Reserved.</p>
         </div>
@@ -305,9 +304,7 @@
   </footer>
 
   <script src="/script.js" defer></script>
-
   <script>
-    // Footer year fallback
     (function(){ try { var fy=document.getElementById('footer-year'); if(fy) fy.textContent=new Date().getFullYear(); } catch(e){} })();
   </script>
 </body>
