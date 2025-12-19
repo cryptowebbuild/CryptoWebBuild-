@@ -1,0 +1,36 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cosmic-grad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7C3AED" />   <!-- Electric Purple -->
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#06B6D4" /> <!-- Cyber Cyan -->
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+      <feComposite in="blur" in2="SourceGraphic" operator="in" result="softGlow" />
+      <feMerge>
+        <feMergeNode in="softGlow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background container for best contrast on light tabs -->
+  <rect width="512" height="512" rx="128" fill="#0F172A" />
+  
+  <!-- Logo Icon -->
+  <g filter="url(#glow)">
+    <!-- Left Bracket -->
+    <path d="M176 144C176 144 112 200 112 256C112 312 176 368 176 368" stroke="url(#cosmic-grad)" stroke-width="56" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Right Bracket -->
+    <path d="M336 144C336 144 400 200 400 256C400 312 336 368 336 368" stroke="url(#cosmic-grad)" stroke-width="56" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Central Bridge -->
+    <path d="M192 256H320" stroke="url(#cosmic-grad)" stroke-width="48" stroke-linecap="round" opacity="0.9" />
+    
+    <!-- Nodes -->
+    <circle cx="112" cy="256" r="24" fill="#FFFFFF" />
+    <circle cx="400" cy="256" r="24" fill="#FFFFFF" />
+  </g>
+</svg>

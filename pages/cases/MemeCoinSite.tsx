@@ -1,0 +1,111 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
+import QuackInuMockup from '../../components/QuackInuMockup';
+
+const MemeCoinSite: React.FC = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Case Study: BNB Quack Inu - Viral Meme Coin Launch",
+    "image": "https://cryptowebbuild.com/project-memecoin.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild"
+    },
+    "description": "Analyzing the BNB Quack Inu launch: A gamified jungle-themed meme coin site featuring spin-to-win mechanics and custom wood-textured UI."
+  };
+
+  return (
+    <div className="container mx-auto px-6 pt-32 pb-20">
+      <SEO 
+        title="Case Study: BNB Quack Inu - Gamified Meme Coin Launch"
+        description="Analyzing the BNB Quack Inu launch: A gamified jungle-themed meme coin site featuring spin-to-win mechanics and custom wood-textured UI."
+      />
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </script>
+      <div className="max-w-4xl mx-auto animate-slide-up">
+        <div className="inline-block px-3 py-1 mb-6 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-600 dark:text-green-300 text-xs font-bold uppercase tracking-wider shadow-sm">
+          Case Study
+        </div>
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-main mb-8 leading-tight">
+          BNB Quack Inu — <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-yellow-500">Gamified Viral Launch</span>
+        </h1>
+        
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 h-[400px] md:h-[500px]">
+             <QuackInuMockup className="w-full h-full" />
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="glass-panel p-6 rounded-2xl bg-surface border-t border-green-500/20">
+            <h3 className="text-text-muted text-xs font-bold uppercase tracking-widest mb-2">Theme</h3>
+            <p className="text-text-main font-bold text-lg">Jungle Adventure</p>
+          </div>
+          <div className="glass-panel p-6 rounded-2xl bg-surface border-t border-green-500/20">
+            <h3 className="text-text-muted text-xs font-bold uppercase tracking-widest mb-2">Feature</h3>
+            <p className="text-text-main font-bold text-lg">Spin-to-Win</p>
+          </div>
+          <div className="glass-panel p-6 rounded-2xl bg-surface border-t border-green-500/20">
+            <h3 className="text-text-muted text-xs font-bold uppercase tracking-widest mb-2">Result</h3>
+            <p className="text-green-500 font-bold text-lg">High Engagement</p>
+          </div>
+        </div>
+
+        <div className="prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold">
+          <h2>The Goal</h2>
+          <p>The meme coin market is saturated. To stand out on BNB Chain, "Quack Inu" needed more than just a landing page—it needed a <strong>brand experience</strong>. The client wanted a fun, "Jungle" theme that felt like a mobile game rather than a financial website.</p>
+
+          <h2>Design & Gamification</h2>
+          <p>We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface:</p>
+          <ul>
+            <li><strong>Mascot-Centric Hero:</strong> The homepage centers around the animated Quack Inu character with interactive tooltips ("Click to Spin!").</li>
+            <li><strong>Wooden UI Elements:</strong> Custom CSS styling to create "wood plank" buttons and panels, fitting the jungle narrative perfectly.</li>
+            <li><strong>Gamified Mechanics:</strong> A "Spin to Win" feature (visualized in the UI) keeps users on the page longer, reducing bounce rates and increasing community interaction.</li>
+            <li><strong>Narrative Roadmap:</strong> The roadmap is designed as a "Jungle Path" (Exploration, Base Camp, El Dorado), making the project's future feel like an adventure.</li>
+          </ul>
+
+          <h2>Community Impact</h2>
+          <div className="not-prose my-12 p-8 bg-gradient-to-br from-[#2E8B57] to-[#1a5c38] rounded-3xl border border-green-400/30 relative overflow-hidden group shadow-lg">
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <h3 className="font-display text-2xl font-bold text-white mb-8 text-center relative z-10 drop-shadow-md">Launch Statistics</h3>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 text-center relative z-10">
+              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+                <div className="text-3xl font-bold text-yellow-300 mb-2">25K+</div>
+                <div className="text-xs font-bold text-white/80 uppercase tracking-widest">Telegram</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+                <div className="text-3xl font-bold text-yellow-300 mb-2">0%</div>
+                <div className="text-xs font-bold text-white/80 uppercase tracking-widest">Buy Tax</div>
+              </div>
+               <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+                <div className="text-3xl font-bold text-yellow-300 mb-2">45s</div>
+                <div className="text-xs font-bold text-white/80 uppercase tracking-widest">Avg. Time on Site</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+                <div className="text-3xl font-bold text-yellow-300 mb-2">#1</div>
+                <div className="text-xs font-bold text-white/80 uppercase tracking-widest">Trending</div>
+              </div>
+            </div>
+          </div>
+
+          <h2>Technical Execution</h2>
+          <p>Despite the heavy visuals, the site remains incredibly fast. We used <strong>CSS-only shapes and gradients</strong> for many UI elements (like the wood textures) instead of heavy image files, keeping the bundle size small and the load time under 1 second.</p>
+        </div>
+
+        <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-white/10">
+          <a href="https://quackmeme.pages.dev" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 bg-[#8B4513] hover:bg-[#A0522D] text-white font-bold rounded-xl transition-colors shadow-lg border-b-4 border-[#5c2e0c]">
+            Visit Quack Inu
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <Link to="/projects" className="inline-flex items-center justify-center px-8 py-3 bg-surface border border-slate-200 dark:border-slate-700 text-text-main font-bold rounded-xl hover:bg-surface-highlight transition-colors">
+            Back to Projects
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MemeCoinSite;
