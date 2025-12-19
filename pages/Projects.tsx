@@ -90,15 +90,18 @@ const Projects: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Web Development Portfolio & Case Studies | CryptoWebBuild"
-        description="View successful projects: Solana token launches, viral meme coin landing pages, and high-performance e-commerce sites."
+        title="Web3 Projects & Crypto Website Portfolio | Case Studies"
+        description="Explore my web development portfolio: High-performance Solana token launches, viral meme coin sites, and headless e-commerce stores."
+        keywords={['Web3 Portfolio', 'Crypto Website Examples', 'E-commerce Case Studies', 'React Projects', 'Meme Coin Design Portfolio']}
+        canonical="/projects"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
       <div className="text-center mb-16 animate-slide-up">
         <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6">
-          Selected Projects & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Case Studies</span>
+          Web3 Projects & <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Case Studies</span>
         </h1>
         <p className="text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
           Explore recent work in <Link to="/services" className="text-purple-500 hover:underline font-medium">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-500 hover:underline font-medium">E-commerce</Link>, and Custom Software.

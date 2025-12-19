@@ -27,8 +27,10 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Contact Sagor Ahamed | Get a Free Project Quote"
-        description="Discuss your crypto, web3, or business project. Get a fast, accurate quote and timeline for your custom website build."
+        title="Hire Web3 Developer | Get a Website Quote"
+        description="Contact Sagor Ahamed for your crypto, web3, or business project. Get a fast, accurate quote and timeline for your custom website build."
+        keywords={['Hire Web3 Developer', 'Website Development Quote', 'Contact Crypto Developer', 'Hire React Freelancer']}
+        canonical="/contact"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
@@ -38,7 +40,7 @@ const Contact: React.FC = () => {
           <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-surface-highlight border border-border-glass text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">
             Open for Work
           </div>
-          <h1 className="font-display text-5xl font-bold text-text-main mb-4">Let's Talk</h1>
+          <h1 className="font-display text-5xl font-bold text-text-main mb-4">Contact Sagor Ahamed</h1>
           <p className="text-text-muted text-lg">Tell me about your project — I usually reply within a few hours.</p>
         </div>
 

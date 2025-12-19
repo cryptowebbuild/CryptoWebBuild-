@@ -46,15 +46,18 @@ const Services: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Web3 Development Services | Token Launch & E-commerce"
-        description="Specialized web development services: Crypto presale pages, smart contract integration, high-speed e-commerce stores, and SEO-optimized business websites."
+        title="Web3 & E-commerce Development Services | Pricing & Packages"
+        description="View my web development services: Crypto presale sites, meme coin landing pages, and high-performance e-commerce stores. Clear pricing and packages."
+        keywords={['Web Development Services', 'Crypto Website Pricing', 'E-commerce Development Packages', 'Custom Website Cost', 'Meme Coin Site Price']}
+        canonical="/services"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
       <div className="text-center max-w-3xl mx-auto mb-20 animate-slide-up">
         <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6 tracking-tight">
-          Web Development <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Services</span>
+          Web3 & E-commerce <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Development Services</span>
         </h1>
         <p className="text-lg text-text-muted">
           Full-stack and static-first websites tailored for performance, SEO, and growth.
@@ -88,9 +91,16 @@ const Services: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <Link to="/tokenlaunch" className="inline-flex items-center text-purple-500 font-bold hover:text-purple-400 transition-colors">
-                View Case Study: SolNova Protocol →
-              </Link>
+              
+              {/* Internal Linking Strategy: Connect Services to Case Studies & Blogs */}
+              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-6 pt-6 border-t border-white/10">
+                  <Link to="/tokenlaunch" className="flex items-center text-purple-500 hover:text-purple-400 transition-colors">
+                    <span className="bg-purple-500/10 p-1 rounded mr-2">Case Study</span> SolNova Protocol →
+                  </Link>
+                  <Link to="/crypto-website-cost" className="flex items-center text-text-muted hover:text-text-main transition-colors">
+                    <span className="bg-surface-highlight border border-white/10 p-1 rounded mr-2">Guide</span> Pricing Breakdown →
+                  </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -122,9 +132,16 @@ const Services: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <Link to="/shopfast" className="inline-flex items-center text-cyan-500 font-bold hover:text-cyan-400 transition-colors">
-                View Case Study: ShopFast →
-              </Link>
+              
+              {/* Internal Linking Strategy */}
+              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-6 pt-6 border-t border-white/10">
+                  <Link to="/shopfast" className="flex items-center text-cyan-500 hover:text-cyan-400 transition-colors">
+                    <span className="bg-cyan-500/10 p-1 rounded mr-2">Case Study</span> ShopFast Store →
+                  </Link>
+                  <Link to="/static-vs-dynamic-website" className="flex items-center text-text-muted hover:text-text-main transition-colors">
+                    <span className="bg-surface-highlight border border-white/10 p-1 rounded mr-2">Guide</span> Why Static is Faster →
+                  </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -151,12 +168,18 @@ const Services: React.FC = () => {
               <p className="text-text-muted mb-6 leading-relaxed text-lg">
                 Responsive websites for local businesses and startups with SEO-focused content and clear CTAs.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mb-6">
                 {['Lead Gen', 'Responsive', 'SEO', 'Performance'].map((tag) => (
                   <span key={tag} className="px-4 py-1.5 bg-surface-highlight rounded-full text-sm font-medium text-text-muted border border-white/10 group-hover:border-blue-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-6 pt-6 border-t border-white/10">
+                  <Link to="/website-builder-vs-developer" className="flex items-center text-blue-500 hover:text-blue-400 transition-colors">
+                    <span className="bg-blue-500/10 p-1 rounded mr-2">Deep Dive</span> Website Builders vs Developers →
+                  </Link>
               </div>
             </div>
           </div>

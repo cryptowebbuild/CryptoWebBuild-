@@ -44,12 +44,12 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Posts -->
+  <!-- Blog Posts (High Priority Content) -->
   <url>
     <loc>https://cryptowebbuild.com/website-builder-vs-developer</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cryptowebbuild.com/best-website-developer</loc>
@@ -67,7 +67,7 @@
     <loc>https://cryptowebbuild.com/crypto-website-cost</loc>
     <lastmod>2025-11-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cryptowebbuild.com/crypto-project-website</loc>
@@ -82,7 +82,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Case Studies / Projects -->
+  <!-- Case Studies / Projects (Portfolio) -->
   <url>
     <loc>https://cryptowebbuild.com/tokenlaunch</loc>
     <lastmod>2025-11-28</lastmod>

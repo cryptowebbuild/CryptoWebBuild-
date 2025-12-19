@@ -81,9 +81,11 @@ const About: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="About Sagor Ahamed | Founder of CryptoWebBuild Agency"
-        description="Meet Sagor Ahamed, the founder of CryptoWebBuild. Expert full-stack developer specializing in high-performance Web3 interfaces, e-commerce, and modern web architecture."
+        title="About Sagor Ahamed | Senior Web3 Developer"
+        description="Meet Sagor Ahamed, founder of CryptoWebBuild. Expert full-stack developer specialized in React, Solana, and high-performance web architecture."
+        keywords={['Sagor Ahamed', 'CryptoWebBuild Founder', 'Senior React Developer', 'Web3 Expert', 'Frontend Architect']}
         image="https://cryptowebbuild.com/sagor-avatar.png"
+        canonical="/about"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
@@ -135,8 +137,8 @@ const About: React.FC = () => {
                     </div>
                     
                     <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-main mb-6 leading-tight">
-                        Architecting the <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-shimmer">Decentralized Future</span>
+                        About Sagor Ahamed: <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-shimmer">Decentralized Architect</span>
                     </h1>
                     
                     <p className="text-lg md:text-xl text-text-muted leading-relaxed mb-8 font-light max-w-2xl mx-auto lg:mx-0">

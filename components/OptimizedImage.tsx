@@ -6,6 +6,8 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   className?: string;
   fill?: boolean;
   priority?: boolean;
+  width?: number | string;
+  height?: number | string;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ 
@@ -14,6 +16,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className = '', 
   fill = false,
   priority = false,
+  width,
+  height,
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(priority);
@@ -52,6 +56,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         <img
             src={optimizedSrc}
             alt={alt}
+            width={width}
+            height={height}
             loading={priority ? "eager" : "lazy"}
             decoding={priority ? "sync" : "async"}
             className={`transition-all duration-700 ease-out ${imgClasses} ${transitionClasses}`}

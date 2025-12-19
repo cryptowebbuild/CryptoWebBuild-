@@ -19,8 +19,10 @@ const MemeCoinSite: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Case Study: BNB Quack Inu - Gamified Meme Coin Launch"
-        description="Analyzing the BNB Quack Inu launch: A gamified jungle-themed meme coin site featuring spin-to-win mechanics and custom wood-textured UI."
+        title="Meme Coin Website Design | Viral Crypto Landing Page Case Study"
+        description="Case study: How we designed a viral, gamified meme coin website on BNB Chain. Custom animations, spin-to-win features, and mobile-first design."
+        keywords={['Meme Coin Website Design', 'Viral Crypto Landing Page', 'BNB Chain Developer', 'Gamified Crypto Site', 'Crypto Web Design']}
+        type="article"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
@@ -53,22 +55,29 @@ const MemeCoinSite: React.FC = () => {
         </div>
 
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold">
-          <h2>The Goal</h2>
-          <p>The meme coin market is saturated. To stand out on BNB Chain, "Quack Inu" needed more than just a landing page—it needed a <strong>brand experience</strong>. The client wanted a fun, "Jungle" theme that felt like a mobile game rather than a financial website.</p>
+          <h2>The Goal: Stand Out or Die</h2>
+          <p>
+            The meme coin market on BNB Chain is saturated with thousands of low-effort clones. To stand out, "Quack Inu" needed more than just a landing page—it needed a <strong>brand experience</strong> that people would talk about.
+          </p>
+          <p>
+            The client wanted a fun, "Jungle" theme that felt like a mobile game rather than a financial website. The goal was to increase the "Time on Site" metric, which correlates with higher investment probability.
+          </p>
 
           <h2>Design & Gamification Strategy</h2>
-          <p>We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface. Learn more about our approach to <Link to="/meme-coin-website-features">Must-Have Meme Coin Features</Link>.</p>
+          <p>
+            We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface. Learn more about our philosophy on <Link to="/meme-coin-website-features">Must-Have Meme Coin Features</Link>.
+          </p>
           <ul>
             <li><strong>Mascot-Centric Hero:</strong> The homepage centers around the animated Quack Inu character with interactive tooltips ("Click to Spin!").</li>
             <li><strong>Wooden UI Elements:</strong> Custom CSS styling to create "wood plank" buttons and panels, fitting the jungle narrative perfectly.</li>
-            <li><strong>Gamified Mechanics:</strong> A "Spin to Win" feature (visualized in the UI) keeps users on the page longer, reducing bounce rates and increasing community interaction.</li>
+            <li><strong>Gamified Mechanics:</strong> A "Spin to Win" feature (visualized in the UI) keeps users on the page longer, reducing bounce rates.</li>
             <li><strong>Narrative Roadmap:</strong> The roadmap is designed as a "Jungle Path" (Exploration, Base Camp, El Dorado), making the project's future feel like an adventure.</li>
           </ul>
 
           <div className="my-12 p-8 bg-surface-highlight rounded-3xl border border-green-500/20">
             <h3>Technical Deep Dive: CSS-Only Performance</h3>
             <p>
-                To maintain a sub-1 second load time despite the heavy visuals, we avoided large PNG assets. Instead, we used <strong>CSS-only shapes and gradients</strong> to create the wood textures and jungle foliage.
+                To maintain a <strong>sub-1 second load time</strong> despite the heavy visuals, we avoided large PNG assets. Instead, we used <strong>CSS-only shapes and gradients</strong> to create the wood textures and jungle foliage.
             </p>
             <p>
                 This "Code-over-Assets" approach kept the bundle size under 150KB, ensuring the site loads instantly even on 3G mobile networks in emerging markets—a key demographic for BNB Chain projects.
@@ -76,6 +85,9 @@ const MemeCoinSite: React.FC = () => {
           </div>
 
           <h2>Community Impact</h2>
+          <p>
+            The unique design became a talking point in Telegram groups. Investors cited the "high quality website" as a primary reason for trusting the team not to rug-pull.
+          </p>
           <div className="not-prose my-12 p-8 bg-gradient-to-br from-[#2E8B57] to-[#1a5c38] rounded-3xl border border-green-400/30 relative overflow-hidden group shadow-lg">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
             <h3 className="font-display text-2xl font-bold text-white mb-8 text-center relative z-10 drop-shadow-md">Launch Statistics</h3>
@@ -106,8 +118,8 @@ const MemeCoinSite: React.FC = () => {
             Visit Quack Inu
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
-          <Link to="/projects" className="inline-flex items-center justify-center px-8 py-3 bg-surface border border-slate-200 dark:border-slate-700 text-text-main font-bold rounded-xl hover:bg-surface-highlight transition-colors">
-            Back to Projects
+          <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-surface border border-slate-200 dark:border-slate-700 text-text-main font-bold rounded-xl hover:bg-surface-highlight transition-colors">
+            Get a Meme Coin Quote
           </Link>
         </div>
       </div>

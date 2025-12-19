@@ -19,8 +19,9 @@ const GigaSolana: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Case Study: $GIGA Solana - Viral Meme Coin Design"
-        description="Building a cult-following meme coin site. Features 'Moon Math' calculator, neon aesthetics, and aggressive branding on Solana."
+        title="Viral Meme Coin Design | $GIGA Solana Case Study"
+        description="Learn how we built a cult-following meme coin site on Solana. Featuring 'Moon Math' calculators, neon aesthetics, and aggressive branding."
+        keywords={['Viral Meme Coin Design', 'Solana Meme Coin Branding', 'Moon Math Calculator Code', 'Crypto Community Website']}
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}

@@ -66,6 +66,8 @@ const Videos: React.FC = () => {
       <SEO 
         title="AI Coding Experiments & Tutorials | CryptoWebBuild"
         description="Watch AI coding experiments: Building apps on mobile, generative game design, and modern web development tutorials."
+        keywords={['AI Coding Tutorials', 'Mobile Coding Guide', 'Build App without Laptop', 'Generative AI Coding']}
+        canonical="/videos"
       />
       
       {/* Inject JSON-LD */}
@@ -79,7 +81,7 @@ const Videos: React.FC = () => {
           Tutorials & Experiments
         </div>
         <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6 leading-tight">
-          AI Coding <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Experiments</span>
+          AI Coding <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Tutorials & Experiments</span>
         </h1>
         <p className="text-lg text-text-muted leading-relaxed">
           Pushing the boundaries of what's possible with Generative AI, Mobile Development, and Game Design.

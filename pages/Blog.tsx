@@ -86,14 +86,17 @@ const Blog: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Web3 Development & SEO Blog | CryptoWebBuild"
+        title="Web3 Development Blog & Insights | CryptoWebBuild"
         description="Expert guides on crypto website costs, hiring developers, meme coin marketing features, and static vs dynamic web architecture."
+        canonical="/blog"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
       <div className="text-center mb-20 animate-float">
-        <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6">Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Insights</span></h1>
+        <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6">
+          Web3 Development <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Blog & Insights</span>
+        </h1>
         <p className="text-text-muted max-w-2xl mx-auto text-lg">
           Guides, case studies, and insights on building fast, SEO-first websites for the Web3 era.
         </p>

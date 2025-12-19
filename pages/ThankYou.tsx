@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
@@ -7,8 +6,9 @@ const ThankYou: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-40 pb-20 text-center">
       <SEO 
-        title="Thank You | Message Received - CryptoWebBuild" 
-        description="Thank you for reaching out to Sagor Ahamed at CryptoWebBuild. I will review your project brief and get back to you within 24 hours."
+        title="Message Received | CryptoWebBuild" 
+        description="Thank you for your message."
+        noIndex={true} 
       />
       <div className="glass-panel p-12 rounded-3xl max-w-2xl mx-auto border-t border-green-500/30 shadow-[0_0_50px_rgba(34,197,94,0.1)] bg-surface">
         <div className="w-24 h-24 bg-gradient-to-br from-green-500/20 to-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl shadow-lg shadow-green-900/20 border border-green-500/20">

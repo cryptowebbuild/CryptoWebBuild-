@@ -19,8 +19,9 @@ const AutoGitHub: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO
-        title="Case Study: AutoGit Deployer - Serverless DevOps Engine"
+        title="Serverless React App Case Study | AutoGit Deployer"
         description="How I built a client-side tool to deploy static sites to GitHub Pages directly from the browser using React and the GitHub API."
+        keywords={['React App Case Study', 'Client-Side DevOps', 'GitHub API Integration', 'Serverless Web App']}
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
