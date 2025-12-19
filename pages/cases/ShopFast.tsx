@@ -54,7 +54,7 @@ const ShopFast: React.FC = () => {
 
         <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
           <h2>The Challenge</h2>
-          <p>Traditional e-commerce platforms (like WooCommerce or Magento) were too slow and bloated for this client, causing high bounce rates for mobile devices. They needed a solution that was instant-loading globally.</p>
+          <p>Traditional e-commerce platforms (like WooCommerce or Magento) were too slow and bloated for this client, causing high bounce rates for mobile devices. They needed a solution that was instant-loading globally. See our breakdown on <Link to="/static-vs-dynamic-website">Static vs Dynamic Websites</Link>.</p>
 
           <h2>The Solution</h2>
           <p>We implemented a headless static storefront. Key architectural decisions included:</p>
@@ -64,8 +64,18 @@ const ShopFast: React.FC = () => {
             <li><strong>Stripe Checkout:</strong> Offloading PCI compliance and secure payments to Stripe's hosted checkout page.</li>
           </ul>
 
+          <div className="bg-surface-highlight p-8 rounded-3xl border border-cyan-500/20 my-10">
+            <h3 className="text-xl font-bold text-text-main mb-4">Why Headless?</h3>
+            <p>
+                By decoupling the frontend (the store you see) from the backend (inventory management), we achieved a perfect 100/100 Performance score on Google PageSpeed Insights.
+            </p>
+            <p>
+                This architecture eliminates database queries on page load, meaning the site can handle 10,000 concurrent visitors as easily as 10.
+            </p>
+          </div>
+
           <h2>The Outcome</h2>
-          <p>The new site achieves a perfect 100/100 Performance score on Google PageSpeed Insights. Checkout abandonment dropped by 38%, directly attributing to the faster, friction-free experience.</p>
+          <p>Checkout abandonment dropped by 38%, directly attributing to the faster, friction-free experience. The SEO visibility for long-tail product keywords increased significantly due to the clean, semantic HTML structure.</p>
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-white/10">

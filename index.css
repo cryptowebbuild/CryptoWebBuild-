@@ -50,7 +50,7 @@ body {
   color: inherit;
 }
 
-/* Cinematic Noise Texture - Reduced opacity for Light Mode */
+/* Cinematic Noise Texture - Optimized with transform: translateZ(0) for GPU */
 .noise-overlay {
   position: fixed;
   top: 0;
@@ -59,13 +59,14 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.015; /* Subtler noise */
+  opacity: 0.015;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
+  transform: translateZ(0); /* Force GPU */
 }
 
 .dark .noise-overlay {
-    opacity: 0.04; /* Stronger noise in dark mode */
+    opacity: 0.04;
 }
 
 /* Smooth Scrollbar */
@@ -94,10 +95,18 @@ body {
 /* Enhanced Glass Panel */
 .glass-panel {
   background: var(--bg-surface);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px); /* Reduced slightly for mobile FPS */
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
   box-shadow: 0 8px 32px 0 var(--shadow-color);
+  transform: translateZ(0); /* Performance hack */
+}
+
+/* Performance Utilities */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 /* Text Gradients */

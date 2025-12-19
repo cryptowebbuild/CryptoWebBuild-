@@ -56,14 +56,24 @@ const MemeCoinSite: React.FC = () => {
           <h2>The Goal</h2>
           <p>The meme coin market is saturated. To stand out on BNB Chain, "Quack Inu" needed more than just a landing page—it needed a <strong>brand experience</strong>. The client wanted a fun, "Jungle" theme that felt like a mobile game rather than a financial website.</p>
 
-          <h2>Design & Gamification</h2>
-          <p>We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface:</p>
+          <h2>Design & Gamification Strategy</h2>
+          <p>We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface. Learn more about our approach to <Link to="/meme-coin-website-features">Must-Have Meme Coin Features</Link>.</p>
           <ul>
             <li><strong>Mascot-Centric Hero:</strong> The homepage centers around the animated Quack Inu character with interactive tooltips ("Click to Spin!").</li>
             <li><strong>Wooden UI Elements:</strong> Custom CSS styling to create "wood plank" buttons and panels, fitting the jungle narrative perfectly.</li>
             <li><strong>Gamified Mechanics:</strong> A "Spin to Win" feature (visualized in the UI) keeps users on the page longer, reducing bounce rates and increasing community interaction.</li>
             <li><strong>Narrative Roadmap:</strong> The roadmap is designed as a "Jungle Path" (Exploration, Base Camp, El Dorado), making the project's future feel like an adventure.</li>
           </ul>
+
+          <div className="my-12 p-8 bg-surface-highlight rounded-3xl border border-green-500/20">
+            <h3>Technical Deep Dive: CSS-Only Performance</h3>
+            <p>
+                To maintain a sub-1 second load time despite the heavy visuals, we avoided large PNG assets. Instead, we used <strong>CSS-only shapes and gradients</strong> to create the wood textures and jungle foliage.
+            </p>
+            <p>
+                This "Code-over-Assets" approach kept the bundle size under 150KB, ensuring the site loads instantly even on 3G mobile networks in emerging markets—a key demographic for BNB Chain projects.
+            </p>
+          </div>
 
           <h2>Community Impact</h2>
           <div className="not-prose my-12 p-8 bg-gradient-to-br from-[#2E8B57] to-[#1a5c38] rounded-3xl border border-green-400/30 relative overflow-hidden group shadow-lg">
@@ -89,9 +99,6 @@ const MemeCoinSite: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <h2>Technical Execution</h2>
-          <p>Despite the heavy visuals, the site remains incredibly fast. We used <strong>CSS-only shapes and gradients</strong> for many UI elements (like the wood textures) instead of heavy image files, keeping the bundle size small and the load time under 1 second.</p>
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-white/10">

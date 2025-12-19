@@ -34,7 +34,6 @@ const AutoGitHub: React.FC = () => {
         </h1>
 
         <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 relative group h-[400px] md:h-[500px]">
-            {/* Replaced static image with live coded mockup */}
             <AutoGitMockup className="w-full h-full" />
         </div>
 
@@ -66,9 +65,15 @@ const AutoGitHub: React.FC = () => {
             <li><strong>Automated Configuration:</strong> It automatically creates the repository, pushes the code, and enables GitHub Pages environments via API calls.</li>
           </ul>
 
-          <h2>Technical Deep Dive</h2>
-          <p>The most complex part was handling binary file uploads and large directory structures from the browser. I implemented a recursive file reader that converts assets to Base64 (for images) or raw text (for code) and batches the API requests to avoid rate limits.</p>
-          <p>Because the logic lives in the client, the tool is <strong>infinitely scalable</strong> and costs $0 to host.</p>
+          <div className="bg-surface-highlight p-8 rounded-3xl border border-blue-500/20 my-10">
+            <h3 className="text-xl font-bold text-text-main mb-4">Why Client-Side?</h3>
+            <p>
+                The most complex part was handling binary file uploads and large directory structures from the browser. I implemented a recursive file reader that converts assets to Base64 (for images) or raw text (for code) and batches the API requests to avoid rate limits.
+            </p>
+            <p>
+                Because the logic lives in the client, the tool is <strong>infinitely scalable</strong> and costs $0 to host. It respects user privacy as no code ever touches my servers—it goes straight from their device to GitHub.
+            </p>
+          </div>
 
           <h2>The Outcome</h2>
           <p>Users can now deploy a live website in under 30 seconds from a phone or tablet. It bridges the gap between coding on mobile (using AI tools) and publishing to the real web.</p>

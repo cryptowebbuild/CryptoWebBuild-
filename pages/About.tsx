@@ -10,15 +10,17 @@ const About: React.FC = () => {
       "@type": "Person",
       "name": "Sagor Ahamed",
       "alternateName": "CryptoWebBuild",
-      "jobTitle": "Founder & Senior Web3 Developer",
+      "jobTitle": "Senior Web3 Developer",
       "image": "https://cryptowebbuild.com/sagor-avatar.png",
       "description": "Founder of CryptoWebBuild Agency. Specialized in high-performance Web3 interfaces, e-commerce, and modern web architecture.",
+      "url": "https://cryptowebbuild.com/about",
       "sameAs": [
         "https://x.com/WebBuildDev",
         "https://t.me/CryptoWebBuild",
         "https://github.com/cryptowebbuild",
         "https://www.youtube.com/@cryptowebbuild"
-      ]
+      ],
+      "knowsAbout": ["React", "Solana", "Next.js", "Technical SEO", "Smart Contract Integration"]
     }
   };
 
@@ -80,7 +82,8 @@ const About: React.FC = () => {
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
         title="About Sagor Ahamed | Founder of CryptoWebBuild Agency"
-        description="Meet Sagor Ahamed, the founder of CryptoWebBuild. Expert full-stack developer specializing in Crypto, Web3, and high-performance agency websites."
+        description="Meet Sagor Ahamed, the founder of CryptoWebBuild. Expert full-stack developer specializing in high-performance Web3 interfaces, e-commerce, and modern web architecture."
+        image="https://cryptowebbuild.com/sagor-avatar.png"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}

@@ -2,12 +2,37 @@ import React from 'react';
 import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact CryptoWebBuild",
+    "description": "Get a quote for your Web3 or E-commerce project. Contact Sagor Ahamed.",
+    "url": "https://cryptowebbuild.com/contact",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "CryptoWebBuild",
+      "image": "https://cryptowebbuild.com/logo.png",
+      "priceRange": "$$-$$$",
+      "telephone": "",
+      "email": "hello@cryptowebbuild.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@cryptowebbuild.com",
+        "availableLanguage": ["English"]
+      }
+    }
+  };
+
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
         title="Contact Sagor Ahamed | Get a Free Project Quote"
         description="Discuss your crypto, web3, or business project. Get a fast, accurate quote and timeline for your custom website build."
       />
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+      </script>
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">
           <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-surface-highlight border border-border-glass text-cyan-600 dark:text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">

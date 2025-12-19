@@ -6,13 +6,15 @@ interface SEOProps {
   description: string;
   canonical?: string;
   image?: string;
+  type?: 'website' | 'article';
 }
 
 const SEO: React.FC<SEOProps> = ({ 
   title, 
   description, 
   canonical, 
-  image = 'https://cryptowebbuild.com/hero-avatar.webp' 
+  image = 'https://cryptowebbuild.com/hero-avatar.webp',
+  type = 'website'
 }) => {
   const fullTitle = `${title} — CryptoWebBuild`;
   const currentUrl = canonical || (typeof window !== 'undefined' ? window.location.href : '');
@@ -29,7 +31,7 @@ const SEO: React.FC<SEOProps> = ({
       {currentUrl && <link rel="canonical" href={currentUrl} />}
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

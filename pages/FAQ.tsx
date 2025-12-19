@@ -9,7 +9,7 @@ const FAQ: React.FC = () => {
       questions: [
         {
           q: "What services do you provide?",
-          a: "I specialize in high-performance web development for Crypto/Web3 projects (landing pages, DApps), E-commerce stores (Shopify, Custom), and professional business websites. My focus is on speed, security, and conversion."
+          a: <span>I specialize in high-performance web development for <Link to="/services" className="text-purple-500 hover:underline">Crypto/Web3 projects</Link> (landing pages, DApps), E-commerce stores (Shopify, Custom), and professional business websites. My focus is on speed, security, and conversion.</span>
         },
         {
           q: "Do you work with agencies or white-label?",
@@ -22,11 +22,11 @@ const FAQ: React.FC = () => {
       questions: [
         {
           q: "What tech stack do you use?",
-          a: "For most static sites and landing pages, I use React, Tailwind CSS, and Cloudflare Pages for instant global loading. For dynamic features, I integrate lightweight APIs or serverless functions. I avoid heavy CMSs like WordPress unless specifically requested."
+          a: <span>For most static sites and landing pages, I use React, Tailwind CSS, and Cloudflare Pages for instant global loading. Read my guide on <Link to="/static-vs-dynamic-website" className="text-purple-500 hover:underline">Static vs Dynamic Websites</Link> to understand why this is superior for SEO.</span>
         },
         {
           q: "Can you integrate smart contracts?",
-          a: "Yes, I build the front-end interfaces (UI) that interact with smart contracts using libraries like Ethers.js, Wagmi, or Solana's Web3.js. Note: I do not write or audit the smart contracts themselves."
+          a: "Yes, I build the front-end interfaces (UI) that interact with smart contracts using libraries like Ethers.js, Wagmi, or Solana's Web3.js. Note: I do not write or audit the smart contracts themselves, I connect your UI to them."
         }
       ]
     },
@@ -35,7 +35,7 @@ const FAQ: React.FC = () => {
       questions: [
         {
           q: "How much does a website cost?",
-          a: "Prices depend on complexity. A single-page crypto landing site starts around $150–$300. A full professional site ranges $600–$2,000. Custom DApps are quoted based on scope. See the Blog for a detailed breakdown."
+          a: <span>Prices depend on complexity. A single-page crypto landing site starts around $150–$300. A full professional site ranges $600–$2,000. See the <Link to="/crypto-website-cost" className="text-purple-500 hover:underline">Full Pricing Breakdown</Link> for details on packages.</span>
         },
         {
           q: "What is the typical timeline?",
@@ -49,16 +49,16 @@ const FAQ: React.FC = () => {
     }
   ];
 
-  const allQuestions = faqs.flatMap(cat => cat.questions);
+  // Schema generation remains simple string for search engines
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": allQuestions.map(q => ({
+    "mainEntity": faqs.flatMap(cat => cat.questions).map(q => ({
       "@type": "Question",
       "name": q.q,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": q.a
+        "text": typeof q.a === 'string' ? q.a : "Detailed answer available on page." 
       }
     }))
   };

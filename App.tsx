@@ -15,6 +15,7 @@ const ThankYou = lazy(() => import('./pages/ThankYou'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Case Studies
 const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
@@ -79,6 +80,9 @@ const App: React.FC = () => {
           <Route path="/crypto-website-cost" element={<CryptoCost />} />
           <Route path="/static-vs-dynamic-website" element={<StaticVsDynamic />} />
           <Route path="/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
+
+          {/* 404 Catch-all */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Layout>

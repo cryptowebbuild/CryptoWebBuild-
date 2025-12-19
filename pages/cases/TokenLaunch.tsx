@@ -4,11 +4,12 @@ import SEO from '../../components/SEO';
 import SolNovaMockup from '../../components/SolNovaMockup';
 
 const TokenLaunch: React.FC = () => {
+  const image = "https://cryptowebbuild.com/project-solana.jpg";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: SolNova Protocol - Solana Presale",
-    "image": "https://cryptowebbuild.com/project-solana.jpg",
+    "image": image,
     "author": {
       "@type": "Organization",
       "name": "CryptoWebBuild"
@@ -21,6 +22,8 @@ const TokenLaunch: React.FC = () => {
       <SEO 
         title="Case Study: SolNova - Solana Yield Protocol & Presale"
         description="How we built SolNova: a high-yield aggregator on Solana with a custom React presale dashboard, wallet integration, and 0.8s load times."
+        image={image}
+        type="article"
       />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
@@ -58,12 +61,22 @@ const TokenLaunch: React.FC = () => {
           <p>Key requirements included a real-time fundraising progress bar, integration with Solana wallets (Phantom/Solflare), and a design that communicated "institutional DeFi" rather than just another meme coin.</p>
 
           <h2>The Solution</h2>
-          <p>We engineered a static-first application using React and Cloudflare Pages to ensure 100% uptime during the traffic spike of the launch.</p>
+          <p>We engineered a static-first application using React and Cloudflare Pages to ensure 100% uptime during the traffic spike of the launch. This approach aligns with our <Link to="/services">standard high-performance crypto architecture</Link>.</p>
           <ul>
             <li><strong>Custom Presale Dashboard:</strong> A React component that fetches on-chain data to display the "Raised Amount" and countdown timer in real-time.</li>
             <li><strong>Solana Wallet Adapter:</strong> Full integration with the `@solana/wallet-adapter-react` library for secure, one-click wallet connection.</li>
             <li><strong>Neon-Dark UI:</strong> A bespoke Tailwind CSS design system featuring "glassmorphism" cards and animated gradients to match the futuristic brand identity.</li>
           </ul>
+
+          <div className="my-10 p-8 bg-surface-highlight border border-white/10 rounded-2xl">
+            <h3 className="text-xl font-bold text-text-main mb-4">Technical Deep Dive</h3>
+            <p className="text-text-muted text-sm">
+                To achieve the 0.8s load time, we utilized code-splitting to separate the heavy Wallet libraries from the initial landing page bundle. We also implemented aggressive caching headers via Cloudflare Workers. This ensures that even during viral spikes (e.g., influential tweets), the site remains responsive. 
+            </p>
+            <p className="text-text-muted text-sm mt-4">
+                Interested in similar performance for your project? Check out our <Link to="/crypto-website-cost" className="text-purple-500 font-bold hover:underline">Pricing Guide</Link>.
+            </p>
+          </div>
 
           <h2>The Outcome</h2>
           <p>The site achieved a perfect 100 Performance score on Google PageSpeed Insights. The friction-free buying process contributed to raising over <strong>$1.2M in the first phase</strong> of the presale.</p>

@@ -48,14 +48,19 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       : 'opacity-0 scale-105 blur-md';
 
   return (
-    <div className={`overflow-hidden bg-slate-200 dark:bg-slate-800 ${wrapperClasses} ${className}`}>
+    <div className={`overflow-hidden bg-slate-200 dark:bg-slate-800 animate-pulse ${wrapperClasses} ${className}`} style={{ animationDuration: '2s' }}>
         <img
             src={optimizedSrc}
             alt={alt}
             loading={priority ? "eager" : "lazy"}
             decoding={priority ? "sync" : "async"}
             className={`transition-all duration-700 ease-out ${imgClasses} ${transitionClasses}`}
-            onLoad={() => setIsLoaded(true)}
+            onLoad={(e) => {
+              setIsLoaded(true);
+              // Remove pulse animation from parent by manipulating DOM directly or relying on image covering it
+              const parent = e.currentTarget.parentElement;
+              if(parent) parent.style.animation = 'none';
+            }}
             {...props}
         />
     </div>

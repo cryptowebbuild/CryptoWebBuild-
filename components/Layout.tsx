@@ -28,7 +28,8 @@ const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }
 );
 
 const LogoIcon = ({ className, idSuffix = 'header' }: { className?: string, idSuffix?: string }) => (
-  <svg viewBox="0 0 128 128" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CryptoWebBuild Logo">
+  <svg viewBox="0 0 128 128" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CryptoWebBuild Logo" role="img">
+    <title>CryptoWebBuild Logo</title>
     <defs>
       <linearGradient id={`logoGradient-${idSuffix}`} x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="#7C3AED" />
@@ -45,7 +46,7 @@ const LogoIcon = ({ className, idSuffix = 'header' }: { className?: string, idSu
 );
 
 const SocialIcon = ({ d }: { d: string }) => (
-  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path d={d} />
   </svg>
 );
@@ -59,6 +60,8 @@ const socialLinks = [
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  
   // Default to light mode unless saved otherwise
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const location = useLocation();
@@ -77,12 +80,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  // Handle Scroll
+  // Handle Scroll & Scroll-to-Top visibility
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      setShowScrollTop(window.scrollY > 500);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Close menu on route change
   useEffect(() => {
@@ -102,10 +112,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen relative font-sans text-text-main overflow-x-hidden flex flex-col transition-colors duration-500">
       
-      {/* Background Ambience (Adaptive) */}
+      {/* Background Ambience (Adaptive) - GPU Accelerated for Mobile FPS */}
       <div className="fixed inset-0 z-0 bg-void pointer-events-none overflow-hidden transition-colors duration-500">
-        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000" />
+        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 gpu-accelerated" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 gpu-accelerated" />
         <div className="absolute inset-0 opacity-[0.4] dark:opacity-[0.2]" style={{ backgroundImage: `linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(to right, var(--grid-color) 1px, transparent 1px)`, backgroundSize: '64px 64px' }}></div>
       </div>
 
@@ -115,7 +125,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm' : ''}`}>
             
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
               <LogoIcon className="w-9 h-9 text-text-main" />
               <span className="font-display font-bold text-xl tracking-tight text-text-main">CryptoWebBuild</span>
             </Link>
@@ -154,7 +164,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Mobile Menu Dropdown */}
           <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="bg-surface/95 backdrop-blur-xl border border-border-glass shadow-2xl rounded-3xl p-4 overflow-hidden">
+            <div className="glass-panel border border-border-glass shadow-2xl rounded-3xl p-4 overflow-hidden">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link 
@@ -199,6 +209,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <main className="relative z-10 flex-grow pt-24">{children}</main>
 
+      {/* Scroll To Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-40 p-4 rounded-full bg-purple-600 text-white shadow-lg shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50 ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}
+        aria-label="Scroll to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+      </button>
+
       {/* --- FOOTER --- */}
       <footer className="relative z-10 mt-32 bg-surface border-t border-border-glass">
         <div className="container mx-auto px-6 py-16">
@@ -214,7 +233,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
               </p>
               
-              {/* FIXED SOCIAL LINKS */}
+              {/* FIXED SOCIAL LINKS WITH ARIA LABELS */}
               <div className="flex gap-4 pt-2">
                 {socialLinks.map((social) => (
                   <a 
@@ -231,32 +250,30 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
 
-            {/* Sitemap */}
+            {/* Sitemap - Fixed Header Hierarchy */}
             <div className="lg:col-span-2">
-              <h4 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h4>
+              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
                 {navLinks.map(link => (
                   <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{link.label}</Link></li>
                 ))}
-                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
 
-            {/* Case Studies */}
+            {/* Resources (Fixed Orphans) */}
             <div className="lg:col-span-2">
-              <h4 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Case Studies</h4>
+              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Resources</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
-                <li><Link to="/tokenlaunch" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">SolNova Protocol</Link></li>
-                <li><Link to="/memecoinsite" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Quack Inu Meme</Link></li>
-                <li><Link to="/shopfast" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">ShopFast E-com</Link></li>
-                <li><Link to="/autogithub" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">AutoGit Deployer</Link></li>
-                <li><Link to="/gigasolana" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">$GIGA Solana</Link></li>
+                <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
+                <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Terms of Service</Link></li>
+                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
 
             {/* Guides */}
             <div className="lg:col-span-4">
-              <h4 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Guides & Tech</h4>
+              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Guides & Tech</h3>
               <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
                 <li><Link to="/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
                 <li><Link to="/crypto-project-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Project Foundations</Link></li>
@@ -270,9 +287,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-text-muted text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
             <div className="flex gap-8 text-sm font-bold text-text-muted">
-              <Link to="/privacy" className="hover:text-text-main transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-text-main transition-colors">Terms of Service</Link>
-              <Link to="/faq" className="hover:text-text-main transition-colors">FAQ</Link>
+              <Link to="/privacy" className="hover:text-text-main transition-colors">Privacy</Link>
+              <Link to="/terms" className="hover:text-text-main transition-colors">Terms</Link>
             </div>
           </div>
         </div>

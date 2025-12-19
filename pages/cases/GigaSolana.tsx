@@ -64,15 +64,15 @@ const GigaSolana: React.FC = () => {
             <li><strong>Interactive React Component:</strong> Built with minimal state management to ensure it feels instant and responsive on mobile.</li>
           </ul>
 
-          <h2>Onboarding: "How to Ape In"</h2>
-          <p>Recognizing that not all users are DeFi experts, we designed a visual "How to Ape In" section. It breaks down the bridging and swapping process into 4 simple steps with direct links to Raydium and Jupiter, reducing the friction for new investors.</p>
-
           <h2>Design Language</h2>
           <p>We ditched the standard "corporate crypto" blues for a <strong>Neon Green & Hot Pink</strong> palette against a deep void background. The prominent use of the Moai statue (🗿) anchors the "Chad" branding.</p>
           <p>The typography is massive, italicized, and uppercase to scream confidence. The result is a site that is impossible to ignore.</p>
 
-          <h2>Technical Execution</h2>
-          <p>Speed was non-negotiable. We used a static-first approach with optimized assets (WebP) to ensure the site loads instantly even on poor mobile connections, which is where 85% of meme coin traffic originates.</p>
+          <div className="my-10 p-8 bg-surface-highlight border border-white/10 rounded-2xl">
+             <h3 className="text-xl font-bold text-text-main mb-4">Technical Strategy</h3>
+             <p>Speed was non-negotiable. We used a static-first approach with optimized assets (WebP) to ensure the site loads instantly even on poor mobile connections, which is where 85% of meme coin traffic originates.</p>
+             <p>Interested in launching a similar viral site? Check out our <Link to="/crypto-website-cost" className="text-green-500 font-bold hover:underline">Meme Coin Pricing Guide</Link>.</p>
+          </div>
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-white/10">

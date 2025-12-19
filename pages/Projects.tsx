@@ -100,8 +100,8 @@ const Projects: React.FC = () => {
         <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6">
           Selected Projects & <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Case Studies</span>
         </h1>
-        <p className="text-text-muted max-w-2xl mx-auto text-lg">
-          Explore recent work in high-performance Web3 interfaces, token launches, and static e-commerce.
+        <p className="text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
+          Explore recent work in <Link to="/services" className="text-purple-500 hover:underline font-medium">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-500 hover:underline font-medium">E-commerce</Link>, and Custom Software.
         </p>
       </div>
 

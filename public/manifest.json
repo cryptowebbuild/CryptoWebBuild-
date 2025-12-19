@@ -1,0 +1,16 @@
+{
+  "name": "CryptoWebBuild",
+  "short_name": "WebBuild",
+  "description": "Professional Web3 & E-commerce Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#030014",
+  "icons": [
+    {
+      "src": "/icons/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
+}
