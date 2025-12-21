@@ -1,41 +1,69 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
+import path from 'path';
+
+// Custom Plugin: Automatically create 404.html for SPA Fallback
+const spaFallbackPlugin = () => {
+  return {
+    name: 'spa-fallback',
+    closeBundle() {
+      // Use path.resolve('dist') which resolves relative to cwd by default
+      const dist = path.resolve('dist');
+      const indexHtml = path.join(dist, 'index.html');
+      const fourOhFourHtml = path.join(dist, '404.html');
+      
+      if (fs.existsSync(indexHtml)) {
+        fs.copyFileSync(indexHtml, fourOhFourHtml);
+        console.log('✨ Generated 404.html for SPA Routing Fallback');
+      }
+    }
+  }
+}
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(), 
+    spaFallbackPlugin()
+  ],
   build: {
-    // Target es2015 to support older mobile webviews (Telegram/FB)
-    target: 'es2015',
+    target: 'es2015', // Compatibility for older mobile webviews
     outDir: 'dist',
     assetsDir: 'assets',
-    // Minify with esbuild for speed and smaller bundle size
+    emptyOutDir: true,
     minify: 'esbuild',
-    cssCodeSplit: true,
-    sourcemap: false,
+    cssCodeSplit: true, // Split CSS to remove unused styles from critical path
+    sourcemap: false, // Disable source maps for production speed
     rollupOptions: {
       output: {
-        // Advanced Manual Chunks to fix LCP and Bundle Size
+        // Advanced Manual Chunks for PageSpeed 95+
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // Split Core React Logic (Critical Path)
+            // 1. Core React (Critical Path)
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('react-helmet-async')) {
               return 'vendor-react';
             }
-            // Split Heavy GenAI SDK (Lazy Loaded usually, but keep separate)
+            // 2. GenAI SDK (Heavy - separate to avoid blocking main thread)
             if (id.includes('@google/genai')) {
               return 'vendor-genai';
             }
-            // Group all other dependencies
+            // 3. Animation Library (Heavy - separate for LCP optimization)
+            if (id.includes('framer-motion')) {
+              return 'vendor-framer';
+            }
+            // 4. Icons & UI Utilities
+            if (id.includes('lucide-react') || id.includes('clsx') || id.includes('tailwind-merge')) {
+              return 'vendor-ui';
+            }
+            // 5. Fallback for remaining dependencies
             return 'vendor-libs';
           }
         }
       }
     },
-    // Increase warning limit to prevent noise
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 800,
   },
   define: {
-    // Securely stringify API key for client-side usage if needed
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ""),
   }
 });
