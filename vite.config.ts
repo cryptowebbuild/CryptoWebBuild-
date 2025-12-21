@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    // CRITICAL FIX: Target 'es2015' to support older mobile browsers (Opera Mini, UC, old Android).
+    // Default 'modules' target leaves modern syntax (?. ??) that crashes older engines.
+    target: 'es2015',
     outDir: 'dist',
     rollupOptions: {
       output: {

@@ -124,7 +124,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4 md:px-6">
           <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm' : ''}`}>
             
-            {/* Logo */}
+            {/* Logo - SEMANTIC FIX: Using span instead of h1 to prevent multiple H1 tags */}
             <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
               <LogoIcon className="w-9 h-9 text-text-main" />
               <span className="font-display font-bold text-xl tracking-tight text-text-main">CryptoWebBuild</span>
