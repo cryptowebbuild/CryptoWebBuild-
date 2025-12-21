@@ -36,21 +36,12 @@ html {
     -webkit-font-smoothing: antialiased;
     background-color: var(--bg-void);
     transition: background-color 0.3s ease;
-    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-void);
     color: var(--tx-main);
     transition: color 0.3s ease;
-    /* Prevent horizontal overflow on mobile from animations */
-    overflow-x: hidden;
-    width: 100%;
-}
-
-/* Improve tap feedback on mobile */
-button, a {
-    -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom Selection Color */
@@ -104,14 +95,11 @@ button, a {
 /* Enhanced Glass Panel */
 .glass-panel {
   background: var(--bg-surface);
-  /* Reduced blur for mobile FPS, browsers handle this automatically mostly, but fallback helps */
-  backdrop-filter: blur(16px); 
+  backdrop-filter: blur(16px); /* Reduced slightly for mobile FPS */
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
   box-shadow: 0 8px 32px 0 var(--shadow-color);
-  /* Hardware acceleration hint */
-  transform: translateZ(0); 
-  will-change: transform, opacity;
+  transform: translateZ(0); /* Performance hack */
 }
 
 /* Performance Utilities */
@@ -133,8 +121,7 @@ button, a {
   text-wrap: balance;
 }
 
-/* Rendering Optimization for below-fold content */
 .content-auto {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+  contain-intrinsic-size: 1px 1000px;
 }

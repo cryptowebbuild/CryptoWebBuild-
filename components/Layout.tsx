@@ -10,17 +10,17 @@ interface LayoutProps {
 const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => (
   <button
     onClick={toggle}
-    className="w-12 h-12 flex items-center justify-center rounded-full text-text-muted hover:text-text-main hover:bg-surface-highlight transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 touch-manipulation"
+    className="w-10 h-10 flex items-center justify-center rounded-full text-text-muted hover:text-text-main hover:bg-surface-highlight transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
     aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
   >
     {isDark ? (
       // Sun Icon
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ) : (
       // Moon Icon
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     )}
@@ -46,7 +46,7 @@ const LogoIcon = ({ className, idSuffix = 'header' }: { className?: string, idSu
 );
 
 const SocialIcon = ({ d }: { d: string }) => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path d={d} />
   </svg>
 );
@@ -94,21 +94,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Close menu on route change & prevent body scroll when open
+  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
-    document.body.style.overflow = '';
     window.scrollTo(0,0);
   }, [location.pathname]);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-  }, [isMenuOpen]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -135,8 +125,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm' : ''}`}>
             
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group shrink-0" aria-label="CryptoWebBuild Home">
-              <LogoIcon className="w-10 h-10 text-text-main" />
+            <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
+              <LogoIcon className="w-9 h-9 text-text-main" />
               <span className="font-display font-bold text-xl tracking-tight text-text-main">CryptoWebBuild</span>
             </Link>
 
@@ -160,72 +150,72 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               {/* Mobile Hamburger */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className="lg:hidden w-12 h-12 flex items-center justify-center text-text-main focus:outline-none bg-surface-highlight rounded-xl active:scale-95 transition-transform touch-manipulation"
+                className="lg:hidden p-2 text-text-main focus:outline-none bg-surface-highlight rounded-lg"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
               >
                 <div className="w-5 h-4 flex flex-col justify-between relative">
-                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 origin-left ${isMenuOpen ? 'rotate-45 translate-x-[2px]' : ''}`} />
+                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
                   <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 origin-left ${isMenuOpen ? '-rotate-45 translate-x-[2px]' : ''}`} />
+                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
                 </div>
               </button>
             </div>
           </nav>
+
+          {/* Mobile Menu Dropdown */}
+          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+            <div className="glass-panel border border-border-glass shadow-2xl rounded-3xl p-4 overflow-hidden">
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.path} 
+                    to={link.path} 
+                    className={`block px-4 py-3 text-lg font-medium rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-text-muted hover:bg-surface-highlight hover:text-text-main'}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="pt-4 mt-4 border-t border-border-glass">
+                {/* Socials in Mobile Menu */}
+                <div className="flex justify-center gap-6 mb-4">
+                  {socialLinks.map((social) => (
+                    <a 
+                      key={social.label} 
+                      href={social.href} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-muted hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
+                      aria-label={social.label}
+                    >
+                      <SocialIcon d={social.d} />
+                    </a>
+                  ))}
+                </div>
+                <Link 
+                  to="/contact" 
+                  className="flex items-center justify-center w-full px-6 py-4 bg-text-main text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Hire Me
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
-
-      {/* Mobile Menu Overlay (Fixed Position) */}
-      <div 
-        className={`fixed inset-0 z-40 bg-void/90 backdrop-blur-xl transition-all duration-500 lg:hidden flex flex-col pt-32 px-6 pb-12 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
-      >
-        <div className="flex flex-col space-y-2 flex-grow overflow-y-auto">
-          {navLinks.map((link, i) => (
-            <Link 
-              key={link.path} 
-              to={link.path} 
-              className={`block px-6 py-5 text-2xl font-display font-bold rounded-2xl transition-all duration-300 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-text-muted hover:text-text-main'}`}
-              onClick={() => setIsMenuOpen(false)}
-              style={{ transitionDelay: `${i * 50}ms` }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-        
-        <div className={`mt-8 space-y-6 transition-all duration-500 delay-300 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="flex justify-center gap-8">
-            {socialLinks.map((social) => (
-              <a 
-                key={social.label} 
-                href={social.href} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-muted hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
-                aria-label={social.label}
-              >
-                <SocialIcon d={social.d} />
-              </a>
-            ))}
-          </div>
-          <Link 
-            to="/contact" 
-            className="flex items-center justify-center w-full px-6 py-5 bg-text-main text-white dark:bg-white dark:text-black font-bold rounded-2xl text-xl shadow-xl"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Hire Me
-          </Link>
-        </div>
-      </div>
 
       <main className="relative z-10 flex-grow pt-24">{children}</main>
 
       {/* Scroll To Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-40 w-14 h-14 rounded-full bg-purple-600 text-white shadow-lg shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50 flex items-center justify-center touch-manipulation ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-8 right-8 z-40 p-4 rounded-full bg-purple-600 text-white shadow-lg shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50 ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}
         aria-label="Scroll to top"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
       </button>
 
       {/* --- FOOTER --- */}
@@ -251,7 +241,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-surface-highlight border border-border-glass text-text-muted flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300 touch-manipulation"
+                    className="w-10 h-10 rounded-full bg-surface-highlight border border-border-glass text-text-muted flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300"
                     aria-label={social.label}
                   >
                     <SocialIcon d={social.d} />
@@ -265,7 +255,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
                 {navLinks.map(link => (
-                  <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">{link.label}</Link></li>
+                  <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{link.label}</Link></li>
                 ))}
               </ul>
             </div>
@@ -274,10 +264,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Resources</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
-                <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">FAQ & Support</Link></li>
-                <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Terms of Service</Link></li>
-                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Contact</Link></li>
+                <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
+                <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Terms of Service</Link></li>
+                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
 
@@ -285,10 +275,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="lg:col-span-4">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Guides & Tech</h3>
               <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
-                <li><Link to="/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Hiring the Best Developer</Link></li>
-                <li><Link to="/crypto-project-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Crypto Project Foundations</Link></li>
-                <li><Link to="/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Viral Meme Coin Features</Link></li>
-                <li><Link to="/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1 block">Crypto Website Pricing</Link></li>
+                <li><Link to="/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
+                <li><Link to="/crypto-project-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Project Foundations</Link></li>
+                <li><Link to="/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
+                <li><Link to="/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
               </ul>
             </div>
 
@@ -297,8 +287,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-text-muted text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
             <div className="flex gap-8 text-sm font-bold text-text-muted">
-              <Link to="/privacy" className="hover:text-text-main transition-colors p-2">Privacy</Link>
-              <Link to="/terms" className="hover:text-text-main transition-colors p-2">Terms</Link>
+              <Link to="/privacy" className="hover:text-text-main transition-colors">Privacy</Link>
+              <Link to="/terms" className="hover:text-text-main transition-colors">Terms</Link>
             </div>
           </div>
         </div>

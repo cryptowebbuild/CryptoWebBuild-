@@ -4,13 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Professional Web3 and E-commerce Developer Portfolio. High-performance websites by Sagor Ahamed.">
+  
+  <!-- NOTE: Title and Description are managed dynamically by React Helmet (SEO.tsx) to prevent duplicates -->
   <meta name="robots" content="index, follow">
   
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#030014" media="(prefers-color-scheme: dark)">
-  
-  <title>Sagor Ahamed | CryptoWebBuild</title>
   
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
@@ -43,6 +42,32 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body class="bg-void text-text-main antialiased selection:bg-purple-500/30 overflow-x-hidden">
+  
+  <!-- SEO Fallback for Bots that don't run JS (Fixes Ahrefs 'No Outgoing Links' & 'H1 Missing') -->
+  <noscript>
+    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
+      <h1>Web3 & Crypto Website Developer | Sagor Ahamed</h1>
+      <p>Professional freelance developer specializing in React, Solana, and E-commerce.</p>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services & Pricing</a></li>
+          <li><a href="/projects">Portfolio & Case Studies</a></li>
+          <li><a href="/about">About Sagor Ahamed</a></li>
+          <li><a href="/blog">Web3 Development Blog</a></li>
+          <li><a href="/contact">Hire Me</a></li>
+          <li><a href="/videos">AI Tutorials</a></li>
+        </ul>
+      </nav>
+      <h2>Services</h2>
+      <ul>
+        <li><a href="/tokenlaunch">Solana Token Launch Sites</a></li>
+        <li><a href="/memecoinsite">Meme Coin Websites</a></li>
+        <li><a href="/shopfast">Headless E-commerce</a></li>
+      </ul>
+    </div>
+  </noscript>
+
   <div class="noise-overlay"></div>
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>

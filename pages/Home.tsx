@@ -112,7 +112,7 @@ const Home: React.FC = () => {
       />
       
       {/* --- Hero Section --- */}
-      <section className="relative pt-24 pb-24 md:pt-36 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
+      <section className="relative pt-20 pb-24 md:pt-32 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
         
         {/* Glow Effects - GPU Accelerated */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/20 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen" />
@@ -120,13 +120,13 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
           
-          <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 md:mb-10 animate-float hover:border-purple-500/50 transition-colors gpu-accelerated cursor-pointer group">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 md:mb-10 animate-float hover:border-purple-500/50 transition-colors gpu-accelerated">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
-            <span className="text-xs md:text-sm font-bold text-text-muted uppercase tracking-wide group-hover:text-purple-500 transition-colors">Available for New Projects</span>
-          </Link>
+            <span className="text-xs md:text-sm font-bold text-text-muted uppercase tracking-wide">Available for New Projects</span>
+          </div>
 
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] animate-slide-up text-text-main text-balance">
             High-Performance <br/>
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
           </h1>
 
           {/* Typing Container - Fixed Height for Stability */}
-          <div className="min-h-[4.5rem] mb-8 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
+          <div className="h-[4rem] sm:h-[3rem] md:h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-muted font-medium">I build</span>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-main font-bold relative inline-block break-words min-w-[280px] text-left">
               {text}
@@ -151,14 +151,14 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <Link 
               to="/contact" 
-              className="relative px-8 py-4 md:px-10 md:py-5 bg-text-main text-white dark:bg-white dark:text-black font-bold text-lg md:text-xl rounded-2xl overflow-hidden transition-all active:scale-95 hover:scale-105 shadow-xl shadow-purple-500/10 w-full sm:w-auto flex items-center justify-center min-w-[200px]"
+              className="relative px-8 py-4 md:px-10 md:py-5 bg-text-main text-white dark:bg-white dark:text-black font-bold text-lg md:text-xl rounded-2xl overflow-hidden transition-all active:scale-95 hover:scale-105 shadow-xl shadow-purple-500/10 w-full sm:w-auto flex items-center justify-center"
             >
               <span className="relative z-10">Get a Quote</span>
             </Link>
             
             <Link 
               to="/services" 
-              className="px-8 py-4 md:px-10 md:py-5 text-text-main font-bold text-lg md:text-xl rounded-2xl border border-border-glass bg-surface/50 hover:bg-surface-highlight hover:border-purple-500/30 transition-all active:scale-95 shadow-sm w-full sm:w-auto text-center min-w-[200px]"
+              className="px-8 py-4 md:px-10 md:py-5 text-text-main font-bold text-lg md:text-xl rounded-2xl border border-border-glass bg-surface/50 hover:bg-surface-highlight hover:border-purple-500/30 transition-all active:scale-95 shadow-sm w-full sm:w-auto text-center"
             >
               View Services
             </Link>
@@ -172,7 +172,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- Services Preview --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-20 gap-6">
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl md:text-6xl font-bold text-text-main mb-4 md:mb-6">
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
               Full-stack and static-first websites tailored for performance and growth.
             </p>
           </div>
-          <Link to="/services" className="text-cyan-600 dark:text-cyan-400 font-bold text-lg hover:text-cyan-500 transition-colors flex items-center gap-2 group border-b-2 border-transparent hover:border-cyan-500 pb-1 py-3">
+          <Link to="/services" className="text-cyan-600 dark:text-cyan-400 font-bold text-lg hover:text-cyan-500 transition-colors flex items-center gap-2 group border-b-2 border-transparent hover:border-cyan-500 pb-1">
             All Services <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- Technical Philosophy (Word Count & SEO Booster) --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="glass-panel p-8 md:p-12 rounded-[32px] bg-surface border-t border-purple-500/20 shadow-xl">
             <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="flex-1 space-y-6">
@@ -313,7 +313,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- Why Choose Me --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="bg-surface/50 border border-border-glass rounded-[32px] md:rounded-[48px] p-8 md:p-24 relative overflow-hidden shadow-2xl shadow-purple-500/5">
           <div className="absolute top-0 right-0 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-purple-600/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
           
@@ -345,7 +345,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- Testimonials Section --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <h2 className="font-display text-4xl md:text-6xl font-bold text-text-main mb-6">
             Trusted by Builders
@@ -385,7 +385,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- Launch Protocol (Process Section) --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm animate-pulse-slow">
             Launch Protocol
@@ -455,7 +455,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* --- CTA Section --- */}
-      <section className="container mx-auto px-6 content-auto">
+      <section className="container mx-auto px-6">
         <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden p-10 md:p-32 text-center border border-white/10 group bg-slate-900 shadow-2xl shadow-purple-900/20">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-blue-900/40 opacity-100 group-hover:opacity-90 transition-opacity duration-500" />
           <div className="absolute inset-0 backdrop-blur-3xl" />

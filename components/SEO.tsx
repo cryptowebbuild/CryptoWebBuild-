@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   keywords?: string[];
   canonical?: string;
   image?: string;
@@ -12,7 +12,7 @@ interface SEOProps {
   publishedTime?: string;
   author?: string;
   noIndex?: boolean;
-  schema?: Record<string, any>; // New prop for structured data
+  schema?: Record<string, any>;
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -29,24 +29,44 @@ const SEO: React.FC<SEOProps> = ({
   schema
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
-  // Ensure canonical is absolute
-  const fullCanonical = canonical 
-    ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`)
-    : (typeof window !== 'undefined' ? window.location.href : siteUrl);
+  
+  // Default SEO Values (Fallback if not provided)
+  const defaultTitle = "Sagor Ahamed | Web3 & Crypto Website Developer";
+  const defaultDescription = "Professional freelance developer specializing in high-performance React websites for Token Launches, Meme Coins, and E-commerce.";
+  
+  // Use provided values or fall back to defaults
+  const finalTitle = title || defaultTitle;
+  const finalDescription = description || defaultDescription;
 
-  // Default keywords if none provided (Fallbacks)
+  // Robust Canonical Logic:
+  // 1. If explicit canonical is passed, use it.
+  // 2. If not passed, use window.location.pathname (Clean URL) to strip query params.
+  // 3. Fallback to siteUrl.
+  const getCanonicalUrl = () => {
+    if (canonical) {
+      return canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+    }
+    if (typeof window !== 'undefined') {
+      return `${siteUrl}${window.location.pathname}`;
+    }
+    return siteUrl;
+  };
+
+  const fullCanonical = getCanonicalUrl();
+
+  // Default keywords + any specific ones
   const defaultKeywords = ['Web3 Developer', 'Crypto Website', 'React Developer', 'E-commerce Builder'];
-  const allKeywords = keywords.length > 0 ? keywords : defaultKeywords;
+  const allKeywords = [...new Set([...defaultKeywords, ...keywords])]; // Remove duplicates
 
   return (
     <Helmet>
       {/* Standard Metadata */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
       <meta name="keywords" content={allKeywords.join(', ')} />
       <link rel="canonical" href={fullCanonical} />
       
-      {/* Robots Control: Critical for SEO health */}
+      {/* Robots Control */}
       <meta 
         name="robots" 
         content={noIndex 
@@ -59,8 +79,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:site_name" content={name} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -78,8 +98,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@WebBuildDev" />
       <meta name="twitter:creator" content="@WebBuildDev" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={image} />
 
       {/* JSON-LD Schema Injection */}
