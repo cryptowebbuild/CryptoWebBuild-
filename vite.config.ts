@@ -3,14 +3,25 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  // 1. এটি জরুরি: _redirects ফাইল কপি করার জন্য
-  publicDir: 'public', 
+  publicDir: 'public',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
     sourcemap: false,
-    // 2. নিরাপত্তা: জটিল manualChunks বাদ দেওয়া হয়েছে
+    minify: 'esbuild', // ফাস্ট মিনিফিকেশন
+    rollupOptions: {
+      output: {
+        // ✅ Safe Code Splitting: লাইব্রেরিগুলোকে আলাদা ফাইলে ভাগ করে, যাতে মেইন সাইট দ্রুত লোড হয়
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react'; // React আলাদা
+            if (id.includes('framer-motion')) return 'vendor-anim'; // অ্যানিমেশন আলাদা (ভারী লাইব্রেরি)
+            return 'vendor-libs'; // বাকি সব আলাদা
+          }
+        }
+      }
+    },
     chunkSizeWarningLimit: 1000,
   },
   server: {
