@@ -4,21 +4,33 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    // CRITICAL FIX: Target 'es2015' to support older mobile browsers (Opera Mini, UC, old Android).
-    // Default 'modules' target leaves modern syntax (?. ??) that crashes older engines.
+    // CRITICAL: Target 'es2015' prevents white screen on older mobile browsers
     target: 'es2015',
     outDir: 'dist',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          'vendor-utils': ['@google/genai']
+        // Advanced Code Splitting:
+        // 1. Separates React core to 'vendor-react'
+        // 2. Separates GenAI SDK to 'vendor-genai'
+        // 3. Moves all other node_modules to 'vendor-libs'
+        // This keeps the main 'index.js' tiny and ensures better caching.
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('react-helmet-async')) {
+              return 'vendor-react';
+            }
+            if (id.includes('@google/genai')) {
+              return 'vendor-genai';
+            }
+            return 'vendor-libs';
+          }
         }
       }
     },
     minify: 'esbuild',
     sourcemap: false,
     cssCodeSplit: true,
+    chunkSizeWarningLimit: 1000,
   },
   define: {
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY || ""),
