@@ -5,57 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <!-- SEO handled by React Helmet, but basic fallbacks here -->
   <meta name="robots" content="index, follow">
-  
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#030014" media="(prefers-color-scheme: dark)">
   
-  <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-  <link rel="apple-touch-icon" href="/icons/favicon.svg">
 
-  <!-- Performance: Preconnect to Font Origins (LCP Optimization) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- Performance: display=swap prevents FOIT (Flash of Invisible Text) -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="dns-prefetch" href="https://images.unsplash.com">
-
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "react-dom": "https://esm.sh/react-dom@18.2.0?deps=react@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?deps=react@18.2.0",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.22.0?deps=react@18.2.0,react-dom@18.2.0",
-    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.4?deps=react@18.2.0,react-dom@18.2.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "fs": "https://esm.sh/fs@^0.0.1-security",
-    "path": "https://esm.sh/path@^0.12.7"
-  }
-}
-</script>
-
-<link rel="stylesheet" href="/index.css">
+  <title>CryptoWebBuild</title>
 </head>
 <body class="bg-void text-text-main antialiased selection:bg-purple-500/30 overflow-x-hidden">
   
   <noscript>
     <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
       <h2>Web3 & Crypto Website Developer | Sagor Ahamed</h2>
-      <p>Professional freelance developer specializing in React, Solana, and E-commerce.</p>
     </div>
   </noscript>
 
   <div class="noise-overlay"></div>
+  
   <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
