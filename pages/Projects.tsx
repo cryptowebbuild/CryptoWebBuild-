@@ -6,6 +6,7 @@ import SolNovaMockup from '../components/SolNovaMockup';
 import QuackInuMockup from '../components/QuackInuMockup';
 import GigaChadMockup from '../components/GigaChadMockup';
 import ShopFastMockup from '../components/ShopFastMockup';
+import OptimizedImage from '../components/OptimizedImage';
 
 // Define project interface for type safety
 interface ProjectItem {
@@ -128,13 +129,12 @@ const Projects: React.FC = () => {
                ) : project.id === 'shopfast' ? (
                  <ShopFastMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                ) : (
-                 // Fallback for standard images
-                 <img 
+                 // Fallback for standard images using OptimizedImage for performance
+                 <OptimizedImage 
                    src={project.img || '/default-project.jpg'} 
                    alt={`Preview of ${project.title}`} 
                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
-                   loading="lazy"
-                   decoding="async"
+                   fill={true}
                  />
                )}
                

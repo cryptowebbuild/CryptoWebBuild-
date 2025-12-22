@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#030014" media="(prefers-color-scheme: dark)">
-  
-  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO: Broadened keywords in Title and Description -->
+    <title>Sagor Ahamed | Web3, Business & E-commerce Website Developer</title>
+    <meta name="description" content="Expert Full-Stack Developer for Crypto, Business, E-commerce, and Portfolio websites. Hire Sagor Ahamed for high-speed, SEO-optimized custom web development.">
+    <meta name="theme-color" content="#02010a">
+    <meta name="author" content="Sagor Ahamed">
+    
+    <!-- Fixed Favicon Path (Removed /icons/ prefix) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Performance: Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://esm.sh" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    
+    <!-- Performance: display=swap prevents render blocking text -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <title>CryptoWebBuild</title>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@2.0.5?external=react,react-dom",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.1.1?external=react,react-dom",
+    "@google/genai": "https://esm.sh/@google/genai@1.31.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-void text-text-main antialiased selection:bg-purple-500/30 overflow-x-hidden">
-  
-  <noscript>
-    <div style="padding: 20px; max-width: 800px; margin: 0 auto;">
-      <h2>Web3 & Crypto Website Developer | Sagor Ahamed</h2>
-    </div>
-  </noscript>
-
-  <div class="noise-overlay"></div>
-  
-  <div id="root"></div>
-
-  <script type="module" src="/index.tsx"></script>
-</body>
+  <body class="bg-[#02010a] text-slate-100 antialiased selection:bg-purple-500/30 overflow-x-hidden font-sans">
+    <div class="noise-overlay"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

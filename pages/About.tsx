@@ -155,6 +155,7 @@ const About: React.FC = () => {
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={`Connect with Sagor Ahamed on ${social.name}`}
                                     className={`group flex items-center gap-3 pl-3 pr-4 py-2.5 rounded-xl text-white font-bold text-sm transition-all hover:scale-105 shadow-lg ${social.color} hover:shadow-xl`}
                                 >
                                     <div className="bg-white/20 p-1 rounded-lg group-hover:bg-white/30 transition-colors">
@@ -297,7 +298,7 @@ const About: React.FC = () => {
                 <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform hover:shadow-purple-500/30">
                     Start Your Project
                 </Link>
-                <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-md">
+                <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" aria-label="Chat on Telegram" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-md">
                     Telegram Chat
                 </a>
             </div>

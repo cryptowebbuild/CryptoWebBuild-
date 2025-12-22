@@ -8,6 +8,7 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   priority?: boolean;
   width?: number | string;
   height?: number | string;
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ 
@@ -18,6 +19,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   priority = false,
   width,
   height,
+  fetchPriority,
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(priority);
@@ -59,6 +61,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
             width={width}
             height={height}
             loading={priority ? "eager" : "lazy"}
+            // @ts-ignore - React types might not strictly support fetchPriority yet but browsers do
+            fetchpriority={fetchPriority || (priority ? "high" : "auto")}
             decoding={priority ? "sync" : "async"}
             className={`transition-all duration-700 ease-out ${imgClasses} ${transitionClasses}`}
             onLoad={(e) => {
