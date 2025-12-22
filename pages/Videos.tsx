@@ -5,7 +5,6 @@ import SEO from '../components/SEO';
 // Lite Video Component to boost performance
 const LiteYouTubeEmbed = ({ id, title }: { id: string; title: string }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-
   // High-res thumbnail
   const posterUrl = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
   const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
