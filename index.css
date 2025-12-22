@@ -6,8 +6,8 @@
 :root {
   /* Light Mode (Default Day) */
   --bg-void: #f8fafc;
-  --bg-surface: rgba(255, 255, 255, 0.8);
-  --bg-surface-highlight: rgba(241, 245, 249, 0.8);
+  --bg-surface: rgba(255, 255, 255, 0.85);
+  --bg-surface-highlight: rgba(241, 245, 249, 0.9);
   --tx-main: #0f172a;
   --tx-muted: #475569;
   --border-glass: rgba(148, 163, 184, 0.2);
@@ -18,8 +18,8 @@
 .dark {
   /* Dark Mode (Cosmic Night) */
   --bg-void: #02010a;
-  --bg-surface: rgba(10, 10, 20, 0.4);
-  --bg-surface-highlight: rgba(20, 20, 40, 0.6);
+  --bg-surface: rgba(10, 10, 20, 0.6);
+  --bg-surface-highlight: rgba(20, 20, 40, 0.8);
   --tx-main: #f8fafc;
   --tx-muted: #94a3b8;
   --border-glass: rgba(255, 255, 255, 0.1);
@@ -32,12 +32,8 @@
     @apply bg-void text-text-main font-sans transition-colors duration-300;
   }
   
-  /* Cosmic Background - Only visible in Dark Mode */
-  .dark body {
-    background-image: 
-      radial-gradient(circle at 50% 50%, rgba(176, 38, 255, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 0% 0%, rgba(0, 245, 255, 0.05) 0%, transparent 40%);
-    background-attachment: fixed;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -46,7 +42,7 @@
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.03;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
@@ -54,21 +50,22 @@
 /* Glassmorphism that adapts to Light/Dark */
 .glass-panel {
   background: var(--bg-surface);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Lighter shadow for Day */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); 
 }
 
 .dark .glass-panel {
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); /* Deep shadow for Night */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 .glass-panel:hover {
   border-color: var(--accent-purple);
+  box-shadow: 0 0 20px rgba(176, 38, 255, 0.15);
 }
 
-/* Cosmic Background Particles - Hidden in Light Mode */
+/* Cosmic Background */
 .cosmic-bg {
   position: fixed;
   inset: 0;
@@ -88,21 +85,20 @@
 
 .nebula {
   position: absolute;
-  width: 80vmax;
-  height: 80vmax;
+  width: 90vmax;
+  height: 90vmax;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(100px);
   opacity: 0.15;
   mix-blend-mode: screen;
   animation: nebulaFloat 20s ease-in-out infinite alternate;
 }
 
 @keyframes nebulaFloat {
-  from { transform: translate(-10%, -10%) scale(1); }
-  to { transform: translate(10%, 10%) scale(1.1); }
+  from { transform: translate(-5%, -5%) scale(1); }
+  to { transform: translate(5%, 5%) scale(1.1); }
 }
 
-/* Starfield */
 .stars {
   position: absolute;
   top: 0;
@@ -110,23 +106,22 @@
   width: 200%;
   height: 200%;
   background-image: 
-    radial-gradient(1px 1px at 10% 20%, white, transparent),
+    radial-gradient(1.5px 1.5px at 10% 20%, white, transparent),
     radial-gradient(1px 1px at 30% 50%, white, transparent),
     radial-gradient(2px 2px at 50% 10%, white, transparent),
-    radial-gradient(1px 1px at 70% 80%, white, transparent),
-    radial-gradient(2px 2px at 90% 40%, white, transparent);
+    radial-gradient(1.5px 1.5px at 70% 80%, white, transparent),
+    radial-gradient(2.5px 2.5px at 90% 40%, white, transparent);
   background-repeat: repeat;
-  background-size: 500px 500px;
-  opacity: 0.3;
-  animation: starsMove 150s linear infinite;
+  background-size: 600px 600px;
+  opacity: 0.4;
+  animation: starsMove 200s linear infinite;
 }
 
 @keyframes starsMove {
   from { transform: translateY(0); }
-  to { transform: translateY(-500px); }
+  to { transform: translateY(-600px); }
 }
 
-/* Cosmic Spinner */
 .cosmic-spinner {
   width: 50px;
   height: 50px;
@@ -135,6 +130,7 @@
   border-right-color: var(--accent-cyan);
   border-radius: 50%;
   animation: cosmicSpin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.5);
 }
 
 @keyframes cosmicSpin {
@@ -150,7 +146,7 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 bg-[length:200%_auto];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-cyan-400 to-purple-500 bg-[length:200%_auto];
   animation: shimmer 4s linear infinite;
 }
 

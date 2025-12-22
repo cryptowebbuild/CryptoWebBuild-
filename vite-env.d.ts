@@ -17,3 +17,5 @@ declare namespace NodeJS {
     [key: string]: string | undefined;
   }
 }
+
+declare module 'react-router-dom';

@@ -1,10 +1,19 @@
 
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import SEO from './components/SEO';
 
-// Lazy Load Pages with extensions for native ESM resolution
+// ScrollToTop Utility Component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+// Lazy Load Pages
 const Home = lazy(() => import('./pages/Home.tsx'));
 const About = lazy(() => import('./pages/About.tsx'));
 const Services = lazy(() => import('./pages/Services.tsx'));
@@ -44,6 +53,7 @@ const PageLoader = () => (
 const App: React.FC = () => {
   return (
     <Layout>
+      <ScrollToTop />
       <SEO 
         title="Professional Developer" 
         description="High-performance Web3 and E-commerce architecture by Sagor Ahamed."

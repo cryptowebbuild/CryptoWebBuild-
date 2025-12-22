@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -21,10 +20,9 @@ const LogoIcon = ({ className }: { className?: string }) => (
 );
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(true); // Default to Dark (Cosmic)
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Check local storage or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
       setIsDark(false);
@@ -54,12 +52,10 @@ const ThemeToggle = () => {
       aria-label="Toggle Theme"
     >
       {isDark ? (
-        // Sun Icon for Dark Mode
         <svg className="w-5 h-5 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       ) : (
-        // Moon Icon for Light Mode
         <svg className="w-5 h-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
@@ -107,21 +103,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   ];
 
   return (
-    <div className="min-h-screen relative flex flex-col overflow-x-hidden transition-colors duration-300 bg-void">
+    <div className="min-h-screen relative flex flex-col overflow-x-hidden transition-colors duration-300 bg-void font-sans">
       
       {/* Dynamic Cosmic Background */}
-      <div className="cosmic-bg">
+      <div className="cosmic-bg fixed inset-0 z-0">
         <div className="stars"></div>
         <div className="nebula top-[-10%] left-[-10%] bg-purple-600/10"></div>
         <div className="nebula bottom-[-10%] right-[-10%] bg-cyan-500/10 animate-delay-2000"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#02010a]/50 to-[#02010a]"></div>
       </div>
 
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-6 md:py-8'}`}>
         <div className="container mx-auto px-4">
-          <nav className={`mx-auto max-w-6xl flex items-center justify-between px-6 py-2.5 rounded-full transition-all duration-500 ${scrolled ? 'glass-panel border-border-glass bg-surface/80 backdrop-blur-md' : 'bg-transparent'}`}>
+          <nav className={`mx-auto max-w-7xl flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${scrolled ? 'glass-panel border-border-glass bg-surface/80 backdrop-blur-md shadow-2xl shadow-purple-900/10' : 'bg-transparent'}`}>
             <Link to="/" className="flex items-center gap-2 group">
-              <LogoIcon className="w-8 h-8 transition-transform group-hover:rotate-180 duration-700" />
+              <LogoIcon className="w-9 h-9 transition-transform group-hover:rotate-180 duration-700" />
               <span className="font-display font-bold text-xl tracking-tighter text-text-main">CryptoWebBuild</span>
             </Link>
 
@@ -130,7 +126,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <Link 
                   key={link.path} 
                   to={link.path} 
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${location.pathname === link.path ? 'bg-surface-highlight text-cyan-500 dark:text-cyan-400' : 'text-text-muted hover:text-text-main hover:bg-surface/50'}`}
+                  className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 ${location.pathname === link.path ? 'bg-surface-highlight text-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.2)]' : 'text-text-muted hover:text-text-main hover:bg-surface/50'}`}
                 >
                   {link.label}
                 </Link>
@@ -140,36 +136,36 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="flex items-center gap-4">
               <ThemeToggle />
               
-              <Link to="/contact" className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-full text-xs hover:scale-105 transition-transform shadow-[0_0_20px_rgba(176,38,255,0.3)]">
+              <Link to="/contact" className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-full text-xs hover:scale-105 transition-transform shadow-[0_0_20px_rgba(176,38,255,0.3)] hover:shadow-[0_0_30px_rgba(0,245,255,0.4)]">
                 Initialize Contact
               </Link>
               
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-text-main bg-surface rounded-full border border-border-glass">
-                <div className="w-5 h-4 flex flex-col justify-between">
-                  <span className={`h-0.5 bg-current w-full rounded-full transition-all ${isMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-                  <span className={`h-0.5 bg-current w-full rounded-full transition-all ${isMenuOpen ? 'opacity-0' : ''}`} />
-                  <span className={`h-0.5 bg-current w-full rounded-full transition-all ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+                <div className="w-6 h-5 flex flex-col justify-between">
+                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''}`} />
+                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+                  <span className={`h-0.5 bg-current w-full rounded-full transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`} />
                 </div>
               </button>
             </div>
           </nav>
 
           {/* Mobile Menu */}
-          <div className={`lg:hidden absolute top-full left-4 right-4 mt-4 transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="glass-panel rounded-3xl p-6 shadow-2xl overflow-hidden bg-surface">
+          <div className={`lg:hidden absolute top-full left-4 right-4 mt-4 transition-all duration-500 z-50 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+            <div className="glass-panel rounded-3xl p-6 shadow-2xl overflow-hidden bg-surface border border-purple-500/20">
               <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path} 
-                    className={`block px-4 py-3 text-lg font-medium rounded-2xl ${location.pathname === link.path ? 'bg-surface-highlight text-cyan-500' : 'text-text-muted'}`}
+                    className={`block px-6 py-4 text-lg font-medium rounded-2xl ${location.pathname === link.path ? 'bg-surface-highlight text-cyan-500' : 'text-text-muted hover:bg-white/5'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
                 ))}
-                <Link to="/contact" className="block w-full py-3 mt-4 text-center bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-2xl">
-                  Contact
+                <Link to="/contact" className="block w-full py-4 mt-4 text-center bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-2xl shadow-lg">
+                  Start Project
                 </Link>
               </div>
             </div>
@@ -177,70 +173,94 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-grow pt-24">{children}</main>
+      <main className="flex-grow pt-28 relative z-10">{children}</main>
 
-      <footer className="mt-32 border-t border-border-glass bg-surface backdrop-blur-xl">
-        <div className="container mx-auto px-6 py-16">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
-            
-            {/* Logo & Tagline */}
-            <div className="text-center lg:text-left">
-              <Link to="/" className="flex items-center justify-center lg:justify-start gap-3 mb-4 group">
-                <LogoIcon className="w-8 h-8 group-hover:scale-110 transition-transform" />
-                <span className="font-display font-bold text-2xl text-text-main">CryptoWebBuild</span>
-              </Link>
-              <p className="text-text-muted text-sm max-w-xs leading-relaxed">
-                Architecting the decentralized frontier with pixel-perfect cosmic precision.
-              </p>
+      {/* Enhanced Footer (Cosmic Command Center) */}
+      <footer className="relative mt-32 z-10">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+        <div className="bg-[#02010a]/90 backdrop-blur-xl border-t border-white/5">
+          <div className="container mx-auto px-6 py-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24">
+              
+              {/* Column 1: Brand */}
+              <div className="space-y-6">
+                <Link to="/" className="flex items-center gap-3 group">
+                  <LogoIcon className="w-10 h-10 group-hover:scale-110 transition-transform duration-500" />
+                  <span className="font-display font-bold text-2xl text-text-main tracking-tight">CryptoWebBuild</span>
+                </Link>
+                <p className="text-text-muted text-sm leading-relaxed max-w-xs">
+                  Architecting decentralized frontiers with pixel-perfect cosmic precision. High-performance Web3 & E-commerce solutions.
+                </p>
+                <div className="flex gap-4 pt-2">
+                   <SocialIcon 
+                     href="https://t.me/CryptoWebBuild" 
+                     label="Telegram" 
+                     colorClass="hover:bg-[#229ED9] hover:border-[#229ED9] hover:text-white"
+                     path="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.415-.752-.21-1.349-.321-1.298-.678.027-.184.285-.372.75-.567 2.943-1.28 4.909-2.126 5.895-2.54 2.809-1.176 3.39-1.38 3.766-1.386.082-.002.268.006.416.093z"
+                   />
+                   <SocialIcon 
+                     href="https://x.com/WebBuildDev" 
+                     label="X (Twitter)" 
+                     colorClass="hover:bg-black hover:border-white hover:text-white"
+                     path="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                   />
+                   <SocialIcon 
+                     href="https://github.com/cryptowebbuild" 
+                     label="GitHub" 
+                     colorClass="hover:bg-white hover:text-black hover:border-white"
+                     path="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                   />
+                </div>
+              </div>
+
+              {/* Column 2: Systems (Services) - Fix Orphans */}
+              <div>
+                <h4 className="font-display font-bold text-lg text-white mb-6">Systems</h4>
+                <ul className="space-y-3">
+                  <li><Link to="/services" className="text-text-muted hover:text-cyan-400 transition-colors text-sm">Web3 Development</Link></li>
+                  <li><Link to="/services" className="text-text-muted hover:text-cyan-400 transition-colors text-sm">Meme Coin Launch</Link></li>
+                  <li><Link to="/services" className="text-text-muted hover:text-cyan-400 transition-colors text-sm">E-commerce Store</Link></li>
+                  <li><Link to="/services" className="text-text-muted hover:text-cyan-400 transition-colors text-sm">Smart Contract UI</Link></li>
+                </ul>
+              </div>
+
+              {/* Column 3: Intelligence (Blog/Legal) - Fix Orphans */}
+              <div>
+                <h4 className="font-display font-bold text-lg text-white mb-6">Intelligence</h4>
+                <ul className="space-y-3">
+                  <li><Link to="/blog" className="text-text-muted hover:text-purple-400 transition-colors text-sm">Developer Blog</Link></li>
+                  <li><Link to="/faq" className="text-text-muted hover:text-purple-400 transition-colors text-sm">FAQ & Support</Link></li>
+                  <li><Link to="/privacy" className="text-text-muted hover:text-purple-400 transition-colors text-sm">Privacy Policy</Link></li>
+                  <li><Link to="/terms" className="text-text-muted hover:text-purple-400 transition-colors text-sm">Terms of Service</Link></li>
+                </ul>
+              </div>
+
+              {/* Column 4: Contact Widget */}
+              <div className="bg-surface-highlight/50 p-6 rounded-2xl border border-white/5">
+                <h4 className="font-display font-bold text-white mb-4">Initialize Project</h4>
+                <p className="text-text-muted text-xs mb-4">Ready to deploy? Response time: &lt; 4 hours.</p>
+                <Link to="/contact" className="block w-full py-3 text-center bg-white text-black font-bold text-sm rounded-xl hover:bg-cyan-50 transition-colors">
+                  Get Quote →
+                </Link>
+                <div className="mt-4 flex items-center gap-2 text-[10px] text-text-muted uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  Systems Online
+                </div>
+              </div>
+
             </div>
 
-            {/* Social Icons */}
-            <div className="flex gap-4">
-               <SocialIcon 
-                 href="https://www.facebook.com/CryptoWebBuild" 
-                 label="Facebook" 
-                 colorClass="hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white"
-                 path="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-               />
-               <SocialIcon 
-                 href="https://youtube.com/@CryptoWebBuild" 
-                 label="YouTube" 
-                 colorClass="hover:bg-[#FF0000] hover:border-[#FF0000] hover:text-white"
-                 path="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
-               />
-               <SocialIcon 
-                 href="https://t.me/CryptoWebBuild" 
-                 label="Telegram" 
-                 colorClass="hover:bg-[#229ED9] hover:border-[#229ED9] hover:text-white"
-                 path="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.415-.752-.21-1.349-.321-1.298-.678.027-.184.285-.372.75-.567 2.943-1.28 4.909-2.126 5.895-2.54 2.809-1.176 3.39-1.38 3.766-1.386.082-.002.268.006.416.093z"
-               />
-               <SocialIcon 
-                 href="https://github.com/cryptowebbuild" 
-                 label="GitHub" 
-                 colorClass="hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-black dark:hover:border-white"
-                 path="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-               />
-               <SocialIcon 
-                 href="https://x.com/WebBuildDev" 
-                 label="X (Twitter)" 
-                 colorClass="hover:bg-black hover:border-white hover:text-white"
-                 path="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-               />
+            <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="text-center md:text-left text-text-muted text-[10px] uppercase tracking-widest font-bold opacity-60">
+                © 2026 CryptoWebBuild // All Systems Operational
+              </div>
+              <div className="flex gap-6 text-[10px] font-bold text-text-muted uppercase tracking-widest">
+                 <a href="/sitemap.xml" target="_blank" className="hover:text-white transition-colors">Sitemap</a>
+                 <span className="text-white/20">|</span>
+                 <span className="hover:text-white transition-colors cursor-default">Dhaka, Bangladesh</span>
+              </div>
             </div>
           </div>
-
-          <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left text-text-muted text-[10px] uppercase tracking-widest font-bold">
-              © 2025 CryptoWebBuild // Intelligence Stream Active
-            </div>
-            
-            <div className="flex gap-8 text-xs font-bold text-text-muted uppercase tracking-widest">
-              <Link to="/privacy" className="hover:text-cyan-400 transition-colors">Privacy</Link>
-              <Link to="/terms" className="hover:text-purple-400 transition-colors">Terms</Link>
-              <a href="mailto:hello@cryptowebbuild.com" className="hover:text-cyan-400 transition-colors">Secure Mail</a>
-            </div>
-          </div>
-
         </div>
       </footer>
     </div>
