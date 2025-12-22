@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cryptowebbuild-v8';
+const CACHE_NAME = 'cryptowebbuild-v6';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

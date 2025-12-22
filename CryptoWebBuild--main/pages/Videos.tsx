@@ -1,58 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-
-// Lite Video Component to boost performance
-const LiteYouTubeEmbed = ({ id, title }: { id: string; title: string }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  // High-res thumbnail
-  const posterUrl = `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-  const embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-
-  return (
-    <div 
-      className="relative w-full pb-[56.25%] bg-black rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/20 border border-white/10 group cursor-pointer"
-      onClick={() => setIsLoaded(true)}
-    >
-      {!isLoaded ? (
-        <>
-          <img 
-            src={posterUrl} 
-            alt={title} 
-            className="absolute top-0 left-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-            loading="lazy"
-          />
-          {/* Custom Cosmic Play Button */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_30px_rgba(124,58,237,0.5)]">
-              <svg className="w-8 h-8 md:w-10 md:h-10 text-white fill-white ml-1" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-        </>
-      ) : (
-        <iframe
-          src={embedUrl}
-          title={title}
-          className="absolute top-0 left-0 w-full h-full"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      )}
-    </div>
-  );
-};
 
 const Videos: React.FC = () => {
   const videos = [
     {
       id: 'android-app',
-      videoId: 'nRlcTomEEqc', // Extracted ID
       title: "Build an Android App on Mobile (No Laptop!)",
       desc: "Full guide on creating a homework solver app using only a mobile phone and AI tools like Claude. No PC required.",
+      url: "https://www.youtube.com/embed/nRlcTomEEqc",
       link: "https://youtu.be/nRlcTomEEqc",
       date: "Nov 04, 2025",
       highlights: [
@@ -63,9 +19,9 @@ const Videos: React.FC = () => {
     },
     {
       id: 'gta-6-ai',
-      videoId: 'v2ypUO0cr7Q',
       title: "I Challenged AI to Build GTA 6 From Scratch",
       desc: "A coding battle between ChatGPT and Claude AI. ChatGPT attempts 3D while Claude builds a polished 2D shooter.",
+      url: "https://www.youtube.com/embed/v2ypUO0cr7Q",
       link: "https://youtu.be/v2ypUO0cr7Q",
       date: "Nov 20, 2025",
       highlights: [
@@ -76,9 +32,9 @@ const Videos: React.FC = () => {
     },
     {
       id: 'sora-2-game',
-      videoId: 'erslja3K9TI',
       title: "I Asked Sora 2 to Make Video Games (Scary Real)",
       desc: "Testing Sora 2 AI to generate realistic gameplay footage for Minecraft, Roblox, GTA, and more. Is this the future of game engines?",
+      url: "https://www.youtube.com/embed/erslja3K9TI",
       link: "https://youtu.be/erslja3K9TI",
       date: "Nov 26, 2025",
       highlights: [
@@ -89,6 +45,7 @@ const Videos: React.FC = () => {
     }
   ];
 
+  // Schema.org Structured Data
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -97,10 +54,10 @@ const Videos: React.FC = () => {
       "position": index + 1,
       "name": video.title,
       "description": video.desc,
-      "uploadDate": "2025-11-20",
-      "thumbnailUrl": `https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`,
+      "uploadDate": "2025-11-20", // Generalized for static output
+      "thumbnailUrl": `https://img.youtube.com/vi/${video.url.split('/').pop()}/maxresdefault.jpg`,
       "contentUrl": video.link,
-      "embedUrl": `https://www.youtube.com/embed/${video.videoId}`
+      "embedUrl": video.url
     }))
   };
 
@@ -113,6 +70,7 @@ const Videos: React.FC = () => {
         canonical="/videos"
       />
       
+      {/* Inject JSON-LD */}
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
@@ -143,9 +101,17 @@ const Videos: React.FC = () => {
             
             <div className="flex flex-col lg:flex-row gap-8 bg-surface/50 backdrop-blur-xl rounded-[28px] p-6 md:p-8 relative z-10">
               
-              {/* Optimized Video Player Side */}
+              {/* Video Player Side */}
               <div className="w-full lg:w-2/3">
-                <LiteYouTubeEmbed id={video.videoId} title={video.title} />
+                <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden bg-black shadow-2xl shadow-purple-900/10 border border-white/5 group-hover:shadow-[0_0_30px_rgba(124,58,237,0.2)] transition-shadow duration-500">
+                  <iframe 
+                    src={`${video.url}?rel=0&modestbranding=1`} 
+                    title={video.title}
+                    className="absolute top-0 left-0 w-full h-full border-0"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
               </div>
 
               {/* Content Side */}

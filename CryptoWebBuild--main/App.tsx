@@ -1,59 +1,50 @@
-
-import React, { Suspense, lazy, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import SEO from './components/SEO';
 
-// ScrollToTop Utility Component
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
-// Lazy Load Pages
-const Home = lazy(() => import('./pages/Home.tsx'));
-const About = lazy(() => import('./pages/About.tsx'));
-const Services = lazy(() => import('./pages/Services.tsx'));
-const Projects = lazy(() => import('./pages/Projects.tsx'));
-const Videos = lazy(() => import('./pages/Videos.tsx'));
-const Blog = lazy(() => import('./pages/Blog.tsx'));
-const Contact = lazy(() => import('./pages/Contact.tsx'));
-const ThankYou = lazy(() => import('./pages/ThankYou.tsx'));
-const FAQ = lazy(() => import('./pages/FAQ.tsx'));
-const Privacy = lazy(() => import('./pages/Privacy.tsx'));
-const Terms = lazy(() => import('./pages/Terms.tsx'));
-const NotFound = lazy(() => import('./pages/NotFound.tsx'));
+// Lazy Load Pages for Performance
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Videos = lazy(() => import('./pages/Videos'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Contact = lazy(() => import('./pages/Contact'));
+const ThankYou = lazy(() => import('./pages/ThankYou'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Case Studies
-const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch.tsx'));
-const MemeCoinSite = lazy(() => import('./pages/cases/MemeCoinSite.tsx'));
-const ShopFast = lazy(() => import('./pages/cases/ShopFast.tsx'));
-const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub.tsx'));
-const GigaSolana = lazy(() => import('./pages/cases/GigaSolana.tsx'));
+const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
+const MemeCoinSite = lazy(() => import('./pages/cases/MemeCoinSite'));
+const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
+const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
+const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
 
 // Blog Posts
-const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper.tsx'));
-const CryptoProject = lazy(() => import('./pages/blog/CryptoProject.tsx'));
-const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures.tsx'));
-const CryptoCost = lazy(() => import('./pages/blog/CryptoCost.tsx'));
-const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic.tsx'));
-const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper.tsx'));
+const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
+const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
+const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures'));
+const CryptoCost = lazy(() => import('./pages/blog/CryptoCost'));
+const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic'));
+const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
 
 // Cosmic Loader Component
 const PageLoader = () => (
-  <div className="min-h-[60vh] flex flex-col items-center justify-center">
-    <div className="cosmic-spinner mb-4"></div>
-    <div className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em] animate-pulse">Syncing Intelligence...</div>
+  <div className="min-h-screen flex items-center justify-center bg-void">
+    <div className="relative w-16 h-16">
+      <div className="absolute top-0 left-0 w-full h-full border-4 border-purple-500/20 rounded-full"></div>
+      <div className="absolute top-0 left-0 w-full h-full border-4 border-cyan-500 rounded-full border-t-transparent animate-spin"></div>
+    </div>
   </div>
 );
 
 const App: React.FC = () => {
   return (
     <Layout>
-      <ScrollToTop />
       <SEO 
         title="Professional Developer" 
         description="High-performance Web3 and E-commerce architecture by Sagor Ahamed."

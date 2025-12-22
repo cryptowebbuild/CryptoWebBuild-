@@ -29,10 +29,19 @@ const SEO: React.FC<SEOProps> = ({
   schema
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
-  // Updated default title/desc to be broader
-  const finalTitle = title || "Sagor Ahamed | Professional Website Developer (Crypto, Business, E-com)";
-  const finalDescription = description || "Hire Sagor Ahamed for high-performance website development. Specializing in Web3, E-commerce Stores, Business Portfolios, and Blogs using React & Next.js.";
+  
+  // Default SEO Values (Fallback if not provided)
+  const defaultTitle = "Sagor Ahamed | Web3 & Crypto Website Developer";
+  const defaultDescription = "Professional freelance developer specializing in high-performance React websites for Token Launches, Meme Coins, and E-commerce.";
+  
+  // Use provided values or fall back to defaults
+  const finalTitle = title || defaultTitle;
+  const finalDescription = description || defaultDescription;
 
+  // Robust Canonical Logic:
+  // 1. If explicit canonical is passed, use it.
+  // 2. If not passed, use window.location.pathname (Clean URL) to strip query params.
+  // 3. Fallback to siteUrl.
   const getCanonicalUrl = () => {
     if (canonical) {
       return canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
@@ -44,29 +53,27 @@ const SEO: React.FC<SEOProps> = ({
   };
 
   const fullCanonical = getCanonicalUrl();
-  // Expanded Keyword List for broader SEO reach
-  const defaultKeywords = [
-    'Website Developer', 
-    'Web3 Developer', 
-    'Business Website Builder', 
-    'E-commerce Developer', 
-    'Portfolio Website Design', 
-    'Blog Development',
-    'React Developer',
-    'Crypto Website', 
-    'Solana Development',
-    'Landing Page Expert'
-  ];
-  const allKeywords = [...new Set([...defaultKeywords, ...keywords])];
+
+  // Default keywords + any specific ones
+  const defaultKeywords = ['Web3 Developer', 'Crypto Website', 'React Developer', 'E-commerce Builder'];
+  const allKeywords = [...new Set([...defaultKeywords, ...keywords])]; // Remove duplicates
 
   return (
     <Helmet>
+      {/* Standard Metadata */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={allKeywords.join(', ')} />
       <link rel="canonical" href={fullCanonical} />
-      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
-      <meta name="author" content={author} />
+      
+      {/* Robots Control */}
+      <meta 
+        name="robots" 
+        content={noIndex 
+          ? "noindex, nofollow" 
+          : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        } 
+      />
 
       {/* Open Graph / Facebook */}
       <meta property="og:site_name" content={name} />
@@ -77,7 +84,15 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      <meta property="og:locale" content="en_US" />
+
+      {/* Article Specific Open Graph */}
+      {type === 'article' && publishedTime && (
+        <meta property="article:published_time" content={publishedTime} />
+      )}
+      {type === 'article' && (
+        <meta property="article:author" content={author} />
+      )}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -87,7 +102,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={image} />
 
-      {/* Structured Data (JSON-LD) */}
+      {/* JSON-LD Schema Injection */}
       {schema && (
         <script type="application/ld+json">
           {JSON.stringify(schema)}

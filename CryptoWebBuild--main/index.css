@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  /* DAY MODE (Default) - Clean, Crisp, Professional */
+  --bg-void: #FAFAFA; /* Very light grey, easier on eyes than pure white */
+  --bg-surface: rgba(255, 255, 255, 0.85); /* Glassy White */
+  --bg-surface-highlight: #F1F5F9; /* Slate 100 */
+  --tx-main: #1E293B; /* Slate 800 - High Contrast */
+  --tx-muted: #64748B; /* Slate 500 */
+  --border-glass: rgba(0, 0, 0, 0.06); /* Very subtle border */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --grid-color: rgba(0, 0, 0, 0.04);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  /* NIGHT MODE (Cosmic) - Deep, Neon, Cyberpunk */
+  --bg-void: #030014; /* Deep Space Black */
+  --bg-surface: rgba(15, 23, 42, 0.6); /* Glassy Dark */
+  --bg-surface-highlight: #1E293B; /* Slate 800 */
+  --tx-main: #F8FAFC; /* Slate 50 */
+  --tx-muted: #94A3B8; /* Slate 400 */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(15, 23, 42, 0.4);
+  --grid-color: rgba(255, 255, 255, 0.03);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Base Typography & Scrolling */
+html {
+    scroll-padding-top: 100px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-void);
+    transition: background-color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-void);
+    color: var(--tx-main);
+    transition: color 0.3s ease;
+}
+
+/* Custom Selection Color */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: inherit;
+}
+
+/* Cinematic Noise Texture - Optimized with transform: translateZ(0) for GPU */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  transform: translateZ(0); /* Force GPU */
+}
+
+.dark .noise-overlay {
+    opacity: 0.04;
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 5px;
+  border: 3px solid var(--bg-void);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Enhanced Glass Panel */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px); /* Reduced slightly for mobile FPS */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  transform: translateZ(0); /* Performance hack */
+}
+
+/* Performance Utilities */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Text Gradients */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #7C3AED, #06B6D4);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
