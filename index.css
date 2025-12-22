@@ -1,8 +1,22 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Light Mode (Default Day) */
+  --bg-void: #f8fafc;
+  --bg-surface: rgba(255, 255, 255, 0.8);
+  --bg-surface-highlight: rgba(241, 245, 249, 0.8);
+  --tx-main: #0f172a;
+  --tx-muted: #475569;
+  --border-glass: rgba(148, 163, 184, 0.2);
+  --accent-purple: #9333ea;
+  --accent-cyan: #0891b2;
+}
+
+.dark {
+  /* Dark Mode (Cosmic Night) */
   --bg-void: #02010a;
   --bg-surface: rgba(10, 10, 20, 0.4);
   --bg-surface-highlight: rgba(20, 20, 40, 0.6);
@@ -15,7 +29,11 @@
 
 @layer base {
   body {
-    @apply bg-void text-text-main font-sans;
+    @apply bg-void text-text-main font-sans transition-colors duration-300;
+  }
+  
+  /* Cosmic Background - Only visible in Dark Mode */
+  .dark body {
     background-image: 
       radial-gradient(circle at 50% 50%, rgba(176, 38, 255, 0.05) 0%, transparent 50%),
       radial-gradient(circle at 0% 0%, rgba(0, 245, 255, 0.05) 0%, transparent 40%);
@@ -28,32 +46,44 @@
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.05;
+  opacity: 0.03;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Glassmorphism */
+/* Glassmorphism that adapts to Light/Dark */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Lighter shadow for Day */
+}
+
+.dark .glass-panel {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); /* Deep shadow for Night */
 }
 
 .glass-panel:hover {
-  border-color: rgba(176, 38, 255, 0.3);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-purple);
 }
 
-/* Cosmic Background Particles */
+/* Cosmic Background Particles - Hidden in Light Mode */
 .cosmic-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: #02010a;
+  background: var(--bg-void);
+  pointer-events: none;
+}
+
+.nebula, .stars {
+  display: none;
+}
+
+.dark .nebula, .dark .stars {
+  display: block;
 }
 
 .nebula {
@@ -113,14 +143,14 @@
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #02010a; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7C3AED, #06B6D4);
+  background: linear-gradient(to bottom, var(--accent-purple), var(--accent-cyan));
   border-radius: 10px;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-cyan-400 to-purple-500 bg-[length:200%_auto];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-cyan-500 to-purple-600 bg-[length:200%_auto];
   animation: shimmer 4s linear infinite;
 }
 
