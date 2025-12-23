@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   className?: string;
-  fill?: boolean;
-  priority?: boolean;
-  width?: number | string;
-  height?: number | string;
+  fill?: boolean; // If true, fills the parent container
+  priority?: boolean; // If true, loads immediately (LCP optimization)
+  width?: number;
+  height?: number;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ 
@@ -20,53 +20,45 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   height,
   ...props 
 }) => {
+  // If priority is true, we assume loaded to prevent LCP delay, 
+  // though the browser still needs to fetch it.
   const [isLoaded, setIsLoaded] = useState(priority);
 
-  // Auto-optimize Unsplash URLs for WebP and efficient quality if not already present
+  // 1. Auto-optimize Unsplash URLs (WebP + Quality 75)
   const optimizedSrc = src.includes('images.unsplash.com') && !src.includes('fm=webp')
     ? `${src}&fm=webp&q=75`
     : src;
 
-  useEffect(() => {
-    if (priority) {
-      const img = new Image();
-      img.src = optimizedSrc;
-      img.onload = () => setIsLoaded(true);
-    }
-  }, [optimizedSrc, priority]);
-
-  // If fill is true, wrapper handles positioning, img fills it
-  const wrapperClasses = fill 
-    ? 'absolute inset-0 w-full h-full' 
-    : 'relative w-full h-auto';
-
-  const imgClasses = fill
-    ? 'absolute inset-0 w-full h-full object-cover'
-    : 'w-full h-auto';
-  
-  // Smooth blur-up transition
-  const transitionClasses = priority
-    ? 'opacity-100 blur-0'
-    : isLoaded 
-      ? 'opacity-100 scale-100 blur-0' 
-      : 'opacity-0 scale-105 blur-md';
+  // 2. CLS FIX: Calculate Aspect Ratio to reserve space before load
+  // This prevents the page from "jumping" when the image appears.
+  const aspectRatioStyle = (!fill && width && height) 
+    ? { aspectRatio: `${width} / ${height}` } 
+    : undefined;
 
   return (
-    <div className={`overflow-hidden bg-slate-200 dark:bg-slate-800 animate-pulse ${wrapperClasses} ${className}`} style={{ animationDuration: '2s' }}>
+    <div 
+      className={`
+        relative overflow-hidden 
+        ${fill ? 'absolute inset-0 h-full w-full' : 'w-full'} 
+        ${!isLoaded ? 'bg-slate-200 dark:bg-slate-800 animate-pulse' : 'bg-transparent'} 
+        ${className}
+      `}
+      style={aspectRatioStyle}
+    >
         <img
             src={optimizedSrc}
             alt={alt}
             width={width}
             height={height}
+            // 3. Priority Handling: Eager for Hero images, Lazy for others
             loading={priority ? "eager" : "lazy"}
-            decoding={priority ? "sync" : "async"}
-            className={`transition-all duration-700 ease-out ${imgClasses} ${transitionClasses}`}
-            onLoad={(e) => {
-              setIsLoaded(true);
-              // Remove pulse animation from parent by manipulating DOM directly or relying on image covering it
-              const parent = e.currentTarget.parentElement;
-              if(parent) parent.style.animation = 'none';
-            }}
+            decoding="async"
+            className={`
+              transition-all duration-700 ease-out 
+              ${fill ? 'absolute inset-0 h-full w-full object-cover' : 'w-full h-auto'}
+              ${isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-xl'}
+            `}
+            onLoad={() => setIsLoaded(true)}
             {...props}
         />
     </div>
