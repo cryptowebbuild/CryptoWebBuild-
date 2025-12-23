@@ -5,8 +5,7 @@ interface LayoutProps {
   children?: React.ReactNode;
 }
 
-// --- Icons & Components ---
-
+// --- Icons (SVG Components) ---
 const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => (
   <button
     onClick={toggle}
@@ -14,22 +13,15 @@ const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }
     aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
   >
     {isDark ? (
-      // Sun Icon
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
     ) : (
-      // Moon Icon
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-      </svg>
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
     )}
   </button>
 );
 
 const LogoIcon = ({ className, idSuffix = 'header' }: { className?: string, idSuffix?: string }) => (
   <svg viewBox="0 0 128 128" width="128" height="128" className={className} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CryptoWebBuild Logo" role="img">
-    <title>CryptoWebBuild Logo</title>
     <defs>
       <linearGradient id={`logoGradient-${idSuffix}`} x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="#7C3AED" />
@@ -46,9 +38,7 @@ const LogoIcon = ({ className, idSuffix = 'header' }: { className?: string, idSu
 );
 
 const SocialIcon = ({ d }: { d: string }) => (
-  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d={d} />
-  </svg>
+  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={d} /></svg>
 );
 
 const socialLinks = [
@@ -62,11 +52,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   
-  // Default to light mode unless saved otherwise
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  // Initialize theme from localStorage directly to avoid flicker
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light';
+  });
+  
   const location = useLocation();
 
-  // Handle Theme Toggle
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -76,23 +71,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
-  // Handle Scroll & Scroll-to-Top visibility
+  // Optimized Scroll Handler (Throttled with requestAnimationFrame)
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-      setShowScrollTop(window.scrollY > 500);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          setShowScrollTop(window.scrollY > 500);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   // Close menu on route change
   useEffect(() => {
@@ -112,19 +112,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen relative font-sans text-text-main overflow-x-hidden flex flex-col transition-colors duration-500">
       
-      {/* Background Ambience (Adaptive) - GPU Accelerated for Mobile FPS */}
+      {/* Background Ambience - GPU Accelerated */}
       <div className="fixed inset-0 z-0 bg-void pointer-events-none overflow-hidden transition-colors duration-500">
-        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 gpu-accelerated" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 gpu-accelerated" />
+        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
         <div className="absolute inset-0 opacity-[0.4] dark:opacity-[0.2]" style={{ backgroundImage: `linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(to right, var(--grid-color) 1px, transparent 1px)`, backgroundSize: '64px 64px' }}></div>
       </div>
 
       {/* --- HEADER --- */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${scrolled ? 'py-3' : 'py-5'}`}>
+      {/* Fixed CLS: Removed padding transition. Height stays stable. */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4`}>
         <div className="container mx-auto px-4 md:px-6">
-          <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm' : ''}`}>
+          <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm bg-opacity-90 backdrop-blur-md' : 'bg-transparent'}`}>
             
-            {/* Logo - SEMANTIC FIX: Using span instead of h1 to prevent multiple H1 tags */}
             <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
               <LogoIcon className="w-9 h-9 text-text-main" />
               <span className="font-display font-bold text-xl tracking-tight text-text-main">CryptoWebBuild</span>
@@ -139,7 +139,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ))}
             </div>
 
-            {/* Actions (Toggle & CTA) */}
+            {/* Actions */}
             <div className="flex items-center gap-3">
               <ThemeToggle isDark={theme === 'dark'} toggle={toggleTheme} />
               
@@ -179,7 +179,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
               
               <div className="pt-4 mt-4 border-t border-border-glass">
-                {/* Socials in Mobile Menu */}
                 <div className="flex justify-center gap-6 mb-4">
                   {socialLinks.map((social) => (
                     <a 
@@ -207,7 +206,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="relative z-10 flex-grow pt-24">{children}</main>
+      <main className="relative z-10 flex-grow pt-32">{children}</main>
 
       {/* Scroll To Top Button */}
       <button
@@ -223,7 +222,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             
-            {/* Brand Section */}
             <div className="lg:col-span-4 space-y-6">
               <Link to="/" className="flex items-center gap-3">
                 <LogoIcon className="w-8 h-8 text-text-main" idSuffix="footer" />
@@ -233,7 +231,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
               </p>
               
-              {/* FIXED SOCIAL LINKS WITH ARIA LABELS */}
               <div className="flex gap-4 pt-2">
                 {socialLinks.map((social) => (
                   <a 
@@ -250,7 +247,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
 
-            {/* Sitemap - Fixed Header Hierarchy */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
@@ -260,7 +256,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </ul>
             </div>
 
-            {/* Resources (Fixed Orphans) */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Resources</h3>
               <ul className="space-y-4 text-text-muted text-sm font-medium">
@@ -271,7 +266,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </ul>
             </div>
 
-            {/* Guides */}
             <div className="lg:col-span-4">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Guides & Tech</h3>
               <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
@@ -281,7 +275,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <li><Link to="/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
               </ul>
             </div>
-
           </div>
 
           <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
