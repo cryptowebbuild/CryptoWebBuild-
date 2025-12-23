@@ -20,7 +20,7 @@ const SEO: React.FC<SEOProps> = ({
   description, 
   keywords = [],
   canonical, 
-  image = 'https://cryptowebbuild.com/hero-avatar.webp',
+  image, 
   type = 'website',
   name = 'CryptoWebBuild',
   publishedTime,
@@ -30,33 +30,51 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
   
-  // Default SEO Values (Fallback if not provided)
+  // 1. Defaut Values
   const defaultTitle = "Sagor Ahamed | Web3 & Crypto Website Developer";
   const defaultDescription = "Professional freelance developer specializing in high-performance React websites for Token Launches, Meme Coins, and E-commerce.";
-  
-  // Use provided values or fall back to defaults
+  const defaultImage = `${siteUrl}/hero-avatar.webp`; // Ensure this image exists in public folder
+
+  // 2. Resolve Final Values
   const finalTitle = title || defaultTitle;
   const finalDescription = description || defaultDescription;
+  const finalImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : defaultImage;
 
-  // Robust Canonical Logic:
-  // 1. If explicit canonical is passed, use it.
-  // 2. If not passed, use window.location.pathname (Clean URL) to strip query params.
-  // 3. Fallback to siteUrl.
+  // 3. Robust Canonical Logic
   const getCanonicalUrl = () => {
     if (canonical) {
       return canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
     }
+    // Safe check for window availability (prevents build crashes)
     if (typeof window !== 'undefined') {
-      return `${siteUrl}${window.location.pathname}`;
+      return window.location.href.split('?')[0]; // Removes query params like ?fbclid=...
     }
     return siteUrl;
   };
 
   const fullCanonical = getCanonicalUrl();
 
-  // Default keywords + any specific ones
-  const defaultKeywords = ['Web3 Developer', 'Crypto Website', 'React Developer', 'E-commerce Builder'];
-  const allKeywords = [...new Set([...defaultKeywords, ...keywords])]; // Remove duplicates
+  // 4. Keywords
+  const defaultKeywords = ['Web3 Developer', 'Crypto Website', 'React Developer', 'Solana Developer', 'Frontend Engineer'];
+  const allKeywords = [...new Set([...defaultKeywords, ...keywords])];
+
+  // 5. Default JSON-LD Schema (Vital for SEO)
+  // If no custom schema is provided, we tell Google this is a "Person" (You)
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": author,
+    "url": siteUrl,
+    "jobTitle": "Web3 Developer",
+    "image": finalImage,
+    "description": finalDescription,
+    "sameAs": [
+        "https://github.com/YourGithubUsername", // Update this later
+        "https://twitter.com/WebBuildDev"
+    ]
+  };
+
+  const finalSchema = schema || defaultSchema;
 
   return (
     <Helmet>
@@ -65,6 +83,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={allKeywords.join(', ')} />
       <link rel="canonical" href={fullCanonical} />
+      <meta name="author" content={author} />
       
       {/* Robots Control */}
       <meta 
@@ -81,33 +100,26 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image" content={finalImage} />
       <meta property="og:locale" content="en_US" />
 
       {/* Article Specific Open Graph */}
       {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
       )}
-      {type === 'article' && (
-        <meta property="article:author" content={author} />
-      )}
 
-      {/* Twitter */}
+      {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@WebBuildDev" />
       <meta name="twitter:creator" content="@WebBuildDev" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={finalImage} />
 
       {/* JSON-LD Schema Injection */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
-      )}
+      <script type="application/ld+json">
+        {JSON.stringify(finalSchema)}
+      </script>
     </Helmet>
   );
 };
