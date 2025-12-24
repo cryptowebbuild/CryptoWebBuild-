@@ -6,7 +6,6 @@ import OptimizedImage from '../../components/OptimizedImage';
 export default function BestDeveloper() {
   const image = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80";
   
-  // Advanced Schema for Long-Form Content
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -28,12 +27,11 @@ export default function BestDeveloper() {
         "url": "https://cryptowebbuild.com/favicon.svg"
       }
     },
-    "description": "A comprehensive 6,000-word guide on hiring developers. Covering technical vetting, React vs WordPress, Security, RPC nodes, and contract negotiation.",
+    "description": "A comprehensive guide on hiring developers. Covering technical vetting, React vs WordPress, Security, RPC nodes, and contract negotiation.",
     "articleSection": "Hiring Guide",
     "wordCount": 6500
   };
 
-  // Smooth Scroll Handler
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -46,7 +44,11 @@ export default function BestDeveloper() {
   };
 
   return (
-    <article className="pt-24 pb-20 md:pt-36 md:pb-32 min-h-screen bg-gray-50 dark:bg-void transition-colors duration-300">
+    <article className="pt-24 pb-20 md:pt-36 md:pb-32 min-h-screen bg-gray-50 dark:bg-[#020617] transition-colors duration-300 relative overflow-hidden">
+      
+      {/* --- Background Ambient Glow (Restored for aesthetics) --- */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-purple-500/20 blur-[120px] rounded-full pointer-events-none opacity-50 dark:opacity-20" />
+      
       <SEO 
         title="Hire the Best Web3 Developer 2026 | Ultimate Guide"
         description="Don't lose money on bad code. The definitive guide to hiring high-performance React & Web3 developers. Deep dive into Security, Speed, and ROI."
@@ -57,7 +59,7 @@ export default function BestDeveloper() {
         canonical="/best-website-developer"
       />
       
-      <div className="container mx-auto px-4 md:px-6 max-w-5xl relative">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
         
         {/* --- Breadcrumbs --- */}
         <nav className="flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 mb-8 animate-slide-up">
@@ -65,23 +67,23 @@ export default function BestDeveloper() {
           <span>/</span>
           <Link to="/blog" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Insights</Link>
           <span>/</span>
-          <span className="text-gray-900 dark:text-white font-bold truncate">Ultimate Hiring Guide</span>
+          <span className="text-gray-900 dark:text-gray-200 font-bold truncate">Hiring Guide</span>
         </nav>
 
         {/* --- Hero Header --- */}
         <header className="mb-14 text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <div className="inline-block px-6 py-2 mb-6 rounded-full bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 text-sm font-bold tracking-wider uppercase shadow-lg">
+            <div className="inline-block px-6 py-2 mb-6 rounded-full bg-purple-100 dark:bg-purple-900/40 border border-purple-200 dark:border-purple-700/50 text-purple-700 dark:text-purple-300 text-sm font-bold tracking-wider uppercase shadow-lg backdrop-blur-sm">
                 The Founder's Bible • Updated Dec 2025
             </div>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-8 leading-tight">
-                How to Find the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400">Best Developer</span> <br className="hidden md:block" /> Without Burning Your Budget
+                How to Find the <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400">Best Developer</span> <br className="hidden md:block" /> Without Burning Budget
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-10 max-w-3xl mx-auto font-medium">
                 A brutally honest deep-dive into the chaos of hiring. Learn why 90% of crypto projects fail due to bad code, and how to find the top 1% who can build your vision.
             </p>
 
             {/* Author Meta Card */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white dark:bg-surface-highlight border border-gray-200 dark:border-white/10 px-8 py-4 rounded-2xl shadow-xl">
+            <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 px-8 py-4 rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center font-bold text-white text-lg shadow-md">SA</div>
                     <div className="text-left">
@@ -97,7 +99,7 @@ export default function BestDeveloper() {
             </div>
         </header>
 
-        {/* --- Featured Image (Big & Bold) --- */}
+        {/* --- Featured Image --- */}
         <div className="mb-20 rounded-[40px] overflow-hidden shadow-2xl shadow-purple-900/20 border border-gray-200 dark:border-white/10 animate-slide-up bg-white dark:bg-gray-800" style={{ animationDelay: '0.2s' }}>
             <OptimizedImage 
                 src={image} 
@@ -107,11 +109,11 @@ export default function BestDeveloper() {
             />
         </div>
 
-        {/* --- Content Wrapper with Glass Effect --- */}
-        <div className="bg-white/80 dark:bg-surface/60 backdrop-blur-xl p-6 md:p-16 rounded-[40px] border border-gray-200 dark:border-white/10 shadow-2xl">
+        {/* --- Content Wrapper (THE FIX IS HERE: Darker BG in Night Mode) --- */}
+        <div className="bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-xl p-6 md:p-16 rounded-[40px] border border-gray-200 dark:border-white/10 shadow-2xl">
             
             {/* Table of Contents */}
-            <div className="mb-16 p-8 md:p-10 bg-gray-50 dark:bg-black/20 rounded-3xl border border-gray-200 dark:border-white/10">
+            <div className="mb-16 p-8 md:p-10 bg-gray-50 dark:bg-[#1e293b]/50 rounded-3xl border border-gray-200 dark:border-white/10">
                 <strong className="text-gray-900 dark:text-white mb-8 text-2xl font-display font-bold flex items-center gap-3">
                     <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
                     Table of Contents
@@ -130,7 +132,7 @@ export default function BestDeveloper() {
                             <a 
                                 href={`#${item.id}`} 
                                 onClick={(e) => handleScroll(e, item.id)} 
-                                className="group flex items-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-all font-medium text-lg cursor-pointer"
+                                className="group flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all font-medium text-lg cursor-pointer"
                             >
                                 <span className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600 group-hover:bg-purple-500 mr-3 transition-colors"></span>
                                 {item.label}
@@ -141,12 +143,11 @@ export default function BestDeveloper() {
             </div>
 
             {/* --- LONG FORM CONTENT --- */}
-            {/* Using explicit colors for Day/Night mode visibility */}
+            {/* FIX: Explicit prose colors for Dark Mode */}
             <div className="prose prose-lg md:prose-2xl max-w-none 
-                text-gray-800 dark:text-gray-200 
-                headings:text-gray-900 dark:headings:text-white
-                prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:font-bold prose-h2:text-gray-900 dark:prose-h2:text-white prose-h2:mt-16 prose-h2:mb-6
-                prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:font-bold prose-h3:text-gray-800 dark:prose-h3:text-gray-100 prose-h3:mt-12 prose-h3:mb-4
+                prose-slate dark:prose-invert
+                prose-h2:text-3xl md:prose-h2:text-4xl prose-h2:font-bold prose-h2:mt-16 prose-h2:mb-6
+                prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:font-bold prose-h3:mt-12 prose-h3:mb-4
                 prose-p:leading-relaxed prose-p:mb-6 prose-p:text-gray-700 dark:prose-p:text-gray-300
                 prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:mb-2
                 prose-strong:text-purple-700 dark:prose-strong:text-purple-400
@@ -201,19 +202,20 @@ export default function BestDeveloper() {
                 When I build a meme coin site or a presale dashboard, I am not just writing HTML. I am engineering a financial interface. Here is what a true Web3 Developer handles:
             </p>
 
+            {/* Feature Cards - Adjusted for Dark Mode Contrast */}
             <div className="grid md:grid-cols-2 gap-6 not-prose my-12">
-                <div className="bg-gray-100 dark:bg-white/5 p-8 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-colors">
+                <div className="bg-gray-100 dark:bg-[#1e293b] p-8 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-colors">
                     <h4 className="text-purple-600 dark:text-purple-400 font-bold text-xl mb-4">Frontend Engineering</h4>
-                    <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-3 text-gray-700 dark:text-gray-300 font-medium">
                         <li className="flex gap-3"><span className="text-green-500">✔</span> React.js / Next.js / Vite</li>
                         <li className="flex gap-3"><span className="text-green-500">✔</span> TypeScript (Essential for financial accuracy)</li>
                         <li className="flex gap-3"><span className="text-green-500">✔</span> Tailwind CSS (For pixel-perfect scaling)</li>
                         <li className="flex gap-3"><span className="text-green-500">✔</span> Framer Motion (High-end animations)</li>
                     </ul>
                 </div>
-                <div className="bg-gray-100 dark:bg-white/5 p-8 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-cyan-500 transition-colors">
+                <div className="bg-gray-100 dark:bg-[#1e293b] p-8 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-cyan-500 transition-colors">
                     <h4 className="text-cyan-600 dark:text-cyan-400 font-bold text-xl mb-4">Web3 Specifics</h4>
-                    <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                    <ul className="space-y-3 text-gray-700 dark:text-gray-300 font-medium">
                         <li className="flex gap-3"><span className="text-green-500">✔</span> Wagmi / Ethers.js / Solana Web3.js</li>
                         <li className="flex gap-3"><span className="text-green-500">✔</span> RPC Node Management (QuickNode/Alchemy)</li>
                         <li className="flex gap-3"><span className="text-green-500">✔</span> Smart Contract Integration (ABI Handling)</li>
@@ -241,7 +243,7 @@ export default function BestDeveloper() {
             <h3 className="text-xl font-bold">The "Lighthouse" Test</h3>
             <ol className="list-decimal pl-6 space-y-2">
                 <li>Ask the developer for a link to a live site they built recently.</li>
-                <li>Go to <a href="https://pagespeed.web.dev/" target="_blank" rel="nofollow" className="text-blue-500 hover:underline">Google PageSpeed Insights</a>.</li>
+                <li>Go to <a href="https://pagespeed.web.dev/" target="_blank" rel="nofollow" className="text-blue-500 hover:underline font-bold">Google PageSpeed Insights</a>.</li>
                 <li>Paste the URL and run the audit.</li>
             </ol>
             <p>
@@ -260,9 +262,9 @@ export default function BestDeveloper() {
             </p>
 
             <div className="my-12 overflow-x-auto not-prose shadow-xl rounded-2xl border border-gray-200 dark:border-white/10">
-                <table className="w-full text-left border-collapse bg-white dark:bg-surface">
+                <table className="w-full text-left border-collapse bg-white dark:bg-[#1e293b]">
                     <thead>
-                        <tr className="bg-gray-100 dark:bg-surface-highlight text-gray-900 dark:text-white">
+                        <tr className="bg-gray-100 dark:bg-black/40 text-gray-900 dark:text-white">
                             <th className="p-5 border-b border-gray-200 dark:border-white/10 font-bold">Project Type</th>
                             <th className="p-5 border-b border-gray-200 dark:border-white/10 font-bold">Freelancer Range</th>
                             <th className="p-5 border-b border-gray-200 dark:border-white/10 font-bold">Agency Range</th>
@@ -330,7 +332,7 @@ export default function BestDeveloper() {
 
             </div>
 
-            {/* --- CTA Section (High Conversion) --- */}
+            {/* --- CTA Section --- */}
             <div className="mt-20 p-8 md:p-14 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-purple-900/40 dark:to-blue-900/40 rounded-[32px] border border-gray-700 dark:border-white/10 text-center relative overflow-hidden group shadow-2xl">
                 {/* Background Noise */}
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
