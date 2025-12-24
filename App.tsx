@@ -31,6 +31,7 @@ const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures'));
 const CryptoCost = lazy(() => import('./pages/blog/CryptoCost'));
 const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic'));
 const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
+const CryptoMarketingGuide = lazy(() => import('./pages/blog/CryptoMarketingGuide'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -77,6 +78,7 @@ const App: React.FC = () => {
           <Route path="/crypto-website-cost" element={<CryptoCost />} />
           <Route path="/static-vs-dynamic-website" element={<StaticVsDynamic />} />
           <Route path="/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
+          <Route path="/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
