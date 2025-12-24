@@ -7,51 +7,81 @@ const Blog: React.FC = () => {
   const posts = [
     {
       slug: '/website-builder-vs-developer',
-      title: 'Best Website Builder vs Hiring a Developer: The Honest Truth',
+      title: 'Best Website Builder vs Hiring a Developer: The 2026 Business Guide',
       date: 'Nov 25, 2025',
-      category: 'Tech Strategy',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-      desc: 'Why Wix and Squarespace might be killing your business. A breakdown of ownership, speed, SEO, and ROI.'
+      readTime: '10 min read',
+      category: 'Strategic Analysis',
+      color: 'from-orange-500 to-red-500', // Warning/Strategy Vibe
+      text: 'text-orange-600 dark:text-orange-400',
+      bg: 'bg-orange-100 dark:bg-orange-900/30',
+      border: 'group-hover:border-orange-500/50',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      desc: 'Stop renting your business. A forensic comparison of Wix vs. Custom Code. Learn why owning your code is the only path to SEO dominance.'
     },
     {
       slug: '/best-website-developer',
-      title: 'How to Find the Best Website Developer in 2026',
+      title: 'How to Find the Best Web3 Developer in 2026',
       date: 'Nov 16, 2025',
-      category: 'Hiring',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
-      desc: 'The definitive guide to hiring top developers. Pricing, skills checklist, SEO, and avoiding mistakes.'
+      readTime: '12 min read',
+      category: 'Hiring Guide',
+      color: 'from-purple-600 to-blue-600', // Professional/Tech Vibe
+      text: 'text-purple-600 dark:text-purple-400',
+      bg: 'bg-purple-100 dark:bg-purple-900/30',
+      border: 'group-hover:border-purple-500/50',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+      desc: 'Don\'t get rekt by bad devs. The definitive guide to hiring high-performance React & Web3 developers. Pricing, vetting, and avoiding agency traps.'
     },
     {
       slug: '/static-vs-dynamic-website',
       title: 'Static vs Dynamic Websites: Which Grows Business Faster?',
       date: 'Nov 12, 2025',
-      category: 'Tech Strategy',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
-      desc: 'Learn about speed, SEO, scalability, and costs. A complete 2026 guide for business owners.'
+      readTime: '8 min read',
+      category: 'Technical Strategy',
+      color: 'from-blue-600 to-cyan-500', // Speed/Tech Vibe
+      text: 'text-cyan-600 dark:text-cyan-400',
+      bg: 'bg-cyan-100 dark:bg-cyan-900/30',
+      border: 'group-hover:border-cyan-500/50',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
+      desc: 'The definitive guide to web architecture. Why Static Sites (SSG) outperform Dynamic CMS (WordPress) in Speed, Security, and SEO ROI.'
     },
     {
       slug: '/crypto-website-cost',
-      title: 'How Much Does a Crypto Website Cost?',
-      date: 'Nov 04, 2025',
-      category: 'Pricing',
-      image: 'https://images.unsplash.com/photo-1621504450168-38f647315661?auto=format&fit=crop&w=800&q=80',
-      desc: 'Practical breakdown of costs for 2025-2026. Packages, hidden fees, and developer insights.'
+      title: 'The Real Cost of Building a Crypto Website in 2026',
+      date: 'Oct 25, 2025',
+      readTime: '15 min read',
+      category: 'Pricing Report',
+      color: 'from-emerald-600 to-teal-500', // Money/Finance Vibe
+      text: 'text-emerald-600 dark:text-emerald-400',
+      bg: 'bg-emerald-100 dark:bg-emerald-900/30',
+      border: 'group-hover:border-emerald-500/50',
+      image: 'https://images.unsplash.com/photo-1621504450168-38f647315661?q=80&w=800&auto=format&fit=crop',
+      desc: 'A forensic breakdown of pricing. Meme coin sites ($400+), Presale Dashboards ($1,500+), and hidden fees like Audits and RPC nodes.'
     },
     {
       slug: '/crypto-project-website',
       title: 'Why Your Crypto Project Needs a Professional Website',
       date: 'Nov 03, 2025',
-      category: 'Web3 Growth',
-      image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800&q=80',
-      desc: 'Build trust, control your message, and rank on Google. Beyond just social media.'
+      readTime: '8 min read',
+      category: 'Web3 Strategy',
+      color: 'from-blue-600 to-purple-600', // Trust/Authority Vibe
+      text: 'text-blue-600 dark:text-blue-400',
+      bg: 'bg-blue-100 dark:bg-blue-900/30',
+      border: 'group-hover:border-blue-500/50',
+      image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop',
+      desc: 'Stop losing investors to "Ghost Projects." Learn why a high-performance React website is the ultimate foundation for your token launch.'
     },
     {
       slug: '/meme-coin-website-features',
-      title: '5 Must-Have Features for a Successful Meme Coin Site',
+      title: '5 Must-Have Features for a Viral Meme Coin Website',
       date: 'Nov 03, 2025',
+      readTime: '8 min read',
       category: 'Viral Marketing',
-      image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&w=800&q=80',
-      desc: 'Essential features to build trust and attract holders. Checklist and examples included.'
+      color: 'from-pink-600 to-purple-600', // Fun/Viral Vibe
+      text: 'text-pink-600 dark:text-pink-400',
+      bg: 'bg-pink-100 dark:bg-pink-900/30',
+      border: 'group-hover:border-pink-500/50',
+      image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=800&auto=format&fit=crop',
+      desc: 'Don\'t launch a ghost token. The 5 non-negotiable features that trigger FOMO, build trust, and turn visitors into diamond-handed holders.'
     }
   ];
 
@@ -60,7 +90,7 @@ const Blog: React.FC = () => {
     "@type": "Blog",
     "name": "CryptoWebBuild Insights",
     "url": "https://cryptowebbuild.com/blog",
-    "description": "Guides, case studies, and insights on building fast, SEO-first websites for the Web3 era.",
+    "description": "Deep dives into Web3 architecture, frontend performance, and the business of blockchain.",
     "publisher": {
       "@type": "Organization",
       "name": "CryptoWebBuild",
@@ -84,24 +114,25 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-void transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
       
       {/* Ambient Glow for Depth */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+      <div className="container mx-auto px-6 pt-32 pb-24 relative z-10">
         <SEO 
-          title="Web3 Development Blog & Insights | CryptoWebBuild"
+          title="Web3 & Tech Insights | CryptoWebBuild Blog"
           description="Expert guides on crypto website costs, hiring developers, meme coin marketing features, and static vs dynamic web architecture."
           canonical="/blog"
           schema={jsonLd}
         />
         
-        <div className="text-center mb-20 animate-slide-up">
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-xs font-bold tracking-wider uppercase shadow-sm">
-            Knowledge Hub
+        {/* Header Section */}
+        <div className="text-center mb-24 animate-slide-up">
+          <div className="inline-block px-5 py-2 mb-6 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white text-xs font-black tracking-widest uppercase shadow-lg backdrop-blur-md">
+            Knowledge Hub • 2026
           </div>
-          <h1 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+          <h1 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 tracking-tight">
             Insights from the <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">Codebase</span>
           </h1>
@@ -110,50 +141,60 @@ const Blog: React.FC = () => {
           </p>
         </div>
 
+        {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, idx) => (
             <Link 
               key={post.slug} 
               to={post.slug}
-              className="group flex flex-col bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 animate-slide-up"
+              className={`group flex flex-col bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 animate-slide-up border-t-4 ${post.border}`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              {/* Image Container */}
+              {/* Image Container with Zoom Effect */}
               <div className="relative h-64 overflow-hidden bg-gray-100 dark:bg-gray-800">
                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
                  <OptimizedImage 
                    src={post.image} 
                    alt={post.title}
                    fill={true}
-                   // Prioritize loading the first 2 images for LCP speed
-                   priority={idx < 2}
-                   className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                   priority={idx < 3} // Load first row immediately
+                   className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                  />
+                 
+                 {/* Category Badge */}
                  <div className="absolute top-4 left-4 z-20">
-                   <span className="px-4 py-1.5 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-full text-xs font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 shadow-sm uppercase tracking-wide">
+                   <span className={`px-4 py-1.5 backdrop-blur-md rounded-full text-xs font-bold border border-white/20 shadow-lg uppercase tracking-wide ${post.bg} ${post.text}`}>
                      {post.category}
                    </span>
                  </div>
               </div>
               
+              {/* Card Content */}
               <div className="p-8 flex flex-col flex-1 relative">
-                  <div className="flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4">
-                    <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-                    {post.date}
+                  {/* Meta Data */}
+                  <div className="flex items-center justify-between text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-5">
+                    <div className="flex items-center gap-2">
+                        <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${post.color}`}></span>
+                        {post.date}
+                    </div>
+                    <span>{post.readTime}</span>
                   </div>
                   
-                  <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-tight line-clamp-2">
-                  {post.title}
+                  {/* Title */}
+                  <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-[1.2] line-clamp-2">
+                    {post.title}
                   </h2>
                   
+                  {/* Description */}
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm mb-8 line-clamp-3 flex-1 font-medium">
                     {post.desc}
                   </p>
                   
+                  {/* Footer Arrow */}
                   <div className="mt-auto flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                       Read Article 
-                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                   </div>
               </div>
