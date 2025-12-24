@@ -4,18 +4,34 @@ import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 
 const Blog: React.FC = () => {
+  // -----------------------------------------------------------------
+  // 📝 EDIT HERE: Change 'readTime' or 'date' manually below
+  // -----------------------------------------------------------------
   const posts = [
+    {
+      slug: '/crypto-marketing-guide',
+      title: 'How to Market Your Crypto Project in 2026: The Dev-First Strategy',
+      date: 'Nov 30, 2025',
+      readTime: '9 min read', // <--- Change this manually
+      category: 'Growth Hacking',
+      color: 'from-indigo-600 to-purple-600',
+      text: 'text-indigo-600 dark:text-indigo-400',
+      bg: 'bg-indigo-100 dark:bg-indigo-900/30',
+      border: 'group-hover:border-indigo-500/50',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      desc: 'Stop paying influencers. Learn how Technical SEO, Site Speed, and On-Chain Trust Signals can viralize your token launch organically.'
+    },
     {
       slug: '/website-builder-vs-developer',
       title: 'Best Website Builder vs Hiring a Developer: The 2026 Business Guide',
       date: 'Nov 25, 2025',
-      readTime: '10 min read',
+      readTime: '10 min read', 
       category: 'Strategic Analysis',
-      color: 'from-orange-500 to-red-500', // Warning/Strategy Vibe
+      color: 'from-orange-500 to-red-500',
       text: 'text-orange-600 dark:text-orange-400',
       bg: 'bg-orange-100 dark:bg-orange-900/30',
       border: 'group-hover:border-orange-500/50',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
       desc: 'Stop renting your business. A forensic comparison of Wix vs. Custom Code. Learn why owning your code is the only path to SEO dominance.'
     },
     {
@@ -24,7 +40,7 @@ const Blog: React.FC = () => {
       date: 'Nov 16, 2025',
       readTime: '12 min read',
       category: 'Hiring Guide',
-      color: 'from-purple-600 to-blue-600', // Professional/Tech Vibe
+      color: 'from-purple-600 to-blue-600',
       text: 'text-purple-600 dark:text-purple-400',
       bg: 'bg-purple-100 dark:bg-purple-900/30',
       border: 'group-hover:border-purple-500/50',
@@ -37,11 +53,11 @@ const Blog: React.FC = () => {
       date: 'Nov 12, 2025',
       readTime: '8 min read',
       category: 'Technical Strategy',
-      color: 'from-blue-600 to-cyan-500', // Speed/Tech Vibe
+      color: 'from-cyan-600 to-blue-500',
       text: 'text-cyan-600 dark:text-cyan-400',
       bg: 'bg-cyan-100 dark:bg-cyan-900/30',
       border: 'group-hover:border-cyan-500/50',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop',
       desc: 'The definitive guide to web architecture. Why Static Sites (SSG) outperform Dynamic CMS (WordPress) in Speed, Security, and SEO ROI.'
     },
     {
@@ -50,11 +66,11 @@ const Blog: React.FC = () => {
       date: 'Oct 25, 2025',
       readTime: '15 min read',
       category: 'Pricing Report',
-      color: 'from-emerald-600 to-teal-500', // Money/Finance Vibe
+      color: 'from-emerald-600 to-teal-500',
       text: 'text-emerald-600 dark:text-emerald-400',
       bg: 'bg-emerald-100 dark:bg-emerald-900/30',
       border: 'group-hover:border-emerald-500/50',
-      image: 'https://images.unsplash.com/photo-1621504450168-38f647315661?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop',
       desc: 'A forensic breakdown of pricing. Meme coin sites ($400+), Presale Dashboards ($1,500+), and hidden fees like Audits and RPC nodes.'
     },
     {
@@ -63,11 +79,11 @@ const Blog: React.FC = () => {
       date: 'Nov 03, 2025',
       readTime: '8 min read',
       category: 'Web3 Strategy',
-      color: 'from-blue-600 to-purple-600', // Trust/Authority Vibe
+      color: 'from-blue-600 to-purple-600',
       text: 'text-blue-600 dark:text-blue-400',
       bg: 'bg-blue-100 dark:bg-blue-900/30',
       border: 'group-hover:border-blue-500/50',
-      image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=800&auto=format&fit=crop',
       desc: 'Stop losing investors to "Ghost Projects." Learn why a high-performance React website is the ultimate foundation for your token launch.'
     },
     {
@@ -76,7 +92,7 @@ const Blog: React.FC = () => {
       date: 'Nov 03, 2025',
       readTime: '8 min read',
       category: 'Viral Marketing',
-      color: 'from-pink-600 to-purple-600', // Fun/Viral Vibe
+      color: 'from-pink-600 to-purple-600',
       text: 'text-pink-600 dark:text-pink-400',
       bg: 'bg-pink-100 dark:bg-pink-900/30',
       border: 'group-hover:border-pink-500/50',
@@ -121,8 +137,8 @@ const Blog: React.FC = () => {
 
       <div className="container mx-auto px-6 pt-32 pb-24 relative z-10">
         <SEO 
-          title="Web3 & Tech Insights | CryptoWebBuild Blog"
-          description="Expert guides on crypto website costs, hiring developers, meme coin marketing features, and static vs dynamic web architecture."
+          title="Web3 & Tech Strategy Insights | CryptoWebBuild"
+          description="Expert guides on crypto marketing, development costs, hiring strategies, and web architecture. Built for founders who want to scale."
           canonical="/blog"
           schema={jsonLd}
         />
@@ -132,12 +148,12 @@ const Blog: React.FC = () => {
           <div className="inline-block px-5 py-2 mb-6 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white text-xs font-black tracking-widest uppercase shadow-lg backdrop-blur-md">
             Knowledge Hub • 2026
           </div>
-          <h1 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 tracking-tight">
+          <h1 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
             Insights from the <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">Codebase</span>
           </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-medium">
-            Deep dives into Web3 architecture, frontend performance, and the business of blockchain. No fluff, just engineering truths.
+            Strategic guides on Web3 architecture, frontend performance, and business growth. No fluff, just engineering truths.
           </p>
         </div>
 
@@ -157,7 +173,7 @@ const Blog: React.FC = () => {
                    src={post.image} 
                    alt={post.title}
                    fill={true}
-                   priority={idx < 3} // Load first row immediately
+                   priority={idx < 3} // Load first 3 images instantly for LCP score
                    className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                  />
                  
@@ -177,6 +193,7 @@ const Blog: React.FC = () => {
                         <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${post.color}`}></span>
                         {post.date}
                     </div>
+                    {/* READ TIME DISPLAY */}
                     <span>{post.readTime}</span>
                   </div>
                   
