@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import OptimizedImage from '../components/OptimizedImage';
+import OptimizedImage from '../components/OptimizedImage'; // Ensure this path is correct
 
 const Home: React.FC = () => {
   const [text, setText] = useState('');
@@ -13,13 +13,14 @@ const Home: React.FC = () => {
     'SEO-Ready Brand Sites.'
   ];
   
+  // Testimonials with explicit dimensions to prevent layout shifts
   const testimonials = [
     {
       name: "Alex R.",
       role: "Founder",
       company: "Solana Token Launch",
       image: "https://randomuser.me/api/portraits/men/32.jpg",
-      quote: "Sagor delivered our presale page in 3 days. The load speed was instant and we hit our hard cap in 12 hours. Best dev we've hired."
+      quote: "Sagor delivered our presale page in 2 days. The load speed was instant and we hit our hard cap in 12 hours. Best dev we've hired."
     },
     {
       name: "Sarah J.",
@@ -37,6 +38,7 @@ const Home: React.FC = () => {
     }
   ];
   
+  // Typing Effect Logic
   useEffect(() => {
     let phraseIndex = 0;
     let charIndex = 0;
@@ -70,6 +72,7 @@ const Home: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // SEO Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -112,15 +115,25 @@ const Home: React.FC = () => {
       />
       
       {/* --- Hero Section --- */}
-      <section className="relative pt-20 pb-24 md:pt-32 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
+      <section className="relative pt-24 pb-24 md:pt-36 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
         
         {/* Glow Effects - GPU Accelerated */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/20 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-cyan-500/20 dark:bg-cyan-500/20 blur-[90px] rounded-full animate-pulse-slow pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/20 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen will-change-transform" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-cyan-500/20 dark:bg-cyan-500/20 blur-[90px] rounded-full animate-pulse-slow pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen will-change-transform" />
 
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
           
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 md:mb-10 animate-float hover:border-purple-500/50 transition-colors gpu-accelerated">
+          {/* LCP OPTIMIZATION: Main Hero Image (Restored) */}
+          <div className="relative w-32 h-32 md:w-40 md:h-40 mb-8 rounded-full overflow-hidden border-4 border-purple-500/20 shadow-2xl shadow-purple-500/20 animate-float">
+            <OptimizedImage
+              src="/hero-avatar.webp" // Ensure this image is in your public folder!
+              alt="Sagor Ahamed - Web3 Developer"
+              fill={true}
+              priority={true} // <--- THIS FIXES THE LCP SCORE (Loads Instantly)
+            />
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 animate-slide-up hover:border-purple-500/50 transition-colors gpu-accelerated">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
@@ -135,8 +148,8 @@ const Home: React.FC = () => {
             </span>
           </h1>
 
-          {/* Typing Container - Fixed Height for Stability */}
-          <div className="h-[4rem] sm:h-[3rem] md:h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
+          {/* Typing Container - CLS Fixed with min-height */}
+          <div className="min-h-[4rem] sm:min-h-[3rem] md:min-h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-muted font-medium">I build</span>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-main font-bold relative inline-block break-words min-w-[280px] text-left">
               {text}
@@ -266,7 +279,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* --- Technical Philosophy (Word Count & SEO Booster) --- */}
+      {/* --- Technical Philosophy --- */}
       <section className="container mx-auto px-6">
         <div className="glass-panel p-8 md:p-12 rounded-[32px] bg-surface border-t border-purple-500/20 shadow-xl">
             <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -384,7 +397,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* --- Launch Protocol (Process Section) --- */}
+      {/* --- Launch Protocol --- */}
       <section className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-surface border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm animate-pulse-slow">
@@ -403,7 +416,7 @@ const Home: React.FC = () => {
           <div className="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent -translate-y-1/2 z-0" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
-            {/* Step 1: Ignition */}
+            {/* Step 1 */}
             <div className="group glass-panel p-8 rounded-[32px] bg-surface hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 active:scale-[0.98]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-purple-500/30 mb-6 relative group-hover:scale-110 transition-transform">
                 1
@@ -415,7 +428,7 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            {/* Step 2: Trajectory */}
+            {/* Step 2 */}
             <div className="group glass-panel p-8 rounded-[32px] bg-surface hover:border-blue-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 active:scale-[0.98]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-blue-500/30 mb-6 relative group-hover:scale-110 transition-transform">
                 2
@@ -427,7 +440,7 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            {/* Step 3: Propulsion */}
+            {/* Step 3 */}
             <div className="group glass-panel p-8 rounded-[32px] bg-surface hover:border-cyan-500 transition-all duration-500 hover:-translate-y-2 active:scale-[0.98]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-600 to-teal-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-cyan-500/30 mb-6 relative group-hover:scale-110 transition-transform">
                 3
@@ -439,7 +452,7 @@ const Home: React.FC = () => {
               </p>
             </div>
 
-            {/* Step 4: Orbit */}
+            {/* Step 4 */}
             <div className="group glass-panel p-8 rounded-[32px] bg-surface hover:border-emerald-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 active:scale-[0.98]">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-600 to-emerald-600 flex items-center justify-center text-white font-bold text-2xl shadow-lg shadow-emerald-500/30 mb-6 relative group-hover:scale-110 transition-transform">
                 4
