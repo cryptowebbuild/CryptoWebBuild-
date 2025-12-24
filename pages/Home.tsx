@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import OptimizedImage from '../components/OptimizedImage'; // Ensure this path is correct
+import OptimizedImage from '../components/OptimizedImage';
 
 const Home: React.FC = () => {
   const [text, setText] = useState('');
@@ -13,7 +13,6 @@ const Home: React.FC = () => {
     'SEO-Ready Brand Sites.'
   ];
   
-  // Testimonials with explicit dimensions to prevent layout shifts
   const testimonials = [
     {
       name: "Alex R.",
@@ -38,7 +37,6 @@ const Home: React.FC = () => {
     }
   ];
   
-  // Typing Effect Logic
   useEffect(() => {
     let phraseIndex = 0;
     let charIndex = 0;
@@ -72,12 +70,11 @@ const Home: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // SEO Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "CryptoWebBuild",
-    "image": "https://cryptowebbuild.com/hero-avatar.webp",
+    "image": "https://cryptowebbuild.com/hero-avatar.webp", // Ensure a fallback image exists in public folder
     "url": "https://cryptowebbuild.com",
     "telephone": "",
     "priceRange": "$$-$$$",
@@ -115,7 +112,7 @@ const Home: React.FC = () => {
       />
       
       {/* --- Hero Section --- */}
-      <section className="relative pt-24 pb-24 md:pt-36 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
+      <section className="relative pt-20 pb-24 md:pt-32 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
         
         {/* Glow Effects - GPU Accelerated */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/20 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 gpu-accelerated mix-blend-multiply dark:mix-blend-screen will-change-transform" />
@@ -123,17 +120,7 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center">
           
-          {/* LCP OPTIMIZATION: Main Hero Image (Restored) */}
-          <div className="relative w-32 h-32 md:w-40 md:h-40 mb-8 rounded-full overflow-hidden border-4 border-purple-500/20 shadow-2xl shadow-purple-500/20 animate-float">
-            <OptimizedImage
-              src="/hero-avatar.webp" // Ensure this image is in your public folder!
-              alt="Sagor Ahamed - Web3 Developer"
-              fill={true}
-              priority={true} // <--- THIS FIXES THE LCP SCORE (Loads Instantly)
-            />
-          </div>
-
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 animate-slide-up hover:border-purple-500/50 transition-colors gpu-accelerated">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-surface/50 backdrop-blur-sm border border-border-glass shadow-sm mb-8 md:mb-10 animate-float hover:border-purple-500/50 transition-colors gpu-accelerated">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
@@ -141,6 +128,7 @@ const Home: React.FC = () => {
             <span className="text-xs md:text-sm font-bold text-text-muted uppercase tracking-wide">Available for New Projects</span>
           </div>
 
+          {/* H1 Optimized for LCP */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.1] animate-slide-up text-text-main text-balance">
             High-Performance <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-cyan-600 to-purple-600 dark:from-purple-400 dark:via-cyan-400 dark:to-purple-400 bg-[length:200%_auto] animate-shimmer">
@@ -148,7 +136,7 @@ const Home: React.FC = () => {
             </span>
           </h1>
 
-          {/* Typing Container - CLS Fixed with min-height */}
+          {/* Typing Container - Fixed min-height to prevent layout shift (CLS) */}
           <div className="min-h-[4rem] sm:min-h-[3rem] md:min-h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-muted font-medium">I build</span>
             <span className="text-2xl sm:text-3xl md:text-5xl text-text-main font-bold relative inline-block break-words min-w-[280px] text-left">
