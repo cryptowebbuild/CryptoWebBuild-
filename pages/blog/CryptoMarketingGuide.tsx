@@ -21,7 +21,10 @@ const CryptoMarketingGuide: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "CryptoWebBuild",
-      "logo": "https://cryptowebbuild.com/favicon.svg"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/favicon.svg"
+      }
     },
     "datePublished": "2025-11-30",
     "dateModified": "2024-12-24",
@@ -109,7 +112,7 @@ const CryptoMarketingGuide: React.FC = () => {
             
             {/* Table of Contents */}
             <div className="mb-16 p-8 md:p-10 bg-gray-50 dark:bg-[#1e293b]/50 rounded-3xl border border-gray-200 dark:border-white/10">
-                <strong className="text-gray-900 dark:text-white mb-8 text-2xl font-display font-black tracking-tight uppercase flex items-center gap-3">
+                <strong className="text-gray-900 dark:text-white mb-8 text-2xl font-display font-bold flex items-center gap-3">
                     <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     Strategy Blueprint
                 </strong>
@@ -276,4 +279,6 @@ const CryptoMarketingGuide: React.FC = () => {
       </div>
     </article>
   );
-}
+};
+
+export default CryptoMarketingGuide;
