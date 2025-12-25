@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+
+// Import Mockup Components (Ensure these exist in your project)
 import AutoGitMockup from '../components/AutoGitMockup';
 import SolNovaMockup from '../components/SolNovaMockup';
 import QuackInuMockup from '../components/QuackInuMockup';
@@ -14,12 +16,14 @@ interface ProjectItem {
   category: string;
   desc: string;
   tech: string[];
-  link: string;
-  liveUrl: string;
-  img?: string; // Optional if using component
+  link: string; // Internal Link for Case Study
+  liveUrl: string; // External Link
+  img?: string; // Fallback Image URL
 }
 
 const Projects: React.FC = () => {
+  
+  // --- PROJECT DATA ---
   const projects: ProjectItem[] = [
     {
       id: 'gigasolana',
@@ -88,35 +92,42 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
+      
+      {/* --- SEO Configuration --- */}
       <SEO 
         title="Web3 Projects & Crypto Website Portfolio | Case Studies"
         description="Explore my web development portfolio: High-performance Solana token launches, viral meme coin sites, and headless e-commerce stores."
         keywords={['Web3 Portfolio', 'Crypto Website Examples', 'E-commerce Case Studies', 'React Projects', 'Meme Coin Design Portfolio']}
         canonical="/projects"
+        schema={jsonLd}
       />
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
-      </script>
+
+      {/* --- Header Section --- */}
       <div className="text-center mb-16 animate-slide-up">
-        <h1 className="font-display text-5xl md:text-6xl font-bold text-text-main mb-6">
+        <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm">
+            Selected Works
+        </div>
+        <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
           Web3 Projects & <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Case Studies</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400">Case Studies</span>
         </h1>
-        <p className="text-text-muted max-w-2xl mx-auto text-lg leading-relaxed">
-          Explore recent work in <Link to="/services" className="text-purple-500 hover:underline font-medium">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-500 hover:underline font-medium">E-commerce</Link>, and Custom Software.
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+          Explore recent work in <Link to="/services" className="text-purple-600 dark:text-purple-400 hover:underline font-bold">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-600 dark:text-cyan-400 hover:underline font-bold">E-commerce</Link>, and Custom Software.
         </p>
       </div>
 
+      {/* --- Projects Grid --- */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, idx) => (
           <article 
             key={project.id} 
-            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl animate-slide-up bg-slate-900 border border-border-glass"
+            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl animate-slide-up bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10"
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
-            {/* Visual Container (Mockup Component or Image) */}
-            <div className="absolute inset-0 overflow-hidden bg-slate-900">
+            {/* --- Visual Container (Mockup Component) --- */}
+            <div className="absolute inset-0 overflow-hidden bg-gray-100 dark:bg-slate-900">
+               {/* Conditional Rendering for Mockups */}
                {project.id === 'autogithub' ? (
                  <AutoGitMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                ) : project.id === 'tokenlaunch' ? (
@@ -128,7 +139,7 @@ const Projects: React.FC = () => {
                ) : project.id === 'shopfast' ? (
                  <ShopFastMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                ) : (
-                 // Fallback for standard images
+                 // Fallback Image
                  <img 
                    src={project.img || '/default-project.jpg'} 
                    alt={`Preview of ${project.title}`} 
@@ -138,30 +149,30 @@ const Projects: React.FC = () => {
                  />
                )}
                
-               {/* Gradient Overlay for Readability (Darkened for text contrast) */}
+               {/* Gradient Overlay for Readability */}
                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90" />
             </div>
             
-            {/* Content Container */}
+            {/* --- Content Container --- */}
             <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
               
-              {/* Category Badge (Slides in from top on hover) */}
+              {/* Category Badge (Slides in on hover) */}
               <div className="absolute top-8 left-8 transform -translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out pointer-events-none">
-                <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
+                <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
                   {project.category}
                 </span>
               </div>
 
-              {/* Title & Tags Container */}
+              {/* Title & Tags */}
               <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
                 <h3 className="font-display text-3xl font-bold text-white mb-2 drop-shadow-md">
                   {project.title}
                 </h3>
                 
-                {/* Tech Tags - Visible initially, fade out on hover to make room */}
+                {/* Tech Tags (Hidden on hover to make space) */}
                 <div className="flex flex-wrap gap-2 transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden delay-100">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="text-[10px] font-bold text-slate-300 bg-white/5 border border-white/10 px-2 py-1 rounded-full uppercase tracking-wide">
+                    <span key={i} className="text-[10px] font-bold text-slate-300 bg-white/10 border border-white/20 px-2 py-1 rounded-full uppercase tracking-wide">
                       {t}
                     </span>
                   ))}
@@ -172,7 +183,7 @@ const Projects: React.FC = () => {
               <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                 <div className="overflow-hidden">
                   <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed border-l-2 border-purple-500 pl-4">
+                    <p className="text-slate-300 text-sm mb-6 leading-relaxed border-l-2 border-purple-500 pl-4 font-medium">
                       {project.desc}
                     </p>
                     
@@ -186,6 +197,8 @@ const Projects: React.FC = () => {
                           Live Demo
                           <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                       </a>
+                      
+                      {/* Check if Case Study exists (internal link) */}
                       {project.link !== '/projects' ? (
                         <Link 
                           to={project.link}
@@ -195,7 +208,7 @@ const Projects: React.FC = () => {
                         </Link>
                       ) : (
                         <span className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white/5 backdrop-blur-sm text-slate-400 border border-white/10 font-bold rounded-xl text-sm cursor-default">
-                          Case Study Soon
+                          Details Soon
                         </span>
                       )}
                     </div>
@@ -208,10 +221,11 @@ const Projects: React.FC = () => {
         ))}
       </div>
 
+      {/* --- CTA Section --- */}
       <div className="mt-24 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <div className="inline-block p-8 rounded-3xl bg-surface border border-border-glass shadow-xl">
-          <h3 className="font-display text-2xl font-bold text-text-main mb-2">Ready to start your own project?</h3>
-          <p className="text-text-muted mb-6">I'm currently accepting new contracts for Q4 2025.</p>
+        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">I'm currently accepting new contracts for Q4 2025.</p>
           <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
             Get a Quote
           </Link>
