@@ -15,7 +15,7 @@ const About: React.FC = () => {
       "description": "Founder of CryptoWebBuild Agency. Specialized in high-performance Web3 interfaces, e-commerce, and modern web architecture.",
       "url": "https://cryptowebbuild.com/about",
       "sameAs": [
-        "https://x.com/WebBuildDev",
+        "https://x.com/CryptowebbuildX",
         "https://t.me/CryptoWebBuild",
         "https://github.com/cryptowebbuild",
         "https://www.youtube.com/@cryptowebbuild"
@@ -34,8 +34,8 @@ const About: React.FC = () => {
     },
     { 
       name: 'X (Twitter)', 
-      label: '@WebBuildDev', 
-      url: 'https://x.com/WebBuildDev', 
+      label: '@CryptoWebBuildX' , 
+      url: 'https://x.com/CryptowebbuildX', 
       color: 'bg-black border border-white/20', 
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     },
