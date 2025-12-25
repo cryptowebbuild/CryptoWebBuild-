@@ -79,7 +79,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       <SEO 
         title="About Sagor Ahamed | Senior Web3 Developer"
         description="Meet Sagor Ahamed, founder of CryptoWebBuild. Expert full-stack developer specialized in React, Solana, and high-performance web architecture."
@@ -97,9 +97,9 @@ const About: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <div className="glass-panel rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-surface relative z-10 overflow-hidden">
+        <div className="rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-white dark:bg-[#1e293b] relative z-10 overflow-hidden">
             {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
+            <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
             
             <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
@@ -136,18 +136,18 @@ const About: React.FC = () => {
                         The Mind Behind The Agency
                     </div>
                     
-                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-main mb-6 leading-tight">
+                    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                         About Sagor Ahamed: <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-shimmer">Decentralized Architect</span>
                     </h1>
                     
-                    <p className="text-lg md:text-xl text-text-muted leading-relaxed mb-8 font-light max-w-2xl mx-auto lg:mx-0">
-                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-text-main font-bold">CryptoWebBuild Agency</span>. We don't just write code; we build high-performance digital assets that turn visitors into investors and customers. From viral meme coins to institutional DeFi protocols.
+                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8 font-light max-w-2xl mx-auto lg:mx-0">
+                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-gray-900 dark:text-white font-bold">CryptoWebBuild Agency</span>. We don't just write code; we build high-performance digital assets that turn visitors into investors and customers. From viral meme coins to institutional DeFi protocols.
                     </p>
 
                     {/* Social Command Center */}
                     <div className="mb-8">
-                        <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-4 opacity-70">Connect Directly</h3>
+                        <h3 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 opacity-70">Connect Directly</h3>
                         <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                             {socialLinks.map((social) => (
                                 <a 
@@ -169,10 +169,10 @@ const About: React.FC = () => {
             </div>
 
             {/* Stats Bar */}
-            <div className="mt-12 pt-8 border-t border-border-glass grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
                 {stats.map((stat, i) => (
                     <div key={i} className="text-center group cursor-default">
-                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-text-main to-text-muted mb-1 group-hover:scale-110 transition-transform">
+                        <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-1 group-hover:scale-110 transition-transform">
                             {stat.value}
                         </div>
                         <div className="text-xs font-bold text-cyan-600 uppercase tracking-widest">{stat.label}</div>
@@ -185,18 +185,18 @@ const About: React.FC = () => {
       {/* --- Philosophy / Agency Story --- */}
       <div className="grid md:grid-cols-2 gap-12 md:gap-24 mb-32 items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
         <div className="space-y-8 order-2 md:order-1">
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-text-main leading-tight">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                 More than a Developer. <br/>
                 <span className="text-purple-600 dark:text-purple-400">I am your Agency.</span>
             </h2>
-            <div className="prose prose-lg text-text-muted dark:prose-invert">
+            <div className="prose prose-lg text-gray-600 dark:text-gray-400">
                 <p>
                     In 2026, a website isn't just a digital brochure; it's a conversion engine. Whether you are launching a Solana token, dropping an NFT collection, or scaling an e-commerce brand, <strong>speed and trust are your currency.</strong>
                 </p>
                 <p>
                     I started <strong>CryptoWebBuild</strong> with a singular mission: to eliminate the bloat of traditional agencies. No middlemen, no "account managers" who don't code, and no delays. 
                 </p>
-                <p className="border-l-4 border-cyan-500 pl-4 italic text-text-main font-medium">
+                <p className="border-l-4 border-cyan-500 pl-4 italic text-gray-900 dark:text-white font-medium">
                     "I obsess over milliseconds so you don't lose customers. I build assets that appreciate in value."
                 </p>
                 <p>
@@ -207,23 +207,23 @@ const About: React.FC = () => {
 
         {/* The Tech Arsenal */}
         <div className="order-1 md:order-2">
-            <div className="glass-panel p-8 rounded-3xl bg-surface-highlight border border-border-glass relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full"></div>
-                <h3 className="font-display text-2xl font-bold text-text-main mb-8 flex items-center gap-3">
+            <div className="p-8 rounded-3xl bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 relative overflow-hidden shadow-xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full pointer-events-none"></div>
+                <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                     <span className="w-2 h-8 bg-gradient-to-b from-purple-500 to-cyan-500 rounded-full"></span>
                     The Agency Arsenal
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-4">
                     {techStack.map((tech, i) => (
-                        <div key={i} className="group p-4 bg-surface border border-border-glass hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg hover:bg-surface-highlight/50">
+                        <div key={i} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
                             <div className="flex items-center gap-3 mb-2">
                                 <span className="text-2xl filter grayscale group-hover:grayscale-0 transition-all">{tech.icon === 'TS' ? (
                                     <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C0.502 0 0 0.502 0 1.125v21.75C0 23.498 0.502 24 1.125 24h21.75c0.623 0 1.125-0.502 1.125-1.125V1.125C24 0.502 23.498 0 22.875 0H1.125zM15.266 18.063h-3.328v-1.782h3.328v1.782zm-8.832 0H3.106v-7.149h5.188v1.782H4.888v1.781h1.547v1.782H4.888v1.804zm6.602-5.367H11.25v-1.782h3.328v1.782z"/></svg>
                                 ) : tech.icon}</span>
-                                <span className="font-bold text-text-main text-sm">{tech.name}</span>
+                                <span className="font-bold text-gray-900 dark:text-white text-sm">{tech.name}</span>
                             </div>
-                            <p className="text-[10px] text-text-muted font-bold uppercase tracking-wide opacity-60 group-hover:opacity-100">{tech.desc}</p>
+                            <p className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wide opacity-60 group-hover:opacity-100">{tech.desc}</p>
                         </div>
                     ))}
                 </div>
@@ -233,51 +233,51 @@ const About: React.FC = () => {
 
       {/* --- Timeline / Journey --- */}
       <div className="max-w-4xl mx-auto mb-32 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <h2 className="font-display text-3xl font-bold text-center text-text-main mb-12">The Evolution</h2>
-        <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-6 md:ml-0 md:pl-0 space-y-12">
+        <h2 className="font-display text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">The Evolution</h2>
+        <div className="relative border-l-2 border-gray-200 dark:border-slate-800 ml-6 md:ml-0 md:pl-0 space-y-12">
             
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                 <div className="hidden md:block text-right pr-12">
-                     <h3 className="text-xl font-bold text-text-main mb-1">CryptoWebBuild Agency</h3>
+                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">CryptoWebBuild Agency</h3>
                      <p className="text-purple-600 dark:text-purple-400 font-bold text-sm uppercase tracking-wide">Present</p>
                 </div>
-                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-void z-10 shadow-[0_0_15px_#a855f7]"></div>
+                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-white dark:border-[#020617] z-10 shadow-[0_0_15px_#a855f7]"></div>
                 <div className="pl-12 md:pl-0">
                     <div className="md:hidden mb-2">
                         <span className="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-wide">Present</span>
-                        <h3 className="text-xl font-bold text-text-main">CryptoWebBuild Agency</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">CryptoWebBuild Agency</h3>
                     </div>
-                    <p className="text-text-muted">Scaling the agency to serve high-stakes launches. Building custom DApps, Meme Coin Generators, and Enterprise E-commerce solutions.</p>
+                    <p className="text-gray-600 dark:text-gray-400">Scaling the agency to serve high-stakes launches. Building custom DApps, Meme Coin Generators, and Enterprise E-commerce solutions.</p>
                 </div>
             </div>
 
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                  <div className="pl-12 md:text-right md:pl-0 md:pr-12 order-1">
                      <div className="md:hidden mb-2">
-                         <span className="text-text-muted font-bold text-xs uppercase tracking-wide">2023 - 2024</span>
-                         <h3 className="text-xl font-bold text-text-main">Lead Web3 Architect</h3>
+                         <span className="text-gray-500 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2023 - 2024</span>
+                         <h3 className="text-xl font-bold text-gray-900 dark:text-white">Lead Web3 Architect</h3>
                      </div>
-                     <p className="text-text-muted">Led frontend development for multiple DeFi protocols. Mastered wallet integration (Wagmi/Solana) and real-time data visualization.</p>
+                     <p className="text-gray-600 dark:text-gray-400">Led frontend development for multiple DeFi protocols. Mastered wallet integration (Wagmi/Solana) and real-time data visualization.</p>
                 </div>
-                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-void z-10"></div>
+                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 dark:bg-slate-700 border-4 border-white dark:border-[#020617] z-10"></div>
                 <div className="hidden md:block order-2">
-                     <h3 className="text-xl font-bold text-text-main mb-1">Lead Web3 Architect</h3>
-                     <p className="text-text-muted font-bold text-sm uppercase tracking-wide">2023 - 2024</p>
+                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Lead Web3 Architect</h3>
+                     <p className="text-gray-500 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2023 - 2024</p>
                 </div>
             </div>
 
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                  <div className="hidden md:block text-right pr-12">
-                     <h3 className="text-xl font-bold text-text-main mb-1">Full Stack Developer</h3>
-                     <p className="text-text-muted font-bold text-sm uppercase tracking-wide">2021 - 2023</p>
+                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Full Stack Developer</h3>
+                     <p className="text-gray-500 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2021 - 2023</p>
                 </div>
-                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-void z-10"></div>
+                <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 dark:bg-slate-700 border-4 border-white dark:border-[#020617] z-10"></div>
                 <div className="pl-12 md:pl-0">
                      <div className="md:hidden mb-2">
-                        <span className="text-text-muted font-bold text-xs uppercase tracking-wide">2021 - 2023</span>
-                        <h3 className="text-xl font-bold text-text-main">Full Stack Developer</h3>
+                        <span className="text-gray-500 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2021 - 2023</span>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">Full Stack Developer</h3>
                      </div>
-                    <p className="text-text-muted">Built custom MERN stack applications and headless CMS solutions. Learned the importance of SEO and Server-Side Rendering.</p>
+                    <p className="text-gray-600 dark:text-gray-400">Built custom MERN stack applications and headless CMS solutions. Learned the importance of SEO and Server-Side Rendering.</p>
                 </div>
             </div>
         </div>
@@ -285,7 +285,7 @@ const About: React.FC = () => {
 
       {/* --- CTA --- */}
       <div className="relative group rounded-[3rem] overflow-hidden bg-slate-900 border border-white/10 p-12 text-center shadow-2xl">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-green-500"></div>
         
         <div className="relative z-10 max-w-2xl mx-auto">
