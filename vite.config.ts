@@ -39,7 +39,6 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) return 'vendor-react';
             if (id.includes('@google/genai')) return 'vendor-genai';
-            if (id.includes('framer-motion')) return 'vendor-framer';
             if (id.includes('lucide-react') || id.includes('clsx') || id.includes('tailwind-merge')) return 'vendor-ui';
             return 'vendor-libs';
           }

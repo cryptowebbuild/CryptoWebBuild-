@@ -12,6 +12,7 @@ interface SEOProps {
   author?: string;
   noIndex?: boolean;
   schema?: Record<string, any>;
+  schemaType?: 'Person' | 'Organization' | 'Service';
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -24,12 +25,12 @@ const SEO: React.FC<SEOProps> = ({
   publishedTime,
   author = 'Sagor Ahamed',
   noIndex = false,
-  schema
+  schema,
+  schemaType = 'Person'
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
   
   // 1. Default Identity (Broad Authority)
-  // এটি আপনাকে "Web3" এর পাশাপাশি "General Expert" হিসেবে দেখাবে
   const defaultTitle = "Sagor Ahamed | Senior Full-Stack & Web3 Developer";
   const defaultDescription = "Expert React & Next.js Developer for high-performance Websites. Specializing in Crypto Projects, E-commerce Stores, and Custom Business Solutions.";
   const defaultImage = `${siteUrl}/default-og-image.jpg`; // Make sure to have a generic tech image in public folder
@@ -54,7 +55,6 @@ const SEO: React.FC<SEOProps> = ({
   const fullCanonical = getCanonicalUrl();
 
   // 4. Keyword Strategy (Anti-Cannibalization)
-  // Global Keywords: আপনার মূল স্কিলসেট (সবার জন্য প্রযোজ্য)
   const globalKeywords = [
     'Full-Stack Developer', 
     'React Expert', 
@@ -65,35 +65,83 @@ const SEO: React.FC<SEOProps> = ({
     'Web3 Integration' 
   ];
   
-  // পেজ স্পেসিফিক কিওয়ার্ডের সাথে গ্লোবাল কিওয়ার্ড মার্জ করা হলো
   const allKeywords = [...new Set([...keywords, ...globalKeywords])];
 
-  // 5. Advanced Schema (Professional Service + Person)
-  // এটি গুগলকে বলবে আপনি একজন "প্রফেশনাল", শুধু ব্লগার নন।
-  const defaultSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": author,
-    "url": siteUrl,
-    "jobTitle": "Senior Full-Stack Architect",
-    "image": finalImage,
-    "description": finalDescription,
-    "knowsAbout": [
-      "Web Development",
-      "React.js",
-      "Next.js",
-      "Blockchain Technology",
-      "E-commerce",
-      "Technical SEO"
-    ],
-    "sameAs": [
-        "https://github.com/cryptowebbuild", 
-        "https://twitter.com/WebBuildDev",
-        "https://linkedin.com/in/sagor-ahamed" // Add your real links
-    ]
+  // 5. Advanced Schema (Professional Service + Person + Organization)
+  const generateSchema = () => {
+    if (schema) return schema;
+
+    const baseSchema: Record<string, any> = {
+      "@context": "https://schema.org",
+      "url": siteUrl,
+      "image": finalImage,
+      "description": finalDescription,
+      "sameAs": [
+          "https://github.com/cryptowebbuild",
+          "https://twitter.com/WebBuildDev",
+          "https://www.youtube.com/@cryptowebbuild",
+          "https://t.me/CryptoWebBuild"
+      ]
+    };
+
+    if (schemaType === 'Organization') {
+      return {
+        ...baseSchema,
+        "@type": "Organization",
+        "name": "CryptoWebBuild Agency",
+        "logo": `${siteUrl}/favicon.svg`,
+        "founder": {
+           "@type": "Person",
+           "name": "Sagor Ahamed"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "hello@cryptowebbuild.com"
+        }
+      };
+    }
+
+    if (schemaType === 'Service') {
+      return {
+        ...baseSchema,
+        "@type": "Service",
+        "name": finalTitle,
+        "provider": {
+          "@type": "Organization",
+          "name": "CryptoWebBuild"
+        },
+        "areaServed": "Global",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Web Development Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crypto Website Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Business Sites" } }
+          ]
+        }
+      };
+    }
+
+    // Default: Person
+    return {
+      ...baseSchema,
+      "@type": "Person",
+      "name": author,
+      "jobTitle": "Senior Full-Stack Architect",
+      "knowsAbout": [
+        "Web Development",
+        "React.js",
+        "Next.js",
+        "Blockchain Technology",
+        "E-commerce",
+        "Technical SEO"
+      ]
+    };
   };
 
-  const finalSchema = schema || defaultSchema;
+  const finalSchema = generateSchema();
 
   return (
     <Helmet>
