@@ -5,7 +5,7 @@ interface LayoutProps {
   children?: React.ReactNode;
 }
 
-// --- Icons (SVG Components) ---
+// --- SVG Icons ---
 const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => (
   <button
     onClick={toggle}
@@ -41,10 +41,33 @@ const SocialIcon = ({ d }: { d: string }) => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={d} /></svg>
 );
 
+// --- Updated Social Links (YouTube & GitHub Added) ---
 const socialLinks = [
-  { label: 'Follow on X (Twitter)', href: 'https://x.com/CryptowebbuildX', d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" },
-  { label: 'Join Telegram Channel', href: 'https://t.me/CryptoWebBuild', d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.48-1.02-2.4-1.62-1.06-.69-.37-1.07.23-1.68.16-.16 2.87-2.63 2.92-2.85.01-.03.01-.14-.06-.2-.06-.05-.16-.04-.23-.02-.1.02-1.72 1.1-4.86 3.22-.46.32-.88.47-1.25.46-.4-.01-1.18-.23-1.75-.38-.7-.18-1.26-.28-1.21-.6.03-.16.24-.32.65-.49 2.56-1.11 4.27-1.84 5.12-2.2 2.43-1.01 2.93-1.19 3.26-1.19.07 0 .23.02.33.09.09.08.12.19.13.29v.04z" },
-  { label: 'Send Email', href: 'mailto:hello@cryptowebbuild.com', d: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" }
+  { 
+    label: 'YouTube', 
+    href: 'https://www.youtube.com/@cryptowebbuild', 
+    d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" 
+  },
+  { 
+    label: 'GitHub', 
+    href: 'https://github.com/cryptowebbuild', 
+    d: "M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" 
+  },
+  { 
+    label: 'X (Twitter)', 
+    href: 'https://x.com/WebBuildDev', 
+    d: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" 
+  },
+  { 
+    label: 'Telegram', 
+    href: 'https://t.me/CryptoWebBuild', 
+    d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.48-1.02-2.4-1.62-1.06-.69-.37-1.07.23-1.68.16-.16 2.87-2.63 2.92-2.85.01-.03.01-.14-.06-.2-.06-.05-.16-.04-.23-.02-.1.02-1.72 1.1-4.86 3.22-.46.32-.88.47-1.25.46-.4-.01-1.18-.23-1.75-.38-.7-.18-1.26-.28-1.21-.6.03-.16.24-.32.65-.49 2.56-1.11 4.27-1.84 5.12-2.2 2.43-1.01 2.93-1.19 3.26-1.19.07 0 .23.02.33.09.09.08.12.19.13.29v.04z" 
+  },
+  { 
+    label: 'Email', 
+    href: 'mailto:hello@cryptowebbuild.com', 
+    d: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" 
+  }
 ];
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
@@ -52,7 +75,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   
-  // Initialize theme from localStorage directly to avoid flicker
+  // Initialize theme
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') || 'light';
@@ -73,7 +96,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
-  // Optimized Scroll Handler (Throttled with requestAnimationFrame)
+  // Performance Optimized Scroll Handler
   useEffect(() => {
     let ticking = false;
     
@@ -94,7 +117,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Close menu on route change
+  // Close menu on route change & Scroll top
   useEffect(() => {
     setIsMenuOpen(false);
     window.scrollTo(0,0);
@@ -112,7 +135,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen relative font-sans text-text-main overflow-x-hidden flex flex-col transition-colors duration-500">
       
-      {/* Background Ambience - GPU Accelerated */}
+      {/* --- Optimized Background --- */}
       <div className="fixed inset-0 z-0 bg-void pointer-events-none overflow-hidden transition-colors duration-500">
         <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
@@ -120,7 +143,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>
 
       {/* --- HEADER --- */}
-      {/* Fixed CLS: Removed padding transition. Height stays stable. */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4`}>
         <div className="container mx-auto px-4 md:px-6">
           <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm bg-opacity-90 backdrop-blur-md' : 'bg-transparent'}`}>
@@ -217,11 +239,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
       </button>
 
-      {/* --- FOOTER --- */}
+      {/* --- FOOTER (Enhanced Internal Linking & Socials) --- */}
       <footer className="relative z-10 mt-32 bg-surface border-t border-border-glass">
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             
+            {/* 1. Brand & Socials */}
             <div className="lg:col-span-4 space-y-6">
               <Link to="/" className="flex items-center gap-3">
                 <LogoIcon className="w-8 h-8 text-text-main" idSuffix="footer" />
@@ -231,7 +254,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
               </p>
               
-              <div className="flex gap-4 pt-2">
+              <div className="flex gap-3 pt-2">
                 {socialLinks.map((social) => (
                   <a 
                     key={social.label} 
@@ -247,32 +270,37 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
 
+            {/* 2. Main Pages (Navigation) */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
-              <ul className="space-y-4 text-text-muted text-sm font-medium">
+              <ul className="space-y-3 text-text-muted text-sm font-medium">
                 {navLinks.map(link => (
                   <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{link.label}</Link></li>
                 ))}
               </ul>
             </div>
 
+            {/* 3. Resources & Legal (Zero Orphan) */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Resources</h3>
-              <ul className="space-y-4 text-text-muted text-sm font-medium">
+              <ul className="space-y-3 text-text-muted text-sm font-medium">
+                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Get a Quote</Link></li>
                 <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
                 <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Terms of Service</Link></li>
-                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
 
+            {/* 4. High-Value Guides (SEO Silo) */}
             <div className="lg:col-span-4">
-              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Guides & Tech</h3>
+              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
               <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
+                {/* NEW Strategy Guide Linked Here */}
+                <li><Link to="/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
                 <li><Link to="/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
-                <li><Link to="/crypto-project-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Project Foundations</Link></li>
                 <li><Link to="/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
                 <li><Link to="/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
+                <li><Link to="/static-vs-dynamic-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>
               </ul>
             </div>
           </div>
@@ -280,8 +308,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-text-muted text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
             <div className="flex gap-8 text-sm font-bold text-text-muted">
-              <Link to="/privacy" className="hover:text-text-main transition-colors">Privacy</Link>
-              <Link to="/terms" className="hover:text-text-main transition-colors">Terms</Link>
+              <a href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">GitHub</a>
+              <a href="https://www.youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">YouTube</a>
             </div>
           </div>
         </div>
