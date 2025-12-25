@@ -48,17 +48,18 @@ const Services: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="Web3 & E-commerce Development Services | Pricing & Packages"
-        description="View my web development services: Crypto presale sites, meme coin landing pages, and high-performance e-commerce stores. Clear pricing and packages."
+        title="Web Development Services | Crypto, E-commerce & Business Agency"
+        description="Full-stack web development agency services: Crypto presale sites, meme coin landing pages, and high-performance e-commerce stores. View our packages."
         keywords={[
-          'Web Development Services', 
+          'Web Development Agency Services',
           'Crypto Website Pricing', 
           'E-commerce Development Packages', 
           'Custom Website Cost', 
-          'Business Website Design'
+          'Business Website Design Agency'
         ]}
         canonical="/services"
         schema={jsonLd}
+        schemaType="Service"
       />
 
       {/* --- Header Section --- */}

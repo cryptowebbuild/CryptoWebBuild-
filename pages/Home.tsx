@@ -77,16 +77,18 @@ const Home: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="Sagor Ahamed | Senior Full-Stack & Web3 Developer"
-        description="Hire a top-rated developer for fast, secure Crypto, E-commerce, and Business websites. Expert in React, Next.js, and SEO-first architecture."
+        title="CryptoWebBuild Agency | High-Performance Web Solutions"
+        description="Premier Web Development Agency for Startups & Crypto Projects. We build secure, ultra-fast websites that convert. Hire our expert team today."
         keywords={[
-          'Web3 Website Developer', 
+          'Web Development Agency',
+          'Crypto Website Agency',
           'Business Website Developer', 
-          'E-commerce Website Developer', 
-          'Hire React Developer', 
+          'E-commerce Solutions',
+          'Hire React Developers',
           'Custom Website Design Agency'
         ]}
         canonical="/"
+        schemaType="Organization"
       />
       
       {/* --- Hero Section --- */}
