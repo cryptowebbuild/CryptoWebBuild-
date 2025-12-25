@@ -139,10 +139,10 @@ const Home: React.FC = () => {
             </Link>
             
             <Link 
-              to="/services" 
+              to="/solana-meme-coin-guide"
               className="px-8 py-4 md:px-10 md:py-5 text-gray-900 dark:text-white font-bold text-lg md:text-xl rounded-2xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all active:scale-95 shadow-sm w-full sm:w-auto text-center backdrop-blur-md"
             >
-              View Services
+              Start Launching
             </Link>
           </div>
         </div>
