@@ -182,7 +182,7 @@ const MemeCoinFeatures: React.FC = () => {
                 <div className="absolute -top-12 -right-12 w-48 h-48 bg-pink-500/10 blur-3xl group-hover:bg-pink-500/20 transition-all duration-700"></div>
                 <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-4">Launch with a Professional Advantage.</h3>
                 <p className="text-gray-600 dark:text-slate-300 text-xl mb-8 leading-relaxed">
-                    Building a meme coin? You need speed and security. Check out how much a high-performance build costs in my <Link to="/crypto-website-cost" className="text-pink-600 dark:text-pink-400 font-black underline">Full Pricing Guide</Link>.
+                    Building a meme coin? You need speed and security. Check out how much a high-performance build costs in my <Link to="/blog/crypto-cost" className="text-pink-600 dark:text-pink-400 font-black underline">Full Pricing Guide</Link>.
                 </p>
                 <Link to="/contact" className="inline-flex items-center px-10 py-4 bg-pink-600 text-white font-black text-lg rounded-2xl hover:bg-pink-500 hover:shadow-[0_0_30px_rgba(219,39,119,0.4)] transition-all transform hover:scale-105 active:scale-95">
                     Discuss Your Launch

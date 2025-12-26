@@ -296,11 +296,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
               <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
                 {/* NEW Strategy Guide Linked Here */}
-                <li><Link to="/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
-                <li><Link to="/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
-                <li><Link to="/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
-                <li><Link to="/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
-                <li><Link to="/static-vs-dynamic-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>
+                <li><Link to="/blog/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
+                <li><Link to="/blog/best-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
+                <li><Link to="/blog/meme-coin-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
+                <li><Link to="/blog/crypto-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
+                <li><Link to="/blog/static-vs-dynamic" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>
+                <li><Link to="/blog/solana-meme-coin-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Solana Meme Coin Guide</Link></li>
+                <li><Link to="/blog/crypto-project" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Launch a Crypto Project</Link></li>
+                <li><Link to="/blog/presale-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Presale Launch Guide</Link></li>
+                <li><Link to="/blog/crypto-seo" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto SEO Mastery</Link></li>
+                <li><Link to="/blog/website-builder-vs-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Website Builder vs Developer</Link></li>
               </ul>
             </div>
           </div>
@@ -310,6 +315,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="flex gap-8 text-sm font-bold text-text-muted">
               <a href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">GitHub</a>
               <a href="https://www.youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">YouTube</a>
+              <a href="https://twitter.com/WebBuildDev" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">X (Twitter)</a>
             </div>
           </div>
         </div>

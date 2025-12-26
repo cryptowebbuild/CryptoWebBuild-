@@ -97,11 +97,11 @@ const StaticVsDynamic: React.FC = () => {
         <div className="mt-32 pt-16 border-t border-gray-200 dark:border-white/10">
            <h3 className="text-2xl font-bold mb-8 dark:text-white">Read Next</h3>
            <div className="grid md:grid-cols-2 gap-8">
-              <Link to="/crypto-website-cost" className="group block p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-emerald-500 transition-colors">
+              <Link to="/blog/crypto-cost" className="group block p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-emerald-500 transition-colors">
                  <div className="text-sm font-bold text-emerald-600 mb-2">Cost</div>
                  <div className="font-bold text-xl dark:text-white group-hover:text-emerald-500 transition-colors">Web3 Website Cost Breakdown →</div>
               </Link>
-              <Link to="/best-website-developer" className="group block p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-colors">
+              <Link to="/blog/best-developer" className="group block p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-colors">
                  <div className="text-sm font-bold text-purple-600 mb-2">Hiring</div>
                  <div className="font-bold text-xl dark:text-white group-hover:text-purple-500 transition-colors">How to Hire a Developer →</div>
               </Link>

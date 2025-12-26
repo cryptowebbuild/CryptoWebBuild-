@@ -74,7 +74,7 @@ const CryptoMarketingGuide: React.FC = () => {
             </p>
             <h3>The Checklist for Crypto SEO:</h3>
             <ul>
-              <li><strong>Programmatic SEO:</strong> Auto-generate pages for "How to buy [Token Name]" to capture long-tail traffic. <Link to="/crypto-seo-guide" className="text-indigo-600 font-bold">Read the full Crypto SEO Guide here.</Link></li>
+              <li><strong>Programmatic SEO:</strong> Auto-generate pages for "How to buy [Token Name]" to capture long-tail traffic. <Link to="/blog/crypto-seo" className="text-indigo-600 font-bold">Read the full Crypto SEO Guide here.</Link></li>
               <li><strong>Schema Markup:</strong> Tell Google you are a `FinancialProduct` (Token) or `SoftwareApplication` (DApp).</li>
               <li><strong>Speed:</strong> A 100/100 PageSpeed score is a ranking factor. React Static sites win here.</li>
             </ul>
@@ -123,7 +123,7 @@ const CryptoMarketingGuide: React.FC = () => {
             </ol>
 
             <ExpertBox type="insight" title="Why I Build Static Sites">
-              I build all my client sites using <strong>React & Vite</strong> (Static Architecture). Why? Because when Elon Musk tweets about your niche, you might get 50,000 visitors in 1 minute. A WordPress site will crash. A Static site on Cloudflare will stay up and keep processing buys. <Link to="/static-vs-dynamic-website" className="underline font-bold">Read the technical breakdown here.</Link>
+              I build all my client sites using <strong>React & Vite</strong> (Static Architecture). Why? Because when Elon Musk tweets about your niche, you might get 50,000 visitors in 1 minute. A WordPress site will crash. A Static site on Cloudflare will stay up and keep processing buys. <Link to="/blog/static-vs-dynamic" className="underline font-bold">Read the technical breakdown here.</Link>
             </ExpertBox>
 
             <h2 id="conclusion">Conclusion: Build Different</h2>
