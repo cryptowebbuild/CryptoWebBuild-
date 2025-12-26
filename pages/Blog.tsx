@@ -61,7 +61,8 @@ const Blog: React.FC = () => {
       "headline": post.title,
       "description": post.desc,
       "datePublished": new Date(post.date).toISOString().split('T')[0],
-      "url": `https://cryptowebbuild.com${post.slug}`,
+      // FIX: Ensure absolute URL structure matches App.tsx
+      "url": `https://cryptowebbuild.com/blog/${post.slug}`,
       "image": post.image,
       "author": {
         "@type": "Person",
@@ -103,7 +104,8 @@ const Blog: React.FC = () => {
           {posts.map((post, idx) => (
             <Link 
               key={post.slug} 
-              to={post.slug}
+              // FIX: Explicitly adding /blog/ prefix to ensure routing works perfectly
+              to={`/blog/${post.slug}`}
               className={`group flex flex-col bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 animate-slide-up border-t-4 ${post.border}`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
