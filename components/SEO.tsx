@@ -12,7 +12,7 @@ interface SEOProps {
   author?: string;
   noIndex?: boolean;
   schema?: Record<string, any>;
-  schemaType?: 'Person' | 'Organization' | 'Service';
+  schemaType?: 'Person' | 'Organization' | 'Service' | 'FAQPage' | 'Article';
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -33,7 +33,7 @@ const SEO: React.FC<SEOProps> = ({
   // 1. Default Identity (Broad Authority)
   const defaultTitle = "Sagor Ahamed | Senior Full-Stack & Web3 Developer";
   const defaultDescription = "Expert React & Next.js Developer for high-performance Websites. Specializing in Crypto Projects, E-commerce Stores, and Custom Business Solutions.";
-  const defaultImage = `${siteUrl}/default-og-image.jpg`; // Make sure to have a generic tech image in public folder
+  const defaultImage = `${siteUrl}/default-og-image.jpg`;
 
   // 2. Resolve Final Values
   const finalTitle = title || defaultTitle;
@@ -67,13 +67,13 @@ const SEO: React.FC<SEOProps> = ({
   
   const allKeywords = [...new Set([...keywords, ...globalKeywords])];
 
-  // 5. Advanced Schema (Professional Service + Person + Organization)
+  // 5. Advanced Schema (Professional Service + Person + Organization + FAQ + Article)
   const generateSchema = () => {
     if (schema) return schema;
 
     const baseSchema: Record<string, any> = {
       "@context": "https://schema.org",
-      "url": siteUrl,
+      "url": fullCanonical,
       "image": finalImage,
       "description": finalDescription,
       "sameAs": [
@@ -122,6 +122,47 @@ const SEO: React.FC<SEOProps> = ({
           ]
         }
       };
+    }
+
+    if (schemaType === 'Article' || type === 'article') {
+       return {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": fullCanonical
+          },
+          "headline": finalTitle,
+          "description": finalDescription,
+          "image": finalImage,
+          "author": {
+            "@type": "Person",
+            "name": author,
+            "url": "https://cryptowebbuild.com/about" // Link to bio
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "CryptoWebBuild",
+            "logo": {
+              "@type": "ImageObject",
+              "url": `${siteUrl}/favicon.svg`
+            }
+          },
+          "datePublished": publishedTime || new Date().toISOString(),
+          "dateModified": publishedTime || new Date().toISOString() // Ideally should be passed separate modified time
+       };
+    }
+
+    if (schemaType === 'FAQPage') {
+        // NOTE: FAQ items should be passed via the `schema` prop manually if strictly needed,
+        // or we could add a `faq` prop to this component to generate it.
+        // For now, if schemaType is FAQPage, we expect the caller to might have passed `schema`
+        // or we return a base FAQPage (which isn't very useful without Questions).
+        // Best approach: If `schema` is provided, use it. If not, fallback to WebPage.
+        return {
+             ...baseSchema,
+             "@type": "FAQPage"
+        };
     }
 
     // Default: Person

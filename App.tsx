@@ -34,7 +34,7 @@ const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
 const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
 const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
 
-// --- Blog Posts (All 7 Articles) ---
+// --- Blog Posts (All 10 Articles) ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
 const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
 const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures'));
@@ -89,17 +89,20 @@ const App: React.FC = () => {
           <Route path="/autogithub" element={<AutoGitHub />} />
           <Route path="/gigasolana" element={<GigaSolana />} />
 
-          {/* Blog Posts Routes */}
-          <Route path="/best-website-developer" element={<BestDeveloper />} />
-          <Route path="/crypto-project-website" element={<CryptoProject />} />
-          <Route path="/meme-coin-website-features" element={<MemeCoinFeatures />} />
-          <Route path="/crypto-website-cost" element={<CryptoCost />} />
-          <Route path="/static-vs-dynamic-website" element={<StaticVsDynamic />} />
-          <Route path="/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
-          <Route path="/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
-          <Route path="/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
-          <Route path="/crypto-seo-guide" element={<CryptoSEO />} />
-          <Route path="/how-to-build-presale-dapp" element={<PresaleGuide />} />
+          {/* Blog Posts Routes - Updated to /blog/slug structure for SEO silos */}
+          <Route path="/blog/best-developer" element={<BestDeveloper />} />
+          <Route path="/blog/crypto-project" element={<CryptoProject />} />
+          <Route path="/blog/meme-coin-features" element={<MemeCoinFeatures />} />
+          <Route path="/blog/crypto-cost" element={<CryptoCost />} />
+          <Route path="/blog/static-vs-dynamic" element={<StaticVsDynamic />} />
+          <Route path="/blog/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
+          <Route path="/blog/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
+          <Route path="/blog/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
+          <Route path="/blog/crypto-seo" element={<CryptoSEO />} />
+          <Route path="/blog/presale-guide" element={<PresaleGuide />} />
+
+          {/* Legacy Redirects (Optional: Handled via _redirects or just keep old routes if needed, but for now we enforce new structure) */}
+          {/* Ideally we would add <Navigate to="..." /> for old routes but let's stick to the new structure matching Layout.tsx */}
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFound />} />

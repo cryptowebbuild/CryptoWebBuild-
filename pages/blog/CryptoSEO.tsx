@@ -135,7 +135,7 @@ export default function Page({ params }) {
         Don't write random blog posts. Google rewards "Topical Authority." You need to cover a topic exhaustively.
       </p>
       <p>
-        <strong>The Pillar Page:</strong> <Link to="/solana-meme-coin-guide">The Ultimate Guide to Solana Meme Coins</Link> (A 3,000-word overview).
+        <strong>The Pillar Page:</strong> <Link to="/blog/solana-meme-coin-guide">The Ultimate Guide to Solana Meme Coins</Link> (A 3,000-word overview).
       </p>
       <p>
         <strong>Cluster Content (Supporting Articles):</strong>
