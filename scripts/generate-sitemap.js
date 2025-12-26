@@ -4,7 +4,7 @@ import path from 'path';
 // Define the Base URL
 const BASE_URL = 'https://cryptowebbuild.com';
 
-// Define your static routes here (sync this with App.tsx manually or automated)
+// Define your static routes
 const staticRoutes = [
   '/',
   '/about',
@@ -25,19 +25,18 @@ const staticRoutes = [
   '/gigasolana',
 ];
 
-// Blog Routes (Manually synced with data/blogPosts.ts for now, as we can't import TS in JS script easily without build step)
-// NOTE: Ideally this would parse the TS file, but for simplicity/reliability in this script, we list them.
+// Blog Routes (UPDATED: Added '/blog' prefix to match App.tsx)
 const blogRoutes = [
-  '/crypto-seo-guide', // New Skyscraper
-  '/how-to-build-presale-dapp', // New Tech Guide
-  '/crypto-marketing-guide',
-  '/best-website-developer',
-  '/solana-meme-coin-guide',
-  '/crypto-website-cost',
-  '/static-vs-dynamic-website',
-  '/meme-coin-website-features',
-  '/crypto-project-website',
-  '/website-builder-vs-developer'
+  '/blog/crypto-seo-guide',
+  '/blog/how-to-build-presale-dapp',
+  '/blog/crypto-marketing-guide',
+  '/blog/best-website-developer',
+  '/blog/solana-meme-coin-guide',
+  '/blog/crypto-website-cost',
+  '/blog/static-vs-dynamic-website',
+  '/blog/meme-coin-website-features',
+  '/blog/crypto-project-website',
+  '/blog/website-builder-vs-developer'
 ];
 
 const routes = [...staticRoutes, ...blogRoutes];
@@ -57,13 +56,14 @@ ${routes
   .join('\n')}
 </urlset>`;
 
+  // Handle distinct public folder path depending on where script is run
   const publicDir = path.resolve('public');
   if (!fs.existsSync(publicDir)) {
       fs.mkdirSync(publicDir);
   }
 
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-  console.log('✅ Sitemap generated successfully!');
+  console.log('✅ Sitemap generated successfully with correct /blog paths!');
 };
 
 generateSitemap();
