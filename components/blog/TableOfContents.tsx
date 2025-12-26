@@ -35,24 +35,33 @@ const TableOfContents: React.FC = () => {
   if (headings.length === 0) return null;
 
   return (
-    <div className="hidden lg:block w-72 sticky top-32 ml-12 h-fit max-h-[80vh] overflow-y-auto">
-      <h4 className="font-display font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-wider text-sm">Contents</h4>
-      <ul className="space-y-3 border-l-2 border-gray-100 dark:border-white/5 pl-4">
-        {headings.map((heading) => (
-          <li key={heading.id} style={{ marginLeft: (heading.level - 2) * 12 }}>
-            <a
-              href={`#${heading.id}`}
-              className={`text-sm transition-colors duration-200 block ${
-                activeId === heading.id
-                  ? 'text-purple-600 dark:text-purple-400 font-bold -ml-[18px] border-l-2 border-purple-500 pl-4'
-                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
-              }`}
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div className="hidden lg:block w-72 h-fit max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
+      <div className="p-6 bg-white/50 dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 backdrop-blur-xl">
+        <h4 className="font-display font-black text-gray-900 dark:text-white mb-6 uppercase tracking-widest text-xs flex items-center gap-2">
+            <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+            On This Page
+        </h4>
+        <ul className="space-y-4">
+            {headings.map((heading) => (
+            <li key={heading.id} style={{ paddingLeft: (heading.level - 2) * 12 }}>
+                <a
+                href={`#${heading.id}`}
+                onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className={`text-sm transition-all duration-300 block leading-tight ${
+                    activeId === heading.id
+                    ? 'text-purple-600 dark:text-purple-400 font-bold translate-x-1'
+                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:translate-x-1'
+                }`}
+                >
+                {heading.text}
+                </a>
+            </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 };
