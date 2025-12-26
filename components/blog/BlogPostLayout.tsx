@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../SEO';
 import OptimizedImage from '../OptimizedImage';
@@ -30,6 +30,21 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   canonical,
   children
 }) => {
+  const [readingProgress, setReadingProgress] = useState(0);
+
+  useEffect(() => {
+    const updateScroll = () => {
+      const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (totalHeight > 0) {
+        setReadingProgress((currentScroll / totalHeight) * 100);
+      }
+    };
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    return () => window.removeEventListener('scroll', updateScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
       <SEO
@@ -44,9 +59,15 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
       />
 
       {/* --- Progress Bar (Optional Polish) --- */}
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
-         {/* Implement Scroll Progress later if needed */}
-      </div>
+      <div
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 z-[100] transition-all duration-150 ease-out"
+        style={{ width: `${readingProgress}%` }}
+        role="progressbar"
+        aria-valuenow={Math.round(readingProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Reading progress"
+      />
 
       {/* --- Hero Section (Glassmorphism) --- */}
       <header className="relative pt-32 pb-16 md:pt-48 md:pb-32 px-6 overflow-hidden">
