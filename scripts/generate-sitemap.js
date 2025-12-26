@@ -28,9 +28,11 @@ const staticRoutes = [
 // Blog Routes (Manually synced with data/blogPosts.ts for now, as we can't import TS in JS script easily without build step)
 // NOTE: Ideally this would parse the TS file, but for simplicity/reliability in this script, we list them.
 const blogRoutes = [
+  '/crypto-seo-guide', // New Skyscraper
+  '/how-to-build-presale-dapp', // New Tech Guide
   '/crypto-marketing-guide',
   '/best-website-developer',
-  '/solana-meme-coin-guide', // NEW
+  '/solana-meme-coin-guide',
   '/crypto-website-cost',
   '/static-vs-dynamic-website',
   '/meme-coin-website-features',

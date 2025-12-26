@@ -74,7 +74,7 @@ const CryptoMarketingGuide: React.FC = () => {
             </p>
             <h3>The Checklist for Crypto SEO:</h3>
             <ul>
-              <li><strong>Programmatic SEO:</strong> Auto-generate pages for "How to buy [Token Name]" to capture long-tail traffic.</li>
+              <li><strong>Programmatic SEO:</strong> Auto-generate pages for "How to buy [Token Name]" to capture long-tail traffic. <Link to="/crypto-seo-guide" className="text-indigo-600 font-bold">Read the full Crypto SEO Guide here.</Link></li>
               <li><strong>Schema Markup:</strong> Tell Google you are a `FinancialProduct` (Token) or `SoftwareApplication` (DApp).</li>
               <li><strong>Speed:</strong> A 100/100 PageSpeed score is a ranking factor. React Static sites win here.</li>
             </ul>

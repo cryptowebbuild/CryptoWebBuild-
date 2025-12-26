@@ -12,6 +12,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '9',
+    slug: '/crypto-seo-guide',
+    title: 'Crypto SEO Guide 2026: How to Rank Your Token #1',
+    excerpt: 'The ultimate guide to ranking for "How to buy $TOKEN". Programmatic SEO, Schema Markup, and Speed Optimization.',
+    date: 'Jan 05, 2026',
+    readTime: '10 min read',
+    category: 'Guide',
+    image: 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&w=800&q=80',
+    keywords: ['Crypto SEO', 'Token Ranking', 'Programmatic SEO']
+  },
+  {
+    id: '10',
+    slug: '/how-to-build-presale-dapp',
+    title: 'How to Build a Secure Token Presale DApp',
+    excerpt: 'Technical roadmap for building a high-concurrency ICO dashboard. Smart contracts, React, and anti-bot security.',
+    date: 'Jan 10, 2026',
+    readTime: '15 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?auto=format&fit=crop&w=800&q=80',
+    keywords: ['Presale DApp', 'Smart Contract Development', 'Web3 Security']
+  },
+  {
     id: '1',
     slug: '/crypto-marketing-guide',
     title: 'The 2026 Crypto Marketing Strategy Guide',
