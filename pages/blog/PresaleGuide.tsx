@@ -6,6 +6,52 @@ import ProTip from '../../components/blog/ProTip';
 import HireUsCTA from '../../components/blog/HireUsCTA';
 
 const PresaleGuide: React.FC = () => {
+  const contentBody = `
+    Raising capital in Web3 has evolved. The days of "send ETH to this address" are gone (mostly). Investors demand locked liquidity, audited contracts, and doxxed teams.
+
+    ## 1. The Platform Dilemma: Custom vs Launchpad
+
+    ### Option A: Launchpads (PinkSale, GemPad)
+    *   **Pros:** Instant trust (liquidity is auto-locked), built-in traffic from their user base.
+    *   **Cons:** Fees (5% of raised ETH/SOL), generic landing page.
+
+    ### Option B: Custom Presale Website
+    *   **Pros:** No fees, full brand control, you own the user data.
+    *   **Cons:** Requires expensive auditing. Investors are skeptical of custom contracts.
+
+    **Hybrid Strategy:** Build a custom, high-converting marketing website that *links* to the PinkSale presale page. This gives you the branding power of a custom site with the trust factor of a launchpad.
+
+    ## 2. The Marketing Ramp-Up (The 4-Week Rule)
+    You cannot launch a presale to an empty room.
+    *   **Week 1:** Teasers, art reveals, website launch.
+    *   **Week 2:** Whitepaper release, community contests (whitelist spots).
+    *   **Week 3:** Influencer push, AMA tour.
+    *   **Week 4:** "FOMO week" - Countdown, partnership announcements.
+
+    ## 3. The Whitelist Strategy
+    Don't let just anyone buy. Create scarcity.
+    Use "Whitelists" (WL) to reward active community members. If people have to work (tweet, invite friends) to get a WL spot, they are more likely to hold the token. This is a core part of Community Building Strategy.
+
+    ## 4. Security: The Anti-Rug Checklist
+    Investors are terrified of rugs. Prove you aren't one.
+    *   **KYC (Know Your Customer):** Dox yourself to a third party (like Assure DeFi). You get a "KYC Verified" badge without revealing your face to the public.
+    *   **Audit:** Get your contract audited. Even a basic audit covers simple exploits.
+    *   **Multi-Sig Wallet:** Use a Gnosis Safe for the marketing funds. It shows that one person cannot run away with the money.
+
+    ## 5. Post-Presale: The Danger Zone
+    The moment you list on DEX, presale buyers are in profit. Many will dump.
+    **The Defense:**
+    *   Have a massive marketing announcement ready for 1 hour after launch.
+    *   Use buy-back and burn mechanics if price dips below listing price.
+    *   Encourage staking immediately to lock up tokens.
+
+    ## Conclusion
+    A presale is a promise. You are selling a vision. If you treat your investors with respect and transparency, they will carry you to the moon. If you treat them as exit liquidity, you will crash.
+  `;
+
+  const wordCount = contentBody.split(/\s+/).length + 300;
+  const readTime = `${Math.ceil(wordCount / 200)} min read`;
+
   const takeaways = [
     "Presales are the highest-risk, highest-reward phase. Trust is the only metric that matters.",
     "Don't build your own presale contract unless you have $50k for audits. Use PinkSale or GemPad for safety.",
@@ -18,9 +64,9 @@ const PresaleGuide: React.FC = () => {
       title="The Ultimate Crypto Presale Guide 2026: How to Sell Out in Minutes"
       description="A step-by-step masterclass on running a successful token presale. Platforms, marketing, safety, and post-launch strategy."
       publishedTime="2025-02-15"
-      image="/hero-avatar.webp"
+      image="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200" // Launch/Solana Context
       category="Launch Strategy"
-      readTime="13 min read"
+      readTime={readTime}
       keywords={['crypto presale guide', 'how to launch presale', 'pinksale strategy', 'token launchpad', 'crypto fundraising']}
       canonical="/blog/presale-guide"
     >
@@ -115,6 +161,35 @@ function claim() external {
       <p>
         A presale is a promise. You are selling a vision. If you treat your investors with respect and transparency, they will carry you to the moon. If you treat them as exit liquidity, you will crash.
       </p>
+
+      <HireUsCTA />
+
+      {/* FAQ Section */}
+      <div className="mt-16 pt-10 border-t border-gray-200 dark:border-white/10">
+        <h3 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Frequently Asked Questions</h3>
+        <div className="space-y-6">
+            <div>
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">What is a 'hard cap'?</h4>
+                <p className="text-gray-600 dark:text-gray-400">The hard cap is the maximum amount of money you want to raise. If you hit it, the presale ends immediately. It creates FOMO.</p>
+            </div>
+            <div>
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">What is a 'soft cap'?</h4>
+                <p className="text-gray-600 dark:text-gray-400">The minimum amount you need to proceed. If you don't hit the soft cap, everyone gets a refund automatically.</p>
+            </div>
+            <div>
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Should I use a bonding curve?</h4>
+                <p className="text-gray-600 dark:text-gray-400">Bonding curves are complex. For most presales, a fixed price is better because it's easier for investors to understand.</p>
+            </div>
+            <div>
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">How do I prevent bots?</h4>
+                <p className="text-gray-600 dark:text-gray-400">Use a whitelist. Or implement a 'max transaction' limit on the presale contract. Launchpads like PinkSale have built-in anti-bot measures.</p>
+            </div>
+            <div>
+                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">Can I run a presale without a website?</h4>
+                <p className="text-gray-600 dark:text-gray-400">Technically yes, but no one will trust you. A professional website is the #1 trust signal for a presale investor.</p>
+            </div>
+        </div>
+      </div>
 
     </BlogPostLayout>
   );
