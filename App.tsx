@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import SEO from './components/SEO';
 
 // --- Scroll To Top Component (UX Fix) ---
-// এটি নিশ্চিত করে যে রাউট চেঞ্জ হলে পেজটি সবসময় টপ থেকে শুরু হবে
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -13,7 +12,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-// --- Lazy Load Pages (Code Splitting) ---
+// --- Lazy Load Pages ---
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
@@ -34,7 +33,7 @@ const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
 const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
 const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
 
-// --- Blog Posts (All 10 Articles) ---
+// --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
 const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
 const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures'));
@@ -59,10 +58,7 @@ const PageLoader = () => (
 const App: React.FC = () => {
   return (
     <Layout>
-      {/* UX Utility */}
       <ScrollToTop />
-      
-      {/* Global Default SEO */}
       <SEO />
       
       <Suspense fallback={<PageLoader />}>
@@ -89,20 +85,37 @@ const App: React.FC = () => {
           <Route path="/autogithub" element={<AutoGitHub />} />
           <Route path="/gigasolana" element={<GigaSolana />} />
 
-          {/* Blog Posts Routes - Updated to /blog/slug structure for SEO silos */}
-          <Route path="/blog/best-developer" element={<BestDeveloper />} />
-          <Route path="/blog/crypto-project" element={<CryptoProject />} />
-          <Route path="/blog/meme-coin-features" element={<MemeCoinFeatures />} />
-          <Route path="/blog/crypto-cost" element={<CryptoCost />} />
-          <Route path="/blog/static-vs-dynamic" element={<StaticVsDynamic />} />
-          <Route path="/blog/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
-          <Route path="/blog/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
-          <Route path="/blog/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
-          <Route path="/blog/crypto-seo" element={<CryptoSEO />} />
-          <Route path="/blog/presale-guide" element={<PresaleGuide />} />
+          {/* --- BLOG ROUTES (FIXED TO MATCH blogPosts.ts SLUGS) --- */}
+          
+          {/* 1. Crypto SEO Guide */}
+          <Route path="/blog/crypto-seo-guide" element={<CryptoSEO />} />
 
-          {/* Legacy Redirects (Optional: Handled via _redirects or just keep old routes if needed, but for now we enforce new structure) */}
-          {/* Ideally we would add <Navigate to="..." /> for old routes but let's stick to the new structure matching Layout.tsx */}
+          {/* 2. Presale DApp */}
+          <Route path="/blog/how-to-build-presale-dapp" element={<PresaleGuide />} />
+
+          {/* 3. Solana Meme Coin (Matched) */}
+          <Route path="/blog/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
+
+          {/* 4. Crypto Marketing (Matched) */}
+          <Route path="/blog/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
+
+          {/* 5. Best Developer */}
+          <Route path="/blog/best-website-developer" element={<BestDeveloper />} />
+
+          {/* 6. Crypto Website Cost */}
+          <Route path="/blog/crypto-website-cost" element={<CryptoCost />} />
+
+          {/* 7. Static vs Dynamic */}
+          <Route path="/blog/static-vs-dynamic-website" element={<StaticVsDynamic />} />
+
+          {/* 8. Meme Coin Features */}
+          <Route path="/blog/meme-coin-website-features" element={<MemeCoinFeatures />} />
+
+          {/* 9. Crypto Project Blueprint */}
+          <Route path="/blog/crypto-project-website" element={<CryptoProject />} />
+
+          {/* 10. Builder vs Developer */}
+          <Route path="/blog/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFound />} />
