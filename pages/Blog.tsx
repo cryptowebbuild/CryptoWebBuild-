@@ -61,7 +61,7 @@ const Blog: React.FC = () => {
       "headline": post.title,
       "description": post.desc,
       "datePublished": new Date(post.date).toISOString().split('T')[0],
-      // FIX: Ensure absolute URL structure matches App.tsx
+      // FIX: Ensure absolute URL structure includes /blog/ prefix
       "url": `https://cryptowebbuild.com/blog/${post.slug}`,
       "image": post.image,
       "author": {
@@ -104,7 +104,7 @@ const Blog: React.FC = () => {
           {posts.map((post, idx) => (
             <Link 
               key={post.slug} 
-              // FIX: Explicitly adding /blog/ prefix to ensure routing works perfectly
+              // FIX: Explicitly adding /blog/ prefix so routing matches App.tsx
               to={`/blog/${post.slug}`}
               className={`group flex flex-col bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 animate-slide-up border-t-4 ${post.border}`}
               style={{ animationDelay: `${idx * 0.1}s` }}
@@ -136,7 +136,7 @@ const Blog: React.FC = () => {
                         <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${post.color}`}></span>
                         {post.date}
                     </div>
-                    {/* READ TIME DISPLAY */}
+                    {/* READ TIME DISPLAY - Pulled correctly from blogPosts.ts */}
                     <span>{post.readTime}</span>
                   </div>
                   
