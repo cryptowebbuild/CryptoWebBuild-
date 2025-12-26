@@ -5,7 +5,7 @@ import path from 'path';
 const BASE_URL = 'https://cryptowebbuild.com';
 
 // Define your static routes here (sync this with App.tsx manually or automated)
-const routes = [
+const staticRoutes = [
   '/',
   '/about',
   '/services',
@@ -23,15 +23,24 @@ const routes = [
   '/shopfast',
   '/autogithub',
   '/gigasolana',
-  // Blog Posts
+];
+
+// Blog Routes (Manually synced with data/blogPosts.ts for now, as we can't import TS in JS script easily without build step)
+// NOTE: Ideally this would parse the TS file, but for simplicity/reliability in this script, we list them.
+const blogRoutes = [
+  '/crypto-seo-guide', // New Skyscraper
+  '/how-to-build-presale-dapp', // New Tech Guide
+  '/crypto-marketing-guide',
   '/best-website-developer',
-  '/crypto-project-website',
-  '/meme-coin-website-features',
+  '/solana-meme-coin-guide',
   '/crypto-website-cost',
   '/static-vs-dynamic-website',
-  '/website-builder-vs-developer',
-  '/crypto-marketing-guide'
+  '/meme-coin-website-features',
+  '/crypto-project-website',
+  '/website-builder-vs-developer'
 ];
+
+const routes = [...staticRoutes, ...blogRoutes];
 
 const generateSitemap = () => {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

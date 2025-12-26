@@ -42,6 +42,9 @@ const CryptoCost = lazy(() => import('./pages/blog/CryptoCost'));
 const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic'));
 const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
 const CryptoMarketingGuide = lazy(() => import('./pages/blog/CryptoMarketingGuide'));
+const SolanaMemeCoinGuide = lazy(() => import('./pages/blog/SolanaMemeCoinGuide'));
+const CryptoSEO = lazy(() => import('./pages/blog/CryptoSEO'));
+const PresaleGuide = lazy(() => import('./pages/blog/PresaleGuide'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -94,6 +97,9 @@ const App: React.FC = () => {
           <Route path="/static-vs-dynamic-website" element={<StaticVsDynamic />} />
           <Route path="/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
           <Route path="/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
+          <Route path="/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
+          <Route path="/crypto-seo-guide" element={<CryptoSEO />} />
+          <Route path="/how-to-build-presale-dapp" element={<PresaleGuide />} />
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFound />} />

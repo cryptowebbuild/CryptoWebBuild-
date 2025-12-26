@@ -2,104 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
+import { blogPosts, BlogPost } from '../data/blogPosts';
 
 const Blog: React.FC = () => {
-  // -----------------------------------------------------------------
-  // 📝 EDIT HERE: Change 'readTime' or 'date' manually below
-  // -----------------------------------------------------------------
-  const posts = [
-    {
-      slug: '/crypto-marketing-guide',
-      title: 'How to Market Your Crypto Project in 2026: The Dev-First Strategy',
-      date: 'Nov 30, 2025',
-      readTime: '9 min read', // <--- Change this manually
-      category: 'Growth Hacking',
+  // Mapping categories to styling
+  const categoryStyles: Record<string, { color: string, text: string, bg: string, border: string }> = {
+    'Guide': {
       color: 'from-indigo-600 to-purple-600',
       text: 'text-indigo-600 dark:text-indigo-400',
       bg: 'bg-indigo-100 dark:bg-indigo-900/30',
-      border: 'group-hover:border-indigo-500/50',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      desc: 'Stop paying influencers. Learn how Technical SEO, Site Speed, and On-Chain Trust Signals can viralize your token launch organically.'
+      border: 'group-hover:border-indigo-500/50'
     },
-    {
-      slug: '/website-builder-vs-developer',
-      title: 'Best Website Builder vs Hiring a Developer: The 2026 Business Guide',
-      date: 'Nov 25, 2025',
-      readTime: '10 min read', 
-      category: 'Strategic Analysis',
-      color: 'from-orange-500 to-red-500',
-      text: 'text-orange-600 dark:text-orange-400',
-      bg: 'bg-orange-100 dark:bg-orange-900/30',
-      border: 'group-hover:border-orange-500/50',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
-      desc: 'Stop renting your business. A forensic comparison of Wix vs. Custom Code. Learn why owning your code is the only path to SEO dominance.'
-    },
-    {
-      slug: '/best-website-developer',
-      title: 'How to Find the Best Web3 Developer in 2026',
-      date: 'Nov 16, 2025',
-      readTime: '12 min read',
-      category: 'Hiring Guide',
-      color: 'from-purple-600 to-blue-600',
-      text: 'text-purple-600 dark:text-purple-400',
-      bg: 'bg-purple-100 dark:bg-purple-900/30',
-      border: 'group-hover:border-purple-500/50',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
-      desc: 'Don\'t get rekt by bad devs. The definitive guide to hiring high-performance React & Web3 developers. Pricing, vetting, and avoiding agency traps.'
-    },
-    {
-      slug: '/static-vs-dynamic-website',
-      title: 'Static vs Dynamic Websites: Which Grows Business Faster?',
-      date: 'Nov 12, 2025',
-      readTime: '8 min read',
-      category: 'Technical Strategy',
-      color: 'from-cyan-600 to-blue-500',
-      text: 'text-cyan-600 dark:text-cyan-400',
-      bg: 'bg-cyan-100 dark:bg-cyan-900/30',
-      border: 'group-hover:border-cyan-500/50',
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop',
-      desc: 'The definitive guide to web architecture. Why Static Sites (SSG) outperform Dynamic CMS (WordPress) in Speed, Security, and SEO ROI.'
-    },
-    {
-      slug: '/crypto-website-cost',
-      title: 'The Real Cost of Building a Crypto Website in 2026',
-      date: 'Oct 25, 2025',
-      readTime: '15 min read',
-      category: 'Pricing Report',
+    'Business': {
       color: 'from-emerald-600 to-teal-500',
       text: 'text-emerald-600 dark:text-emerald-400',
       bg: 'bg-emerald-100 dark:bg-emerald-900/30',
-      border: 'group-hover:border-emerald-500/50',
-      image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop',
-      desc: 'A forensic breakdown of pricing. Meme coin sites ($400+), Presale Dashboards ($1,500+), and hidden fees like Audits and RPC nodes.'
+      border: 'group-hover:border-emerald-500/50'
     },
-    {
-      slug: '/crypto-project-website',
-      title: 'Why Your Crypto Project Needs a Professional Website',
-      date: 'Nov 03, 2025',
-      readTime: '8 min read',
-      category: 'Web3 Strategy',
-      color: 'from-blue-600 to-purple-600',
-      text: 'text-blue-600 dark:text-blue-400',
-      bg: 'bg-blue-100 dark:bg-blue-900/30',
-      border: 'group-hover:border-blue-500/50',
-      image: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?q=80&w=800&auto=format&fit=crop',
-      desc: 'Stop losing investors to "Ghost Projects." Learn why a high-performance React website is the ultimate foundation for your token launch.'
+    'Tech': {
+      color: 'from-cyan-600 to-blue-500',
+      text: 'text-cyan-600 dark:text-cyan-400',
+      bg: 'bg-cyan-100 dark:bg-cyan-900/30',
+      border: 'group-hover:border-cyan-500/50'
     },
-    {
-      slug: '/meme-coin-website-features',
-      title: '5 Must-Have Features for a Viral Meme Coin Website',
-      date: 'Nov 03, 2025',
-      readTime: '8 min read',
-      category: 'Viral Marketing',
-      color: 'from-pink-600 to-purple-600',
-      text: 'text-pink-600 dark:text-pink-400',
-      bg: 'bg-pink-100 dark:bg-pink-900/30',
-      border: 'group-hover:border-pink-500/50',
-      image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9?q=80&w=800&auto=format&fit=crop',
-      desc: 'Don\'t launch a ghost token. The 5 non-negotiable features that trigger FOMO, build trust, and turn visitors into diamond-handed holders.'
-    }
-  ];
+    'Case Study': {
+      color: 'from-orange-500 to-red-500',
+      text: 'text-orange-600 dark:text-orange-400',
+      bg: 'bg-orange-100 dark:bg-orange-900/30',
+      border: 'group-hover:border-orange-500/50'
+    },
+  };
+
+  const posts = blogPosts.map((post: BlogPost) => {
+    const style = categoryStyles[post.category] || categoryStyles['Guide'];
+    return {
+      ...post,
+      ...style,
+      desc: post.excerpt
+    };
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -115,7 +56,7 @@ const Blog: React.FC = () => {
         "url": "https://cryptowebbuild.com/favicon.svg"
       }
     },
-    "blogPost": posts.map(post => ({
+    "blogPost": posts.map((post: any) => ({
       "@type": "BlogPosting",
       "headline": post.title,
       "description": post.desc,
