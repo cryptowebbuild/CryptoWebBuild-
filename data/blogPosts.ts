@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '6',
     slug: '/meme-coin-website-features',
-    title: '7 Must-Have Features for Viral Meme Coin Sites',
+    title: '5 Must-Have Features for Viral Meme Coin Sites',
     excerpt: 'Don’t launch without these. Conversions depend on trust signals and smooth UI.',
     date: 'Nov 03, 2025',
     readTime: '5 min read',
