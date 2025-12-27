@@ -22,7 +22,7 @@ const FAQ: React.FC = () => {
       questions: [
         {
           q: "What tech stack do you use?",
-          a: <span>For most static sites and landing pages, I use React, Tailwind CSS, and Cloudflare Pages for instant global loading. Read my guide on <Link to="/static-vs-dynamic-website" className="text-purple-500 hover:underline">Static vs Dynamic Websites</Link> to understand why this is superior for SEO.</span>
+          a: <span>For most static sites and landing pages, I use React, Tailwind CSS, and Cloudflare Pages for instant global loading. Read my guide on <Link to="/blog/static-vs-dynamic" className="text-purple-500 hover:underline">Static vs Dynamic Websites</Link> to understand why this is superior for SEO.</span>
         },
         {
           q: "Can you integrate smart contracts?",
@@ -35,7 +35,7 @@ const FAQ: React.FC = () => {
       questions: [
         {
           q: "How much does a website cost?",
-          a: <span>Prices depend on complexity. A single-page crypto landing site starts around $150–$300. A full professional site ranges $600–$2,000. See the <Link to="/crypto-website-cost" className="text-purple-500 hover:underline">Full Pricing Breakdown</Link> for details on packages.</span>
+          a: <span>Prices depend on complexity. A single-page crypto landing site starts around $150–$300. A full professional site ranges $600–$2,000. See the <Link to="/blog/crypto-cost" className="text-purple-500 hover:underline">Full Pricing Breakdown</Link> for details on packages.</span>
         },
         {
           q: "What is the typical timeline?",

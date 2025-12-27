@@ -93,7 +93,7 @@ const TokenLaunch: React.FC = () => {
                 To achieve the <strong>0.8s load time</strong>, we utilized aggressive code-splitting. We lazy-loaded the heavy Wallet libraries so they only fetch when the user clicks "Connect Wallet". We also implemented aggressive caching headers via Cloudflare Workers. 
             </p>
             <p className="text-text-muted text-sm mt-4">
-                This ensures that even if 50,000 users hit the site simultaneously, the landing page renders instantly. Interested in similar performance for your project? Check out our <Link to="/crypto-website-cost" className="text-purple-500 font-bold hover:underline">Crypto Website Pricing Guide</Link>.
+                This ensures that even if 50,000 users hit the site simultaneously, the landing page renders instantly. Interested in similar performance for your project? Check out our <Link to="/blog/crypto-cost" className="text-purple-500 font-bold hover:underline">Crypto Website Pricing Guide</Link>.
             </p>
           </div>
 

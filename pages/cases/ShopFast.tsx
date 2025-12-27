@@ -62,7 +62,7 @@ const ShopFast: React.FC = () => {
             The client, a modern apparel brand, was struggling with high bounce rates on mobile devices. Their previous WordPress/WooCommerce site was taking 4-6 seconds to load, especially on 4G networks. In 2026, <strong>every second of delay reduces conversion by 7%</strong>.
           </p>
           <p>
-            They needed a solution that was instant-loading globally, easy to manage, and securely integrated with payments. Traditional website builders were too bloated. See our breakdown on <Link to="/static-vs-dynamic-website">Static vs Dynamic Websites</Link> to understand why this matters.
+            They needed a solution that was instant-loading globally, easy to manage, and securely integrated with payments. Traditional website builders were too bloated. See our breakdown on <Link to="/blog/static-vs-dynamic">Static vs Dynamic Websites</Link> to understand why this matters.
           </p>
 
           <h2>The Solution: Headless Commerce</h2>

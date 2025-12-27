@@ -72,7 +72,7 @@ const GigaSolana: React.FC = () => {
           <div className="my-10 p-8 bg-surface-highlight border border-white/10 rounded-2xl">
              <h3 className="text-xl font-bold text-text-main mb-4">Technical Strategy</h3>
              <p>Speed was non-negotiable. We used a static-first approach with optimized assets (WebP) to ensure the site loads instantly even on poor mobile connections, which is where 85% of meme coin traffic originates.</p>
-             <p>Interested in launching a similar viral site? Check out our <Link to="/crypto-website-cost" className="text-green-500 font-bold hover:underline">Meme Coin Pricing Guide</Link>.</p>
+             <p>Interested in launching a similar viral site? Check out our <Link to="/blog/crypto-cost" className="text-green-500 font-bold hover:underline">Meme Coin Pricing Guide</Link>.</p>
           </div>
         </div>
 
