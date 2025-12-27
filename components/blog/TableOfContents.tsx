@@ -5,14 +5,33 @@ const TableOfContents: React.FC = () => {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll('h2, h3'))
-      .map((elem) => ({
-        id: elem.id,
-        text: elem.textContent || '',
-        level: Number(elem.tagName.substring(1))
-      }));
-    setHeadings(elements);
+    // Timeout ensures DOM is fully painted before querying
+    const timer = setTimeout(() => {
+        // Query only within the article content (avoiding footer/header headings)
+        const contentArea = document.querySelector('article');
+        if (!contentArea) return;
 
+        const elements = Array.from(contentArea.querySelectorAll('h2, h3'));
+        
+        const mappedHeadings = elements.map((elem, index) => {
+            // Auto-generate ID if missing
+            if (!elem.id) {
+                const text = elem.textContent || `section-${index}`;
+                elem.id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+            }
+            return {
+                id: elem.id,
+                text: elem.textContent || '',
+                level: Number(elem.tagName.substring(1))
+            };
+        });
+        setHeadings(mappedHeadings);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,45 +40,63 @@ const TableOfContents: React.FC = () => {
           }
         });
       },
-      { rootMargin: '0px 0px -40% 0px' }
+      { rootMargin: '-20% 0% -60% 0%' } // Optimized for reading flow
     );
 
-    elements.forEach((heading) => {
-      const el = document.getElementById(heading.id);
-      if (el) observer.observe(el);
+    headings.forEach((heading) => {
+      const element = document.getElementById(heading.id);
+      if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [headings]);
 
   if (headings.length === 0) return null;
 
   return (
-    <div className="hidden lg:block w-72 h-fit max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
-      <div className="p-6 bg-white/50 dark:bg-white/5 rounded-3xl border border-gray-200 dark:border-white/10 backdrop-blur-xl">
-        <h4 className="font-display font-black text-gray-900 dark:text-white mb-6 uppercase tracking-widest text-xs flex items-center gap-2">
-            <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
-            On This Page
-        </h4>
-        <ul className="space-y-4">
-            {headings.map((heading) => (
-            <li key={heading.id} style={{ paddingLeft: (heading.level - 2) * 12 }}>
-                <a
-                href={`#${heading.id}`}
-                onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                className={`text-sm transition-all duration-300 block leading-tight ${
-                    activeId === heading.id
-                    ? 'text-purple-600 dark:text-purple-400 font-bold translate-x-1'
-                    : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:translate-x-1'
-                }`}
-                >
-                {heading.text}
-                </a>
-            </li>
-            ))}
+    <div className="p-6 rounded-[24px] bg-white/50 dark:bg-[#1e293b]/50 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg">
+      <h4 className="flex items-center gap-3 font-display font-black text-xs uppercase tracking-widest text-gray-900 dark:text-white mb-6">
+        <span className="flex h-2 w-2 rounded-full bg-purple-500 animate-pulse"></span>
+        Content Navigator
+      </h4>
+      
+      <div className="relative">
+        {/* Vertical Track Line */}
+        <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gray-200 dark:bg-white/10 rounded-full" />
+
+        <ul className="space-y-4 relative">
+            {headings.map((heading) => {
+                const isActive = activeId === heading.id;
+                return (
+                    <li key={heading.id} className="relative group">
+                        <a
+                            href={`#${heading.id}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById(heading.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                setActiveId(heading.id); // Immediate feedback
+                            }}
+                            className={`flex items-start gap-4 text-sm transition-all duration-300 ${
+                                isActive 
+                                ? 'text-purple-600 dark:text-purple-400 font-bold translate-x-1' 
+                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:translate-x-1'
+                            }`}
+                            style={{ marginLeft: heading.level === 3 ? '16px' : '0px' }}
+                        >
+                            {/* Dot Indicator */}
+                            <span className={`shrink-0 mt-1.5 w-3.5 h-3.5 rounded-full border-[3px] transition-colors duration-300 z-10 bg-white dark:bg-[#0f172a] ${
+                                isActive 
+                                ? 'border-purple-500 scale-110' 
+                                : 'border-gray-300 dark:border-gray-600 group-hover:border-purple-300'
+                            }`} />
+                            
+                            <span className="leading-snug">
+                                {heading.text}
+                            </span>
+                        </a>
+                    </li>
+                );
+            })}
         </ul>
       </div>
     </div>
