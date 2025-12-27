@@ -111,12 +111,14 @@ const Blog: React.FC = () => {
             >
               {/* Image Container */}
               <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
+                 {/* Gradient Overlay for better text visibility (optional) */}
                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
+
                  <OptimizedImage 
                    src={post.image} 
                    alt={post.title}
                    fill={true}
-                   priority={idx < 3} // Priority load the first row
+                   priority={idx < 3} // Priority load the first row for LCP
                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
                  />
                  

@@ -10,6 +10,7 @@ export interface BlogPost {
   keywords: string[];
 }
 
+// Ensure slugs match src/App.tsx routes
 export const blogPosts: BlogPost[] = [
   {
     id: '1',

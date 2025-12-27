@@ -165,6 +165,7 @@ const Projects: React.FC = () => {
 
               {/* Title & Tags */}
               <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                {/* Fixed Contrast Issue: Ensure Title is White on the Dark Overlay */}
                 <h3 className="font-display text-3xl font-bold text-white mb-2 drop-shadow-md">
                   {project.title}
                 </h3>

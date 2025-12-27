@@ -184,15 +184,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </nav>
 
-          {/* Mobile Menu Dropdown */}
-          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
-              <div className="flex flex-col space-y-1">
+          {/* Mobile Menu Dropdown (Improved Robustness) */}
+          <div className={`lg:hidden fixed inset-0 top-[80px] z-40 p-4 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+            <div className="bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-6 overflow-y-auto max-h-[calc(100vh-100px)]">
+              <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path} 
-                    className={`block px-4 py-3 text-lg font-medium rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white'}`}
+                    className={`block px-5 py-4 text-xl font-bold rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -200,8 +200,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 ))}
               </div>
               
-              <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/10">
-                <div className="flex justify-center gap-6 mb-4">
+              <div className="pt-6 mt-6 border-t border-gray-200 dark:border-white/10">
+                <div className="flex justify-center gap-6 mb-6">
                   {socialLinks.map((social) => (
                     <a 
                       key={social.label} 
