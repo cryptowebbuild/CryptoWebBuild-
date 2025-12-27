@@ -55,9 +55,18 @@ const CryptoSEO: React.FC = () => {
         If you do not own the top spot for these search results, you are handing your potential investors over to competitors, or worse, to scammers who build phishing sites to drain their wallets.
       </p>
 
-      <p>
-        <strong>SEO in Web3 is not just marketing; it is Defense.</strong>
-      </p>
+      <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 my-8 rounded-r-lg">
+        <h4 className="text-red-800 dark:text-red-200 font-bold uppercase tracking-wide text-sm">Case Study: The "Invisible" Protocol</h4>
+        <p className="text-gray-700 dark:text-gray-300 mt-2">
+            In 2025, a DeFi protocol raised $5M from VCs. They had amazing tech but zero SEO. When users Googled their name, the first result was a Reddit thread calling them a "slow rug".
+        </p>
+        <p className="mt-2 text-gray-700 dark:text-gray-300">
+            <strong>Result:</strong> They bled liquidity for 6 months until they rebranded.
+        </p>
+        <p className="mt-4 font-bold text-red-600 dark:text-red-400">
+            SEO is not just marketing; it is Reputation Defense.
+        </p>
+      </div>
 
       {/* --- PART 1: THE AI SEARCH ERA --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Part 1: Optimizing for AI (ChatGPT & Perplexity)</h2>
@@ -152,7 +161,7 @@ export default function HowToBuyPage({ params }) {
       </p>
 
       <ProTip>
-        <strong>The 2.5s Rule:</strong> If your Largest Contentful Paint (LCP) is slower than 2.5 seconds, Google will demote you.
+        <strong>The 2.5s Rule:</strong> If your Largest Contentful Paint (LCP) is slower than 2.5 seconds, Google will demote you. Check out our guide on <Link to="/blog/static-vs-dynamic-website" className="text-purple-600 font-bold hover:underline">Static vs Dynamic Sites</Link> to learn why we use Next.js.
       </ProTip>
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">How to Fix Your Slow dApp</h3>
@@ -175,7 +184,7 @@ export default function HowToBuyPage({ params }) {
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
               <td className="py-4 px-6 font-medium text-red-500">Client-Side Bloat</td>
-              <td className="py-4 px-6 text-gray-600 dark:text-gray-300">Switch to <Link to="/blog/static-vs-dynamic-website" className="text-purple-600 font-bold hover:underline">Static Generation (SSG)</Link> for marketing pages.</td>
+              <td className="py-4 px-6 text-gray-600 dark:text-gray-300">Switch to Static Generation (SSG) for marketing pages.</td>
             </tr>
           </tbody>
         </table>
