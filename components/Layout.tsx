@@ -9,7 +9,7 @@ interface LayoutProps {
 const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => (
   <button
     onClick={toggle}
-    className="w-10 h-10 flex items-center justify-center rounded-full text-text-muted hover:text-text-main hover:bg-surface-highlight transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+    className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-purple-600 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
     aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
   >
     {isDark ? (
@@ -41,7 +41,7 @@ const SocialIcon = ({ d }: { d: string }) => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={d} /></svg>
 );
 
-// --- Updated Social Links (YouTube & GitHub Added) ---
+// --- Updated Social Links ---
 const socialLinks = [
   { 
     label: 'YouTube', 
@@ -133,29 +133,29 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   ];
 
   return (
-    <div className="min-h-screen relative font-sans text-text-main overflow-x-hidden flex flex-col transition-colors duration-500">
+    <div className="min-h-screen relative font-sans text-gray-900 dark:text-white overflow-x-hidden flex flex-col transition-colors duration-500">
       
       {/* --- Optimized Background --- */}
-      <div className="fixed inset-0 z-0 bg-void pointer-events-none overflow-hidden transition-colors duration-500">
-        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/20 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/20 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
+      <div className="fixed inset-0 z-0 bg-white dark:bg-[#020617] pointer-events-none overflow-hidden transition-colors duration-500">
+        <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/10 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[70vw] h-[70vw] bg-cyan-300/30 dark:bg-blue-600/10 rounded-full blur-[120px] animate-blob animation-delay-2000 mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
         <div className="absolute inset-0 opacity-[0.4] dark:opacity-[0.2]" style={{ backgroundImage: `linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(to right, var(--grid-color) 1px, transparent 1px)`, backgroundSize: '64px 64px' }}></div>
       </div>
 
       {/* --- HEADER --- */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4`}>
         <div className="container mx-auto px-4 md:px-6">
-          <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'glass-panel shadow-sm bg-opacity-90 backdrop-blur-md' : 'bg-transparent'}`}>
+          <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'bg-white/80 dark:bg-[#0f172a]/80 shadow-sm backdrop-blur-md border border-gray-200 dark:border-white/10' : 'bg-transparent'}`}>
             
             <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
-              <LogoIcon className="w-9 h-9 text-text-main" />
-              <span className="font-display font-bold text-xl tracking-tight text-text-main">CryptoWebBuild</span>
+              <LogoIcon className="w-9 h-9 text-gray-900 dark:text-white" />
+              <span className="font-display font-bold text-xl tracking-tight text-gray-900 dark:text-white">CryptoWebBuild</span>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
-                <Link key={link.path} to={link.path} className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${location.pathname === link.path ? 'bg-surface-highlight text-purple-600 dark:text-purple-400' : 'text-text-muted hover:text-text-main hover:bg-surface-highlight/50'}`}>
+                <Link key={link.path} to={link.path} className={`px-4 py-2 text-sm font-semibold rounded-lg transition-colors ${location.pathname === link.path ? 'bg-gray-100 dark:bg-white/10 text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'}`}>
                   {link.label}
                 </Link>
               ))}
@@ -165,14 +165,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="flex items-center gap-3">
               <ThemeToggle isDark={theme === 'dark'} toggle={toggleTheme} />
               
-              <Link to="/contact" className="hidden md:block px-5 py-2.5 bg-text-main text-white dark:bg-white dark:text-black font-bold rounded-xl text-sm hover:scale-105 transition-transform shadow-lg shadow-purple-500/10">
+              <Link to="/contact" className="hidden md:block px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-sm hover:scale-105 transition-transform shadow-lg shadow-purple-500/10">
                 Hire Me
               </Link>
 
               {/* Mobile Hamburger */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className="lg:hidden p-2 text-text-main focus:outline-none bg-surface-highlight rounded-lg"
+                className="lg:hidden p-2 text-gray-900 dark:text-white focus:outline-none bg-gray-100 dark:bg-white/10 rounded-lg"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
               >
                 <div className="w-5 h-4 flex flex-col justify-between relative">
@@ -186,13 +186,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           {/* Mobile Menu Dropdown */}
           <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="glass-panel border border-border-glass shadow-2xl rounded-3xl p-4 overflow-hidden">
+            <div className="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path} 
-                    className={`block px-4 py-3 text-lg font-medium rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-text-muted hover:bg-surface-highlight hover:text-text-main'}`}
+                    className={`block px-4 py-3 text-lg font-medium rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -200,7 +200,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 ))}
               </div>
               
-              <div className="pt-4 mt-4 border-t border-border-glass">
+              <div className="pt-4 mt-4 border-t border-gray-200 dark:border-white/10">
                 <div className="flex justify-center gap-6 mb-4">
                   {socialLinks.map((social) => (
                     <a 
@@ -208,7 +208,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                       href={social.href} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-text-muted hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
+                      className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
                       aria-label={social.label}
                     >
                       <SocialIcon d={social.d} />
@@ -217,7 +217,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
                 <Link 
                   to="/contact" 
-                  className="flex items-center justify-center w-full px-6 py-4 bg-text-main text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
+                  className="flex items-center justify-center w-full px-6 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Hire Me
@@ -240,17 +240,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </button>
 
       {/* --- FOOTER (Enhanced Internal Linking & Socials) --- */}
-      <footer className="relative z-10 mt-32 bg-surface border-t border-border-glass">
+      <footer className="relative z-10 mt-32 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/5">
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             
             {/* 1. Brand & Socials */}
             <div className="lg:col-span-4 space-y-6">
               <Link to="/" className="flex items-center gap-3">
-                <LogoIcon className="w-8 h-8 text-text-main" idSuffix="footer" />
-                <span className="font-display font-bold text-2xl text-text-main">CryptoWebBuild</span>
+                <LogoIcon className="w-8 h-8 text-gray-900 dark:text-white" idSuffix="footer" />
+                <span className="font-display font-bold text-2xl text-gray-900 dark:text-white">CryptoWebBuild</span>
               </Link>
-              <p className="text-text-muted text-lg leading-relaxed max-w-sm">
+              <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed max-w-sm">
                 Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
               </p>
               
@@ -261,7 +261,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-surface-highlight border border-border-glass text-text-muted flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300"
                     aria-label={social.label}
                   >
                     <SocialIcon d={social.d} />
@@ -272,8 +272,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* 2. Main Pages (Navigation) */}
             <div className="lg:col-span-2">
-              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
-              <ul className="space-y-3 text-text-muted text-sm font-medium">
+              <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
+              <ul className="space-y-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
                 {navLinks.map(link => (
                   <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{link.label}</Link></li>
                 ))}
@@ -282,8 +282,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* 3. Resources & Legal (Zero Orphan) */}
             <div className="lg:col-span-2">
-              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Resources</h3>
-              <ul className="space-y-3 text-text-muted text-sm font-medium">
+              <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Resources</h3>
+              <ul className="space-y-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
                 <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Get a Quote</Link></li>
                 <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
                 <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
@@ -293,29 +293,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* 4. High-Value Guides (SEO Silo) */}
             <div className="lg:col-span-4">
-              <h3 className="font-display font-bold text-text-main mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
-              <ul className="grid grid-cols-1 gap-3 text-text-muted text-sm font-medium">
-                {/* NEW Strategy Guide Linked Here */}
+              <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
+              <ul className="grid grid-cols-1 gap-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
                 <li><Link to="/blog/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
                 <li><Link to="/blog/best-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
-                <li><Link to="/blog/meme-coin-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
-                <li><Link to="/blog/crypto-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
-                <li><Link to="/blog/static-vs-dynamic" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>
+                <li><Link to="/blog/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
+                <li><Link to="/blog/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
+                <li><Link to="/blog/static-vs-dynamic-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>
                 <li><Link to="/blog/solana-meme-coin-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Solana Meme Coin Guide</Link></li>
                 <li><Link to="/blog/crypto-project" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Launch a Crypto Project</Link></li>
                 <li><Link to="/blog/presale-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Presale Launch Guide</Link></li>
-                <li><Link to="/blog/crypto-seo" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto SEO Mastery</Link></li>
+                <li><Link to="/blog/crypto-seo-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto SEO Mastery</Link></li>
                 <li><Link to="/blog/website-builder-vs-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Website Builder vs Developer</Link></li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-border-glass flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-text-muted text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
-            <div className="flex gap-8 text-sm font-bold text-text-muted">
-              <a href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">GitHub</a>
-              <a href="https://www.youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">YouTube</a>
-              <a href="https://twitter.com/WebBuildDev" target="_blank" rel="noopener noreferrer" className="hover:text-text-main transition-colors">X (Twitter)</a>
+          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
+            <div className="flex gap-8 text-sm font-bold text-gray-500 dark:text-gray-400">
+              <a href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
+              <a href="https://www.youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">YouTube</a>
+              <a href="https://x.com/CryptowebbuildX" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">X (Twitter)</a>
             </div>
           </div>
         </div>
