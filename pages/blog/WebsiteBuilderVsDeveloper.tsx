@@ -68,11 +68,17 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
       <p>
         Wix, Squarespace, and Shopify are centralized corporations. They have strict "Acceptable Use Policies". Crypto, DeFi, and Gambling are often classified as "High Risk".
       </p>
-      <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 my-6 rounded-r-lg">
-        <p className="text-gray-700 dark:text-gray-300">
-            <strong>True Story:</strong> In 2024, a popular NFT project built on Shopify had their store shut down 24 hours before their mint because Shopify's risk algorithm flagged the traffic spike as "suspicious activity". They lost huge revenue and community trust.
+      
+      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-6 rounded-r-xl shadow-sm">
+        <h4 className="flex items-center gap-2 text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm mb-2">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            True Story: Shopify Ban
+        </h4>
+        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+            In 2024, a popular NFT project built on Shopify had their store shut down 24 hours before their mint because Shopify's risk algorithm flagged the traffic spike as "suspicious activity". They lost huge revenue and community trust.
         </p>
       </div>
+      
       <p>
         <strong>Custom Development:</strong> You own the code (GitHub Repo). You can host it on Vercel, AWS, DigitalOcean, or even a decentralized network like IPFS/Arweave. You are <strong>Uncensorable</strong>.
       </p>
@@ -88,30 +94,30 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         Website builders are "General Purpose". They load code for E-commerce, Blogs, Galleries, and Forms on <em>every single page</em>, whether you use them or not. This is called "Code Bloat".
       </p>
 
-      <div className="overflow-x-auto my-8">
-        <table className="w-full text-left border-collapse bg-white dark:bg-[#111] rounded-lg shadow-sm">
+      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
-            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-800">
-              <th className="p-4 font-bold">Metric</th>
-              <th className="p-4 font-bold">Wix / Squarespace</th>
-              <th className="p-4 font-bold">Custom Code (Next.js)</th>
+            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Metric</th>
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Wix / Squarespace</th>
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Custom Code (Next.js)</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">JS Bundle Size</td>
-              <td className="p-4 text-red-500">2MB+ (Massive)</td>
-              <td className="p-4 text-green-600">~50KB (Tiny)</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">JS Bundle Size</td>
+              <td className="p-4 text-red-500 font-bold">2MB+ (Massive)</td>
+              <td className="p-4 text-green-600 font-bold">~50KB (Tiny)</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">Mobile Score</td>
-              <td className="p-4 text-red-500">30-50 / 100</td>
-              <td className="p-4 text-green-600">90-100 / 100</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Mobile Score</td>
+              <td className="p-4 text-red-500 font-bold">30-50 / 100</td>
+              <td className="p-4 text-green-600 font-bold">90-100 / 100</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">First Paint</td>
-              <td className="p-4 text-yellow-600">1.5 Seconds</td>
-              <td className="p-4 text-green-600">0.2 Seconds</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">First Paint</td>
+              <td className="p-4 text-yellow-600 font-bold">1.5 Seconds</td>
+              <td className="p-4 text-green-600 font-bold">0.2 Seconds</td>
             </tr>
           </tbody>
         </table>
@@ -124,22 +130,32 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
       {/* --- CHAPTER 3: WEB3 LIMITATIONS --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">3. The Web3 Limitation (The Dealbreaker)</h2>
       <p>
-        This is where the debate ends for crypto founders.
+        This is where the debate ends for crypto founders. You want to add a "Connect Wallet" button?
       </p>
-      <p>
-        You want to add a "Connect Wallet" button?
-      </p>
-      <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 mb-6">
-        <li>
-            <strong>Wix/Squarespace:</strong> Impossible natively. You have to use hacky "Embed Codes" or iframes. These connect poorly with mobile wallets (Phantom/MetaMask app) and look amateurish.
-        </li>
-        <li>
-            <strong>Webflow:</strong> Possible via third-party tools (like Wized), but extremely brittle. If Webflow updates their class names, your dApp breaks.
-        </li>
-        <li>
-            <strong>Custom Dev:</strong> Native integration. We use industry-standard libraries like `wagmi`, `viem`, or `@solana/wallet-adapter`. The wallet interacts directly with the React State. It is seamless, fast, and secure.
-        </li>
-      </ul>
+      
+      <div className="space-y-4 my-6">
+        <div className="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-900/10 rounded-lg border border-red-100 dark:border-red-900/30">
+            <span className="text-red-500 font-bold text-xl">×</span>
+            <div>
+                <strong className="text-red-800 dark:text-red-300 block mb-1">Wix / Squarespace</strong>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Impossible natively. You have to use hacky "Embed Codes" or iframes. These connect poorly with mobile wallets (Phantom/MetaMask app) and look amateurish.</p>
+            </div>
+        </div>
+        <div className="flex items-start gap-3 p-4 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg border border-yellow-100 dark:border-yellow-900/30">
+            <span className="text-yellow-600 font-bold text-xl">~</span>
+            <div>
+                <strong className="text-yellow-800 dark:text-yellow-300 block mb-1">Webflow</strong>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Possible via third-party tools (like Wized), but extremely brittle. If Webflow updates their class names, your dApp breaks.</p>
+            </div>
+        </div>
+        <div className="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-900/10 rounded-lg border border-green-100 dark:border-green-900/30">
+            <span className="text-green-600 font-bold text-xl">✓</span>
+            <div>
+                <strong className="text-green-800 dark:text-green-300 block mb-1">Custom Dev (Agency)</strong>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Native integration. We use industry-standard libraries like `wagmi` or `@solana/wallet-adapter`. The wallet interacts directly with the React State. It is seamless, fast, and secure.</p>
+            </div>
+        </div>
+      </div>
 
       <ProTip>
         <strong>Scalability Check:</strong> What happens when you want to add a "Staking Dashboard" next month? On Wix, you can't. You have to scrap the site and hire a developer anyway. Start with the foundation that lets you scale.
@@ -151,22 +167,38 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         Founders see the upfront cost ($5,000) and get scared. They see the monthly cost ($29) and feel safe. This is a financial illusion.
       </p>
 
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The "Wix" Cost (3 Years)</h3>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li>Subscription (Business Tier): $30/mo * 36 = <strong>$1,080</strong></li>
-        <li>Apps/Plugins (Email, SEO, Popups): $50/mo * 36 = <strong>$1,800</strong></li>
-        <li>Transaction Fees (Payment Processing): <strong>2-3% of sales</strong></li>
-        <li>Lost Revenue (Due to low conversion/SEO): <strong>Uncalculable (Huge)</strong></li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+        {/* Wix Cost */}
+        <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-6 rounded-xl">
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-lg">The "Wix" Cost (3 Years)</h4>
+            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+                <li className="flex justify-between"><span>Subscription:</span> <span className="font-mono">$1,080</span></li>
+                <li className="flex justify-between"><span>Plugins (Apps):</span> <span className="font-mono">$1,800</span></li>
+                <li className="flex justify-between"><span>Tx Fees:</span> <span className="font-mono">2-3% of Sales</span></li>
+                <li className="flex justify-between text-red-500 font-bold"><span>Lost Revenue:</span> <span>Huge</span></li>
+            </ul>
+            <div className="pt-4 border-t border-gray-200 dark:border-white/10">
+                <p className="text-xs text-gray-500 uppercase tracking-widest">Asset Value</p>
+                <p className="text-2xl font-bold text-red-500">$0 (Liability)</p>
+            </div>
+        </div>
 
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The "Custom Dev" Cost (3 Years)</h3>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li>Upfront Build: <strong>$3,000 - $6,000</strong></li>
-        <li>Hosting (Vercel/Netlify): <strong>$0 (Free Tier)</strong></li>
-        <li>Plugins: <strong>$0 (We code features)</strong></li>
-        <li>Transaction Fees: <strong>0% (You own the logic)</strong></li>
-        <li>Asset Value: <strong>High (You own the IP)</strong></li>
-      </ul>
+        {/* Custom Cost */}
+        <div className="bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800 p-6 rounded-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">WINNER</div>
+            <h4 className="font-bold text-purple-900 dark:text-white mb-4 text-lg">The "Custom Dev" Cost</h4>
+            <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
+                <li className="flex justify-between"><span>Upfront Build:</span> <span className="font-mono">$3k - $6k</span></li>
+                <li className="flex justify-between"><span>Hosting:</span> <span className="font-mono">$0 (Free Tier)</span></li>
+                <li className="flex justify-between"><span>Plugins:</span> <span className="font-mono">$0 (Custom)</span></li>
+                <li className="flex justify-between text-green-600 font-bold"><span>Tx Fees:</span> <span>0%</span></li>
+            </ul>
+            <div className="pt-4 border-t border-purple-200 dark:border-purple-800">
+                <p className="text-xs text-purple-600 dark:text-purple-300 uppercase tracking-widest">Asset Value</p>
+                <p className="text-2xl font-bold text-green-600 dark:text-green-400">High (Owned IP)</p>
+            </div>
+        </div>
+      </div>
 
       <p className="mt-6">
         Custom development is <strong>CapEx (Capital Expenditure)</strong>—you are buying an asset. Builders are <strong>OpEx (Operating Expenditure)</strong>—you are bleeding cash for a service you don't control.
