@@ -29,7 +29,7 @@ const PresaleGuide: React.FC = () => {
         'anti-rug presale checklist',
         'web3 fundraising'
       ]}
-      canonical="/blog/how-to-build-presale-dapp"
+      canonical="/blog/presale-guide" // Updated to match the new slug
     >
       <KeyTakeaways points={takeaways} />
 
@@ -60,30 +60,30 @@ const PresaleGuide: React.FC = () => {
         This is the first decision you must make. "Where do people buy?"
       </p>
 
-      <div className="overflow-x-auto my-8">
-        <table className="w-full text-left border-collapse bg-white dark:bg-[#111] rounded-lg shadow-sm">
+      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
-            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-800">
-              <th className="p-4 font-bold">Feature</th>
-              <th className="p-4 font-bold">Launchpads (PinkSale/GemPad)</th>
-              <th className="p-4 font-bold">Custom dApp (Self-Hosted)</th>
+            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Feature</th>
+              <th className="p-4 font-bold text-pink-600 dark:text-pink-400">Launchpads (PinkSale)</th>
+              <th className="p-4 font-bold text-blue-600 dark:text-blue-400">Custom dApp (Self-Hosted)</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">Trust Factor</td>
-              <td className="p-4 text-green-600">High (Auto-Locked Liquidity)</td>
-              <td className="p-4 text-red-500">Low (Requires expensive Audit)</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Trust Factor</td>
+              <td className="p-4 text-green-600 font-bold">High (Auto-Locked)</td>
+              <td className="p-4 text-red-500 font-bold">Low (Unless Audited)</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">Fees</td>
-              <td className="p-4 text-red-500">5% of Raised Capital + 2% Token</td>
-              <td className="p-4 text-green-600">0% (You keep everything)</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Fees</td>
+              <td className="p-4 text-red-500">5% of Raised Capital</td>
+              <td className="p-4 text-green-600">0% (Keep Everything)</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold">Brand Control</td>
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Brand Control</td>
               <td className="p-4 text-red-500">Low (Generic UI)</td>
-              <td className="p-4 text-green-600">High (Fully Custom Experience)</td>
+              <td className="p-4 text-green-600">High (Fully Custom)</td>
             </tr>
           </tbody>
         </table>
@@ -109,22 +109,22 @@ const PresaleGuide: React.FC = () => {
         You cannot launch a presale cold. If you deploy a contract and tweet "We are live!", you will fail. You need a runway.
       </p>
 
-      <div className="space-y-6 my-8">
-        <div className="border-l-4 border-purple-500 pl-6">
-            <h4 className="font-bold text-lg text-purple-700 dark:text-purple-400">Week 1: The Tease (Social Proof)</h4>
-            <p className="text-gray-600 dark:text-gray-300">Launch the Twitter/X account. Post cryptic videos. Run a "Gleam" campaign to collect emails. Do NOT ask for money yet. Goal: 1,000 Telegram members.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="bg-purple-50 dark:bg-purple-900/10 border-l-4 border-purple-500 p-6 rounded-r-xl">
+            <h4 className="font-bold text-lg text-purple-700 dark:text-purple-400 mb-2">Week 1: The Tease</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Launch the Twitter/X account. Post cryptic videos. Run a "Gleam" campaign to collect emails. Do NOT ask for money yet. Goal: 1,000 Telegram members.</p>
         </div>
-        <div className="border-l-4 border-blue-500 pl-6">
-            <h4 className="font-bold text-lg text-blue-700 dark:text-blue-400">Week 2: The Whitelist (Scarcity)</h4>
-            <p className="text-gray-600 dark:text-gray-300">Open the "Whitelist". Make it hard to get. "Only the top 100 inviters get a WL spot." This forces your community to shill for you. See <Link to="/blog/crypto-marketing-guide" className="underline">Community Engineering</Link>.</p>
+        <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded-r-xl">
+            <h4 className="font-bold text-lg text-blue-700 dark:text-blue-400 mb-2">Week 2: The Whitelist</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Open the "Whitelist". Make it hard to get. "Only the top 100 inviters get a WL spot." This forces your community to shill for you.</p>
         </div>
-        <div className="border-l-4 border-green-500 pl-6">
-            <h4 className="font-bold text-lg text-green-700 dark:text-green-400">Week 3: The Validation (Audit/KYC)</h4>
-            <p className="text-gray-600 dark:text-gray-300">Release your Audit Report (CertiK/InterFi) and KYC badge (Assure DeFi). This kills the FUD (Fear, Uncertainty, Doubt). Investors now know you aren't a rug.</p>
+        <div className="bg-green-50 dark:bg-green-900/10 border-l-4 border-green-500 p-6 rounded-r-xl">
+            <h4 className="font-bold text-lg text-green-700 dark:text-green-400 mb-2">Week 3: The Validation</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Release your Audit Report (CertiK/InterFi) and KYC badge (Assure DeFi). This kills the FUD. Investors now know you aren't a rug.</p>
         </div>
-        <div className="border-l-4 border-red-500 pl-6">
-            <h4 className="font-bold text-lg text-red-700 dark:text-red-400">Week 4: The FOMO (Countdown)</h4>
-            <p className="text-gray-600 dark:text-gray-300">Host daily AMAs. Partner with "Call Channels". Show the "Sold Out" potential. Launch the presale on Friday.</p>
+        <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 rounded-r-xl">
+            <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">Week 4: The FOMO</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300">Host daily AMAs. Partner with "Call Channels". Show the "Sold Out" potential. Launch the presale on Friday.</p>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ const PresaleGuide: React.FC = () => {
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">1. The Multi-Sig Wallet</h3>
       <p>
-        Never use a single private key for the marketing funds. Use a <strong className="text-purple-600">Gnosis Safe (Safe{`{Wallet}`})</strong>. It requires 2 out of 3 signatures to move funds. This proves to investors that one rogue developer cannot run away with the treasury.
+        Never use a single private key for the marketing funds. Use a <strong className="text-purple-600 dark:text-purple-400">Gnosis Safe (Safe{`{Wallet}`})</strong>. It requires 2 out of 3 signatures to move funds. This proves to investors that one rogue developer cannot run away with the treasury.
       </p>
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">2. Smart Contract Vesting</h3>
@@ -144,9 +144,16 @@ const PresaleGuide: React.FC = () => {
         If your team tokens unlock instantly, you are uninvestable. You need hardcoded vesting logic.
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
-        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-bl">Solidity</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
+        <div className="bg-gray-800/50 px-4 py-2 flex justify-between items-center border-b border-gray-700 mb-4">
+            <span className="text-xs font-mono text-blue-400">Vesting.sol</span>
+            <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            </div>
+        </div>
+        <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// Linear Vesting Logic
 uint256 public constant VESTING_DURATION = 365 days;
 uint256 public constant CLIFF = 30 days;
@@ -180,18 +187,23 @@ function claim() external {
         If you don't have a plan, your chart will look like a red waterfall.
       </p>
 
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The Defense Strategy</h3>
-      <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300">
-        <li>
-            <strong>The "News Nuke":</strong> Do not announce everything during the presale. Save your biggest partnership or CEX listing for 1 hour <em>after</em> the token launches on Uniswap. This forces sellers to FOMO back in.
-        </li>
-        <li>
-            <strong>Buy-Back & Burn:</strong> Use a portion of the raised funds (the ETH/SOL side) to buy back your own token if it dips below the listing price. This defends the "Floor".
-        </li>
-        <li>
-            <strong>Staking Incentives:</strong> Launch a staking dApp immediately. "Stake your tokens now for 500% APY". This locks up the supply and stops people from selling. Read about <Link to="/blog/crypto-cost" className="underline">dApp Development Costs</Link> to budget for this.
-        </li>
-      </ul>
+      <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl p-6 my-8">
+        <h4 className="font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-widest text-sm border-b border-gray-100 dark:border-gray-800 pb-2">Defensive Tactics</h4>
+        <ul className="space-y-4 text-gray-700 dark:text-gray-300 text-sm">
+            <li className="flex items-start gap-3">
+                <span className="text-purple-500 font-bold">01.</span>
+                <div><strong>The "News Nuke":</strong> Do not announce everything during the presale. Save your biggest partnership or CEX listing for 1 hour <em>after</em> the token launches on Uniswap. This forces sellers to FOMO back in.</div>
+            </li>
+            <li className="flex items-start gap-3">
+                <span className="text-purple-500 font-bold">02.</span>
+                <div><strong>Buy-Back & Burn:</strong> Use a portion of the raised funds (the ETH/SOL side) to buy back your own token if it dips below the listing price. This defends the "Floor".</div>
+            </li>
+            <li className="flex items-start gap-3">
+                <span className="text-purple-500 font-bold">03.</span>
+                <div><strong>Staking Incentives:</strong> Launch a staking dApp immediately. "Stake your tokens now for 500% APY". This locks up the supply and stops people from selling.</div>
+            </li>
+        </ul>
+      </div>
 
       <HireUsCTA />
 
