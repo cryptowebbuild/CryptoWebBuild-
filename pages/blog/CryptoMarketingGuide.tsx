@@ -43,7 +43,7 @@ const CryptoMarketingGuide: React.FC = () => {
       </p>
 
       <p>
-        In 2021, you could pay a YouTuber $1,000, and your token would pump 10x. In 2026, the market has matured. Investors have been rugged, scammed, and lied to. They use tools like <em className="text-purple-600">TweetScout</em> and <em className="text-purple-600">BubbleMaps</em> to spot paid promotions instantly.
+        In 2021, you could pay a YouTuber $1,000, and your token would pump 10x. In 2026, the market has matured. Investors have been rugged, scammed, and lied to. They use tools like <em className="text-purple-600 font-bold">TweetScout</em> and <em className="text-purple-600 font-bold">BubbleMaps</em> to spot paid promotions instantly.
       </p>
 
       <p>
@@ -62,29 +62,31 @@ const CryptoMarketingGuide: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8">
         {/* Project A */}
-        <div className="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/50 p-6 rounded-xl">
-            <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-2">Project A: "MoonDog"</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4"><strong>Strategy:</strong> "Influencer Bomb"</p>
-            <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>💸 Paid $20,000 to 5 "Alpha Callers".</li>
-                <li>📈 Chart pumped 200% in 1 hour.</li>
-                <li>📉 Chart crashed 90% in 4 hours as influencers dumped their free tokens.</li>
-                <li>💀 Community became a ghost town of "Wen Marketing?"</li>
+        <div className="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 p-8 rounded-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-red-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">FAILURE</div>
+            <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Project A: "MoonDog"</h3>
+            <p className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Strategy: "Influencer Bomb"</p>
+            <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2"><span className="text-red-500">✘</span> Paid $20,000 to 5 "Alpha Callers".</li>
+                <li className="flex items-start gap-2"><span className="text-red-500">✘</span> Chart pumped 200% in 1 hour.</li>
+                <li className="flex items-start gap-2"><span className="text-red-500">✘</span> Chart crashed 90% in 4 hours.</li>
+                <li className="flex items-start gap-2"><span className="text-red-500">✘</span> Community became a ghost town.</li>
             </ul>
-            <p className="mt-4 font-bold text-red-600">Result: Dead in 24 hours.</p>
+            <p className="mt-6 font-bold text-red-600 bg-red-100 dark:bg-red-900/20 px-3 py-2 rounded-lg inline-block">Result: Dead in 24 hours.</p>
         </div>
 
         {/* Project B */}
-        <div className="bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/50 p-6 rounded-xl">
-            <h3 className="text-xl font-bold text-green-700 dark:text-green-400 mb-2">Project B: "BuildFi"</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4"><strong>Strategy:</strong> "Community Engineering"</p>
-            <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>🛠️ Spent $5,000 building a custom <Link to="/blog/crypto-website-cost" className="underline">"Quest Dashboard"</Link>.</li>
-                <li>🎮 Users had to stake tokens to unlock "Premium Analytics".</li>
-                <li>🐦 Users earned "XP" for organic tweets (verified via API).</li>
-                <li>🚀 Slow, steady growth. 10,000 real holders in Month 1.</li>
+        <div className="bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 p-8 rounded-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-green-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">SUCCESS</div>
+            <h3 className="text-xl font-bold text-green-700 dark:text-green-400 mb-4">Project B: "BuildFi"</h3>
+            <p className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Strategy: "Community Engineering"</p>
+            <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2"><span className="text-green-500">✔</span> Spent $5,000 on a <Link to="/blog/crypto-website-cost" className="underline font-bold text-green-600">Quest Dashboard</Link>.</li>
+                <li className="flex items-start gap-2"><span className="text-green-500">✔</span> Users staked tokens for "Premium".</li>
+                <li className="flex items-start gap-2"><span className="text-green-500">✔</span> Users earned "XP" for organic tweets.</li>
+                <li className="flex items-start gap-2"><span className="text-green-500">✔</span> 10,000 real holders in Month 1.</li>
             </ul>
-            <p className="mt-4 font-bold text-green-600">Result: $50M Market Cap & Stable Floor.</p>
+            <p className="mt-6 font-bold text-green-600 bg-green-100 dark:bg-green-900/20 px-3 py-2 rounded-lg inline-block">Result: $50M Market Cap.</p>
         </div>
       </div>
 
@@ -114,28 +116,30 @@ const CryptoMarketingGuide: React.FC = () => {
         You don't just want to rank for your name. You want to rank for the <em>problem</em> you solve.
       </p>
       
-      <div className="bg-[#1e1e1e] p-6 rounded-xl border border-gray-700 shadow-2xl my-6">
-        <h4 className="text-gray-300 font-mono mb-4 text-sm uppercase tracking-wider">The Content Loop Blueprint</h4>
-        <div className="space-y-4">
-            <div className="flex items-start gap-4">
-                <span className="text-purple-500 font-bold font-mono">01.</span>
+      <div className="bg-[#1e1e1e] p-8 rounded-2xl border border-gray-700 shadow-xl my-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">BLUEPRINT</div>
+        <h4 className="text-white font-mono mb-6 text-lg tracking-wider border-b border-gray-700 pb-2">THE CONTENT LOOP</h4>
+        
+        <div className="space-y-6">
+            <div className="flex items-start gap-4 group">
+                <span className="text-purple-500 font-bold font-mono text-xl group-hover:scale-110 transition-transform">01.</span>
                 <div>
-                    <p className="text-gray-200 font-bold">Identify Long-Tail Keywords</p>
-                    <p className="text-gray-400 text-sm">"Best Solana Staking 2026", "New Meme Coins with Utility", "How to bridge ETH to SOL".</p>
+                    <p className="text-white font-bold text-lg mb-1">Identify Long-Tail Keywords</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">"Best Solana Staking 2026", "New Meme Coins with Utility", "How to bridge ETH to SOL". Use Ahrefs or SEMRush.</p>
                 </div>
             </div>
-            <div className="flex items-start gap-4">
-                <span className="text-purple-500 font-bold font-mono">02.</span>
+            <div className="flex items-start gap-4 group">
+                <span className="text-purple-500 font-bold font-mono text-xl group-hover:scale-110 transition-transform">02.</span>
                 <div>
-                    <p className="text-gray-200 font-bold">Build "Skyscraper" Landing Pages</p>
-                    <p className="text-gray-400 text-sm">Create dedicated pages for each keyword using <Link to="/blog/crypto-seo-guide" className="text-purple-400 hover:underline">Next.js Dynamic Routes</Link>. E.g., `/learn/how-to-buy-solana`.</p>
+                    <p className="text-white font-bold text-lg mb-1">Build "Skyscraper" Landing Pages</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">Create dedicated pages for each keyword using <Link to="/blog/crypto-seo-guide" className="text-purple-400 hover:text-white underline transition-colors">Next.js Dynamic Routes</Link>. E.g., `/learn/how-to-buy-solana`.</p>
                 </div>
             </div>
-            <div className="flex items-start gap-4">
-                <span className="text-purple-500 font-bold font-mono">03.</span>
+            <div className="flex items-start gap-4 group">
+                <span className="text-purple-500 font-bold font-mono text-xl group-hover:scale-110 transition-transform">03.</span>
                 <div>
-                    <p className="text-gray-200 font-bold">Inject "Buy Now" CTAs</p>
-                    <p className="text-gray-400 text-sm">Don't just educate. Convert. Place a Jupiter/Uniswap widget directly inside the article.</p>
+                    <p className="text-white font-bold text-lg mb-1">Inject "Buy Now" CTAs</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">Don't just educate. Convert. Place a Jupiter/Uniswap widget directly inside the article so they can buy without leaving.</p>
                 </div>
             </div>
         </div>
@@ -159,29 +163,29 @@ const CryptoMarketingGuide: React.FC = () => {
         Stop using Gleam.io or Galxe. Build it on your own domain (`quests.yourproject.com`). This keeps the traffic on <em>your</em> site (good for SEO) and builds brand value.
       </p>
 
-      <ul className="space-y-4 mt-4">
-        <li className="flex items-start gap-3">
-            <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg text-purple-600">🎮</div>
+      <div className="space-y-4 mt-6">
+        <div className="flex items-start gap-4 bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/10 shadow-sm">
+            <div className="shrink-0 bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg text-2xl">🎮</div>
             <div>
-                <strong className="text-gray-900 dark:text-white">Step 1: Wallet Login</strong>
+                <strong className="text-gray-900 dark:text-white block mb-1">Step 1: Wallet Login</strong>
                 <p className="text-sm text-gray-600 dark:text-gray-400">User connects Phantom/MetaMask. We read their token balance. If they hold $0, they can't access the quests. (Filters out bots).</p>
             </div>
-        </li>
-        <li className="flex items-start gap-3">
-            <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg text-purple-600">🐦</div>
+        </div>
+        <div className="flex items-start gap-4 bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/10 shadow-sm">
+            <div className="shrink-0 bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg text-2xl">🐦</div>
             <div>
-                <strong className="text-gray-900 dark:text-white">Step 2: API Verification</strong>
-                <p className="text-sm text-gray-600 dark:text-gray-400">User links their X (Twitter) account. Your backend checks: <em>"Did they Like & Retweet the pinned post?"</em></p>
+                <strong className="text-gray-900 dark:text-white block mb-1">Step 2: API Verification</strong>
+                <p className="text-sm text-gray-600 dark:text-gray-400">User links their X (Twitter) account. Your backend checks: <em>"Did they Like & Retweet the pinned post?"</em> via the Twitter API.</p>
             </div>
-        </li>
-        <li className="flex items-start gap-3">
-            <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg text-purple-600">🎁</div>
+        </div>
+        <div className="flex items-start gap-4 bg-white dark:bg-white/5 p-4 rounded-xl border border-gray-200 dark:border-white/10 shadow-sm">
+            <div className="shrink-0 bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg text-2xl">🎁</div>
             <div>
-                <strong className="text-gray-900 dark:text-white">Step 3: Instant Reward</strong>
+                <strong className="text-gray-900 dark:text-white block mb-1">Step 3: Instant Reward</strong>
                 <p className="text-sm text-gray-600 dark:text-gray-400">If verified, the Smart Contract automatically airdrops "XP" or a "Loyalty NFT". Leaderboards drive competition.</p>
             </div>
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <p className="mt-6">
         This is <strong>Community Engineering</strong>. You are programming human behavior.
@@ -196,26 +200,26 @@ const CryptoMarketingGuide: React.FC = () => {
         Here is the high-conversion structure I use for every client:
       </p>
 
-      <div className="relative border-l-4 border-gray-200 dark:border-gray-700 pl-8 ml-4 space-y-8 my-8">
+      <div className="relative border-l-4 border-purple-200 dark:border-purple-900/30 pl-8 ml-4 space-y-10 my-10">
         <div className="relative">
-            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617]"></span>
-            <h4 className="font-bold text-gray-900 dark:text-white">Section 1: The "Hype" Header</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400">One clear headline. One massive "Buy Now" button. No distractions. Background video of the product/meme.</p>
+            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617] shadow-lg shadow-purple-500/50"></span>
+            <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-2">Section 1: The "Hype" Header</h4>
+            <p className="text-gray-600 dark:text-gray-400">One clear headline. One massive "Buy Now" button. No distractions. Background video of the product/meme.</p>
         </div>
         <div className="relative">
-            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617]"></span>
-            <h4 className="font-bold text-gray-900 dark:text-white">Section 2: Social Proof (The Trust Anchor)</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400">"As seen on: CoinGecko, DexTools, Bloomberg". Even if it's just a press release, badges build trust.</p>
+            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617] shadow-lg shadow-purple-500/50"></span>
+            <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-2">Section 2: Social Proof (The Trust Anchor)</h4>
+            <p className="text-gray-600 dark:text-gray-400">"As seen on: CoinGecko, DexTools, Bloomberg". Even if it's just a press release, badges build trust immediately.</p>
         </div>
         <div className="relative">
-            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617]"></span>
-            <h4 className="font-bold text-gray-900 dark:text-white">Section 3: The Live Chart</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Embed the TradingView chart directly. Do not make them leave your site to check the price. If they leave, they might see a competitor.</p>
+            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617] shadow-lg shadow-purple-500/50"></span>
+            <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-2">Section 3: The Live Chart</h4>
+            <p className="text-gray-600 dark:text-gray-400">Embed the TradingView chart directly. Do not make them leave your site to check the price. If they leave, they might see a competitor.</p>
         </div>
         <div className="relative">
-            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617]"></span>
-            <h4 className="font-bold text-gray-900 dark:text-white">Section 4: The Swap Widget</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Integrate the Jupiter Terminal (Solana) or Uniswap Widget (ETH). Remove all friction. Allow them to buy in 2 clicks.</p>
+            <span className="absolute -left-[42px] top-0 w-6 h-6 bg-purple-600 rounded-full border-4 border-white dark:border-[#020617] shadow-lg shadow-purple-500/50"></span>
+            <h4 className="font-bold text-xl text-gray-900 dark:text-white mb-2">Section 4: The Swap Widget</h4>
+            <p className="text-gray-600 dark:text-gray-400">Integrate the Jupiter Terminal (Solana) or Uniswap Widget (ETH). Remove all friction. Allow them to buy in 2 clicks.</p>
         </div>
       </div>
 
@@ -238,35 +242,35 @@ const CryptoMarketingGuide: React.FC = () => {
       {/* --- PART 5: COMPARISON --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Summary: The Old Way vs. The 2026 Way</h2>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse my-8 text-sm md:text-base">
+      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
             <tr className="bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white">
-              <th className="p-4 border border-gray-200 dark:border-gray-700">Strategy</th>
-              <th className="p-4 border border-gray-200 dark:border-gray-700">The "Old Way" (2021)</th>
-              <th className="p-4 border border-gray-200 dark:border-gray-700">The "Agency Way" (2026)</th>
+              <th className="p-4 border-b border-gray-200 dark:border-gray-700 font-bold">Strategy</th>
+              <th className="p-4 border-b border-gray-200 dark:border-gray-700 font-bold text-red-500">The "Old Way" (2021)</th>
+              <th className="p-4 border-b border-gray-200 dark:border-gray-700 font-bold text-green-500">The "Agency Way" (2026)</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border border-gray-200 dark:border-gray-700">
-              <td className="p-4 font-bold">Traffic Source</td>
-              <td className="p-4 text-red-500">Paid Influencers (Short term)</td>
-              <td className="p-4 text-green-500">Programmatic SEO (Long term)</td>
+            <tr className="border-b border-gray-100 dark:border-gray-800">
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Traffic Source</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Paid Influencers (Short term)</td>
+              <td className="p-4 text-gray-900 dark:text-white font-bold">Programmatic SEO (Long term)</td>
             </tr>
-            <tr className="border border-gray-200 dark:border-gray-700">
-              <td className="p-4 font-bold">Community</td>
-              <td className="p-4 text-red-500">Telegram Bots</td>
-              <td className="p-4 text-green-500">On-Chain Verified Holders</td>
+            <tr className="border-b border-gray-100 dark:border-gray-800">
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Community</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Telegram Bots</td>
+              <td className="p-4 text-gray-900 dark:text-white font-bold">On-Chain Verified Holders</td>
             </tr>
-            <tr className="border border-gray-200 dark:border-gray-700">
-              <td className="p-4 font-bold">Technology</td>
-              <td className="p-4 text-red-500">Linktree / Wix</td>
-              <td className="p-4 text-green-500">Custom React WebApp</td>
+            <tr className="border-b border-gray-100 dark:border-gray-800">
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Technology</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Linktree / Wix</td>
+              <td className="p-4 text-gray-900 dark:text-white font-bold">Custom React WebApp</td>
             </tr>
-            <tr className="border border-gray-200 dark:border-gray-700">
-              <td className="p-4 font-bold">ROI</td>
-              <td className="p-4 text-red-500">Negative (Pump & Dump)</td>
-              <td className="p-4 text-green-500">Compound Growth</td>
+            <tr className="border-b border-gray-100 dark:border-gray-800">
+              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">ROI</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Negative (Pump & Dump)</td>
+              <td className="p-4 text-gray-900 dark:text-white font-bold">Compound Growth</td>
             </tr>
           </tbody>
         </table>
