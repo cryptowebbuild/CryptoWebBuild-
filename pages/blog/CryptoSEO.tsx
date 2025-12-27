@@ -50,7 +50,7 @@ const CryptoSEO: React.FC = () => {
       <p>
         The user journey has evolved. When a retail investor sees a ticker symbol on X (Twitter), they don't buy immediately. They verify. They open Google or ChatGPT and ask:
       </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 font-medium">
+      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 font-medium ml-4">
         <li><em>"Is $TOKEN safe?"</em></li>
         <li><em>"Who is the team behind $TOKEN?"</em></li>
         <li><em>"How to buy $TOKEN with [Fiat Currency]"</em></li>
@@ -87,25 +87,29 @@ const CryptoSEO: React.FC = () => {
         You need to connect the dots for the AI. You do this through <strong>Schema Markup</strong> and <strong>Consistent N.A.P (Name, Address, Pitch)</strong>.
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl border border-gray-700 shadow-2xl my-6">
-        <h4 className="text-gray-300 font-mono mb-4 text-sm uppercase tracking-wider">The "Entity" Verification Checklist</h4>
-        <ul className="space-y-4 text-gray-400 text-sm">
-            <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✓</span>
+      <div className="bg-[#1e1e1e] p-8 rounded-2xl border border-gray-700 shadow-2xl my-8 relative overflow-hidden">
+        <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">CHECKLIST</div>
+        <h4 className="text-white font-mono mb-6 text-lg tracking-wider border-b border-gray-700 pb-2">THE "ENTITY" VERIFICATION</h4>
+        <ul className="space-y-6">
+            <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 font-bold">✓</span>
                 <div>
-                    <strong className="text-gray-900 dark:text-white">SameAs Strategy:</strong> In your website's JSON-LD Schema, explicitly link to your CoinGecko, CoinMarketCap, DefiLlama, and Twitter profiles. This tells Google: "These are all the same entity."
+                    <strong className="text-white block mb-1">SameAs Strategy</strong>
+                    <span className="text-gray-400 text-sm">In your website's JSON-LD Schema, explicitly link to your CoinGecko, CoinMarketCap, DefiLlama, and Twitter profiles. This tells Google: "These are all the same entity."</span>
                 </div>
             </li>
-            <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✓</span>
+            <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 font-bold">✓</span>
                 <div>
-                    <strong className="text-gray-900 dark:text-white">Wikidata/Wikipedia:</strong> Getting a mention or a page on Wikidata is the "God Mode" of SEO. It cements your status as a factual entity.
+                    <strong className="text-white block mb-1">Wikidata/Wikipedia</strong>
+                    <span className="text-gray-400 text-sm">Getting a mention or a page on Wikidata is the "God Mode" of SEO. It cements your status as a factual entity.</span>
                 </div>
             </li>
-            <li className="flex items-start gap-3">
-                <span className="text-green-500 font-bold">✓</span>
+            <li className="flex items-start gap-4">
+                <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 font-bold">✓</span>
                 <div>
-                    <strong className="text-gray-900 dark:text-white">The "About Us" Page:</strong> Do not hide. List your team (even if pseudonymous avatars), your registered entity (DAO or LLC), and your mission. AI looks for "Authoritativeness".
+                    <strong className="text-white block mb-1">The "About Us" Page</strong>
+                    <span className="text-gray-400 text-sm">Do not hide. List your team (even if pseudonymous avatars), your registered entity (DAO or LLC), and your mission. AI looks for "Authoritativeness".</span>
                 </div>
             </li>
         </ul>
@@ -127,16 +131,16 @@ const CryptoSEO: React.FC = () => {
       <p>
         Instead of writing one generic "How to Buy" guide, we generate 500+ specific pages targeting every possible payment method and currency.
       </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-6 ml-4">
         <li><em>"How to buy $TOKEN with USD"</em></li>
         <li><em>"How to buy $TOKEN with EUR"</em></li>
         <li><em>"How to buy $TOKEN with Apple Pay"</em></li>
         <li><em>"How to buy $TOKEN in Nigeria"</em></li>
       </ul>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative">
-        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-bl">Next.js / React Strategy</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
+        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">Next.js / React Strategy</div>
+        <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// 1. Define your data source (or fetch from API)
 const paymentMethods = [
   { slug: 'usd', name: 'US Dollar', type: 'Fiat' },
@@ -194,30 +198,29 @@ export default function HowToBuy({ params }) {
       </ProTip>
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The "Anti-Lag" Tech Stack</h3>
-      <div className="overflow-x-auto my-6">
-        <table className="w-full text-left border-collapse bg-white dark:bg-[#111] rounded-lg shadow-sm">
+      <div className="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
-            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-800">
-              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">The Problem</th>
-              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">The Technical Fix</th>
+            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
+              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white uppercase text-sm tracking-wider">The Problem</th>
+              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white uppercase text-sm tracking-wider">The Technical Fix</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-medium text-red-500">Heavy 3D Models (Spline)</td>
+              <td className="py-4 px-6 font-bold text-red-500">Heavy 3D Models (Spline)</td>
               <td className="py-4 px-6 text-gray-600 dark:text-gray-300">
                 Never load 3D on the main thread. Use `React.lazy()` to load the 3D canvas <em>after</em> the main text is visible.
               </td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-medium text-red-500">Unoptimized Images</td>
+              <td className="py-4 px-6 font-bold text-red-500">Unoptimized Images</td>
               <td className="py-4 px-6 text-gray-600 dark:text-gray-300">
-                {/* Fixed Image Tag Error */}
                 Do not use standard <code>&lt;img&gt;</code> tags. Use <strong>WebP</strong> format and lazy loading.
               </td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-medium text-red-500">Client-Side Bloat</td>
+              <td className="py-4 px-6 font-bold text-red-500">Client-Side Bloat</td>
               <td className="py-4 px-6 text-gray-600 dark:text-gray-300">
                 Switch to <Link to="/blog/static-vs-dynamic-website" className="text-purple-600 font-bold hover:underline">Static Generation (SSG)</Link>. Pre-render HTML on the server/build time.
               </td>
@@ -235,9 +238,9 @@ export default function HowToBuy({ params }) {
         Most crypto sites have zero schema. You can gain a massive advantage by implementing the `FinancialProduct` or `Currency` schema. This allows Google to show your <strong>Price</strong>, <strong>Ticker</strong>, and <strong>Contract Address</strong> directly in the search results (Rich Snippets).
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative">
-        <div className="absolute top-0 right-0 bg-yellow-600 text-white text-xs px-2 py-1 rounded-bl">JSON-LD Template</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
+        <div className="absolute top-0 right-0 bg-yellow-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">JSON-LD Template</div>
+        <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`<script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -266,31 +269,6 @@ export default function HowToBuy({ params }) {
       <p>
         <strong>The Impact:</strong> Rich snippets increase Click-Through Rate (CTR) by up to 30%. It makes your result look "Official" and trustworthy compared to the plain text results of your competitors.
       </p>
-
-      {/* --- CHAPTER 5: OFF-PAGE STRATEGY --- */}
-      <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Chapter 5: Off-Page SEO (Backlinks are Dead?)</h2>
-      <p>
-        In 2021, you could buy 1,000 spam backlinks on Fiverr and rank. In 2026, Google's "SpamBrain" AI will detect this immediately and de-index your site entirely.
-      </p>
-      <p>
-        <strong>Do NOT buy cheap backlinks.</strong> It is poison for your domain.
-      </p>
-      
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The "Digital PR" Strategy</h3>
-      <p>
-        Instead of spam, focus on <strong>Digital PR</strong>. You want high-authority news sites (CoinDesk, Cointelegraph, Bloomberg, Yahoo Finance) to link to you because you have actual news.
-      </p>
-      <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 mt-4">
-        <li>
-            <strong>Data Studies:</strong> Publish a report on "Solana Transaction Speeds" or "DeFi Hacks in 2025". Journalists love data. If you provide the chart, they will link to you as the source.
-        </li>
-        <li>
-            <strong>Free Tools:</strong> Build a free tool (e.g., "Impermanent Loss Calculator" or "Gas Fee Tracker") hosted on your domain. People will link to it naturally because it provides utility.
-        </li>
-        <li>
-            <strong>Ecosystem Partnerships:</strong> When you partner with another protocol, ensure they write a blog post announcing it with a "dofollow" link to your site.
-        </li>
-      </ul>
 
       <HireUsCTA />
 
