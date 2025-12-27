@@ -1,6 +1,37 @@
-import React from 'react';
+import React, { useState, useId } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+
+const FAQItem = ({ question, answer }: { question: string, answer: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentId = useId();
+
+  return (
+    <div className="group border border-gray-200 dark:border-white/10 rounded-2xl bg-white dark:bg-[#1e293b] overflow-hidden transition-all duration-300 hover:border-purple-500/30">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+        className="w-full flex items-center justify-between p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-inset rounded-2xl"
+      >
+        <span className="font-bold text-lg text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{question}</span>
+        <span className={`transform transition-transform duration-300 text-purple-600 ${isOpen ? 'rotate-180' : ''}`}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+        </span>
+      </button>
+      <div
+        id={contentId}
+        role="region"
+        aria-label={question}
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <div className="p-6 pt-0 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-white/5 mt-2">
+          {answer}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const FAQ: React.FC = () => {
   const faqs = [
@@ -64,7 +95,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       <SEO 
         title="Frequently Asked Questions | CryptoWebBuild"
         description="Answers to common questions about web development services, pricing, timelines, and crypto integrations."
@@ -74,13 +105,14 @@ const FAQ: React.FC = () => {
       </script>
       
       <div className="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
-        <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-surface-highlight border border-white/10 text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">
+        <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-cyan-100 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-500/20 text-cyan-700 dark:text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">
           Support
         </div>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-text-main mb-6">
-          Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">Questions</span>
+        <h1 className="font-display text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+          Frequently Asked <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Questions</span>
         </h1>
-        <p className="text-lg text-text-muted">
+        <p className="text-gray-600 dark:text-gray-400 text-lg">
           Everything you need to know about working with me.
         </p>
       </div>
@@ -88,22 +120,12 @@ const FAQ: React.FC = () => {
       <div className="max-w-3xl mx-auto space-y-12">
         {faqs.map((section, idx) => (
           <div key={idx} className="animate-slide-up" style={{ animationDelay: `${idx * 0.1}s` }}>
-            <h3 className="font-display text-xl font-bold text-text-main mb-6 pl-4 border-l-4 border-purple-500">
+            <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-6 pl-4 border-l-4 border-purple-500">
               {section.category}
             </h3>
             <div className="space-y-4">
               {section.questions.map((item, i) => (
-                <details key={i} className="group glass-panel rounded-2xl bg-surface open:bg-surface-highlight transition-all duration-300">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <span className="font-bold text-text-main text-lg">{item.q}</span>
-                    <span className="transition-transform group-open:rotate-180 text-purple-400">
-                      <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                    </span>
-                  </summary>
-                  <div className="text-text-muted px-6 pb-6 leading-relaxed">
-                    {item.a}
-                  </div>
-                </details>
+                <FAQItem key={i} question={item.q} answer={item.a} />
               ))}
             </div>
           </div>
@@ -111,9 +133,9 @@ const FAQ: React.FC = () => {
       </div>
 
       <div className="mt-20 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <div className="glass-panel p-8 rounded-3xl inline-block bg-surface">
-          <p className="text-text-main font-bold text-lg mb-2">Still have questions?</p>
-          <p className="text-text-muted mb-6">Chat with me directly to discuss your specific needs.</p>
+        <div className="p-8 rounded-3xl inline-block bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-xl">
+          <p className="text-gray-900 dark:text-white font-bold text-lg mb-2">Still have questions?</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">Chat with me directly to discuss your specific needs.</p>
           <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-xl hover:scale-105 transition-transform shadow-lg shadow-purple-500/20">
             Contact Support
           </Link>
