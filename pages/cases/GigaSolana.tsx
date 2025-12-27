@@ -22,11 +22,18 @@ const GigaSolana: React.FC = () => {
         title="Viral Meme Coin Design | $GIGA Solana Case Study"
         description="Learn how we built a cult-following meme coin site on Solana. Featuring 'Moon Math' calculators, neon aesthetics, and aggressive branding."
         keywords={['Viral Meme Coin Design', 'Solana Meme Coin Branding', 'Moon Math Calculator Code', 'Crypto Community Website']}
+        schema={jsonLd}
       />
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
-      </script>
+
       <div className="max-w-4xl mx-auto animate-slide-up">
+        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+            <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>
+            <span>/</span>
+            <span className="text-gray-900 dark:text-gray-300 font-medium">$GIGA Solana</span>
+        </nav>
+
         <div className="inline-block px-3 py-1 mb-6 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-600 dark:text-green-300 text-xs font-bold uppercase tracking-wider shadow-sm">
           Case Study
         </div>

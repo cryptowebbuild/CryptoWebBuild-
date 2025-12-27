@@ -25,11 +25,18 @@ const ShopFast: React.FC = () => {
         keywords={['Headless E-commerce Developer', 'Next.js E-commerce', 'High Performance Online Store', 'Static Site E-commerce', 'Stripe Integration React']}
         type="article"
         publishedTime="2025-10-20"
+        schema={jsonLd}
       />
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
-      </script>
+
       <div className="max-w-4xl mx-auto animate-slide-up">
+        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+            <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>
+            <span>/</span>
+            <span className="text-gray-900 dark:text-gray-300 font-medium">ShopFast</span>
+        </nav>
+
         <div className="inline-block px-3 py-1 mb-6 rounded-full bg-cyan-100 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-800 text-cyan-600 dark:text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-sm">
           Case Study
         </div>
