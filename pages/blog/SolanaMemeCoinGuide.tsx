@@ -56,25 +56,25 @@ const SolanaMemeCoinGuide: React.FC = () => {
         Most tutorials teach you the "Legacy" standard. That is a mistake.
       </p>
 
-      <div className="overflow-x-auto my-8">
-        <table className="w-full text-left border-collapse bg-white dark:bg-[#111] rounded-lg shadow-sm">
+      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
-            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-800">
-              <th className="p-4 font-bold">Standard</th>
-              <th className="p-4 font-bold">Features</th>
-              <th className="p-4 font-bold">Verdict</th>
+            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Standard</th>
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Features</th>
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Verdict</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-gray-500">Legacy SPL</td>
-              <td className="p-4">Basic Transfer, Freeze, Mint. No Taxes.</td>
-              <td className="p-4 text-gray-500">Outdated. Good for pure memes only.</td>
+              <td className="p-4 font-bold text-gray-500 dark:text-gray-400">Legacy SPL</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Basic Transfer, Freeze, Mint. No Taxes.</td>
+              <td className="p-4 text-gray-500 dark:text-gray-500 font-mono text-sm">Outdated. Good for pure memes only.</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-purple-600">Token-2022</td>
-              <td className="p-4">Transfer Fees (Tax), Transfer Hooks, Confidential Transfers.</td>
-              <td className="p-4 text-green-600"><strong>The 2026 Standard.</strong> Allows for 1-5% marketing tax.</td>
+              <td className="p-4 font-bold text-purple-600 dark:text-purple-400">Token-2022</td>
+              <td className="p-4 text-gray-600 dark:text-gray-400">Transfer Fees (Tax), Hooks, Confidential Transfers.</td>
+              <td className="p-4 text-green-600 font-bold">The 2026 Standard.</td>
             </tr>
           </tbody>
         </table>
@@ -88,9 +88,16 @@ const SolanaMemeCoinGuide: React.FC = () => {
         With Token-2022, the tax is enforced <em>at the protocol level</em>. It works on Raydium, Jupiter, and even OTC transfers.
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
-        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-bl">Solana CLI</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] rounded-xl overflow-hidden border border-gray-700 shadow-2xl relative my-8">
+        <div className="bg-gray-800/50 px-4 py-2 flex justify-between items-center border-b border-gray-700">
+            <span className="text-xs font-mono text-green-400">terminal — solana-cli</span>
+            <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            </div>
+        </div>
+        <pre className="p-6 text-sm font-mono text-green-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`# 1. Create a Token-2022 with Transfer Fee Config
 spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb --transfer-fee 200 20000000
 
@@ -102,7 +109,7 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
       </div>
 
       <ProTip>
-        <strong>Tool Recommendation:</strong> If you aren't comfortable with CLI, use <em className="text-purple-600">FluxBeam</em> or <em className="text-purple-600">Smithii</em> tools. They provide a GUI for Token-2022 creation but charge a small SOL fee.
+        <strong>Tool Recommendation:</strong> If you aren't comfortable with CLI, use <em className="text-purple-600 dark:text-purple-400 font-bold">FluxBeam</em> or <em className="text-purple-600 dark:text-purple-400 font-bold">Smithii</em> tools. They provide a GUI for Token-2022 creation but charge a small SOL fee.
       </ProTip>
 
       {/* --- PHASE 2: METADATA --- */}
@@ -129,20 +136,20 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 rounded-xl">
+        <div className="p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-xl">
             <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2">Raydium (Standard AMM)</h4>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong>Pros:</strong> Universal support. Every bot and sniper works here.
                 <br/><strong>Cons:</strong> Capital inefficient. Liquidity is spread from $0 to Infinity.
-                <br/><strong>Verdict:</strong> Best for initial launch to capture volume.
+                <br/><strong className="text-blue-600 dark:text-blue-300">Verdict:</strong> Best for initial launch to capture volume.
             </p>
         </div>
-        <div className="p-6 bg-pink-50 dark:bg-pink-900/10 border border-pink-200 rounded-xl">
+        <div className="p-6 bg-pink-50 dark:bg-pink-900/10 border border-pink-200 dark:border-pink-800 rounded-xl">
             <h4 className="font-bold text-pink-800 dark:text-pink-400 mb-2">Meteora (DLMM)</h4>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong>Pros:</strong> Dynamic Liquidity. You can concentrate liquidity around the current price, reducing slippage for big buys.
                 <br/><strong>Cons:</strong> More complex to manage.
-                <br/><strong>Verdict:</strong> Best for "Phase 2" growth to stabilize the floor.
+                <br/><strong className="text-pink-600 dark:text-pink-300">Verdict:</strong> Best for "Phase 2" growth to stabilize the floor.
             </p>
         </div>
       </div>
@@ -164,17 +171,26 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
         To prevent this, sophisticated devs use <strong>Jito Bundles</strong>.
       </p>
 
-      <div className="bg-gray-100 dark:bg-gray-800/50 p-6 rounded-xl border-l-4 border-orange-500 my-6">
-        <h4 className="font-bold text-orange-700 dark:text-orange-400">How Jito Bundles Work:</h4>
-        <p className="text-gray-700 dark:text-gray-300 mt-2">
+      <div className="bg-orange-50 dark:bg-orange-900/10 p-8 rounded-xl border border-orange-200 dark:border-orange-800 my-8">
+        <h4 className="font-bold text-orange-800 dark:text-orange-400 text-lg mb-4">How Jito Bundles Work</h4>
+        <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm">
             Jito allows you to bundle multiple transactions into a single, atomic packet.
         </p>
-        <ol className="list-decimal pl-6 mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-            <li><strong>Tx 1:</strong> Create Raydium Pool (Add Liquidity).</li>
-            <li><strong>Tx 2:</strong> Buy 5% of Supply (for Team/Marketing).</li>
-            <li><strong>Tx 3:</strong> Lock LP Tokens.</li>
+        <ol className="space-y-3">
+            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+                <span className="font-mono text-orange-600 font-bold">Tx 1</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Create Raydium Pool (Add Liquidity)</span>
+            </li>
+            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+                <span className="font-mono text-orange-600 font-bold">Tx 2</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Buy 5% of Supply (for Team/Marketing)</span>
+            </li>
+            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+                <span className="font-mono text-orange-600 font-bold">Tx 3</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Lock LP Tokens</span>
+            </li>
         </ol>
-        <p className="mt-4 text-gray-700 dark:text-gray-300">
+        <p className="mt-4 text-gray-600 dark:text-gray-400 text-xs italic">
             These execute <strong>simultaneously</strong>. No bot can sandwich you because there is no time gap between adding liquidity and your first buy.
         </p>
       </div>
