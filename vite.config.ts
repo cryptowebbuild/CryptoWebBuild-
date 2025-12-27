@@ -4,15 +4,22 @@ import viteCompression from 'vite-plugin-compression';
 import fs from 'fs';
 import path from 'path';
 
-// FORCE FIX: Create _redirects file for Cloudflare
+// --- PLUGIN: FORCE FIX Cloudflare 404 Error ---
 const cloudflareRedirectsPlugin = () => {
   return {
     name: 'cloudflare-redirects',
     closeBundle() {
-      const dist = path.resolve('dist');
+      const dist = path.resolve(__dirname, 'dist');
+      
+      // CRITICAL FIX: Check if 'dist' exists, if not create it.
+      // This prevents the "ENOENT" error during build.
+      if (!fs.existsSync(dist)) {
+        fs.mkdirSync(dist, { recursive: true });
+      }
+
       const redirectsPath = path.join(dist, '_redirects');
-      // This line fixes the SEO 404 error
-      fs.writeFileSync(redirectsPath, '/* /index.html  200');
+      // Create the file that tells Cloudflare to serve index.html for all routes
+      fs.writeFileSync(redirectsPath, '/* /index.html 200');
       console.log('✅ Generated _redirects file for Cloudflare SPA');
     }
   }
@@ -21,10 +28,16 @@ const cloudflareRedirectsPlugin = () => {
 export default defineConfig({
   plugins: [
     react(),
-    cloudflareRedirectsPlugin(), // <--- This runs the fix automatically
+    cloudflareRedirectsPlugin(),
+    // Compression settings
     viteCompression({ algorithm: 'gzip', ext: '.gz' }),
     viteCompression({ algorithm: 'brotliCompress', ext: '.br' })
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   build: {
     target: 'es2015',
     outDir: 'dist',
@@ -32,14 +45,18 @@ export default defineConfig({
     emptyOutDir: true,
     minify: 'esbuild',
     cssCodeSplit: true,
-    sourcemap: false,
+    sourcemap: false, // Save memory/space
     rollupOptions: {
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) return 'vendor-react';
-            if (id.includes('@google/genai')) return 'vendor-genai';
-            if (id.includes('lucide-react') || id.includes('clsx') || id.includes('tailwind-merge')) return 'vendor-ui';
+            // Split heavy libraries into separate chunks for better caching
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('framer-motion') || id.includes('lucide-react')) {
+              return 'vendor-ui';
+            }
             return 'vendor-libs';
           }
         }
