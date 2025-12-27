@@ -65,7 +65,7 @@ const MemeCoinSite: React.FC = () => {
 
           <h2>Design & Gamification Strategy</h2>
           <p>
-            We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface. Learn more about our philosophy on <Link to="/meme-coin-website-features">Must-Have Meme Coin Features</Link>.
+            We moved away from standard "dark mode crypto" templates and built a vibrant, custom interface. Learn more about our philosophy on <Link to="/blog/meme-coin-features">Must-Have Meme Coin Features</Link>.
           </p>
           <ul>
             <li><strong>Mascot-Centric Hero:</strong> The homepage centers around the animated Quack Inu character with interactive tooltips ("Click to Spin!").</li>
