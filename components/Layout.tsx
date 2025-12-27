@@ -296,7 +296,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
               <ul className="grid grid-cols-1 gap-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
                 <li><Link to="/blog/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
-                <li><Link to="/blog/best-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
+                <li><Link to="/blog/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
                 <li><Link to="/blog/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
                 <li><Link to="/blog/crypto-website-cost" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Crypto Website Pricing</Link></li>
                 <li><Link to="/blog/static-vs-dynamic-website" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Static vs Dynamic Performance</Link></li>

@@ -25,19 +25,40 @@ const staticRoutes = [
   '/gigasolana',
 ];
 
-// Blog Routes (UPDATED: Added '/blog' prefix to match App.tsx)
-const blogRoutes = [
-  '/blog/crypto-seo-guide',
-  '/blog/how-to-build-presale-dapp',
-  '/blog/crypto-marketing-guide',
-  '/blog/best-website-developer',
-  '/blog/solana-meme-coin-guide',
-  '/blog/crypto-website-cost',
-  '/blog/static-vs-dynamic-website',
-  '/blog/meme-coin-website-features',
-  '/blog/crypto-project-website',
-  '/blog/website-builder-vs-developer'
-];
+// Read blog posts dynamically from data/blogPosts.ts
+const blogPostsPath = path.resolve('data/blogPosts.ts');
+let blogRoutes = [];
+
+try {
+  const content = fs.readFileSync(blogPostsPath, 'utf-8');
+  // Regex to extract slugs from the TS object structure
+  // Looks for: slug: 'some-slug-value'
+  const slugRegex = /slug:\s*['"]([^'"]+)['"]/g;
+  let match;
+
+  while ((match = slugRegex.exec(content)) !== null) {
+    if (match[1]) {
+      blogRoutes.push(`/blog/${match[1]}`);
+    }
+  }
+
+  console.log(`✅ Found ${blogRoutes.length} blog posts.`);
+} catch (error) {
+  console.error('❌ Error reading blogPosts.ts:', error);
+  // Fallback to hardcoded list if file read fails (though it shouldn't)
+  blogRoutes = [
+    '/blog/crypto-seo-guide',
+    '/blog/presale-guide',
+    '/blog/solana-meme-coin-guide',
+    '/blog/crypto-marketing-guide',
+    '/blog/best-website-developer',
+    '/blog/crypto-website-cost',
+    '/blog/static-vs-dynamic-website',
+    '/blog/meme-coin-website-features',
+    '/blog/crypto-project',
+    '/blog/website-builder-vs-developer'
+  ];
+}
 
 const routes = [...staticRoutes, ...blogRoutes];
 

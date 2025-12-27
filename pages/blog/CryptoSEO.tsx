@@ -93,19 +93,19 @@ const CryptoSEO: React.FC = () => {
             <li className="flex items-start gap-3">
                 <span className="text-green-500 font-bold">✓</span>
                 <div>
-                    <strong className="text-white">SameAs Strategy:</strong> In your website's JSON-LD Schema, explicitly link to your CoinGecko, CoinMarketCap, DefiLlama, and Twitter profiles. This tells Google: "These are all the same entity."
+                    <strong className="text-gray-900 dark:text-white">SameAs Strategy:</strong> In your website's JSON-LD Schema, explicitly link to your CoinGecko, CoinMarketCap, DefiLlama, and Twitter profiles. This tells Google: "These are all the same entity."
                 </div>
             </li>
             <li className="flex items-start gap-3">
                 <span className="text-green-500 font-bold">✓</span>
                 <div>
-                    <strong className="text-white">Wikidata/Wikipedia:</strong> Getting a mention or a page on Wikidata is the "God Mode" of SEO. It cements your status as a factual entity.
+                    <strong className="text-gray-900 dark:text-white">Wikidata/Wikipedia:</strong> Getting a mention or a page on Wikidata is the "God Mode" of SEO. It cements your status as a factual entity.
                 </div>
             </li>
             <li className="flex items-start gap-3">
                 <span className="text-green-500 font-bold">✓</span>
                 <div>
-                    <strong className="text-white">The "About Us" Page:</strong> Do not hide. List your team (even if pseudonymous avatars), your registered entity (DAO or LLC), and your mission. AI looks for "Authoritativeness".
+                    <strong className="text-gray-900 dark:text-white">The "About Us" Page:</strong> Do not hide. List your team (even if pseudonymous avatars), your registered entity (DAO or LLC), and your mission. AI looks for "Authoritativeness".
                 </div>
             </li>
         </ul>
