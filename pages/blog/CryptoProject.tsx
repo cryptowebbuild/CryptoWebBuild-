@@ -29,7 +29,7 @@ const CryptoProject: React.FC = () => {
         'crypto regulatory compliance',
         'smart contract deployment guide'
       ]}
-      canonical="/blog/crypto-project-website"
+      canonical="/blog/crypto-project"
     >
       <KeyTakeaways points={takeaways} />
 
@@ -65,30 +65,30 @@ const CryptoProject: React.FC = () => {
         In 2026, retail investors have been burned too many times by "VC dump fests". The trend has shifted heavily towards the <strong>Fair Launch</strong> model.
       </p>
 
-      <div className="overflow-x-auto my-6">
-        <table className="w-full text-left border-collapse bg-white dark:bg-[#111] rounded-lg shadow-sm">
+      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+        <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
-            <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-800">
+            <tr className="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
               <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">Feature</th>
-              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">Fair Launch (Meme/Community)</th>
-              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">VC Model (Utility/Tech)</th>
+              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">Fair Launch (Meme)</th>
+              <th className="py-4 px-6 font-bold text-gray-900 dark:text-white">VC Model (Utility)</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-bold">Liquidity</td>
-              <td className="py-4 px-6 text-green-600">80-100% to LP</td>
-              <td className="py-4 px-6 text-yellow-600">40-50% to LP</td>
+              <td className="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">Liquidity</td>
+              <td className="py-4 px-6 text-green-600 font-bold">80-100% to LP</td>
+              <td className="py-4 px-6 text-yellow-600 font-bold">40-50% to LP</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-bold">Team Allocation</td>
-              <td className="py-4 px-6">0-5% (Strictly locked)</td>
-              <td className="py-4 px-6">15-20% (Vested over 4 years)</td>
+              <td className="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">Team Allocation</td>
+              <td className="py-4 px-6 text-gray-600 dark:text-gray-400">0-5% (Strictly locked)</td>
+              <td className="py-4 px-6 text-gray-600 dark:text-gray-400">15-20% (Vested 4 yrs)</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="py-4 px-6 font-bold">Trust Factor</td>
-              <td className="py-4 px-6">High (Community owned)</td>
-              <td className="py-4 px-6">Low (Retail fears dumps)</td>
+              <td className="py-4 px-6 font-bold text-gray-700 dark:text-gray-300">Trust Factor</td>
+              <td className="py-4 px-6 text-gray-600 dark:text-gray-400">High (Community owned)</td>
+              <td className="py-4 px-6 text-gray-600 dark:text-gray-400">Low (Retail fears dumps)</td>
             </tr>
           </tbody>
         </table>
@@ -106,7 +106,7 @@ const CryptoProject: React.FC = () => {
       </ul>
 
       <ProTip>
-        <strong>The "Cliff" Strategy:</strong> Investors check Etherscan/Solscan. If they see a large wallet labeled "Team" that is unlocked, they will not buy. Use <em className="text-purple-600">Streamflow</em> or <em className="text-purple-600">PinkSale</em> to create on-chain vesting contracts visible to everyone.
+        <strong>The "Cliff" Strategy:</strong> Investors check Etherscan/Solscan. If they see a large wallet labeled "Team" that is unlocked, they will not buy. Use <em className="text-purple-600 dark:text-purple-400 font-bold">Streamflow</em> or <em className="text-purple-600 dark:text-purple-400 font-bold">PinkSale</em> to create on-chain vesting contracts visible to everyone.
       </ProTip>
 
       {/* --- CHAPTER 3: SMART CONTRACT SECURITY --- */}
@@ -123,9 +123,9 @@ const CryptoProject: React.FC = () => {
         You <strong>MUST</strong> implement protection measures in your Solidity/Rust contract.
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
-        <div className="absolute top-0 right-0 bg-red-600 text-white text-xs px-2 py-1 rounded-bl">Solidity (Hardhat)</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-xl relative">
+        <div className="absolute top-0 right-0 bg-red-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">Solidity (Hardhat)</div>
+        <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// Anti-Sniper: Max Transaction Limit
 uint256 public maxTxAmount = 1000000 * 10**18; // Max 1% buy per wallet
 
@@ -140,7 +140,7 @@ function _transfer(address from, address to, uint256 amount) internal override {
 }
 
 // Anti-Sniper: Dead Blocks (Trap the Bots)
-// Prevent trading for the first 3 blocks after launch (Humans can't trade this fast anyway)
+// Prevent trading for the first 3 blocks after launch
 uint256 public launchBlock;
 bool public tradingOpen = false;
 
@@ -152,7 +152,6 @@ function openTrading() external onlyOwner {
 modifier antiBot(address from) {
     if (tradingOpen && block.number < launchBlock + 3) {
         // Anyone buying in the first 3 blocks is 100% a bot.
-        // We can either revert or blacklist them.
         revert("Bot detected"); 
     }
     _;
@@ -194,13 +193,13 @@ modifier antiBot(address from) {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-xl border border-purple-200">
-            <h4 className="font-bold text-purple-800 dark:text-purple-400 mb-2">The "Alpha" Leak</h4>
-            <p className="text-sm text-gray-700 dark:text-gray-300">Don't announce everything at once. Leak UI teasers, concept art, and partnership logos slowly over 2 weeks to build anticipation.</p>
+        <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+            <h4 className="font-bold text-purple-800 dark:text-purple-400 mb-2 text-lg">The "Alpha" Leak</h4>
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Don't announce everything at once. Leak UI teasers, concept art, and partnership logos slowly over 2 weeks to build anticipation.</p>
         </div>
-        <div className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-xl border border-blue-200">
-            <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2">The Whitelist Grind</h4>
-            <p className="text-sm text-gray-700 dark:text-gray-300">Make people work for it. Don't give WL spots for free. Require them to join the Telegram, Retweet, and invite 2 friends. Investment = Retention.</p>
+        <div className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+            <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2 text-lg">The Whitelist Grind</h4>
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Make people work for it. Don't give WL spots for free. Require them to join the Telegram, Retweet, and invite 2 friends. Investment = Retention.</p>
         </div>
       </div>
 
@@ -210,22 +209,22 @@ modifier antiBot(address from) {
         The day of the launch is chaos. You will have 500 DMs, 10,000 Telegram messages, and scammers pretending to be you. You need a script.
       </p>
 
-      <div className="space-y-4 my-8">
-        <div className="flex gap-4">
-            <div className="w-24 font-mono font-bold text-pink-600">T-Minus 1H</div>
-            <div className="flex-1 text-gray-700 dark:text-gray-300">Mute Telegram. Start the Voice Chat (AMA). Play hype music. Reassure the community.</div>
+      <div className="space-y-6 my-8">
+        <div className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+            <div className="w-24 shrink-0 font-mono font-bold text-pink-600">T-Minus 1H</div>
+            <div className="flex-1 text-gray-700 dark:text-gray-300 font-medium">Mute Telegram. Start the Voice Chat (AMA). Play hype music. Reassure the community.</div>
         </div>
-        <div className="flex gap-4">
-            <div className="w-24 font-mono font-bold text-pink-600">T-Minus 10m</div>
-            <div className="flex-1 text-gray-700 dark:text-gray-300">Share the official Contract Address (CA) in a read-only channel. <strong>Verify it on Etherscan/Solscan</strong> so the green checkmark appears.</div>
+        <div className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+            <div className="w-24 shrink-0 font-mono font-bold text-pink-600">T-Minus 10m</div>
+            <div className="flex-1 text-gray-700 dark:text-gray-300 font-medium">Share the official Contract Address (CA) in a read-only channel. <strong>Verify it on Etherscan/Solscan</strong> so the green checkmark appears.</div>
         </div>
-        <div className="flex gap-4">
-            <div className="w-24 font-mono font-bold text-red-600">T-Zero</div>
-            <div className="flex-1 text-gray-700 dark:text-gray-300"><strong>Add Liquidity.</strong> Enable Trading (call the `openTrading` function). Lock the LP tokens immediately via PinkSale/Unicrypt and post the link.</div>
+        <div className="flex items-start gap-4 p-4 rounded-lg bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30">
+            <div className="w-24 shrink-0 font-mono font-bold text-red-600">T-Zero</div>
+            <div className="flex-1 text-gray-800 dark:text-red-200 font-bold"><strong>Add Liquidity.</strong> Enable Trading (call the `openTrading` function). Lock the LP tokens immediately via PinkSale/Unicrypt and post the link.</div>
         </div>
-        <div className="flex gap-4">
-            <div className="w-24 font-mono font-bold text-green-600">T-Plus 5m</div>
-            <div className="flex-1 text-gray-700 dark:text-gray-300">First marketing wave. Tweet "WE ARE LIVE". Influencers post their calls. DexScreener update.</div>
+        <div className="flex items-start gap-4 p-4 rounded-lg bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/30">
+            <div className="w-24 shrink-0 font-mono font-bold text-green-600">T-Plus 5m</div>
+            <div className="flex-1 text-gray-800 dark:text-green-200 font-bold">First marketing wave. Tweet "WE ARE LIVE". Influencers post their calls. DexScreener update.</div>
         </div>
       </div>
 
@@ -240,7 +239,7 @@ modifier antiBot(address from) {
         You must climb the ladder. Exchanges want Volume, not tech.
       </p>
       
-      <ol className="list-decimal pl-6 space-y-4 text-gray-700 dark:text-gray-300 mt-4">
+      <ol className="list-decimal pl-6 space-y-4 text-gray-700 dark:text-gray-300 mt-4 font-medium">
         <li>
             <strong>DEX Only (Day 1-30):</strong> Focus on Uniswap/Raydium. Build organic volume ($100k+ daily). Get listed on CoinGecko (CG) and CoinMarketCap (CMC). This is the minimum requirement.
         </li>
