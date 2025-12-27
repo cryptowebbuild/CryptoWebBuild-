@@ -22,11 +22,18 @@ const AutoGitHub: React.FC = () => {
         title="Serverless React App Case Study | AutoGit Deployer"
         description="How I built a client-side tool to deploy static sites to GitHub Pages directly from the browser using React and the GitHub API."
         keywords={['React App Case Study', 'Client-Side DevOps', 'GitHub API Integration', 'Serverless Web App']}
+        schema={jsonLd}
       />
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
-      </script>
+
       <div className="max-w-4xl mx-auto animate-slide-up">
+        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+            <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>
+            <span>/</span>
+            <span className="text-gray-900 dark:text-gray-300 font-medium">AutoGit</span>
+        </nav>
+
         <div className="inline-block px-3 py-1 mb-6 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-300 text-xs font-bold uppercase tracking-wider shadow-sm">
           Case Study
         </div>

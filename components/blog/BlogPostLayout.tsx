@@ -77,14 +77,21 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const updateScrollProgress = () => {
-      const currentScroll = window.scrollY;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollHeight) {
-        setScrollProgress((currentScroll / scrollHeight) * 100);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScroll = window.scrollY;
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (scrollHeight) {
+            setScrollProgress((currentScroll / scrollHeight) * 100);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener("scroll", updateScrollProgress);
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollProgress);
   }, []);
 
@@ -111,8 +118,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
       <header className="relative pt-32 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-            <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob" />
-            <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000" />
+            <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob will-change-transform" />
+            <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-blue-500/10 blur-[100px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000 will-change-transform" />
         </div>
 
         <div className="container mx-auto max-w-4xl relative z-10 text-center">
@@ -135,7 +142,14 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
 
             <div className="flex flex-wrap items-center justify-center gap-6 text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex items-center gap-2">
-                    <img src="/hero-avatar.webp" alt="Sagor Ahamed" className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 object-cover" />
+                    <img
+                      src="/hero-avatar.webp"
+                      alt="Sagor Ahamed"
+                      className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 object-cover"
+                      width={32}
+                      height={32}
+                      loading="lazy"
+                    />
                     <span className="text-slate-900 dark:text-slate-200 font-bold">Sagor Ahamed</span>
                 </div>
                 <span className="opacity-30">•</span>
