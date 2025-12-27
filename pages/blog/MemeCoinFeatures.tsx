@@ -251,4 +251,4 @@ const CopyAddress = ({ address }) => {
   );
 };
 
-export default MemeCoinFeatures; 
+export default MemeCoinFeatures;
