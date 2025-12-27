@@ -64,33 +64,40 @@ const StaticVsDynamic: React.FC = () => {
         To understand the security risk, you need to understand how the servers work.
       </p>
 
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The WordPress Way (Dynamic Processing)</h3>
-      <p>
-        When a user visits a WordPress site, a complex chain reaction occurs:
-      </p>
-      <ol className="list-decimal pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li>The request hits the server (Apache/Nginx).</li>
-        <li>The server executes PHP code.</li>
-        <li>The PHP code queries a MySQL Database (to get the content).</li>
-        <li>The server stitches the HTML together on-the-fly.</li>
-        <li>The server sends the page to the user.</li>
-      </ol>
-      <p>
-        <strong>The Risk:</strong> Every single step in this chain is an attack vector. If there is a bug in PHP, a vulnerability in the Database, or a flaw in a Plugin, the hacker gets in. It is a "Live Target".
-      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+        {/* Dynamic Card */}
+        <div className="p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl relative">
+            <div className="absolute top-0 right-0 bg-red-500 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">DANGEROUS</div>
+            <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-4">WordPress (Dynamic)</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Every user visit triggers a complex chain:</p>
+            <ol className="list-decimal pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Request hits Server (Apache/Nginx).</li>
+                <li>Server executes PHP code.</li>
+                <li>PHP queries MySQL Database.</li>
+                <li>Server builds HTML on-the-fly.</li>
+                <li>Server sends page to user.</li>
+            </ol>
+            <p className="mt-4 text-xs font-bold text-red-600 dark:text-red-400 uppercase">Risk: 5 Points of Failure</p>
+        </div>
 
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The Static Way (React/Vite/Next.js)</h3>
+        {/* Static Card */}
+        <div className="p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl relative">
+            <div className="absolute top-0 right-0 bg-green-500 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">SECURE</div>
+            <h3 className="text-xl font-bold text-green-700 dark:text-green-400 mb-4">React/Static (Modern)</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Work is done <em>before</em> the user arrives:</p>
+            <ol className="list-decimal pl-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>Developer writes Code.</li>
+                <li>Build System creates HTML/CSS/JS.</li>
+                <li>Files uploaded to CDN (Cloudflare).</li>
+                <li>CDN hands file to user.</li>
+                <li><span className="opacity-50 line-through">No Database. No Server logic.</span></li>
+            </ol>
+            <p className="mt-4 text-xs font-bold text-green-600 dark:text-green-400 uppercase">Risk: 0 Points of Failure</p>
+        </div>
+      </div>
+
       <p>
-        When we build a Static Site, the process is different. We do the work <em>before</em> the user arrives.
-      </p>
-      <ol className="list-decimal pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li>Developer writes code.</li>
-        <li>Build System compiles the code into static HTML, CSS, and JS files.</li>
-        <li>These files are uploaded to a Global CDN (Content Delivery Network).</li>
-        <li>When a user visits, the CDN simply hands them the file.</li>
-      </ol>
-      <p>
-        <strong>The Security:</strong> There is no database to hack. There is no PHP running. There is no server to breach. You cannot hack a static HTML file any more than you can hack a PDF document. It is <strong>Read-Only</strong> infrastructure.
+        <strong>The Security Reality:</strong> There is no database to hack. There is no PHP running. There is no server to breach. You cannot hack a static HTML file any more than you can hack a PDF document. It is <strong>Read-Only</strong> infrastructure.
       </p>
 
       {/* --- CHAPTER 2: SECURITY VULNERABILITIES --- */}
@@ -99,16 +106,16 @@ const StaticVsDynamic: React.FC = () => {
         "But I keep my WordPress updated!" you say. It doesn't matter.
       </p>
 
-      <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 my-8 rounded-r-lg">
-        <h4 className="text-red-800 dark:text-red-200 font-bold uppercase tracking-wide text-sm">The "Plugin" Trap</h4>
-        <p className="text-gray-700 dark:text-gray-300 mt-2">
-            The average WordPress site has 20-30 plugins (SEO, Forms, caching, sliders). These plugins are written by third-party developers.
+      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-8 rounded-r-xl shadow-sm">
+        <h4 className="text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm flex items-center gap-2">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            The "Plugin" Trap
+        </h4>
+        <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm leading-relaxed">
+            The average WordPress site has 20-30 plugins (SEO, Forms, caching). These are potential backdoors. In 2025, hackers bought popular plugins just to push malicious updates.
         </p>
-        <p className="text-gray-700 dark:text-gray-300 mt-2">
-            In 2025, a common attack vector was buying popular plugins. A hacker organization would offer a plugin developer $50,000 for their plugin. The developer sells. The hacker pushes an "update" to the plugin that contains a backdoor. 
-        </p>
-        <p className="mt-4 font-bold text-red-600 dark:text-red-400">
-            Instantly, 100,000 websites are compromised. You didn't do anything wrong, but your site is now serving malware.
+        <p className="mt-3 font-bold text-red-600 dark:text-red-400 text-sm">
+            Result: 100,000 websites compromised instantly. You didn't do anything wrong, but your site is now serving malware.
         </p>
       </div>
 
@@ -119,104 +126,100 @@ const StaticVsDynamic: React.FC = () => {
       {/* --- CHAPTER 3: SCALABILITY --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Chapter 3: The "Elon Musk" Stress Test</h2>
       <p>
-        Crypto is viral. It is not slow growth; it is explosive.
-      </p>
-      <p>
-        If Elon Musk tweets a meme related to your token, or if Binance lists you, you might get <strong>100,000 visitors in 5 minutes</strong>.
+        Crypto is viral. It is not slow growth; it is explosive. If Elon Musk tweets a meme related to your token, you might get <strong>100,000 visitors in 5 minutes</strong>.
       </p>
 
-      <h3 className="text-xl font-bold mt-4 text-gray-800 dark:text-gray-100">Scenario A: WordPress</h3>
-      <p>
-        The first 1,000 users hit the site. The PHP workers get overloaded. The MySQL database locks up because it can't handle the read/write requests. The server CPU hits 100%.
-      </p>
-      <p>
-        <strong>Result:</strong> "Error 500: Database Connection Failed". Your site is down during the most important moment of your project's life. The chart dumps because people think you rug-pulled.
-      </p>
-
-      <h3 className="text-xl font-bold mt-4 text-gray-800 dark:text-gray-100">Scenario B: Static Site (Our Stack)</h3>
-      <p>
-        The files are hosted on Cloudflare's Edge Network (servers in 250+ cities). When 100,000 people visit, the traffic doesn't hit one server; it is distributed to the server closest to each user.
-      </p>
-      <p>
-        <strong>Result:</strong> The site loads in 0.1 seconds for everyone. No crash. No database limits. The chart pumps.
-      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="border border-red-200 dark:border-red-900/30 rounded-xl p-6 bg-white dark:bg-[#111]">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-2">Scenario A: WordPress</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">The PHP workers get overloaded. The MySQL database locks up. CPU hits 100%.</p>
+            <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 rounded text-red-700 dark:text-red-400 text-sm font-mono font-bold">
+                Error 500: Database Connection Failed
+            </div>
+            <p className="mt-2 text-xs text-red-500">Result: Chart dumps. Users panic.</p>
+        </div>
+        <div className="border border-green-200 dark:border-green-900/30 rounded-xl p-6 bg-white dark:bg-[#111]">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-2">Scenario B: Static Site</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Traffic hits Cloudflare's Edge Network (250+ locations). Files are cached globally.</p>
+            <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/20 rounded text-green-700 dark:text-green-400 text-sm font-mono font-bold">
+                Status 200: OK (0.1s Load Time)
+            </div>
+            <p className="mt-2 text-xs text-green-500">Result: Chart pumps. Trust maintained.</p>
+        </div>
+      </div>
 
       {/* --- CHAPTER 4: SPEED & SEO --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Chapter 4: Speed is Trust (Core Web Vitals)</h2>
       <p>
         In Crypto, users are paranoid. A slow website creates subconscious anxiety.
+        <br/>
+        <em>"Is this a phishing site? Why is it taking so long?"</em>
       </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li><strong>Laggy Animations:</strong> "Their code is bad. The smart contract is probably bad too."</li>
-        <li><strong>Slow Loading:</strong> "Is this a phishing site? Why is it taking so long?"</li>
-      </ul>
+
+      <div className="bg-[#0f172a] rounded-xl overflow-hidden border border-gray-700 shadow-2xl relative my-8">
+        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">BENCHMARK</div>
+        <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm md:text-base text-gray-300 font-mono">
+                <thead>
+                    <tr className="bg-gray-800/50 border-b border-gray-700 text-gray-400">
+                        <th className="p-4">Metric</th>
+                        <th className="p-4">WordPress Avg</th>
+                        <th className="p-4 text-green-400">Static (React) Avg</th>
+                    </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-800">
+                    <tr>
+                        <td className="p-4 font-bold text-white">TTFB (Time to First Byte)</td>
+                        <td className="p-4 text-red-400">800ms - 1.5s</td>
+                        <td className="p-4 text-green-400">50ms - 100ms</td>
+                    </tr>
+                    <tr>
+                        <td className="p-4 font-bold text-white">LCP (Loading Speed)</td>
+                        <td className="p-4 text-red-400">2.5s - 4.0s</td>
+                        <td className="p-4 text-green-400">0.8s - 1.2s</td>
+                    </tr>
+                    <tr>
+                        <td className="p-4 font-bold text-white">Security Risk</td>
+                        <td className="p-4 text-red-400">High (SQLi, XSS)</td>
+                        <td className="p-4 text-green-400">Near Zero</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
 
       <p>
         Read our full <Link to="/blog/crypto-seo-guide" className="text-purple-600 font-bold hover:underline">Crypto SEO Guide</Link> to understand why Google hates slow sites.
       </p>
-
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
-        <div className="absolute top-0 right-0 bg-green-600 text-white text-xs px-2 py-1 rounded-bl">Performance Data</div>
-        <table className="w-full text-left text-sm md:text-base text-gray-300 font-mono">
-            <thead>
-                <tr className="border-b border-gray-700">
-                    <th className="p-2">Metric</th>
-                    <th className="p-2">WordPress Avg</th>
-                    <th className="p-2 text-green-400">Static (React) Avg</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td className="p-2">TTFB (Time to First Byte)</td>
-                    <td className="p-2">800ms - 1.5s</td>
-                    <td className="p-2 text-green-400">50ms - 100ms</td>
-                </tr>
-                <tr>
-                    <td className="p-2">LCP (Largest Contentful Paint)</td>
-                    <td className="p-2">2.5s - 4.0s</td>
-                    <td className="p-2 text-green-400">0.8s - 1.2s</td>
-                </tr>
-                <tr>
-                    <td className="p-2">Security Risk</td>
-                    <td className="p-2 text-red-500">High</td>
-                    <td className="p-2 text-green-400">Near Zero</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
 
       <HireUsCTA />
 
       {/* --- CHAPTER 5: COST ANALYSIS --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Chapter 5: The "Backend Kom" Philosophy (Cost Savings)</h2>
       <p>
-        My clients from Bangladesh and India often ask to "keep the backend minimal" ("Backend kom korbo"). This is actually a brilliant engineering strategy.
+        My clients often ask to "keep the backend minimal" ("Backend kom korbo"). This is actually a brilliant engineering strategy.
       </p>
       
-      <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">The Cost of Maintenance</h3>
-      <p>
-        <strong>WordPress Cost:</strong>
-        <br/>
-        - Hosting: $50/mo (for a decent VPS to handle traffic).
-        <br/>
-        - Security Plugin: $200/yr.
-        <br/>
-        - Developer Retainer: $500/mo (to update plugins and fix crashes).
-        <br/>
-        <strong>Total: ~$1,000 / year minimum.</strong>
-      </p>
-
-      <p>
-        <strong>Static Site Cost:</strong>
-        <br/>
-        - Hosting (Vercel/Netlify): Free (Generous free tier) or $20/mo for Pro.
-        <br/>
-        - Security: Included (handled by the platform).
-        <br/>
-        - Maintenance: $0. Code doesn't "rot". It works forever.
-        <br/>
-        <strong>Total: ~$0 - $240 / year.</strong>
-      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
+        <div className="bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4">WordPress Maintenance</h4>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                <li>• Hosting: $50/mo (VPS)</li>
+                <li>• Security Plugins: $200/yr</li>
+                <li>• Dev Retainer: $500/mo (Updates)</li>
+            </ul>
+            <p className="mt-4 font-bold text-red-600">Total: ~$1,000+ / year</p>
+        </div>
+        <div className="bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+            <h4 className="font-bold text-gray-900 dark:text-white mb-4">Static Site Maintenance</h4>
+            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                <li>• Hosting (Vercel): $20/mo or Free</li>
+                <li>• Security: Included</li>
+                <li>• Updates: Code doesn't "rot"</li>
+            </ul>
+            <p className="mt-4 font-bold text-green-600">Total: ~$0 - $240 / year</p>
+        </div>
+      </div>
 
       <p>
         By investing in a custom build upfront (see <Link to="/blog/crypto-website-cost" className="text-purple-600 font-bold hover:underline">Development Costs</Link>), you save thousands in maintenance headaches later.
@@ -225,19 +228,17 @@ const StaticVsDynamic: React.FC = () => {
       {/* --- CHAPTER 6: WHEN TO USE DYNAMIC? --- */}
       <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">Chapter 6: When Do You Actually Need a Backend?</h2>
       <p>
-        "Static" doesn't mean "Not Interactive". A static React site can still be highly dynamic for the user.
+        "Static" doesn't mean "Not Interactive". A static React site can still be highly dynamic for the user. Your site is static, but it talks to APIs.
       </p>
-      <p>
-        Your site is static, but it talks to APIs.
-      </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+      
+      <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300 mt-4">
         <li><strong>Smart Contract Data:</strong> Read directly from the blockchain (RPC nodes) using Wagmi/Ethers.js. No backend needed.</li>
         <li><strong>Price Data:</strong> Fetch from Coingecko API. No backend needed.</li>
         <li><strong>Forms/Email:</strong> Use a service like Web3Forms or EmailJS. No backend needed.</li>
       </ul>
 
-      <p>
-        You <strong>ONLY</strong> need a custom backend (Node.js/Python) if you are storing private user data off-chain (like a Web2 login system) or doing complex indexing that The Graph cannot handle. For 99% of meme coins and presales, a Static Site is all you need.
+      <p className="mt-4">
+        You <strong>ONLY</strong> need a custom backend (Node.js/Python) if you are storing private user data off-chain (like a Web2 login system) or doing complex indexing. For 99% of meme coins and presales, a Static Site is all you need.
       </p>
 
       {/* --- CONCLUSION --- */}
