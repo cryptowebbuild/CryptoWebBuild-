@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../SEO';
 import OptimizedImage from '../OptimizedImage';
@@ -10,9 +10,9 @@ interface BlogPostLayoutProps {
   description: string;
   publishedTime: string;
   modifiedTime?: string;
-  image?: string; // Optional now, as we auto-generate it
+  image?: string;
   category: string;
-  readTime?: string; // Optional, we calculate it
+  readTime?: string;
   keywords: string[];
   canonical: string;
   children: React.ReactNode;
@@ -32,23 +32,19 @@ const extractTextFromNode = (node: React.ReactNode): string => {
 
 // --- HELPER: Smart Image Mapper ---
 const getContextualImage = (title: string, category: string, providedImage?: string) => {
-  // If a specific image is provided via props (and isn't the default placeholder), use it.
   if (providedImage && !providedImage.includes('hero-avatar')) return providedImage;
-
   const t = title.toLowerCase();
   const c = category.toLowerCase();
 
-  // Logic to map topics to Unsplash images
   if (t.includes('solana') || t.includes('meme') || c.includes('web3') || t.includes('crypto')) {
-    return "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80"; // Crypto/Blockchain
+    return "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80";
   }
   if (t.includes('marketing') || t.includes('growth') || t.includes('seo') || t.includes('traffic')) {
-    return "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"; // Analytics/Growth
+    return "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
   }
   if (t.includes('shop') || t.includes('commerce') || c.includes('business') || t.includes('cost')) {
-    return "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=1200&q=80"; // E-commerce/Money
+    return "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=1200&q=80";
   }
-  // Default for Dev/Coding/Security
   return "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"; 
 };
 
@@ -67,9 +63,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   // 1. Calculate Real Read Time
   const calculatedReadTime = useMemo(() => {
     const text = extractTextFromNode(children);
-    // Simple word count approximation
     const words = text.split(/\s+/).length;
-    const minutes = Math.ceil(words / 200); // Average reading speed
+    const minutes = Math.ceil(words / 200); 
     return `${minutes} min read`; 
   }, [children]);
 
@@ -78,8 +73,23 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
     getContextualImage(title, category, image), 
   [title, category, image]);
 
+  // 3. Scroll Progress Logic
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const currentScroll = window.scrollY;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight) {
+        setScrollProgress((currentScroll / scrollHeight) * 100);
+      }
+    };
+    window.addEventListener("scroll", updateScrollProgress);
+    return () => window.removeEventListener("scroll", updateScrollProgress);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-[#020617] transition-colors duration-300">
       <SEO
         title={title}
         description={description}
@@ -87,14 +97,17 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         canonical={canonical}
         type="article"
         publishedTime={publishedTime}
-        image={finalImage} // Injecting the smart image into Meta Tags
+        image={finalImage} 
         author="Sagor Ahamed"
       />
 
-      {/* --- Progress Bar (Optional Placeholder) --- */}
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-gradient-to-r from-purple-500 to-pink-500 origin-left scale-x-0" id="scroll-progress" />
+      {/* --- Progress Bar --- */}
+      <div 
+        className="fixed top-0 left-0 h-1 z-[60] bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-100 ease-out" 
+        style={{ width: `${scrollProgress}%` }}
+      />
 
-      {/* --- Hero Section (Glassmorphism) --- */}
+      {/* --- Hero Section --- */}
       <header className="relative pt-32 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
@@ -103,9 +116,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         </div>
 
         <div className="container mx-auto max-w-4xl relative z-10 text-center">
-            {/* Back to Library Button */}
+            {/* Back Button */}
             <div className="mb-8 flex justify-center animate-fade-in-up">
-                <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-md text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-white hover:text-purple-600 dark:hover:bg-white/10 dark:hover:text-purple-400 transition-all shadow-sm hover:shadow-md group">
+                <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-md text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-white hover:text-purple-600 dark:hover:bg-white/10 dark:hover:text-purple-400 transition-all shadow-sm hover:shadow-md group">
                     <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Back to Library
                 </Link>
@@ -125,9 +138,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                     <img src="/hero-avatar.webp" alt="Sagor Ahamed" className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 object-cover" />
                     <span className="text-slate-900 dark:text-slate-200 font-bold">Sagor Ahamed</span>
                 </div>
-                <span className="opacity-50">•</span>
+                <span className="opacity-30">•</span>
                 <span>{publishedTime}</span>
-                <span className="opacity-50">•</span>
+                <span className="opacity-30">•</span>
                 <span className="flex items-center gap-1.5 text-purple-600 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-900/10 px-3 py-1 rounded-full text-xs uppercase tracking-wide">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     {calculatedReadTime}
@@ -136,25 +149,24 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         </div>
       </header>
 
-      {/* --- Main Content Layout --- */}
+      {/* --- Main Content --- */}
       <main className="container mx-auto px-4 md:px-6 pb-24 max-w-7xl">
 
-        {/* Featured Image (Auto-Contextual) */}
+        {/* Featured Image */}
         <div className="max-w-5xl mx-auto mb-16 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl shadow-purple-900/10 border-[6px] border-white dark:border-[#1e293b] relative aspect-[16/9] bg-gray-200 dark:bg-gray-800 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <OptimizedImage
                 src={finalImage}
                 alt={title}
-                fill={true} // Assumes OptimizedImage handles layout="fill" style
-                priority={true} // Google LCP Boost
-                className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-1000 ease-out"
+                fill={true}
+                priority={true}
+                className="object-cover w-full h-full"
             />
-            {/* Image Overlay Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start relative">
 
-            {/* Sidebar (Sticky) */}
+            {/* Sidebar (TOC) */}
             <aside className="hidden lg:block w-72 shrink-0 sticky top-32 h-fit max-h-[calc(100vh-150px)] overflow-y-auto custom-scrollbar pr-4">
                 <TableOfContents />
             </aside>
@@ -162,7 +174,6 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
             {/* Article Body */}
             <article className="flex-1 min-w-0">
 
-                {/* Content Typography Engine */}
                 <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-none
                     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-32
                     prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-slate-900 dark:prose-h2:text-white
