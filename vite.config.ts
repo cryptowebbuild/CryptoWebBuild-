@@ -4,19 +4,21 @@ import viteCompression from 'vite-plugin-compression';
 import fs from 'fs';
 import path from 'path';
 
-// --- PLUGIN: FORCE FIX Cloudflare 404 Error & Directory Check ---
+// --- PLUGIN: Fix Cloudflare 404 & Directory Error ---
 const cloudflareRedirectsPlugin = () => {
   return {
     name: 'cloudflare-redirects',
     closeBundle() {
-      const dist = path.resolve(__dirname, 'dist');
+      const dist = path.resolve('dist'); // Use 'dist' relative to root
       
-      // CRITICAL FIX: Create 'dist' folder if it doesn't exist
+      // CRITICAL FIX: Check if 'dist' exists, if NOT, create it manually
       if (!fs.existsSync(dist)) {
         fs.mkdirSync(dist, { recursive: true });
+        console.log('📁 Created dist directory manually');
       }
 
       const redirectsPath = path.join(dist, '_redirects');
+      // Create the redirects file
       fs.writeFileSync(redirectsPath, '/* /index.html 200');
       console.log('✅ Generated _redirects file for Cloudflare SPA');
     }
