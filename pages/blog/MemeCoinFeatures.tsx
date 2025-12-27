@@ -72,9 +72,16 @@ const MemeCoinFeatures: React.FC = () => {
         Don't just write the address text. Text is hard to select on mobile. Create a massive, specialized component that copies the address to the clipboard and triggers a dopamine-inducing animation (confetti or a sound effect).
       </p>
 
-      <div className="bg-[#1e1e1e] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
-        <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-bl">React Code Snippet</div>
-        <pre className="text-sm font-mono text-gray-300 leading-relaxed">
+      <div className="bg-[#0f172a] rounded-xl overflow-hidden border border-gray-700 shadow-2xl relative my-8">
+        <div className="bg-gray-800/50 px-4 py-2 flex justify-between items-center border-b border-gray-700">
+            <span className="text-xs font-mono text-blue-400">CopyButton.tsx</span>
+            <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+            </div>
+        </div>
+        <pre className="p-6 text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// The Psychology of the "Copy" Button
 const CopyAddress = ({ address }) => {
   const [copied, setCopied] = useState(false);
@@ -82,18 +89,20 @@ const CopyAddress = ({ address }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(address);
     setCopied(true);
-    triggerConfetti(); // Dopamine hit!
+    triggerConfetti(); // Dopamine hit! 🎊
     
-    // Reset after 2 seconds so they can do it again
+    // Reset after 2 seconds
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <button 
       onClick={handleCopy}
-      className="bg-green-500 hover:bg-green-400 text-black font-black py-4 px-8 rounded-xl w-full flex justify-between items-center transition-all transform active:scale-95"
+      className="bg-green-500 hover:bg-green-400 text-black font-black 
+                 py-4 px-8 rounded-xl w-full flex justify-between items-center 
+                 transition-all transform active:scale-95 shadow-lg shadow-green-500/20"
     >
-      <span className="truncate mr-4">{address}</span>
+      <span className="truncate mr-4 font-mono">{address}</span>
       <span>{copied ? "COPIED! 🚀" : "COPY CA"}</span>
     </button>
   );
@@ -113,11 +122,21 @@ const CopyAddress = ({ address }) => {
       <p>
         Suddenly, 50,000 people try to load your website in 60 seconds.
       </p>
-      <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-        <li><strong>WordPress:</strong> Crashes immediately. Database connection error.</li>
-        <li><strong>Wix/Squarespace:</strong> Loads slowly. Users bounce.</li>
-        <li><strong>Custom React (Static):</strong> Stays up. Loads instantly.</li>
-      </ul>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div className="p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl">
+            <h4 className="font-bold text-red-700 dark:text-red-400 mb-2">WordPress</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Crashes immediately. Database connection error. Users panic sell.</p>
+        </div>
+        <div className="p-6 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-900/30 rounded-xl">
+            <h4 className="font-bold text-yellow-700 dark:text-yellow-400 mb-2">Wix / Carrd</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Loads slowly. Looks amateur. Bandwidth limits apply.</p>
+        </div>
+        <div className="p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl">
+            <h4 className="font-bold text-green-700 dark:text-green-400 mb-2">Next.js (Static)</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Stays up. Loads instantly via Cloudflare Edge. Zero database dependencies.</p>
+        </div>
+      </div>
 
       <p>
         We build meme coin sites using <Link to="/blog/static-vs-dynamic-website" className="text-purple-600 font-bold hover:underline">Next.js Static Generation (SSG)</Link> deployed on Cloudflare Edge. This means your website is just HTML/CSS files replicated on servers in 200+ cities worldwide. It is physically impossible to crash it with traffic.
@@ -136,13 +155,15 @@ const CopyAddress = ({ address }) => {
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 rounded-xl">
-            <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2">Live Chart Widget</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Embed the DexScreener or Birdeye chart directly on the homepage. Don't make them leave your site to check the price. If they leave, they might see a competitor's token on the sidebar.</p>
+        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-blue-500 transition-colors group">
+            <div className="text-3xl mb-4">📈</div>
+            <h4 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500">Live Chart Widget</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Embed the DexScreener or Birdeye chart directly on the homepage. Don't make them leave your site to check the price. If they leave, they might see a competitor.</p>
         </div>
-        <div className="p-6 bg-pink-50 dark:bg-pink-900/10 border border-pink-200 rounded-xl">
-            <h4 className="font-bold text-pink-800 dark:text-pink-400 mb-2">The "Wall of Love"</h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300">Use a Twitter API integration to show a scrolling wall of real people tweeting about your token. This is "Social Proof" on steroids. It shows visitors: "Real people are buying this."</p>
+        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-pink-500 transition-colors group">
+            <div className="text-3xl mb-4">❤️</div>
+            <h4 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-pink-500">The "Wall of Love"</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Use a Twitter API integration to show a scrolling wall of real people tweeting about your token. This is "Social Proof" on steroids.</p>
         </div>
       </div>
 
@@ -159,15 +180,14 @@ const CopyAddress = ({ address }) => {
       <p>
         Build a simple tool where users can upload their own photo, and your website automatically overlays your token's mascot on top of it.
       </p>
-      <p>
-        <strong>Why it works:</strong>
-        <br/>
-        1. User creates meme.
-        <br/>
-        2. User posts meme on Twitter (Free Marketing).
-        <br/>
-        3. User feels "invested" in the brand.
-      </p>
+      <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-lg border-l-4 border-purple-500 my-6">
+        <p className="font-bold text-purple-900 dark:text-purple-200 mb-2">Why it works:</p>
+        <ol className="list-decimal pl-6 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+            <li>User creates meme.</li>
+            <li>User posts meme on Twitter (Free Marketing).</li>
+            <li>User feels "invested" in the brand.</li>
+        </ol>
+      </div>
       <p>
         This turns passive holders into active marketers. Read more about <Link to="/blog/crypto-marketing-guide" className="text-purple-600 font-bold hover:underline">Community Engineering here</Link>.
       </p>
@@ -181,29 +201,23 @@ const CopyAddress = ({ address }) => {
         Your website must scream safety visually. Don't bury this in the footer. Put it in the hero section.
       </p>
 
-      <ul className="space-y-4 mt-6">
-        <li className="flex items-start gap-3">
-            <span className="text-2xl">🔒</span>
-            <div>
-                <strong className="text-gray-900 dark:text-white">Liquidity Lock Countdown:</strong>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">A live countdown timer showing how long liquidity is locked. Link directly to the PinkSale/Unicrypt proof.</p>
-            </div>
-        </li>
-        <li className="flex items-start gap-3">
-            <span className="text-2xl">📝</span>
-            <div>
-                <strong className="text-gray-900 dark:text-white">Audit Badge:</strong>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">"Audited by [Firm Name]". Even a basic automated audit from a tool like TokenSniffer is better than nothing.</p>
-            </div>
-        </li>
-        <li className="flex items-start gap-3">
-            <span className="text-2xl">🔥</span>
-            <div>
-                <strong className="text-gray-900 dark:text-white">Renounced Ownership:</strong>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">A big green checkmark saying "Contract Renounced". This tells them you cannot print more tokens or change the tax.</p>
-            </div>
-        </li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+            <span className="text-4xl mb-4">🔒</span>
+            <strong className="text-gray-900 dark:text-white mb-2">Liquidity Locked</strong>
+            <p className="text-xs text-gray-500">Live countdown linked to PinkSale/Unicrypt.</p>
+        </div>
+        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+            <span className="text-4xl mb-4">📝</span>
+            <strong className="text-gray-900 dark:text-white mb-2">Audited</strong>
+            <p className="text-xs text-gray-500">Badge from TokenSniffer or CertiK.</p>
+        </div>
+        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+            <span className="text-4xl mb-4">🔥</span>
+            <strong className="text-gray-900 dark:text-white mb-2">Renounced</strong>
+            <p className="text-xs text-gray-500">Ownership renounced. No mint function.</p>
+        </div>
+      </div>
 
       <HireUsCTA />
 
