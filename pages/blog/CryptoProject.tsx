@@ -81,7 +81,7 @@ const CryptoProject: React.FC = () => {
         In 2026, retail investors have been burned too many times by "VC dump fests". The trend has shifted heavily towards the <strong>Fair Launch</strong> model.
       </p>
 
-      <div className="overflow-x-auto my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+      <div className="overflow-x-auto w-full max-w-full my-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
         <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
             <tr className="bg-gray-50 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
@@ -139,7 +139,7 @@ const CryptoProject: React.FC = () => {
         You <strong>MUST</strong> implement protection measures in your Solidity/Rust contract.
       </p>
 
-      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-xl relative">
+      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto w-full max-w-full my-8 border border-gray-700 shadow-xl relative">
         <div className="absolute top-0 right-0 bg-red-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">Solidity (Hardhat)</div>
         <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// Anti-Sniper: Max Transaction Limit

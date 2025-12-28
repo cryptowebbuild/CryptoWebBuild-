@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HireUsCTA: React.FC = () => {
   return (
-    <div className="my-20 relative group">
+    <div className="my-20 w-full max-w-full relative group">
       {/* --- Glow Effects Behind the Card (Adaptive) --- */}
       <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[40px] blur opacity-20 dark:opacity-40 group-hover:opacity-40 dark:group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
       

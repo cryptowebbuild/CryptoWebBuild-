@@ -190,9 +190,9 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
             </aside>
 
             {/* Article Body */}
-            <article className="flex-1 min-w-0">
+            <article className="flex-1 min-w-0 w-full overflow-hidden break-words">
 
-                <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-none
+                <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-full
                     prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:scroll-mt-32
                     prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:text-slate-900 dark:prose-h2:text-white
                     prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-slate-800 dark:prose-h3:text-slate-100
