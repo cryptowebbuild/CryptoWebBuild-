@@ -20,7 +20,7 @@ const CryptoSEO: React.FC = () => {
       publishedTime="2026-02-15"
       category="Growth Strategy"
       // Note: Layout calculates readTime automatically (~25-30 min read)
-      image="https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&w=1200&q=80" // Analytics/Graph Context
+      image="https://images.unsplash.com/photo-1652337036505-6f5052a69b70" // Analytics/Graph Context
       keywords={[
         'crypto seo agency', 
         'programmatic seo crypto', 

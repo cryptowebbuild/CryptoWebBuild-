@@ -20,7 +20,7 @@ const MemeCoinFeatures: React.FC = () => {
       publishedTime="2026-02-20"
       category="Design & UX"
       // Note: Layout calculates readTime automatically (~25-30 min read)
-      image="https://images.unsplash.com/photo-1622630998477-20aa696c4c5c?auto=format&fit=crop&w=1200&q=80" // Crypto/Meme Context
+      image="https://images.unsplash.com/photo-1636587224433-3cd253788c40" // Crypto/Meme Context
       keywords={[
         'meme coin website design', 
         'crypto landing page features', 
