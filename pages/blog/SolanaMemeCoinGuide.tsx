@@ -13,6 +13,21 @@ const SolanaMemeCoinGuide: React.FC = () => {
     "Anti-Sniper Launch: Using Jito Bundles to deploy liquidity + buy first in the same block, beating the bots."
   ];
 
+  const faqData = [
+    {
+      question: "How much SOL do I need to launch?",
+      answer: "Minimum: ~0.5 SOL for deployment fees. Recommended: 50-100 SOL for initial liquidity. If liquidity is too low ($1k), snipers will eat you. $20k+ liquidity is a safe start."
+    },
+    {
+      question: "What is 'Freeze Authority'?",
+      answer: "Freeze authority allows the dev to stop anyone from trading the token. You MUST revoke this immediately after launch. If you don't, tools like RugCheck will flag you as 'Danger'."
+    },
+    {
+      question: "Can I update my token metadata later?",
+      answer: "Yes, if your update authority is mutable. However, investors prefer 'Immutable' metadata (revoked update authority) as it guarantees you won't change the supply or ticker later."
+    }
+  ];
+
   return (
     <BlogPostLayout
       title="How to Launch a Solana Meme Coin in 2026: The Advanced Technical Guide"
@@ -30,6 +45,7 @@ const SolanaMemeCoinGuide: React.FC = () => {
         'meme coin launch strategy'
       ]}
       canonical="/blog/solana-meme-coin-guide"
+      faq={faqData}
     >
       <KeyTakeaways points={takeaways} />
 
@@ -228,28 +244,18 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
 
       <HireUsCTA />
 
-      {/* --- FAQ SCHEMA SECTION --- */}
+      {/* --- FAQ SECTION --- */}
       <div className="mt-20 pt-10 border-t border-gray-200 dark:border-white/10">
         <h3 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Frequently Asked Questions</h3>
         <div className="space-y-6">
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">How much SOL do I need to launch?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">Minimum: ~0.5 SOL for deployment fees. Recommended: 50-100 SOL for initial liquidity. If liquidity is too low ($1k), snipers will eat you. $20k+ liquidity is a safe start.</p>
+            {faqData.map((item, index) => (
+                <div key={index}>
+                    <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">{item.question}</h4>
+                    <div>
+                        <p className="text-gray-600 dark:text-gray-400">{item.answer}</p>
+                    </div>
                 </div>
-            </div>
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">What is "Freeze Authority"?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">Freeze authority allows the dev to stop anyone from trading the token. You MUST revoke this immediately after launch. If you don't, tools like RugCheck will flag you as "Danger".</p>
-                </div>
-            </div>
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">Can I update my token metadata later?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">Yes, if your update authority is mutable. However, investors prefer "Immutable" metadata (revoked update authority) as it guarantees you won't change the supply or ticker later.</p>
-                </div>
-            </div>
+            ))}
         </div>
       </div>
 

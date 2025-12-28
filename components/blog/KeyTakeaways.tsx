@@ -6,7 +6,7 @@ interface KeyTakeawaysProps {
 
 const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ points }) => {
   return (
-    <div className="my-12 p-8 rounded-[32px] bg-gradient-to-br from-purple-50/50 via-white to-purple-50/50 dark:from-[#1e293b] dark:via-[#0f172a] dark:to-[#1e293b] border border-purple-100 dark:border-purple-900/30 shadow-xl shadow-purple-900/5 relative overflow-hidden group">
+    <div className="my-12 p-6 md:p-8 rounded-[32px] bg-gradient-to-br from-purple-50/50 via-white to-purple-50/50 dark:from-[#1e293b] dark:via-[#0f172a] dark:to-[#1e293b] border border-purple-100 dark:border-purple-900/30 shadow-xl shadow-purple-900/5 relative overflow-hidden group">
 
       {/* --- Background Glow --- */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-purple-500/20 transition-colors duration-700" />

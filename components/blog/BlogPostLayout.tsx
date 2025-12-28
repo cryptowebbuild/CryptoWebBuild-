@@ -15,6 +15,7 @@ interface BlogPostLayoutProps {
   readTime?: string;
   keywords: string[];
   canonical: string;
+  faq?: Array<{ question: string; answer: string }>;
   children: React.ReactNode;
 }
 
@@ -57,6 +58,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   category,
   keywords,
   canonical,
+  faq,
   children
 }) => {
   
@@ -106,6 +108,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         publishedTime={publishedTime}
         image={finalImage} 
         author="Sagor Ahamed"
+        faq={faq}
       />
 
       {/* --- Progress Bar --- */}
@@ -115,7 +118,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
       />
 
       {/* --- Hero Section --- */}
-      <header className="relative pt-32 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
+      <header className="relative pt-24 pb-16 md:pt-48 md:pb-24 px-6 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
             <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob will-change-transform" />

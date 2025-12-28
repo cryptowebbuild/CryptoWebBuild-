@@ -54,9 +54,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
             loading={priority ? "eager" : "lazy"}
             decoding="async"
             className={`
-              transition-all duration-700 ease-out 
+              ${!priority && 'transition-all duration-700 ease-out'}
               ${fill ? 'absolute inset-0 h-full w-full object-cover' : 'w-full h-auto'}
-              ${isLoaded ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-xl'}
+              ${isLoaded || priority ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-105 blur-xl'}
             `}
             onLoad={() => setIsLoaded(true)}
             {...props}

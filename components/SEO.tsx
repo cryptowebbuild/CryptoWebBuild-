@@ -13,6 +13,7 @@ interface SEOProps {
   noIndex?: boolean;
   schema?: Record<string, any>;
   schemaType?: 'Person' | 'Organization' | 'Service' | 'FAQPage' | 'Article';
+  faq?: Array<{ question: string; answer: string }>;
 }
 
 const SEO: React.FC<SEOProps> = ({ 
@@ -26,7 +27,8 @@ const SEO: React.FC<SEOProps> = ({
   author = 'Sagor Ahamed',
   noIndex = false,
   schema,
-  schemaType = 'Person'
+  schemaType = 'Person',
+  faq
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
   
@@ -124,8 +126,15 @@ const SEO: React.FC<SEOProps> = ({
       };
     }
 
+    // --- 6. Schema Generation (Decoupled Logic) ---
+    // We generate potential schemas independently to allow combination (e.g. Article + FAQ)
+
+    let articleSchema: Record<string, any> | null = null;
+    let faqSchema: Record<string, any> | null = null;
+
+    // A. Article Schema Logic
     if (schemaType === 'Article' || type === 'article') {
-       return {
+       articleSchema = {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "mainEntityOfPage": {
@@ -138,7 +147,7 @@ const SEO: React.FC<SEOProps> = ({
           "author": {
             "@type": "Person",
             "name": author,
-            "url": "https://cryptowebbuild.com/about" // Link to bio
+            "url": "https://cryptowebbuild.com/about"
           },
           "publisher": {
             "@type": "Organization",
@@ -149,21 +158,36 @@ const SEO: React.FC<SEOProps> = ({
             }
           },
           "datePublished": publishedTime || new Date().toISOString(),
-          "dateModified": publishedTime || new Date().toISOString() // Ideally should be passed separate modified time
+          "dateModified": publishedTime || new Date().toISOString()
        };
     }
 
-    if (schemaType === 'FAQPage') {
-        // NOTE: FAQ items should be passed via the `schema` prop manually if strictly needed,
-        // or we could add a `faq` prop to this component to generate it.
-        // For now, if schemaType is FAQPage, we expect the caller to might have passed `schema`
-        // or we return a base FAQPage (which isn't very useful without Questions).
-        // Best approach: If `schema` is provided, use it. If not, fallback to WebPage.
-        return {
-             ...baseSchema,
-             "@type": "FAQPage"
+    // B. FAQ Schema Logic
+    if (schemaType === 'FAQPage' || (faq && faq.length > 0)) {
+        faqSchema = {
+          ...baseSchema, // Uses base context
+          "@type": "FAQPage",
+          "mainEntity": faq?.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          })) || []
         };
     }
+
+    // --- 7. Return Final Schema Structure ---
+
+    // If both exist, return them as a graph array (Standard for multiple schemas)
+    if (articleSchema && faqSchema) {
+      return [articleSchema, faqSchema];
+    }
+
+    // If only one exists, return it
+    if (articleSchema) return articleSchema;
+    if (faqSchema) return faqSchema;
 
     // Default: Person
     return {
