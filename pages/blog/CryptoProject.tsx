@@ -13,6 +13,21 @@ const CryptoProject: React.FC = () => {
     "CEX Listing Secrets: Tier-1 Exchanges (Binance/Coinbase) do not care about your tech. They care about your Volume and Community. Learn how to negotiate."
   ];
 
+  const faqData = [
+    {
+      question: "How much liquidity should I add at launch?",
+      answer: "A good rule of thumb is 15-20% of your initial market cap estimate. For a meme coin with a $50k Mcap target, $10k liquidity is healthy. Less than $5k liquidity attracts snipers and scares away whales."
+    },
+    {
+      question: "What is 'Renouncing Ownership'?",
+      answer: "Renouncing ownership means the developer gives up administrative control of the smart contract. They can no longer mint new tokens, change tax rates, or blacklist wallets. It is a massive trust signal for investors."
+    },
+    {
+      question: "How do I verify my contract on Etherscan/Solscan?",
+      answer: "Verification publishes your source code so anyone can read it. It is done via the block explorer's API or tools like Hardhat/Foundry. Unverified contracts are automatically flagged as 'High Risk' scams."
+    }
+  ];
+
   return (
     <BlogPostLayout
       title="How to Launch a Crypto Project in 2026: The Ultimate Blueprint (From Idea to Binance)"
@@ -30,6 +45,7 @@ const CryptoProject: React.FC = () => {
         'smart contract deployment guide'
       ]}
       canonical="/blog/crypto-project"
+      faq={faqData}
     >
       <KeyTakeaways points={takeaways} />
 
@@ -276,28 +292,18 @@ modifier antiBot(address from) {
 
       <HireUsCTA />
 
-      {/* --- FAQ SCHEMA SECTION --- */}
+      {/* --- FAQ SECTION --- */}
       <div className="mt-20 pt-10 border-t border-gray-200 dark:border-white/10">
         <h3 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Frequently Asked Questions</h3>
         <div className="space-y-6">
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">How much liquidity should I add at launch?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">A good rule of thumb is 15-20% of your initial market cap estimate. For a meme coin with a $50k Mcap target, $10k liquidity is healthy. Less than $5k liquidity attracts snipers and scares away whales.</p>
+            {faqData.map((item, index) => (
+                <div key={index}>
+                    <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">{item.question}</h4>
+                    <div>
+                        <p className="text-gray-600 dark:text-gray-400">{item.answer}</p>
+                    </div>
                 </div>
-            </div>
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">What is "Renouncing Ownership"?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">Renouncing ownership means the developer gives up administrative control of the smart contract. They can no longer mint new tokens, change tax rates, or blacklist wallets. It is a massive trust signal for investors.</p>
-                </div>
-            </div>
-            <div itemScope itemType="https://schema.org/Question">
-                <h4 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2" itemProp="name">How do I verify my contract on Etherscan/Solscan?</h4>
-                <div itemScope itemType="https://schema.org/Answer">
-                    <p className="text-gray-600 dark:text-gray-400" itemProp="text">Verification publishes your source code so anyone can read it. It is done via the block explorer's API or tools like Hardhat/Foundry. Unverified contracts are automatically flagged as "High Risk" scams.</p>
-                </div>
-            </div>
+            ))}
         </div>
       </div>
 
