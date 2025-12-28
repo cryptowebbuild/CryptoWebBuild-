@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     readTime: '25 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1611974765270-ca12586343bb?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1652337036505-6f5052a69b70',
     keywords: ['Crypto SEO', 'Token Ranking', 'Programmatic SEO']
   },
   {
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 20, 2026',
     readTime: '18 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1622630998477-20aa696c4c5c?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1636587224433-3cd253788c40',
     keywords: ['Meme Coin Features', 'Web Design', 'Conversion Rate']
   },
   {

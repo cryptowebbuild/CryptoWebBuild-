@@ -26,8 +26,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [hasError, setHasError] = useState(false);
 
   // 1. Auto-optimize Unsplash URLs (WebP + Quality 75)
+  const separator = src.includes('?') ? '&' : '?';
   const optimizedSrc = src.includes('images.unsplash.com') && !src.includes('fm=webp')
-    ? `${src}&fm=webp&q=75`
+    ? `${src}${separator}fm=webp&q=75`
     : src;
 
   // 2. CLS FIX: Calculate Aspect Ratio to reserve space before load
