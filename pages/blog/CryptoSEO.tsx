@@ -60,7 +60,7 @@ const CryptoSEO: React.FC = () => {
         If you do not own the top spot for these queries, you are handing your potential investors over to competitors—or worse, to scammers who build phishing sites to drain their wallets.
       </p>
 
-      <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 my-8 rounded-r-lg">
+      <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 md:p-6 my-8 rounded-r-lg">
         <h4 className="text-red-800 dark:text-red-200 font-bold uppercase tracking-wide text-sm">Case Study: The "Invisible" Protocol</h4>
         <p className="text-gray-700 dark:text-gray-300 mt-2">
             In 2025, a DeFi protocol raised $5M from VCs. They had amazing tech (Rust/Solana) but zero SEO. When users Googled their name, the first result was a Reddit thread calling them a "slow rug" because of a delayed airdrop.
@@ -87,7 +87,7 @@ const CryptoSEO: React.FC = () => {
         You need to connect the dots for the AI. You do this through <strong>Schema Markup</strong> and <strong>Consistent N.A.P (Name, Address, Pitch)</strong>.
       </p>
 
-      <div className="bg-[#1e1e1e] p-8 rounded-2xl border border-gray-700 shadow-2xl my-8 relative overflow-hidden">
+      <div className="bg-[#1e1e1e] p-4 md:p-8 rounded-2xl border border-gray-700 shadow-2xl my-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">CHECKLIST</div>
         <h4 className="text-white font-mono mb-6 text-lg tracking-wider border-b border-gray-700 pb-2">THE "ENTITY" VERIFICATION</h4>
         <ul className="space-y-6">
@@ -138,7 +138,7 @@ const CryptoSEO: React.FC = () => {
         <li><em>"How to buy $TOKEN in Nigeria"</em></li>
       </ul>
 
-      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
+      <div className="bg-[#0f172a] p-4 md:p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
         <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">Next.js / React Strategy</div>
         <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`// 1. Define your data source (or fetch from API)
@@ -238,7 +238,7 @@ export default function HowToBuy({ params }) {
         Most crypto sites have zero schema. You can gain a massive advantage by implementing the `FinancialProduct` or `Currency` schema. This allows Google to show your <strong>Price</strong>, <strong>Ticker</strong>, and <strong>Contract Address</strong> directly in the search results (Rich Snippets).
       </p>
 
-      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
+      <div className="bg-[#0f172a] p-4 md:p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 relative shadow-lg">
         <div className="absolute top-0 right-0 bg-yellow-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">JSON-LD Template</div>
         <pre className="text-sm font-mono text-gray-300 leading-relaxed overflow-x-auto custom-scrollbar">
 {`<script type="application/ld+json">

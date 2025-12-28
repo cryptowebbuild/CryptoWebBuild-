@@ -60,9 +60,9 @@ const CryptoMarketingGuide: React.FC = () => {
         Let me tell you a tale of two projects. Both launched on Solana in late 2025.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 my-8">
         {/* Project A */}
-        <div className="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 p-8 rounded-2xl relative overflow-hidden">
+        <div className="bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 p-4 md:p-8 rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-red-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">FAILURE</div>
             <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Project A: "MoonDog"</h3>
             <p className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Strategy: "Influencer Bomb"</p>
@@ -76,7 +76,7 @@ const CryptoMarketingGuide: React.FC = () => {
         </div>
 
         {/* Project B */}
-        <div className="bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 p-8 rounded-2xl relative overflow-hidden">
+        <div className="bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 p-4 md:p-8 rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-green-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">SUCCESS</div>
             <h3 className="text-xl font-bold text-green-700 dark:text-green-400 mb-4">Project B: "BuildFi"</h3>
             <p className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Strategy: "Community Engineering"</p>
@@ -116,7 +116,7 @@ const CryptoMarketingGuide: React.FC = () => {
         You don't just want to rank for your name. You want to rank for the <em>problem</em> you solve.
       </p>
       
-      <div className="bg-[#1e1e1e] p-8 rounded-2xl border border-gray-700 shadow-xl my-8 relative overflow-hidden">
+      <div className="bg-[#1e1e1e] p-4 md:p-8 rounded-2xl border border-gray-700 shadow-xl my-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">BLUEPRINT</div>
         <h4 className="text-white font-mono mb-6 text-lg tracking-wider border-b border-gray-700 pb-2">THE CONTENT LOOP</h4>
         

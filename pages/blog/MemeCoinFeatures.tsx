@@ -123,16 +123,16 @@ const CopyAddress = ({ address }) => {
         Suddenly, 50,000 people try to load your website in 60 seconds.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-        <div className="p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
+        <div className="p-4 md:p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl">
             <h4 className="font-bold text-red-700 dark:text-red-400 mb-2">WordPress</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Crashes immediately. Database connection error. Users panic sell.</p>
         </div>
-        <div className="p-6 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-900/30 rounded-xl">
+        <div className="p-4 md:p-6 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-900/30 rounded-xl">
             <h4 className="font-bold text-yellow-700 dark:text-yellow-400 mb-2">Wix / Carrd</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Loads slowly. Looks amateur. Bandwidth limits apply.</p>
         </div>
-        <div className="p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl">
+        <div className="p-4 md:p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl">
             <h4 className="font-bold text-green-700 dark:text-green-400 mb-2">Next.js (Static)</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Stays up. Loads instantly via Cloudflare Edge. Zero database dependencies.</p>
         </div>
@@ -154,13 +154,13 @@ const CopyAddress = ({ address }) => {
         Static text is boring. You need dynamic feeds.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-blue-500 transition-colors group">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="p-4 md:p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-blue-500 transition-colors group">
             <div className="text-3xl mb-4">📈</div>
             <h4 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500">Live Chart Widget</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Embed the DexScreener or Birdeye chart directly on the homepage. Don't make them leave your site to check the price. If they leave, they might see a competitor.</p>
         </div>
-        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-pink-500 transition-colors group">
+        <div className="p-4 md:p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl shadow-sm hover:border-pink-500 transition-colors group">
             <div className="text-3xl mb-4">❤️</div>
             <h4 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-pink-500">The "Wall of Love"</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Use a Twitter API integration to show a scrolling wall of real people tweeting about your token. This is "Social Proof" on steroids.</p>
@@ -180,7 +180,7 @@ const CopyAddress = ({ address }) => {
       <p>
         Build a simple tool where users can upload their own photo, and your website automatically overlays your token's mascot on top of it.
       </p>
-      <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-lg border-l-4 border-purple-500 my-6">
+      <div className="bg-purple-50 dark:bg-purple-900/10 p-4 md:p-6 rounded-lg border-l-4 border-purple-500 my-6">
         <p className="font-bold text-purple-900 dark:text-purple-200 mb-2">Why it works:</p>
         <ol className="list-decimal pl-6 space-y-2 text-sm text-gray-700 dark:text-gray-300">
             <li>User creates meme.</li>
@@ -201,18 +201,18 @@ const CopyAddress = ({ address }) => {
         Your website must scream safety visually. Don't bury this in the footer. Put it in the hero section.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
+        <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">🔒</span>
             <strong className="text-gray-900 dark:text-white mb-2">Liquidity Locked</strong>
             <p className="text-xs text-gray-500">Live countdown linked to PinkSale/Unicrypt.</p>
         </div>
-        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+        <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">📝</span>
             <strong className="text-gray-900 dark:text-white mb-2">Audited</strong>
             <p className="text-xs text-gray-500">Badge from TokenSniffer or CertiK.</p>
         </div>
-        <div className="flex flex-col items-center text-center p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
+        <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">🔥</span>
             <strong className="text-gray-900 dark:text-white mb-2">Renounced</strong>
             <p className="text-xs text-gray-500">Ownership renounced. No mint function.</p>
