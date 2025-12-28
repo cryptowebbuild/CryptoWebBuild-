@@ -35,7 +35,7 @@ const CryptoProject: React.FC = () => {
       publishedTime="2026-02-01"
       category="Launch Strategy"
       // Note: Layout calculates readTime automatically (~30-35 min read)
-      image="https://images.unsplash.com/photo-1621504450168-38f6473199e7?auto=format&fit=crop&w=1200" // Rocket/Launch Context
+      image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" // Rocket/Launch Context
       keywords={[
         'launch crypto project 2026', 
         'tokenomics design guide', 

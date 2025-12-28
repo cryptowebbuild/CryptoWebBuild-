@@ -40,7 +40,7 @@ const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
 // --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
 const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
-const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinFeatures'));
+const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinWebsiteFeatures'));
 const CryptoCost = lazy(() => import('./pages/blog/CryptoCost'));
 const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic'));
 const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
