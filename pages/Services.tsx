@@ -48,7 +48,7 @@ const Services: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="Web Development Services | Crypto, E-commerce & Business Agency"
+        title="Web Development Services | Crypto, E-commerce & Business"
         description="Full-stack web development agency services: Crypto presale sites, meme coin landing pages, and high-performance e-commerce stores. View our packages."
         keywords={[
           'Web Development Agency Services',
