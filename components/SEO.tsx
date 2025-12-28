@@ -91,7 +91,7 @@ const SEO: React.FC<SEOProps> = ({
         ...baseSchema,
         "@type": "Organization",
         "name": "CryptoWebBuild Agency",
-        "logo": `${siteUrl}/favicon.svg`,
+        "logo": `${siteUrl}/hero-avatar.webp`,
         "founder": {
            "@type": "Person",
            "name": "Sagor Ahamed"
@@ -154,7 +154,7 @@ const SEO: React.FC<SEOProps> = ({
             "name": "CryptoWebBuild",
             "logo": {
               "@type": "ImageObject",
-              "url": `${siteUrl}/favicon.svg`
+              "url": `${siteUrl}/hero-avatar.webp`
             }
           },
           "datePublished": publishedTime || new Date().toISOString(),
