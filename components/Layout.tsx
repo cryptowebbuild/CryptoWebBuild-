@@ -228,7 +228,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="relative z-10 flex-grow pt-32">{children}</main>
+      <main className="relative z-10 flex-grow pt-32 pb-24">{children}</main>
 
       {/* Scroll To Top Button */}
       <button

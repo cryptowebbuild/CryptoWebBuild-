@@ -151,8 +151,8 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
         This is where money meets code. How you structure your liquidity determines your price action.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="p-4 md:p-6 bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-xl">
             <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2">Raydium (Standard AMM)</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong>Pros:</strong> Universal support. Every bot and sniper works here.
@@ -160,7 +160,7 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
                 <br/><strong className="text-blue-600 dark:text-blue-300">Verdict:</strong> Best for initial launch to capture volume.
             </p>
         </div>
-        <div className="p-6 bg-pink-50 dark:bg-pink-900/10 border border-pink-200 dark:border-pink-800 rounded-xl">
+        <div className="p-4 md:p-6 bg-pink-50 dark:bg-pink-900/10 border border-pink-200 dark:border-pink-800 rounded-xl">
             <h4 className="font-bold text-pink-800 dark:text-pink-400 mb-2">Meteora (DLMM)</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                 <strong>Pros:</strong> Dynamic Liquidity. You can concentrate liquidity around the current price, reducing slippage for big buys.
@@ -187,7 +187,7 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
         To prevent this, sophisticated devs use <strong>Jito Bundles</strong>.
       </p>
 
-      <div className="bg-orange-50 dark:bg-orange-900/10 p-8 rounded-xl border border-orange-200 dark:border-orange-800 my-8">
+      <div className="bg-orange-50 dark:bg-orange-900/10 p-4 md:p-8 rounded-xl border border-orange-200 dark:border-orange-800 my-8">
         <h4 className="font-bold text-orange-800 dark:text-orange-400 text-lg mb-4">How Jito Bundles Work</h4>
         <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm">
             Jito allows you to bundle multiple transactions into a single, atomic packet.

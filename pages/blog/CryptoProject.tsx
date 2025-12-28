@@ -208,12 +208,12 @@ modifier antiBot(address from) {
         You need a "Waitlist Strategy". Read our full <Link to="/blog/crypto-marketing-guide" className="text-purple-600 font-bold hover:underline">Crypto Marketing Guide</Link> for the deep dive, but here is the essential checklist:
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="bg-purple-50 dark:bg-purple-900/10 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="bg-purple-50 dark:bg-purple-900/10 p-4 md:p-6 rounded-xl border border-purple-200 dark:border-purple-800">
             <h4 className="font-bold text-purple-800 dark:text-purple-400 mb-2 text-lg">The "Alpha" Leak</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Don't announce everything at once. Leak UI teasers, concept art, and partnership logos slowly over 2 weeks to build anticipation.</p>
         </div>
-        <div className="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+        <div className="bg-blue-50 dark:bg-blue-900/10 p-4 md:p-6 rounded-xl border border-blue-200 dark:border-blue-800">
             <h4 className="font-bold text-blue-800 dark:text-blue-400 mb-2 text-lg">The Whitelist Grind</h4>
             <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">Make people work for it. Don't give WL spots for free. Require them to join the Telegram, Retweet, and invite 2 friends. Investment = Retention.</p>
         </div>

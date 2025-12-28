@@ -69,7 +69,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         Wix, Squarespace, and Shopify are centralized corporations. They have strict "Acceptable Use Policies". Crypto, DeFi, and Gambling are often classified as "High Risk".
       </p>
       
-      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-6 rounded-r-xl shadow-sm">
+      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4 md:p-6 my-6 rounded-r-xl shadow-sm">
         <h4 className="flex items-center gap-2 text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm mb-2">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             True Story: Shopify Ban
@@ -98,26 +98,26 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
           <thead>
             <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
-              <th className="p-4 font-bold text-gray-900 dark:text-white">Metric</th>
-              <th className="p-4 font-bold text-gray-900 dark:text-white">Wix / Squarespace</th>
-              <th className="p-4 font-bold text-gray-900 dark:text-white">Custom Code (Next.js)</th>
+              <th className="p-3 md:p-4 font-bold text-gray-900 dark:text-white text-sm md:text-base">Metric</th>
+              <th className="p-3 md:p-4 font-bold text-gray-900 dark:text-white text-sm md:text-base">Wix / Squarespace</th>
+              <th className="p-3 md:p-4 font-bold text-gray-900 dark:text-white text-sm md:text-base">Custom Code (Next.js)</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">JS Bundle Size</td>
-              <td className="p-4 text-red-500 font-bold">2MB+ (Massive)</td>
-              <td className="p-4 text-green-600 font-bold">~50KB (Tiny)</td>
+              <td className="p-3 md:p-4 font-bold text-gray-700 dark:text-gray-300 text-sm md:text-base">JS Bundle Size</td>
+              <td className="p-3 md:p-4 text-red-500 font-bold text-sm md:text-base">2MB+ (Massive)</td>
+              <td className="p-3 md:p-4 text-green-600 font-bold text-sm md:text-base">~50KB (Tiny)</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">Mobile Score</td>
-              <td className="p-4 text-red-500 font-bold">30-50 / 100</td>
-              <td className="p-4 text-green-600 font-bold">90-100 / 100</td>
+              <td className="p-3 md:p-4 font-bold text-gray-700 dark:text-gray-300 text-sm md:text-base">Mobile Score</td>
+              <td className="p-3 md:p-4 text-red-500 font-bold text-sm md:text-base">30-50 / 100</td>
+              <td className="p-3 md:p-4 text-green-600 font-bold text-sm md:text-base">90-100 / 100</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-gray-700 dark:text-gray-300">First Paint</td>
-              <td className="p-4 text-yellow-600 font-bold">1.5 Seconds</td>
-              <td className="p-4 text-green-600 font-bold">0.2 Seconds</td>
+              <td className="p-3 md:p-4 font-bold text-gray-700 dark:text-gray-300 text-sm md:text-base">First Paint</td>
+              <td className="p-3 md:p-4 text-yellow-600 font-bold text-sm md:text-base">1.5 Seconds</td>
+              <td className="p-3 md:p-4 text-green-600 font-bold text-sm md:text-base">0.2 Seconds</td>
             </tr>
           </tbody>
         </table>
@@ -167,9 +167,9 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         Founders see the upfront cost ($5,000) and get scared. They see the monthly cost ($29) and feel safe. This is a financial illusion.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-8">
         {/* Wix Cost */}
-        <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-6 rounded-xl">
+        <div className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 p-4 md:p-6 rounded-xl">
             <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-lg">The "Wix" Cost (3 Years)</h4>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">
                 <li className="flex justify-between"><span>Subscription:</span> <span className="font-mono">$1,080</span></li>
@@ -184,7 +184,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
         </div>
 
         {/* Custom Cost */}
-        <div className="bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800 p-6 rounded-xl relative overflow-hidden">
+        <div className="bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800 p-4 md:p-6 rounded-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-purple-600 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">WINNER</div>
             <h4 className="font-bold text-purple-900 dark:text-white mb-4 text-lg">The "Custom Dev" Cost</h4>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 mb-6">

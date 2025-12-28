@@ -109,20 +109,20 @@ const PresaleGuide: React.FC = () => {
         You cannot launch a presale cold. If you deploy a contract and tweet "We are live!", you will fail. You need a runway.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="bg-purple-50 dark:bg-purple-900/10 border-l-4 border-purple-500 p-6 rounded-r-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="bg-purple-50 dark:bg-purple-900/10 border-l-4 border-purple-500 p-4 md:p-6 rounded-r-xl">
             <h4 className="font-bold text-lg text-purple-700 dark:text-purple-400 mb-2">Week 1: The Tease</h4>
             <p className="text-sm text-gray-600 dark:text-gray-300">Launch the Twitter/X account. Post cryptic videos. Run a "Gleam" campaign to collect emails. Do NOT ask for money yet. Goal: 1,000 Telegram members.</p>
         </div>
-        <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded-r-xl">
+        <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-4 md:p-6 rounded-r-xl">
             <h4 className="font-bold text-lg text-blue-700 dark:text-blue-400 mb-2">Week 2: The Whitelist</h4>
             <p className="text-sm text-gray-600 dark:text-gray-300">Open the "Whitelist". Make it hard to get. "Only the top 100 inviters get a WL spot." This forces your community to shill for you.</p>
         </div>
-        <div className="bg-green-50 dark:bg-green-900/10 border-l-4 border-green-500 p-6 rounded-r-xl">
+        <div className="bg-green-50 dark:bg-green-900/10 border-l-4 border-green-500 p-4 md:p-6 rounded-r-xl">
             <h4 className="font-bold text-lg text-green-700 dark:text-green-400 mb-2">Week 3: The Validation</h4>
             <p className="text-sm text-gray-600 dark:text-gray-300">Release your Audit Report (CertiK/InterFi) and KYC badge (Assure DeFi). This kills the FUD. Investors now know you aren't a rug.</p>
         </div>
-        <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 rounded-r-xl">
+        <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4 md:p-6 rounded-r-xl">
             <h4 className="font-bold text-lg text-red-700 dark:text-red-400 mb-2">Week 4: The FOMO</h4>
             <p className="text-sm text-gray-600 dark:text-gray-300">Host daily AMAs. Partner with "Call Channels". Show the "Sold Out" potential. Launch the presale on Friday.</p>
         </div>
@@ -144,7 +144,7 @@ const PresaleGuide: React.FC = () => {
         If your team tokens unlock instantly, you are uninvestable. You need hardcoded vesting logic.
       </p>
 
-      <div className="bg-[#0f172a] p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
+      <div className="bg-[#0f172a] p-4 md:p-6 rounded-xl overflow-x-auto my-8 border border-gray-700 shadow-2xl relative">
         <div className="bg-gray-800/50 px-4 py-2 flex justify-between items-center border-b border-gray-700 mb-4">
             <span className="text-xs font-mono text-blue-400">Vesting.sol</span>
             <div className="flex gap-1.5">

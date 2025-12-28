@@ -64,9 +64,9 @@ const StaticVsDynamic: React.FC = () => {
         To understand the security risk, you need to understand how the servers work.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-8">
         {/* Dynamic Card */}
-        <div className="p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl relative">
+        <div className="p-4 md:p-6 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/30 rounded-xl relative">
             <div className="absolute top-0 right-0 bg-red-500 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">DANGEROUS</div>
             <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-4">WordPress (Dynamic)</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Every user visit triggers a complex chain:</p>
@@ -81,7 +81,7 @@ const StaticVsDynamic: React.FC = () => {
         </div>
 
         {/* Static Card */}
-        <div className="p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl relative">
+        <div className="p-4 md:p-6 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 rounded-xl relative">
             <div className="absolute top-0 right-0 bg-green-500 text-white text-xs px-3 py-1 rounded-bl-lg font-bold">SECURE</div>
             <h3 className="text-xl font-bold text-green-700 dark:text-green-400 mb-4">React/Static (Modern)</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">Work is done <em>before</em> the user arrives:</p>
@@ -106,7 +106,7 @@ const StaticVsDynamic: React.FC = () => {
         "But I keep my WordPress updated!" you say. It doesn't matter.
       </p>
 
-      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-8 rounded-r-xl shadow-sm">
+      <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4 md:p-6 my-8 rounded-r-xl shadow-sm">
         <h4 className="text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm flex items-center gap-2">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             The "Plugin" Trap
@@ -129,8 +129,8 @@ const StaticVsDynamic: React.FC = () => {
         Crypto is viral. It is not slow growth; it is explosive. If Elon Musk tweets a meme related to your token, you might get <strong>100,000 visitors in 5 minutes</strong>.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="border border-red-200 dark:border-red-900/30 rounded-xl p-6 bg-white dark:bg-[#111]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="border border-red-200 dark:border-red-900/30 rounded-xl p-4 md:p-6 bg-white dark:bg-[#111]">
             <h3 className="font-bold text-gray-900 dark:text-white mb-2">Scenario A: WordPress</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">The PHP workers get overloaded. The MySQL database locks up. CPU hits 100%.</p>
             <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/20 rounded text-red-700 dark:text-red-400 text-sm font-mono font-bold">
@@ -138,7 +138,7 @@ const StaticVsDynamic: React.FC = () => {
             </div>
             <p className="mt-2 text-xs text-red-500">Result: Chart dumps. Users panic.</p>
         </div>
-        <div className="border border-green-200 dark:border-green-900/30 rounded-xl p-6 bg-white dark:bg-[#111]">
+        <div className="border border-green-200 dark:border-green-900/30 rounded-xl p-4 md:p-6 bg-white dark:bg-[#111]">
             <h3 className="font-bold text-gray-900 dark:text-white mb-2">Scenario B: Static Site</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">Traffic hits Cloudflare's Edge Network (250+ locations). Files are cached globally.</p>
             <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/20 rounded text-green-700 dark:text-green-400 text-sm font-mono font-bold">
@@ -200,8 +200,8 @@ const StaticVsDynamic: React.FC = () => {
         My clients often ask to "keep the backend minimal" ("Backend kom korbo"). This is actually a brilliant engineering strategy.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
-        <div className="bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 my-6">
+        <div className="bg-gray-50 dark:bg-white/5 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-white/10">
             <h4 className="font-bold text-gray-900 dark:text-white mb-4">WordPress Maintenance</h4>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <li>• Hosting: $50/mo (VPS)</li>
@@ -210,7 +210,7 @@ const StaticVsDynamic: React.FC = () => {
             </ul>
             <p className="mt-4 font-bold text-red-600">Total: ~$1,000+ / year</p>
         </div>
-        <div className="bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+        <div className="bg-gray-50 dark:bg-white/5 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-white/10">
             <h4 className="font-bold text-gray-900 dark:text-white mb-4">Static Site Maintenance</h4>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <li>• Hosting (Vercel): $20/mo or Free</li>

@@ -104,8 +104,8 @@ const BestDeveloper: React.FC = () => {
         You need a developer who is "T-Shaped". This means they have deep, vertical expertise in one core stack, but a broad horizontal understanding of the entire business ecosystem.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="bg-white dark:bg-[#111] p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 my-8">
+        <div className="bg-white dark:bg-[#111] p-4 md:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
             <h4 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-4">Vertical Depth (The Expert)</h4>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
@@ -115,7 +115,7 @@ const BestDeveloper: React.FC = () => {
                 <li className="flex items-start gap-2"><span className="text-purple-500">⚡</span> <strong>Database:</strong> Complex Postgres schema design.</li>
             </ul>
         </div>
-        <div className="bg-white dark:bg-[#111] p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
+        <div className="bg-white dark:bg-[#111] p-4 md:p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-cyan-500"></div>
             <h4 className="text-xl font-bold text-cyan-600 dark:text-cyan-400 mb-4">Horizontal Breadth (The Partner)</h4>
             <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
@@ -150,21 +150,21 @@ const BestDeveloper: React.FC = () => {
       </p>
 
       <div className="space-y-6 my-8">
-        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-white/10">
             <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl">1</div>
             <div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">The Live Portfolio Audit</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Do not look at screenshots. Ask for <strong>Live URLs</strong>. Open the site on your phone. Scroll fast. Does it stutter? Right-click and check the Console. Are there red errors? A clean console indicates discipline.</p>
             </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-white/10">
             <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl">2</div>
             <div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">The "Why" Question</h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Ask: <em>"I want to build a Crypto Dashboard. Should we use WordPress or React?"</em> If they say WordPress because "it's easy", run. A senior dev will explain why React is needed for state management and security.</p>
             </div>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10">
+        <div className="flex flex-col md:flex-row gap-4 bg-gray-50 dark:bg-white/5 p-4 md:p-6 rounded-xl border border-gray-200 dark:border-white/10">
             <div className="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl">3</div>
             <div>
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">The Paid "Micro-Task"</h4>
@@ -179,7 +179,7 @@ const BestDeveloper: React.FC = () => {
         You don't need to be a coder to spot quality. You just need to look for patterns. Here is a real-world example of how a Junior vs. Senior developer writes a simple button.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 my-8">
         {/* Bad Code */}
         <div className="bg-[#0f172a] rounded-xl overflow-hidden border border-red-500/30 shadow-2xl">
             <div className="bg-red-500/10 px-4 py-3 border-b border-red-500/20 flex justify-between items-center">
@@ -273,18 +273,18 @@ export const Button = ({
         Web3 is unforgiving. In Web2 (normal websites), if there is a bug, you fix it. In Web3, if there is a bug, the money is gone forever.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
+        <div className="p-4 md:p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
             <div className="text-3xl mb-3">🛡️</div>
             <h4 className="font-bold text-gray-900 dark:text-white mb-2">Security Mindset</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Ask: <em>"How do you prevent Re-entrancy attacks?"</em> If they don't mention Audits or Unit Tests, run.</p>
         </div>
-        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
+        <div className="p-4 md:p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
             <div className="text-3xl mb-3">⚡</div>
             <h4 className="font-bold text-gray-900 dark:text-white mb-2">Gas Optimization</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Bad code costs users money. A good dev knows how to pack variables and minimize loops to save gas.</p>
         </div>
-        <div className="p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
+        <div className="p-4 md:p-6 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl">
             <div className="text-3xl mb-3">🔗</div>
             <h4 className="font-bold text-gray-900 dark:text-white mb-2">Wallet UX</h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">Connecting a wallet needs to be seamless. They must know AppKit (Web3Modal) or Solana Adapters.</p>

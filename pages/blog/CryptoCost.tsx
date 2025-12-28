@@ -89,7 +89,7 @@ const CryptoCost: React.FC = () => {
       </p>
 
       {/* TIER 1 */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-2xl p-8 my-10 bg-white dark:bg-[#0f172a] shadow-xl relative overflow-hidden transition-transform hover:scale-[1.01]">
+      <div className="border border-gray-200 dark:border-gray-700 rounded-2xl p-4 md:p-8 my-10 bg-white dark:bg-[#0f172a] shadow-xl relative overflow-hidden transition-transform hover:scale-[1.01]">
         <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-lg">Entry Level</div>
         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
         
@@ -99,7 +99,7 @@ const CryptoCost: React.FC = () => {
             Perfect for Meme Coins, NFT Collections, or Pre-Launch Waitlists. The goal here is <strong>Conversion</strong> and <strong>Brand Trust</strong>.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-8 border-t border-gray-100 dark:border-gray-800">
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">What You Get:</h4>
                 <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -122,7 +122,7 @@ const CryptoCost: React.FC = () => {
       </div>
 
       {/* TIER 2 */}
-      <div className="border-2 border-purple-500/50 rounded-2xl p-8 my-10 bg-white dark:bg-[#120a2e] shadow-2xl shadow-purple-900/20 relative overflow-hidden transform scale-[1.02] z-10">
+      <div className="border-2 border-purple-500/50 rounded-2xl p-4 md:p-8 my-10 bg-white dark:bg-[#120a2e] shadow-2xl shadow-purple-900/20 relative overflow-hidden transform scale-[1.02] z-10">
         <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold px-6 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-lg">Most Popular</div>
         
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Tier 2: The Standard dApp</h3>
@@ -131,7 +131,7 @@ const CryptoCost: React.FC = () => {
             For projects that need user interaction. Staking platforms, Token Presale Dashboards, or Claim Portals. This involves <strong>Smart Contracts</strong>.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-purple-100 dark:border-purple-900/30">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-8 border-t border-purple-100 dark:border-purple-900/30">
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">What You Get:</h4>
                 <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
@@ -153,7 +153,7 @@ const CryptoCost: React.FC = () => {
       </div>
 
       {/* TIER 3 */}
-      <div className="border border-gray-200 dark:border-gray-700 rounded-2xl p-8 my-10 bg-white dark:bg-[#0f172a] shadow-xl relative overflow-hidden transition-transform hover:scale-[1.01]">
+      <div className="border border-gray-200 dark:border-gray-700 rounded-2xl p-4 md:p-8 my-10 bg-white dark:bg-[#0f172a] shadow-xl relative overflow-hidden transition-transform hover:scale-[1.01]">
         <div className="absolute top-0 right-0 bg-gray-800 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-lg">Enterprise</div>
         <div className="absolute top-0 left-0 w-1 h-full bg-gray-600"></div>
         
@@ -163,7 +163,7 @@ const CryptoCost: React.FC = () => {
             Complex platforms with high concurrency. NFT Marketplaces, Perpetual DEXs, GambleFi platforms. This is serious software engineering.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pt-8 border-t border-gray-100 dark:border-gray-800">
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">The Tech Stack:</h4>
                 <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
@@ -191,8 +191,8 @@ const CryptoCost: React.FC = () => {
         Most agencies will quote you the development fee, but they won't tell you about the <strong>Operational Costs (OpEx)</strong>. These are the monthly bills you need to pay to keep a Web3 app running.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-        <div className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
+        <div className="bg-white dark:bg-white/5 p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">🛡️</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Audits</h4>
             <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$5k - $50k</p>
@@ -200,7 +200,7 @@ const CryptoCost: React.FC = () => {
                 A reputable audit (CertiK, Hacken) is mandatory if you hold user funds.
             </p>
         </div>
-        <div className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
+        <div className="bg-white dark:bg-white/5 p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">⚡</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">RPC Nodes</h4>
             <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$200 - $1k <span className="text-sm font-normal text-gray-500">/mo</span></p>
@@ -208,7 +208,7 @@ const CryptoCost: React.FC = () => {
                 Public nodes are too slow. You need private nodes (Helius, Alchemy) for speed.
             </p>
         </div>
-        <div className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
+        <div className="bg-white dark:bg-white/5 p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">🔧</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Maintenance</h4>
             <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$1k - $3k <span className="text-sm font-normal text-gray-500">/mo</span></p>
@@ -228,8 +228,8 @@ const CryptoCost: React.FC = () => {
         Now that you know the costs, who builds it? You have three options.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-          <div className="p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
+          <div className="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">1. Freelancer</h3>
               <p className="text-sm text-gray-500 mb-4 font-mono">$30-$80 / hr</p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
@@ -239,7 +239,7 @@ const CryptoCost: React.FC = () => {
                   <li>No QA team</li>
               </ul>
           </div>
-          <div className="p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+          <div className="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">2. Template Shop</h3>
               <p className="text-sm text-gray-500 mb-4 font-mono">Fixed Low Price</p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
@@ -249,7 +249,7 @@ const CryptoCost: React.FC = () => {
                   <li>Zero customization</li>
               </ul>
           </div>
-          <div className="p-6 rounded-xl bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800">
+          <div className="p-4 md:p-6 rounded-xl bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800">
               <h3 className="text-xl font-bold text-purple-700 dark:text-purple-300 mb-2">3. Web3 Agency</h3>
               <p className="text-sm text-purple-600/70 dark:text-purple-400/70 mb-4 font-mono">Market Rate</p>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
