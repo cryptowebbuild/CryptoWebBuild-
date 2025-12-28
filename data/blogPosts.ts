@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 20, 2026',
     readTime: '18 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1620321023374-d1a68fdd720d?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1622630998477-20aa696c4c5c?auto=format&fit=crop&w=1200&q=80',
     keywords: ['Meme Coin Features', 'Web Design', 'Conversion Rate']
   },
   {
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 01, 2026',
     readTime: '40 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     keywords: ['Launch Strategy', 'Tokenomics', 'Project Management']
   },
   {
