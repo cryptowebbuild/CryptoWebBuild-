@@ -22,6 +22,7 @@ const staticRoutes = [
   '/shopfast',
   '/autogithub',
   '/gigasolana',
+  '/newsphotocard',
 ];
 
 // Read blog posts dynamically from data/blogPosts.ts

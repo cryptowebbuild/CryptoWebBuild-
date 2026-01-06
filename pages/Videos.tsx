@@ -42,6 +42,19 @@ const Videos: React.FC = () => {
         "Generating Minecraft physics",
         "The future of AI 'Dream' engines"
       ]
+    },
+    {
+      id: 'video-adzd',
+      title: "How to Create Viral News Cards (React & Canvas)",
+      desc: "Step-by-step guide on building the News Photo Card generator. Learn how to manipulate HTML5 Canvas, handle image uploads, and optimize for mobile devices.",
+      url: "https://www.youtube.com/embed/ADZdY0_nQpU",
+      link: "https://youtu.be/ADZdY0_nQpU",
+      date: "Dec 28, 2025",
+      highlights: [
+        "React + Canvas API Integration",
+        "Handling Client-Side Image Processing",
+        "Building a Viral Marketing Tool"
+      ]
     }
   ];
 

@@ -36,6 +36,7 @@ const MemeCoinSite = lazy(() => import('./pages/cases/MemeCoinSite'));
 const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
 const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
 const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
+const NewsPhotoCard = lazy(() => import('./pages/cases/NewsPhotoCard'));
 
 // --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
@@ -96,6 +97,7 @@ const App: React.FC = () => {
           <Route path="/shopfast" element={<ShopFast />} />
           <Route path="/autogithub" element={<AutoGitHub />} />
           <Route path="/gigasolana" element={<GigaSolana />} />
+          <Route path="/newsphotocard" element={<NewsPhotoCard />} />
 
           {/* --- BLOG ROUTES (Synchronized with src/data/blogPosts.ts) --- */}
           
