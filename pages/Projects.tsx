@@ -26,6 +26,16 @@ const Projects: React.FC = () => {
   // --- PROJECT DATA ---
   const projects: ProjectItem[] = [
     {
+      id: 'newsphotocard',
+      title: 'News Photo Card',
+      category: 'Viral Generator',
+      desc: 'A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.',
+      tech: ['React', 'Canvas API', 'Tailwind'],
+      link: '/newsphotocard',
+      liveUrl: 'https://newsphotocard.pages.dev/',
+      img: '/projects/project-newsphotocard.jpg'
+    },
+    {
       id: 'gigasolana',
       title: '$GIGA Solana',
       category: 'Meme & Utility',
