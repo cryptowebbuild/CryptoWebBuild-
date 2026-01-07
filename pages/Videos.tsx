@@ -45,15 +45,15 @@ const Videos: React.FC = () => {
     },
     {
       id: 'video-adzd',
-      title: "How to Create Viral News Cards (React & Canvas)",
-      desc: "Step-by-step guide on building the News Photo Card generator. Learn how to manipulate HTML5 Canvas, handle image uploads, and optimize for mobile devices.",
+      title: "Build a $3,000 Food Delivery App (DoorDash Clone)",
+      desc: "Watch me build a complete Food Delivery platform (like Uber Eats) from scratch. Covering Frontend UI, Backend Database, and the 'No Code' tools used to ship fast.",
       url: "https://www.youtube.com/embed/ADZdY0_nQpU",
       link: "https://youtu.be/ADZdY0_nQpU",
       date: "Dec 28, 2025",
       highlights: [
-        "React + Canvas API Integration",
-        "Handling Client-Side Image Processing",
-        "Building a Viral Marketing Tool"
+        "Full-Stack Food Delivery Clone",
+        "Frontend & Backend Integration",
+        "Real-world $3000 Project Breakdown"
       ]
     }
   ];
