@@ -119,7 +119,7 @@ const Home: React.FC = () => {
 
           {/* Typing Container */}
           <div className="min-h-[4rem] sm:min-h-[3rem] md:min-h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
-            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-500 dark:text-gray-400 font-medium">I build</span>
+            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-600 dark:text-gray-400 font-medium">I build</span>
             <span className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white font-bold relative inline-block break-words min-w-[280px] text-left">
               {text}
               <span className="animate-pulse text-cyan-500 ml-1">|</span>
@@ -366,8 +366,8 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((t, i) => (
-            <div key={i} className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-300 relative shadow-sm hover:shadow-xl">
+          {testimonials.map((t) => (
+            <div key={t.name} className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-300 relative shadow-sm hover:shadow-xl">
               {/* Quote Icon */}
               <div className="text-purple-500 mb-6 md:mb-8 opacity-50">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">

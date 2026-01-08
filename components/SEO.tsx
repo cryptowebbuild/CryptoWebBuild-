@@ -214,6 +214,7 @@ const SEO: React.FC<SEOProps> = ({
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={allKeywords.slice(0, 15).join(', ')} /> {/* Limit to top 15 to avoid spam flags */}
+      {/* Explicitly passing only href to avoid undefined/null attribute injection by some parsers */}
       <link rel="canonical" href={fullCanonical} />
       <meta name="author" content={author} />
       
