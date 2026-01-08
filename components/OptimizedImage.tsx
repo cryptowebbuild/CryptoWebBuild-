@@ -8,6 +8,7 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   priority?: boolean; // If true, loads immediately (LCP optimization)
   width?: number;
   height?: number;
+  aspectRatio?: string; // Optional manual aspect ratio (e.g. "16/9")
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({ 
@@ -18,6 +19,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   priority = false,
   width,
   height,
+  aspectRatio,
   ...props 
 }) => {
   // If priority is true, we assume loaded to prevent LCP delay, 
@@ -33,8 +35,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   // 2. CLS FIX: Calculate Aspect Ratio to reserve space before load
   // This prevents the page from "jumping" when the image appears.
-  const aspectRatioStyle = (!fill && width && height) 
-    ? { aspectRatio: `${width} / ${height}` } 
+  const aspectRatioStyle = (!fill && (aspectRatio || (width && height)))
+    ? { aspectRatio: aspectRatio || `${width} / ${height}` }
     : undefined;
 
   return (

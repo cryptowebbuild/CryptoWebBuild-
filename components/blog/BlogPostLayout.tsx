@@ -145,15 +145,15 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
 
             <div className="flex flex-wrap items-center justify-center gap-6 text-gray-600 dark:text-gray-400 font-medium text-sm md:text-base animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex items-center gap-2">
-                    <OptimizedImage
-                      src="/hero-avatar.webp"
-                      alt="Sagor Ahamed"
-                      className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 relative"
-                      width={32}
-                      height={32}
-                      fill={true}
-                      priority={false}
-                    />
+                    <div className="relative w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <OptimizedImage
+                            src="/hero-avatar.webp"
+                            alt="Sagor Ahamed"
+                            fill={true}
+                            priority={false}
+                            className="object-cover"
+                        />
+                    </div>
                     <span className="text-slate-900 dark:text-slate-200 font-bold">Sagor Ahamed</span>
                 </div>
                 <span className="opacity-30">•</span>
