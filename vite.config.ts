@@ -6,15 +6,19 @@ import path from 'path';
 
 // --- PLUGIN: Fix Cloudflare 404 & Directory Error ---
 const cloudflareRedirectsPlugin = () => {
+  let outDir = 'dist';
   return {
     name: 'cloudflare-redirects',
+    configResolved(config: any) {
+      outDir = config.build.outDir;
+    },
     closeBundle() {
-      const dist = path.resolve('dist'); // Use 'dist' relative to root
+      const dist = path.resolve(outDir);
       
       // CRITICAL FIX: Check if 'dist' exists, if NOT, create it manually
       if (!fs.existsSync(dist)) {
         fs.mkdirSync(dist, { recursive: true });
-        console.log('📁 Created dist directory manually');
+        console.log(`📁 Created ${outDir} directory manually`);
       }
 
       const redirectsPath = path.join(dist, '_redirects');
