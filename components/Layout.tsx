@@ -9,7 +9,7 @@ interface LayoutProps {
 const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => (
   <button
     onClick={toggle}
-    className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-purple-600 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+    className="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-400 hover:text-purple-600 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
     aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
   >
     {isDark ? (
@@ -148,7 +148,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <nav className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-500 relative z-50 ${scrolled ? 'bg-white/80 dark:bg-[#0f172a]/80 shadow-sm backdrop-blur-md border border-gray-200 dark:border-white/10' : 'bg-transparent'}`}>
             
             <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
-              <LogoIcon className="w-9 h-9 text-gray-900 dark:text-white" />
+              <div aria-hidden="true">
+                <LogoIcon className="w-9 h-9 text-gray-900 dark:text-white" />
+              </div>
               <span className="font-display font-bold text-xl tracking-tight text-gray-900 dark:text-white">CryptoWebBuild</span>
             </Link>
 
@@ -250,7 +252,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <LogoIcon className="w-8 h-8 text-gray-900 dark:text-white" idSuffix="footer" />
                 <span className="font-display font-bold text-2xl text-gray-900 dark:text-white">CryptoWebBuild</span>
               </Link>
-              <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed max-w-sm">
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-sm">
                 Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
               </p>
               
@@ -261,7 +263,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 flex items-center justify-center hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-300"
                     aria-label={social.label}
                   >
                     <SocialIcon d={social.d} />
@@ -273,7 +275,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* 2. Main Pages (Navigation) */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Main Pages</h3>
-              <ul className="space-y-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
+              <ul className="space-y-3 text-gray-600 dark:text-gray-400 text-sm font-medium">
                 {navLinks.map(link => (
                   <li key={link.path}><Link to={link.path} className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{link.label}</Link></li>
                 ))}
@@ -283,7 +285,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* 3. Resources & Legal (Zero Orphan) */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Resources</h3>
-              <ul className="space-y-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
+              <ul className="space-y-3 text-gray-600 dark:text-gray-400 text-sm font-medium">
                 <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Get a Quote</Link></li>
                 <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
                 <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
@@ -294,7 +296,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* 4. High-Value Guides (SEO Silo) */}
             <div className="lg:col-span-4">
               <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Growth Guides</h3>
-              <ul className="grid grid-cols-1 gap-3 text-gray-500 dark:text-gray-400 text-sm font-medium">
+              <ul className="grid grid-cols-1 gap-3 text-gray-600 dark:text-gray-400 text-sm font-medium">
                 <li><Link to="/blog/crypto-marketing-guide" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-2"><span className="text-cyan-500">★</span> 2026 Crypto Marketing Strategy</Link></li>
                 <li><Link to="/blog/best-website-developer" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Hiring the Best Developer</Link></li>
                 <li><Link to="/blog/meme-coin-website-features" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Viral Meme Coin Features</Link></li>
@@ -310,8 +312,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
 
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
-            <div className="flex gap-8 text-sm font-bold text-gray-500 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">© 2025 CryptoWebBuild. All rights reserved.</p>
+            <div className="flex gap-8 text-sm font-bold text-gray-600 dark:text-gray-400">
               <a href="https://github.com/cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
               <a href="https://www.youtube.com/@cryptowebbuild" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">YouTube</a>
               <a href="https://x.com/CryptowebbuildX" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 dark:hover:text-white transition-colors">X (Twitter)</a>

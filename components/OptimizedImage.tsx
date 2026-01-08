@@ -55,6 +55,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
               height={height}
               // 3. Priority Handling: Eager for Hero images, Lazy for others
               loading={priority ? "eager" : "lazy"}
+              // @ts-ignore - fetchPriority is a valid attribute but React types might not know it yet
+              fetchPriority={priority ? "high" : "auto"}
               decoding="async"
               className={`
                 ${!priority && 'transition-all duration-700 ease-out'}
