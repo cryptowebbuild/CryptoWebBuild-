@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       desc: 'A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.',
       tech: ['React', 'Canvas API', 'Tailwind'],
       link: '/newsphotocard',
-      liveUrl: 'https://newsphotocard.pages.dev/',
+      liveUrl: 'https://tools.cryptowebbuild.com/',
       img: '/projects/project-newsphotocard.jpg'
     },
     {
