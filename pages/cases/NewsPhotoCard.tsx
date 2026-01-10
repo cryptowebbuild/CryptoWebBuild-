@@ -13,6 +13,14 @@ const NewsPhotoCard: React.FC = () => {
       "@type": "Organization",
       "name": "CryptoWebBuild"
     },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
+    },
     "description": "How we built a client-side viral news card generator using React and Canvas API. Features authentic templates, custom image upload, and instant download.",
     "keywords": "Viral News Generator, React Canvas App, Social Media Tool, Fake News Card Maker, Meme Generator Development"
   };
@@ -27,6 +35,7 @@ const NewsPhotoCard: React.FC = () => {
         type="article"
         publishedTime="2025-12-28"
         schema={jsonLd}
+        canonical="/newsphotocard"
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
@@ -112,9 +121,9 @@ const NewsPhotoCard: React.FC = () => {
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-gray-200 dark:border-white/10">
-          <a href="https://newsphotocard.pages.dev/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 bg-red-600 text-white font-bold rounded-xl transition-transform hover:scale-105 shadow-lg shadow-red-500/30">
+          <a href="https://tools.cryptowebbuild.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 bg-red-600 text-white font-bold rounded-xl transition-transform hover:scale-105 shadow-lg shadow-red-500/30">
             Launch Generator
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>
           <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-white/10 transition-colors">
             Order a Custom Tool
