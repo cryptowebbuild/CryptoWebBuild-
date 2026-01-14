@@ -15,7 +15,7 @@ const cloudflareRedirectsPlugin = () => {
     closeBundle() {
       const dist = path.resolve(outDir);
       
-      // CRITICAL FIX: Check if 'dist' exists, if NOT, create it manually
+      // Ensure output directory exists before writing _redirects
       if (!fs.existsSync(dist)) {
         fs.mkdirSync(dist, { recursive: true });
         console.log(`📁 Created ${outDir} directory manually`);
