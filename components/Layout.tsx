@@ -135,6 +135,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen relative font-sans text-gray-900 dark:text-white overflow-x-hidden flex flex-col transition-colors duration-500">
       
+      {/* --- Skip to Content Link (A11y) --- */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-white focus:text-purple-600 focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-4 focus:ring-purple-500 font-bold"
+      >
+        Skip to content
+      </a>
+
       {/* --- Optimized Background --- */}
       <div className="fixed inset-0 z-0 bg-white dark:bg-[#020617] pointer-events-none overflow-hidden transition-colors duration-500">
         <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/10 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
@@ -174,7 +182,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               {/* Mobile Hamburger */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className="lg:hidden p-2 text-gray-900 dark:text-white focus:outline-none bg-gray-100 dark:bg-white/10 rounded-lg"
+                className="lg:hidden p-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-100 dark:bg-white/10 rounded-lg"
                 aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
               >
                 <div className="w-5 h-4 flex flex-col justify-between relative">
@@ -187,7 +195,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </nav>
 
           {/* Mobile Menu Dropdown */}
-          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 pointer-events-none invisible'}`}>
             <div className="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
@@ -230,7 +238,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="relative z-10 flex-grow pt-20 md:pt-32 pb-24">{children}</main>
+      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-20 md:pt-32 pb-24 focus:outline-none">{children}</main>
 
       {/* Scroll To Top Button */}
       <button
