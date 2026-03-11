@@ -30,12 +30,12 @@ const CryptoProject: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="How to Launch a Crypto Project in 2026: The Ultimate Blueprint (From Idea to Binance)"
+      title="How to Launch a Crypto Project in 2026: The Blueprint"
       description="The definitive 6,000-word military-grade guide to launching a token. Covering Tokenomics Engineering, Smart Contract Security, Anti-Sniper defense, and the secret path to CEX Listings."
       publishedTime="2026-02-01"
       category="Launch Strategy"
       // Note: Layout calculates readTime automatically (~30-35 min read)
-      image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" // Rocket/Launch Context
+      image="https://images.unsplash.com/photo-1551288049-bebda4e38f71" // Rocket/Launch Context
       keywords={[
         'launch crypto project 2026', 
         'tokenomics design guide', 

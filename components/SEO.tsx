@@ -76,7 +76,10 @@ const SEO: React.FC<SEOProps> = ({
     const baseSchema: Record<string, any> = {
       "@context": "https://schema.org",
       "url": fullCanonical,
-      "image": finalImage,
+      "image": {
+        "@type": "ImageObject",
+        "url": finalImage
+      },
       "description": finalDescription,
       "sameAs": [
           "https://github.com/cryptowebbuild",
@@ -91,7 +94,11 @@ const SEO: React.FC<SEOProps> = ({
         ...baseSchema,
         "@type": "Organization",
         "name": "CryptoWebBuild Agency",
-        "logo": `${siteUrl}/hero-avatar.webp`,
+        "url": siteUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/hero-avatar.webp`
+        },
         "founder": {
            "@type": "Person",
            "name": "Sagor Ahamed"
@@ -111,7 +118,11 @@ const SEO: React.FC<SEOProps> = ({
         "name": finalTitle,
         "provider": {
           "@type": "Organization",
-          "name": "CryptoWebBuild"
+          "name": "CryptoWebBuild",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/hero-avatar.webp`
+          }
         },
         "areaServed": "Global",
         "hasOfferCatalog": {
@@ -147,7 +158,7 @@ const SEO: React.FC<SEOProps> = ({
           "author": {
             "@type": "Person",
             "name": author,
-            "url": "https://cryptowebbuild.com/about"
+            "url": `${siteUrl}/about`
           },
           "publisher": {
             "@type": "Organization",
