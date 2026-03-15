@@ -181,8 +181,8 @@ const Projects: React.FC = () => {
                 
                 {/* Tech Tags (Hidden on hover to make space) */}
                 <div className="flex flex-wrap gap-2 transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden delay-100">
-                  {project.tech.map((t, i) => (
-                    <span key={i} className="text-[10px] font-bold text-slate-300 bg-white/10 border border-white/20 px-2 py-1 rounded-full uppercase tracking-wide">
+                  {project.tech.map((t) => (
+                    <span key={t} className="text-[10px] font-bold text-slate-300 bg-white/10 border border-white/20 px-2 py-1 rounded-full uppercase tracking-wide">
                       {t}
                     </span>
                   ))}

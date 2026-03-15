@@ -133,7 +133,7 @@ const Videos: React.FC = () => {
               <div className="w-full lg:w-1/3 flex flex-col justify-between">
                 <div>
                     <div className="flex items-center gap-3 mb-4">
-                        <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{video.date}</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest">{video.date}</span>
                         <div className="h-px flex-1 bg-gray-200 dark:bg-white/10"></div>
                     </div>
 
@@ -152,8 +152,8 @@ const Videos: React.FC = () => {
                             Key Takeaways
                         </h4>
                         <ul className="space-y-2">
-                            {video.highlights.map((item, i) => (
-                            <li key={i} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-2 font-medium">
+                            {video.highlights.map((item) => (
+                            <li key={item} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-2 font-medium">
                                 <span className="text-purple-500 mt-1">▹</span>
                                 {item}
                             </li>

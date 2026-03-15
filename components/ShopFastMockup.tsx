@@ -10,7 +10,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
       {/* Navbar */}
       <div className="h-14 px-6 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200">
         <span className="font-bold text-lg tracking-tight text-black">ShopFast.</span>
-        <div className="flex gap-5 text-sm font-medium text-gray-500">
+        <div className="flex gap-5 text-sm font-medium text-gray-600">
             <span>Men</span>
             <span>Women</span>
             <span>New</span>
@@ -45,7 +45,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
         <div className="max-w-xs space-y-6">
             <div>
                 <h2 className="text-3xl font-bold text-black leading-tight mb-2">Ultra Runner <br/>Carbon Edition</h2>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                     Engineered for speed. Minimalist design meets maximum performance. Pre-rendered static pages for instant load.
                 </p>
             </div>

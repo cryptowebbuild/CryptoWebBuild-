@@ -83,9 +83,9 @@ const SolanaMemeCoinGuide: React.FC = () => {
           </thead>
           <tbody>
             <tr className="border-b border-gray-100 dark:border-gray-800">
-              <td className="p-4 font-bold text-gray-500 dark:text-gray-400">Legacy SPL</td>
+              <td className="p-4 font-bold text-gray-600 dark:text-gray-400">Legacy SPL</td>
               <td className="p-4 text-gray-600 dark:text-gray-400">Basic Transfer, Freeze, Mint. No Taxes.</td>
-              <td className="p-4 text-gray-500 dark:text-gray-500 font-mono text-sm">Outdated. Good for pure memes only.</td>
+              <td className="p-4 text-gray-600 dark:text-gray-600 font-mono text-sm">Outdated. Good for pure memes only.</td>
             </tr>
             <tr className="border-b border-gray-100 dark:border-gray-800">
               <td className="p-4 font-bold text-purple-600 dark:text-purple-400">Token-2022</td>

@@ -13,9 +13,9 @@ const ThemeToggle = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }
     aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
   >
     {isDark ? (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
     ) : (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
     )}
   </button>
 );
@@ -134,7 +134,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen relative font-sans text-gray-900 dark:text-white overflow-x-hidden flex flex-col transition-colors duration-500">
-      
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+        Skip to content
+      </a>
       {/* --- Optimized Background --- */}
       <div className="fixed inset-0 z-0 bg-white dark:bg-[#020617] pointer-events-none overflow-hidden transition-colors duration-500">
         <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-purple-300/30 dark:bg-purple-600/10 rounded-full blur-[120px] animate-blob mix-blend-multiply dark:mix-blend-screen transition-colors duration-1000 will-change-transform" />
@@ -187,7 +189,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </nav>
 
           {/* Mobile Menu Dropdown */}
-          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-4 pointer-events-none'}`}>
             <div className="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
@@ -210,7 +212,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                       href={social.href} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
+                      className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
                       aria-label={social.label}
                     >
                       <SocialIcon d={social.d} />
@@ -230,7 +232,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className="relative z-10 flex-grow pt-20 md:pt-32 pb-24">{children}</main>
+      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-20 md:pt-32 pb-24 focus:outline-none">{children}</main>
 
       {/* Scroll To Top Button */}
       <button
@@ -238,7 +240,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         className={`fixed bottom-8 right-8 z-40 p-4 rounded-full bg-purple-600 text-white shadow-lg shadow-purple-500/30 transition-all duration-500 transform hover:scale-110 hover:bg-purple-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50 ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'}`}
         aria-label="Scroll to top"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
       </button>
 
       {/* --- FOOTER (Enhanced Internal Linking & Socials) --- */}

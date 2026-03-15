@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     readTime: '30 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0',
     keywords: ['Presale DApp', 'Smart Contract', 'Fundraising']
   },
   {
@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 22, 2026',
     readTime: '35 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9',
     keywords: ['Solana Meme Coin', 'Token-2022', 'Web3 Development']
   },
   {
@@ -52,7 +52,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Dec 24, 2025',
     readTime: '15 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
     keywords: ['Crypto Marketing', 'Token Strategy', 'Community']
   },
   {
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 16, 2025',
     readTime: '12 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095',
     keywords: ['Hire Developer', 'Blockchain Agency', 'Freelancer Guide']
   },
   {
@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Dec 26, 2025',
     readTime: '10 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c',
     keywords: ['Website Cost', 'Web Development Pricing', 'Budgeting']
   },
   {
@@ -85,7 +85,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 28, 2026',
     readTime: '20 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c',
     keywords: ['Website Security', 'Static vs Dynamic', 'WordPress Risks']
   },
   {
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 01, 2026',
     readTime: '40 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
     keywords: ['Launch Strategy', 'Tokenomics', 'Project Management']
   },
   {
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mar 01, 2026',
     readTime: '25 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
     keywords: ['Wix vs React', 'Custom Development', 'Business Strategy']
   }
 ];

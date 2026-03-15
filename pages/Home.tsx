@@ -258,8 +258,8 @@ const Home: React.FC = () => {
                                 "SEO Dominance: Google Core Web Vitals score near 100/100.",
                                 "Security: No database to hack, impervious to SQL injection.",
                                 "Global Speed: Assets distributed globally via Cloudflare CDN."
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3">
+                            ].map((item) => (
+                                <li key={item} className="flex items-center gap-3">
                                     <span className="w-5 h-5 rounded-full bg-green-500/20 text-green-600 flex items-center justify-center text-xs">✓</span>
                                     {item}
                                 </li>
@@ -271,19 +271,19 @@ const Home: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-green-500/50 transition-colors">
                             <div className="text-4xl font-black text-green-500 mb-2">100</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Performance</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Performance</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-blue-500/50 transition-colors">
                             <div className="text-4xl font-black text-blue-500 mb-2">0.8s</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Load Time</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Load Time</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-purple-500/50 transition-colors">
                             <div className="text-4xl font-black text-purple-500 mb-2">A+</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Security</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Security</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-cyan-500/50 transition-colors">
                             <div className="text-4xl font-black text-cyan-500 mb-2">100%</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Uptime</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Uptime</div>
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@ const Home: React.FC = () => {
                  </div>
                  <div>
                     <div className="font-bold text-gray-900 dark:text-white text-lg">{t.name}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{t.role}, {t.company}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{t.role}, {t.company}</div>
                  </div>
               </div>
             </div>
