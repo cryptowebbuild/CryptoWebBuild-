@@ -205,17 +205,17 @@ const CopyAddress = ({ address }) => {
         <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">🔒</span>
             <strong className="text-gray-900 dark:text-white mb-2">Liquidity Locked</strong>
-            <p className="text-xs text-gray-500">Live countdown linked to PinkSale/Unicrypt.</p>
+            <p className="text-xs text-gray-600">Live countdown linked to PinkSale/Unicrypt.</p>
         </div>
         <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">📝</span>
             <strong className="text-gray-900 dark:text-white mb-2">Audited</strong>
-            <p className="text-xs text-gray-500">Badge from TokenSniffer or CertiK.</p>
+            <p className="text-xs text-gray-600">Badge from TokenSniffer or CertiK.</p>
         </div>
         <div className="flex flex-col items-center text-center p-4 md:p-6 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/10">
             <span className="text-4xl mb-4">🔥</span>
             <strong className="text-gray-900 dark:text-white mb-2">Renounced</strong>
-            <p className="text-xs text-gray-500">Ownership renounced. No mint function.</p>
+            <p className="text-xs text-gray-600">Ownership renounced. No mint function.</p>
         </div>
       </div>
 

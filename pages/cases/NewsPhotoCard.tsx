@@ -39,7 +39,7 @@ const NewsPhotoCard: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>
@@ -66,15 +66,15 @@ const NewsPhotoCard: React.FC = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="glass-panel p-6 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10">
-            <h3 className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Stack</h3>
+            <h3 className="text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Stack</h3>
             <p className="text-gray-900 dark:text-white font-bold text-lg">React, Canvas API</p>
           </div>
           <div className="glass-panel p-6 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10">
-            <h3 className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Type</h3>
+            <h3 className="text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Type</h3>
             <p className="text-gray-900 dark:text-white font-bold text-lg">Viral Marketing Tool</p>
           </div>
           <div className="glass-panel p-6 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10">
-            <h3 className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Result</h3>
+            <h3 className="text-gray-600 dark:text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Result</h3>
             <p className="text-green-500 font-bold text-lg">10k+ Daily Users</p>
           </div>
         </div>

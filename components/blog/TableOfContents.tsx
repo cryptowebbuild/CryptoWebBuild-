@@ -79,7 +79,7 @@ const TableOfContents: React.FC = () => {
                             className={`flex items-start gap-4 text-sm transition-all duration-300 ${
                                 isActive 
                                 ? 'text-purple-600 dark:text-purple-400 font-bold translate-x-1' 
-                                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:translate-x-1'
+                                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:translate-x-1'
                             }`}
                             style={{ marginLeft: heading.level === 3 ? '16px' : '0px' }}
                         >

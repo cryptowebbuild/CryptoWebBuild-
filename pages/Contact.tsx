@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Name</label>
                     <input 
                         id="name" 
                         name="name" 
@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Your Email</label>
+                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Email</label>
                     <input 
                         id="email" 
                         name="email" 
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="category" className="block text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Project Category</label>
+              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Category</label>
               <select 
                 id="category" 
                 name="category" 
@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="budget" className="block text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Project Budget</label>
+              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Budget</label>
               <select 
                 id="budget" 
                 name="budget" 
@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Your Message</label>
+              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Message</label>
               <textarea 
                 id="message" 
                 name="message" 
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
           </form>
         </div>
 
-        <div className="mt-10 text-center text-gray-500 dark:text-gray-400 text-sm font-medium">
+        <div className="mt-10 text-center text-gray-600 dark:text-gray-400 text-sm font-medium">
           Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
         </div>
       </div>

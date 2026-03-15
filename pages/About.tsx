@@ -147,7 +147,7 @@ const About: React.FC = () => {
 
                     {/* Social Command Center */}
                     <div className="mb-8">
-                        <h3 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 opacity-70">Connect Directly</h3>
+                        <h3 className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest mb-4 opacity-70">Connect Directly</h3>
                         <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                             {socialLinks.map((social) => (
                                 <a 
@@ -170,8 +170,8 @@ const About: React.FC = () => {
 
             {/* Stats Bar */}
             <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
-                {stats.map((stat, i) => (
-                    <div key={i} className="text-center group cursor-default">
+                {stats.map((stat) => (
+                    <div key={stat.label} className="text-center group cursor-default">
                         <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-1 group-hover:scale-110 transition-transform">
                             {stat.value}
                         </div>
@@ -215,15 +215,15 @@ const About: React.FC = () => {
                 </h3>
                 
                 <div className="grid grid-cols-2 gap-4">
-                    {techStack.map((tech, i) => (
-                        <div key={i} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
+                    {techStack.map((tech) => (
+                        <div key={tech.name} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
                             <div className="flex items-center gap-3 mb-2">
                                 <span className="text-2xl filter grayscale group-hover:grayscale-0 transition-all">{tech.icon === 'TS' ? (
                                     <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C0.502 0 0 0.502 0 1.125v21.75C0 23.498 0.502 24 1.125 24h21.75c0.623 0 1.125-0.502 1.125-1.125V1.125C24 0.502 23.498 0 22.875 0H1.125zM15.266 18.063h-3.328v-1.782h3.328v1.782zm-8.832 0H3.106v-7.149h5.188v1.782H4.888v1.781h1.547v1.782H4.888v1.804zm6.602-5.367H11.25v-1.782h3.328v1.782z"/></svg>
                                 ) : tech.icon}</span>
                                 <span className="font-bold text-gray-900 dark:text-white text-sm">{tech.name}</span>
                             </div>
-                            <p className="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wide opacity-60 group-hover:opacity-100">{tech.desc}</p>
+                            <p className="text-[10px] text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wide opacity-60 group-hover:opacity-100">{tech.desc}</p>
                         </div>
                     ))}
                 </div>
@@ -254,7 +254,7 @@ const About: React.FC = () => {
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                  <div className="pl-12 md:text-right md:pl-0 md:pr-12 order-1">
                      <div className="md:hidden mb-2">
-                         <span className="text-gray-500 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2023 - 2024</span>
+                         <span className="text-gray-600 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2023 - 2024</span>
                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Lead Web3 Architect</h3>
                      </div>
                      <p className="text-gray-600 dark:text-gray-400">Led frontend development for multiple DeFi protocols. Mastered wallet integration (Wagmi/Solana) and real-time data visualization.</p>
@@ -262,19 +262,19 @@ const About: React.FC = () => {
                 <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 dark:bg-slate-700 border-4 border-white dark:border-[#020617] z-10"></div>
                 <div className="hidden md:block order-2">
                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Lead Web3 Architect</h3>
-                     <p className="text-gray-500 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2023 - 2024</p>
+                     <p className="text-gray-600 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2023 - 2024</p>
                 </div>
             </div>
 
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                  <div className="hidden md:block text-right pr-12">
                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Full Stack Developer</h3>
-                     <p className="text-gray-500 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2021 - 2023</p>
+                     <p className="text-gray-600 dark:text-gray-400 font-bold text-sm uppercase tracking-wide">2021 - 2023</p>
                 </div>
                 <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-gray-300 dark:bg-slate-700 border-4 border-white dark:border-[#020617] z-10"></div>
                 <div className="pl-12 md:pl-0">
                      <div className="md:hidden mb-2">
-                        <span className="text-gray-500 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2021 - 2023</span>
+                        <span className="text-gray-600 dark:text-gray-400 font-bold text-xs uppercase tracking-wide">2021 - 2023</span>
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white">Full Stack Developer</h3>
                      </div>
                     <p className="text-gray-600 dark:text-gray-400">Built custom MERN stack applications and headless CMS solutions. Learned the importance of SEO and Server-Side Rendering.</p>

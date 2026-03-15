@@ -25,9 +25,9 @@ const KeyTakeaways: React.FC<KeyTakeawaysProps> = ({ points }) => {
 
       {/* --- List Points --- */}
       <ul className="space-y-4 relative z-10">
-        {points.map((point, index) => (
+        {points.map((point) => (
           <li 
-            key={index} 
+            key={point}
             className="flex items-start gap-4 p-4 rounded-2xl bg-white/60 dark:bg-white/5 border border-transparent hover:border-purple-200 dark:hover:border-purple-800 transition-all duration-300 hover:shadow-sm"
           >
             <div className="shrink-0 mt-1">

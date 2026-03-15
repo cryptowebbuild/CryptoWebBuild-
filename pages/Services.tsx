@@ -110,7 +110,7 @@ const Services: React.FC = () => {
                   <Link to="/tokenlaunch" className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-500 transition-colors">
                     <span className="bg-purple-100 dark:bg-purple-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">Case Study</span> SolNova Protocol →
                   </Link>
-                  <Link to="/blog/crypto-cost" className="flex items-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <Link to="/blog/crypto-cost" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <span className="bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded mr-2 text-xs uppercase">Guide</span> Pricing Breakdown →
                   </Link>
               </div>
@@ -150,7 +150,7 @@ const Services: React.FC = () => {
                   <Link to="/shopfast" className="flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors">
                     <span className="bg-cyan-100 dark:bg-cyan-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">Case Study</span> ShopFast Store →
                   </Link>
-                  <Link to="/blog/static-vs-dynamic" className="flex items-center text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                  <Link to="/blog/static-vs-dynamic" className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                     <span className="bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded mr-2 text-xs uppercase">Guide</span> Why Static is Faster →
                   </Link>
               </div>

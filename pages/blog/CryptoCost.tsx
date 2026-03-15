@@ -15,12 +15,12 @@ const CryptoCost: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The Real Cost of Building a Crypto Website in 2026: A Transparent Pricing Guide"
+      title="The Real Cost of Building a Crypto Website in 2026"
       description="Detailed breakdown of Web3 development costs. From high-converting landing pages to secure DEXs. We reveal the hidden costs agencies won't tell you."
       publishedTime="2026-01-22"
       category="Web3 Development"
       // Note: Read time is auto-calculated (~20-25 min read)
-      image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200" // Finance/Budget Context
+      image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" // Finance/Budget Context
       keywords={[
         'crypto website cost 2026', 
         'web3 development pricing', 
@@ -111,7 +111,7 @@ const CryptoCost: React.FC = () => {
             </div>
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">Limitations:</h4>
-                <ul className="space-y-3 text-sm text-gray-500">
+                <ul className="space-y-3 text-sm text-gray-600">
                     <li className="flex items-center gap-2"><span className="text-red-400">×</span> No Smart Contracts</li>
                     <li className="flex items-center gap-2"><span className="text-red-400">×</span> No User Dashboard</li>
                     <li className="flex items-center gap-2"><span className="text-red-400">×</span> No Database</li>
@@ -143,7 +143,7 @@ const CryptoCost: React.FC = () => {
             </div>
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">Requirements:</h4>
-                <ul className="space-y-3 text-sm text-gray-500">
+                <ul className="space-y-3 text-sm text-gray-600">
                     <li className="flex items-center gap-2"><span className="text-yellow-500">⚠</span> <strong>Audit Required:</strong> Budget extra for security.</li>
                     <li className="flex items-center gap-2"><span className="text-yellow-500">⚠</span> <strong>RPC Node:</strong> Requires paid provider.</li>
                 </ul>
@@ -175,7 +175,7 @@ const CryptoCost: React.FC = () => {
             </div>
             <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wide">Why It Costs More:</h4>
-                <p className="text-sm text-gray-500 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                     You are paying for security architecture. Handling thousands of transactions per second requires optimizations that junior developers don't understand.
                 </p>
             </div>
@@ -196,23 +196,23 @@ const CryptoCost: React.FC = () => {
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">🛡️</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Audits</h4>
             <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$5k - $50k</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
                 A reputable audit (CertiK, Hacken) is mandatory if you hold user funds.
             </p>
         </div>
         <div className="bg-white dark:bg-white/5 p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">⚡</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">RPC Nodes</h4>
-            <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$200 - $1k <span className="text-sm font-normal text-gray-500">/mo</span></p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$200 - $1k <span className="text-sm font-normal text-gray-600">/mo</span></p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
                 Public nodes are too slow. You need private nodes (Helius, Alchemy) for speed.
             </p>
         </div>
         <div className="bg-white dark:bg-white/5 p-4 md:p-6 rounded-2xl border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-colors group">
             <span className="text-4xl group-hover:scale-110 transition-transform block mb-4">🔧</span>
             <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">Maintenance</h4>
-            <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$1k - $3k <span className="text-sm font-normal text-gray-500">/mo</span></p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2 font-display">$1k - $3k <span className="text-sm font-normal text-gray-600">/mo</span></p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
                 Blockchains update. APIs break. You need a developer on retainer to fix bugs.
             </p>
         </div>
@@ -231,7 +231,7 @@ const CryptoCost: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 my-8">
           <div className="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">1. Freelancer</h3>
-              <p className="text-sm text-gray-500 mb-4 font-mono">$30-$80 / hr</p>
+              <p className="text-sm text-gray-600 mb-4 font-mono">$30-$80 / hr</p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                   <li className="text-red-500 font-bold">⚠ High Risk</li>
                   <li>Good for simple LPs</li>
@@ -241,7 +241,7 @@ const CryptoCost: React.FC = () => {
           </div>
           <div className="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">2. Template Shop</h3>
-              <p className="text-sm text-gray-500 mb-4 font-mono">Fixed Low Price</p>
+              <p className="text-sm text-gray-600 mb-4 font-mono">Fixed Low Price</p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                   <li className="text-red-500 font-bold">⚠ Extreme Risk</li>
                   <li>Reused code (insecure)</li>

@@ -52,7 +52,7 @@ const HireUsCTA: React.FC = () => {
           </div>
 
           {/* Footer Text */}
-          <p className="mt-8 text-sm text-gray-500 dark:text-gray-500 font-bold uppercase tracking-widest opacity-80">
+          <p className="mt-8 text-sm text-gray-600 dark:text-gray-600 font-bold uppercase tracking-widest opacity-80">
             Limited Availability for {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
           </p>
         </div>
