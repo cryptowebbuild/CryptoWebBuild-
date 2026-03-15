@@ -49,6 +49,7 @@ const CryptoMarketingGuide = lazy(() => import('./pages/blog/CryptoMarketingGuid
 const SolanaMemeCoinGuide = lazy(() => import('./pages/blog/SolanaMemeCoinGuide'));
 const CryptoSEO = lazy(() => import('./pages/blog/CryptoSEO'));
 const PresaleGuide = lazy(() => import('./pages/blog/PresaleGuide'));
+const Web3GamingProxy = lazy(() => import('./pages/blog/Web3GamingProxy'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -130,6 +131,9 @@ const App: React.FC = () => {
 
           {/* 10. Builder vs Developer */}
           <Route path="/blog/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
+
+          {/* 11. Web3 Gaming Proxy */}
+          <Route path="/blog/web3-gaming-zero-latency-proxy" element={<Web3GamingProxy />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
