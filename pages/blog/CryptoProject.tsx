@@ -31,7 +31,7 @@ const CryptoProject: React.FC = () => {
   return (
     <BlogPostLayout
       title="How to Launch a Crypto Project in 2026: The Blueprint"
-      description="The definitive 6,000-word military-grade guide to launching a token. Covering Tokenomics Engineering, Smart Contract Security, Anti-Sniper defense, and the secret path to CEX Listings."
+      description="The 6,000-word guide to launching a token. Covering Tokenomics, Smart Contract Security, Anti-Sniper defense, and the path to CEX Listings."
       publishedTime="2026-02-01"
       category="Launch Strategy"
       // Note: Layout calculates readTime automatically (~30-35 min read)

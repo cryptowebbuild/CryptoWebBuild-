@@ -12,7 +12,19 @@ const TokenLaunch: React.FC = () => {
     "image": image,
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild"
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
     },
     "description": "How we built SolNova: a high-yield aggregator on Solana with a custom React presale dashboard, wallet integration, and 0.8s load times.",
     "keywords": "Solana Presale, Web3 Developer, React Wallet Integration, Token Launch Website"
@@ -28,6 +40,7 @@ const TokenLaunch: React.FC = () => {
         type="article"
         publishedTime="2025-10-15"
         schema={jsonLd}
+        canonical="/tokenlaunch"
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
@@ -100,7 +113,7 @@ const TokenLaunch: React.FC = () => {
                 To achieve the <strong>0.8s load time</strong>, we utilized aggressive code-splitting. We lazy-loaded the heavy Wallet libraries so they only fetch when the user clicks "Connect Wallet". We also implemented aggressive caching headers via Cloudflare Workers. 
             </p>
             <p className="text-text-muted text-sm mt-4">
-                This ensures that even if 50,000 users hit the site simultaneously, the landing page renders instantly. Interested in similar performance for your project? Check out our <Link to="/blog/crypto-cost" className="text-purple-500 font-bold hover:underline">Crypto Website Pricing Guide</Link>.
+                This ensures that even if 50,000 users hit the site simultaneously, the landing page renders instantly. Interested in similar performance for your project? Check out our <Link to="/blog/crypto-website-cost" className="text-purple-500 font-bold hover:underline">Crypto Website Pricing Guide</Link>.
             </p>
           </div>
 

@@ -53,7 +53,7 @@ const Blog: React.FC = () => {
       "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/favicon.svg"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "blogPost": posts.map((post) => ({

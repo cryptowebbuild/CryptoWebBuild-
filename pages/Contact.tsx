@@ -11,6 +11,10 @@ const Contact: React.FC = () => {
     "mainEntity": {
       "@type": "ProfessionalService",
       "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      },
       "image": "https://cryptowebbuild.com/logo.png",
       "priceRange": "$$-$$$",
       "telephone": "",

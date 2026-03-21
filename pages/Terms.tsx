@@ -7,6 +7,8 @@ const Terms: React.FC = () => {
       <SEO 
         title="Terms of Service | CryptoWebBuild"
         description="Terms and conditions for using CryptoWebBuild services."
+        canonical="/terms"
+        noIndex={true}
       />
       
       <div className="max-w-4xl mx-auto animate-slide-up">

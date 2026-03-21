@@ -15,8 +15,8 @@ const CryptoSEO: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The Ultimate Crypto SEO Guide 2026: Rank #1 on Google & AI Search"
-      description="The definitive 6,000-word technical handbook for Web3 SEO. From Programmatic Architecture to Knowledge Graph Optimization. Stop buying traffic, start owning it."
+      title="Ultimate Crypto SEO Guide: Rank #1 on Google & AI Search"
+      description="The technical handbook for Web3 SEO. From Programmatic Architecture to Knowledge Graph Optimization. Stop buying traffic, start owning it."
       publishedTime="2026-02-15"
       category="Growth Strategy"
       // Note: Layout calculates readTime automatically (~25-30 min read)
@@ -162,7 +162,7 @@ export default function HowToBuy({ params }) {
   
   return (
     <article>
-      <h1>How to Buy $TOKEN with {method.name} (Step-by-Step)</h1>
+      <h2>How to Buy $TOKEN with {method.name} (Step-by-Step)</h2>
       <p>
         Looking to purchase $TOKEN using {method.name}? 
         You are in the right place. This guide covers the fees, 

@@ -14,8 +14,6 @@ const staticRoutes = [
   '/blog',
   '/contact',
   '/faq',
-  '/privacy',
-  '/terms',
   // Case Studies
   '/tokenlaunch',
   '/memecoinsite',

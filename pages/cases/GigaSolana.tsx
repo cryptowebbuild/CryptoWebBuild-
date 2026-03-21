@@ -11,7 +11,19 @@ const GigaSolana: React.FC = () => {
     "image": "https://cryptowebbuild.com/giga-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild"
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
     },
     "description": "How we built a high-energy meme coin site with a custom 'Moon Math' calculator to drive community engagement on Solana."
   };
@@ -23,6 +35,7 @@ const GigaSolana: React.FC = () => {
         description="Learn how we built a cult-following meme coin site on Solana. Featuring 'Moon Math' calculators, neon aesthetics, and aggressive branding."
         keywords={['Viral Meme Coin Design', 'Solana Meme Coin Branding', 'Moon Math Calculator Code', 'Crypto Community Website']}
         schema={jsonLd}
+        canonical="/gigasolana"
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
@@ -79,7 +92,7 @@ const GigaSolana: React.FC = () => {
           <div className="my-10 p-8 bg-surface-highlight border border-white/10 rounded-2xl">
              <h3 className="text-xl font-bold text-text-main mb-4">Technical Strategy</h3>
              <p>Speed was non-negotiable. We used a static-first approach with optimized assets (WebP) to ensure the site loads instantly even on poor mobile connections, which is where 85% of meme coin traffic originates.</p>
-             <p>Interested in launching a similar viral site? Check out our <Link to="/blog/crypto-cost" className="text-green-500 font-bold hover:underline">Meme Coin Pricing Guide</Link>.</p>
+             <p>Interested in launching a similar viral site? Check out our <Link to="/blog/crypto-website-cost" className="text-green-500 font-bold hover:underline">Meme Coin Pricing Guide</Link>.</p>
           </div>
         </div>
 

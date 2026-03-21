@@ -15,8 +15,8 @@ const PresaleGuide: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The Ultimate Crypto Presale Guide 2026: How to Raise 1000 ETH in Minutes"
-      description="The definitive 6,000-word blueprint for token fundraising. Learn the 'Hybrid Launch' strategy, smart contract vesting logic, and how to avoid the post-presale dump."
+      title="The Ultimate Crypto Presale Guide: Raise ETH in Minutes"
+      description="The blueprint for token fundraising. Learn the 'Hybrid Launch' strategy, smart contract vesting logic, and how to avoid the post-presale dump."
       publishedTime="2026-02-15"
       category="Launch Strategy"
       // Note: Layout calculates readTime automatically (~30-35 min read)

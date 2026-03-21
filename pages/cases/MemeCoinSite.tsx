@@ -11,7 +11,19 @@ const MemeCoinSite: React.FC = () => {
     "image": "https://cryptowebbuild.com/project-memecoin.jpg",
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild"
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
     },
     "description": "Analyzing the BNB Quack Inu launch: A gamified jungle-themed meme coin site featuring spin-to-win mechanics and custom wood-textured UI."
   };
@@ -19,11 +31,12 @@ const MemeCoinSite: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO 
-        title="Meme Coin Website Design | Viral Crypto Landing Page Case Study"
+        title="Meme Coin Website Design | Viral Landing Page Case Study"
         description="Case study: How we designed a viral, gamified meme coin website on BNB Chain. Custom animations, spin-to-win features, and mobile-first design."
         keywords={['Meme Coin Website Design', 'Viral Crypto Landing Page', 'BNB Chain Developer', 'Gamified Crypto Site', 'Crypto Web Design']}
         type="article"
         schema={jsonLd}
+        canonical="/memecoinsite"
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">

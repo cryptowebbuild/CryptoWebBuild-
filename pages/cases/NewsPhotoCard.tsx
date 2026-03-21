@@ -11,7 +11,11 @@ const NewsPhotoCard: React.FC = () => {
     "image": "https://cryptowebbuild.com" + image,
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild"
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
     },
     "publisher": {
       "@type": "Organization",
@@ -29,7 +33,7 @@ const NewsPhotoCard: React.FC = () => {
     <div className="container mx-auto px-6 pt-32 pb-20">
       <SEO
         title="Viral News Card Generator Development | Case Study"
-        description="Case study on building a high-performance, client-side social media graphic generator using React and HTML5 Canvas. Zero server costs, 100% viral potential."
+        description="Case study on building a high-performance, client-side social media graphic generator using React and HTML5 Canvas. Zero server costs, viral potential."
         keywords={['News Card Generator', 'React Canvas Application', 'Viral Marketing Tool', 'Social Media Graphics Tool', 'Frontend Development Case Study']}
         image={image}
         type="article"

@@ -53,8 +53,8 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Web3 Infrastructure vs Gaming Proxies: Achieving Zero-Latency Connections"
-      description="Explore the technical parallels between high-performance crypto nodes and competitive gaming proxies. Learn how dedicated infrastructure solves the 999+ ping problem."
+      title="Web3 Infra vs Gaming Proxies: Zero-Latency Connections"
+      description="Explore the technical parallels between crypto nodes and gaming proxies. Learn how dedicated infrastructure solves the 999+ ping problem."
       publishedTime="2026-03-05"
       category="Tech"
       image="https://images.unsplash.com/photo-1542751371-adc38448a05e"

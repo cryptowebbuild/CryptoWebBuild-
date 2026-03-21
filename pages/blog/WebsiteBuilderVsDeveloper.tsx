@@ -16,7 +16,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
   return (
     <BlogPostLayout
       title="Wix vs Custom Code: The Honest Truth for Founders"
-      description="Should you use Wix/Webflow or hire a developer? A deep technical and business analysis of costs, risks, risks of censorship, and ROI for crypto projects."
+      description="Should you use Wix/Webflow or hire a developer? A technical analysis of costs, risks of censorship, and ROI for crypto projects."
       publishedTime="2026-03-01"
       category="Business Strategy"
       // Note: Layout calculates readTime automatically (~25-30 min read)

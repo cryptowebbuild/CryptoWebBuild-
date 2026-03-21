@@ -7,6 +7,8 @@ const Privacy: React.FC = () => {
       <SEO 
         title="Privacy Policy | CryptoWebBuild"
         description="Our privacy policy outlining how we collect, use, and protect your data."
+        canonical="/privacy"
+        noIndex={true}
       />
       
       <div className="max-w-4xl mx-auto animate-slide-up">
