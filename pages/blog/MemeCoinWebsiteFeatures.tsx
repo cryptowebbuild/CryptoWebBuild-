@@ -15,8 +15,8 @@ const MemeCoinFeatures: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="5 Must-Have Features for a Meme Coin Website: The 2026 Viral Blueprint"
-      description="Don't launch a ghost token. The ultimate technical and psychological guide to building Meme Coin websites that trigger FOMO, handle viral traffic, and convert visitors into diamond-handed holders."
+      title="5 Must-Have Features for a Meme Coin Website: Viral Guide"
+      description="The ultimate technical and psychological guide to building Meme Coin websites that trigger FOMO, handle viral traffic, and convert visitors."
       publishedTime="2026-02-20"
       category="Design & UX"
       // Note: Layout calculates readTime automatically (~25-30 min read)

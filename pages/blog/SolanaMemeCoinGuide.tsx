@@ -30,7 +30,7 @@ const SolanaMemeCoinGuide: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="How to Launch a Solana Meme Coin in 2026: The Advanced Technical Guide"
+      title="How to Launch a Solana Meme Coin: Advanced Tech Guide"
       description="The definitive 6,000-word manual for Solana developers. Covers Token-2022, Meteora Liquidity Pools, Jito Bundles, and building a cult community."
       publishedTime="2026-02-22"
       category="Solana Development"

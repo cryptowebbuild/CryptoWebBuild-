@@ -15,8 +15,8 @@ const StaticVsDynamic: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Why Static Sites (React) Are Safer Than WordPress for Crypto: The 2026 Security Report"
-      description="The definitive technical analysis of Web3 website architecture. Learn why 'Headless' and 'Static' tech stacks prevent 99% of hacks compared to dynamic CMS like WordPress."
+      title="Why Static Sites (React) Are Safer Than WordPress for Crypto"
+      description="Technical analysis of Web3 architecture. Learn why 'Headless' and 'Static' tech stacks prevent 99% of hacks compared to WordPress."
       publishedTime="2026-02-28"
       category="Tech Strategy"
       // Note: Layout calculates readTime automatically (~30-35 min read)

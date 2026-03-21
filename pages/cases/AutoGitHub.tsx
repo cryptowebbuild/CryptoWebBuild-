@@ -11,7 +11,19 @@ const AutoGitHub: React.FC = () => {
     "image": "https://cryptowebbuild.com/autogit-hero.jpg",
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild"
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CryptoWebBuild",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+      }
     },
     "description": "Building a client-side DevOps engine to deploy static websites to GitHub Pages directly from the browser without a backend."
   };
@@ -23,6 +35,7 @@ const AutoGitHub: React.FC = () => {
         description="How I built a client-side tool to deploy static sites to GitHub Pages directly from the browser using React and the GitHub API."
         keywords={['React App Case Study', 'Client-Side DevOps', 'GitHub API Integration', 'Serverless Web App']}
         schema={jsonLd}
+        canonical="/autogithub"
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">

@@ -15,8 +15,8 @@ const CryptoMarketingGuide: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The 2026 Crypto Marketing Strategy Guide: Stop Buying Bots, Start Building Tech"
-      description="The 'Agency-Grade' playbook for organic token growth. Learn how to replace expensive influencers with Technical SEO, On-Chain Loyalty Programs, and High-Performance Web Architecture."
+      title="Crypto Marketing Strategy Guide: Stop Bots, Build Tech"
+      description="The 'Agency-Grade' playbook for organic token growth. Learn how to replace expensive influencers with Technical SEO and On-Chain Loyalty."
       publishedTime="2026-02-10"
       category="Growth & Marketing"
       // Note: Read time is auto-calculated (~30 min read)
