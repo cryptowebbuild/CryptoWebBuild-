@@ -113,7 +113,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
       {/* --- VIDEO EMBED --- */}
       <div className="my-8 aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 relative bg-gray-100 dark:bg-gray-900">
         <iframe
-          src="https://www.youtube-nocookie.com/embed/S2iBFEf8n04?si=hM08N_D7p200n1O9"
+          src="https://www.youtube.com/embed/S2iBFEf8n04"
           title="Understanding Network Routing and Latency"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -177,7 +177,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
         If a free Android application can stabilize a real-time multiplayer game for millions of users, Web3 applications have no excuse for failed transactions and sluggish UIs. This is why <Link to="/services" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">professional Web3 development services</Link> focus heavily on node optimization.
       </p>
 
-      <p>Here is how we apply these lessons when building crypto infrastructure and <Link to="/services/dapp-development" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">custom DApps</Link> at CryptoWebBuild:</p>
+      <p>Here is how we apply these lessons when building crypto infrastructure and <Link to="/services" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">custom DApps</Link> at CryptoWebBuild:</p>
 
       <div className="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700">
         <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
@@ -216,7 +216,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
       {/* --- CONCLUSION --- */}
       <h2 className="text-3xl font-bold mt-16 mb-6 text-gray-900 dark:text-white">Conclusion: Infrastructure is the Unsung Hero</h2>
       <p>
-        Most users don't care about the backend infrastructure until it fails. When a gamer gets shot behind a wall because of high ping, they blame the game. When a crypto trader loses money because of slippage caused by a poorly optimized <Link to="/services/smart-contract-development" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">smart contract connection</Link> or slow RPC node, they blame the protocol.
+        Most users don't care about the backend infrastructure until it fails. When a gamer gets shot behind a wall because of high ping, they blame the game. When a crypto trader loses money because of slippage caused by a poorly optimized <Link to="/blog/best-website-developer" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">smart contract connection</Link> or slow RPC node, they blame the protocol.
       </p>
       <p>
         By studying highly optimized, single-purpose tools like dedicated proxies, we learn that reliable, direct-routing infrastructure is the key to a flawless user experience.
