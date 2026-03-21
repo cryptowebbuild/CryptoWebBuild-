@@ -17,7 +17,7 @@ interface ProjectItem {
   desc: string;
   tech: string[];
   link: string; // Internal Link for Case Study
-  liveUrl: string; // External Link
+  liveUrl?: string; // External Link (Optional for fictional projects)
   img?: string; // Fallback Image URL
 }
 
@@ -25,6 +25,33 @@ const Projects: React.FC = () => {
   
   // --- PROJECT DATA ---
   const projects: ProjectItem[] = [
+    {
+      id: 'nexusweb3',
+      title: 'Nexus Web3 Protocol',
+      category: 'DeFi Dashboard',
+      desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
+      tech: ['React', 'Ethers.js', 'Tailwind'],
+      link: '/nexusweb3',
+      img: 'https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'auracommerce',
+      title: 'Aura Commerce',
+      category: 'High-Conversion Store',
+      desc: 'A lightning-fast, high-converting dropshipping e-commerce landing page optimized for mobile sales and instantaneous checkouts.',
+      tech: ['Next.js', 'Stripe', 'Tailwind'],
+      link: '/auracommerce',
+      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'apexagency',
+      title: 'Apex Digital Agency',
+      category: 'Corporate Portfolio',
+      desc: 'A modern, sleek corporate portfolio for a marketing agency. Features smooth Framer Motion animations and professional B2B design.',
+      tech: ['React', 'Framer Motion', 'UI/UX'],
+      link: '/apexagency',
+      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
+    },
     {
       id: 'newsphotocard',
       title: 'News Photo Card',
@@ -198,15 +225,17 @@ const Projects: React.FC = () => {
                     </p>
                     
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <a 
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
-                      >
-                          Live Demo
-                          <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                      </a>
+                      {project.liveUrl && (
+                        <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
+                        >
+                            Live Demo
+                            <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                      )}
                       
                       {/* Check if Case Study exists (internal link) */}
                       {project.link !== '/projects' ? (

@@ -21,6 +21,9 @@ const staticRoutes = [
   '/autogithub',
   '/gigasolana',
   '/newsphotocard',
+  '/nexusweb3',
+  '/auracommerce',
+  '/apexagency',
 ];
 
 // Read blog posts dynamically from data/blogPosts.ts

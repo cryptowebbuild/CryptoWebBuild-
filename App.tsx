@@ -37,6 +37,9 @@ const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
 const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
 const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
 const NewsPhotoCard = lazy(() => import('./pages/cases/NewsPhotoCard'));
+const NexusWeb3 = lazy(() => import('./pages/cases/NexusWeb3'));
+const AuraCommerce = lazy(() => import('./pages/cases/AuraCommerce'));
+const ApexAgency = lazy(() => import('./pages/cases/ApexAgency'));
 
 // --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
@@ -99,6 +102,9 @@ const App: React.FC = () => {
           <Route path="/autogithub" element={<AutoGitHub />} />
           <Route path="/gigasolana" element={<GigaSolana />} />
           <Route path="/newsphotocard" element={<NewsPhotoCard />} />
+          <Route path="/nexusweb3" element={<NexusWeb3 />} />
+          <Route path="/auracommerce" element={<AuraCommerce />} />
+          <Route path="/apexagency" element={<ApexAgency />} />
 
           {/* --- BLOG ROUTES (Synchronized with src/data/blogPosts.ts) --- */}
           
