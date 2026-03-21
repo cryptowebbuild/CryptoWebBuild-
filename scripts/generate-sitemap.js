@@ -24,6 +24,8 @@ const staticRoutes = [
   '/nexusweb3',
   '/auracommerce',
   '/apexagency',
+  '/vanguardsaas',
+  '/solananft',
 ];
 
 // Read blog posts dynamically from data/blogPosts.ts

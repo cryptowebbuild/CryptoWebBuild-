@@ -40,6 +40,8 @@ const NewsPhotoCard = lazy(() => import('./pages/cases/NewsPhotoCard'));
 const NexusWeb3 = lazy(() => import('./pages/cases/NexusWeb3'));
 const AuraCommerce = lazy(() => import('./pages/cases/AuraCommerce'));
 const ApexAgency = lazy(() => import('./pages/cases/ApexAgency'));
+const VanguardSaaS = lazy(() => import('./pages/cases/VanguardSaaS'));
+const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
 
 // --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
@@ -105,6 +107,8 @@ const App: React.FC = () => {
           <Route path="/nexusweb3" element={<NexusWeb3 />} />
           <Route path="/auracommerce" element={<AuraCommerce />} />
           <Route path="/apexagency" element={<ApexAgency />} />
+          <Route path="/vanguardsaas" element={<VanguardSaaS />} />
+          <Route path="/solananft" element={<SolanaNFT />} />
 
           {/* --- BLOG ROUTES (Synchronized with src/data/blogPosts.ts) --- */}
           
