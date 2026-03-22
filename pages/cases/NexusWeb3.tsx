@@ -59,7 +59,7 @@ const NexusWeb3: React.FC = () => {
 
         <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 h-[400px] md:h-[500px]">
              <OptimizedImage
-               src="https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=1200&q=80"
+               src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&w=1200&q=80"
                alt="Nexus Web3 Protocol Interface Preview"
                className="w-full h-full"
                fill={true}

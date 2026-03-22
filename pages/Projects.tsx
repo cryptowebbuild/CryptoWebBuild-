@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
       tech: ['React', 'Ethers.js', 'Tailwind'],
       link: '/nexusweb3',
-      img: 'https://images.unsplash.com/photo-1639762681485-074b7f4ec651?auto=format&fit=crop&w=800&q=80'
+      img: 'https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'auracommerce',
@@ -51,6 +51,24 @@ const Projects: React.FC = () => {
       tech: ['React', 'Framer Motion', 'UI/UX'],
       link: '/apexagency',
       img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'vanguardsaas',
+      title: 'Vanguard SaaS',
+      category: 'B2B Analytics Platform',
+      desc: 'A high-performance, dark-mode B2B analytics dashboard engineered to visualize millions of real-time financial data points without lag.',
+      tech: ['React', 'D3.js', 'Tailwind'],
+      link: '/vanguardsaas',
+      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
+    },
+    {
+      id: 'solananft',
+      title: 'SolMint Marketplace',
+      category: 'Solana NFT App',
+      desc: 'A sleek, fast, image-heavy marketplace for Web3 collectibles featuring seamless Phantom wallet integration and optimistic UI updates.',
+      tech: ['Next.js', 'Solana Web3', 'React'],
+      link: '/solananft',
+      img: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 'newsphotocard',
