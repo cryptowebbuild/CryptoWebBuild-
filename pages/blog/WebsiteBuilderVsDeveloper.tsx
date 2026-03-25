@@ -39,7 +39,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
       </p>
 
       <p>
-        On one side, you have <strong>Wix, Squarespace, or Webflow</strong>. They promise you a website for $29/month. "No coding required," they say. "Launch in hours," they promise.
+        On one side, you have Wix, Squarespace, Webflow, or <a href="https://nicepage.com" target="_blank" rel="noopener">nicepage website builder</a>. They promise you a website for $29/month ($6.75 for Nicepage). "No coding required," they say. "Launch in hours," they promise.
       </p>
 
       <p>
