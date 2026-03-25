@@ -55,6 +55,7 @@ const SolanaMemeCoinGuide = lazy(() => import('./pages/blog/SolanaMemeCoinGuide'
 const CryptoSEO = lazy(() => import('./pages/blog/CryptoSEO'));
 const PresaleGuide = lazy(() => import('./pages/blog/PresaleGuide'));
 const GamingProxyVsCryptoNodes = lazy(() => import('./pages/blog/GamingProxyVsCryptoNodes'));
+const HiddenCostSlowWebsites = lazy(() => import('./pages/blog/HiddenCostSlowWebsites'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -144,6 +145,9 @@ const App: React.FC = () => {
 
           {/* 11. Gaming Proxy vs Crypto Nodes */}
           <Route path="/blog/gaming-proxy-vs-crypto-nodes" element={<GamingProxyVsCryptoNodes />} />
+
+          {/* 12. Hidden Cost of Slow Websites */}
+          <Route path="/blog/hidden-cost-of-slow-websites" element={<HiddenCostSlowWebsites />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
