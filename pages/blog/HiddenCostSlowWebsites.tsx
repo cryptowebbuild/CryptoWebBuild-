@@ -143,7 +143,7 @@ const HiddenCostSlowWebsites: React.FC = () => {
         WordPress is popular, but out of the box, it's slow. To add features, owners install dozens of plugins (forms, analytics, sliders, SEO). Every plugin adds extra JavaScript and CSS to your site, creating massive "Code Bloat".
       </p>
       <p>
-        This is a major reason why many high-end agencies are moving clients away from bloated CMS setups toward modern, custom-coded architectures. (We've detailed the risks of relying on restrictive platforms in our analysis of <Link to="/blog/website-builder-vs-developer" className="text-purple-600 font-bold hover:underline">[INTERNAL LINK: Website Builder Ranking]</Link> vs Custom Development).
+        This is a major reason why many high-end agencies are moving clients away from bloated CMS setups toward modern, custom-coded architectures. (We've detailed the risks of relying on restrictive platforms in our analysis of <Link to="/blog/website-builder-vs-developer" className="text-purple-600 font-bold hover:underline">Website Builders</Link> vs Custom Development).
       </p>
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">3. Unoptimized Images</h3>
@@ -189,14 +189,14 @@ const HiddenCostSlowWebsites: React.FC = () => {
         Ready to stop the leak? It starts with data. You can run a basic check using a [EXTERNAL PARTNER LINK PLACEHOLDER] Local SEO Audit tool, or you can get a professional analysis.
       </p>
 
-      <div className="mt-12 bg-gradient-to-r from-purple-900 to-indigo-900 rounded-2xl p-8 md:p-12 text-center shadow-2xl border border-purple-500/30">
-        <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Is Your Website Bleeding Revenue?</h3>
-        <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">
+      <div className="mt-12 bg-gray-50 dark:bg-gradient-to-r dark:from-purple-900 dark:to-indigo-900 rounded-2xl p-8 md:p-12 text-center shadow-lg dark:shadow-2xl border border-gray-200 dark:border-purple-500/30">
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Is Your Website Bleeding Revenue?</h3>
+        <p className="text-gray-700 dark:text-purple-100 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             Stop guessing. Get a comprehensive, expert Technical SEO and Speed Audit. We will tell you exactly how many seconds you are losing, and exactly how much revenue it's costing you.
         </p>
-        <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-900 bg-white rounded-full hover:bg-purple-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 dark:text-gray-900 dark:bg-white rounded-full hover:bg-blue-700 dark:hover:bg-purple-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Book Your Free Speed Audit
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
         </Link>
       </div>
 
