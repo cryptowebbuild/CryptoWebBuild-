@@ -30,7 +30,7 @@ const NexusWeb3: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO
         title="Nexus Web3 Protocol | DeFi Staking Dashboard UI"
         description="See how we designed and developed a high-performance, neon-themed Web3 staking and analytics dashboard."
@@ -42,7 +42,7 @@ const NexusWeb3: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>

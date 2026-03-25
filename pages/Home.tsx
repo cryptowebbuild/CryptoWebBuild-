@@ -73,7 +73,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="space-y-24 md:space-y-48 pb-32 overflow-hidden bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
+    <div className="space-y-24 md:space-y-48 overflow-hidden bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
       
       {/* --- SEO Configuration --- */}
       <SEO 
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
       />
       
       {/* --- Hero Section --- */}
-      <section className="relative pt-24 pb-24 md:pt-40 md:pb-32 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
+      <section className="relative px-6 min-h-[90vh] flex flex-col items-center justify-center text-center">
         
         {/* Glow Effects - GPU Accelerated */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/20 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
@@ -271,19 +271,19 @@ const Home: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-green-500/50 transition-colors">
                             <div className="text-4xl font-black text-green-500 mb-2">100</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Performance</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Performance</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-blue-500/50 transition-colors">
                             <div className="text-4xl font-black text-blue-500 mb-2">0.8s</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Load Time</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Load Time</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-purple-500/50 transition-colors">
                             <div className="text-4xl font-black text-purple-500 mb-2">A+</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Security</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Security</div>
                         </div>
                         <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-cyan-500/50 transition-colors">
                             <div className="text-4xl font-black text-cyan-500 mb-2">100%</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600">Uptime</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Uptime</div>
                         </div>
                     </div>
                 </div>

@@ -48,7 +48,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
+    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
       <SEO 
@@ -80,7 +80,7 @@ const Services: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 max-w-5xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
         
         {/* Service 1: Crypto & Web3 */}
         <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-purple-500/10" style={{ animationDelay: '0.1s' }}>

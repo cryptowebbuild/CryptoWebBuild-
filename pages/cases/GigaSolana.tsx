@@ -29,7 +29,7 @@ const GigaSolana: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO 
         title="Viral Meme Coin Design | $GIGA Solana Case Study"
         description="Learn how we built a cult-following meme coin site on Solana. Featuring 'Moon Math' calculators, neon aesthetics, and aggressive branding."
@@ -39,7 +39,7 @@ const GigaSolana: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>

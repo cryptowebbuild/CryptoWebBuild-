@@ -76,7 +76,7 @@ const Blog: React.FC = () => {
       {/* Ambient Glow for Depth */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 pt-32 pb-24 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <SEO 
           title="Web3 Strategy & Dev Insights | CryptoWebBuild Blog"
           description="Expert guides on crypto marketing, development costs, hiring strategies, and web architecture. Built for founders who want to scale."

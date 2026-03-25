@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20 flex flex-col items-center justify-center min-h-[80vh] text-center">
+    <div className="container mx-auto px-6 flex flex-col items-center justify-center min-h-[80vh] text-center">
       <SEO 
         title="404 - Page Not Found"
         description="The page you are looking for has been lost in the crypto void."

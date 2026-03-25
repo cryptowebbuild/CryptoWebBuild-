@@ -29,7 +29,7 @@ const AutoGitHub: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO
         title="Serverless React App Case Study | AutoGit Deployer"
         description="How I built a client-side tool to deploy static sites to GitHub Pages directly from the browser using React and the GitHub API."
@@ -39,7 +39,7 @@ const AutoGitHub: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>

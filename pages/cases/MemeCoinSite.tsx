@@ -29,7 +29,7 @@ const MemeCoinSite: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO 
         title="Meme Coin Website Design | Viral Landing Page Case Study"
         description="Case study: How we designed a viral, gamified meme coin website on BNB Chain. Custom animations, spin-to-win features, and mobile-first design."
@@ -40,7 +40,7 @@ const MemeCoinSite: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>

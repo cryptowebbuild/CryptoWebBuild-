@@ -178,7 +178,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
                 <li className="flex justify-between text-red-500 font-bold"><span>Lost Revenue:</span> <span>Huge</span></li>
             </ul>
             <div className="pt-4 border-t border-gray-200 dark:border-white/10">
-                <p className="text-xs text-gray-600 uppercase tracking-widest">Asset Value</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-widest">Asset Value</p>
                 <p className="text-2xl font-bold text-red-500">$0 (Liability)</p>
             </div>
         </div>

@@ -30,7 +30,7 @@ const NewsPhotoCard: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO
         title="Viral News Card Generator Development | Case Study"
         description="Case study on building a high-performance, client-side social media graphic generator using React and HTML5 Canvas. Zero server costs, viral potential."
@@ -43,7 +43,7 @@ const NewsPhotoCard: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto animate-slide-up">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-8">
             <Link to="/" className="hover:text-purple-600 transition-colors">Home</Link>
             <span>/</span>
             <Link to="/projects" className="hover:text-purple-600 transition-colors">Projects</Link>
