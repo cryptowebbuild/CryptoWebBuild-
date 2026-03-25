@@ -131,5 +131,16 @@ export const blogPosts: BlogPost[] = [
     category: 'Tech',
     image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e',
     keywords: ['gaming proxy', 'free fire proxy server', 'web3 infrastructure', 'zero latency']
+  },
+  {
+    id: '12',
+    slug: 'hidden-cost-of-slow-websites',
+    title: 'The Hidden Cost of Slow Websites: Leaking Leads',
+    excerpt: 'Is your local service business losing high-ticket leads? Discover why speed optimization is the ultimate Technical SEO strategy for roofers, dentists, and lawyers.',
+    date: 'Apr 10, 2026',
+    readTime: '15 min read',
+    category: 'Business',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+    keywords: ['website speed optimization', 'technical seo for local business', 'roofer marketing', 'dentist seo', 'core web vitals']
   }
 ];
