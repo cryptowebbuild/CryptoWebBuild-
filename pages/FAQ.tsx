@@ -95,7 +95,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
+    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       <SEO 
         title="Frequently Asked Questions | CryptoWebBuild"
         description="Answers to common questions about web development services, pricing, timelines, and crypto integrations."

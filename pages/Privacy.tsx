@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const Privacy: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO 
         title="Privacy Policy | CryptoWebBuild"
         description="Our privacy policy outlining how we collect, use, and protect your data."

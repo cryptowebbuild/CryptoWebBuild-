@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
+    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
       <SEO 
@@ -40,20 +40,24 @@ const Contact: React.FC = () => {
         schema={jsonLd}
       />
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         
         {/* --- Header Section --- */}
-        <div className="text-center mb-12 animate-slide-up">
+        <div className="text-center lg:text-left mb-12 lg:mb-0 animate-slide-up">
           <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-cyan-100 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-500/20 text-cyan-700 dark:text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">
             Open for Work
           </div>
-          <h1 className="font-display text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">
-            Let's Build Something <br/>
+          <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+            Let's Build Something <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">Extraordinary</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            Tell me about your project — I usually reply within a few hours.
+          <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">
+            Tell me about your project — I usually reply within a few hours. Whether it's a new Web3 protocol, a viral meme coin, or a blazing fast e-commerce store, I'm ready to architect it.
           </p>
+
+          <div className="mt-10 hidden lg:block text-gray-600 dark:text-gray-400 text-sm font-medium">
+            Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
+          </div>
         </div>
 
         {/* --- Contact Form --- */}
@@ -148,8 +152,8 @@ const Contact: React.FC = () => {
           </form>
         </div>
 
-        <div className="mt-10 text-center text-gray-600 dark:text-gray-400 text-sm font-medium">
-          Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
+        <div className="mt-10 lg:hidden text-center text-gray-600 dark:text-gray-400 text-sm font-medium">
+          Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
         </div>
       </div>
     </div>

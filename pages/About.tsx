@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
 
 const About: React.FC = () => {
   const jsonLd = {
@@ -11,7 +12,7 @@ const About: React.FC = () => {
       "name": "Sagor Ahamed",
       "alternateName": "CryptoWebBuild",
       "jobTitle": "Senior Web3 Developer",
-      "image": "https://cryptowebbuild.com/sagor-avatar.png",
+      "image": "https://cryptowebbuild.com/hero-avatar.webp",
       "description": "Founder of CryptoWebBuild Agency. Specialized in high-performance Web3 interfaces, e-commerce, and modern web architecture.",
       "url": "https://cryptowebbuild.com/about",
       "sameAs": [
@@ -79,12 +80,12 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
+    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       <SEO 
         title="About Sagor Ahamed | Senior Web3 Developer"
         description="Meet Sagor Ahamed, founder of CryptoWebBuild. Expert full-stack developer specialized in React, Solana, and high-performance web architecture."
         keywords={['Sagor Ahamed', 'CryptoWebBuild Founder', 'Senior React Developer', 'Web3 Expert', 'Frontend Architect']}
-        image="https://cryptowebbuild.com/sagor-avatar.png"
+        image="https://cryptowebbuild.com/hero-avatar.webp"
         canonical="/about"
       />
       <script type="application/ld+json">
@@ -92,7 +93,7 @@ const About: React.FC = () => {
       </script>
 
       {/* --- HERO: Founder Profile & Social Command Center --- */}
-      <div className="relative mb-32 animate-slide-up">
+      <div className="max-w-7xl mx-auto relative mb-32 animate-slide-up">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -109,11 +110,12 @@ const About: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-orange-500 to-yellow-300 rounded-[2.5rem] blur-[30px] opacity-40 group-hover:opacity-60 transition-opacity duration-700 animate-pulse-slow"></div>
                     
                     <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[2.5rem] overflow-hidden border-4 border-yellow-400/20 shadow-[0_0_50px_rgba(250,204,21,0.2)] bg-[#0F172A] transform transition-transform duration-700 group-hover:rotate-y-6 group-hover:scale-[1.02]">
-                        <img 
-                            src="/sagor-avatar.png" 
+                        <OptimizedImage
+                            src="/hero-avatar.webp"
                             alt="Sagor Ahamed - CryptoWebBuild Founder" 
                             className="w-full h-full object-cover"
-                            loading="eager"
+                            fill={true}
+                            priority={true}
                         />
                         {/* Overlay Gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent opacity-30"></div>
@@ -183,7 +185,7 @@ const About: React.FC = () => {
       </div>
 
       {/* --- Philosophy / Agency Story --- */}
-      <div className="grid md:grid-cols-2 gap-12 md:gap-24 mb-32 items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
         <div className="space-y-8 order-2 md:order-1">
             <h2 className="font-display text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                 More than a Developer. <br/>
@@ -284,7 +286,7 @@ const About: React.FC = () => {
       </div>
 
       {/* --- CTA --- */}
-      <div className="relative group rounded-[3rem] overflow-hidden bg-slate-900 border border-white/10 p-12 text-center shadow-2xl">
+      <div className="max-w-7xl mx-auto relative group rounded-[3rem] overflow-hidden bg-slate-900 border border-white/10 p-12 text-center shadow-2xl">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-green-500"></div>
         

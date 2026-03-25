@@ -3,7 +3,7 @@ import SEO from '../components/SEO';
 
 const Terms: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 pt-32 pb-20">
+    <div className="container mx-auto px-6 ">
       <SEO 
         title="Terms of Service | CryptoWebBuild"
         description="Terms and conditions for using CryptoWebBuild services."
