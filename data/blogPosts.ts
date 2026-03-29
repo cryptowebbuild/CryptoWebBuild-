@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'meme-coin-website-ultimate-guide',
+    slug: 'meme-coin-website-ultimate-guide',
+    title: 'The Ultimate Guide to Building a Million-Dollar Meme Coin Website',
+    excerpt: 'A deep-dive, 3,000-word guide for crypto founders on how to build high-performance, conversion-optimized meme coin websites that scream legitimacy and attract whales.',
+    date: 'May 20, 2024',
+    readTime: '15 min read',
+    category: 'Guide',
+    image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247',
+    keywords: ['meme coin website development', 'how to build a crypto presale website', 'Web3 website design agency']
+  },
+  {
     id: '1',
     slug: 'crypto-seo-guide',
     title: 'Crypto SEO Guide 2026: How to Rank Your Token #1',
