@@ -12,15 +12,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'meme-coin-website-ultimate-guide',
-    slug: 'meme-coin-website-ultimate-guide',
-    title: 'The Ultimate Guide to Building a Million-Dollar Meme Coin Website',
-    excerpt: 'A deep-dive, 3,000-word guide for crypto founders on how to build high-performance, conversion-optimized meme coin websites that scream legitimacy and attract whales.',
-    date: 'May 20, 2024',
+    id: 'hidden-cost-slow-websites',
+    slug: 'hidden-cost-of-slow-websites',
+    title: 'The Hidden Cost of Slow Websites: Why Your Local Business is Leaking Money',
+    excerpt: 'A technical breakdown of how website speed optimization directly impacts revenue for local service businesses like roofers, plumbers, and lawyers.',
+    date: 'Mar 10, 2026',
+    readTime: '12 min read',
+    category: 'Business',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b',
+    keywords: ['cost of a slow website for local business', 'technical SEO for contractors', 'website speed optimization services']
+  },
+  {
+    id: 'meme-coin-scaling-guide',
+    slug: 'meme-coin-scaling-guide',
+    title: 'From Pump.fun to $100M: The 2026 Blueprint for Scaling Your Meme Coin Website',
+    excerpt: 'A massive, 3,000-word deep dive into how viral meme coins must upgrade their digital infrastructure and build custom Web3 ecosystems to attract whales.',
+    date: 'Mar 15, 2026',
     readTime: '15 min read',
-    category: 'Guide',
+    category: 'Tech',
     image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247',
-    keywords: ['meme coin website development', 'how to build a crypto presale website', 'Web3 website design agency']
+    keywords: ['pump fun alternative website', 'migrating meme coin to custom website', 'scaling a solana meme coin', 'crypto website redesign 2026']
   },
   {
     id: '1',
@@ -142,16 +153,5 @@ export const blogPosts: BlogPost[] = [
     category: 'Tech',
     image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e',
     keywords: ['gaming proxy', 'free fire proxy server', 'web3 infrastructure', 'zero latency']
-  },
-  {
-    id: '12',
-    slug: 'hidden-cost-of-slow-websites',
-    title: 'The Hidden Cost of Slow Websites: Leaking Leads',
-    excerpt: 'Is your local service business losing high-ticket leads? Discover why speed optimization is the ultimate Technical SEO strategy for roofers, dentists, and lawyers.',
-    date: 'Apr 10, 2026',
-    readTime: '15 min read',
-    category: 'Business',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    keywords: ['website speed optimization', 'technical seo for local business', 'roofer marketing', 'dentist seo', 'core web vitals']
   }
 ];

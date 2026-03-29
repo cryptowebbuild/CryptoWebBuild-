@@ -6,70 +6,45 @@ import ProTip from '../../components/blog/ProTip';
 
 const HiddenCostSlowWebsites: React.FC = () => {
   const takeaways = [
-    "The 3-Second Rule: 53% of mobile users abandon a website that takes longer than 3 seconds to load. For a roofing contractor, that's thousands of dollars in lost leads.",
-    "Google's Core Web Vitals (CWV): Speed isn't just a luxury; it's a confirmed ranking factor. A slow site gets pushed to Page 2 of Google, where leads go to die.",
-    "The 'Band-Aid' Trap: Cheap hosting and bloated WordPress plugins are the primary culprits behind local business site failures.",
-    "Technical SEO > Aesthetics: A beautiful website that takes 8 seconds to load will always be outperformed by a simple, lightning-fast site."
+    "A 1-second delay in page load time can reduce conversions by up to 20% for local service businesses.",
+    "Google's Core Web Vitals (CWV) directly penalize slow websites, pushing competitors above you in local map packs.",
+    "Cheap shared hosting and bloated WordPress plugins are the #1 cause of slow load times.",
+    "Migrating to a custom-coded, static site architecture (SSG) can guarantee sub-second load times and dominate local SEO."
   ];
 
   return (
     <BlogPostLayout
       title="The Hidden Cost of Slow Websites: Why Your Local Business is Leaking Money"
-      description="Is your service business website losing high-ticket leads? Discover why speed optimization is the ultimate Technical SEO strategy for roofers, dentists, and lawyers."
-      publishedTime="2026-04-10"
-      category="Business Strategy"
-      image="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+      description="A technical breakdown of how website speed optimization directly impacts revenue for local service businesses like roofers, plumbers, and lawyers."
+      publishedTime="2026-03-10"
+      category="Business"
+      image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" // Unique image: Cyber security / Data flow
       keywords={[
-        'website speed optimization',
-        'technical seo for local business',
-        'roofer marketing',
-        'dentist seo',
-        'core web vitals',
-        'high-performance web development'
+        'cost of a slow website for local business',
+        'technical SEO for contractors',
+        'website speed optimization services',
+        'core web vitals local SEO'
       ]}
       canonical="/blog/hidden-cost-of-slow-websites"
     >
       <KeyTakeaways points={takeaways} />
 
-      {/* --- INTRO --- */}
-      <p className="lead text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300 leading-relaxed">
-        Let's talk about the silent killer of local service businesses.
+      {/* --- CHAPTER 1: THE REALITY --- */}
+      <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">1. The 3-Second Bleed: How You Lose High-Ticket Leads</h2>
+      <p>
+        Imagine you are a homeowner whose roof just started leaking. Water is dripping onto your drywall. You pull out your phone, frantically search "Emergency Roofer Near Me," and click the first result.
       </p>
 
       <p>
-        You've invested in a sleek new logo. You've printed the truck wraps. You might even be running Google Ads to drive traffic to your website. But when a homeowner clicks your ad after their roof starts leaking, they are greeted by a blank white screen and a spinning loading wheel.
+        The screen goes white. One second passes. Two seconds pass. A spinning loading wheel appears. Three seconds pass.
       </p>
 
       <p>
-        One second passes. Two seconds. Three seconds.
+        What do you do? You hit the "Back" button and click the next roofer on the list.
       </p>
 
       <p>
-        By the fourth second, they hit the "back" button and click on your competitor. You just paid $45 for a click that resulted in zero revenue.
-      </p>
-
-      <div className="bg-blue-50 dark:bg-blue-900/10 border-l-4 border-blue-500 p-4 md:p-6 my-6 rounded-r-xl shadow-sm">
-        <h4 className="flex items-center gap-2 text-blue-800 dark:text-blue-400 font-bold uppercase tracking-wide text-sm mb-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            Case Study: The $10,000/Month Leak
-        </h4>
-        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-            I recently audited a local roofing contractor's site in Chicago. They were spending heavily on marketing but seeing terrible conversion rates. The audit revealed a <strong>7-second load time</strong> on mobile devices. By our calculations, analyzing their traffic volume and average ticket size, this sluggish performance was costing them an estimated <strong>$10,000+ a month</strong> in bounced traffic to competitors. After rebuilding their site for speed, their conversion rate tripled within 30 days.
-        </p>
-      </div>
-
-      <p>
-        As a web developer who specializes in high-performance websites, I see this daily. Business owners treat their websites like digital brochures when they should treat them like high-speed sales engines. In this guide, I'll explain exactly why your site is leaking money and the Technical SEO fixes you need right now.
-      </p>
-
-      {/* --- CHAPTER 1: THE PSYCHOLOGY OF SPEED --- */}
-      <h2 className="text-3xl font-bold mt-16 mb-8 text-gray-900 dark:text-white">1. The Psychology of Speed (Patience is Dead)</h2>
-      <p>
-        We live in an era of instant gratification. When a customer is looking for an emergency plumber, a personal injury lawyer, or a roofer, they are often stressed and in a hurry.
-      </p>
-
-      <p>
-        According to Google's own data, as page load time goes from 1 second to 3 seconds, the probability of bounce (the user leaving immediately) increases by <strong>32%</strong>. If it hits 5 seconds, the probability of bounce increases by <strong>90%</strong>.
+        This exact scenario is playing out thousands of times a day across every local service industry. A Google study found that if a page takes longer than 3 seconds to load, over 53% of mobile users will abandon the site. If it hits 5 seconds, the probability of bounce increases by <strong>90%</strong>.
       </p>
 
       <h3 className="text-2xl font-bold mt-8 mb-4 text-gray-800 dark:text-gray-100">Speed Equals Trust</h3>
