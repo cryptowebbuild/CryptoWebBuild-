@@ -153,5 +153,16 @@ export const blogPosts: BlogPost[] = [
     category: 'Business',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
     keywords: ['website speed optimization', 'technical seo for local business', 'roofer marketing', 'dentist seo', 'core web vitals']
+  },
+  {
+    id: '13',
+    slug: 'local-business-website-seo-checklist',
+    title: 'Local Business Website SEO Checklist: Rank Higher and Turn Visitors Into Clients',
+    excerpt: 'A practical local business SEO checklist for companies that want better rankings, faster websites, stronger trust signals, and more leads from their homepage, service pages, and local search traffic.',
+    date: 'Apr 01, 2026',
+    readTime: '18 min read',
+    category: 'Business',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    keywords: ['local business website seo checklist', 'local business seo website', 'website seo audit checklist for local business']
   }
 ];
