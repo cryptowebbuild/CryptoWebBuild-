@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Dec 24, 2025',
     readTime: '15 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+    image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4',
     keywords: ['Crypto Marketing', 'Token Strategy', 'Community']
   },
   {
@@ -162,7 +162,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Apr 01, 2026',
     readTime: '18 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
     keywords: ['local business website seo checklist', 'local business seo website', 'website seo audit checklist for local business']
   }
 ];

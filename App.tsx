@@ -57,6 +57,7 @@ const PresaleGuide = lazy(() => import('./pages/blog/PresaleGuide'));
 const GamingProxyVsCryptoNodes = lazy(() => import('./pages/blog/GamingProxyVsCryptoNodes'));
 const HiddenCostSlowWebsites = lazy(() => import('./pages/blog/HiddenCostSlowWebsites'));
 const MemeCoinWebsiteUltimateGuide = lazy(() => import('./pages/blog/MemeCoinWebsiteUltimateGuide'));
+const LocalBusinessWebsiteSEOChecklist = lazy(() => import('./pages/blog/local-business-website-seo-checklist'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -152,6 +153,9 @@ const App: React.FC = () => {
 
           {/* 13. Meme Coin Website Ultimate Guide */}
           <Route path="/blog/meme-coin-website-ultimate-guide" element={<MemeCoinWebsiteUltimateGuide />} />
+
+          {/* 14. Local Business Website SEO Checklist */}
+          <Route path="/blog/local-business-website-seo-checklist" element={<LocalBusinessWebsiteSEOChecklist />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
