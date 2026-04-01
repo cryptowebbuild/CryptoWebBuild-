@@ -11,10 +11,7 @@
 ## Target Audience & Niche Focus
 - Web3 & Crypto Projects (Token Presales, Meme Coins, DApps, NFT Marketplaces)
 - High-Growth E-commerce Stores
-- Dental Clinics
-- Roofing Contractors
-- Real Estate Agencies
-- B2B SaaS and Enterprise Startups
+- Service Businesses and Startups that need faster, clearer websites
 
 ---
 
@@ -32,9 +29,9 @@ Turn traffic into revenue. I architect secure, SEO-first websites tailored for S
 
 **Why My Sites Rank & Convert (Engineering Philosophy):**
 In 2026, standard templates don't cut it. I build using a Static-First Architecture. This means your site isn't generated on the fly every time a user visits—it's pre-built and served from the edge.
-- **SEO Dominance:** Google Core Web Vitals score near 100/100.
-- **Security:** No database to hack, impervious to SQL injection.
-- **Global Speed:** Assets distributed globally via Cloudflare CDN. (0.8s Load Time, 100% Uptime, A+ Security).
+- **SEO Structure:** Clean metadata, schema support, and crawlable page architecture.
+- **Security:** Static-first architecture reduces unnecessary backend surface area.
+- **Global Speed:** Assets can be delivered globally through Cloudflare CDN with a lightweight frontend stack.
 
 **Launch Protocol (From Concept to Launch):**
 1. **Discovery:** We map your goals, audience, and features to build a roadmap that ensures a successful liftoff.
@@ -43,9 +40,9 @@ In 2026, standard templates don't cut it. I build using a Static-First Architect
 4. **Launch:** Deployment to global edge networks. Analytics setup. Your project is live, secure, and ready for traffic.
 
 **Trusted by Builders:**
-- Alex R., Founder (Solana Token Launch): "Sagor delivered our presale page in 2 days. The load speed was instant and we hit our hard cap in 12 hours. Best dev we've hired."
-- Sarah J., CEO (ModernShop E-com): "The static site architecture changed everything. Our bounce rate dropped by 40% immediately. Highly recommended for performance."
-- Mike T., Lead Dev (DeFi Dashboard Protocol): "Clean code, great communication, and he actually understands Web3 context. The wallet integration was flawless."
+- CryptoWebBuild focuses on direct execution, clear communication, and practical frontend results.
+- The agency emphasizes fast delivery, cleaner design systems, and technical SEO foundations.
+- Project credibility should be demonstrated through real case studies, live examples, and transparent process rather than generic testimonials.
 
 ---
 

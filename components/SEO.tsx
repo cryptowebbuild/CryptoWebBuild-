@@ -83,7 +83,7 @@ const SEO: React.FC<SEOProps> = ({
       "description": finalDescription,
       "sameAs": [
           "https://github.com/cryptowebbuild",
-          "https://twitter.com/WebBuildDev",
+          "https://x.com/CryptowebbuildX",
           "https://www.youtube.com/@cryptowebbuild",
           "https://t.me/CryptoWebBuild"
       ]
@@ -93,7 +93,7 @@ const SEO: React.FC<SEOProps> = ({
       return {
         ...baseSchema,
         "@type": "Organization",
-        "name": "CryptoWebBuild Agency",
+        "name": "CryptoWebBuild",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",
@@ -250,8 +250,8 @@ const SEO: React.FC<SEOProps> = ({
 
       {/* --- Twitter Cards (Large Image for better CTR) --- */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@WebBuildDev" />
-      <meta name="twitter:creator" content="@WebBuildDev" />
+      <meta name="twitter:site" content="@CryptowebbuildX" />
+      <meta name="twitter:creator" content="@CryptowebbuildX" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={finalImage} />

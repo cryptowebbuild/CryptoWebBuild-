@@ -11,10 +11,7 @@
 ## Target Audience & Niche Focus
 - Web3 & Crypto Projects (Token Presales, Meme Coins, DApps, NFT Marketplaces)
 - High-Growth E-commerce Stores
-- Dental Clinics
-- Roofing Contractors
-- Real Estate Agencies
-- B2B SaaS and Enterprise Startups
+- Service Businesses and Startups that need faster, clearer websites
 
 ## Core Services & Solutions
 - **Crypto & Web3 Sites:** Token landing pages, presale flows, custom dApp UIs, wallet integrations, and Moon Math calculators.
@@ -25,7 +22,7 @@
 
 ## Technical Capabilities & Philosophy
 - **Architecture:** Static-First, Headless CMS, and Client-Side rendering.
-- **Performance:** Sub-second load times (< 0.8s LCP), Core Web Vitals 90+ optimization.
+- **Performance:** Fast-loading, static-first builds with strong Core Web Vitals potential and clean frontend architecture.
 - **Tech Stack:** React, Next.js, TypeScript, Tailwind CSS (Glassmorphism/Neomorphism UI), Solana Web3.js, Ethers.js, Cloudflare CDN.
 - **Security:** Zero-database static architecture to prevent SQL injection and enhance global distribution.
 

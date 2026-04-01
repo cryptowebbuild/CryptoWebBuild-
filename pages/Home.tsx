@@ -8,34 +8,17 @@ const Home: React.FC = () => {
 
   // Updated Phrases to target diverse clients
   const phrases = [
-    'Viral Meme Coin Sites.',
-    'High-Converting Stores.',
-    'Secure Token Presales.',
-    'Custom Business Sites.'
+    'Crypto Launch Websites.',
+    'Fast Business Websites.',
+    'Conversion-Focused Landing Pages.',
+    'SEO-Friendly Custom Builds.'
   ];
   
-  const testimonials = [
-    {
-      name: "Alex R.",
-      role: "Founder",
-      company: "Solana Token Launch",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=200&h=200",
-      quote: "Sagor delivered our presale page in 2 days. The load speed was instant and we hit our hard cap in 12 hours. Best dev we've hired."
-    },
-    {
-      name: "Sarah J.",
-      role: "CEO",
-      company: "ModernShop E-com",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?fit=crop&w=200&h=200",
-      quote: "The static site architecture changed everything. Our bounce rate dropped by 40% immediately. Highly recommended for performance."
-    },
-    {
-      name: "Mike T.",
-      role: "Lead Dev",
-      company: "DeFi Dashboard Protocol",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=200&h=200",
-      quote: "Clean code, great communication, and he actually understands Web3 context. The wallet integration was flawless."
-    }
+  const proofPoints = [
+    'Custom React and static-first builds',
+    'Clean SEO structure with technical setup',
+    'Mobile-first pages focused on clarity and speed',
+    'Direct communication with Sagor Ahamed'
   ];
   
   // Typing Effect Logic
@@ -77,15 +60,15 @@ const Home: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="CryptoWebBuild Agency | High-Performance Web Solutions"
-        description="Premier Web Development Agency for Startups & Crypto Projects. We build secure, ultra-fast websites that convert. Hire our expert team today."
+        title="CryptoWebBuild | Fast Websites for Crypto, Business & E-commerce"
+        description="CryptoWebBuild builds fast, modern websites for crypto projects, businesses, and e-commerce brands with strong SEO structure, clean design, and conversion-focused UX."
         keywords={[
-          'Web Development Agency',
-          'Crypto Website Agency',
+          'Crypto Website Developer',
           'Business Website Developer', 
-          'E-commerce Solutions',
-          'Hire React Developers',
-          'Custom Website Design Agency'
+          'E-commerce Website Developer',
+          'Technical SEO Web Design',
+          'React Website Development',
+          'Conversion Focused Website Design'
         ]}
         canonical="/"
         schemaType="Organization"
@@ -127,7 +110,7 @@ const Home: React.FC = () => {
           </div>
 
           <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up font-medium text-balance" style={{ animationDelay: '0.4s' }}>
-            Turn traffic into revenue. I architect secure, SEO-first websites tailored for <strong>Startups</strong>, <strong>Crypto Projects</strong>, and <strong>High-Growth E-commerce</strong>.
+            I build fast, modern websites for <strong>crypto projects</strong>, <strong>growing businesses</strong>, and <strong>e-commerce brands</strong> that need better clarity, stronger SEO structure, and cleaner conversion flow.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto animate-slide-up" style={{ animationDelay: '0.6s' }}>
@@ -135,14 +118,14 @@ const Home: React.FC = () => {
               to="/contact" 
               className="relative px-8 py-4 md:px-10 md:py-5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold text-lg md:text-xl rounded-2xl overflow-hidden transition-all active:scale-95 hover:scale-105 shadow-xl shadow-purple-500/10 w-full sm:w-auto flex items-center justify-center"
             >
-              <span className="relative z-10">Get a Quote</span>
+              <span className="relative z-10">Start Your Project</span>
             </Link>
             
             <Link 
-              to="/blog/solana-meme-coin-guide"
+              to="/projects"
               className="px-8 py-4 md:px-10 md:py-5 text-gray-900 dark:text-white font-bold text-lg md:text-xl rounded-2xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all active:scale-95 shadow-sm w-full sm:w-auto text-center backdrop-blur-md"
             >
-              Start Launching
+              View Recent Work
             </Link>
           </div>
         </div>
@@ -255,9 +238,9 @@ const Home: React.FC = () => {
                         </p>
                         <ul className="space-y-3 mt-6">
                             {[
-                                "SEO Dominance: Google Core Web Vitals score near 100/100.",
-                                "Security: No database to hack, impervious to SQL injection.",
-                                "Global Speed: Assets distributed globally via Cloudflare CDN."
+                                "SEO-ready structure with clean metadata, schema, and crawlable pages.",
+                                "Static-first architecture that reduces bloat and improves stability.",
+                                "Cloudflare delivery for faster global performance and simpler deployment."
                             ].map((item) => (
                                 <li key={item} className="flex items-center gap-3">
                                     <span className="w-5 h-5 rounded-full bg-green-500/20 text-green-600 flex items-center justify-center text-xs">✓</span>
@@ -269,22 +252,11 @@ const Home: React.FC = () => {
                 </div>
                 <div className="flex-1 w-full max-w-md">
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-green-500/50 transition-colors">
-                            <div className="text-4xl font-black text-green-500 mb-2">100</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Performance</div>
-                        </div>
-                        <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-blue-500/50 transition-colors">
-                            <div className="text-4xl font-black text-blue-500 mb-2">0.8s</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Load Time</div>
-                        </div>
-                        <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-purple-500/50 transition-colors">
-                            <div className="text-4xl font-black text-purple-500 mb-2">A+</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Security</div>
-                        </div>
-                        <div className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-cyan-500/50 transition-colors">
-                            <div className="text-4xl font-black text-cyan-500 mb-2">100%</div>
-                            <div className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">Uptime</div>
-                        </div>
+                        {proofPoints.map((point) => (
+                          <div key={point} className="p-6 bg-gray-50 dark:bg-black/20 rounded-2xl border border-gray-200 dark:border-white/5 text-center hover:border-cyan-500/50 transition-colors">
+                            <div className="text-sm md:text-base font-bold text-gray-900 dark:text-white leading-relaxed">{point}</div>
+                          </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -357,40 +329,30 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* --- Testimonials Section --- */}
+      {/* --- Proof / Positioning Section --- */}
       <section className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Trusted by Builders
+            Built for clarity, speed, and trust
           </h2>
+          <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
+            CryptoWebBuild focuses on fast execution, clean frontend architecture, and practical SEO structure — without bloated agency process.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((t) => (
-            <div key={t.name} className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-300 relative shadow-sm hover:shadow-xl">
-              {/* Quote Icon */}
-              <div className="text-purple-500 mb-6 md:mb-8 opacity-50">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
-                </svg>
-              </div>
-              <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl mb-8 leading-relaxed font-medium italic">"{t.quote}"</p>
-              <div className="flex items-center gap-5 pt-8 border-t border-gray-100 dark:border-white/5">
-                 <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0">
-                    <OptimizedImage 
-                      src={t.image} 
-                      alt={t.name}
-                      fill={true}
-                      className="object-cover"
-                    />
-                 </div>
-                 <div>
-                    <div className="font-bold text-gray-900 dark:text-white text-lg">{t.name}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{t.role}, {t.company}</div>
-                 </div>
-              </div>
-            </div>
-          ))}
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Fast build process</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Direct communication, clean delivery, and less back-and-forth so projects move faster.</p>
+          </div>
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Modern frontend quality</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Responsive layouts, sharper messaging, and cleaner UI decisions that make websites feel more credible.</p>
+          </div>
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">SEO-ready foundation</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Technical setup, structured content, and conversion-focused pages built to support long-term growth.</p>
+          </div>
         </div>
       </section>
 
@@ -406,14 +368,14 @@ const Home: React.FC = () => {
               Ready to build?
             </h2>
             <p className="text-slate-300 mb-12 md:mb-14 text-lg md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed">
-              Book a free consultation and I’ll share a roadmap tailored to your project.
+              Send your project details and I’ll review the scope, suggest the best direction, and reply with a practical plan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                 <Link 
                 to="/contact" 
                 className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
-                Get a Free Consultation
+                Send Project Details
                 </Link>
                 <Link 
                 to="/projects" 
