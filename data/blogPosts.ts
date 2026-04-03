@@ -164,5 +164,16 @@ export const blogPosts: BlogPost[] = [
     category: 'Business',
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80',
     keywords: ['local business website seo checklist', 'local business seo website', 'website seo audit checklist for local business']
+  },
+  {
+    id: '14',
+    slug: 'roofing-website-mistakes-costing-leads',
+    title: '7 Roofing Website Mistakes That Quietly Cost You Leads',
+    excerpt: 'A practical guide for roofing companies that want more calls, stronger SEO, better trust signals, and higher conversion rates from their website.',
+    date: 'Apr 03, 2026',
+    readTime: '14 min read',
+    category: 'Business',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+    keywords: ['roofing website mistakes', 'roofing company website seo', 'roofing website conversion optimization']
   }
 ];
