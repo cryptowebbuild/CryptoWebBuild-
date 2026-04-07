@@ -60,8 +60,8 @@ const Home: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="CryptoWebBuild | Fast Websites for Crypto, Business & E-commerce"
-        description="CryptoWebBuild builds fast, modern websites for crypto projects, businesses, and e-commerce brands with strong SEO structure, clean design, and conversion-focused UX."
+        title="CryptoWebBuild | Premium Websites for Crypto, Startups & Growth Brands"
+        description="CryptoWebBuild designs premium, high-performance websites for crypto projects, startups, and growth-focused businesses with stronger SEO, clearer messaging, and conversion-first UX."
         keywords={[
           'Crypto Website Developer',
           'Business Website Developer', 
@@ -89,14 +89,14 @@ const Home: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
             </span>
-            <span className="text-xs md:text-sm font-bold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Available for New Projects</span>
+            <span className="text-xs md:text-sm font-bold text-gray-600 dark:text-gray-300 uppercase tracking-wide">Premium Build Slots Open</span>
           </div>
 
           {/* H1 Title */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1] animate-slide-up text-gray-900 dark:text-white text-balance">
-            High-Performance <br/>
+            Premium Websites <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-cyan-600 to-purple-600 dark:from-purple-400 dark:via-cyan-400 dark:to-purple-400 bg-[length:200%_auto] animate-shimmer">
-              Web Solutions
+              Built to Convert
             </span>
           </h1>
 
@@ -110,7 +110,7 @@ const Home: React.FC = () => {
           </div>
 
           <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up font-medium text-balance" style={{ animationDelay: '0.4s' }}>
-            I build fast, modern websites for <strong>crypto projects</strong>, <strong>growing businesses</strong>, and <strong>e-commerce brands</strong> that need better clarity, stronger SEO structure, and cleaner conversion flow.
+            CryptoWebBuild creates premium, high-performance websites for <strong>crypto projects</strong>, <strong>growth-stage businesses</strong>, and <strong>e-commerce brands</strong> that need sharper positioning, stronger SEO structure, and smoother conversion flow.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto animate-slide-up" style={{ animationDelay: '0.6s' }}>
@@ -118,14 +118,14 @@ const Home: React.FC = () => {
               to="/contact" 
               className="relative px-8 py-4 md:px-10 md:py-5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold text-lg md:text-xl rounded-2xl overflow-hidden transition-all active:scale-95 hover:scale-105 shadow-xl shadow-purple-500/10 w-full sm:w-auto flex items-center justify-center"
             >
-              <span className="relative z-10">Start Your Project</span>
+              <span className="relative z-10">Book Your Build</span>
             </Link>
             
             <Link 
               to="/projects"
               className="px-8 py-4 md:px-10 md:py-5 text-gray-900 dark:text-white font-bold text-lg md:text-xl rounded-2xl border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all active:scale-95 shadow-sm w-full sm:w-auto text-center backdrop-blur-md"
             >
-              View Recent Work
+              View Premium Work
             </Link>
           </div>
         </div>
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
               Services I Provide
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
-              Full-stack and static-first websites tailored for performance and growth.
+              Premium web experiences built for authority, speed, and measurable business growth.
             </p>
           </div>
           <Link to="/services" className="text-cyan-600 dark:text-cyan-400 font-bold text-lg hover:text-cyan-500 transition-colors flex items-center gap-2 group border-b-2 border-transparent hover:border-cyan-500 pb-1">
@@ -164,7 +164,7 @@ const Home: React.FC = () => {
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Crypto & Web3</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
-              Token landing pages, presale flows, and on-page SEO tailored for token launches.
+              Premium token websites, presale funnels, and authority-focused launch pages engineered for trust and speed.
             </p>
           </div>
 
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">E-Commerce</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
-              Product pages, JavaScript carts and secure payment gateways optimized for sales.
+              High-conversion product pages, fast checkout flows, and premium e-commerce UX designed to lift revenue.
             </p>
           </div>
 
@@ -196,7 +196,7 @@ const Home: React.FC = () => {
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Business Sites</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
-              Responsive websites for startups with SEO-focused content and clear CTAs.
+              Premium business websites for startups and local brands that need stronger trust, SEO, and lead generation.
             </p>
           </div>
 
@@ -211,7 +211,7 @@ const Home: React.FC = () => {
             </div>
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Blogs & Portfolios</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
-              Fast static blogs for personal branding and organic traffic growth.
+              Fast, premium blog and portfolio systems built to grow authority, rankings, and inbound demand.
             </p>
           </div>
 

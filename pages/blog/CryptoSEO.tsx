@@ -15,8 +15,8 @@ const CryptoSEO: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Ultimate Crypto SEO Guide: Rank #1 on Google & AI Search"
-      description="The technical handbook for Web3 SEO. From Programmatic Architecture to Knowledge Graph Optimization. Stop buying traffic, start owning it."
+      title="Crypto SEO Guide for 2026: How Web3 Projects Win Clicks, Rankings & AI Search"
+      description="A practical crypto SEO guide for Web3 teams that want better rankings, stronger click-through rates, and real search visibility across Google, ChatGPT, and AI search engines."
       publishedTime="2026-02-15"
       category="Growth Strategy"
       // Note: Layout calculates readTime automatically (~25-30 min read)
