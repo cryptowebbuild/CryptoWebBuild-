@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'openclaw-ai-workflow-automation',
+    slug: 'openclaw-ai-workflow-automation',
+    title: 'How to Automate Your Business with OpenClaw: The Ultimate AI Workflow Guide',
+    excerpt: 'Scale your business effortlessly. Learn how OpenClaw AI agents can automate B2B lead generation, web research, and manual daily workflows to save hundreds of hours.',
+    date: 'Apr 25, 2026',
+    readTime: '12 min read',
+    category: 'Business',
+    image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b',
+    keywords: ['OpenClaw AI', 'AI workflow automation', 'business automation', 'local AI agents', 'lead generation automation']
+  },
+  {
     id: 'meme-coin-website-ultimate-guide',
     slug: 'meme-coin-website-ultimate-guide',
     title: 'The Ultimate Guide to Building a Million-Dollar Meme Coin Website',

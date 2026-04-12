@@ -42,6 +42,14 @@ const Services: React.FC = () => {
             "name": "Business Websites",
             "description": "SEO-optimized corporate websites."
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom OpenClaw & AI Workflow Automation",
+            "description": "Scale your business effortlessly with our custom AI automation services using OpenClaw."
+          }
         }
       ]
     }
@@ -228,6 +236,41 @@ const Services: React.FC = () => {
                     {tag}
                   </span>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service 5: Custom OpenClaw & AI Workflow Automation */}
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2" style={{ animationDelay: '0.5s' }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+          <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+            <div className="shrink-0">
+               <div className="w-24 h-24 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                 <svg className="w-10 h-10 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                 </svg>
+              </div>
+            </div>
+
+            <div className="flex-1">
+              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Custom OpenClaw & AI Workflow Automation</h2>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg font-medium">
+                Scale your business effortlessly with our custom AI automation services. We build, configure, and deploy intelligent OpenClaw AI agents tailored to your exact needs. From automated B2B lead generation to deep web research and browser automation, we turn your manual workflows into a 24/7 automated machine. Save hundreds of hours and outpace your competitors with cutting-edge AI.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                {['OpenClaw AI', 'Workflow Automation', 'Lead Gen', 'Browser Agents'].map((tag) => (
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-emerald-500/30 transition-colors">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
+                  <Link to="/blog/openclaw-ai-workflow-automation" className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition-colors">
+                    <span className="bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">Guide</span> Automate Your Business with OpenClaw →
+                  </Link>
               </div>
             </div>
           </div>
