@@ -68,6 +68,10 @@ Responsive websites for local businesses, startups, and agencies with SEO-focuse
 Fast static blogs and portfolios for personal branding, case studies, and organic traffic growth.
 - **Tags:** Static Blog, Content, Traffic, Branding
 
+### Custom OpenClaw & AI Workflow Automation
+Scale your business effortlessly with our custom AI automation services. We build, configure, and deploy intelligent OpenClaw AI agents tailored to your exact needs. From automated B2B lead generation to deep web research and browser automation, we turn your manual workflows into a 24/7 automated machine.
+- **Tags:** OpenClaw AI, Workflow Automation, Lead Gen, Browser Agents
+
 ---
 
 # 3. Portfolio Projects & Case Studies
