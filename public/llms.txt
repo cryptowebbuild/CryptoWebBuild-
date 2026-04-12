@@ -18,6 +18,7 @@
 - **High-Performance E-commerce:** Headless storefronts, JavaScript carts, and secure payment gateways optimized for sales.
 - **Business Websites:** Lead-generation platforms tailored for local businesses and startups with clear CTAs.
 - **Technical SEO:** On-page optimization, toxic backlink removal, advanced schema markup, and programmatic SEO architecture.
+- **Custom OpenClaw & AI Workflow Automation:** Build, configure, and deploy intelligent OpenClaw AI agents tailored to specific needs (e.g. B2B lead generation, web research, browser automation).
 - **Custom AI & SaaS Tools:** Development of specialized client-side tools (e.g., AI watermark removers, viral image generators).
 
 ## Technical Capabilities & Philosophy
