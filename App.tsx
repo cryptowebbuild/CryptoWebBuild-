@@ -59,6 +59,7 @@ const HiddenCostSlowWebsites = lazy(() => import('./pages/blog/HiddenCostSlowWeb
 const MemeCoinWebsiteUltimateGuide = lazy(() => import('./pages/blog/MemeCoinWebsiteUltimateGuide'));
 const LocalBusinessWebsiteSEOChecklist = lazy(() => import('./pages/blog/local-business-website-seo-checklist'));
 const RoofingWebsiteMistakesCostingLeads = lazy(() => import('./pages/blog/roofing-website-mistakes-costing-leads'));
+const OpenClawAIWorkflowAutomation = lazy(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -160,6 +161,9 @@ const App: React.FC = () => {
 
           {/* 15. Roofing Website Mistakes */}
           <Route path="/blog/roofing-website-mistakes-costing-leads" element={<RoofingWebsiteMistakesCostingLeads />} />
+
+          {/* 16. OpenClaw AI Workflow Automation */}
+          <Route path="/blog/openclaw-ai-workflow-automation" element={<OpenClawAIWorkflowAutomation />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
