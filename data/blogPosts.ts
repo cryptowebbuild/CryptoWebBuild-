@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'ai-seo-generative-engine-optimization-2026',
+    slug: 'ai-seo-generative-engine-optimization-2026',
+    title: 'AI SEO 2026: Mastering Generative Engine Optimization (GEO) for Web3 & SaaS',
+    excerpt: 'The era of 10 blue links is over. Learn how to optimize your Web3 or SaaS website for AI search engines, reduce bot latency, and dominate Generative Engine Optimization (GEO).',
+    date: 'May 10, 2026',
+    readTime: '12 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995',
+    keywords: ['AI SEO 2026', 'Generative Engine Optimization', 'GEO', 'AI Overviews', 'Web3 SEO', 'SaaS SEO', 'Technical SEO']
+  },
+  {
     id: 'openclaw-ai-workflow-automation',
     slug: 'openclaw-ai-workflow-automation',
     title: 'How to Automate Your Business with OpenClaw: The Ultimate AI Workflow Guide',

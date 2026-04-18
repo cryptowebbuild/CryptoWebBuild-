@@ -60,6 +60,7 @@ const MemeCoinWebsiteUltimateGuide = lazy(() => import('./pages/blog/MemeCoinWeb
 const LocalBusinessWebsiteSEOChecklist = lazy(() => import('./pages/blog/local-business-website-seo-checklist'));
 const RoofingWebsiteMistakesCostingLeads = lazy(() => import('./pages/blog/roofing-website-mistakes-costing-leads'));
 const OpenClawAIWorkflowAutomation = lazy(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
+const AISEO2026 = lazy(() => import('./pages/blog/AISEO2026'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -164,6 +165,9 @@ const App: React.FC = () => {
 
           {/* 16. OpenClaw AI Workflow Automation */}
           <Route path="/blog/openclaw-ai-workflow-automation" element={<OpenClawAIWorkflowAutomation />} />
+
+          {/* 17. AI SEO 2026 */}
+          <Route path="/blog/ai-seo-generative-engine-optimization-2026" element={<AISEO2026 />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
