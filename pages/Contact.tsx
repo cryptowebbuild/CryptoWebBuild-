@@ -123,11 +123,9 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select your budget</option>
-                <option value="$50 – $150 (Small fixes)">$50 – $150 (Small fixes)</option>
-                <option value="$150 – $300 (Starter)">$150 – $300 (Starter)</option>
-                <option value="$300 – $600 (Business)">$300 – $600 (Business)</option>
-                <option value="$600 – $1200 (Crypto/Web3)">$600 – $1200 (Crypto/Web3)</option>
-                <option value="$1200+ (Custom DApp)">$1200+ (Custom DApp)</option>
+                <option value="$2,000 – $5,000 (AI Pilot)">$2,000 – $5,000 (AI Pilot)</option>
+                <option value="$5,000 – $10,000 (Full Integration)">$5,000 – $10,000 (Full Integration)</option>
+                <option value="$10,000+ (Enterprise Architecture)">$10,000+ (Enterprise Architecture)</option>
               </select>
             </div>
 

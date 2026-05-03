@@ -94,16 +94,15 @@ const Home: React.FC = () => {
 
           {/* H1 Title */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1] animate-slide-up text-gray-900 dark:text-white text-balance">
-            Premium Websites <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-cyan-600 to-purple-600 dark:from-purple-400 dark:via-cyan-400 dark:to-purple-400 bg-[length:200%_auto] animate-shimmer">
-              Built to Convert
-            </span>
+            <span className="text-gray-900 dark:text-white text-3xl md:text-5xl block mb-2 opacity-80">We don't just build websites.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400 block mt-2">We Scale Web3</span>
+            <span className="text-gray-900 dark:text-white block mt-2">Profits with AI.</span>
           </h1>
 
           {/* Typing Container */}
           <div className="min-h-[4rem] sm:min-h-[3rem] md:min-h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
             <span className="text-2xl sm:text-3xl md:text-5xl text-gray-600 dark:text-gray-400 font-medium">I build</span>
-            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white font-bold relative inline-block break-words min-w-[280px] text-left">
+            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white font-bold relative inline-block break-words min-w-[280px] text-center md:text-left">
               {text}
               <span className="animate-pulse text-cyan-500 ml-1">|</span>
             </span>
