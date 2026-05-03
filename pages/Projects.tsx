@@ -31,8 +31,8 @@ const Projects: React.FC = () => {
       category: 'DeFi Dashboard',
       desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
       tech: ['React', 'Ethers.js', 'Tailwind'],
-      link: '/nexusweb3',
-      img: 'https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&w=800&q=80'
+      liveUrl: 'https://clickrunclaw.com', link: '/projects',
+      img: 'https://clickrunclaw.com/og-image.png'
     },
     {
       id: 'auracommerce',

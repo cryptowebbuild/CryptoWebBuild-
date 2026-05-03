@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Name</label>
                     <input 
                         id="name" 
                         name="name" 
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Email</label>
+                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Email</label>
                     <input 
                         id="email" 
                         name="email" 
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Category</label>
+              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Category</label>
               <select 
                 id="category" 
                 name="category" 
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Budget</label>
+              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Budget</label>
               <select 
                 id="budget" 
                 name="budget" 
@@ -123,6 +123,7 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select your budget</option>
+                <option value="$500 – $1,000 (Small Automation)">$500 – $1,000 (Small Automation)</option>
                 <option value="$2,000 – $5,000 (AI Pilot)">$2,000 – $5,000 (AI Pilot)</option>
                 <option value="$5,000 – $10,000 (Full Integration)">$5,000 – $10,000 (Full Integration)</option>
                 <option value="$10,000+ (Enterprise Architecture)">$10,000+ (Enterprise Architecture)</option>
@@ -130,7 +131,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Message</label>
+              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Message</label>
               <textarea 
                 id="message" 
                 name="message" 
