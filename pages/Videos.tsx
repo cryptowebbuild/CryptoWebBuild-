@@ -202,7 +202,7 @@ const Videos: React.FC = () => {
             to="/contact" 
             className="relative z-10 inline-flex items-center justify-center px-10 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold text-lg rounded-2xl hover:scale-105 transition-transform shadow-xl"
           >
-            Hire Me
+            Claim AI Prototype
           </Link>
         </div>
       </div>

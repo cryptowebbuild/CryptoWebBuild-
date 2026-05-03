@@ -8,17 +8,17 @@ const Home: React.FC = () => {
 
   // Updated Phrases to target diverse clients
   const phrases = [
-    'Crypto Launch Websites.',
-    'Fast Business Websites.',
-    'Conversion-Focused Landing Pages.',
-    'SEO-Friendly Custom Builds.'
+    'AI Community Guardians.',
+    'Web3 Growth Funnels.',
+    'Smart Knowledge Bases.',
+    'Autonomous Sales Agents.'
   ];
   
   const proofPoints = [
-    'Custom React and static-first builds',
-    'Clean SEO structure with technical setup',
-    'Mobile-first pages focused on clarity and speed',
-    'Direct communication with Sagor Ahamed'
+    'Whitepaper-trained custom AI models',
+    '24/7 autonomous FUD prevention',
+    '48-Hour rapid prototype deployment',
+    'Pay 50% only after live validation'
   ];
   
   // Typing Effect Logic
@@ -60,8 +60,8 @@ const Home: React.FC = () => {
       
       {/* --- SEO Configuration --- */}
       <SEO 
-        title="CryptoWebBuild | Premium Websites for Crypto, Startups & Growth Brands"
-        description="CryptoWebBuild designs premium, high-performance websites for crypto projects, startups, and growth-focused businesses with stronger SEO, clearer messaging, and conversion-first UX."
+        title="CryptoWebBuild | Elite AI Automation & Web3 Infrastructure"
+        description="We scale Web3 profits with custom AI agents. 48-hour prototype deployment for autonomous FUD prevention and community management."
         keywords={[
           'Crypto Website Developer',
           'Business Website Developer', 
@@ -162,7 +162,7 @@ const Home: React.FC = () => {
                     <path d="M11 3L8 9L12 21L16 9L13 3" />
                  </svg>
             </div>
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Crypto & Web3</h3>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Knowledge Base Agents</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
               Premium token websites, presale funnels, and authority-focused launch pages engineered for trust and speed.
             </p>
@@ -177,7 +177,7 @@ const Home: React.FC = () => {
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                  </svg>
             </div>
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">E-Commerce</h3>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Web3 Sales Funnels</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
               High-conversion product pages, fast checkout flows, and premium e-commerce UX designed to lift revenue.
             </p>
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
                     <path d="M17 21v6" />
                  </svg>
             </div>
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Business Sites</h3>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">FUD Prevention</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
               Premium business websites for startups and local brands that need stronger trust, SEO, and lead generation.
             </p>
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
                     <path d="M2 2l7.586 7.586" />
                  </svg>
             </div>
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Blogs & Portfolios</h3>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Cost Reduction</h3>
             <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed font-medium">
               Fast, premium blog and portfolio systems built to grow authority, rankings, and inbound demand.
             </p>
@@ -270,10 +270,10 @@ const Home: React.FC = () => {
             Launch Protocol
           </div>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            From Concept to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">Launch</span>
+            48-Hour <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">AI Integration</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
-            A proven workflow designed to take your project from raw idea to global launch in weeks.
+            A proven, high-speed workflow to deploy autonomous agents and scale your Web3 operations immediately.
           </p>
         </div>
 
@@ -333,25 +333,25 @@ const Home: React.FC = () => {
       <section className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Built for clarity, speed, and trust
+            Elite AI Architecture. Zero Bloat.
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed">
-            CryptoWebBuild focuses on fast execution, clean frontend architecture, and practical SEO structure — without bloated agency process.
+            We replace manual community management and slow sales cycles with autonomous AI systems designed for Web3 dominance.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Fast build process</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Direct communication, clean delivery, and less back-and-forth so projects move faster.</p>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">FUD Prevention</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">24/7 AI Guardians instantly answer investor questions based on your Whitepaper, eliminating fear and doubt.</p>
           </div>
           <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Modern frontend quality</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Responsive layouts, sharper messaging, and cleaner UI decisions that make websites feel more credible.</p>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Cost Reduction</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Save thousands of dollars monthly by automating community management and presale onboarding with precision AI.</p>
           </div>
           <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
-            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">SEO-ready foundation</h3>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Technical setup, structured content, and conversion-focused pages built to support long-term growth.</p>
+            <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">High-Speed Deployment</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Custom RAG models trained on your specific ecosystem data and deployed live within 48 hours.</p>
           </div>
         </div>
       </section>
@@ -365,23 +365,23 @@ const Home: React.FC = () => {
           
           <div className="relative z-10">
             <h2 className="font-display text-4xl md:text-7xl font-bold text-white mb-8 md:mb-10 tracking-tight">
-              Ready to build?
+              The Grand Slam Guarantee
             </h2>
             <p className="text-slate-300 mb-12 md:mb-14 text-lg md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed">
-              Send your project details and I’ll review the scope, suggest the best direction, and reply with a practical plan.
+              Pay 50% upfront to start. Pay the final 50% <span className="text-cyan-400 font-bold">ONLY</span> when you see your custom AI Agent perfectly answering questions from your Whitepaper in a live test. Zero risk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                 <Link 
                 to="/contact" 
                 className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
-                Send Project Details
+                Claim AI Prototype
                 </Link>
                 <Link 
                 to="/projects" 
                 className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white/10 border border-white/20 text-white text-lg md:text-xl font-bold rounded-2xl hover:bg-white/20 transition-all backdrop-blur-md"
                 >
-                See Portfolio
+                View Infrastructure
                 </Link>
             </div>
           </div>

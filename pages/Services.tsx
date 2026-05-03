@@ -6,7 +6,7 @@ const Services: React.FC = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Web Development",
+    "serviceType": "AI Automation & Web3 Infrastructure",
     "provider": {
       "@type": "ProfessionalService",
       "name": "CryptoWebBuild",
@@ -17,38 +17,30 @@ const Services: React.FC = () => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Web Development Services",
+      "name": "Elite AI & Web3 Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Crypto & Web3 Sites",
-            "description": "Token landing pages, presale flows, and dApp UIs."
+            "name": "AI Community Guardians",
+            "description": "24/7 FUD-prevention agents for Telegram/Discord."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "E-Commerce Stores",
-            "description": "High-performance online stores with custom integrations."
+            "name": "Web3 Growth Funnels",
+            "description": "AI-integrated landing pages that convert investors."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Business Websites",
-            "description": "SEO-optimized corporate websites."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Custom OpenClaw & AI Workflow Automation",
-            "description": "Scale your business effortlessly with our custom AI automation services using OpenClaw."
+            "name": "Smart Knowledge Bases",
+            "description": "RAG-based AI bots trained on project Whitepapers."
           }
         }
       ]
@@ -77,14 +69,14 @@ const Services: React.FC = () => {
       {/* --- Header Section --- */}
       <div className="text-center max-w-4xl mx-auto mb-20 animate-slide-up">
         <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm">
-            Professional Solutions
+            AI & Infrastructure
         </div>
         <h1 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
-          Web3 & E-commerce <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400">Development Services</span>
+          Elite AI Architecture <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400">for Web3 Dominance.</span>
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Full-stack and static-first websites tailored for performance, SEO, and growth.
+          We don't build generic websites. We build autonomous AI systems and high-converting growth funnels that scale your community and revenue.
         </p>
       </div>
 
@@ -105,12 +97,12 @@ const Services: React.FC = () => {
             </div>
             
             <div className="flex-1">
-              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Crypto & Web3 Sites</h2>
+              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">AI Community Guardians</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg font-medium">
-                Token landing pages, tokenomics charts, presale flows, contract verification links and on-page SEO tailored for token launches.
+                24/7 autonomous FUD-prevention agents for Telegram/Discord. Trained on your Whitepaper to answer investor questions instantly.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
-                {['Tokenomics', 'Presale', 'DApp UI', 'WalletConnect'].map((tag) => (
+                {['Whitepaper RAG', 'Telegram Bot', 'Discord Bot', 'FUD Detection'].map((tag) => (
                   <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-purple-500/30 transition-colors">
                     {tag}
                   </span>
@@ -146,7 +138,7 @@ const Services: React.FC = () => {
             </div>
             
             <div className="flex-1">
-              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">E-Commerce Stores</h2>
+              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">Web3 Growth Funnels</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg font-medium">
                 High-performance product pages, JavaScript carts, and secure payment gateways optimized for speed, UX, and SEO.
               </p>
@@ -170,7 +162,7 @@ const Services: React.FC = () => {
           </div>
         </div>
 
-        {/* Service 3: Business Websites */}
+        {/* Service 3: Smart Knowledge Bases */}
         <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-blue-500/10" style={{ animationDelay: '0.3s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
@@ -188,7 +180,7 @@ const Services: React.FC = () => {
             </div>
             
             <div className="flex-1">
-              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Business Websites</h2>
+              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Smart Knowledge Bases</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg font-medium">
                 Responsive websites for local businesses, startups, and agencies with SEO-focused content structure and clear CTAs.
               </p>
@@ -241,7 +233,7 @@ const Services: React.FC = () => {
           </div>
         </div>
 
-        {/* Service 5: Custom OpenClaw & AI Workflow Automation */}
+        {/* Service 5: Technical Web3 Infrastructure */}
         <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2" style={{ animationDelay: '0.5s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -255,7 +247,7 @@ const Services: React.FC = () => {
             </div>
 
             <div className="flex-1">
-              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Custom OpenClaw & AI Workflow Automation</h2>
+              <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Technical Web3 Infrastructure</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-lg font-medium">
                 Scale your business effortlessly with our custom AI automation services. We build, configure, and deploy intelligent OpenClaw AI agents tailored to your exact needs. From automated B2B lead generation to deep web research and browser automation, we turn your manual workflows into a 24/7 automated machine. Save hundreds of hours and outpace your competitors with cutting-edge AI.
               </p>

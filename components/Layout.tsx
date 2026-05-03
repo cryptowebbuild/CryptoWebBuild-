@@ -126,7 +126,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
-    { path: '/projects', label: 'Work' },
+    { path: '/projects', label: 'Infrastructure' },
     { path: '/videos', label: 'Videos' },
     { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About' },
@@ -170,7 +170,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <ThemeToggle isDark={theme === 'dark'} toggle={toggleTheme} />
               
               <Link to="/contact" className="hidden md:block px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-sm hover:scale-105 transition-transform shadow-lg shadow-purple-500/10">
-                Hire Me
+                Start Project
               </Link>
 
               {/* Mobile Hamburger */}
@@ -224,7 +224,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   className="flex items-center justify-center w-full px-6 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Hire Me
+                  Start Project
                 </Link>
               </div>
             </div>
@@ -255,7 +255,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <span className="font-display font-bold text-2xl text-gray-900 dark:text-white">CryptoWebBuild</span>
               </Link>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-sm">
-                Forging the decentralized web with pixel-perfect precision. Specializing in high-performance Web3 interfaces.
+                We scale Web3 profits with autonomous AI agents and elite infrastructure. Don't just build a website, build a machine.
               </p>
               
               <div className="flex gap-3 pt-2">
@@ -288,7 +288,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-gray-900 dark:text-white mb-6 text-sm uppercase tracking-wider">Resources</h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-400 text-sm font-medium">
-                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Get a Quote</Link></li>
+                <li><Link to="/contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Claim AI Audit</Link></li>
                 <li><Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">FAQ & Support</Link></li>
                 <li><Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Terms of Service</Link></li>
