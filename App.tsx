@@ -62,6 +62,8 @@ const RoofingWebsiteMistakesCostingLeads = lazy(() => import('./pages/blog/roofi
 const OpenClawAIWorkflowAutomation = lazy(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
 const AISEO2026 = lazy(() => import('./pages/blog/AISEO2026'));
 const AGIAutonomousAIAgents = lazy(() => import('./pages/blog/AGIAutonomousAIAgents'));
+const AIAutomationROI = lazy(() => import('./pages/blog/AIAutomationROI'));
+
 
 
 // --- Optimized Loader ---
@@ -171,6 +173,8 @@ const App: React.FC = () => {
           {/* 17. AI SEO 2026 */}
           <Route path="/blog/ai-seo-generative-engine-optimization-2026" element={<AISEO2026 />} />
           <Route path="/blog/agi-autonomous-ai-agents-business-future-2026" element={<AGIAutonomousAIAgents />} />
+          <Route path="/blog/ai-automation-business-roi-cost-savings-2026" element={<AIAutomationROI />} />
+
 
 
           {/* --- 404 Catch-All --- */}
