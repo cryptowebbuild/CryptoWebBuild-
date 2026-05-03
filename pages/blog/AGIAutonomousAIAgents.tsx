@@ -71,6 +71,7 @@ const AGIAutonomousAIAgents: React.FC = () => {
         </p>
         <p>
           Businesses are rapidly transitioning to "Service as a Software"—where the AI doesn't just provide the tool, it provides the labor.
+
         </p>
         <ul>
           <li><strong>Legacy Model:</strong> Human buys software to do a task faster.</li>
@@ -81,6 +82,7 @@ const AGIAutonomousAIAgents: React.FC = () => {
         <p>
           You cannot jump straight into AGI if your business runs on spreadsheets, sticky notes, and duct-taped Zapier integrations. You need a structured, local, and highly controllable agentic framework. This is exactly where <Link to="/services" className="text-blue-600 dark:text-blue-400 hover:underline">Custom AI Workflow Automation</Link> comes in.
         </p>
+
 
         <p>
           Using systems like <strong>OpenClaw</strong>, we build custom AI agents that sit inside your business infrastructure. They aren't generic chatbots. They are specialized digital workers.
@@ -103,6 +105,7 @@ const AGIAutonomousAIAgents: React.FC = () => {
             </li>
           </ul>
         </div>
+
 
         <p>
           Want to see how this looks in practice? Read our deep dive on <Link to="/blog/openclaw-ai-workflow-automation" className="text-blue-600 dark:text-blue-400 hover:underline">How to Automate Your Business with OpenClaw</Link>.

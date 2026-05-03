@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact CryptoWebBuild",
-    "description": "Get a quote for your Web3 or E-commerce project. Contact Sagor Ahamed.",
+    "description": "Claim your 48-Hour AI Prototype. Contact CryptoWebBuild for Elite AI Automation & Web3 Infrastructure.",
     "url": "https://cryptowebbuild.com/contact",
     "mainEntity": {
       "@type": "ProfessionalService",
@@ -48,11 +48,11 @@ const Contact: React.FC = () => {
             Open for Work
           </div>
           <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
-            Let's Build Something <br className="hidden lg:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">Extraordinary</span>
+            Claim Your 48-Hour <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">AI Prototype</span>
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Tell me about your project — I usually reply within a few hours. Whether it's a new Web3 protocol, a viral meme coin, or a blazing fast e-commerce store, I'm ready to architect it.
+            Pay 50% upfront. Pay the final 50% ONLY when you see your custom AI Agent perfectly answering questions from your Whitepaper in a live test. Zero risk.
           </p>
 
           <div className="mt-10 hidden lg:block text-gray-600 dark:text-gray-400 text-sm font-medium">
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Name</label>
                     <input 
                         id="name" 
                         name="name" 
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Email</label>
+                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Email</label>
                     <input 
                         id="email" 
                         name="email" 
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Category</label>
+              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Category</label>
               <select 
                 id="category" 
                 name="category" 
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Project Budget</label>
+              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Budget</label>
               <select 
                 id="budget" 
                 name="budget" 
@@ -123,16 +123,15 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select your budget</option>
-                <option value="$50 – $150 (Small fixes)">$50 – $150 (Small fixes)</option>
-                <option value="$150 – $300 (Starter)">$150 – $300 (Starter)</option>
-                <option value="$300 – $600 (Business)">$300 – $600 (Business)</option>
-                <option value="$600 – $1200 (Crypto/Web3)">$600 – $1200 (Crypto/Web3)</option>
-                <option value="$1200+ (Custom DApp)">$1200+ (Custom DApp)</option>
+                <option value="$500 – $1,000 (Small Automation)">$500 – $1,000 (Small Automation)</option>
+                <option value="$2,000 – $5,000 (AI Pilot)">$2,000 – $5,000 (AI Pilot)</option>
+                <option value="$5,000 – $10,000 (Full Integration)">$5,000 – $10,000 (Full Integration)</option>
+                <option value="$10,000+ (Enterprise Architecture)">$10,000+ (Enterprise Architecture)</option>
               </select>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wide">Your Message</label>
+              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Message</label>
               <textarea 
                 id="message" 
                 name="message" 

@@ -31,8 +31,8 @@ const Projects: React.FC = () => {
       category: 'DeFi Dashboard',
       desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
       tech: ['React', 'Ethers.js', 'Tailwind'],
-      link: '/nexusweb3',
-      img: 'https://images.unsplash.com/photo-1621504450181-5d356f61d307?auto=format&fit=crop&w=800&q=80'
+      liveUrl: 'https://clickrunclaw.com', link: '/projects',
+      img: 'https://clickrunclaw.com/og-image.png'
     },
     {
       id: 'auracommerce',
@@ -44,10 +44,10 @@ const Projects: React.FC = () => {
       img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'apexagency',
-      title: 'Apex Digital Agency',
-      category: 'Corporate Portfolio',
-      desc: 'A modern, sleek corporate portfolio for a marketing agency. Features smooth Framer Motion animations and professional B2B design.',
+      id: 'clickrunclaw',
+      title: 'ClickRunClaw',
+      category: 'Flagship AI SaaS',
+      desc: 'Our proprietary AI workflow automation tool. Connecting APIs and running autonomous agents for Web3 operations.',
       tech: ['React', 'Framer Motion', 'UI/UX'],
       link: '/apexagency',
       img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'

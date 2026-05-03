@@ -12,7 +12,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 'ai-automation-business-roi-cost-savings-2026',
+id: 'ai-automation-business-roi-cost-savings-2026',
     slug: 'ai-automation-business-roi-cost-savings-2026',
     title: 'The True Cost of Manual Work: How AI Automation Saves Businesses $50k/Year in 2026',
     excerpt: 'Stop bleeding cash on repetitive tasks. Discover the massive ROI of custom AI workflow automation, and how replacing manual data entry with AI agents directly impacts your bottom line.',
