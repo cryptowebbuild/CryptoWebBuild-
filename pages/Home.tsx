@@ -94,9 +94,9 @@ const Home: React.FC = () => {
 
           {/* H1 Title */}
           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1] animate-slide-up text-gray-900 dark:text-white text-balance">
-            <span className="text-gray-900 dark:text-white text-3xl md:text-5xl block mb-2 opacity-80">We don't just build websites.</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400 block mt-2">We Scale Web3</span>
-            <span className="text-gray-900 dark:text-white block mt-2">Profits with AI.</span>
+            <span className="text-gray-900 dark:text-white text-2xl md:text-4xl block mb-4 opacity-80 uppercase tracking-widest font-bold">The Grand Slam Offer</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400 block mt-2">Claim Your 48-Hour</span>
+            <span className="text-gray-900 dark:text-white block mt-2">Custom AI Prototype.</span>
           </h1>
 
           {/* Typing Container */}
@@ -108,9 +108,17 @@ const Home: React.FC = () => {
             </span>
           </div>
 
-          <p className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up font-medium text-balance" style={{ animationDelay: '0.4s' }}>
-            CryptoWebBuild creates premium, high-performance websites for <strong>crypto projects</strong>, <strong>growth-stage businesses</strong>, and <strong>e-commerce brands</strong> that need sharper positioning, stronger SEO structure, and smoother conversion flow.
-          </p>
+          <div className="max-w-4xl mx-auto mb-12 p-1 rounded-2xl bg-gradient-to-r from-purple-600/20 to-cyan-500/20 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <div className="bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-xl p-6 md:p-8 rounded-xl border border-white/20 dark:border-white/10 shadow-2xl">
+              <p className="text-xl md:text-3xl font-display font-bold text-gray-900 dark:text-white leading-tight mb-4">
+                Pay 50% upfront. Pay the final 50% <span className="text-cyan-600 dark:text-cyan-400 underline decoration-purple-500 decoration-4 underline-offset-4">ONLY</span> when you see your custom AI Agent perfectly answering questions in a live test.
+              </p>
+              <div className="flex items-center justify-center gap-3 text-sm md:text-base font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest">
+                <span className="flex h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
+                Zero Risk. 100% Performance.
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center w-full sm:w-auto animate-slide-up" style={{ animationDelay: '0.6s' }}>
             <Link 
