@@ -103,12 +103,11 @@ const Contact: React.FC = () => {
                 className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select a project type</option>
-                <option value="Web3 & Crypto Website">Web3 & Crypto Website</option>
-                <option value="Meme Coin Landing Page">Meme Coin Landing Page</option>
-                <option value="Token Presale Website">Token Presale Website</option>
-                <option value="Business/Company Website">Business/Company Website</option>
-                <option value="E-commerce Store">E-commerce Store</option>
-                <option value="Portfolio / Blog">Portfolio / Blog</option>
+                <option value="Custom AI Knowledge Base Agent">Custom AI Knowledge Base Agent</option>
+                <option value="Automated Web3 Sales Funnel">Automated Web3 Sales Funnel</option>
+                <option value="Elite Crypto Platform UI/UX">Elite Crypto Platform UI/UX</option>
+                <option value="Token Presale Architecture">Token Presale Architecture</option>
+                <option value="Headless E-commerce Ecosystem">Headless E-commerce Ecosystem</option>
                 <option value="Custom Web Project">Custom Web Project</option>
               </select>
             </div>

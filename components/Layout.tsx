@@ -189,15 +189,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </nav>
 
           {/* Mobile Menu Dropdown */}
-          <div className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-300 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
+          <div
+            className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) z-40 origin-top ${
+              isMenuOpen
+                ? 'opacity-100 scale-y-100 translate-y-0'
+                : 'invisible opacity-0 scale-y-95 -translate-y-4 pointer-events-none'
+            }`}
+          >
+            <div className="bg-white/90 dark:bg-[#0f172a]/95 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden transform transition-transform duration-500">
               <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.path} 
                     to={link.path} 
                     className={`block px-4 py-3 text-lg font-medium rounded-xl transition-colors ${location.pathname === link.path ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white'}`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
                   >
                     {link.label}
                   </Link>
@@ -222,7 +228,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <Link 
                   to="/contact" 
                   className="flex items-center justify-center w-full px-6 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
                 >
                   Start Project
                 </Link>
