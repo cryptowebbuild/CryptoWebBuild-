@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'decentralized-ai-stack-web3-infrastructure-2026',
+    slug: 'decentralized-ai-stack-web3-infrastructure-2026',
+    title: 'The Decentralized AI Stack: How 8-Figure Founders Combine Web3 Architecture with Autonomous Agents in 2026',
+    excerpt: 'Discover how elite founders build sovereign, decentralized AI stacks in 2026. Learn why combining Web3 architecture with autonomous agents is the future.',
+    date: 'Jun 25, 2026',
+    readTime: '15 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a',
+    keywords: ['Decentralized AI Stack', 'Web3 Infrastructure', 'Autonomous AI Agents', 'Sovereign AI', 'Tech Founders 2026', 'AI Smart Contracts']
+  },
+  {
     id: 'agi-autonomous-ai-agents-business-future-2026',
     slug: 'agi-autonomous-ai-agents-business-future-2026',
     title: 'The Dawn of AGI: Why Autonomous AI Agents Are the Future of Business (2026 Guide)',
