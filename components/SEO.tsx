@@ -35,7 +35,7 @@ const SEO: React.FC<SEOProps> = ({
   // 1. Default Identity (Broad Authority)
   const defaultTitle = "Sagor Ahamed | Senior Full-Stack & Web3 Developer";
   const defaultDescription = "Expert React & Next.js Developer for high-performance Websites. Specializing in Crypto Projects, E-commerce Stores, and Custom Business Solutions.";
-  const defaultImage = `${siteUrl}/default-og-image.jpg`;
+  const defaultImage = `${siteUrl}/hero-avatar.webp`;
 
   // 2. Resolve Final Values
   const finalTitle = title || defaultTitle;
@@ -127,11 +127,11 @@ const SEO: React.FC<SEOProps> = ({
         "areaServed": "Global",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Web Development Services",
+          "name": "Elite AI & Web3 Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crypto Website Development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce Development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Business Sites" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Community Guardians" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web3 Growth Funnels" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Autonomous Sales Agents" } }
           ]
         }
       };

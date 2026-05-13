@@ -282,9 +282,9 @@ const Projects: React.FC = () => {
       <div className="mt-24 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
         <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">I'm currently accepting new contracts for Q4 2025.</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3 2026.</p>
           <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
-            Get a Quote
+            Claim Your Custom AI Prototype
           </Link>
         </div>
       </div>

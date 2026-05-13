@@ -21,7 +21,7 @@ const HireUsCTA: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 mb-6">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest">Accepting New Projects</span>
+            <span className="text-xs font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest">Now Booking Projects</span>
           </div>
 
           {/* Headline */}

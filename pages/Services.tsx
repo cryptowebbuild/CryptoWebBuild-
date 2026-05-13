@@ -53,7 +53,7 @@ const Services: React.FC = () => {
       {/* --- SEO Configuration --- */}
       <SEO 
         title="Web Development Services | Crypto & E-commerce"
-        description="Full-stack web development agency services: Crypto presale sites, meme coin landing pages, and high-performance e-commerce stores. View our packages."
+        description="Deploy elite AI automation and Web3 infrastructure. Secure smart knowledge bases, autonomous sales agents, and high-converting crypto growth funnels."
         keywords={[
           'Web Development Agency Services',
           'Crypto Website Pricing', 
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="shrink-0">
                <div className="w-24 h-24 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center border border-purple-200 dark:border-purple-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                 <svg className="w-10 h-10 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-10 h-10 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 3L2 9L12 21L22 9L18 3H6Z" />
                     <path d="M11 3L8 9L12 21L16 9L13 3" />
                  </svg>
@@ -129,7 +129,7 @@ const Services: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="shrink-0">
                <div className="w-24 h-24 rounded-2xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center border border-cyan-200 dark:border-cyan-500/20 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
-                 <svg className="w-10 h-10 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-10 h-10 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="9" cy="21" r="1" />
                     <circle cx="20" cy="21" r="1" />
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
@@ -169,7 +169,7 @@ const Services: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="shrink-0">
                <div className="w-24 h-24 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center border border-blue-200 dark:border-blue-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                 <svg className="w-10 h-10 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-10 h-10 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 21h18" />
                     <path d="M5 21V7" />
                     <path d="M9 21V11" />
@@ -208,7 +208,7 @@ const Services: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="shrink-0">
                <div className="w-24 h-24 rounded-2xl bg-pink-50 dark:bg-pink-900/20 flex items-center justify-center border border-pink-200 dark:border-pink-500/20 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
-                 <svg className="w-10 h-10 text-pink-600 dark:text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-10 h-10 text-pink-600 dark:text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 19l7-7 3 3-7 7-3-3z" />
                     <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
                     <path d="M2 2l7.586 7.586" />
@@ -240,7 +240,7 @@ const Services: React.FC = () => {
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="shrink-0">
                <div className="w-24 h-24 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                 <svg className="w-10 h-10 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-10 h-10 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                  </svg>
               </div>
@@ -272,7 +272,7 @@ const Services: React.FC = () => {
 
       <div className="mt-20 text-center">
         <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-xl shadow-purple-500/20">
-          Request a Custom Quote
+          Claim Your Custom AI Prototype
         </Link>
       </div>
     </div>

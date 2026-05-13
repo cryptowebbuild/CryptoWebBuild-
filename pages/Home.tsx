@@ -61,7 +61,7 @@ const Home: React.FC = () => {
       {/* --- SEO Configuration --- */}
       <SEO 
         title="CryptoWebBuild | Elite AI Automation & Web3 Infrastructure"
-        description="We scale Web3 profits with custom AI agents. 48-hour prototype deployment for autonomous FUD prevention and community management."
+        description="Scale your Web3 brand with custom AI agents and elite infrastructure. Claim your 48-hour AI prototype risk-free. Pay only after live validation."
         keywords={[
           'Crypto Website Developer',
           'Business Website Developer', 
@@ -100,10 +100,10 @@ const Home: React.FC = () => {
           </h1>
 
           {/* Typing Container */}
-          <div className="min-h-[4rem] sm:min-h-[3rem] md:min-h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2" style={{ animationDelay: '0.2s' }}>
+          <div className="h-[5rem] md:h-[4.5rem] mb-10 md:mb-12 animate-slide-up flex flex-col md:flex-row md:items-center justify-center gap-2 overflow-hidden" style={{ animationDelay: '0.2s' }}>
             <span className="text-2xl sm:text-3xl md:text-5xl text-gray-600 dark:text-gray-400 font-medium">I build</span>
-            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white font-bold relative inline-block break-words min-w-[280px] text-center md:text-left">
-              {text}
+            <span className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white font-bold relative inline-block min-w-[280px] text-center md:text-left">
+              <span className="inline-block whitespace-nowrap">{text}</span>
               <span className="animate-pulse text-cyan-500 ml-1">|</span>
             </span>
           </div>
@@ -125,7 +125,7 @@ const Home: React.FC = () => {
               to="/contact" 
               className="relative px-8 py-4 md:px-10 md:py-5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold text-lg md:text-xl rounded-2xl overflow-hidden transition-all active:scale-95 hover:scale-105 shadow-xl shadow-purple-500/10 w-full sm:w-auto flex items-center justify-center"
             >
-              <span className="relative z-10">Book Your Build</span>
+              <span className="relative z-10">Claim Your Custom AI Prototype</span>
             </Link>
             
             <Link 
@@ -137,9 +137,43 @@ const Home: React.FC = () => {
           </div>
         </div>
 
+        {/* Premium Trust Metrics Bar */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto mt-20 md:mt-32 animate-slide-up" style={{ animationDelay: '0.8s' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 p-8 md:p-10 rounded-[32px] bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-2xl">
+
+            <div className="flex flex-col items-center justify-center text-center group">
+              <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                100+
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 font-bold tracking-widest uppercase text-sm">
+                Projects Analyzed
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center group md:border-x border-gray-200 dark:border-white/10">
+              <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-400 dark:to-blue-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                $10M+
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 font-bold tracking-widest uppercase text-sm">
+                Raised by Clients
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center group">
+              <h3 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                &lt;0.8s
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 font-bold tracking-widest uppercase text-sm">
+                Load Times
+              </p>
+            </div>
+
+          </div>
+        </div>
+
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-slow text-gray-400 opacity-60 hidden md:block">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
       </section>
 
@@ -164,7 +198,7 @@ const Home: React.FC = () => {
           {/* Service 1 - Crypto */}
           <div className="group relative overflow-hidden p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-purple-500/10">
             <div className="w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 rounded-2xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                 <svg className="w-8 h-8 md:w-10 md:h-10 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-8 h-8 md:w-10 md:h-10 text-purple-600 dark:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 3L2 9L12 21L22 9L18 3H6Z" />
                     <path d="M11 3L8 9L12 21L16 9L13 3" />
                  </svg>
@@ -178,7 +212,7 @@ const Home: React.FC = () => {
           {/* Service 2 - E-commerce */}
           <div className="group relative overflow-hidden p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-cyan-500/10">
             <div className="w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 rounded-2xl bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                 <svg className="w-8 h-8 md:w-10 md:h-10 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-8 h-8 md:w-10 md:h-10 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="9" cy="21" r="1" />
                     <circle cx="20" cy="21" r="1" />
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
@@ -193,7 +227,7 @@ const Home: React.FC = () => {
            {/* Service 3 - Business */}
           <div className="group relative overflow-hidden p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-500/10">
              <div className="w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 rounded-2xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                 <svg className="w-8 h-8 md:w-10 md:h-10 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-8 h-8 md:w-10 md:h-10 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 21h18" />
                     <path d="M5 21V7" />
                     <path d="M9 21V11" />
@@ -210,7 +244,7 @@ const Home: React.FC = () => {
            {/* Service 4 - Blogs */}
           <div className="group relative overflow-hidden p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-pink-500/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-pink-500/10">
              <div className="w-16 h-16 md:w-20 md:h-20 mb-6 md:mb-8 rounded-2xl bg-pink-50 dark:bg-pink-900/20 border border-pink-200 dark:border-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                 <svg className="w-8 h-8 md:w-10 md:h-10 text-pink-600 dark:text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                 <svg aria-hidden="true" className="w-8 h-8 md:w-10 md:h-10 text-pink-600 dark:text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 19l7-7 3 3-7 7-3-3z" />
                     <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
                     <path d="M2 2l7.586 7.586" />
@@ -382,7 +416,7 @@ const Home: React.FC = () => {
                 to="/contact" 
                 className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
-                Claim AI Prototype
+                Claim Your Custom AI Prototype
                 </Link>
                 <Link 
                 to="/projects" 
