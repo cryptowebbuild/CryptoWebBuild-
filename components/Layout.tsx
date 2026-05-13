@@ -126,7 +126,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
-    { path: '/projects', label: 'Infrastructure' },
+    { path: '/projects', label: 'Case Studies' },
     { path: '/videos', label: 'Videos' },
     { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About' },
@@ -248,6 +248,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
       </button>
+
+      {/* Floating Quick Chat Widget */}
+      <a
+        href="https://t.me/CryptoWebBuild"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 left-8 z-40 flex items-center gap-3 px-6 py-4 rounded-full bg-white/10 dark:bg-slate-900/50 backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-all duration-300 group"
+        aria-label="Quick Chat on Telegram"
+      >
+        <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/20 group-hover:bg-cyan-500/30 transition-colors">
+          <svg className="w-5 h-5 text-cyan-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.48-1.02-2.4-1.62-1.06-.69-.37-1.07.23-1.68.16-.16 2.87-2.63 2.92-2.85.01-.03.01-.14-.06-.2-.06-.05-.16-.04-.23-.02-.1.02-1.72 1.1-4.86 3.22-.46.32-.88.47-1.25.46-.4-.01-1.18-.23-1.75-.38-.7-.18-1.26-.28-1.21-.6.03-.16.24-.32.65-.49 2.56-1.11 4.27-1.84 5.12-2.2 2.43-1.01 2.93-1.19 3.26-1.19.07 0 .23.02.33.09.09.08.12.19.13.29v.04z"/></svg>
+          <div className="absolute top-0 right-0 w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+        </div>
+        <span className="font-bold text-gray-900 dark:text-white hidden sm:block">Quick Chat</span>
+      </a>
 
       {/* --- FOOTER (Enhanced Internal Linking & Socials) --- */}
       <footer className="relative z-10 mt-32 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/5">
