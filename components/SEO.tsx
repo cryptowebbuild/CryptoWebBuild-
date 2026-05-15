@@ -33,8 +33,8 @@ const SEO: React.FC<SEOProps> = ({
   const siteUrl = 'https://cryptowebbuild.com';
   
   // 1. Default Identity (Broad Authority)
-  const defaultTitle = "Sagor Ahamed | Senior Full-Stack & Web3 Developer";
-  const defaultDescription = "Expert React & Next.js Developer for high-performance Websites. Specializing in Crypto Projects, E-commerce Stores, and Custom Business Solutions.";
+  const defaultTitle = "CryptoWebBuild | Elite AI Automation & Web3 Agency";
+  const defaultDescription = "Scale your Web3 brand with custom AI agents and elite infrastructure. Claim your 48-hour AI prototype risk-free.";
   const defaultImage = `${siteUrl}/hero-avatar.webp`;
 
   // 2. Resolve Final Values
