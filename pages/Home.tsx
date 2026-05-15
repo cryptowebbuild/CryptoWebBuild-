@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import OptimizedImage from '../components/OptimizedImage';
-import { Calendar, Play, BrainCircuit, Zap, Database, Rocket } from 'lucide-react';
+
+import { Play, BrainCircuit, Zap, Database, Rocket } from 'lucide-react';
 
 const Home: React.FC = () => {
   return (
@@ -25,13 +25,13 @@ const Home: React.FC = () => {
       />
       
       {/* --- Hero Section --- */}
-      <section className="relative px-6 pt-24 md:pt-32 pb-16 min-h-[90vh] flex items-center justify-center">
+      <section className="relative px-6 pt-24 md:pt-32 pb-16 min-h-[90vh] lg:min-h-screen flex items-center justify-center">
         
         {/* Glow Effects - GPU Accelerated */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/10 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
         <div className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-blue-500/10 dark:bg-cyan-500/20 blur-[90px] rounded-full animate-pulse-slow pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
 
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 animate-slide-up">
@@ -63,8 +63,8 @@ const Home: React.FC = () => {
                 to="/contact"
                 className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 transition-all"
               >
-                <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                Book a Free Call
+                <Zap className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                Build Your AI Agent
               </Link>
               <Link
                 to="/projects"
