@@ -109,37 +109,37 @@ Explore recent work in Crypto & Web3, E-commerce, and Custom Software.
 - **Category:** Viral Generator
 - **Description:** A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.
 - **Tech:** React, Canvas API, Tailwind
-- **Live URL:** [https://tools.cryptowebbuild.com/](https://tools.cryptowebbuild.com/)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 **$GIGA Solana**
 - **Category:** Meme & Utility
 - **Description:** A high-energy "Chad" themed meme coin site featuring a custom "Moon Math" calculator to drive investor engagement and viral sharing.
 - **Tech:** React, Moon Math UI, Tailwind
-- **Live URL:** [https://giga-solana.pages.dev](https://giga-solana.pages.dev)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 **AutoGit Deployer**
 - **Category:** DevOps SaaS
 - **Description:** The world's first Client-Side DevOps Engine. Deploy static sites directly from your browser. No Command Line. No Servers. No Fees.
 - **Tech:** React, GitHub API, Client-Side
-- **Live URL:** [https://autogithub.pages.dev](https://autogithub.pages.dev)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 **SolNova Protocol**
 - **Category:** Solana Presale
 - **Description:** High-yield Solana aggregation protocol. Features a real-time presale dashboard, wallet integration, and on-chain data visualization.
 - **Tech:** React, Solana Web3.js, Cloudflare
-- **Live URL:** [https://solnova.pages.dev](https://solnova.pages.dev)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 **BNB Quack Inu**
 - **Category:** Viral Meme Coin
 - **Description:** Gamified meme coin experience on BNB Chain. Features a "Spin to Win" mechanic, jungle-themed UI, and custom wood-textured interface elements.
 - **Tech:** Gamification, CSS Animations, Viral UI
-- **Live URL:** [https://quackmeme.pages.dev](https://quackmeme.pages.dev)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 **ShopFast E-commerce**
 - **Category:** Headless Commerce
 - **Description:** Ultra-fast static storefront with sub-second load times. Features a headless architecture, Stripe integration, and client-side cart logic.
 - **Tech:** Static Frontend, Stripe, Client-side Cart
-- **Live URL:** [https://e-commercesagor.pages.dev/](https://e-commercesagor.pages.dev/)
+- **Live URL:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 ---
 

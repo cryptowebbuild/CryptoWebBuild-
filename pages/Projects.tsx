@@ -77,7 +77,7 @@ const Projects: React.FC = () => {
       desc: 'A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.',
       tech: ['React', 'Canvas API', 'Tailwind'],
       link: '/newsphotocard',
-      liveUrl: 'https://tools.cryptowebbuild.com/',
+      liveUrl: 'https://cryptowebbuild.com/',
       img: '/projects/project-newsphotocard.jpg'
     },
     {
@@ -87,7 +87,7 @@ const Projects: React.FC = () => {
       desc: 'A high-energy "Chad" themed meme coin site featuring a custom "Moon Math" calculator to drive investor engagement and viral sharing.',
       tech: ['React', 'Moon Math UI', 'Tailwind'],
       link: '/gigasolana',
-      liveUrl: 'https://giga-solana.pages.dev'
+      liveUrl: 'https://cryptowebbuild.com/'
     },
     {
       id: 'autogithub',
@@ -96,7 +96,7 @@ const Projects: React.FC = () => {
       desc: "The world's first Client-Side DevOps Engine. Deploy static sites directly from your browser. No Command Line. No Servers. No Fees.",
       tech: ['React', 'GitHub API', 'Client-Side'],
       link: '/autogithub',
-      liveUrl: 'https://autogithub.pages.dev'
+      liveUrl: 'https://cryptowebbuild.com/'
     },
     {
       id: 'tokenlaunch',
@@ -105,7 +105,7 @@ const Projects: React.FC = () => {
       desc: 'High-yield Solana aggregation protocol. Features a real-time presale dashboard, wallet integration, and on-chain data visualization.',
       tech: ['React', 'Solana Web3.js', 'Cloudflare'],
       link: '/tokenlaunch',
-      liveUrl: 'https://solnova.pages.dev'
+      liveUrl: 'https://cryptowebbuild.com/'
     },
     {
       id: 'memecoinsite',
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
       desc: 'Gamified meme coin experience on BNB Chain. Features a "Spin to Win" mechanic, jungle-themed UI, and custom wood-textured interface elements.',
       tech: ['Gamification', 'CSS Animations', 'Viral UI'],
       link: '/memecoinsite',
-      liveUrl: 'https://quackmeme.pages.dev'
+      liveUrl: 'https://cryptowebbuild.com/'
     },
     {
       id: 'shopfast',
@@ -123,7 +123,7 @@ const Projects: React.FC = () => {
       desc: 'Ultra-fast static storefront with sub-second load times. Features a headless architecture, Stripe integration, and client-side cart logic.',
       tech: ['Static Frontend', 'Stripe', 'Client-side Cart'],
       link: '/shopfast',
-      liveUrl: 'https://e-commercesagor.pages.dev/'
+      liveUrl: 'https://cryptowebbuild.com/'
     }
   ];
 

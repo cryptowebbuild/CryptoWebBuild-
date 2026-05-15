@@ -28,12 +28,12 @@
 - **Security:** Zero-database static architecture to prevent SQL injection and enhance global distribution.
 
 ## Key Projects & Portfolio
-- **News Photo Card (Viral Generator):** [https://tools.cryptowebbuild.com/](https://tools.cryptowebbuild.com/)
-- **$GIGA Solana (Meme Coin):** [https://giga-solana.pages.dev](https://giga-solana.pages.dev)
-- **AutoGit Deployer (DevOps SaaS):** [https://autogithub.pages.dev](https://autogithub.pages.dev)
-- **SolNova Protocol (Solana Presale):** [https://solnova.pages.dev](https://solnova.pages.dev)
-- **ShopFast (Headless E-commerce):** [https://e-commercesagor.pages.dev/](https://e-commercesagor.pages.dev/)
-- **BNB Quack Inu (Viral Meme Coin):** [https://quackmeme.pages.dev](https://quackmeme.pages.dev)
+- **News Photo Card (Viral Generator):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **$GIGA Solana (Meme Coin):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **AutoGit Deployer (DevOps SaaS):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **SolNova Protocol (Solana Presale):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **ShopFast (Headless E-commerce):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **BNB Quack Inu (Viral Meme Coin):** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 
 ## Latest Blog Posts
 - **AI SEO 2026: Mastering Generative Engine Optimization (GEO):** [https://cryptowebbuild.com/blog/ai-seo-generative-engine-optimization-2026](https://cryptowebbuild.com/blog/ai-seo-generative-engine-optimization-2026)
