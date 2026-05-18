@@ -129,7 +129,7 @@ const Blog: React.FC = () => {
               {/* Card Content */}
               <div className="p-8 flex flex-col flex-1 relative">
                   {/* Meta Data */}
-                  <div className="flex items-center justify-between text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-5">
+                  <div className="flex items-center justify-between text-xs font-bold text-slate-400 dark:text-slate-600 uppercase tracking-widest mb-5">
                     <div className="flex items-center gap-2">
                         <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${post.color}`}></span>
                         {post.date}

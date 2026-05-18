@@ -293,7 +293,7 @@ const About: React.FC = () => {
         <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="font-display text-4xl font-bold text-white mb-6">Ready to work with the best?</h2>
             <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                Now booking projects for <span className="text-white font-bold">Q3 2026</span>. If you need a developer who cares about your business growth as much as the code, let's talk.
+                Now booking projects for <span className="text-white font-bold">Q3-Q4 2026</span>. If you need a developer who cares about your business growth as much as the code, let's talk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform hover:shadow-purple-500/30">

@@ -4,6 +4,8 @@ import SEO from '../SEO';
 import OptimizedImage from '../OptimizedImage';
 import TableOfContents from './TableOfContents';
 import AuthorBio from './AuthorBio';
+import FreeAuditCTA from './FreeAuditCTA';
+
 
 interface BlogPostLayoutProps {
   title: string;
@@ -205,6 +207,11 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                     prose-blockquote:border-l-4 prose-blockquote:border-purple-500 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-700 dark:prose-blockquote:text-slate-300 prose-blockquote:bg-gray-50 dark:prose-blockquote:bg-white/5 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-xl
                 ">
                     {children}
+                </div>
+
+                {/* Free Audit Form */}
+                <div className="mt-16">
+                    <FreeAuditCTA />
                 </div>
 
                 {/* Footer Section */}
