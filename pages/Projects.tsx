@@ -24,7 +24,16 @@ interface ProjectItem {
 const Projects: React.FC = () => {
   
   // --- PROJECT DATA ---
-  const projects: ProjectItem[] = [
+    const projects: ProjectItem[] = [
+    {
+      id: 'aiagentdemo',
+      title: 'How our AI Agent handled 7,000+ members and reduced support tickets by 80%.',
+      category: 'AI Automation',
+      desc: 'Deployed a custom RAG-trained AI Guardian in a Web3 Discord community. It instantly resolved repetitive queries based on the Whitepaper, allowing the core team to focus on scaling.',
+      tech: ['Custom LLM', 'RAG', 'Discord API', 'Node.js'],
+      link: '/projects', // Needs details soon or fake link
+      liveUrl: '' // No live URL for this demo yet
+    },
     {
       id: 'nexusweb3',
       title: 'Nexus Web3 Protocol',
@@ -282,7 +291,7 @@ const Projects: React.FC = () => {
       <div className="mt-24 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
         <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3 2026.</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3-Q4 2026.</p>
           <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
             Claim Your Custom AI Prototype
           </Link>

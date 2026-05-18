@@ -47,14 +47,12 @@ const Home: React.FC = () => {
 
             {/* Headline */}
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] text-gray-900 dark:text-white">
-              Get Your <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">Custom AI Prototype</span> <br className="hidden lg:block" />
-              in 48 Hours.
+              Deploy <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-400 dark:to-blue-400">Autonomous AI Guardians</span> For Your Community
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
-              Stop losing high-ticket clients to slow execution. We build, train, and deploy elite AI agents so you can <span className="text-purple-600 dark:text-purple-400 font-bold">move fast</span> and dominate your niche.
+              We build high-end, RAG-trained AI Agents and automated solutions that handle user management, eliminate repetitive support, and scale your operations 24/7.
             </p>
 
             {/* CTAs */}
@@ -75,22 +73,24 @@ const Home: React.FC = () => {
               </Link>
             </div>
 
-            {/* Feature Pills */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-4">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300">
-                <BrainCircuit className="w-4 h-4 text-purple-500" /> Custom AI Agents
+            {/* Trust Badges */}
+            <div className="flex flex-col items-center lg:items-start gap-4 pt-6 border-t border-gray-200 dark:border-white/10 w-full">
+              <div className="flex items-center gap-2 text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                Trusted Infrastructure
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300">
-                <Zap className="w-4 h-4 text-blue-500" /> Automation
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300">
-                <Database className="w-4 h-4 text-emerald-500" /> Knowledge Bases
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300">
-                <Rocket className="w-4 h-4 text-orange-500" /> Fast Delivery
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/10 rounded-xl shadow-sm">
+                  <svg className="w-5 h-5 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.1586 3.4406 6.0462 6.0462 0 0 0-1.0451 7.0809 5.9847 5.9847 0 0 0 .5157 4.9108 6.0462 6.0462 0 0 0 6.5098 2.9 6.0651 6.0651 0 0 0 10.2757-2.1715 5.9847 5.9847 0 0 0 3.1586-3.4406 6.0462 6.0462 0 0 0 1.0451-7.0809zm-8.451 9.8524c-2.5026.149-4.7088-1.5794-5.2673-3.9576l6.634-3.8306v-1.6375l-8.0818-4.6659v1.6406l6.634 3.8306c.5585 2.3782-1.6465 4.1066-4.1491 3.9576zM7.2913 14.821v-3.2812l-6.634-3.8306v1.6406l8.0818 4.6659v-1.6406l-6.634-3.8306c-.5585-2.3782 1.6465-4.1066 4.1491-3.9576 2.5026-.149 4.7088 1.5794 5.2673 3.9576l-4.2302 2.4419zM16.7087 9.179v3.2812l6.634 3.8306v-1.6406l-8.0818-4.6659v1.6406l6.634 3.8306c.5585 2.3782-1.6465 4.1066-4.1491 3.9576-2.5026.149-4.7088-1.5794-5.2673-3.9576l4.2302-2.4419z"/></svg>
+                  <span className="font-bold text-gray-900 dark:text-white">Powered by OpenAI</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/10 rounded-xl shadow-sm">
+                  <Zap className="w-5 h-5 text-yellow-500" />
+                  <span className="font-bold text-gray-900 dark:text-white">Integrated with Telegram, Discord & Solana</span>
+                </div>
               </div>
             </div>
-          </div>
+
+                      </div>
 
           {/* Right Column: AI Agent Studio Mockup */}
           <div className="relative w-full max-w-2xl mx-auto lg:ml-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
-                <div className="mx-auto text-xs font-semibold text-gray-500 dark:text-gray-400">AI Agent Studio</div>
+                <div className="mx-auto text-xs font-semibold text-gray-600 dark:text-gray-400">AI Agent Studio</div>
               </div>
 
               {/* Main App Area */}
@@ -115,10 +115,10 @@ const Home: React.FC = () => {
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white shadow-sm">
                     <BrainCircuit className="w-5 h-5" />
                   </div>
-                  <div className="w-8 h-8 rounded-lg bg-gray-200/50 dark:bg-white/10 flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-purple-500 transition-colors cursor-pointer">
+                  <div className="w-8 h-8 rounded-lg bg-gray-200/50 dark:bg-white/10 flex items-center justify-center text-gray-400 dark:text-gray-600 hover:text-purple-500 transition-colors cursor-pointer">
                     <Database className="w-5 h-5" />
                   </div>
-                  <div className="w-8 h-8 rounded-lg bg-gray-200/50 dark:bg-white/10 flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-purple-500 transition-colors cursor-pointer">
+                  <div className="w-8 h-8 rounded-lg bg-gray-200/50 dark:bg-white/10 flex items-center justify-center text-gray-400 dark:text-gray-600 hover:text-purple-500 transition-colors cursor-pointer">
                     <Zap className="w-5 h-5" />
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
                       </div>
                       <span className="text-sm font-bold text-gray-900 dark:text-white">Agent Status: Active</span>
                     </div>
-                    <div className="text-xs font-medium text-gray-500 dark:text-gray-400">Processing Queries</div>
+                    <div className="text-xs font-medium text-gray-600 dark:text-gray-400">Processing Queries</div>
                   </div>
 
                   {/* Analytics Mockup */}

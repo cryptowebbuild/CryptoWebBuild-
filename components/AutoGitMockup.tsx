@@ -80,10 +80,10 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
 
                 {/* Step 3 */}
                 <div className="relative z-10 flex flex-col items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-slate-500">
+                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-slate-600">
                         <div className="w-1.5 h-1.5 bg-slate-600 rounded-full"></div>
                     </div>
-                    <span className="text-[10px] font-bold text-slate-500">Verify</span>
+                    <span className="text-[10px] font-bold text-slate-600">Verify</span>
                 </div>
             </div>
 

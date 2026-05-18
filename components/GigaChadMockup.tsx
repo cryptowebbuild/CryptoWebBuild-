@@ -59,7 +59,7 @@ const GigaChadMockup: React.FC<GigaChadMockupProps> = ({ className = '' }) => {
                         <label className="text-[10px] text-[#22c55e] font-bold uppercase mb-1 block">I Hold (SOL)</label>
                         <div className="bg-[#111] border border-white/10 rounded-lg p-2.5 flex items-center justify-between shadow-inner">
                             <span className="text-white font-mono text-lg">1</span>
-                            <span className="text-[10px] text-slate-500 font-bold">SOL</span>
+                            <span className="text-[10px] text-slate-600 font-bold">SOL</span>
                         </div>
                     </div>
                     

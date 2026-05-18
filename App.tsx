@@ -30,6 +30,12 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+
+// --- Service Landing Pages ---
+const AIAutomation = lazy(() => import('./pages/services/AIAutomation'));
+const Web3Development = lazy(() => import('./pages/services/Web3Development'));
+const CryptoGrowth = lazy(() => import('./pages/services/CryptoGrowth'));
+
 // --- Case Studies ---
 const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
 const MemeCoinSite = lazy(() => import('./pages/cases/MemeCoinSite'));
@@ -96,6 +102,11 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
+          {/* --- Service Landing Pages --- */}
+          <Route path="/services/ai-automation" element={<AIAutomation />} />
+          <Route path="/services/web3-development" element={<Web3Development />} />
+          <Route path="/services/crypto-growth" element={<CryptoGrowth />} />
+
           <Route path="/videos" element={<Videos />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
