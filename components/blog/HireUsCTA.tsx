@@ -39,7 +39,7 @@ const HireUsCTA: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center w-full">
             <Link
               to="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white dark:bg-[#020617] text-white dark:text-slate-900 font-black text-lg rounded-2xl hover:scale-105 transition-all shadow-xl shadow-purple-500/20 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-slate-900 font-black text-lg rounded-2xl hover:scale-105 transition-all shadow-xl shadow-purple-500/20 flex items-center justify-center gap-2"
             >
               <span>🚀</span> Book a Strategy Call
             </Link>
