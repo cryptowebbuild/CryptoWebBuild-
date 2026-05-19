@@ -66,7 +66,7 @@ const Services: React.FC = () => {
       />
 
       {/* --- Header Section --- */}
-      <div className="text-center max-w-4xl mx-auto mb-20 animate-slide-up">
+      <div className="text-center max-w-4xl mx-auto mb-20 gpu-accelerated animate-slide-up">
         <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm">
             AI & Infrastructure
         </div>
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
       <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
         
         {/* Service 1: Crypto & Web3 */}
-        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-purple-500/10" style={{ animationDelay: '0.1s' }}>
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500/30 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-purple-500/10" style={{ animationDelay: '0.1s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -102,7 +102,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['Whitepaper RAG', 'Telegram Bot', 'Discord Bot', 'FUD Detection'].map((tag) => (
-                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-purple-500/30 transition-colors">
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-purple-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Service 2: E-commerce */}
-        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10" style={{ animationDelay: '0.2s' }}>
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10" style={{ animationDelay: '0.2s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -143,7 +143,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['Fast Cart', 'Stripe/PayPal', 'Analytics', 'Conversion'].map((tag) => (
-                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-cyan-500/30 transition-colors">
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-cyan-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
@@ -162,7 +162,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Service 3: Smart Knowledge Bases */}
-        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-blue-500/10" style={{ animationDelay: '0.3s' }}>
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-blue-500/10" style={{ animationDelay: '0.3s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -185,7 +185,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['Lead Gen', 'Responsive', 'SEO', 'Performance'].map((tag) => (
-                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-blue-500/30 transition-colors">
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-blue-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
@@ -201,7 +201,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Service 4: Blogs & Portfolios */}
-        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-pink-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-pink-500/10" style={{ animationDelay: '0.4s' }}>
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-pink-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-pink-500/10" style={{ animationDelay: '0.4s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -223,7 +223,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['Static Blog', 'Content', 'Traffic', 'Branding'].map((tag) => (
-                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-pink-500/30 transition-colors">
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-pink-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
@@ -233,7 +233,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Service 5: Technical Web3 Infrastructure */}
-        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2" style={{ animationDelay: '0.5s' }}>
+        <div className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2" style={{ animationDelay: '0.5s' }}>
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
@@ -252,7 +252,7 @@ const Services: React.FC = () => {
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['OpenClaw AI', 'Workflow Automation', 'Lead Gen', 'Browser Agents'].map((tag) => (
-                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 group-hover:border-emerald-500/30 transition-colors">
+                  <span key={tag} className="px-4 py-1.5 bg-gray-100 dark:bg-white/5 rounded-full text-sm font-bold text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/5 group-hover:border-emerald-500/30 transition-colors">
                     {tag}
                   </span>
                 ))}
@@ -270,7 +270,7 @@ const Services: React.FC = () => {
       </div>
 
       <div className="mt-20 text-center">
-        <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-xl shadow-purple-500/20">
+        <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 neon-button rounded-xl hover:scale-105 shadow-xl shadow-purple-500/20">
           Claim Your Custom AI Prototype
         </Link>
       </div>

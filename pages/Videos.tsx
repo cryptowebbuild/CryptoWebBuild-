@@ -31,7 +31,7 @@ const Videos: React.FC = () => {
       
       <main className="pt-24 md:pt-32 pb-24 px-4 md:px-8">
         {/* Hero Section */}
-        <section className="text-center max-w-4xl mx-auto mb-20 animate-slide-up">
+        <section className="text-center max-w-4xl mx-auto mb-20 gpu-accelerated animate-slide-up">
           <h1 className="text-4xl md:text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">
             See the AI Infrastructure in Action
           </h1>
@@ -44,7 +44,7 @@ const Videos: React.FC = () => {
         <section className="max-w-7xl mx-auto mb-32">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/20">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/20">
               <div className="w-16 h-16 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
                 <Database size={32} />
               </div>
@@ -55,7 +55,7 @@ const Videos: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-cyan-500/20 md:translate-y-8">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-cyan-500/20 md:translate-y-8">
               <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
                 <Zap size={32} />
               </div>
@@ -66,7 +66,7 @@ const Videos: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-blue-500/20">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-blue-500/20">
               <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                 <Shield size={32} />
               </div>
@@ -80,12 +80,12 @@ const Videos: React.FC = () => {
 
         {/* Section 2: Interactive Community Simulator */}
         <section className="max-w-6xl mx-auto">
-          <div className="bg-white dark:bg-[#0f172a] rounded-[2.5rem] border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+          <div className="bg-white dark:bg-[#0f172a] rounded-[2.5rem] border border-gray-200 dark:border-white/5 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
             
             {/* Telegram Chat Mockup (Left) */}
-            <div className="lg:w-3/5 bg-[#f3f4f6] dark:bg-[#1e293b] flex flex-col border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-white/10 h-[500px]">
+            <div className="lg:w-3/5 bg-[#f3f4f6] glass-panel flex flex-col border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-white/5 h-[500px]">
               {/* Chat Header */}
-              <div className="px-6 py-4 bg-white dark:bg-[#0f172a] border-b border-gray-200 dark:border-white/10 flex items-center gap-4">
+              <div className="px-6 py-4 bg-white dark:bg-[#0f172a] border-b border-gray-200 dark:border-white/5 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                   CWB
                 </div>
@@ -127,8 +127,8 @@ const Videos: React.FC = () => {
               </div>
 
               {/* Chat Input */}
-              <div className="p-4 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/10">
-                <div className="bg-gray-100 dark:bg-[#1e293b] rounded-xl px-4 py-3 flex items-center justify-between text-gray-400">
+              <div className="p-4 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/5">
+                <div className="bg-gray-100 glass-panel rounded-xl px-4 py-3 flex items-center justify-between text-gray-400">
                   <span className="text-sm">Message #general...</span>
                   <MessageSquare size={20} />
                 </div>

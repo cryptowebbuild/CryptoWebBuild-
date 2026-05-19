@@ -87,25 +87,25 @@
   :root {
     /* DAY MODE (Clean & Professional) */
     --bg-void: #FAFAFA; 
-    --bg-surface: rgba(255, 255, 255, 0.85); 
+    --bg-surface: rgba(255, 255, 255, 0.7);
     --bg-surface-highlight: #F1F5F9; 
     --tx-main: #0F172A; /* Darker Slate for better readability (Accessibility) */
     --tx-muted: #64748B; 
-    --border-glass: rgba(0, 0, 0, 0.08); 
+    --border-glass: rgba(0, 0, 0, 0.05);
     --grid-color: rgba(0, 0, 0, 0.04);
     --shadow-color: rgba(0, 0, 0, 0.05);
   }
 
   .dark {
-    /* NIGHT MODE (Deep & AMOLED Friendly) */
+    /* NIGHT MODE (Deep & AMOLED Friendly - "Cosmic Dark") */
     --bg-void: #020617; /* Slate 950 - Richer black */
-    --bg-surface: rgba(15, 23, 42, 0.7); 
+    --bg-surface: rgba(15, 23, 42, 0.4); /* Deeper transparency for glassmorphism */
     --bg-surface-highlight: #1E293B; 
     --tx-main: #F8FAFC; 
     --tx-muted: #94A3B8; 
-    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-glass: rgba(255, 255, 255, 0.05); /* Extremely subtle border */
     --grid-color: rgba(255, 255, 255, 0.03);
-    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.8);
   }
 
   /* Core HTML Setup for SEO & UX */
@@ -152,13 +152,25 @@
     opacity: 0.04;
   }
 
-  /* Premium Glass Panel */
+  /* Premium Glass Panel - Enhanced "Glassmorphism" */
   .glass-panel {
     background: var(--bg-surface);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(24px); /* Increased blur */
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--border-glass);
     box-shadow: 0 8px 32px 0 var(--shadow-color);
+  }
+
+  /* Neon Glow Button - Elite Aesthetic */
+  .neon-button {
+    background: linear-gradient(135deg, #9333ea, #06b6d4);
+    box-shadow: 0 4px 15px -3px rgba(147, 51, 234, 0.4), 0 0 10px rgba(6, 182, 212, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .neon-button:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.6), 0 0 20px rgba(6, 182, 212, 0.4);
   }
 }
 
@@ -191,7 +203,7 @@
 
 /* 1. GPU Acceleration Class */
 .gpu-accelerated {
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0); /* Strict 3D transform for hardware acceleration */
   will-change: transform, opacity;
   backface-visibility: hidden;
 }

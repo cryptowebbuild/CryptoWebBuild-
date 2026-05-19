@@ -167,13 +167,13 @@ const Projects: React.FC = () => {
       />
 
       {/* --- Header Section --- */}
-      <div className="text-center mb-16 animate-slide-up">
+      <div className="text-center mb-16 gpu-accelerated animate-slide-up">
         <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm">
             Selected Works
         </div>
         <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
           Web3 Projects & <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400">Case Studies</span>
+          <span className="text-transparent bg-clip-text neon-button dark:from-purple-400 dark:to-cyan-400">Case Studies</span>
         </h1>
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
           Explore recent work in <Link to="/services" className="text-purple-600 dark:text-purple-400 hover:underline font-bold">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-600 dark:text-cyan-400 hover:underline font-bold">E-commerce</Link>, and Custom Software.
@@ -185,7 +185,7 @@ const Projects: React.FC = () => {
         {projects.map((project, idx) => (
           <article 
             key={project.id} 
-            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl animate-slide-up bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10"
+            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl gpu-accelerated animate-slide-up bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/5"
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
             {/* --- Visual Container (Mockup Component) --- */}
@@ -285,11 +285,11 @@ const Projects: React.FC = () => {
       </div>
 
       {/* --- CTA Section --- */}
-      <div className="mt-24 text-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
+      <div className="mt-24 text-center gpu-accelerated animate-slide-up" style={{ animationDelay: '0.4s' }}>
+        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-xl max-w-2xl mx-auto">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3-Q4 2026.</p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
+          <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 neon-button rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
             Claim Your Custom AI Prototype
           </Link>
         </div>

@@ -1,65 +1,88 @@
 import React from 'react';
+import { Shield } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Privacy: React.FC = () => {
   return (
-    <div className="container mx-auto px-6 ">
-      <SEO 
-        title="Privacy Policy | CryptoWebBuild"
-        description="Our privacy policy outlining how we collect, use, and protect your data."
+    <div className="container mx-auto px-6 py-12 lg:py-24 max-w-4xl min-h-screen">
+      <SEO title="Privacy Policy | CryptoWebBuild"
+        description="Privacy Policy and Data Handling procedures for CryptoWebBuild's Elite AI Infrastructure and Web3 services."
         canonical="/privacy"
-        noIndex={true}
       />
       
-      <div className="max-w-4xl mx-auto animate-slide-up">
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-text-main mb-8 text-center">
-          Privacy Policy
+      <div className="text-center mb-16 gpu-accelerated animate-slide-up">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 mb-6 border border-purple-200 dark:border-purple-800 shadow-lg shadow-purple-500/20">
+          <Shield className="w-8 h-8" />
+        </div>
+        <h1 className="font-display text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+          Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-600">Policy</span>
         </h1>
-        
-        <div className="glass-panel p-8 md:p-16 rounded-3xl bg-surface shadow-xl shadow-purple-900/5 border-t border-purple-500/20">
-          <div className="prose prose-lg prose-invert max-w-none text-text-muted">
-            <p className="text-sm uppercase tracking-widest font-bold mb-8 text-cyan-500">Last Updated: November 2025</p>
+        <p className="text-gray-600 dark:text-gray-400 text-lg">
+          Last Updated: May 2026
+        </p>
+      </div>
 
-            <h3>1. Introduction</h3>
-            <p>
-              Welcome to CryptoWebBuild. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
-            </p>
+      <div className="glass-panel rounded-3xl p-8 md:p-12 shadow-2xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-purple-500 hover:prose-a:text-purple-600">
+          <p className="lead text-xl text-gray-600 dark:text-gray-300 font-medium">
+            At CryptoWebBuild, we engineer elite AI Agent Infrastructure and Web3 Growth Funnels. We treat your corporate data, proprietary operational logic, and tokenomics strategies with the highest level of cryptographic and operational security.
+          </p>
 
-            <h3>2. Data We Collect</h3>
-            <p>
-              We may collect, use, store and transfer different kinds of personal data about you which we have grouped together follows:
-            </p>
-            <ul>
-              <li><strong>Identity Data:</strong> includes first name, last name, username or similar identifier.</li>
-              <li><strong>Contact Data:</strong> includes email address and telephone numbers submitted via contact forms.</li>
-              <li><strong>Technical Data:</strong> includes internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website.</li>
-              <li><strong>Usage Data:</strong> includes information about how you use our website and services (via Google Analytics).</li>
-            </ul>
+          <div className="mt-12 space-y-12">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
+                1. Enterprise Data Collection & Processing
+              </h2>
+              <p>
+                To build and deploy custom autonomous AI agents and complex Web3 architectures, we require access to specific operational data. We classify and protect this data strictly:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 mt-4 text-gray-600 dark:text-gray-400">
+                <li><strong className="text-gray-900 dark:text-white">Proprietary Training Data:</strong> Information you provide for RAG (Retrieval-Augmented Generation) ingestion, including whitepapers, private community logs, and business logic matrices.</li>
+                <li><strong className="text-gray-900 dark:text-white">Technical Architecture Data:</strong> Smart contract ABIs, API keys, staging environment credentials, and server configurations necessary for frontend integration.</li>
+                <li><strong className="text-gray-900 dark:text-white">Identity Data:</strong> Executive contact information, Telegram/Discord handles for project management, and billing details.</li>
+              </ul>
+            </div>
 
-            <h3>3. How We Use Your Data</h3>
-            <p>
-              We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
-            </p>
-            <ul>
-              <li>Where we need to perform the contract we are about to enter into or have entered into with you (e.g., building your website).</li>
-              <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
-              <li>Where we need to comply with a legal or regulatory obligation.</li>
-            </ul>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
+                2. Data Security & Encryption
+              </h2>
+              <p>
+                We implement military-grade security protocols for all client data:
+              </p>
+              <ul className="list-disc pl-6 space-y-3 mt-4 text-gray-600 dark:text-gray-400">
+                <li>All proprietary training data utilized for Custom LLM deployments is strictly sandboxed. We use isolated vector databases to ensure zero cross-contamination between client projects.</li>
+                <li>Your data is never used to train foundational public models (e.g., OpenAI, Anthropic) without explicit enterprise data-privacy agreements in place.</li>
+                <li>API keys and environment variables are encrypted at rest using industry-standard KMS (Key Management Services) and are only decrypted in volatile memory during deployment phases.</li>
+              </ul>
+            </div>
 
-            <h3>4. Cookies</h3>
-            <p>
-              You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly.
-            </p>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
+                3. Web3 & Tokenomics Integrity
+              </h2>
+              <p>
+                CryptoWebBuild is committed to the integrity of the decentralized ecosystem. We handle sensitive pre-launch data, such as tokenomics distribution models and TGE (Token Generation Event) timelines, under strict Non-Disclosure Agreements (NDAs). We do not engage in front-running, nor do we share internal launch strategies with external entities or marketing partners without explicit authorization.
+              </p>
+            </div>
 
-            <h3>5. Third-Party Links</h3>
-            <p>
-              This website may include links to third-party websites, plug-ins and applications (such as crypto exchanges or wallets). Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements.
-            </p>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
+                4. Third-Party Infrastructure Providers
+              </h2>
+              <p>
+                To deliver our elite services, we integrate with secure third-party providers (e.g., Cloudflare for edge computing, Supabase for backend databases, Vercel for frontend hosting, and various RPC node providers). While we meticulously vet these partners for compliance with SOC 2 and ISO 27001 standards, we do not control their independent privacy practices.
+              </p>
+            </div>
 
-            <h3>6. Contact Details</h3>
-            <p>
-              If you have any questions about this privacy policy or our privacy practices, please contact us via the contact form on our website or email at: hello@cryptowebbuild.com.
-            </p>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
+                5. Contact & Compliance Officer
+              </h2>
+              <p>
+                If you require data deletion, infrastructure audit reports, or have inquiries regarding our compliance protocols regarding your proprietary AI models, please contact our lead systems architect directly via our secure channel: <a href="mailto:hello@cryptowebbuild.com" className="font-bold text-purple-500 hover:text-purple-400">hello@cryptowebbuild.com</a>.
+              </p>
+            </div>
           </div>
         </div>
       </div>
