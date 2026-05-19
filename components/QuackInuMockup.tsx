@@ -51,10 +51,10 @@ const QuackInuMockup: React.FC<QuackInuMockupProps> = ({ className = '' }) => {
                 {/* Eyes */}
                 <div className="flex gap-5 mb-3 z-10">
                     <div className="w-5 h-5 bg-black rounded-full relative">
-                        <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full"></div>
+                        <div className="absolute top-1 right-1 w-2 h-2 bg-white dark:bg-[#020617] rounded-full"></div>
                     </div>
                     <div className="w-5 h-5 bg-black rounded-full relative">
-                        <div className="absolute top-1 right-1 w-2 h-2 bg-white rounded-full"></div>
+                        <div className="absolute top-1 right-1 w-2 h-2 bg-white dark:bg-[#020617] rounded-full"></div>
                     </div>
                 </div>
                 {/* Beak */}

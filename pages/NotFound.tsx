@@ -30,7 +30,7 @@ const NotFound: React.FC = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         <Link 
           to="/" 
-          className="px-8 py-3 bg-white text-black font-bold rounded-xl hover:scale-105 transition-transform shadow-lg shadow-white/10"
+          className="px-8 py-3 bg-white dark:bg-[#020617] text-black dark:text-gray-100 font-bold rounded-xl hover:scale-105 transition-transform shadow-lg shadow-white/10"
         >
           Return Home
         </Link>

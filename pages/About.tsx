@@ -98,7 +98,7 @@ const About: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <div className="rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-white glass-panel relative z-10 overflow-hidden">
+        <div className="rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-white dark:bg-[#020617] glass-panel relative z-10 overflow-hidden">
             {/* Grid Pattern Overlay */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
             
@@ -209,7 +209,7 @@ const About: React.FC = () => {
 
         {/* The Tech Arsenal */}
         <div className="order-1 md:order-2">
-            <div className="p-8 rounded-3xl bg-white glass-panel border border-gray-200 dark:border-white/5 relative overflow-hidden shadow-xl">
+            <div className="p-8 rounded-3xl bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 relative overflow-hidden shadow-xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full pointer-events-none"></div>
                 <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                     <span className="w-2 h-8 bg-gradient-to-b from-purple-500 to-cyan-500 rounded-full"></span>

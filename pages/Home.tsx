@@ -99,7 +99,7 @@ const Home: React.FC = () => {
             <div className="relative bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-2xl border border-gray-200/50 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[400px] md:h-[500px]">
 
               {/* macOS Header */}
-              <div className="h-12 bg-gray-50/80 dark:bg-black/40 border-b border-gray-200/50 dark:border-white/5 flex items-center px-4 gap-2">
+              <div className="h-12 bg-gray-50 dark:bg-white/5/80 dark:bg-black/40 border-b border-gray-200/50 dark:border-white/5 flex items-center px-4 gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-yellow-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
@@ -110,7 +110,7 @@ const Home: React.FC = () => {
               <div className="flex flex-1 overflow-hidden">
 
                 {/* Sidebar */}
-                <div className="w-16 hidden md:flex flex-col items-center py-6 gap-6 bg-gray-50/50 dark:bg-white/5 border-r border-gray-200/50 dark:border-white/5">
+                <div className="w-16 hidden md:flex flex-col items-center py-6 gap-6 bg-gray-50 dark:bg-white/5/50 dark:bg-white/5 border-r border-gray-200/50 dark:border-white/5">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white shadow-sm">
                     <BrainCircuit className="w-5 h-5" />
                   </div>
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
                   <div className="flex-1 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5 p-4 flex flex-col gap-4">
                      <div className="flex gap-3">
                         <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-500/20 flex-shrink-0" />
-                        <div className="flex-1 bg-white glass-panel p-3 rounded-2xl rounded-tl-none border border-gray-100 dark:border-white/5 shadow-sm">
+                        <div className="flex-1 bg-white dark:bg-[#020617] glass-panel p-3 rounded-2xl rounded-tl-none border border-gray-100 dark:border-white/5 shadow-sm">
                           <div className="h-2 w-3/4 bg-gray-200 dark:bg-gray-700 rounded-full mb-2" />
                           <div className="h-2 w-1/2 bg-gray-200 dark:bg-gray-700 rounded-full" />
                         </div>
@@ -229,7 +229,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
             {/* Step 1 */}
-            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 1
               </div>
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 2
               </div>
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 3
               </div>
@@ -262,7 +262,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 4 */}
-            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 4
               </div>
@@ -287,15 +287,15 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">FUD Prevention</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">24/7 AI Guardians instantly answer investor questions based on your Whitepaper, eliminating fear and doubt.</p>
           </div>
-          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Cost Reduction</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Save thousands of dollars monthly by automating community management and presale onboarding with precision AI.</p>
           </div>
-          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">High-Speed Deployment</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Custom RAG models trained on your specific ecosystem data and deployed live within 48 hours.</p>
           </div>
@@ -319,7 +319,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                 <Link 
                 to="/contact" 
-                className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
+                className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white dark:bg-[#020617] text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
                 Claim Your Custom AI Prototype
                 </Link>

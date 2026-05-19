@@ -130,7 +130,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         <div className="container mx-auto max-w-4xl relative z-10 text-center">
             {/* Back Button */}
             <div className="mb-8 flex justify-center animate-fade-in-up">
-                <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-md text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-white hover:text-purple-600 dark:hover:bg-white/10 dark:hover:text-purple-400 transition-all shadow-sm hover:shadow-md group">
+                <Link to="/blog" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-md text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-white dark:bg-[#020617] hover:text-purple-600 dark:hover:bg-white/10 dark:hover:text-purple-400 transition-all shadow-sm hover:shadow-md group">
                     <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Back to Library
                 </Link>

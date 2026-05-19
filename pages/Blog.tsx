@@ -104,7 +104,7 @@ const Blog: React.FC = () => {
             <Link 
               key={post.slug} 
               to={`/blog/${post.slug}`}
-              className={`group flex flex-col bg-white glass-panel border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 gpu-accelerated animate-slide-up border-t-4 ${post.border}`}
+              className={`group flex flex-col bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 gpu-accelerated animate-slide-up border-t-4 ${post.border}`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Image Container with Zoom Effect */}
