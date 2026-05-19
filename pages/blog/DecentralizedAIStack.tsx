@@ -4,7 +4,6 @@ import BlogPostLayout from '../../components/blog/BlogPostLayout';
 import TableOfContents from '../../components/blog/TableOfContents';
 import KeyTakeaways from '../../components/blog/KeyTakeaways';
 import ProTip from '../../components/blog/ProTip';
-import AIPrototypeCTA from '../../components/blog/AIPrototypeCTA';
 
 const DecentralizedAIStack: React.FC = () => {
   const takeaways = [
@@ -118,8 +117,6 @@ const DecentralizedAIStack: React.FC = () => {
       <p>
         If you are ready to transition your product to a sovereign, high-performance architecture, start by examining your core <Link to="/" className="text-purple-600 font-bold hover:underline">growth funnels</Link> and identifying where API latency is costing you revenue.
       </p>
-
-      <AIPrototypeCTA />
 
     </BlogPostLayout>
   );

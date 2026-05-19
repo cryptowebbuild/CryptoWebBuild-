@@ -86,7 +86,7 @@ const AGIAutonomousAIAgents: React.FC = () => {
           Using systems like <strong>OpenClaw</strong>, we build custom AI agents that sit inside your business infrastructure. They aren't generic chatbots. They are specialized digital workers.
         </p>
 
-        <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl my-8 border border-gray-200 dark:border-gray-700">
+        <div className="bg-gray-100 dark:bg-[#0f172a] p-6 rounded-xl my-8 border border-gray-200 dark:border-gray-700">
           <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Real-World OpenClaw Agent Use Cases</h3>
           <ul className="space-y-3 mb-0">
             <li className="flex items-start">

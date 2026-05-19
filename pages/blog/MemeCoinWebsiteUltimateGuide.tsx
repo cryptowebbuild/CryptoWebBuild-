@@ -99,7 +99,7 @@ const MemeCoinWebsiteUltimateGuide: React.FC = () => {
         A chaotic design that runs at 60 frames per second on a custom React framework shows intention. A chaotic design that stutters because it's built on a bloated website builder shows amateurism.
       </p>
 
-      <div className="mt-12 mb-12 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 text-center">
+      <div className="mt-12 mb-12 bg-gray-50 dark:bg-[#0f172a] rounded-2xl p-8 border border-gray-200 dark:border-gray-700 text-center">
         <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Is Your Current Website Scaring Off Whales?</h4>
         <p className="text-gray-700 dark:text-gray-300 mb-6">Stop guessing why your conversion rate is low. Get a professional tear-down of your crypto project's UX, speed, and trust signals.</p>
         <Link to="/contact" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">Book a Free Crypto UX Audit</Link>

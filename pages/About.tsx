@@ -11,9 +11,9 @@ const About: React.FC = () => {
       "@type": "Person",
       "name": "Sagor Ahamed",
       "alternateName": "CryptoWebBuild",
-      "jobTitle": "Senior Web3 Developer",
+      "jobTitle": "AI & Web3 Infrastructure Architect",
       "image": "https://cryptowebbuild.com/hero-avatar.webp",
-      "description": "Founder of CryptoWebBuild Agency. Specialized in high-performance Web3 interfaces, e-commerce, and modern web architecture.",
+      "description": "I am Sagor Ahamed, the founder of CryptoWebBuild. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure.",
       "url": "https://cryptowebbuild.com/about",
       "sameAs": [
         "https://x.com/CryptowebbuildX",
@@ -140,11 +140,11 @@ const About: React.FC = () => {
                     
                     <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                         About Sagor Ahamed: <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-shimmer">Decentralized Architect</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-shimmer">AI & Web3 Infrastructure Architect</span>
                     </h1>
                     
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8 font-light max-w-2xl mx-auto lg:mx-0">
-                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-gray-900 dark:text-white font-bold">CryptoWebBuild Agency</span>. We don't just write code; we build high-performance digital assets that turn visitors into investors and customers. From viral meme coins to institutional DeFi protocols.
+                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-gray-900 dark:text-white font-bold">CryptoWebBuild</span>. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure. I help ambitious founders scale their communities and operations with 24/7 autonomous AI systems.
                     </p>
 
                     {/* Social Command Center */}
@@ -218,7 +218,7 @@ const About: React.FC = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                     {techStack.map((tech) => (
-                        <div key={tech.name} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
+                        <div key={tech.name} className="group p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
                             <div className="flex items-center gap-3 mb-2">
                                 <span className="text-2xl filter grayscale group-hover:grayscale-0 transition-all">{tech.icon === 'TS' ? (
                                     <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C0.502 0 0 0.502 0 1.125v21.75C0 23.498 0.502 24 1.125 24h21.75c0.623 0 1.125-0.502 1.125-1.125V1.125C24 0.502 23.498 0 22.875 0H1.125zM15.266 18.063h-3.328v-1.782h3.328v1.782zm-8.832 0H3.106v-7.149h5.188v1.782H4.888v1.781h1.547v1.782H4.888v1.804zm6.602-5.367H11.25v-1.782h3.328v1.782z"/></svg>

@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    formData.append("access_key", "3e10ed03-3f9f-406f-b087-1871c9dec81a");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -61,92 +89,97 @@ const Contact: React.FC = () => {
 
         {/* --- Contact Form --- */}
         <div className="p-8 md:p-12 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <form action="https://api.web3forms.com/submit" method="POST" className="space-y-8">
-            {/* Replace with your Access Key */}
-            <input type="hidden" name="access_key" value="75fafb45-1a1e-41ee-86b7-4637bbd35224" />
-            <input type="hidden" name="_redirect" value="https://cryptowebbuild.com/thank-you" />
-
-            <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Name</label>
-                    <input 
-                        id="name" 
-                        name="name" 
-                        type="text" 
-                        required 
-                        placeholder="John Doe"
-                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
-                    />
-                </div>
-
-                <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Email</label>
-                    <input 
-                        id="email" 
-                        name="email" 
-                        type="email" 
-                        required 
-                        placeholder="you@example.com"
-                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
-                    />
-                </div>
+          {isSuccess ? (
+            <div className="p-8 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl text-center">
+              <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Request received!</h3>
+              <p className="text-gray-600 dark:text-gray-400">We'll be in touch within 24 hours.</p>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                      <label htmlFor="name" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Name</label>
+                      <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          placeholder="John Doe"
+                          className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
+                      />
+                  </div>
 
-            <div className="space-y-2">
-              <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Category</label>
-              <select 
-                id="category" 
-                name="category" 
-                required
-                defaultValue=""
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
+                  <div className="space-y-2">
+                      <label htmlFor="email" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Email</label>
+                      <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="you@example.com"
+                          className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
+                      />
+                  </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="category" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Category</label>
+                <select
+                  id="category"
+                  name="category"
+                  required
+                  defaultValue=""
+                  className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
+                >
+                  <option value="" disabled className="text-gray-400">Select a project type</option>
+                  <option value="Custom AI Knowledge Base Agent">Custom AI Knowledge Base Agent</option>
+                  <option value="Automated Web3 Sales Funnel">Automated Web3 Sales Funnel</option>
+                  <option value="Elite Crypto Platform UI/UX">Elite Crypto Platform UI/UX</option>
+                  <option value="Token Presale Architecture">Token Presale Architecture</option>
+                  <option value="Headless E-commerce Ecosystem">Headless E-commerce Ecosystem</option>
+                  <option value="Custom Web Project">Custom Web Project</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Budget</label>
+                <select
+                  id="budget"
+                  name="budget"
+                  required
+                  defaultValue=""
+                  className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
+                >
+                  <option value="" disabled className="text-gray-400">Select your budget</option>
+                  <option value="$500 – $1,000 (Small Automation)">$500 – $1,000 (Small Automation)</option>
+                  <option value="$2,000 – $5,000 (AI Pilot)">$2,000 – $5,000 (AI Pilot)</option>
+                  <option value="$5,000 – $10,000 (Full Integration)">$5,000 – $10,000 (Full Integration)</option>
+                  <option value="$10,000+ (Enterprise Architecture)">$10,000+ (Enterprise Architecture)</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  placeholder="Describe your project, timeline, and any specific requirements..."
+                  className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none hover:border-purple-500/30"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 neon-button rounded-xl text-white font-bold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <option value="" disabled className="text-gray-400">Select a project type</option>
-                <option value="Custom AI Knowledge Base Agent">Custom AI Knowledge Base Agent</option>
-                <option value="Automated Web3 Sales Funnel">Automated Web3 Sales Funnel</option>
-                <option value="Elite Crypto Platform UI/UX">Elite Crypto Platform UI/UX</option>
-                <option value="Token Presale Architecture">Token Presale Architecture</option>
-                <option value="Headless E-commerce Ecosystem">Headless E-commerce Ecosystem</option>
-                <option value="Custom Web Project">Custom Web Project</option>
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="budget" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Project Budget</label>
-              <select 
-                id="budget" 
-                name="budget" 
-                required
-                defaultValue=""
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
-              >
-                <option value="" disabled className="text-gray-400">Select your budget</option>
-                <option value="$500 – $1,000 (Small Automation)">$500 – $1,000 (Small Automation)</option>
-                <option value="$2,000 – $5,000 (AI Pilot)">$2,000 – $5,000 (AI Pilot)</option>
-                <option value="$5,000 – $10,000 (Full Integration)">$5,000 – $10,000 (Full Integration)</option>
-                <option value="$10,000+ (Enterprise Architecture)">$10,000+ (Enterprise Architecture)</option>
-              </select>
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-[0.2em] text-xs">Your Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows={5}
-                required 
-                placeholder="Describe your project, timeline, and any specific requirements..."
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none hover:border-purple-500/30"
-              ></textarea>
-            </div>
-
-            <button 
-              type="submit" 
-              className="w-full py-4 neon-button rounded-xl text-white font-bold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all"
-            >
-              Send Message
-            </button>
-          </form>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          )}
         </div>
 
         <div className="mt-10 lg:hidden text-center text-gray-600 dark:text-gray-400 text-sm font-medium">

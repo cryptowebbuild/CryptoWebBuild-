@@ -185,11 +185,11 @@ const Projects: React.FC = () => {
         {projects.map((project, idx) => (
           <article 
             key={project.id} 
-            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl gpu-accelerated animate-slide-up bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/5"
+            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl gpu-accelerated animate-slide-up bg-white dark:bg-[#020617] border border-gray-200 dark:border-white/5"
             style={{ animationDelay: `${idx * 0.1}s` }}
           >
             {/* --- Visual Container (Mockup Component) --- */}
-            <div className="absolute inset-0 overflow-hidden bg-gray-100 dark:bg-slate-900">
+            <div className="absolute inset-0 overflow-hidden bg-gray-100 dark:bg-[#020617]">
                {/* Conditional Rendering for Mockups */}
                {project.id === 'autogithub' ? (
                  <AutoGitMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
