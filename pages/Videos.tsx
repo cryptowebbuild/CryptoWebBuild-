@@ -1,211 +1,185 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
+import { Database, Zap, Shield, MessageSquare, Clock, ShieldCheck, Activity } from 'lucide-react';
 
 const Videos: React.FC = () => {
-  const videos = [
-    {
-      id: 'android-app',
-      title: "Build an Android App on Mobile (No Laptop!)",
-      desc: "Full guide on creating a homework solver app using only a mobile phone and AI tools like Claude. No PC required.",
-      url: "https://www.youtube.com/embed/nRlcTomEEqc",
-      link: "https://youtu.be/nRlcTomEEqc",
-      date: "Nov 04, 2025",
-      highlights: [
-        "Full mobile dev workflow setup",
-        "Generating functional code with Claude AI",
-        "Free hosting & monetization guide"
-      ]
-    },
-    {
-      id: 'gta-6-ai',
-      title: "I Challenged AI to Build GTA 6 From Scratch",
-      desc: "A coding battle between ChatGPT and Claude AI. ChatGPT attempts 3D while Claude builds a polished 2D shooter.",
-      url: "https://www.youtube.com/embed/v2ypUO0cr7Q",
-      link: "https://youtu.be/v2ypUO0cr7Q",
-      date: "Nov 20, 2025",
-      highlights: [
-        "ChatGPT's 3D generation struggle",
-        "Claude's advanced 2D game logic",
-        "Implementing a 'Wanted' level system"
-      ]
-    },
-    {
-      id: 'sora-2-game',
-      title: "I Asked Sora 2 to Make Video Games (Scary Real)",
-      desc: "Testing Sora 2 AI to generate realistic gameplay footage for Minecraft, Roblox, GTA, and more. Is this the future of game engines?",
-      url: "https://www.youtube.com/embed/erslja3K9TI",
-      link: "https://youtu.be/erslja3K9TI",
-      date: "Nov 26, 2025",
-      highlights: [
-        "Sora 2 vs Real Gameplay comparison",
-        "Generating Minecraft physics",
-        "The future of AI 'Dream' engines"
-      ]
-    },
-    {
-      id: 'video-adzd',
-      title: "Build a $3,000 Food Delivery App (DoorDash Clone)",
-      desc: "Watch me build a complete Food Delivery platform (like Uber Eats) from scratch. Covering Frontend UI, Backend Database, and the 'No Code' tools used to ship fast.",
-      url: "https://www.youtube.com/embed/ADZdY0_nQpU",
-      link: "https://youtu.be/ADZdY0_nQpU",
-      date: "Dec 28, 2025",
-      highlights: [
-        "Full-Stack Food Delivery Clone",
-        "Frontend & Backend Integration",
-        "Real-world $3000 Project Breakdown"
-      ]
-    }
-  ];
+  const [messages, setMessages] = useState<{sender: 'user'|'agent', text: string}[]>([
+    { sender: 'user', text: "When is the TGE and how do I get whitelisted?" }
+  ]);
+  const [isTyping, setIsTyping] = useState(false);
 
-  // Schema.org Structured Data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": videos.map((video, index) => ({
-      "@type": "VideoObject",
-      "position": index + 1,
-      "name": video.title,
-      "description": video.desc,
-      "uploadDate": "2025-11-20", // Generalized for static output
-      "thumbnailUrl": `https://img.youtube.com/vi/${video.url.split('/').pop()}/maxresdefault.jpg`,
-      "contentUrl": video.link,
-      "embedUrl": video.url
-    }))
-  };
+  useEffect(() => {
+    if (messages.length === 1 && messages[0].sender === 'user') {
+      setIsTyping(true);
+      const timer = setTimeout(() => {
+        setMessages(prev => [...prev, {
+          sender: 'agent',
+          text: "🚀 TGE is scheduled for Q4! To get whitelisted, you need to hold at least 1,000 $CWB tokens and complete the Zealy quests. Let me know if you need the direct link to the quest board!"
+        }]);
+        setIsTyping(false);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [messages]);
 
   return (
-    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
-      
-      {/* --- SEO Configuration --- */}
+    <div className="container mx-auto px-6 py-12 lg:py-24 space-y-12">
       <SEO 
-        title="AI Coding Experiments & Tutorials | CryptoWebBuild"
-        description="Watch AI coding experiments: Building apps on mobile, generative game design, and modern web development tutorials."
-        keywords={['AI Coding Tutorials', 'Mobile Coding Guide', 'Build App without Laptop', 'Generative AI Coding']}
-        canonical="/videos"
+        title="Visual Showcase | CryptoWebBuild - AI & Web3 Infrastructure"
+        description="See our elite AI Agent infrastructure and Web3 Community Guardians in action. No fluff, just raw autonomous power protecting and scaling communities 24/7."
       />
       
-      {/* Inject JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd)}
-      </script>
+      <main className="pt-24 md:pt-32 pb-24 px-4 md:px-8">
+        {/* Hero Section */}
+        <section className="text-center max-w-4xl mx-auto mb-20 animate-slide-up">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+            See the AI Infrastructure in Action
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-10 max-w-3xl mx-auto">
+            No fluff. Just raw, autonomous power protecting and scaling Web3 communities 24/7.
+          </p>
+        </section>
 
-      {/* --- Header --- */}
-      <div className="text-center max-w-3xl mx-auto mb-20 animate-slide-up">
-        <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-red-100 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-xs font-bold tracking-wider uppercase shadow-sm">
-          Tutorials & Experiments
-        </div>
-        <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
-          AI Coding <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Experiments</span>
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
-          Pushing the boundaries of what's possible with Generative AI, Mobile Development, and Game Design.
-        </p>
-      </div>
+        {/* Section 1: The 3-Step Deployment Pipeline */}
+        <section className="max-w-7xl mx-auto mb-32">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/20">
+              <div className="w-16 h-16 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                <Database size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">1. Data Ingestion</h3>
+              <p className="text-gray-600 dark:text-gray-400 font-medium">
+                Feed your whitepaper, git docs, or custom tokenomics data. Our system instantly maps your entire ecosystem.
+              </p>
+            </div>
 
-      {/* --- Video Grid --- */}
-      <div className="space-y-24 max-w-5xl mx-auto">
-        {videos.map((video, idx) => (
-          <article 
-            key={video.id} 
-            className="group relative rounded-[32px] p-1 overflow-hidden transition-all duration-500 animate-slide-up bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 shadow-xl"
-            style={{ animationDelay: `${idx * 0.15}s` }}
-          >
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            {/* Card 2 */}
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-cyan-500/20 md:translate-y-8">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                <Zap size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">2. RAG & LLM Optimization</h3>
+              <p className="text-gray-600 dark:text-gray-400 font-medium">
+                Our backend structures the data using custom Llama 3.1 architecture, ensuring ultra-fast, zero-hallucination responses.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-blue-500/20">
+              <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+                <Shield size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Instant Guardianship</h3>
+              <p className="text-gray-600 dark:text-gray-400 font-medium">
+                1-click deployment live into Telegram/Discord with 24/7 autonomous support, moderating and scaling your community.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Interactive Community Simulator */}
+        <section className="max-w-6xl mx-auto">
+          <div className="bg-white dark:bg-[#0f172a] rounded-[2.5rem] border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row">
             
-            <div className="flex flex-col lg:flex-row gap-8 p-6 md:p-8 relative z-10">
-              
-              {/* Video Player Side */}
-              <div className="w-full lg:w-2/3">
-                <div className="relative pb-[56.25%] h-0 rounded-2xl overflow-hidden bg-black shadow-2xl border border-gray-200 dark:border-white/5 group-hover:shadow-[0_0_30px_rgba(124,58,237,0.2)] transition-shadow duration-500">
-                  <iframe 
-                    src={`${video.url}?rel=0&modestbranding=1`} 
-                    title={video.title}
-                    className="absolute top-0 left-0 w-full h-full border-0"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+            {/* Telegram Chat Mockup (Left) */}
+            <div className="lg:w-3/5 bg-[#f3f4f6] dark:bg-[#1e293b] flex flex-col border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-white/10 h-[500px]">
+              {/* Chat Header */}
+              <div className="px-6 py-4 bg-white dark:bg-[#0f172a] border-b border-gray-200 dark:border-white/10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                  CWB
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white text-lg">CryptoWebBuild Official</h4>
+                  <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">12,450 members • 1,200 online</p>
                 </div>
               </div>
 
-              {/* Content Side */}
-              <div className="w-full lg:w-1/3 flex flex-col justify-between">
-                <div>
-                    <div className="flex items-center gap-3 mb-4">
-                        <span className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-widest">{video.date}</span>
-                        <div className="h-px flex-1 bg-gray-200 dark:bg-white/10"></div>
+              {/* Chat Body */}
+              <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-6">
+                {messages.map((msg, idx) => (
+                  <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                    <div className={`max-w-[80%] rounded-2xl px-5 py-3 shadow-md ${
+                      msg.sender === 'user'
+                        ? 'bg-purple-600 text-white rounded-br-none'
+                        : 'bg-white dark:bg-[#0f172a] text-gray-900 dark:text-gray-200 border border-gray-200 dark:border-white/5 rounded-bl-none'
+                    }`}>
+                      {msg.sender === 'agent' && (
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-xs font-bold text-purple-500 flex items-center gap-1">
+                            <ShieldCheck size={14} /> AI Guardian
+                          </span>
+                        </div>
+                      )}
+                      <p className="text-[15px] leading-relaxed">{msg.text}</p>
                     </div>
-
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4 leading-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        {video.title}
-                    </h2>
-                    
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm font-medium">
-                        {video.desc}
-                    </p>
-
-                    {/* Highlights Box */}
-                    <div className="bg-gray-100 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl p-5 mb-6 hover:border-purple-500/30 transition-colors">
-                        <h4 className="text-purple-600 dark:text-purple-400 text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
-                            Key Takeaways
-                        </h4>
-                        <ul className="space-y-2">
-                            {video.highlights.map((item) => (
-                            <li key={item} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-2 font-medium">
-                                <span className="text-purple-500 mt-1">▹</span>
-                                {item}
-                            </li>
-                            ))}
-                        </ul>
+                  </div>
+                ))}
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/5 rounded-2xl rounded-bl-none px-5 py-4 shadow-md flex gap-2 items-center">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                     </div>
-                </div>
+                  </div>
+                )}
+              </div>
 
-                <div className="flex flex-wrap gap-3 mt-4">
-                  <a 
-                    href={video.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg hover:-translate-y-0.5 text-sm"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    Watch Now
-                  </a>
-                  <a 
-                    href="https://youtube.com/@cryptowebbuild?sub_confirmation=1" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/10 font-bold rounded-xl transition-all text-sm"
-                  >
-                    Subscribe
-                  </a>
+              {/* Chat Input */}
+              <div className="p-4 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/10">
+                <div className="bg-gray-100 dark:bg-[#1e293b] rounded-xl px-4 py-3 flex items-center justify-between text-gray-400">
+                  <span className="text-sm">Message #general...</span>
+                  <MessageSquare size={20} />
                 </div>
               </div>
             </div>
-          </article>
-        ))}
-      </div>
 
-      {/* --- Bottom CTA --- */}
-      <div className="mt-32 relative group max-w-4xl mx-auto text-center">
-        <div className="relative p-12 md:p-20 rounded-[48px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
-          
-          <h2 className="relative z-10 font-display text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-            Need a Custom App?
-          </h2>
-          <p className="relative z-10 text-gray-600 dark:text-gray-400 text-lg mb-10 max-w-2xl mx-auto font-medium">
-            I build professional crypto websites, mobile apps, and AI-integrated solutions using the same tech stack shown in my videos.
-          </p>
-          <Link 
-            to="/contact" 
-            className="relative z-10 inline-flex items-center justify-center px-10 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold text-lg rounded-2xl hover:scale-105 transition-transform shadow-xl"
-          >
-            Claim AI Prototype
-          </Link>
-        </div>
-      </div>
+            {/* Metrics Panel (Right) */}
+            <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center bg-white dark:bg-[#0f172a]">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Real-Time Telemetry</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Live performance metrics of the AI Guardian protecting the community.</p>
+
+              <div className="space-y-6">
+                {/* Metric 1 */}
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+                    <Clock size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Response Time</p>
+                    <p className="text-2xl font-black text-gray-900 dark:text-white">&lt; 1s</p>
+                  </div>
+                </div>
+
+                {/* Metric 2 */}
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                    <ShieldCheck size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">FUD Deflected</p>
+                    <p className="text-2xl font-black text-gray-900 dark:text-white">99.4%</p>
+                  </div>
+                </div>
+
+                {/* Metric 3 */}
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400">
+                    <Activity size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Moderation Cost Saved</p>
+                    <p className="text-2xl font-black text-gray-900 dark:text-white">80%</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
   );
 };

@@ -50,8 +50,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       style={aspectRatioStyle}
     >
         {!hasError ? (
-          <img
-              src={optimizedSrc}
+          <img src={optimizedSrc}
               alt={alt}
               width={width}
               height={height}

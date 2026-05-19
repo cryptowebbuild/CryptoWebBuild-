@@ -60,7 +60,7 @@ const NewsPhotoCard: React.FC = () => {
 
         <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 relative group">
             {/* Display the screenshot */}
-            <img
+            <img loading="lazy"
               src={image}
               alt="News Photo Card Generator Interface"
               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"

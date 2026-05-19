@@ -12,7 +12,7 @@ const FloatingChatWidget: React.FC = () => {
     // 1. Set global config EXACTLY as requested by the user
     window.difyChatbotConfig = {
       token: 'K6KyH2ECZUGFl0gc',
-      baseUrl: 'http://ai.cryptowebbuild.com',
+      baseUrl: 'https://ai.cryptowebbuild.com',
       inputs: {},
       systemVariables: {},
       userVariables: {}
@@ -23,7 +23,7 @@ const FloatingChatWidget: React.FC = () => {
     if (!document.getElementById(scriptId)) {
       const script = document.createElement('script');
       script.id = scriptId;
-      script.src = 'http://ai.cryptowebbuild.com/embed.min.js';
+      script.src = 'https://ai.cryptowebbuild.com/embed.min.js';
       script.defer = true;
       document.body.appendChild(script);
     }
@@ -36,6 +36,7 @@ const FloatingChatWidget: React.FC = () => {
         to match the site's dark theme/glassmorphism while maintaining the requested overrides.
       */}
       <style>{`
+        /* Base widget styling */
         #dify-chatbot-bubble-button {
           background-color: #1C64F2 !important;
           /* Adding a subtle glow to fit the theme */
@@ -48,6 +49,27 @@ const FloatingChatWidget: React.FC = () => {
           border: 1px solid rgba(255, 255, 255, 0.1) !important;
           border-radius: 16px !important;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* Hide Dify Watermark & Replace with CryptoWebBuild */
+        #dify-chatbot-bubble-window a[href*="dify.ai"],
+        #dify-chatbot-bubble-window a[target="_blank"] {
+          display: none !important;
+        }
+        #dify-chatbot-bubble-window .p-4.flex.items-center.justify-between.text-xs {
+          visibility: hidden;
+          position: relative;
+        }
+        #dify-chatbot-bubble-window .p-4.flex.items-center.justify-between.text-xs::after {
+          content: 'Powered by CryptoWebBuild 🚀';
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          color: #6B7280;
+          font-weight: 600;
+          letter-spacing: 0.05em;
         }
 
         /* Responsive handling for mobile so it doesn't overflow */

@@ -159,9 +159,8 @@ const Projects: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
-      <SEO 
-        title="Web3 Projects & Crypto Website Portfolio | Case Studies"
-        description="Explore my web development portfolio: High-performance Solana token launches, viral meme coin sites, and headless e-commerce stores."
+      <SEO title="Case Studies & Projects | CryptoWebBuild"
+        description="Explore our portfolio of elite AI automation, Web3 infrastructure, and high-ticket SaaS solutions powering the next generation of crypto."
         keywords={['Web3 Portfolio', 'Crypto Website Examples', 'E-commerce Case Studies', 'React Projects', 'Meme Coin Design Portfolio']}
         canonical="/projects"
         schema={jsonLd}
@@ -204,11 +203,9 @@ const Projects: React.FC = () => {
                  <ShopFastMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
                ) : (
                  // Fallback Image
-                 <img 
-                   src={project.img || '/default-project.jpg'} 
+                 <img src={project.img || '/default-project.jpg'}
                    alt={`Preview of ${project.title}`} 
-                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1"
-                   loading="lazy"
+                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" loading="lazy"
                    decoding="async"
                  />
                )}
