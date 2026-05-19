@@ -12,11 +12,9 @@ const AuthorBio: React.FC = () => {
       <div className="shrink-0 relative group">
         <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-[4px] border-white dark:border-[#0f172a] shadow-lg ring-2 ring-purple-100 dark:ring-purple-900/30">
             {/* Note: Ensure hero-avatar.webp exists in your public folder */}
-            <img 
-              src="/hero-avatar.webp" 
+            <img src="/hero-avatar.webp"
               alt="Sagor Ahamed - Full Stack Developer" 
-              className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" 
-              loading="lazy"
+              className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" loading="lazy"
             />
         </div>
         

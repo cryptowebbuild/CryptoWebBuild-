@@ -32,9 +32,8 @@ const Contact: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
-      <SEO 
-        title="Hire Web3 Developer | Get a Website Quote"
-        description="Contact Sagor Ahamed for your crypto, web3, or business project. Get a fast, accurate quote and timeline for your custom website build."
+      <SEO title="Contact CryptoWebBuild | AI & Web3 Agency"
+        description="Ready to scale? Contact CryptoWebBuild for custom AI Agent infrastructure, Web3 Growth Funnels, and 24/7 Community Guardians."
         keywords={['Hire Web3 Developer', 'Website Development Quote', 'Contact Crypto Developer', 'Hire React Freelancer']}
         canonical="/contact"
         schema={jsonLd}
