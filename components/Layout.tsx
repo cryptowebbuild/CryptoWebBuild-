@@ -135,7 +135,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen relative font-sans text-gray-900 dark:text-white overflow-x-hidden flex flex-col transition-colors duration-500">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white dark:bg-[#020617] focus:text-black dark:text-gray-100">
         Skip to content
       </a>
       {/* --- Optimized Background --- */}
@@ -170,7 +170,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="flex items-center gap-3">
               <ThemeToggle isDark={theme === 'dark'} toggle={toggleTheme} />
               
-              <Link to="/contact" className="hidden md:block px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-sm hover:scale-105 transition-transform shadow-lg shadow-purple-500/10">
+              <Link to="/contact" className="hidden md:block px-5 py-2.5 bg-gray-900 text-white dark:bg-white dark:text-black dark:text-gray-100 font-bold rounded-xl text-sm hover:scale-105 transition-transform shadow-lg shadow-purple-500/10">
                 Start Project
               </Link>
 
@@ -228,7 +228,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
                 <Link 
                   to="/contact" 
-                  className="flex items-center justify-center w-full px-6 py-4 bg-gray-900 text-white dark:bg-white dark:text-black font-bold rounded-xl text-lg shadow-lg"
+                  className="flex items-center justify-center w-full px-6 py-4 bg-gray-900 text-white dark:bg-white dark:text-black dark:text-gray-100 font-bold rounded-xl text-lg shadow-lg"
                   onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
                 >
                   Start Project

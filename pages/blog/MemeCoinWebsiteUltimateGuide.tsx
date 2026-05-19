@@ -212,7 +212,7 @@ const MemeCoinWebsiteUltimateGuide: React.FC = () => {
       <div className="mt-12 mb-12 bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-800 text-center">
         <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Don't Let Your Site Crash on Launch Day</h4>
         <p className="text-gray-700 dark:text-gray-300 mb-6">Amateur hosting destroys multi-million dollar token launches. Ensure your infrastructure is bulletproof.</p>
-        <Link to="/contact" className="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">Hire Elite Web3 Developers</Link>
+        <Link to="/contact" className="inline-block bg-gray-900 dark:bg-white dark:bg-[#020617] text-white dark:text-gray-900 dark:text-gray-100 font-bold py-3 px-8 rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">Hire Elite Web3 Developers</Link>
       </div>
 
       {/* --- CHAPTER 5 --- */}

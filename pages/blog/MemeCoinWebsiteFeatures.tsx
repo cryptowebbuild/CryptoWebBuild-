@@ -98,7 +98,7 @@ const CopyAddress = ({ address }) => {
   return (
     <button 
       onClick={handleCopy}
-      className="bg-green-500 hover:bg-green-400 text-black font-black 
+      className="bg-green-500 hover:bg-green-400 text-black dark:text-gray-100 font-black
                  py-4 px-8 rounded-xl w-full flex justify-between items-center 
                  transition-all transform active:scale-95 shadow-lg shadow-green-500/20"
     >

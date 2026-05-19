@@ -254,7 +254,7 @@ const Projects: React.FC = () => {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
+                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white dark:bg-[#020617] text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
                         >
                             Live Demo
                             <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -286,7 +286,7 @@ const Projects: React.FC = () => {
 
       {/* --- CTA Section --- */}
       <div className="mt-24 text-center gpu-accelerated animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-xl max-w-2xl mx-auto">
+        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-xl max-w-2xl mx-auto">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3-Q4 2026.</p>
           <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 neon-button rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">

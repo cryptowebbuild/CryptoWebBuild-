@@ -9,7 +9,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
     <div className={`bg-[#F5F5F7] relative overflow-hidden flex flex-col font-sans select-none ${className}`}>
       {/* Navbar */}
       <div className="h-14 px-6 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200">
-        <span className="font-bold text-lg tracking-tight text-black">ShopFast.</span>
+        <span className="font-bold text-lg tracking-tight text-black dark:text-gray-100">ShopFast.</span>
         <div className="flex gap-5 text-sm font-medium text-gray-600">
             <span>Men</span>
             <span>Women</span>
@@ -25,7 +25,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
       <div className="flex-1 p-6 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
         
         {/* Product Image area */}
-        <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-3xl shadow-xl flex items-center justify-center relative">
+        <div className="w-64 h-64 md:w-80 md:h-80 bg-white dark:bg-[#020617] rounded-3xl shadow-xl flex items-center justify-center relative">
             <div className="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-2 py-1 rounded-full">NEW ARRIVAL</div>
             
             {/* Simple geometric representation of a shoe/product */}
@@ -35,7 +35,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
             </div>
 
             {/* Floating details */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center animate-bounce" style={{ animationDuration: '3s' }}>
+            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-[#020617] p-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center animate-bounce" style={{ animationDuration: '3s' }}>
                 <span className="text-xs font-bold text-gray-400 uppercase">Speed Score</span>
                 <span className="text-2xl font-black text-green-500">100/100</span>
             </div>
@@ -44,14 +44,14 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
         {/* Product Details */}
         <div className="max-w-xs space-y-6">
             <div>
-                <h2 className="text-3xl font-bold text-black leading-tight mb-2">Ultra Runner <br/>Carbon Edition</h2>
+                <h2 className="text-3xl font-bold text-black dark:text-gray-100 leading-tight mb-2">Ultra Runner <br/>Carbon Edition</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
                     Engineered for speed. Minimalist design meets maximum performance. Pre-rendered static pages for instant load.
                 </p>
             </div>
 
             <div>
-                <span className="text-2xl font-bold text-black">$199.00</span>
+                <span className="text-2xl font-bold text-black dark:text-gray-100">$199.00</span>
             </div>
 
             <div className="flex gap-3">

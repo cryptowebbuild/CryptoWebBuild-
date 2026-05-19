@@ -194,7 +194,7 @@ const HiddenCostSlowWebsites: React.FC = () => {
         <p className="text-gray-700 dark:text-purple-100 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             Stop guessing. Get a comprehensive, expert Technical SEO and Speed Audit. We will tell you exactly how many seconds you are losing, and exactly how much revenue it's costing you.
         </p>
-        <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 dark:text-gray-900 dark:bg-white rounded-full hover:bg-blue-700 dark:hover:bg-purple-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 dark:text-gray-900 dark:bg-white dark:bg-[#020617] rounded-full hover:bg-blue-700 dark:hover:bg-purple-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Book Your Free Speed Audit
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
         </Link>
