@@ -28,15 +28,15 @@ const Home: React.FC = () => {
         
         {/* Glow Effects - GPU Accelerated */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[700px] h-[300px] md:h-[700px] bg-purple-500/10 dark:bg-purple-500/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
-        <div className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-blue-500/10 dark:bg-cyan-500/20 blur-[90px] rounded-full animate-pulse-slow pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
+        <div className="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-blue-500/10 dark:bg-cyan-500/20 blur-[90px] rounded-full gpu-accelerated animate-pulse-slow pointer-events-none transition-colors duration-500 mix-blend-multiply dark:mix-blend-screen will-change-transform" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 animate-slide-up">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 gpu-accelerated animate-slide-up">
             
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/10 shadow-sm hover:border-purple-500/50 transition-colors">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/5 shadow-sm hover:border-purple-500/30 transition-colors">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
               </Link>
               <Link
                 to="/projects"
-                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold rounded-xl shadow-sm hover:bg-gray-50 dark:hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 text-gray-900 dark:text-white font-bold rounded-xl shadow-sm hover:bg-gray-50 dark:hover:bg-white/10 hover:-translate-y-0.5 transition-all"
               >
                 <Play className="w-5 h-5 group-hover:text-purple-500 transition-colors" />
                 See Live Demo
@@ -73,16 +73,16 @@ const Home: React.FC = () => {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-col items-center lg:items-start gap-4 pt-6 border-t border-gray-200 dark:border-white/10 w-full">
+            <div className="flex flex-col items-center lg:items-start gap-4 pt-6 border-t border-gray-200 dark:border-white/5 w-full">
               <div className="flex items-center gap-2 text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
                 Trusted Infrastructure
               </div>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/10 rounded-xl shadow-sm">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/5 rounded-xl shadow-sm">
                   <svg className="w-5 h-5 text-gray-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.1586 3.4406 6.0462 6.0462 0 0 0-1.0451 7.0809 5.9847 5.9847 0 0 0 .5157 4.9108 6.0462 6.0462 0 0 0 6.5098 2.9 6.0651 6.0651 0 0 0 10.2757-2.1715 5.9847 5.9847 0 0 0 3.1586-3.4406 6.0462 6.0462 0 0 0 1.0451-7.0809zm-8.451 9.8524c-2.5026.149-4.7088-1.5794-5.2673-3.9576l6.634-3.8306v-1.6375l-8.0818-4.6659v1.6406l6.634 3.8306c.5585 2.3782-1.6465 4.1066-4.1491 3.9576zM7.2913 14.821v-3.2812l-6.634-3.8306v1.6406l8.0818 4.6659v-1.6406l-6.634-3.8306c-.5585-2.3782 1.6465-4.1066 4.1491-3.9576 2.5026-.149 4.7088 1.5794 5.2673 3.9576l-4.2302 2.4419zM16.7087 9.179v3.2812l6.634 3.8306v-1.6406l-8.0818-4.6659v1.6406l6.634 3.8306c.5585 2.3782-1.6465 4.1066-4.1491 3.9576-2.5026.149-4.7088-1.5794-5.2673-3.9576l4.2302-2.4419z"/></svg>
                   <span className="font-bold text-gray-900 dark:text-white">Powered by OpenAI</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/10 rounded-xl shadow-sm">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-white/5 rounded-xl shadow-sm">
                   <Zap className="w-5 h-5 text-yellow-500" />
                   <span className="font-bold text-gray-900 dark:text-white">Integrated with Telegram, Discord & Solana</span>
                 </div>
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
                       </div>
 
           {/* Right Column: AI Agent Studio Mockup */}
-          <div className="relative w-full max-w-2xl mx-auto lg:ml-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          <div className="relative w-full max-w-2xl mx-auto lg:ml-auto gpu-accelerated animate-slide-up" style={{ animationDelay: '0.2s' }}>
             {/* Background Decorative Blobs */}
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 to-blue-500/30 rounded-[2rem] blur-xl" />
 
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
                   <div className="flex-1 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-100 dark:border-white/5 p-4 flex flex-col gap-4">
                      <div className="flex gap-3">
                         <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-500/20 flex-shrink-0" />
-                        <div className="flex-1 bg-white dark:bg-[#1e293b] p-3 rounded-2xl rounded-tl-none border border-gray-100 dark:border-white/5 shadow-sm">
+                        <div className="flex-1 bg-white glass-panel p-3 rounded-2xl rounded-tl-none border border-gray-100 dark:border-white/5 shadow-sm">
                           <div className="h-2 w-3/4 bg-gray-200 dark:bg-gray-700 rounded-full mb-2" />
                           <div className="h-2 w-1/2 bg-gray-200 dark:bg-gray-700 rounded-full" />
                         </div>
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
       {/* Guarantee Card Section */}
       <section className="relative px-6 z-20 pb-20 -mt-12 md:-mt-24">
          <div className="max-w-4xl mx-auto">
-            <div className="bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-gray-200 dark:border-white/10 shadow-2xl animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-gray-200 dark:border-white/5 shadow-2xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.4s' }}>
               <div className="text-center mb-8">
                 <p className="text-xl md:text-3xl font-display font-bold text-gray-900 dark:text-white leading-tight">
                   Pay 50% upfront. Pay the final 50% <span className="text-cyan-600 dark:text-cyan-400 underline decoration-purple-500 decoration-4 underline-offset-4">ONLY</span> when you see your custom AI Agent perfectly answering questions in a live test.
@@ -229,7 +229,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
             {/* Step 1 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 1
               </div>
@@ -240,7 +240,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-blue-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 2
               </div>
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-cyan-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500 transition-all duration-500 hover:-translate-y-2 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 3
               </div>
@@ -262,7 +262,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Step 4 */}
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 hover:border-emerald-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
+            <div className="group p-8 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500 transition-all duration-500 hover:-translate-y-2 lg:translate-y-12 shadow-sm hover:shadow-xl">
               <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-2xl mb-6 relative group-hover:scale-110 transition-transform">
                 4
               </div>
@@ -287,15 +287,15 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">FUD Prevention</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">24/7 AI Guardians instantly answer investor questions based on your Whitepaper, eliminating fear and doubt.</p>
           </div>
-          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">Cost Reduction</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Save thousands of dollars monthly by automating community management and presale onboarding with precision AI.</p>
           </div>
-          <div className="p-8 md:p-10 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div className="p-8 md:p-10 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-sm hover:shadow-xl transition-all duration-300">
             <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-4">High-Speed Deployment</h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed font-medium">Custom RAG models trained on your specific ecosystem data and deployed live within 48 hours.</p>
           </div>

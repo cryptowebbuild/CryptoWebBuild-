@@ -85,8 +85,8 @@ const Blog: React.FC = () => {
         />
         
         {/* Header Section */}
-        <div className="text-center mb-20 animate-slide-up">
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-800 dark:text-white text-xs font-black tracking-widest uppercase shadow-sm backdrop-blur-md">
+        <div className="text-center mb-20 gpu-accelerated animate-slide-up">
+          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/5 text-slate-800 dark:text-white text-xs font-black tracking-widest uppercase shadow-sm backdrop-blur-md">
             Knowledge Hub • 2026
           </div>
           <h1 className="font-display text-4xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
@@ -104,7 +104,7 @@ const Blog: React.FC = () => {
             <Link 
               key={post.slug} 
               to={`/blog/${post.slug}`}
-              className={`group flex flex-col bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 animate-slide-up border-t-4 ${post.border}`}
+              className={`group flex flex-col bg-white glass-panel border border-gray-200 dark:border-white/5 rounded-[32px] overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 gpu-accelerated animate-slide-up border-t-4 ${post.border}`}
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Image Container with Zoom Effect */}

@@ -13,7 +13,7 @@ const NotFound: React.FC = () => {
       />
       
       <div className="relative mb-8">
-        <div className="absolute inset-0 bg-purple-500/30 blur-[80px] rounded-full animate-pulse-slow"></div>
+        <div className="absolute inset-0 bg-purple-500/30 blur-[80px] rounded-full gpu-accelerated animate-pulse-slow"></div>
         <h1 className="relative font-display text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/10 z-10">
           404
         </h1>

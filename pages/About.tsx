@@ -93,12 +93,12 @@ const About: React.FC = () => {
       </script>
 
       {/* --- HERO: Founder Profile & Social Command Center --- */}
-      <div className="max-w-7xl mx-auto relative mb-32 animate-slide-up">
+      <div className="max-w-7xl mx-auto relative mb-32 gpu-accelerated animate-slide-up">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 blur-[100px] rounded-full pointer-events-none"></div>
 
-        <div className="rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-white dark:bg-[#1e293b] relative z-10 overflow-hidden">
+        <div className="rounded-[3rem] p-6 md:p-12 border-t border-purple-200 dark:border-purple-800 shadow-2xl shadow-purple-500/10 bg-white glass-panel relative z-10 overflow-hidden">
             {/* Grid Pattern Overlay */}
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#6366f1 1px, transparent 1px), linear-gradient(to right, #6366f1 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
             
@@ -107,7 +107,7 @@ const About: React.FC = () => {
                 {/* Visual Side: Avatar + Holographic Effect */}
                 <div className="shrink-0 relative group perspective-1000">
                     {/* Glow adjusted to match the yellow/gold theme of the avatar */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-orange-500 to-yellow-300 rounded-[2.5rem] blur-[30px] opacity-40 group-hover:opacity-60 transition-opacity duration-700 animate-pulse-slow"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 via-orange-500 to-yellow-300 rounded-[2.5rem] blur-[30px] opacity-40 group-hover:opacity-60 transition-opacity duration-700 gpu-accelerated animate-pulse-slow"></div>
                     
                     <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[2.5rem] overflow-hidden border-4 border-yellow-400/20 shadow-[0_0_50px_rgba(250,204,21,0.2)] bg-[#0F172A] transform transition-transform duration-700 group-hover:rotate-y-6 group-hover:scale-[1.02]">
                         <OptimizedImage
@@ -171,7 +171,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Stats Bar */}
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/5 grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
                 {stats.map((stat) => (
                     <div key={stat.label} className="text-center group cursor-default">
                         <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 mb-1 group-hover:scale-110 transition-transform">
@@ -185,7 +185,7 @@ const About: React.FC = () => {
       </div>
 
       {/* --- Philosophy / Agency Story --- */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center gpu-accelerated animate-slide-up" style={{ animationDelay: '0.2s' }}>
         <div className="space-y-8 order-2 md:order-1">
             <h2 className="font-display text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                 More than a Developer. <br/>
@@ -209,7 +209,7 @@ const About: React.FC = () => {
 
         {/* The Tech Arsenal */}
         <div className="order-1 md:order-2">
-            <div className="p-8 rounded-3xl bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/10 relative overflow-hidden shadow-xl">
+            <div className="p-8 rounded-3xl bg-white glass-panel border border-gray-200 dark:border-white/5 relative overflow-hidden shadow-xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-[50px] rounded-full pointer-events-none"></div>
                 <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
                     <span className="w-2 h-8 bg-gradient-to-b from-purple-500 to-cyan-500 rounded-full"></span>
@@ -218,7 +218,7 @@ const About: React.FC = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                     {techStack.map((tech) => (
-                        <div key={tech.name} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
+                        <div key={tech.name} className="group p-4 bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 hover:border-purple-500/40 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg">
                             <div className="flex items-center gap-3 mb-2">
                                 <span className="text-2xl filter grayscale group-hover:grayscale-0 transition-all">{tech.icon === 'TS' ? (
                                     <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C0.502 0 0 0.502 0 1.125v21.75C0 23.498 0.502 24 1.125 24h21.75c0.623 0 1.125-0.502 1.125-1.125V1.125C24 0.502 23.498 0 22.875 0H1.125zM15.266 18.063h-3.328v-1.782h3.328v1.782zm-8.832 0H3.106v-7.149h5.188v1.782H4.888v1.781h1.547v1.782H4.888v1.804zm6.602-5.367H11.25v-1.782h3.328v1.782z"/></svg>
@@ -234,7 +234,7 @@ const About: React.FC = () => {
       </div>
 
       {/* --- Timeline / Journey --- */}
-      <div className="max-w-4xl mx-auto mb-32 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+      <div className="max-w-4xl mx-auto mb-32 gpu-accelerated animate-slide-up" style={{ animationDelay: '0.4s' }}>
         <h2 className="font-display text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">The Evolution</h2>
         <div className="relative border-l-2 border-gray-200 dark:border-slate-800 ml-6 md:ml-0 md:pl-0 space-y-12">
             
@@ -296,7 +296,7 @@ const About: React.FC = () => {
                 Now booking projects for <span className="text-white font-bold">Q3-Q4 2026</span>. If you need a developer who cares about your business growth as much as the code, let's talk.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform hover:shadow-purple-500/30">
+                <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 neon-button text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform hover:shadow-purple-500/30">
                     Claim Your Custom AI Prototype
                 </Link>
                 <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-md">

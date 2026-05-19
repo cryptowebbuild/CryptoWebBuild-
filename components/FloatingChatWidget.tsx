@@ -32,23 +32,38 @@ const FloatingChatWidget: React.FC = () => {
   return (
     <>
       {/*
-        Inject styles as requested by the user, but with slight improvements
-        to match the site's dark theme/glassmorphism while maintaining the requested overrides.
+        Inject styles to match the Elite Cosmic Dark theme
+        while enforcing mobile responsiveness and strict z-index handling.
       */}
       <style>{`
         /* Base widget styling */
         #dify-chatbot-bubble-button {
-          background-color: #1C64F2 !important;
+          background: linear-gradient(135deg, #9333ea, #06b6d4) !important;
           /* Adding a subtle glow to fit the theme */
-          box-shadow: 0 10px 25px -5px rgba(28, 100, 242, 0.5) !important;
+          box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.6), 0 0 15px rgba(6, 182, 212, 0.4) !important;
+          z-index: 99999 !important;
+          bottom: 20px !important;
+          right: 20px !important;
+          border: 1px solid rgba(255, 255, 255, 0.2) !important;
+          transition: transform 0.3s ease, box-shadow 0.3s ease !important;
         }
+
+        #dify-chatbot-bubble-button:hover {
+          transform: scale(1.05) translateY(-2px) !important;
+          box-shadow: 0 15px 30px -5px rgba(147, 51, 234, 0.8), 0 0 20px rgba(6, 182, 212, 0.6) !important;
+        }
+
         #dify-chatbot-bubble-window {
           width: 24rem !important;
           height: 40rem !important;
           /* Fitting it into the dark theme */
-          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          background-color: rgba(2, 6, 23, 0.85) !important;
+          backdrop-filter: blur(16px) !important;
+          -webkit-backdrop-filter: blur(16px) !important;
+          border: 1px solid rgba(255, 255, 255, 0.05) !important;
           border-radius: 16px !important;
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(147, 51, 234, 0.15) !important;
+          z-index: 99999 !important;
         }
 
         /* Hide Dify Watermark & Replace with CryptoWebBuild */
@@ -72,13 +87,21 @@ const FloatingChatWidget: React.FC = () => {
           letter-spacing: 0.05em;
         }
 
-        /* Responsive handling for mobile so it doesn't overflow */
-        @media (max-width: 640px) {
+        /* Responsive handling for mobile */
+        @media (max-width: 768px) {
+          #dify-chatbot-bubble-button {
+            bottom: 20px !important;
+            right: 20px !important;
+          }
+
           #dify-chatbot-bubble-window {
-            width: calc(100vw - 2rem) !important;
-            height: calc(100vh - 8rem) !important;
-            bottom: 5rem !important;
-            right: 1rem !important;
+            width: calc(100vw - 32px) !important;
+            height: calc(100vh - 100px) !important;
+            bottom: 80px !important;
+            right: 16px !important;
+            left: 16px !important;
+            max-height: 85vh !important;
+            border-radius: 20px !important;
           }
         }
       `}</style>

@@ -11,7 +11,7 @@ const Terms: React.FC = () => {
         noIndex={true}
       />
       
-      <div className="max-w-4xl mx-auto animate-slide-up">
+      <div className="max-w-4xl mx-auto gpu-accelerated animate-slide-up">
         <h1 className="font-display text-4xl md:text-5xl font-bold text-text-main mb-8 text-center">
           Terms of Service
         </h1>

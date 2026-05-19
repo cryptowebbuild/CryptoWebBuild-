@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         
         {/* --- Header Section --- */}
-        <div className="text-center lg:text-left mb-12 lg:mb-0 animate-slide-up">
+        <div className="text-center lg:text-left mb-12 lg:mb-0 gpu-accelerated animate-slide-up">
           <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-cyan-100 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-500/20 text-cyan-700 dark:text-cyan-400 text-sm font-bold tracking-wider uppercase shadow-sm">
             Open for Work
           </div>
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* --- Contact Form --- */}
-        <div className="p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-white/5 shadow-xl animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <div className="p-8 md:p-12 rounded-[32px] bg-white glass-panel border border-gray-200 dark:border-white/5 shadow-xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <form action="https://api.web3forms.com/submit" method="POST" className="space-y-8">
             {/* Replace with your Access Key */}
             <input type="hidden" name="access_key" value="75fafb45-1a1e-41ee-86b7-4637bbd35224" />
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                         type="text" 
                         required 
                         placeholder="John Doe"
-                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
+                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
                     />
                 </div>
 
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                         type="email" 
                         required 
                         placeholder="you@example.com"
-                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
+                        className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all hover:border-purple-500/30"
                     />
                 </div>
             </div>
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                 name="category" 
                 required
                 defaultValue=""
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
+                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select a project type</option>
                 <option value="Custom AI Knowledge Base Agent">Custom AI Knowledge Base Agent</option>
@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
                 name="budget" 
                 required
                 defaultValue=""
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
+                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all appearance-none cursor-pointer hover:border-purple-500/30"
               >
                 <option value="" disabled className="text-gray-400">Select your budget</option>
                 <option value="$500 – $1,000 (Small Automation)">$500 – $1,000 (Small Automation)</option>
@@ -136,13 +136,13 @@ const Contact: React.FC = () => {
                 rows={5}
                 required 
                 placeholder="Describe your project, timeline, and any specific requirements..."
-                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none hover:border-purple-500/30"
+                className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-xl px-5 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none hover:border-purple-500/30"
               ></textarea>
             </div>
 
             <button 
               type="submit" 
-              className="w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              className="w-full py-4 neon-button rounded-xl text-white font-bold text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               Send Message
             </button>
