@@ -38,7 +38,7 @@ const AuthorBio: React.FC = () => {
         </div>
 
         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm md:text-base font-medium">
-            Senior Full-Stack Developer specializing in high-performance <strong>Web3 & E-commerce</strong> architectures. I help ambitious founders build "Anti-Fragile" websites that scale to millions of users without crashing.
+            We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure. I help ambitious founders scale their communities and operations with 24/7 autonomous AI systems.
         </p>
 
         {/* --- Social Links --- */}

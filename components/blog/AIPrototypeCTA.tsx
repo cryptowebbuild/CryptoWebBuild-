@@ -19,7 +19,7 @@ const AIPrototypeCTA: React.FC = () => {
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 mb-8 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 mb-8 backdrop-blur-md">
             <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
             <span className="text-sm font-black text-slate-800 dark:text-cyan-300 uppercase tracking-[0.2em]">Grand Slam Offer</span>
           </div>

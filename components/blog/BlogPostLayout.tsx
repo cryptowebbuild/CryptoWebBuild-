@@ -173,7 +173,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
       <main className="container mx-auto px-4 md:px-6 pb-24 max-w-7xl">
 
         {/* Featured Image */}
-        <div className="max-w-5xl mx-auto mb-16 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl shadow-purple-900/10 border-[6px] border-white dark:border-[#1e293b] relative aspect-[16/9] bg-gray-200 dark:bg-gray-800 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="max-w-5xl mx-auto mb-16 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl shadow-purple-900/10 border-[6px] border-white dark:border-[#1e293b] relative aspect-[16/9] bg-gray-200 dark:bg-[#0f172a] animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <OptimizedImage
                 src={finalImage}
                 alt={title}
@@ -212,6 +212,11 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                 {/* Free Audit Form */}
                 <div className="mt-16">
                     <FreeAuditCTA />
+                    <div className="text-center mt-6">
+                        <Link to="/contact" className="inline-block px-8 py-3 rounded-xl bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 text-gray-900 dark:text-white font-bold transition-all shadow-sm">
+                            Or contact us directly
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Footer Section */}

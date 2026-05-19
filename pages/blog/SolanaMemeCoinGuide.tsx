@@ -193,15 +193,15 @@ spl-token create-token --program-id TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb 
             Jito allows you to bundle multiple transactions into a single, atomic packet.
         </p>
         <ol className="space-y-3">
-            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+            <li className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded border border-orange-100 dark:border-orange-900/50">
                 <span className="font-mono text-orange-600 font-bold">Tx 1</span>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Create Raydium Pool (Add Liquidity)</span>
             </li>
-            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+            <li className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded border border-orange-100 dark:border-orange-900/50">
                 <span className="font-mono text-orange-600 font-bold">Tx 2</span>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Buy 5% of Supply (for Team/Marketing)</span>
             </li>
-            <li className="flex items-center gap-3 bg-white dark:bg-black/20 p-3 rounded border border-orange-100 dark:border-orange-900/50">
+            <li className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded border border-orange-100 dark:border-orange-900/50">
                 <span className="font-mono text-orange-600 font-bold">Tx 3</span>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Lock LP Tokens</span>
             </li>

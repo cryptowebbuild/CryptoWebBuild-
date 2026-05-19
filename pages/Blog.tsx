@@ -108,7 +108,7 @@ const Blog: React.FC = () => {
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Image Container with Zoom Effect */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-gray-800">
+              <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-[#0f172a]">
                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-10" />
                  <OptimizedImage 
                    src={post.image} 
