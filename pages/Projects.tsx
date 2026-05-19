@@ -254,7 +254,7 @@ const Projects: React.FC = () => {
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white dark:bg-[#020617] text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
+                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white text-slate-900 dark:text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
                         >
                             Live Demo
                             <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>

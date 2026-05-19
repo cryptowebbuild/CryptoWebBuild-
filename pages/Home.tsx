@@ -319,7 +319,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
                 <Link 
                 to="/contact" 
-                className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white dark:bg-[#020617] text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
+                className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 dark:text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
                 Claim Your Custom AI Prototype
                 </Link>
