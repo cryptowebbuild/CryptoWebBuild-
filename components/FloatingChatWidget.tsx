@@ -11,7 +11,6 @@ const FloatingChatWidget: React.FC = () => {
   useEffect(() => {
     // Optimization: Delay the chatbot script initialization to prevent it from blocking LCP
     const initChatbot = () => {
-      // 1. Set global config EXACTLY as requested by the user
       window.difyChatbotConfig = {
         token: 'K6KyH2ECZUGFl0gc',
         baseUrl: 'https://ai.cryptowebbuild.com',
@@ -20,21 +19,54 @@ const FloatingChatWidget: React.FC = () => {
         userVariables: {}
       };
 
-      // 2. Inject the script correctly
-      const scriptId = 'K6KyH2ECZUGFl0gc'; // ID must match the token as requested
+      const scriptId = 'K6KyH2ECZUGFl0gc';
       if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
         script.src = 'https://ai.cryptowebbuild.com/embed.min.js';
+        // Set to defer but load immediately on effect to balance speed and reliability
         script.defer = true;
         document.body.appendChild(script);
       }
     };
 
-    // Load after 3.5 seconds to ensure initial paint and interactions are prioritized
-    const timer = setTimeout(initChatbot, 3500);
+    // Lazy load the chatbot script to respect PageSpeed requirements.
+    // We use a delay combined with interaction listeners to ensure it always renders for the user.
+    let initialized = false;
+    const triggerInit = () => {
+      if (!initialized) {
+        initialized = true;
+        initChatbot();
+      }
+    };
 
-    return () => clearTimeout(timer);
+    // Use a 2.5 second delay. This is long enough to let LCP finish,
+    // but short enough that the user sees the chat widget quickly.
+    const timer = setTimeout(triggerInit, 2500);
+
+    // Also trigger on first user interaction (scroll, click, etc.) to guarantee it shows up
+    // if the user interacts before the timer fires.
+    const events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    const handleInteraction = () => {
+      triggerInit();
+      events.forEach(event => window.removeEventListener(event, handleInteraction));
+    };
+
+    events.forEach(event => window.addEventListener(event, handleInteraction, { once: true, passive: true }));
+
+    return () => {
+      clearTimeout(timer);
+      events.forEach(event => window.removeEventListener(event, handleInteraction));
+
+      const script = document.getElementById('K6KyH2ECZUGFl0gc');
+      if (script) {
+        script.remove();
+      }
+      const bubble = document.getElementById('dify-chatbot-bubble-button');
+      if (bubble) bubble.remove();
+      const windowNode = document.getElementById('dify-chatbot-bubble-window');
+      if (windowNode) windowNode.remove();
+    };
   }, []);
 
   return (
