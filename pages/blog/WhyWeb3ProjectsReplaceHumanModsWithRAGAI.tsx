@@ -114,10 +114,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
         </p>
       </div>
 
-      {/* Embedded Audit Form directly within the blog layout */}
-      <div className="mt-16">
-        <FreeAuditCTA />
-      </div>
+
 
     </BlogPostLayout>
   );
