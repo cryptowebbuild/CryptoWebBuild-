@@ -9,24 +9,32 @@ declare global {
 
 const FloatingChatWidget: React.FC = () => {
   useEffect(() => {
-    // 1. Set global config EXACTLY as requested by the user
-    window.difyChatbotConfig = {
-      token: 'K6KyH2ECZUGFl0gc',
-      baseUrl: 'https://ai.cryptowebbuild.com',
-      inputs: {},
-      systemVariables: {},
-      userVariables: {}
+    // Optimization: Delay the chatbot script initialization to prevent it from blocking LCP
+    const initChatbot = () => {
+      // 1. Set global config EXACTLY as requested by the user
+      window.difyChatbotConfig = {
+        token: 'K6KyH2ECZUGFl0gc',
+        baseUrl: 'https://ai.cryptowebbuild.com',
+        inputs: {},
+        systemVariables: {},
+        userVariables: {}
+      };
+
+      // 2. Inject the script correctly
+      const scriptId = 'K6KyH2ECZUGFl0gc'; // ID must match the token as requested
+      if (!document.getElementById(scriptId)) {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = 'https://ai.cryptowebbuild.com/embed.min.js';
+        script.defer = true;
+        document.body.appendChild(script);
+      }
     };
 
-    // 2. Inject the script correctly
-    const scriptId = 'K6KyH2ECZUGFl0gc'; // ID must match the token as requested
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.src = 'https://ai.cryptowebbuild.com/embed.min.js';
-      script.defer = true;
-      document.body.appendChild(script);
-    }
+    // Load after 3.5 seconds to ensure initial paint and interactions are prioritized
+    const timer = setTimeout(initChatbot, 3500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (

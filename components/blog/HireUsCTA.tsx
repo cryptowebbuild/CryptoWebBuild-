@@ -15,7 +15,7 @@ const HireUsCTA: React.FC = () => {
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/20 blur-[80px] rounded-full pointer-events-none" />
         
         {/* Texture Overlay */}
-        <div className="absolute inset-0 opacity-[0.05] dark:opacity-[0.2] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-[0.05] dark:opacity-[0.2] bg-[url('/noise.svg')] pointer-events-none mix-blend-overlay"></div>
 
         <div className="relative z-10 text-center max-w-3xl mx-auto">
           {/* Badge */}

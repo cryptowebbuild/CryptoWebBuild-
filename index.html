@@ -19,15 +19,6 @@
     <link rel="preload" href="/fonts/SpaceGrotesk-Bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWY1LSEBDQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-ZWY1LSEBDQ');
-    </script>
   </head>
   
   <body class="bg-white dark:bg-[#020617] text-gray-900 dark:text-white antialiased overflow-x-hidden transition-colors duration-300 ease-in-out">
@@ -42,5 +33,32 @@
         <p>Please enable JavaScript to use this site.</p>
       </div>
     </noscript>
+
+    <!-- Deferred Google tag (gtag.js) implementation to avoid blocking LCP -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZWY1LSEBDQ');
+
+      // Load GA script after 3 seconds or on first interaction to improve PageSpeed
+      const initGA = () => {
+        if (!window.gaInitialized) {
+          window.gaInitialized = true;
+          const script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZWY1LSEBDQ';
+          script.async = true;
+          document.head.appendChild(script);
+        }
+      };
+
+      // Trigger after delay
+      setTimeout(initGA, 3000);
+
+      // Or trigger on user interaction (whichever happens first)
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => {
+        window.addEventListener(event, initGA, { once: true, passive: true });
+      });
+    </script>
   </body>
 </html>

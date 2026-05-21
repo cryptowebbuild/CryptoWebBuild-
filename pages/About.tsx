@@ -287,7 +287,7 @@ const About: React.FC = () => {
 
       {/* --- CTA --- */}
       <div className="max-w-7xl mx-auto relative group rounded-[3rem] overflow-hidden bg-slate-900 border border-white/10 p-12 text-center shadow-2xl">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-green-500"></div>
         
         <div className="relative z-10 max-w-2xl mx-auto">
