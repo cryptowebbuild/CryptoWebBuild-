@@ -26,12 +26,24 @@ const Projects: React.FC = () => {
   // --- PROJECT DATA ---
     const projects: ProjectItem[] = [
     {
+      id: 'clickrunclaw',
+      title: 'ClickRunClaw: The Ultimate 1-Click Cloud Engine for AI Agents.',
+      category: 'Flagship AI SaaS',
+      desc: 'Our flagship SaaS product. Stop hosting AI agents locally. ClickRunClaw provides enterprise-grade 24/7 cloud infrastructure with instant 1-click deployments for Telegram & Discord webhooks. Zero configuration required.',
+      tech: ['Cloud Infrastructure', 'AI Agents', 'Webhooks', 'Next.js'],
+      link: '/projects',
+      img: '/projects/clickrunclaw.webp',
+      liveUrl: 'https://clickrunclaw.com/'
+    },
+
+    {
       id: 'aiagentdemo',
       title: 'How our AI Agent handled 7,000+ members and reduced support tickets by 80%.',
       category: 'AI Automation',
       desc: 'Deployed a custom RAG-trained AI Guardian in a Web3 Discord community. It instantly resolved repetitive queries based on the Whitepaper, allowing the core team to focus on scaling.',
       tech: ['Custom LLM', 'RAG', 'Discord API', 'Node.js'],
       link: '/projects', // Needs details soon or fake link
+      img: '/projects/aiagentdemo.webp',
       liveUrl: '' // No live URL for this demo yet
     },
     {
@@ -41,7 +53,7 @@ const Projects: React.FC = () => {
       desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
       tech: ['React', 'Ethers.js', 'Tailwind'],
       liveUrl: 'https://clickrunclaw.com', link: '/projects',
-      img: 'https://clickrunclaw.com/og-image.png'
+      img: '/projects/nexusweb3.webp'
     },
     {
       id: 'auracommerce',
@@ -52,15 +64,7 @@ const Projects: React.FC = () => {
       link: '/auracommerce',
       img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
     },
-    {
-      id: 'clickrunclaw',
-      title: 'ClickRunClaw',
-      category: 'Flagship AI SaaS',
-      desc: 'Our proprietary AI workflow automation tool. Connecting APIs and running autonomous agents for Web3 operations.',
-      tech: ['React', 'Framer Motion', 'UI/UX'],
-      link: '/apexagency',
-      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'
-    },
+
     {
       id: 'vanguardsaas',
       title: 'Vanguard SaaS',
