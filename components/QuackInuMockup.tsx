@@ -70,7 +70,7 @@ const QuackInuMockup: React.FC<QuackInuMockupProps> = ({ className = '' }) => {
         {/* Interactive Buttons (Wood Texture) */}
         <div className="flex flex-col gap-3 w-full max-w-xs mt-10">
             <div className="w-full py-3 bg-[#8B4513] rounded-xl border-b-[6px] border-[#5c2e0c] flex items-center justify-center text-white font-black text-sm shadow-xl relative overflow-hidden group active:border-b-2 active:translate-y-[4px] transition-all">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+                <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
                 <span className="relative z-10 flex items-center gap-2">
                     🥞 Buy on PancakeSwap
                 </span>

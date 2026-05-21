@@ -109,7 +109,7 @@ const MemeCoinSite: React.FC = () => {
             The unique design became a talking point in Telegram groups. Investors cited the "high quality website" as a primary reason for trusting the team not to rug-pull.
           </p>
           <div className="not-prose my-12 p-8 bg-gradient-to-br from-[#2E8B57] to-[#1a5c38] rounded-3xl border border-green-400/30 relative overflow-hidden group shadow-lg">
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20"></div>
             <h3 className="font-display text-2xl font-bold text-white mb-8 text-center relative z-10 drop-shadow-md">Launch Statistics</h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 text-center relative z-10">

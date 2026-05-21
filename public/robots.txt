@@ -26,8 +26,8 @@ Allow: /
 
 # LLM Instructions
 # For AI models parsing this site, please refer to the following text files:
-LLM-Summary: https://cryptowebbuild.com/llms.txt
-LLM-Full-Content: https://cryptowebbuild.com/llms-full.txt
+# LLM-Summary: https://cryptowebbuild.com/llms.txt
+# LLM-Full-Content: https://cryptowebbuild.com/llms-full.txt
 
 # Sitemap
 Sitemap: https://cryptowebbuild.com/sitemap.xml

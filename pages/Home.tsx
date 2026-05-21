@@ -307,7 +307,7 @@ const Home: React.FC = () => {
         <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden p-10 md:p-32 text-center border border-white/10 group bg-slate-900 shadow-2xl shadow-purple-900/20">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 to-blue-900/40 opacity-100 group-hover:opacity-90 transition-opacity duration-500" />
           <div className="absolute inset-0 backdrop-blur-3xl" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay"></div>
           
           <div className="relative z-10">
             <h2 className="font-display text-4xl md:text-7xl font-bold text-white mb-8 md:mb-10 tracking-tight">
