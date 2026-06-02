@@ -70,6 +70,8 @@ const AISEO2026 = lazy(() => import('./pages/blog/AISEO2026'));
 const AGIAutonomousAIAgents = lazy(() => import('./pages/blog/AGIAutonomousAIAgents'));
 const DecentralizedAIStack = lazy(() => import('./pages/blog/DecentralizedAIStack'));
 const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazy(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
+const WhyCryptoProjectsAdoptRealTimeAIEngines = lazy(() => import('./pages/blog/WhyCryptoProjectsAdoptRealTimeAIEngines'));
+
 
 
 
@@ -187,6 +189,8 @@ const App: React.FC = () => {
           <Route path="/blog/agi-autonomous-ai-agents-business-future-2026" element={<AGIAutonomousAIAgents />} />
           <Route path="/blog/decentralized-ai-stack-web3-infrastructure-2026" element={<DecentralizedAIStack />} />
           <Route path="/blog/why-web3-projects-replace-human-mods-with-rag-ai" element={<WhyWeb3ProjectsReplaceHumanModsWithRAGAI />} />
+          <Route path="/blog/why-crypto-projects-adopt-real-time-ai-engines" element={<WhyCryptoProjectsAdoptRealTimeAIEngines />} />
+
 
 
 
