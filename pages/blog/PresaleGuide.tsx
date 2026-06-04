@@ -15,7 +15,7 @@ const PresaleGuide: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Crypto Presale Guide for 2026: Launch Strategy, Trust Signals & Better Conversions"
+      title="Crypto Presale Guide 2026: Strategy & Trust Signals"
       description="A practical crypto presale guide covering launch structure, trust-building, vesting logic, and the website strategy needed to improve presale conversions."
       publishedTime="2026-02-15"
       category="Launch Strategy"

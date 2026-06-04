@@ -92,7 +92,7 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
-      <SEO title="FAQ | CryptoWebBuild - AI & Web3 Infrastructure"
+      <SEO title="FAQ | CryptoWebBuild - AI & Web3 Infra"
         description="Frequently asked questions about CryptoWebBuild's Elite AI Agent infrastructure, Web3 Growth Funnels, and Community Guardians."
         canonical="/faq"
       />

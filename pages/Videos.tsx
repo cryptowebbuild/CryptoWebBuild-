@@ -25,7 +25,7 @@ const Videos: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12 lg:py-24 space-y-12">
       <SEO 
-        title="Visual Showcase | CryptoWebBuild - AI & Web3 Infrastructure"
+        title="Visual Showcase | AI & Web3 Infra | CryptoWebBuild"
         description="See our elite AI Agent infrastructure and Web3 Community Guardians in action. No fluff, just raw autonomous power protecting and scaling communities 24/7."
       />
       

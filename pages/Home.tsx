@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     <div className="space-y-24 md:space-y-48 overflow-hidden bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
       
       {/* --- SEO Configuration --- */}
-      <SEO title="CryptoWebBuild | Elite AI Agents & Web3 Growth Funnels"
+      <SEO title="CryptoWebBuild | Elite AI Agents & Web3 Funnels"
         description="Scale your Web3 project with custom AI Agent infrastructure, Community Guardians, and high-converting Growth Funnels by CryptoWebBuild."
         keywords={[
           'Crypto Website Developer',
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 transition-all"
               >
                 <Zap className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                Build Your AI Agent
+                Claim 48-Hour Prototype
               </Link>
               <Link
                 to="/projects"
@@ -321,7 +321,7 @@ const Home: React.FC = () => {
                 to="/contact" 
                 className="inline-flex items-center justify-center px-10 py-5 md:px-12 md:py-6 bg-white text-slate-900 dark:text-slate-900 text-lg md:text-xl font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
                 >
-                Claim Your Custom AI Prototype
+                Claim 48-Hour Prototype
                 </Link>
                 <Link 
                 to="/projects" 

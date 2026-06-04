@@ -14,7 +14,7 @@ const HiddenCostSlowWebsites: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The Hidden Cost of Slow Websites: Why Your Local Business is Leaking Money"
+      title="Hidden Cost of Slow Websites: Stop Leaking Local Business"
       description="Is your service business website losing high-ticket leads? Discover why speed optimization is the ultimate Technical SEO strategy for roofers, dentists, and lawyers."
       publishedTime="2026-04-10"
       category="Business Strategy"

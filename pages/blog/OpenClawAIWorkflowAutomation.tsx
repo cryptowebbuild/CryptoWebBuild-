@@ -14,7 +14,7 @@ const OpenClawAIWorkflowAutomation: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="How to Automate Your Business with OpenClaw: The Ultimate AI Workflow Guide"
+      title="Automate Your Business with OpenClaw: AI Workflow Guide"
       description="Scale your business effortlessly. Learn how OpenClaw AI agents can automate B2B lead generation, web research, and manual daily workflows to save hundreds of hours."
       publishedTime="2026-04-25"
       category="Business Strategy"
