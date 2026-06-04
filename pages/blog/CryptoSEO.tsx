@@ -15,7 +15,7 @@ const CryptoSEO: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Crypto SEO Guide for 2026: How Web3 Projects Win Clicks, Rankings & AI Search"
+      title="Crypto SEO Guide 2026: Win Clicks, Rankings & AI Search"
       description="A practical crypto SEO guide for Web3 teams that want better rankings, stronger click-through rates, and real search visibility across Google, ChatGPT, and AI search engines."
       publishedTime="2026-02-15"
       category="Growth Strategy"

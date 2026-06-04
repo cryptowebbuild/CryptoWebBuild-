@@ -30,7 +30,7 @@ const LocalBusinessWebsiteSEOChecklist: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Local Business Website SEO Checklist: Rank Higher and Turn Visitors Into Clients"
+      title="Local Business SEO Checklist: Turn Visitors Into Clients"
       description="A practical local business SEO checklist for companies that want better rankings, faster websites, stronger trust signals, and more leads from their homepage, service pages, and local search traffic."
       publishedTime="2026-04-01"
       category="Business Strategy"

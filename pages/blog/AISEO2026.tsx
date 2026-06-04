@@ -32,7 +32,7 @@ const AISEO2026: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="AI SEO 2026: Mastering Generative Engine Optimization (GEO) for Web3 & SaaS"
+      title="AI SEO 2026: Mastering GEO for Web3 & SaaS Brands"
       description="The era of 10 blue links is over. Learn how to optimize your Web3 or SaaS website for AI search engines, reduce bot latency, and dominate Generative Engine Optimization (GEO)."
       publishedTime="2026-05-10T00:00:00.000Z"
       readTime="12 min read"

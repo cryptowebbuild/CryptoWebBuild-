@@ -15,7 +15,7 @@ const MemeCoinFeatures: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="5 Must-Have Meme Coin Website Features That Increase Trust & Conversion"
+      title="5 Must-Have Meme Coin Site Features to Increase Trust"
       description="Discover the most important meme coin website features for trust, speed, mobile UX, conversion, and higher buyer confidence during launch."
       publishedTime="2026-02-20"
       category="Design & UX"

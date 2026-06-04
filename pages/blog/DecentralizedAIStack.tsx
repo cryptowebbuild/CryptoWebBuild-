@@ -30,7 +30,7 @@ const DecentralizedAIStack: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="The Decentralized AI Stack: How 8-Figure Founders Combine Web3 Architecture with Autonomous Agents in 2026"
+      title="Decentralized AI Stack: Web3 & Autonomous Agents 2026"
       description="Discover how elite founders build sovereign, decentralized AI stacks in 2026. Learn why combining Web3 architecture with autonomous agents is the future."
       publishedTime="2026-06-25T00:00:00.000Z"
       category="Tech"

@@ -15,7 +15,7 @@ const CryptoCost: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Crypto Website Cost in 2026: Real Pricing for Launch Sites, dApps & Web3 Builds"
+      title="Crypto Website Cost in 2026: Real Pricing for Web3 Builds"
       description="See the real cost of building a crypto website in 2026, from landing pages and presale sites to dApps, audits, infrastructure, and hidden Web3 development costs."
       publishedTime="2026-01-22"
       category="Web3 Development"

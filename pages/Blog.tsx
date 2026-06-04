@@ -78,7 +78,7 @@ const Blog: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <SEO 
-          title="Web3 Strategy & Dev Insights | CryptoWebBuild Blog"
+          title="Web3 Strategy & Dev Insights | CryptoWebBuild"
           description="Expert guides on crypto marketing, development costs, hiring strategies, and web architecture. Built for founders who want to scale."
           canonical="/blog"
           schema={jsonLd}

@@ -14,7 +14,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="Why Modern Web3 Projects are Replacing Human Moderators with Asynchronous RAG AI Agents"
+      title="Why Web3 Projects Replace Human Mods with RAG AI Agents"
       description="Discover why top-tier Web3 founders are abandoning expensive human moderation teams in favor of autonomous RAG AI agents for flawless community management and instant FUD suppression."
       publishedTime="2026-08-15"
       category="Tech"
