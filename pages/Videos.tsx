@@ -147,7 +147,7 @@ const Videos: React.FC = () => {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Response Time</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider">Response Time</p>
                     <p className="text-2xl font-black text-gray-900 dark:text-white">&lt; 1s</p>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ const Videos: React.FC = () => {
                     <ShieldCheck size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">FUD Deflected</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider">FUD Deflected</p>
                     <p className="text-2xl font-black text-gray-900 dark:text-white">99.4%</p>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const Videos: React.FC = () => {
                     <Activity size={24} />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Moderation Cost Saved</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider">Moderation Cost Saved</p>
                     <p className="text-2xl font-black text-gray-900 dark:text-white">80%</p>
                   </div>
                 </div>

@@ -79,7 +79,7 @@ const BestDeveloper: React.FC = () => {
       
       <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-6 my-8 rounded-r-xl shadow-sm">
         <h4 className="text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm flex items-center gap-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             The Cost of "Cheap"
         </h4>
         <p className="text-gray-900 dark:text-white mt-3 font-medium text-lg">

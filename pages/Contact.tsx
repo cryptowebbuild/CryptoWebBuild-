@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
         <div className="p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.1s' }}>
           {isSuccess ? (
             <div className="p-8 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl text-center">
-              <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <svg aria-hidden="true" className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Request received!</h3>
               <p className="text-gray-600 dark:text-gray-400">We'll be in touch within 24 hours.</p>
             </div>

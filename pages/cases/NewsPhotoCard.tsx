@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
+import OptimizedImage from '../../components/OptimizedImage';
 
 const NewsPhotoCard: React.FC = () => {
   const image = "/projects/project-newsphotocard.jpg"; // Local path
@@ -58,12 +59,13 @@ const NewsPhotoCard: React.FC = () => {
           News Photo Card — <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Viral Generator</span>
         </h1>
 
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 relative group">
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 mb-12 relative group w-full aspect-video">
             {/* Display the screenshot */}
-            <img loading="lazy"
+            <OptimizedImage
               src={image}
               alt="News Photo Card Generator Interface"
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              className="transition-transform duration-700 group-hover:scale-105"
+              fill={true}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>

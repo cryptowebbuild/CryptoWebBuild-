@@ -39,7 +39,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
       </p>
 
       <p>
-        On one side, you have Wix, Squarespace, Webflow, or <a href="https://nicepage.com" target="_blank" rel="noopener">nicepage website builder</a>. They promise you a website for $29/month ($6.75 for Nicepage). "No coding required," they say. "Launch in hours," they promise.
+        On one side, you have Wix, Squarespace, Webflow, or <a href="https://nicepage.com" target="_blank" rel="noopener noreferrer">nicepage website builder</a>. They promise you a website for $29/month ($6.75 for Nicepage). "No coding required," they say. "Launch in hours," they promise.
       </p>
 
       <p>
@@ -71,7 +71,7 @@ const WebsiteBuilderVsDeveloper: React.FC = () => {
       
       <div className="bg-red-50 dark:bg-red-900/10 border-l-4 border-red-500 p-4 md:p-6 my-6 rounded-r-xl shadow-sm">
         <h4 className="flex items-center gap-2 text-red-800 dark:text-red-400 font-bold uppercase tracking-wide text-sm mb-2">
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             True Story: Shopify Ban
         </h4>
         <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
