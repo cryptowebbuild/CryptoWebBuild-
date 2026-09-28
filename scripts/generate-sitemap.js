@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Define the Base URL
-const BASE_URL = 'https://cryptowebbuild.com';
+const BASE_URL = 'https://agensys.com';
 
 // Define your static routes
 const staticRoutes = [

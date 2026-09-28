@@ -9,7 +9,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
     "The 24/7 Cost Leak: Human moderators cost Web3 projects $2k-$5k per month and still miss critical FUD during off-hours.",
     "Flawless Knowledge Retention: RAG AI agents are trained directly on your whitepapers and tokenomics, ensuring 100% accurate, contradiction-free responses.",
     "Instant FUD Suppression: Autonomous Telegram guards neutralize fear and misinformation instantly, operating at machine speed.",
-    "Sovereign Community Infrastructure: Replacing offshore moderation teams with custom CryptoWebBuild infrastructure protects your brand reputation and eliminates emotional bias."
+    "Sovereign Community Infrastructure: Replacing offshore moderation teams with custom agensys infrastructure protects your brand reputation and eliminates emotional bias."
   ];
 
   return (
@@ -23,7 +23,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
         'Web3 community automation',
         'RAG AI agents',
         'autonomous Telegram guards',
-        'CryptoWebBuild infrastructure',
+        'agensys infrastructure',
         'Web3 moderation'
       ]}
       canonical="/blog/why-web3-projects-replace-human-mods-with-rag-ai"
@@ -64,9 +64,9 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
           These agents don't just answer questions; they act as <strong>Autonomous Telegram Guards</strong>. Through advanced asynchronous execution, they continuously monitor chat sentiment, instantly delete scam links, warn bad actors, and flag coordinated FUD attacks to the core team before human eyes even perceive a threat. This is elite-level Web3 community automation.
         </p>
 
-        <h2 className="text-3xl font-display font-bold mt-12 mb-6">Comparison: Human Moderators vs. CryptoWebBuild Autonomous AI Guardians</h2>
+        <h2 className="text-3xl font-display font-bold mt-12 mb-6">Comparison: Human Moderators vs. agensys Autonomous AI Guardians</h2>
         <p className="mb-6">
-          Let's look at the hard data. When comparing the legacy human model against custom <strong>CryptoWebBuild Infrastructure</strong>, the ROI becomes undeniable.
+          Let's look at the hard data. When comparing the legacy human model against custom <strong>agensys Infrastructure</strong>, the ROI becomes undeniable.
         </p>
 
         <div className="overflow-x-auto mb-10">
@@ -75,7 +75,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI: React.FC = () => {
               <tr className="bg-white/5 border-b border-white/10">
                 <th className="p-4 font-bold text-white">Metric</th>
                 <th className="p-4 font-bold text-red-400">Human Moderators</th>
-                <th className="p-4 font-bold text-cyan-400">CryptoWebBuild RAG AI Agents</th>
+                <th className="p-4 font-bold text-cyan-400">agensys RAG AI Agents</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">

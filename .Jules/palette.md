@@ -11,7 +11,7 @@
   - Use the `aspectRatio` prop (e.g., `"16/9"`) to define aspect ratio styles and prevent CLS.
   - Handles Unsplash URLs robustly; store URLs in `data/blogPosts.ts` *without* query parameters.
 - **JSON-LD Schema**:
-  - Image URLs must be absolute paths (e.g., `https://cryptowebbuild.com/hero-avatar.webp`).
+  - Image URLs must be absolute paths (e.g., `https://agensys.com/hero-avatar.webp`).
   - Use raster formats (`.webp`, `.jpg`, `.png`) for Organization/Publisher logos. Do NOT use SVGs (`favicon.svg`) to comply with Google Rich Results validation.
 
 ## Layout & Containers

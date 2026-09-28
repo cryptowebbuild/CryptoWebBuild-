@@ -45,15 +45,15 @@ const Blog: React.FC = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "CryptoWebBuild Insights",
-    "url": "https://cryptowebbuild.com/blog",
+    "name": "agensys Insights",
+    "url": "https://agensys.com/blog",
     "description": "Deep dives into Web3 architecture, frontend performance, and the business of blockchain.",
     "publisher": {
       "@type": "Organization",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       }
     },
     "blogPost": posts.map((post) => ({
@@ -61,7 +61,7 @@ const Blog: React.FC = () => {
       "headline": post.title,
       "description": post.desc,
       "datePublished": post.date,
-      "url": `https://cryptowebbuild.com/blog/${post.slug}`,
+      "url": `https://agensys.com/blog/${post.slug}`,
       "image": post.image,
       "author": {
         "@type": "Person",
@@ -78,7 +78,7 @@ const Blog: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <SEO 
-          title="Web3 Strategy & Dev Insights | CryptoWebBuild"
+          title="Web3 Strategy & Dev Insights | agensys"
           description="Expert guides on crypto marketing, development costs, hiring strategies, and web architecture. Built for founders who want to scale."
           canonical="/blog"
           schema={jsonLd}

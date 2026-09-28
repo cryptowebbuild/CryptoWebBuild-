@@ -8,7 +8,7 @@ const NotFound: React.FC = () => {
       <SEO 
         title="404 - Page Not Found"
         description="The page you are looking for has been lost in the crypto void."
-        image="https://cryptowebbuild.com/hero-avatar.webp"
+        image="https://agensys.com/hero-avatar.webp"
         noIndex={true}
       />
       

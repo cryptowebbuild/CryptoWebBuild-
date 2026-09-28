@@ -108,7 +108,7 @@ const OpenClawAIWorkflowAutomation: React.FC = () => {
       <div className="mt-12 p-8 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border border-blue-100 dark:border-blue-800">
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-0 mb-4">Stop doing manual research.</h3>
         <p className="text-gray-700 dark:text-gray-300 mb-6">
-          You are the visionary of your company, not the data-entry clerk. Let CryptoWebBuild set up your custom OpenClaw AI workflow today. We will build, configure, and deploy intelligent agents tailored to your exact needs so you can focus on closing deals.
+          You are the visionary of your company, not the data-entry clerk. Let agensys set up your custom OpenClaw AI workflow today. We will build, configure, and deploy intelligent agents tailored to your exact needs so you can focus on closing deals.
         </p>
         <HireUsCTA />
       </div>

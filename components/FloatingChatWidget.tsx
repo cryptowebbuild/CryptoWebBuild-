@@ -13,7 +13,7 @@ const FloatingChatWidget: React.FC = () => {
     const initChatbot = () => {
       window.difyChatbotConfig = {
         token: 'K6KyH2ECZUGFl0gc',
-        baseUrl: 'https://ai.cryptowebbuild.com',
+        baseUrl: 'https://ai.agensys.com',
         inputs: {},
         systemVariables: {},
         userVariables: {}
@@ -23,7 +23,7 @@ const FloatingChatWidget: React.FC = () => {
       if (!document.getElementById(scriptId)) {
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = 'https://ai.cryptowebbuild.com/embed.min.js';
+        script.src = 'https://ai.agensys.com/embed.min.js';
         // Set to defer but load immediately on effect to balance speed and reliability
         script.defer = true;
         document.body.appendChild(script);
@@ -106,7 +106,7 @@ const FloatingChatWidget: React.FC = () => {
           z-index: 99999 !important;
         }
 
-        /* Hide Dify Watermark & Replace with CryptoWebBuild */
+        /* Hide Dify Watermark & Replace with agensys */
         #dify-chatbot-bubble-window a[href*="dify.ai"],
         #dify-chatbot-bubble-window a[target="_blank"] {
           display: none !important;
@@ -116,7 +116,7 @@ const FloatingChatWidget: React.FC = () => {
           position: relative;
         }
         #dify-chatbot-bubble-window .p-4.flex.items-center.justify-between.text-xs::after {
-          content: 'Powered by CryptoWebBuild 🚀';
+          content: 'Powered by agensys 🚀';
           visibility: visible;
           position: absolute;
           left: 0;

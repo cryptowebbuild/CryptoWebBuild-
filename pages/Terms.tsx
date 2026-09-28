@@ -5,8 +5,8 @@ const Terms: React.FC = () => {
   return (
     <div className="container mx-auto px-6 ">
       <SEO 
-        title="Terms of Service | CryptoWebBuild"
-        description="Terms and conditions for using CryptoWebBuild services."
+        title="Terms of Service | agensys"
+        description="Terms and conditions for using agensys services."
         canonical="/terms"
         noIndex={true}
       />
@@ -22,17 +22,17 @@ const Terms: React.FC = () => {
 
             <h3>1. Acceptance of Terms</h3>
             <p>
-              By accessing and using this website (CryptoWebBuild), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
+              By accessing and using this website (agensys), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.
             </p>
 
             <h3>2. Services</h3>
             <p>
-              CryptoWebBuild provides web development services including but not limited to landing pages, e-commerce stores, and web applications. Specific deliverables, timelines, and costs are agreed upon in separate project contracts or invoices.
+              agensys provides web development services including but not limited to landing pages, e-commerce stores, and web applications. Specific deliverables, timelines, and costs are agreed upon in separate project contracts or invoices.
             </p>
 
             <h3>3. Intellectual Property</h3>
             <p>
-              Upon full payment, intellectual property rights for the developed website code and custom designs are transferred to the client, unless otherwise specified in a separate agreement. CryptoWebBuild retains the right to display the project in portfolios and case studies.
+              Upon full payment, intellectual property rights for the developed website code and custom designs are transferred to the client, unless otherwise specified in a separate agreement. agensys retains the right to display the project in portfolios and case studies.
             </p>
 
             <h3>4. Payments and Refunds</h3>
@@ -42,7 +42,7 @@ const Terms: React.FC = () => {
 
             <h3>5. Limitation of Liability</h3>
             <p>
-              CryptoWebBuild shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or the inability to use the services or for cost of procurement of substitute goods and services.
+              agensys shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or the inability to use the services or for cost of procurement of substitute goods and services.
             </p>
             <p>
               We are developers, not financial advisors. We do not offer financial advice regarding cryptocurrencies, tokens, or investments. We are not responsible for the financial performance of any project we build for.

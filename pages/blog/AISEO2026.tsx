@@ -39,7 +39,7 @@ const AISEO2026: React.FC = () => {
       category="Tech"
       image="https://images.unsplash.com/photo-1677442136019-21780ecad995"
       keywords={['AI SEO 2026', 'Generative Engine Optimization', 'GEO', 'AI Overviews', 'Web3 SEO', 'SaaS SEO', 'Technical SEO']}
-      canonical="https://cryptowebbuild.com/blog/ai-seo-generative-engine-optimization-2026"
+      canonical="https://agensys.com/blog/ai-seo-generative-engine-optimization-2026"
       faq={faqData}
     >
       <KeyTakeaways points={takeaways} />
@@ -66,7 +66,7 @@ const AISEO2026: React.FC = () => {
         AI crawlers are expensive to run. They allocate limited "crawl budgets" to websites. When an AI bot hits a <Link to="/blog/website-builder-vs-developer" className="text-purple-600 font-bold hover:underline">slow WordPress site</Link> bogged down by dozens of plugins and slow database queries, it experiences latency. High latency equals a low crawl rate, meaning your freshest content isn't indexed or cited.
       </p>
       <p>
-        At CryptoWebBuild, we build exclusively using high-performance frameworks (React, Vite, Next.js). These modern architectures deliver near-zero Time to First Byte (TTFB) and pre-rendered HTML.
+        At agensys, we build exclusively using high-performance frameworks (React, Vite, Next.js). These modern architectures deliver near-zero Time to First Byte (TTFB) and pre-rendered HTML.
       </p>
 
       <div className="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700">

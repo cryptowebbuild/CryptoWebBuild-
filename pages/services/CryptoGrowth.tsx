@@ -6,7 +6,7 @@ const CryptoGrowth: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#020617] pt-32 pb-24">
       <SEO
-        title="Crypto Growth Funnels | CryptoWebBuild"
+        title="Crypto Growth Funnels | agensys"
         description="Marketing and promotion infrastructure for Web3 brands."
         canonical="/services/crypto-growth"
       />

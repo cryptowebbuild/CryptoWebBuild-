@@ -8,21 +8,21 @@ const MemeCoinSite: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: BNB Quack Inu - Viral Meme Coin Launch",
-    "image": "https://cryptowebbuild.com/project-memecoin.jpg",
+    "image": "https://agensys.com/project-memecoin.jpg",
     "author": {
       "@type": "Organization",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       }
     },
     "description": "Analyzing the BNB Quack Inu launch: A gamified jungle-themed meme coin site featuring spin-to-win mechanics and custom wood-textured UI."
@@ -134,7 +134,7 @@ const MemeCoinSite: React.FC = () => {
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row gap-4 justify-center pt-10 border-t border-white/10">
-          <a href="https://cryptowebbuild.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 bg-[#8B4513] hover:bg-[#A0522D] text-white font-bold rounded-xl transition-colors shadow-lg border-b-4 border-[#5c2e0c]">
+          <a href="https://agensys.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 bg-[#8B4513] hover:bg-[#A0522D] text-white font-bold rounded-xl transition-colors shadow-lg border-b-4 border-[#5c2e0c]">
             Visit Quack Inu
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
           </a>

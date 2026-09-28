@@ -6,7 +6,7 @@ const ThankYou: React.FC = () => {
   return (
     <div className="container mx-auto px-6 pt-40 pb-20 text-center">
       <SEO 
-        title="Message Received | CryptoWebBuild" 
+        title="Message Received | agensys"
         description="Thank you for your message."
         noIndex={true} 
       />

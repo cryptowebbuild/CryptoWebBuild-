@@ -21,7 +21,7 @@ const WhyCryptoProjectsAdoptRealTimeAIEngines: React.FC = () => {
         'Web3 smart contract security',
         'real-time threat monitoring',
         'autonomous AI guardians',
-        'CryptoWebBuild infrastructure',
+        'agensys infrastructure',
         'AI smart contract audits'
       ]}
       canonical="/blog/why-crypto-projects-adopt-real-time-ai-engines"
@@ -57,7 +57,7 @@ const WhyCryptoProjectsAdoptRealTimeAIEngines: React.FC = () => {
               <tr className="border-b border-gray-200 dark:border-white/10">
                 <th className="p-4 font-display font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-white/5 rounded-tl-lg">Feature</th>
                 <th className="p-4 font-display font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-white/5">Traditional Static Audits</th>
-                <th className="p-4 font-display font-bold text-cyan-600 dark:text-cyan-400 bg-gray-50 dark:bg-white/5 rounded-tr-lg">CryptoWebBuild AI Guardians</th>
+                <th className="p-4 font-display font-bold text-cyan-600 dark:text-cyan-400 bg-gray-50 dark:bg-white/5 rounded-tr-lg">agensys AI Guardians</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-white/10">
@@ -92,7 +92,7 @@ const WhyCryptoProjectsAdoptRealTimeAIEngines: React.FC = () => {
 
         <h2 className="text-3xl font-display font-bold mt-12 mb-6">Securing the Future of Web3</h2>
         <p>
-          As decentralized finance continues to mature and attract institutional capital, the margin for error approaches zero. A single exploit not only drains funds but irreparably destroys community trust. CryptoWebBuild's autonomous AI infrastructure represents the next evolution in blockchain security—moving from passive, static review to active, real-time defense.
+          As decentralized finance continues to mature and attract institutional capital, the margin for error approaches zero. A single exploit not only drains funds but irreparably destroys community trust. agensys's autonomous AI infrastructure represents the next evolution in blockchain security—moving from passive, static review to active, real-time defense.
         </p>
       </div>
     </BlogPostLayout>

@@ -25,7 +25,7 @@ const Videos: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12 lg:py-24 space-y-12">
       <SEO 
-        title="Visual Showcase | AI & Web3 Infra | CryptoWebBuild"
+        title="Visual Showcase | AI & Web3 Infra | agensys"
         description="See our elite AI Agent infrastructure and Web3 Community Guardians in action. No fluff, just raw autonomous power protecting and scaling communities 24/7."
       />
       
@@ -90,7 +90,7 @@ const Videos: React.FC = () => {
                   CWB
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white text-lg">CryptoWebBuild Official</h4>
+                  <h4 className="font-bold text-gray-900 dark:text-white text-lg">agensys Official</h4>
                   <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">12,450 members • 1,200 online</p>
                 </div>
               </div>

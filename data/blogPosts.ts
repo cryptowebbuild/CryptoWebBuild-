@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     category: 'Tech',
     image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7',
-    keywords: ['Web3 smart contract security', 'real-time threat monitoring', 'autonomous AI guardians', 'CryptoWebBuild infrastructure']
+    keywords: ['Web3 smart contract security', 'real-time threat monitoring', 'autonomous AI guardians', 'agensys infrastructure']
   },
   {
     id: 'why-web3-projects-replace-human-mods-with-rag-ai',
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     category: 'Tech',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
-    keywords: ['Web3 community automation', 'RAG AI agents', 'autonomous Telegram guards', 'CryptoWebBuild infrastructure', 'Web3 moderation']
+    keywords: ['Web3 community automation', 'RAG AI agents', 'autonomous Telegram guards', 'agensys infrastructure', 'Web3 moderation']
   },
   {
     id: 'decentralized-ai-stack-web3-infrastructure-2026',
