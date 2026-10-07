@@ -38,7 +38,7 @@ const AGIAutonomousAIAgents: React.FC = () => {
       category="Business"
       image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485"
       keywords={['AGI 2026', 'Autonomous AI Agents', 'OpenClaw AI', 'Business Automation Future', 'AI Agents SaaS', 'Artificial General Intelligence']}
-      canonical="https://cryptowebbuild.com/blog/agi-autonomous-ai-agents-business-future-2026"
+      canonical="https://agensys.com/blog/agi-autonomous-ai-agents-business-future-2026"
       faq={faqData}
     >
       <KeyTakeaways points={takeaways} />

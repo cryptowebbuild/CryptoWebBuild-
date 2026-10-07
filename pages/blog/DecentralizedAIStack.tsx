@@ -36,7 +36,7 @@ const DecentralizedAIStack: React.FC = () => {
       category="Tech"
       image="https://images.unsplash.com/photo-1639322537228-f710d846310a"
       keywords={['Decentralized AI Stack', 'Web3 Infrastructure', 'Autonomous AI Agents', 'Sovereign AI', 'Tech Founders 2026', 'AI Smart Contracts']}
-      canonical="https://cryptowebbuild.com/blog/decentralized-ai-stack-web3-infrastructure-2026"
+      canonical="https://agensys.com/blog/decentralized-ai-stack-web3-infrastructure-2026"
       faq={faqData}
     >
       <KeyTakeaways points={takeaways} />

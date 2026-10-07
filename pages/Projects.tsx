@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
       desc: 'A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.',
       tech: ['React', 'Canvas API', 'Tailwind'],
       link: '/newsphotocard',
-      liveUrl: 'https://cryptowebbuild.com/',
+      liveUrl: 'https://agensys.com/',
       img: '/projects/project-newsphotocard.jpg'
     },
     {
@@ -100,7 +100,7 @@ const Projects: React.FC = () => {
       desc: 'A high-energy "Chad" themed meme coin site featuring a custom "Moon Math" calculator to drive investor engagement and viral sharing.',
       tech: ['React', 'Moon Math UI', 'Tailwind'],
       link: '/gigasolana',
-      liveUrl: 'https://cryptowebbuild.com/'
+      liveUrl: 'https://agensys.com/'
     },
     {
       id: 'autogithub',
@@ -109,7 +109,7 @@ const Projects: React.FC = () => {
       desc: "The world's first Client-Side DevOps Engine. Deploy static sites directly from your browser. No Command Line. No Servers. No Fees.",
       tech: ['React', 'GitHub API', 'Client-Side'],
       link: '/autogithub',
-      liveUrl: 'https://cryptowebbuild.com/'
+      liveUrl: 'https://agensys.com/'
     },
     {
       id: 'tokenlaunch',
@@ -118,7 +118,7 @@ const Projects: React.FC = () => {
       desc: 'High-yield Solana aggregation protocol. Features a real-time presale dashboard, wallet integration, and on-chain data visualization.',
       tech: ['React', 'Solana Web3.js', 'Cloudflare'],
       link: '/tokenlaunch',
-      liveUrl: 'https://cryptowebbuild.com/'
+      liveUrl: 'https://agensys.com/'
     },
     {
       id: 'memecoinsite',
@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
       desc: 'Gamified meme coin experience on BNB Chain. Features a "Spin to Win" mechanic, jungle-themed UI, and custom wood-textured interface elements.',
       tech: ['Gamification', 'CSS Animations', 'Viral UI'],
       link: '/memecoinsite',
-      liveUrl: 'https://cryptowebbuild.com/'
+      liveUrl: 'https://agensys.com/'
     },
     {
       id: 'shopfast',
@@ -136,7 +136,7 @@ const Projects: React.FC = () => {
       desc: 'Ultra-fast static storefront with sub-second load times. Features a headless architecture, Stripe integration, and client-side cart logic.',
       tech: ['Static Frontend', 'Stripe', 'Client-side Cart'],
       link: '/shopfast',
-      liveUrl: 'https://cryptowebbuild.com/'
+      liveUrl: 'https://agensys.com/'
     }
   ];
 
@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Portfolio Case Studies",
-    "url": "https://cryptowebbuild.com/projects",
+    "url": "https://agensys.com/projects",
     "description": "Selected projects and case studies in Web3 and E-commerce development.",
     "mainEntity": {
       "@type": "ItemList",
@@ -153,8 +153,8 @@ const Projects: React.FC = () => {
         "position": i + 1,
         "name": p.title,
         "description": p.desc,
-        "url": `https://cryptowebbuild.com${p.link}`,
-        "image": `https://cryptowebbuild.com/default-project.jpg`
+        "url": `https://agensys.com${p.link}`,
+        "image": `https://agensys.com/default-project.jpg`
       }))
     }
   };
@@ -163,7 +163,7 @@ const Projects: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
-      <SEO title="Case Studies & Projects | CryptoWebBuild"
+      <SEO title="Case Studies & Projects | agensys"
         description="Explore our portfolio of elite AI automation, Web3 infrastructure, and high-ticket SaaS solutions powering the next generation of crypto."
         keywords={['Web3 Portfolio', 'Crypto Website Examples', 'E-commerce Case Studies', 'React Projects', 'Meme Coin Design Portfolio']}
         canonical="/projects"

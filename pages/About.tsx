@@ -10,16 +10,16 @@ const About: React.FC = () => {
     "mainEntity": {
       "@type": "Person",
       "name": "Sagor Ahamed",
-      "alternateName": "CryptoWebBuild",
+      "alternateName": "agensys",
       "jobTitle": "AI & Web3 Infrastructure Architect",
-      "image": "https://cryptowebbuild.com/hero-avatar.webp",
-      "description": "I am Sagor Ahamed, the founder of CryptoWebBuild. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure.",
-      "url": "https://cryptowebbuild.com/about",
+      "image": "https://agensys.com/hero-avatar.webp",
+      "description": "I am Sagor Ahamed, the founder of agensys. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure.",
+      "url": "https://agensys.com/about",
       "sameAs": [
-        "https://x.com/CryptowebbuildX",
-        "https://t.me/CryptoWebBuild",
-        "https://github.com/cryptowebbuild",
-        "https://www.youtube.com/@cryptowebbuild"
+        "https://x.com/agensysX",
+        "https://t.me/agensys",
+        "https://github.com/agensys",
+        "https://www.youtube.com/@agensys"
       ],
       "knowsAbout": ["React", "Solana", "Next.js", "Technical SEO", "Smart Contract Integration"]
     }
@@ -28,36 +28,36 @@ const About: React.FC = () => {
   const socialLinks = [
     { 
       name: 'Telegram', 
-      label: '@CryptoWebBuild', 
-      url: 'https://t.me/CryptoWebBuild', 
+      label: '@agensys',
+      url: 'https://t.me/agensys',
       color: 'bg-[#229ED9]', 
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.415-.752-.21-1.349-.321-1.298-.678.027-.184.285-.372.75-.567 2.943-1.28 4.909-2.126 5.895-2.54 2.809-1.176 3.39-1.38 3.766-1.386.082-.002.268.006.416.093z"/></svg>
     },
     { 
       name: 'X (Twitter)', 
-      label: '@CryptoWebBuildX' , 
-      url: 'https://x.com/CryptowebbuildX', 
+      label: '@agensysX' ,
+      url: 'https://x.com/agensysX',
       color: 'bg-black border border-white/20', 
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     },
     { 
       name: 'GitHub', 
-      label: '@cryptowebbuild', 
-      url: 'https://github.com/cryptowebbuild', 
+      label: '@agensys',
+      url: 'https://github.com/agensys',
       color: 'bg-[#333]', 
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
     },
     { 
       name: 'YouTube', 
       label: 'Watch Tutorials', 
-      url: 'https://www.youtube.com/@cryptowebbuild', 
+      url: 'https://www.youtube.com/@agensys',
       color: 'bg-[#FF0000]', 
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
     },
     {
       name: 'Email',
-      label: 'hello@cryptowebbuild.com',
-      url: 'mailto:hello@cryptowebbuild.com',
+      label: 'hello@agensys.com',
+      url: 'mailto:hello@agensys.com',
       color: 'bg-gradient-to-r from-purple-600 to-blue-600',
       icon: <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
     }
@@ -83,9 +83,9 @@ const About: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       <SEO 
         title="About Sagor Ahamed | Senior Web3 Developer"
-        description="Meet Sagor Ahamed, founder of CryptoWebBuild. Expert full-stack developer specialized in React, Solana, and high-performance web architecture."
-        keywords={['Sagor Ahamed', 'CryptoWebBuild Founder', 'Senior React Developer', 'Web3 Expert', 'Frontend Architect']}
-        image="https://cryptowebbuild.com/hero-avatar.webp"
+        description="Meet Sagor Ahamed, founder of agensys. Expert full-stack developer specialized in React, Solana, and high-performance web architecture."
+        keywords={['Sagor Ahamed', 'agensys Founder', 'Senior React Developer', 'Web3 Expert', 'Frontend Architect']}
+        image="https://agensys.com/hero-avatar.webp"
         canonical="/about"
       />
       <script type="application/ld+json">
@@ -112,7 +112,7 @@ const About: React.FC = () => {
                     <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-[2.5rem] overflow-hidden border-4 border-yellow-400/20 shadow-[0_0_50px_rgba(250,204,21,0.2)] bg-[#0F172A] transform transition-transform duration-700 group-hover:rotate-y-6 group-hover:scale-[1.02]">
                         <OptimizedImage
                             src="/hero-avatar.webp"
-                            alt="Sagor Ahamed - CryptoWebBuild Founder" 
+                            alt="Sagor Ahamed - agensys Founder"
                             className="w-full h-full object-cover"
                             fill={true}
                             priority={true}
@@ -144,7 +144,7 @@ const About: React.FC = () => {
                     </h1>
                     
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8 font-light max-w-2xl mx-auto lg:mx-0">
-                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-gray-900 dark:text-white font-bold">CryptoWebBuild</span>. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure. I help ambitious founders scale their communities and operations with 24/7 autonomous AI systems.
+                        I am <strong>Sagor Ahamed</strong>, the founder of <span className="text-gray-900 dark:text-white font-bold">agensys</span>. We build high-end, custom RAG-trained AI Agents and full-stack automated Web3 infrastructure. I help ambitious founders scale their communities and operations with 24/7 autonomous AI systems.
                     </p>
 
                     {/* Social Command Center */}
@@ -196,7 +196,7 @@ const About: React.FC = () => {
                     In 2026, a website isn't just a digital brochure; it's a conversion engine. Whether you are launching a Solana token, dropping an NFT collection, or scaling an e-commerce brand, <strong>speed and trust are your currency.</strong>
                 </p>
                 <p>
-                    I started <strong>CryptoWebBuild</strong> with a singular mission: to eliminate the bloat of traditional agencies. No middlemen, no "account managers" who don't code, and no delays. 
+                    I started <strong>agensys</strong> with a singular mission: to eliminate the bloat of traditional agencies. No middlemen, no "account managers" who don't code, and no delays.
                 </p>
                 <p className="border-l-4 border-cyan-500 pl-4 italic text-gray-900 dark:text-white font-medium">
                     "I obsess over milliseconds so you don't lose customers. I build assets that appreciate in value."
@@ -240,14 +240,14 @@ const About: React.FC = () => {
             
             <div className="relative md:grid md:grid-cols-2 md:gap-12 items-center">
                 <div className="hidden md:block text-right pr-12">
-                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">CryptoWebBuild Agency</h3>
+                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">agensys Agency</h3>
                      <p className="text-purple-600 dark:text-purple-400 font-bold text-sm uppercase tracking-wide">Present</p>
                 </div>
                 <div className="absolute -left-[9px] md:left-1/2 md:-ml-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-white dark:border-[#020617] z-10 shadow-[0_0_15px_#a855f7]"></div>
                 <div className="pl-12 md:pl-0">
                     <div className="md:hidden mb-2">
                         <span className="text-purple-600 dark:text-purple-400 font-bold text-xs uppercase tracking-wide">Present</span>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">CryptoWebBuild Agency</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">agensys Agency</h3>
                     </div>
                     <p className="text-gray-600 dark:text-gray-400">Scaling the agency to serve high-stakes launches. Building custom DApps, Meme Coin Generators, and Enterprise E-commerce solutions.</p>
                 </div>
@@ -299,7 +299,7 @@ const About: React.FC = () => {
                 <Link to="/contact" className="inline-flex items-center justify-center px-10 py-5 neon-button text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform hover:shadow-purple-500/30">
                     Claim Your Custom AI Prototype
                 </Link>
-                <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-md">
+                <a href="https://t.me/agensys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-5 bg-white/10 border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-colors backdrop-blur-md">
                     Telegram Chat
                 </a>
             </div>

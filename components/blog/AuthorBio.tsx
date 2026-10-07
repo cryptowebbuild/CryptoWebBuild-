@@ -44,7 +44,7 @@ const AuthorBio: React.FC = () => {
         {/* --- Social Links --- */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
             <a 
-              href="https://github.com/cryptowebbuild" 
+              href="https://github.com/agensys"
               target="_blank" 
               rel="noopener noreferrer" 
               className="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 dark:bg-white dark:bg-[#020617] text-white dark:text-gray-900 dark:text-gray-100 font-bold text-sm hover:-translate-y-0.5 transition-transform shadow-lg shadow-gray-900/20"
@@ -53,7 +53,7 @@ const AuthorBio: React.FC = () => {
                 <span>GitHub</span>
             </a>
             <a 
-              href="https://x.com/CryptowebbuildX" 
+              href="https://x.com/agensysX"
               target="_blank" 
               rel="noopener noreferrer" 
               className="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#1DA1F2] text-white font-bold text-sm hover:-translate-y-0.5 transition-transform shadow-lg shadow-blue-500/20"

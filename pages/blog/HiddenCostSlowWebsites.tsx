@@ -162,7 +162,7 @@ const HiddenCostSlowWebsites: React.FC = () => {
       </p>
 
       <p>
-        When we rebuild a local business website at CryptoWebBuild, we abandon bloated builders. Instead, we use modern Javascript frameworks (like React/Next.js).
+        When we rebuild a local business website at agensys, we abandon bloated builders. Instead, we use modern Javascript frameworks (like React/Next.js).
       </p>
 
       <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 my-6">

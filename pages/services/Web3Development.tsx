@@ -6,7 +6,7 @@ const Web3Development: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#020617] pt-32 pb-24">
       <SEO
-        title="Web3 Development Services | CryptoWebBuild"
+        title="Web3 Development Services | agensys"
         description="Full-stack platforms, dApps, and elite Web3 infrastructure."
         canonical="/services/web3-development"
       />

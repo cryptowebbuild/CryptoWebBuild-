@@ -5,8 +5,8 @@ import SEO from '../components/SEO';
 const Privacy: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-12 lg:py-24 max-w-4xl min-h-screen">
-      <SEO title="Privacy Policy | CryptoWebBuild"
-        description="Privacy Policy and Data Handling procedures for CryptoWebBuild's Elite AI Infrastructure and Web3 services."
+      <SEO title="Privacy Policy | agensys"
+        description="Privacy Policy and Data Handling procedures for agensys's Elite AI Infrastructure and Web3 services."
         canonical="/privacy"
       />
       
@@ -25,7 +25,7 @@ const Privacy: React.FC = () => {
       <div className="glass-panel rounded-3xl p-8 md:p-12 shadow-2xl gpu-accelerated animate-slide-up" style={{ animationDelay: '0.1s' }}>
         <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-purple-500 hover:prose-a:text-purple-600">
           <p className="lead text-xl text-gray-600 dark:text-gray-300 font-medium">
-            At CryptoWebBuild, we engineer elite AI Agent Infrastructure and Web3 Growth Funnels. We treat your corporate data, proprietary operational logic, and tokenomics strategies with the highest level of cryptographic and operational security.
+            At agensys, we engineer elite AI Agent Infrastructure and Web3 Growth Funnels. We treat your corporate data, proprietary operational logic, and tokenomics strategies with the highest level of cryptographic and operational security.
           </p>
 
           <div className="mt-12 space-y-12">
@@ -62,7 +62,7 @@ const Privacy: React.FC = () => {
                 3. Web3 & Tokenomics Integrity
               </h2>
               <p>
-                CryptoWebBuild is committed to the integrity of the decentralized ecosystem. We handle sensitive pre-launch data, such as tokenomics distribution models and TGE (Token Generation Event) timelines, under strict Non-Disclosure Agreements (NDAs). We do not engage in front-running, nor do we share internal launch strategies with external entities or marketing partners without explicit authorization.
+                agensys is committed to the integrity of the decentralized ecosystem. We handle sensitive pre-launch data, such as tokenomics distribution models and TGE (Token Generation Event) timelines, under strict Non-Disclosure Agreements (NDAs). We do not engage in front-running, nor do we share internal launch strategies with external entities or marketing partners without explicit authorization.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ const Privacy: React.FC = () => {
                 5. Contact & Compliance Officer
               </h2>
               <p>
-                If you require data deletion, infrastructure audit reports, or have inquiries regarding our compliance protocols regarding your proprietary AI models, please contact our lead systems architect directly via our secure channel: <a href="mailto:hello@cryptowebbuild.com" className="font-bold text-purple-500 hover:text-purple-400">hello@cryptowebbuild.com</a>.
+                If you require data deletion, infrastructure audit reports, or have inquiries regarding our compliance protocols regarding your proprietary AI models, please contact our lead systems architect directly via our secure channel: <a href="mailto:hello@agensys.com" className="font-bold text-purple-500 hover:text-purple-400">hello@agensys.com</a>.
               </p>
             </div>
           </div>

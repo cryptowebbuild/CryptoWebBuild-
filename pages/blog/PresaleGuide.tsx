@@ -51,7 +51,7 @@ const PresaleGuide: React.FC = () => {
       </p>
 
       <p>
-        This guide is the exact blueprint we use at CryptoWebBuild to engineer successful raises. We will cover the Platform Dilemma, the Marketing Ramp-Up, and the Code that protects your chart.
+        This guide is the exact blueprint we use at agensys to engineer successful raises. We will cover the Platform Dilemma, the Marketing Ramp-Up, and the Code that protects your chart.
       </p>
 
       {/* --- CHAPTER 1: THE PLATFORM DILEMMA --- */}

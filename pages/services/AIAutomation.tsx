@@ -6,7 +6,7 @@ const AIAutomation: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#020617] pt-32 pb-24">
       <SEO
-        title="AI Automation Services | CryptoWebBuild"
+        title="AI Automation Services | agensys"
         description="Custom AI agents and community automation for Web3 projects."
         canonical="/services/ai-automation"
       />

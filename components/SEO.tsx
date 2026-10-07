@@ -30,10 +30,10 @@ const SEO: React.FC<SEOProps> = ({
   schemaType = 'Person',
   faq
 }) => {
-  const siteUrl = 'https://cryptowebbuild.com';
+  const siteUrl = 'https://agensys.com';
   
   // 1. Default Identity (Broad Authority)
-  const defaultTitle = "CryptoWebBuild | Elite AI Automation & Web3 Agency";
+  const defaultTitle = "agensys | Elite AI Automation & Web3 Agency";
   const defaultDescription = "Scale your Web3 brand with custom AI agents and elite infrastructure. Claim your 48-hour AI prototype risk-free.";
   const defaultImage = `${siteUrl}/hero-avatar.webp`;
 
@@ -82,10 +82,10 @@ const SEO: React.FC<SEOProps> = ({
       },
       "description": finalDescription,
       "sameAs": [
-          "https://github.com/cryptowebbuild",
-          "https://x.com/CryptowebbuildX",
-          "https://www.youtube.com/@cryptowebbuild",
-          "https://t.me/CryptoWebBuild"
+          "https://github.com/agensys",
+          "https://x.com/agensysX",
+          "https://www.youtube.com/@agensys",
+          "https://t.me/agensys"
       ]
     };
 
@@ -93,7 +93,7 @@ const SEO: React.FC<SEOProps> = ({
       return {
         ...baseSchema,
         "@type": "Organization",
-        "name": "CryptoWebBuild",
+        "name": "agensys",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",
@@ -106,7 +106,7 @@ const SEO: React.FC<SEOProps> = ({
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer support",
-          "email": "hello@cryptowebbuild.com"
+          "email": "hello@agensys.com"
         }
       };
     }
@@ -118,7 +118,7 @@ const SEO: React.FC<SEOProps> = ({
         "name": finalTitle,
         "provider": {
           "@type": "Organization",
-          "name": "CryptoWebBuild",
+          "name": "agensys",
           "logo": {
             "@type": "ImageObject",
             "url": `${siteUrl}/hero-avatar.webp`
@@ -162,7 +162,7 @@ const SEO: React.FC<SEOProps> = ({
           },
           "publisher": {
             "@type": "Organization",
-            "name": "CryptoWebBuild",
+            "name": "agensys",
             "logo": {
               "@type": "ImageObject",
               "url": `${siteUrl}/hero-avatar.webp`
@@ -239,7 +239,7 @@ const SEO: React.FC<SEOProps> = ({
       />
 
       {/* --- Open Graph (Facebook/LinkedIn) --- */}
-      <meta property="og:site_name" content="CryptoWebBuild" />
+      <meta property="og:site_name" content="agensys" />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={finalTitle} />
@@ -250,8 +250,8 @@ const SEO: React.FC<SEOProps> = ({
 
       {/* --- Twitter Cards (Large Image for better CTR) --- */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@CryptowebbuildX" />
-      <meta name="twitter:creator" content="@CryptowebbuildX" />
+      <meta name="twitter:site" content="@agensysX" />
+      <meta name="twitter:creator" content="@agensysX" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={finalImage} />

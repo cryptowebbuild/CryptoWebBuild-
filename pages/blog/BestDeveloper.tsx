@@ -261,7 +261,7 @@ export const Button = ({
       </div>
 
       <p>
-        The code on the left "works". But the code on the right <strong>scales</strong>. When you hire an agency like CryptoWebBuild, you are paying for the code on the right.
+        The code on the left "works". But the code on the right <strong>scales</strong>. When you hire an agency like agensys, you are paying for the code on the right.
       </p>
 
       {/* --- CTA SECTION --- */}

@@ -9,8 +9,8 @@ const Home: React.FC = () => {
     <div className="space-y-24 md:space-y-48 overflow-hidden bg-gray-50 dark:bg-[#020617] transition-colors duration-300">
       
       {/* --- SEO Configuration --- */}
-      <SEO title="CryptoWebBuild | Elite AI Agents & Web3 Funnels"
-        description="Scale your Web3 project with custom AI Agent infrastructure, Community Guardians, and high-converting Growth Funnels by CryptoWebBuild."
+      <SEO title="agensys | Elite AI Agents & Web3 Funnels"
+        description="Scale your Web3 project with custom AI Agent infrastructure, Community Guardians, and high-converting Growth Funnels by agensys."
         keywords={[
           'Crypto Website Developer',
           'Business Website Developer', 

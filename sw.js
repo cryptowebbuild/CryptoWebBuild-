@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cryptowebbuild-v7'; // Incremented version
+const CACHE_NAME = 'agensys-v7'; // Incremented version
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

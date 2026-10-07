@@ -20,7 +20,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
     "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://cryptowebbuild.com/blog/gaming-proxy-vs-crypto-nodes"
+      "@id": "https://agensys.com/blog/gaming-proxy-vs-crypto-nodes"
     },
     "headline": "Web3 Infrastructure vs Gaming Proxies: Achieving Zero-Latency Connections",
     "description": "Explore the technical parallels between high-performance crypto nodes and competitive gaming proxies. Learn how dedicated infrastructure solves the 999+ ping problem.",
@@ -28,16 +28,16 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
     "author": {
       "@type": "Person",
       "name": "Alex Carter",
-      "url": "https://cryptowebbuild.com/about",
+      "url": "https://agensys.com/about",
       "jobTitle": "Lead Web3 Architect",
-      "image": "https://cryptowebbuild.com/hero-avatar.webp"
+      "image": "https://agensys.com/hero-avatar.webp"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       }
     },
     "datePublished": "2026-03-05",
@@ -177,7 +177,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
         If a free Android application can stabilize a real-time multiplayer game for millions of users, Web3 applications have no excuse for failed transactions and sluggish UIs. This is why <Link to="/services" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">professional Web3 development services</Link> focus heavily on node optimization.
       </p>
 
-      <p>Here is how we apply these lessons when building crypto infrastructure and <Link to="/services" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">custom DApps</Link> at CryptoWebBuild:</p>
+      <p>Here is how we apply these lessons when building crypto infrastructure and <Link to="/services" className="text-purple-600 dark:text-purple-400 font-bold hover:underline">custom DApps</Link> at agensys:</p>
 
       <div className="overflow-x-auto my-6 rounded-lg border border-gray-200 dark:border-gray-700">
         <table className="w-full text-left border-collapse bg-white dark:bg-[#111]">
@@ -238,7 +238,7 @@ const GamingProxyVsCryptoNodes: React.FC = () => {
         </div>
         <div className="text-center md:text-left">
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Written by Alex Carter</h3>
-          <p className="text-sm text-purple-600 dark:text-purple-400 font-semibold mb-3 uppercase tracking-wider">Lead Web3 Architect @ CryptoWebBuild</p>
+          <p className="text-sm text-purple-600 dark:text-purple-400 font-semibold mb-3 uppercase tracking-wider">Lead Web3 Architect @ agensys</p>
           <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             Alex has over 8 years of experience building high-frequency trading infrastructure and optimizing decentralized applications. When he's not squeezing milliseconds out of Solana RPC nodes, he's analyzing network topologies to build the fastest DApps on the market.
           </p>

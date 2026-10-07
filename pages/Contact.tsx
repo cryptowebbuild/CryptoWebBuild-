@@ -33,24 +33,24 @@ const Contact: React.FC = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact CryptoWebBuild",
-    "description": "Claim your 48-Hour AI Prototype. Contact CryptoWebBuild for Elite AI Automation & Web3 Infrastructure.",
-    "url": "https://cryptowebbuild.com/contact",
+    "name": "Contact agensys",
+    "description": "Claim your 48-Hour AI Prototype. Contact agensys for Elite AI Automation & Web3 Infrastructure.",
+    "url": "https://agensys.com/contact",
     "mainEntity": {
       "@type": "ProfessionalService",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       },
-      "image": "https://cryptowebbuild.com/logo.png",
+      "image": "https://agensys.com/logo.png",
       "priceRange": "$$-$$$",
       "telephone": "",
-      "email": "hello@cryptowebbuild.com",
+      "email": "hello@agensys.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
-        "email": "hello@cryptowebbuild.com",
+        "email": "hello@agensys.com",
         "availableLanguage": ["English"]
       }
     }
@@ -60,8 +60,8 @@ const Contact: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
-      <SEO title="Contact CryptoWebBuild | AI & Web3 Agency"
-        description="Ready to scale? Contact CryptoWebBuild for custom AI Agent infrastructure, Web3 Growth Funnels, and 24/7 Community Guardians."
+      <SEO title="Contact agensys | AI & Web3 Agency"
+        description="Ready to scale? Contact agensys for custom AI Agent infrastructure, Web3 Growth Funnels, and 24/7 Community Guardians."
         keywords={['Hire Web3 Developer', 'Website Development Quote', 'Contact Crypto Developer', 'Hire React Freelancer']}
         canonical="/contact"
         schema={jsonLd}
@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
           </p>
 
           <div className="mt-10 hidden lg:block text-gray-600 dark:text-gray-400 text-sm font-medium">
-            Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
+            Prefer direct message? Reach me on <a href="https://t.me/agensys" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@agensys.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
           </div>
         </div>
 
@@ -183,7 +183,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="mt-10 lg:hidden text-center text-gray-600 dark:text-gray-400 text-sm font-medium">
-          Prefer direct message? Reach me on <a href="https://t.me/CryptoWebBuild" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@cryptowebbuild.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
+          Prefer direct message? Reach me on <a href="https://t.me/agensys" target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Telegram</a> or <a href="mailto:hello@agensys.com" className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors underline decoration-dotted underline-offset-4 font-bold">Email</a>.
         </div>
       </div>
     </div>

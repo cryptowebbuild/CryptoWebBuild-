@@ -9,10 +9,10 @@ const Services: React.FC = () => {
     "serviceType": "AI Automation & Web3 Infrastructure",
     "provider": {
       "@type": "ProfessionalService",
-      "name": "CryptoWebBuild",
+      "name": "agensys",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://cryptowebbuild.com/hero-avatar.webp"
+        "url": "https://agensys.com/hero-avatar.webp"
       }
     },
     "hasOfferCatalog": {
@@ -51,7 +51,7 @@ const Services: React.FC = () => {
     <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
       
       {/* --- SEO Configuration --- */}
-      <SEO title="AI & Web3 Services | CryptoWebBuild"
+      <SEO title="AI & Web3 Services | agensys"
         description="Custom AI Agents, Web3 Growth Funnels, and Community Guardians. We build elite autonomous infrastructure for founders and SaaS owners."
         keywords={[
           'Web Development Agency Services',

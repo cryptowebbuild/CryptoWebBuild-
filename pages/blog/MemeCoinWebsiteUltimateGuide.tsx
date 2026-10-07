@@ -71,7 +71,7 @@ const MemeCoinWebsiteUltimateGuide: React.FC = () => {
         Conversely, if your platform loads in 0.2 seconds, features flawless Web3 integrations, and visually communicates absolute technical competence, the verdict is: <strong>Gem</strong>.
       </p>
       <p>
-        At CryptoWebBuild, we engineer the high-performance digital infrastructure behind multi-million-dollar token launches. This comprehensive, 3,000-word deep dive will reveal the exact psychology, features, and technical architecture required to build a meme coin website that commands respect, survives viral traffic spikes, and converts skeptical traders into devout community members.
+        At agensys, we engineer the high-performance digital infrastructure behind multi-million-dollar token launches. This comprehensive, 3,000-word deep dive will reveal the exact psychology, features, and technical architecture required to build a meme coin website that commands respect, survives viral traffic spikes, and converts skeptical traders into devout community members.
       </p>
 
       {/* --- CHAPTER 1 --- */}
@@ -157,7 +157,7 @@ const MemeCoinWebsiteUltimateGuide: React.FC = () => {
             <tr className="bg-gray-100 dark:bg-white/5 border-b border-gray-200 dark:border-gray-700">
               <th className="p-4 font-bold text-gray-900 dark:text-white">Feature</th>
               <th className="p-4 font-bold text-gray-900 dark:text-white">Amateur Implementation</th>
-              <th className="p-4 font-bold text-gray-900 dark:text-white">Elite Standard (CryptoWebBuild)</th>
+              <th className="p-4 font-bold text-gray-900 dark:text-white">Elite Standard (agensys)</th>
             </tr>
           </thead>
           <tbody>
