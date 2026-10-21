@@ -49,9 +49,13 @@ const SITE_STATUS_OPTIONS = [
 ];
 
 const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApplyToAudit }) => {
+  const [currency, setCurrency] = useState<'USD' | 'BDT'>('USD');
   const [monthlyVisitors, setMonthlyVisitors] = useState<number>(10000);
   const [statusId, setStatusId] = useState<string>('slow-site');
-  const [averageOrderValue, setAverageOrderValue] = useState<number>(100);
+  const [averageOrderValueUSD, setAverageOrderValueUSD] = useState<number>(100);
+  const [averageOrderValueBDT, setAverageOrderValueBDT] = useState<number>(3000);
+
+  const averageOrderValue = currency === 'USD' ? averageOrderValueUSD : averageOrderValueBDT;
 
   const selectedStatus = useMemo(
     () => SITE_STATUS_OPTIONS.find((s) => s.id === statusId) || SITE_STATUS_OPTIONS[1],
@@ -92,21 +96,18 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
     };
   }, [monthlyVisitors, selectedStatus, averageOrderValue]);
 
-  const formatCurrency = (val: number) =>
-    new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    }).format(val);
+  const formatCurrency = (val: number) => {
+    return currency === 'USD' ? `$${val.toLocaleString()}` : `৳${val.toLocaleString()}`;
+  };
 
   const whatsappAuditUrl = `https://wa.me/8801618138820?text=${encodeURIComponent(
-    `Hi Sagor, I ran the CryptoWebBuild Revenue Diagnostic:\n• Monthly Visitors: ${monthlyVisitors.toLocaleString()}\n• Setup: ${selectedStatus.label}\n• Avg Order/Client Value: $${averageOrderValue}\n• Est. Leaked Revenue: ${formatCurrency(metrics.monthlyLeakedRevenue)}/mo (${formatCurrency(metrics.annualLeakedRevenue)}/yr)\n\nLet's discuss fixing this!`
+    `Hi Sagor, I ran the CryptoWebBuild Revenue Diagnostic:\n• Monthly Visitors: ${monthlyVisitors.toLocaleString()}\n• Setup: ${selectedStatus.label}\n• Avg Order Value: ${formatCurrency(averageOrderValue)}\n• Est. Leaked Revenue: ${formatCurrency(metrics.monthlyLeakedRevenue)}/mo (${formatCurrency(metrics.annualLeakedRevenue)}/yr)\n\nI want to claim my 48-hour live prototype to fix these leaks!`
   )}`;
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-purple-50 dark:bg-white/5 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 text-xs font-bold tracking-wider uppercase">
+      <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="inline-block px-4 py-1.5 mb-3 rounded-full bg-purple-50 dark:bg-white/5 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 text-xs font-bold tracking-wider uppercase">
           Revenue &amp; Speed Risk Calculator
         </div>
         <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
@@ -115,9 +116,35 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
             Manual Funnels Cost You
           </span>
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+        <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-6">
           Adjust your traffic and order value to calculate how much revenue leaks through 4s+ load times and manual DM/checkout bottlenecks.
         </p>
+
+        {/* Currency Switcher */}
+        <div className="inline-flex items-center p-1 rounded-2xl bg-gray-100 dark:bg-[#0B1120] border border-gray-200 dark:border-white/10 shadow-sm">
+          <button
+            type="button"
+            onClick={() => setCurrency('USD')}
+            className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              currency === 'USD'
+                ? 'bg-purple-600 text-white shadow-md'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+            }`}
+          >
+            USD ($ International)
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrency('BDT')}
+            className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              currency === 'BDT'
+                ? 'bg-purple-600 text-white shadow-md'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+            }`}
+          >
+            BDT (৳ Bangladesh)
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -148,46 +175,47 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
             />
             <div className="flex justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
               <span>500 / mo</span>
-              <span>25,000 / mo</span>
+              <span>15,000 / mo</span>
               <span>50,000+ / mo</span>
             </div>
           </div>
 
-          {/* 2. Current Setup */}
+          {/* 2. Current Architecture Status */}
           <div className="space-y-3">
-            <span className="block text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
-              2. Current Website &amp; Checkout Setup
-            </span>
-            <div className="grid grid-cols-1 gap-2.5">
-              {SITE_STATUS_OPTIONS.map((option) => {
-                const active = option.id === statusId;
-                return (
-                  <button
-                    key={option.id}
-                    type="button"
-                    onClick={() => setStatusId(option.id)}
-                    className={`p-4 rounded-2xl border text-left transition-colors flex items-center justify-between ${
-                      active
-                        ? 'bg-purple-500/10 border-purple-500'
-                        : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/10 hover:border-purple-500/40'
-                    }`}
-                  >
-                    <div className="pr-3">
-                      <div className="font-display font-bold text-slate-900 dark:text-white text-sm sm:text-base">
-                        {option.label}
-                      </div>
-                      <div className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{option.tag}</div>
-                    </div>
-                    <div
-                      className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center ${
-                        active ? 'border-purple-600 bg-purple-600' : 'border-slate-300 dark:border-slate-600'
+            <label className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block">
+              2. Your Current Online Setup
+            </label>
+            <div className="space-y-2.5">
+              {SITE_STATUS_OPTIONS.map((opt) => (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setStatusId(opt.id)}
+                  className={`w-full text-left p-3.5 rounded-2xl border transition-all ${
+                    statusId === opt.id
+                      ? 'border-purple-500/80 bg-purple-500/[0.08] shadow-sm'
+                      : 'border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 bg-transparent'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-sm text-slate-900 dark:text-white">
+                      {opt.label}
+                    </span>
+                    <span
+                      className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 ml-2 ${
+                        statusId === opt.id
+                          ? 'border-purple-500 bg-purple-500'
+                          : 'border-slate-400 dark:border-slate-600'
                       }`}
                     >
-                      {active && <span className="w-2 h-2 rounded-full bg-white" />}
-                    </div>
-                  </button>
-                );
-              })}
+                      {statusId === opt.id && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                    </span>
+                  </div>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 block font-medium">
+                    {opt.tag}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -198,149 +226,150 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
                 htmlFor="calc-aov"
                 className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider"
               >
-                3. Average Order / Client Value (USD)
+                3. Average Order or Client Value ({currency})
               </label>
-              <span className="px-3.5 py-1 rounded-xl bg-cyan-500/10 border border-cyan-500/20 font-display font-bold text-cyan-700 dark:text-cyan-400 text-base">
-                ${averageOrderValue.toLocaleString()}
+              <span className="px-3.5 py-1 rounded-xl bg-cyan-500/10 border border-cyan-500/20 font-display font-bold text-cyan-600 dark:text-cyan-400 text-base">
+                {formatCurrency(averageOrderValue)}
               </span>
             </div>
-            <input
-              id="calc-aov"
-              type="range"
-              min={20}
-              max={2000}
-              step={20}
-              value={averageOrderValue}
-              onChange={(e) => setAverageOrderValue(Number(e.target.value))}
-              className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-            />
+            {currency === 'USD' ? (
+              <input
+                id="calc-aov"
+                type="range"
+                min={10}
+                max={1000}
+                step={10}
+                value={averageOrderValueUSD}
+                onChange={(e) => setAverageOrderValueUSD(Number(e.target.value))}
+                className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+              />
+            ) : (
+              <input
+                id="calc-aov"
+                type="range"
+                min={500}
+                max={30000}
+                step={500}
+                value={averageOrderValueBDT}
+                onChange={(e) => setAverageOrderValueBDT(Number(e.target.value))}
+                className="w-full h-2.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+              />
+            )}
             <div className="flex justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
-              <span>$20 (Retail / F-Commerce)</span>
-              <span>$500 (Local Service)</span>
-              <span>$2,000+ (SaaS / B2B)</span>
+              <span>{formatCurrency(currency === 'USD' ? 10 : 500)}</span>
+              <span>{formatCurrency(currency === 'USD' ? 500 : 15000)}</span>
+              <span>{formatCurrency(currency === 'USD' ? 1000 : 30000)}+</span>
             </div>
           </div>
         </div>
 
-        {/* Right Diagnostic Report Card (100% Unified Light & Dark Mode — Zero Black Box Mismatch) */}
-        <div className="lg:col-span-5 p-6 sm:p-9 rounded-[28px] bg-gradient-to-br from-purple-50/90 via-white to-cyan-50/90 dark:from-[#0f172a] dark:via-[#0b1120] dark:to-[#0f172a] border border-purple-200/80 dark:border-white/10 shadow-xl flex flex-col justify-between">
-          <div className="space-y-5">
-            <div className="flex items-center justify-between gap-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-bold uppercase tracking-wider">
+        {/* Right Output Diagnostics Card */}
+        <div className="lg:col-span-5 p-7 sm:p-9 rounded-[28px] glass-panel border border-purple-200 dark:border-purple-500/30 bg-gradient-to-br from-purple-50 via-white to-cyan-50 dark:from-[#0B1120] dark:via-[#020617] dark:to-[#0F172A] flex flex-col justify-between shadow-xl">
+          <div>
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-white/10 mb-6">
+              <span className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
+                Revenue Leak Diagnosis
+              </span>
+              <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-400 flex items-center gap-1">
                 <AlertTriangle className="w-3.5 h-3.5" />
-                <span>Estimated Revenue Risk</span>
-              </div>
-              <span className="text-xs font-bold text-purple-600 dark:text-purple-400">
-                +{metrics.conversionLiftPct}% Conv. Lift
+                Active Loss
               </span>
             </div>
 
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-1">
-                Monthly Recoverable Revenue
-              </p>
-              <div className="font-display text-4xl sm:text-5xl font-black text-slate-900 dark:text-white">
+            {/* Big Headline Stat */}
+            <div className="space-y-2 mb-6">
+              <span className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">
+                Estimated Monthly Leaked Revenue:
+              </span>
+              <div className="font-display text-4xl sm:text-5xl font-black text-red-600 dark:text-red-400">
                 {formatCurrency(metrics.monthlyLeakedRevenue)}
-                <span className="text-lg font-bold text-slate-500 dark:text-slate-400">/mo</span>
+                <span className="text-base sm:text-lg font-medium text-slate-500 dark:text-slate-400"> / month</span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
-                Annual impact:{' '}
-                <strong className="text-purple-600 dark:text-cyan-400">
-                  {formatCurrency(metrics.annualLeakedRevenue)}/year
-                </strong>{' '}
-                in missed orders.
-              </p>
-            </div>
-
-            {/* Current vs Optimized Comparison */}
-            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-200/80 dark:border-white/10">
-              <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-white/5 border border-slate-200/80 dark:border-white/10">
-                <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase">Current Est.</div>
-                <div className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">
-                  {formatCurrency(metrics.currentMonthlyRevenue)}/mo
-                </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">
-                  ~{metrics.currentOrdersDisplay} orders ({((selectedStatus.currentConvRate) * 100).toFixed(1)}%)
-                </div>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-purple-600/10 dark:bg-purple-500/15 border border-purple-500/30">
-                <div className="text-[11px] font-bold text-purple-700 dark:text-cyan-300 uppercase flex items-center gap-1">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  <span>With &lt;0.8s + AI</span>
-                </div>
-                <div className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">
-                  {formatCurrency(metrics.projectedMonthlyRevenue)}/mo
-                </div>
-                <div className="text-xs text-purple-700 dark:text-cyan-200">
-                  ~{metrics.optimizedOrdersDisplay} orders ({((selectedStatus.optimizedConvRate) * 100).toFixed(1)}%)
-                </div>
+              <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium pt-1">
+                ≈ <span className="font-bold text-slate-900 dark:text-white">{formatCurrency(metrics.annualLeakedRevenue)}</span> every 12 months leaking out of your funnel.
               </div>
             </div>
 
-            {/* 3-Factor Leak Breakdown */}
-            <div className="p-4 rounded-2xl bg-white/90 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 space-y-2 text-xs">
-              <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 mb-1">
-                <Zap className="w-3.5 h-3.5 text-purple-600 dark:text-cyan-400" />
-                <span>Where This Revenue Leaks:</span>
+            {/* Concrete 3-Factor Breakdown */}
+            <div className="space-y-3 pt-5 border-t border-slate-200 dark:border-white/10 text-xs sm:text-sm">
+              <span className="font-bold text-slate-700 dark:text-slate-300 text-xs uppercase tracking-wider block mb-2">
+                Where That Revenue Is Lost:
+              </span>
+
+              <div className="p-3 rounded-xl bg-white/70 dark:bg-white/[0.04] border border-slate-200 dark:border-white/5 space-y-1">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-slate-700 dark:text-slate-300">
+                    • Slow Load Bounce Loss:
+                  </span>
+                  <span className="font-mono font-bold text-red-600 dark:text-red-400">
+                    -{formatCurrency(metrics.speedLoss)}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Mobile buyers bouncing before 4s+ page loads.
+                </p>
               </div>
-              <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                <span>• Slow Load Bounce (&gt;3s delay)</span>
-                <span className="font-mono font-bold text-slate-900 dark:text-white">
-                  {formatCurrency(metrics.speedLoss)}/mo
-                </span>
+
+              <div className="p-3 rounded-xl bg-white/70 dark:bg-white/[0.04] border border-slate-200 dark:border-white/5 space-y-1">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-slate-700 dark:text-slate-300">
+                    • Checkout / Inbox Friction:
+                  </span>
+                  <span className="font-mono font-bold text-red-600 dark:text-red-400">
+                    -{formatCurrency(metrics.checkoutLoss)}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Customers lost in slow multi-step forms or &ldquo;Inbox for Price&rdquo;.
+                </p>
               </div>
-              <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                <span>• Checkout / Inbox Friction</span>
-                <span className="font-mono font-bold text-slate-900 dark:text-white">
-                  {formatCurrency(metrics.checkoutLoss)}/mo
-                </span>
+
+              <div className="p-3 rounded-xl bg-white/70 dark:bg-white/[0.04] border border-slate-200 dark:border-white/5 space-y-1">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium text-slate-700 dark:text-slate-300">
+                    • Unanswered After-Hours Queries:
+                  </span>
+                  <span className="font-mono font-bold text-red-600 dark:text-red-400">
+                    -{formatCurrency(metrics.aiLeadLoss)}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                  Late-night DMs that bought from competitors before morning reply.
+                </p>
               </div>
-              <div className="flex items-center justify-between text-slate-600 dark:text-slate-300">
-                <span>• Unanswered After-Hours Queries</span>
-                <span className="font-mono font-bold text-slate-900 dark:text-white">
-                  {formatCurrency(metrics.aiLeadLoss)}/mo
-                </span>
+            </div>
+
+            {/* Projected Recovery with CryptoWebBuild */}
+            <div className="mt-6 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/40 text-xs sm:text-sm">
+              <div className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-300 mb-1">
+                <TrendingUp className="w-4 h-4" />
+                <span>With Sub-0.8s Next.js + 1-Click + 24/7 AI:</span>
+              </div>
+              <div className="text-emerald-900 dark:text-emerald-200">
+                Projected Monthly Revenue: <span className="font-bold font-mono text-base">{formatCurrency(metrics.projectedMonthlyRevenue)}</span> ({metrics.conversionLiftPct}% lift).
               </div>
             </div>
           </div>
 
-          <div className="pt-5 mt-5 border-t border-slate-200/80 dark:border-white/10 flex flex-col gap-2.5">
+          {/* Action CTAs */}
+          <div className="mt-8 space-y-3 pt-6 border-t border-slate-200 dark:border-white/10">
             <a
               href={whatsappAuditUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 px-5 rounded-xl neon-button text-white font-bold text-sm flex items-center justify-center gap-2"
+              className="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2.5 transition-transform hover:scale-[1.02]"
             >
-              <MessageSquare className="w-4 h-4" />
-              <span>Fix This on WhatsApp (01618-138820)</span>
+              <MessageSquare className="w-5 h-5" />
+              <span>Send Diagnosis to WhatsApp (01618-138820)</span>
             </a>
-            {onApplyToAudit ? (
-              <button
-                type="button"
-                onClick={() =>
-                  onApplyToAudit({
-                    monthlyVisitors,
-                    statusLabel: selectedStatus.label,
-                    averageOrderValue,
-                    monthlyLeakedRevenue: metrics.monthlyLeakedRevenue,
-                    annualLeakedRevenue: metrics.annualLeakedRevenue,
-                    projectedMonthlyRevenue: metrics.projectedMonthlyRevenue,
-                  })
-                }
-                className="w-full py-3 px-5 rounded-xl bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 border border-slate-200 dark:border-white/15 text-slate-900 dark:text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors"
-              >
-                <span>Or Book 48-Hour Prototype</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            ) : (
-              <Link
-                to="/contact"
-                className="w-full py-3 px-5 rounded-xl bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 border border-slate-200 dark:border-white/15 text-slate-900 dark:text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors"
-              >
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>Claim 48-Hour Prototype (50/50 Guarantee)</span>
-              </Link>
-            )}
+
+            <Link
+              to="/contact"
+              className="w-full py-3.5 px-6 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-md text-center"
+            >
+              <span>Claim 48-Hour Prototype (50/50 Risk-Reversal)</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

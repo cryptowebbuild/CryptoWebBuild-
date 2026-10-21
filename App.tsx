@@ -71,6 +71,8 @@ const AGIAutonomousAIAgents = lazy(() => import('./pages/blog/AGIAutonomousAIAge
 const DecentralizedAIStack = lazy(() => import('./pages/blog/DecentralizedAIStack'));
 const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazy(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
 const WhyCryptoProjectsAdoptRealTimeAIEngines = lazy(() => import('./pages/blog/WhyCryptoProjectsAdoptRealTimeAIEngines'));
+const WhySubSecondWebsitesCrushWordPress2026 = lazy(() => import('./pages/blog/WhySubSecondWebsitesCrushWordPress2026'));
+const HowToAutomateEcommerceWhatsAppAIAgents = lazy(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
 
 
 
@@ -190,6 +192,8 @@ const App: React.FC = () => {
           <Route path="/blog/decentralized-ai-stack-web3-infrastructure-2026" element={<DecentralizedAIStack />} />
           <Route path="/blog/why-web3-projects-replace-human-mods-with-rag-ai" element={<WhyWeb3ProjectsReplaceHumanModsWithRAGAI />} />
           <Route path="/blog/why-crypto-projects-adopt-real-time-ai-engines" element={<WhyCryptoProjectsAdoptRealTimeAIEngines />} />
+          <Route path="/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026" element={<WhySubSecondWebsitesCrushWordPress2026 />} />
+          <Route path="/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents" element={<HowToAutomateEcommerceWhatsAppAIAgents />} />
 
 
 

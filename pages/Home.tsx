@@ -19,6 +19,9 @@ import LeakedRevenueCalculator from '../components/LeakedRevenueCalculator';
 import ShopFastMockup from '../components/ShopFastMockup';
 import AutoGitMockup from '../components/AutoGitMockup';
 import SolNovaMockup from '../components/SolNovaMockup';
+import ArchitectureComparison from '../components/ArchitectureComparison';
+import BeforeAfterProof from '../components/BeforeAfterProof';
+import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 
 const Home: React.FC = () => {
   const [activeStudioTab, setActiveStudioTab] = useState<'stack' | 'speed' | 'ai'>('stack');
@@ -482,7 +485,10 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 4. SELECTED WORKS & PRODUCTION CASE STUDIES (CLEAN SPLIT CARDS — NO DARK OVERLAY HIDING MOCKUPS) */}
+      {/* 4. ARCHITECTURAL COMPARISON MATRIX: NEXT.JS + DJANGO VS WORDPRESS & SHOPIFY */}
+      <ArchitectureComparison />
+
+      {/* 5. SELECTED WORKS & PRODUCTION CASE STUDIES (CLEAN SPLIT CARDS) */}
       <section className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
@@ -585,12 +591,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE REVENUE & SPEED CALCULATOR */}
+      {/* 6. VERIFIED BENCHMARKS & BEFORE/AFTER PROOF */}
+      <BeforeAfterProof />
+
+      {/* 7. INTERACTIVE REVENUE & SPEED CALCULATOR */}
       <section id="roi-calculator" className="container mx-auto px-6">
         <LeakedRevenueCalculator />
       </section>
 
-      {/* 6. MEET THE PRINCIPAL ARCHITECT (AUTHENTIC CODER AUTHORITY) */}
+      {/* 8. INTERACTIVE PROJECT SCOPE & QUOTE BUILDER */}
+      <ProjectScopeBuilder />
+
+      {/* 9. MEET THE PRINCIPAL ARCHITECT (AUTHENTIC CODER AUTHORITY) */}
       <section className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto p-7 sm:p-12 rounded-[32px] glass-panel">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
