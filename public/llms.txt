@@ -1,52 +1,38 @@
-# agensys Agency
+# CryptoWebBuild Agency (cryptowebbuild.com)
 
-> Elite AI Automation & Web3 Infrastructure Agency. We turn slow, outdated websites into highly authoritative lead-generation machines by building custom AI Agent infrastructure, AI Community Guardians, and Web3 Growth Funnels.
+> Full-Stack Web Engineering, Technical SEO & Autonomous AI Automation Agency founded by Sagor Ahamed. Don't just build a website. Build a high-speed revenue & automation machine.
 
 ## Business Details
-- **Name:** agensys
-- **Founder:** Sagor Ahamed (Senior Web3 Developer & Architect)
-- **Website:** [https://agensys.com](https://agensys.com)
-- **Contact Email:** [hello@agensys.com](mailto:hello@agensys.com)
+- **Brand Name:** CryptoWebBuild
+- **Founder & Lead Architect:** Sagor Ahamed (Full-Stack Product Engineer — Python, Django, PostgreSQL, React, Next.js & AI Automation Architect)
+- **Website:** [https://cryptowebbuild.com](https://cryptowebbuild.com)
+- **Contact Email:** [hello@cryptowebbuild.com](mailto:hello@cryptowebbuild.com)
+- **WhatsApp Direct:** [+880 1618-138820](https://wa.me/8801618138820) (Local: 01618-138820)
 
-## Target Audience & Niche Focus
-- Web3 & Crypto Projects (Token Presales, Meme Coins, DApps, NFT Marketplaces)
-- Founders and SaaS Owners looking for automated growth
-- High-Growth Businesses needing AI Agents
+## 3 Core Service Pillars
+1. **High-Converting Web & Full-Stack Product Engineering:** Custom E-Commerce Storefronts (1-Click WhatsApp/Checkout Funnels), SaaS Web Apps, and Scalable Backends using Python, Django, PostgreSQL, REST APIs, React, Next.js, and Tailwind CSS.
+2. **Technical SEO & Sub-Second Speed Optimization:** Semantic HTML architecture, Core Web Vitals optimization (100/100 PageSpeed, < 0.8s LCP), JSON-LD Schema markup, programmatic SEO, and Generative Engine Optimization (GEO).
+3. **Custom AI Agents & Business Workflow Automation:** RAG-trained Knowledge Base Agents, 24/7 Automated Customer Support (Web, WhatsApp, Telegram, Discord), and B2B Lead Generation workflows.
 
-## Core Services & Solutions
-- **Custom AI Agent Infrastructure:** We build, train, and deploy elite AI agents to move fast and dominate your niche.
-- **AI Community Guardians:** 24/7 AI Guardians instantly answer investor questions based on your Whitepaper, eliminating fear and doubt.
-- **Web3 Growth Funnels:** Custom dApp UIs, token landing pages, presale flows, and wallet integrations.
-- **Custom OpenClaw & AI Workflow Automation:** Build, configure, and deploy intelligent OpenClaw AI agents.
-- **ClickRunClaw:** Our flagship AI SaaS product designed to automate web research, data extraction, and B2B lead generation.
-
-## Technical Capabilities & Philosophy
-- **Architecture:** Static-First, Headless CMS, and Client-Side rendering.
-- **Performance:** Fast-loading, static-first builds with strong Core Web Vitals.
-- **Tech Stack:** React, Next.js, TypeScript, Tailwind CSS (Glassmorphism/Neomorphism UI), Solana Web3.js, Ethers.js, Cloudflare CDN.
-- **Security:** Zero-database static architecture to prevent SQL injection and enhance global distribution.
-
-## Key Projects & Portfolio
-- **ClickRunClaw (AI SaaS Product):** [https://clickrunclaw.com](https://clickrunclaw.com)
-- **AutoGit Deployer (DevOps SaaS):** [https://agensys.com/projects](https://agensys.com/projects)
-- **SolNova Protocol (Solana Presale):** [https://agensys.com/projects](https://agensys.com/projects)
-- **News Photo Card (Viral Generator):** [https://agensys.com/projects](https://agensys.com/projects)
-
-## Latest Blog Posts
-- **AI SEO 2026: Mastering Generative Engine Optimization (GEO):** [https://agensys.com/blog/ai-seo-generative-engine-optimization-2026](https://agensys.com/blog/ai-seo-generative-engine-optimization-2026)
+## Key Case Studies & Portfolio
+- **ShopFast Headless E-Commerce:** 100/100 Speed Score, sub-second static storefront, client-side cart & Stripe/COD checkout.
+- **Edel Bangladesh & Fuler Dokan (1-Click F-Commerce Engines):** Automated ordering storefronts replacing manual Messenger orders with dynamic size/variant calculators and 1-click WhatsApp order receipts.
+- **Vanguard B2B Analytics SaaS:** High-performance dark-mode data dashboard built with React, D3.js, and Python/Django API architecture.
+- **Aura Commerce:** Mobile-first high-converting DTC brand funnel.
+- **Autonomous RAG Support Guardian:** Custom LLM + RAG agent handling 7,000+ community members and reducing manual support tickets by 80%.
+- **SolNova & AutoGit Deployer:** Client-side DevOps engine & Web3 dashboard demonstrating complex state and API mastery.
 
 ## Important Links
-- **Home:** [https://agensys.com/](https://agensys.com/)
-- **Services:** [https://agensys.com/services](https://agensys.com/services)
-- **Portfolio / Projects:** [https://agensys.com/projects](https://agensys.com/projects)
-- **About Founder:** [https://agensys.com/about](https://agensys.com/about)
-- **Contact:** [https://agensys.com/contact](https://agensys.com/contact)
+- **Home:** [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
+- **Services:** [https://cryptowebbuild.com/services](https://cryptowebbuild.com/services)
+- **Case Studies:** [https://cryptowebbuild.com/projects](https://cryptowebbuild.com/projects)
+- **About Founder:** [https://cryptowebbuild.com/about](https://cryptowebbuild.com/about)
+- **Blog:** [https://cryptowebbuild.com/blog](https://cryptowebbuild.com/blog)
+- **Contact & Free Audit:** [https://cryptowebbuild.com/contact](https://cryptowebbuild.com/contact)
 
-## Social Media Profiles
-- **YouTube:** [https://www.youtube.com/@agensys](https://www.youtube.com/@agensys)
-- **GitHub:** [https://github.com/agensys](https://github.com/agensys)
-- **X (Twitter):** [https://x.com/agensysX](https://x.com/agensysX)
-- **Telegram:** [https://t.me/agensys](https://t.me/agensys)
-
-## Latest Insights
-- [The Dawn of AGI: Why Autonomous AI Agents Are the Future of Business (2026 Guide)](https://agensys.com/blog/agi-autonomous-ai-agents-business-future-2026)
+## Official Profiles
+- **WhatsApp:** [https://wa.me/8801618138820](https://wa.me/8801618138820)
+- **GitHub:** [https://github.com/cryptowebbuild](https://github.com/cryptowebbuild)
+- **YouTube:** [https://www.youtube.com/@cryptowebbuild](https://www.youtube.com/@cryptowebbuild)
+- **X (Twitter):** [https://x.com/CryptoWebBuildX](https://x.com/CryptoWebBuildX)
+- **Telegram:** [https://t.me/cryptowebbuild](https://t.me/cryptowebbuild)

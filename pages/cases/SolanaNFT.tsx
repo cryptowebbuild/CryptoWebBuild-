@@ -8,21 +8,21 @@ const SolanaNFT: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: SolMint - High-Performance Solana NFT Marketplace",
-    "image": "https://agensys.com/solana-nft-preview.jpg",
+    "image": "https://cryptowebbuild.com/solana-nft-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "description": "Building a sleek, fast, and highly visual marketplace for Web3 collectibles on the Solana blockchain.",

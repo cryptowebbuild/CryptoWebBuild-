@@ -8,21 +8,21 @@ const ApexAgency: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: Apex Digital Agency - Sleek Corporate Portfolio",
-    "image": "https://agensys.com/apex-agency-preview.jpg",
+    "image": "https://cryptowebbuild.com/apex-agency-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "description": "A modern, sleek corporate portfolio for a marketing agency featuring smooth animations and professional design.",

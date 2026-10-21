@@ -8,21 +8,21 @@ const NexusWeb3: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: Nexus Web3 Protocol - Futuristic DeFi Dashboard",
-    "image": "https://agensys.com/nexus-web3-preview.jpg",
+    "image": "https://cryptowebbuild.com/nexus-web3-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "description": "Building a futuristic DeFi and Crypto Staking Dashboard with real-time analytics and dark neon UI.",

@@ -1,14 +1,14 @@
 {
-  "name": "agensys",
-  "short_name": "WebBuild",
-  "description": "Professional Web3 & E-commerce Developer Portfolio",
+  "name": "CryptoWebBuild",
+  "short_name": "CryptoWebBuild",
+  "description": "CryptoWebBuild by Sagor Ahamed — Full-Stack Web Engineering, Technical SEO & AI Automation Agency",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#030014",
-  "theme_color": "#030014",
+  "background_color": "#090A0F",
+  "theme_color": "#10B981",
   "icons": [
     {
-      "src": "/icons/favicon.svg",
+      "src": "/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     }

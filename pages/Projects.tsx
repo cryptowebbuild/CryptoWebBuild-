@@ -1,300 +1,341 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-
-// Import Mockup Components (Ensure these exist in your project)
 import AutoGitMockup from '../components/AutoGitMockup';
 import SolNovaMockup from '../components/SolNovaMockup';
 import QuackInuMockup from '../components/QuackInuMockup';
 import GigaChadMockup from '../components/GigaChadMockup';
 import ShopFastMockup from '../components/ShopFastMockup';
-
-// Define project interface for type safety
-interface ProjectItem {
-  id: string;
-  title: string;
-  category: string;
-  desc: string;
-  tech: string[];
-  link: string; // Internal Link for Case Study
-  liveUrl?: string; // External Link (Optional for fictional projects)
-  img?: string; // Fallback Image URL
-}
+import { ArrowUpRight } from 'lucide-react';
 
 const Projects: React.FC = () => {
-  
-  // --- PROJECT DATA ---
-    const projects: ProjectItem[] = [
+  const [activeFilter, setActiveFilter] = useState<'all' | 'commerce' | 'saas' | 'ai-web3'>('all');
+
+  const projects = [
     {
       id: 'clickrunclaw',
-      title: 'ClickRunClaw: The Ultimate 1-Click Cloud Engine for AI Agents.',
+      title: 'ClickRunClaw: 1-Click Cloud Engine',
       category: 'Flagship AI SaaS',
-      desc: 'Our flagship SaaS product. Stop hosting AI agents locally. ClickRunClaw provides enterprise-grade 24/7 cloud infrastructure with instant 1-click deployments for Telegram & Discord webhooks. Zero configuration required.',
-      tech: ['Cloud Infrastructure', 'AI Agents', 'Webhooks', 'Next.js'],
-      link: '/projects',
+      metric: '99.98% Uptime',
+      group: 'ai-web3',
+      desc: 'Managed 24/7 cloud runtime for OpenClaw & RAG AI agents with instant webhook provisioning for WhatsApp, Telegram & Discord.',
+      tech: ['Cloud Runtime', 'RAG Webhooks', 'Next.js', 'Docker'],
+      link: '/services/ai-automation',
       img: '/projects/clickrunclaw.webp',
-      liveUrl: 'https://clickrunclaw.com/'
-    },
-
-    {
-      id: 'aiagentdemo',
-      title: 'How our AI Agent handled 7,000+ members and reduced support tickets by 80%.',
-      category: 'AI Automation',
-      desc: 'Deployed a custom RAG-trained AI Guardian in a Web3 Discord community. It instantly resolved repetitive queries based on the Whitepaper, allowing the core team to focus on scaling.',
-      tech: ['Custom LLM', 'RAG', 'Discord API', 'Node.js'],
-      link: '/projects', // Needs details soon or fake link
-      img: '/projects/aiagentdemo.webp',
-      liveUrl: '' // No live URL for this demo yet
-    },
-    {
-      id: 'nexusweb3',
-      title: 'Nexus Web3 Protocol',
-      category: 'DeFi Dashboard',
-      desc: 'A futuristic DeFi and Crypto Staking Dashboard featuring real-time analytics, Web3 integration, and a premium dark neon cyber UI.',
-      tech: ['React', 'Ethers.js', 'Tailwind'],
-      liveUrl: 'https://clickrunclaw.com', link: '/projects',
-      img: '/projects/nexusweb3.webp'
-    },
-    {
-      id: 'auracommerce',
-      title: 'Aura Commerce',
-      category: 'High-Conversion Store',
-      desc: 'A lightning-fast, high-converting dropshipping e-commerce landing page optimized for mobile sales and instantaneous checkouts.',
-      tech: ['Next.js', 'Stripe', 'Tailwind'],
-      link: '/auracommerce',
-      img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
-    },
-
-    {
-      id: 'vanguardsaas',
-      title: 'Vanguard SaaS',
-      category: 'B2B Analytics Platform',
-      desc: 'A high-performance, dark-mode B2B analytics dashboard engineered to visualize millions of real-time financial data points without lag.',
-      tech: ['React', 'D3.js', 'Tailwind'],
-      link: '/vanguardsaas',
-      img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'solananft',
-      title: 'SolMint Marketplace',
-      category: 'Solana NFT App',
-      desc: 'A sleek, fast, image-heavy marketplace for Web3 collectibles featuring seamless Phantom wallet integration and optimistic UI updates.',
-      tech: ['Next.js', 'Solana Web3', 'React'],
-      link: '/solananft',
-      img: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 'newsphotocard',
-      title: 'News Photo Card',
-      category: 'Viral Generator',
-      desc: 'A client-side viral marketing tool that allows users to create authentic-looking news cards and social media visuals in seconds. 100% privacy-focused with no server uploads.',
-      tech: ['React', 'Canvas API', 'Tailwind'],
-      link: '/newsphotocard',
-      liveUrl: 'https://agensys.com/',
-      img: '/projects/project-newsphotocard.jpg'
-    },
-    {
-      id: 'gigasolana',
-      title: '$GIGA Solana',
-      category: 'Meme & Utility',
-      desc: 'A high-energy "Chad" themed meme coin site featuring a custom "Moon Math" calculator to drive investor engagement and viral sharing.',
-      tech: ['React', 'Moon Math UI', 'Tailwind'],
-      link: '/gigasolana',
-      liveUrl: 'https://agensys.com/'
-    },
-    {
-      id: 'autogithub',
-      title: 'AutoGit Deployer',
-      category: 'DevOps SaaS',
-      desc: "The world's first Client-Side DevOps Engine. Deploy static sites directly from your browser. No Command Line. No Servers. No Fees.",
-      tech: ['React', 'GitHub API', 'Client-Side'],
-      link: '/autogithub',
-      liveUrl: 'https://agensys.com/'
-    },
-    {
-      id: 'tokenlaunch',
-      title: 'SolNova Protocol',
-      category: 'Solana Presale',
-      desc: 'High-yield Solana aggregation protocol. Features a real-time presale dashboard, wallet integration, and on-chain data visualization.',
-      tech: ['React', 'Solana Web3.js', 'Cloudflare'],
-      link: '/tokenlaunch',
-      liveUrl: 'https://agensys.com/'
-    },
-    {
-      id: 'memecoinsite',
-      title: 'BNB Quack Inu',
-      category: 'Viral Meme Coin',
-      desc: 'Gamified meme coin experience on BNB Chain. Features a "Spin to Win" mechanic, jungle-themed UI, and custom wood-textured interface elements.',
-      tech: ['Gamification', 'CSS Animations', 'Viral UI'],
-      link: '/memecoinsite',
-      liveUrl: 'https://agensys.com/'
+      liveUrl: 'https://clickrunclaw.com/',
     },
     {
       id: 'shopfast',
-      title: 'ShopFast E-commerce',
-      category: 'Headless Commerce',
-      desc: 'Ultra-fast static storefront with sub-second load times. Features a headless architecture, Stripe integration, and client-side cart logic.',
-      tech: ['Static Frontend', 'Stripe', 'Client-side Cart'],
+      title: 'ShopFast Headless Storefront',
+      category: '1-Click E-Commerce',
+      metric: '0.4s Load • +240% Sales',
+      group: 'commerce',
+      desc: 'Sub-second headless storefront with 1-click checkout (Stripe/bKash), server-side Meta CAPI, and automated courier tracking.',
+      tech: ['Next.js 15', 'Stripe / bKash', '100/100 CWV'],
       link: '/shopfast',
-      liveUrl: 'https://agensys.com/'
-    }
+      liveUrl: 'https://cryptowebbuild.com/shopfast',
+    },
+    {
+      id: 'vanguardsaas',
+      title: 'Vanguard Financial SaaS',
+      category: 'Python / Django B2B',
+      metric: '10M+ Rows • <50ms API',
+      group: 'saas',
+      desc: 'High-concurrency B2B analytics platform engineered with Python, Django REST, PostgreSQL, and React to query millions of rows.',
+      tech: ['Python / Django', 'PostgreSQL', 'React & D3.js'],
+      link: '/vanguardsaas',
+      img: '/projects/vanguardsaas.webp',
+      liveUrl: 'https://cryptowebbuild.com/vanguardsaas',
+    },
+    {
+      id: 'auracommerce',
+      title: 'Aura & Edel Direct Retail',
+      category: 'F-Commerce & Retail',
+      metric: '3.8x ROAS Lift',
+      group: 'commerce',
+      desc: 'Replaced "Inbox for Price" friction with an instant 1-click product funnel, automated Steadfast/Pathao dispatch, and pixel tracking.',
+      tech: ['Next.js', 'Courier API', 'Meta CAPI'],
+      link: '/auracommerce',
+      img: '/projects/auracommerce.webp',
+      liveUrl: 'https://cryptowebbuild.com/auracommerce',
+    },
+    {
+      id: 'autogithub',
+      title: 'AutoGit Edge Deployer',
+      category: 'DevOps SaaS',
+      metric: 'Zero-CLI Browser CI/CD',
+      group: 'saas',
+      desc: 'Client-side DevOps engine deploying production repositories directly from the browser via GitHub REST API and Cloudflare Edge.',
+      tech: ['React', 'GitHub REST API', 'Cloudflare Edge'],
+      link: '/autogithub',
+      liveUrl: 'https://cryptowebbuild.com/autogithub',
+    },
+    {
+      id: 'tokenlaunch',
+      title: 'SolNova Presale Protocol',
+      category: 'Web3 DeFi App',
+      metric: '$4.2M+ Volume',
+      group: 'ai-web3',
+      desc: 'Real-time Solana presale and staking dashboard featuring sub-second RPC telemetry, Phantom/Solflare wallet sync, and on-chain verification.',
+      tech: ['React', 'Solana Web3.js', 'RPC Telemetry'],
+      link: '/tokenlaunch',
+      liveUrl: 'https://cryptowebbuild.com/tokenlaunch',
+    },
+    {
+      id: 'apexagency',
+      title: 'Apex Enterprise Funnel',
+      category: 'B2B Technical SEO',
+      metric: '100/100 PageSpeed',
+      group: 'commerce',
+      desc: 'High-authority B2B corporate platform and programmatic SEO architecture that doubled qualified inbound enterprise leads.',
+      tech: ['React', 'Schema.org JSON-LD', 'Conversion UX'],
+      link: '/apexagency',
+      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+      liveUrl: 'https://cryptowebbuild.com/apexagency',
+    },
+    {
+      id: 'nexusweb3',
+      title: 'Nexus Staking Terminal',
+      category: 'DeFi Analytics',
+      metric: 'Multi-Chain EVM',
+      group: 'ai-web3',
+      desc: 'Institutional-grade DeFi staking and liquidity terminal with multi-wallet Web3 integration and live APY yield calculations.',
+      tech: ['React', 'Ethers.js', 'Tailwind'],
+      liveUrl: 'https://clickrunclaw.com',
+      link: '/nexusweb3',
+      img: '/projects/nexusweb3.webp',
+    },
+    {
+      id: 'solananft',
+      title: 'SolMint Collectibles Hub',
+      category: 'Solana Marketplace',
+      metric: '<0.6s Asset Load',
+      group: 'ai-web3',
+      desc: 'High-speed Solana NFT marketplace featuring optimistic UI state updates, instant wallet signing, and edge image optimization.',
+      tech: ['Next.js', 'Solana Web3', 'Edge CDN'],
+      link: '/solananft',
+      img: '/projects/solananft.webp',
+      liveUrl: 'https://cryptowebbuild.com/solananft',
+    },
+    {
+      id: 'newsphotocard',
+      title: 'News Photo Card Studio',
+      category: 'Client-Side SaaS',
+      metric: '100% Browser Canvas',
+      group: 'saas',
+      desc: 'Zero-server media card generator built with HTML5 Canvas API, enabling publishers to export crisp social cards in seconds.',
+      tech: ['React', 'Canvas API', 'TypeScript'],
+      link: '/newsphotocard',
+      liveUrl: 'https://cryptowebbuild.com/newsphotocard',
+      img: '/projects/project-newsphotocard.jpg',
+    },
+    {
+      id: 'gigasolana',
+      title: '$GIGA Solana Ecosystem',
+      category: 'Web3 Community Hub',
+      metric: 'Interactive Moon Math',
+      group: 'ai-web3',
+      desc: 'High-conversion token portal featuring an interactive market-cap simulator and live DEX liquidity chart integration.',
+      tech: ['React', 'Token Simulator', 'DEX API'],
+      link: '/gigasolana',
+      liveUrl: 'https://cryptowebbuild.com/gigasolana',
+    },
+    {
+      id: 'memecoinsite',
+      title: 'BNB Quack Inu Portal',
+      category: 'Gamified Web3 UI',
+      metric: 'High-Retention UX',
+      group: 'ai-web3',
+      desc: 'Interactive BNB Chain token hub engineered with hardware-accelerated micro-interactions and instant contract verification.',
+      tech: ['React', 'BNB Chain', 'Interactive UI'],
+      link: '/memecoinsite',
+      liveUrl: 'https://cryptowebbuild.com/memecoinsite',
+    },
   ];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Portfolio Case Studies",
-    "url": "https://agensys.com/projects",
-    "description": "Selected projects and case studies in Web3 and E-commerce development.",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": projects.map((p, i) => ({
-        "@type": "CreativeWork",
-        "position": i + 1,
-        "name": p.title,
-        "description": p.desc,
-        "url": `https://agensys.com${p.link}`,
-        "image": `https://agensys.com/default-project.jpg`
-      }))
-    }
+  const filteredProjects =
+    activeFilter === 'all' ? projects : projects.filter((p) => p.group === activeFilter);
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Portfolio Case Studies | CryptoWebBuild',
+    url: 'https://cryptowebbuild.com/projects',
+    description: 'Selected projects and case studies in E-Commerce, Python/Django SaaS, AI Automation, and Web3 development.',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: projects.map((t, o) => ({
+        '@type': 'CreativeWork',
+        position: o + 1,
+        name: t.title,
+        description: t.desc,
+        url: `https://cryptowebbuild.com${t.link}`,
+        image: t.img ? `https://cryptowebbuild.com${t.img}` : 'https://cryptowebbuild.com/hero-avatar.webp',
+      })),
+    },
   };
 
   return (
-    <div className="container mx-auto px-6 bg-gray-50 dark:bg-[#020617] transition-colors duration-300 min-h-screen">
-      
-      {/* --- SEO Configuration --- */}
-      <SEO title="Case Studies & Projects | agensys"
-        description="Explore our portfolio of elite AI automation, Web3 infrastructure, and high-ticket SaaS solutions powering the next generation of crypto."
-        keywords={['Web3 Portfolio', 'Crypto Website Examples', 'E-commerce Case Studies', 'React Projects', 'Meme Coin Design Portfolio']}
+    <div className="container mx-auto px-6 min-h-screen">
+      <SEO
+        title="Case Studies & Portfolio | CryptoWebBuild"
+        description="Explore our portfolio of high-converting E-Commerce stores, Python/Django SaaS platforms, Technical SEO wins, and autonomous AI infrastructure."
+        keywords={[
+          'Full-Stack Portfolio',
+          'E-commerce Case Studies',
+          'Python Django SaaS Examples',
+          'React Next.js Projects',
+          'Web3 & AI Portfolio',
+        ]}
         canonical="/projects"
-        schema={jsonLd}
+        schema={schema}
       />
 
-      {/* --- Header Section --- */}
-      <div className="text-center mb-16 gpu-accelerated animate-slide-up">
-        <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-sm font-bold tracking-wider uppercase shadow-sm">
-            Selected Works
+      <div className="text-center mb-14">
+        <div className="inline-block px-4 py-1.5 mb-5 rounded-full bg-white dark:bg-white/5 border border-purple-500/30 text-purple-600 dark:text-purple-400 text-xs font-bold tracking-wider uppercase shadow-sm">
+          Shipped Production Systems
         </div>
-        <h1 className="font-display text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
-          Web3 Projects & <br/>
-          <span className="text-transparent bg-clip-text neon-button dark:from-purple-400 dark:to-cyan-400">Case Studies</span>
+        <h1 className="font-display text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-5">
+          Production Projects &amp;{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">
+            Case Studies
+          </span>
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-          Explore recent work in <Link to="/services" className="text-purple-600 dark:text-purple-400 hover:underline font-bold">Crypto & Web3</Link>, <Link to="/services" className="text-cyan-600 dark:text-cyan-400 hover:underline font-bold">E-commerce</Link>, and Custom Software.
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed mb-8">
+          Inspect live interactive previews and architectural breakdowns across{' '}
+          <Link to="/services" className="text-cyan-600 dark:text-cyan-400 hover:underline font-bold">
+            1-Click E-Commerce
+          </Link>
+          ,{' '}
+          <Link to="/services" className="text-purple-600 dark:text-purple-400 hover:underline font-bold">
+            Python/Django SaaS
+          </Link>
+          , and Autonomous AI &amp; Web3 Systems.
         </p>
+
+        {/* Clean Filter Tabs */}
+        <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-white dark:bg-[#0B1120] border border-gray-200 dark:border-white/10 shadow-sm">
+          {[
+            { id: 'all' as const, label: 'All Works' },
+            { id: 'commerce' as const, label: 'E-Commerce & SEO' },
+            { id: 'saas' as const, label: 'Python/Django & SaaS' },
+            { id: 'ai-web3' as const, label: 'AI Agents & Web3' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setActiveFilter(tab.id)}
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                activeFilter === tab.id
+                  ? 'bg-gradient-to-r from-purple-600 to-cyan-500 text-white shadow-md'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* --- Projects Grid --- */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, idx) => (
-          <article 
-            key={project.id} 
-            className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-2xl gpu-accelerated animate-slide-up bg-white dark:bg-[#020617] border border-gray-200 dark:border-white/5"
-            style={{ animationDelay: `${idx * 0.1}s` }}
+        {filteredProjects.map((t) => (
+          <article
+            key={t.id}
+            className="group flex flex-col rounded-3xl overflow-hidden glass-panel border border-gray-200 dark:border-white/10 hover:border-purple-500/40 transition-all duration-300 shadow-lg"
           >
-            {/* --- Visual Container (Mockup Component) --- */}
-            <div className="absolute inset-0 overflow-hidden bg-gray-100 dark:bg-[#020617]">
-               {/* Conditional Rendering for Mockups */}
-               {project.id === 'autogithub' ? (
-                 <AutoGitMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-               ) : project.id === 'tokenlaunch' ? (
-                 <SolNovaMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-               ) : project.id === 'memecoinsite' ? (
-                 <QuackInuMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-               ) : project.id === 'gigasolana' ? (
-                 <GigaChadMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-               ) : project.id === 'shopfast' ? (
-                 <ShopFastMockup className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-               ) : (
-                 // Fallback Image
-                 <img src={project.img || '/default-project.jpg'}
-                   alt={`Preview of ${project.title}`} 
-                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:rotate-1" loading="lazy"
-                   decoding="async"
-                 />
-               )}
-               
-               {/* Gradient Overlay for Readability */}
-               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90" />
-            </div>
-            
-            {/* --- Content Container --- */}
-            <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
-              
-              {/* Category Badge (Slides in on hover) */}
-              <div className="absolute top-8 left-8 transform -translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out pointer-events-none">
-                <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-lg">
-                  {project.category}
+            {/* Top Interactive Visual Preview */}
+            <div className="relative h-60 w-full overflow-hidden bg-slate-900 border-b border-gray-200 dark:border-white/10">
+              {t.id === 'autogithub' ? (
+                <AutoGitMockup className="w-full h-full object-cover" />
+              ) : t.id === 'tokenlaunch' ? (
+                <SolNovaMockup className="w-full h-full object-cover" />
+              ) : t.id === 'memecoinsite' ? (
+                <QuackInuMockup className="w-full h-full object-cover" />
+              ) : t.id === 'gigasolana' ? (
+                <GigaChadMockup className="w-full h-full object-cover" />
+              ) : t.id === 'shopfast' ? (
+                <ShopFastMockup className="w-full h-full object-cover" />
+              ) : (
+                <img
+                  src={t.img || '/hero-avatar.webp'}
+                  alt={`Preview of ${t.title}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <div className="absolute top-3 left-3 flex items-center gap-2 pointer-events-none">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-slate-950/85 text-white border border-white/15">
+                  {t.category}
                 </span>
               </div>
+              <div className="absolute top-3 right-3 pointer-events-none">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-500/95 text-white shadow-sm">
+                  {t.metric}
+                </span>
+              </div>
+            </div>
 
-              {/* Title & Tags */}
-              <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                <h3 className="font-display text-3xl font-bold text-white mb-2 drop-shadow-md">
-                  {project.title}
-                </h3>
-                
-                {/* Tech Tags (Hidden on hover to make space) */}
-                <div className="flex flex-wrap gap-2 transition-opacity duration-300 group-hover:opacity-0 group-hover:hidden delay-100">
-                  {project.tech.map((t) => (
-                    <span key={t} className="text-[10px] font-bold text-slate-300 bg-white/10 border border-white/20 px-2 py-1 rounded-full uppercase tracking-wide">
-                      {t}
+            {/* Bottom Structured Content */}
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  {t.title}
+                </h2>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-5">
+                  {t.desc}
+                </p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {t.tech.map((s) => (
+                    <span
+                      key={s}
+                      className="text-[11px] font-bold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-2.5 py-1 rounded-lg"
+                    >
+                      {s}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              {/* Reveal Content (Description & Buttons) */}
-              <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
-                <div className="overflow-hidden">
-                  <div className="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
-                    <p className="text-slate-300 text-sm mb-6 leading-relaxed border-l-2 border-purple-500 pl-4 font-medium">
-                      {project.desc}
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      {project.liveUrl && (
-                        <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white text-slate-900 dark:text-slate-900 font-bold rounded-xl hover:bg-cyan-50 transition-colors shadow-lg text-sm group/btn"
-                        >
-                            Live Demo
-                            <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                        </a>
-                      )}
-                      
-                      {/* Check if Case Study exists (internal link) */}
-                      {project.link !== '/projects' ? (
-                        <Link 
-                          to={project.link}
-                          className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold rounded-xl hover:bg-white/20 transition-colors text-sm"
-                        >
-                          Case Study
-                        </Link>
-                      ) : (
-                        <span className="flex-1 inline-flex items-center justify-center py-3 px-4 bg-white/5 backdrop-blur-sm text-slate-400 border border-white/10 font-bold rounded-xl text-sm cursor-default">
-                          Details Soon
-                        </span>
-                      )}
-                    </div>
-                  </div>
+                <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-white/10">
+                  <Link
+                    to={t.link}
+                    className="flex-1 inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition-colors"
+                  >
+                    Case Study Breakdown
+                  </Link>
+                  {t.liveUrl && (
+                    <a
+                      href={t.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 font-bold text-xs transition-colors"
+                    >
+                      Live Site <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                    </a>
+                  )}
                 </div>
               </div>
-
             </div>
           </article>
         ))}
       </div>
 
-      {/* --- CTA Section --- */}
-      <div className="mt-24 text-center gpu-accelerated animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <div className="inline-block p-8 md:p-12 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 shadow-xl max-w-2xl mx-auto">
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to start your own project?</h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">Now booking projects for Q3-Q4 2026.</p>
-          <Link to="/contact" className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white transition-all duration-200 neon-button rounded-xl hover:scale-105 shadow-lg shadow-purple-500/30">
-            Claim Your Custom AI Prototype
+      <div className="mt-20 text-center">
+        <div className="inline-block p-8 md:p-12 rounded-3xl glass-panel border border-gray-200 dark:border-white/10 shadow-xl max-w-2xl mx-auto">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            Ready to engineer your platform?
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-medium">
+            2 build slots open this month. 50% upfront / 50% upon live verification.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-10 py-4 text-base font-bold text-white neon-button rounded-xl shadow-lg"
+          >
+            Claim Your 48-Hour Prototype
           </Link>
         </div>
       </div>

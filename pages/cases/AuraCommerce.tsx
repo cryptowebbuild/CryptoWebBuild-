@@ -8,21 +8,21 @@ const AuraCommerce: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: Aura Commerce - High-Converting Dropshipping Store",
-    "image": "https://agensys.com/aura-commerce-preview.jpg",
+    "image": "https://cryptowebbuild.com/aura-commerce-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "description": "A lightning-fast, high-converting dropshipping e-commerce landing page optimized for mobile sales.",

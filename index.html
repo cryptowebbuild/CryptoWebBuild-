@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    
+    <title>CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency</title>
+    <meta
+      name="description"
+      content="Scale your business with sub-second full-stack websites (Python/Django &amp; Next.js), #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+    />
+
     <!-- Meta Tags for Social Previews (OpenGraph & Twitter Cards) -->
-    <meta property="og:image" content="/hero-avatar.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CryptoWebBuild" />
+    <meta property="og:title" content="CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency" />
+    <meta
+      property="og:description"
+      content="Scale your business with sub-second full-stack websites, #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+    />
+    <meta property="og:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/hero-avatar.webp" />
+    <meta name="twitter:site" content="@CryptoWebBuildX" />
+    <meta name="twitter:title" content="CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency" />
+    <meta
+      name="twitter:description"
+      content="Scale your business with sub-second full-stack websites, #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+    />
+    <meta name="twitter:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
 
     <!-- Site Favicon & App Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -18,47 +36,9 @@
     <!-- Font Preloading -->
     <link rel="preload" href="/fonts/SpaceGrotesk-Bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin />
-
   </head>
-  
   <body class="bg-white dark:bg-[#020617] text-gray-900 dark:text-white antialiased overflow-x-hidden transition-colors duration-300 ease-in-out">
-    
     <div id="root"></div>
-
     <script type="module" src="/index.tsx"></script>
-
-    <noscript>
-      <div style="padding: 20px; text-align: center; color: #fff; background: #000;">
-        <p style="font-size: 24px; font-weight: bold;">JavaScript Required</p>
-        <p>Please enable JavaScript to use this site.</p>
-      </div>
-    </noscript>
-
-    <!-- Deferred Google tag (gtag.js) implementation to avoid blocking LCP -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ZWY1LSEBDQ');
-
-      // Load GA script after 3 seconds or on first interaction to improve PageSpeed
-      const initGA = () => {
-        if (!window.gaInitialized) {
-          window.gaInitialized = true;
-          const script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZWY1LSEBDQ';
-          script.async = true;
-          document.head.appendChild(script);
-        }
-      };
-
-      // Trigger after delay
-      setTimeout(initGA, 3000);
-
-      // Or trigger on user interaction (whichever happens first)
-      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => {
-        window.addEventListener(event, initGA, { once: true, passive: true });
-      });
-    </script>
   </body>
 </html>

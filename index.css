@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- FONTS (Self-Hosted for Speed) --- */
+/* --- SELF-HOSTED FONTS --- */
 @font-face {
   font-family: 'Outfit';
   font-style: normal;
@@ -82,36 +82,33 @@
   src: url('/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
 }
 
-/* --- LAYER 1: THEME VARIABLES --- */
+/* --- LAYER 1: UNIFIED ZERO-TEAR THEME VARIABLES --- */
 @layer base {
   :root {
-    /* DAY MODE (Clean & Professional) */
-    --bg-void: #FAFAFA; 
-    --bg-surface: rgba(255, 255, 255, 0.7);
-    --bg-surface-highlight: #F1F5F9; 
-    --tx-main: #0F172A; /* Darker Slate for better readability (Accessibility) */
-    --tx-muted: #64748B; 
-    --border-glass: rgba(0, 0, 0, 0.05);
-    --grid-color: rgba(0, 0, 0, 0.04);
-    --shadow-color: rgba(0, 0, 0, 0.05);
+    --bg-void: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-highlight: #F1F5F9;
+    --tx-main: #0F172A;
+    --tx-muted: #475569;
+    --border-glass: rgba(15, 23, 42, 0.08);
+    --grid-color: rgba(15, 23, 42, 0.035);
+    --shadow-color: rgba(15, 23, 42, 0.06);
   }
 
   .dark {
-    /* NIGHT MODE (Deep & AMOLED Friendly - "Cosmic Dark") */
-    --bg-void: #020617; /* Slate 950 - Richer black */
-    --bg-surface: rgba(15, 23, 42, 0.4); /* Deeper transparency for glassmorphism */
-    --bg-surface-highlight: #1E293B; 
-    --tx-main: #F8FAFC; 
-    --tx-muted: #94A3B8; 
-    --border-glass: rgba(255, 255, 255, 0.05); /* Extremely subtle border */
-    --grid-color: rgba(255, 255, 255, 0.03);
-    --shadow-color: rgba(0, 0, 0, 0.8);
+    --bg-void: #020617;
+    --bg-surface: #0F172A;
+    --bg-surface-highlight: #1E293B;
+    --tx-main: #F8FAFC;
+    --tx-muted: #94A3B8;
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --grid-color: rgba(255, 255, 255, 0.025);
+    --shadow-color: rgba(0, 0, 0, 0.5);
   }
 
-  /* Core HTML Setup for SEO & UX */
   html {
-    scroll-behavior: smooth; /* User Friendly Scrolling */
-    scroll-padding-top: 100px; /* Prevents header overlapping content */
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -120,113 +117,67 @@
   body {
     background-color: var(--bg-void);
     color: var(--tx-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Prevents horizontal scroll glitches */
+    overflow-x: hidden;
   }
 
-  /* Focus Styles for Accessibility (Keyboard Navigation) */
   :focus-visible {
     outline: 2px solid #7C3AED;
     outline-offset: 2px;
   }
 }
 
-/* --- LAYER 2: CUSTOM UTILITIES --- */
+/* --- LAYER 2: HIGH-PERFORMANCE SURFACE & BUTTON UTILITIES --- */
 @layer components {
-  /* Cinematic Noise Texture - Performance Optimized */
-  .noise-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 50;
-    opacity: 0.02;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
-    will-change: opacity; /* GPU Hint */
-  }
-
-  .dark .noise-overlay {
-    opacity: 0.04;
-  }
-
-  /* Premium Glass Panel - Enhanced "Glassmorphism" */
+  /* Zero-lag surface panel: avoids stacked backdrop-filter repaints during scroll */
   .glass-panel {
-    background: var(--bg-surface);
-    backdrop-filter: blur(24px); /* Increased blur */
-    -webkit-backdrop-filter: blur(24px);
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-glass);
-    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    box-shadow: 0 10px 30px -10px var(--shadow-color);
   }
 
-  /* Neon Glow Button - Elite Aesthetic */
   .neon-button {
-    background: linear-gradient(135deg, #9333ea, #06b6d4);
-    box-shadow: 0 4px 15px -3px rgba(147, 51, 234, 0.4), 0 0 10px rgba(6, 182, 212, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #7C3AED, #06B6D4);
+    box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.4);
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .neon-button:hover {
-    transform: scale(1.02) translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(147, 51, 234, 0.6), 0 0 20px rgba(6, 182, 212, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -4px rgba(124, 58, 237, 0.55);
   }
 }
 
-/* --- LAYER 3: GLOBAL STYLES --- */
-
-/* Selection Color */
 ::selection {
   background: rgba(124, 58, 237, 0.25);
   color: inherit;
 }
 
-/* Custom Scrollbar (Modern & Minimal) */
 ::-webkit-scrollbar {
-  width: 8px; /* Thinner for cleaner look */
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(156, 163, 175, 0.5);
+  background-color: rgba(148, 163, 184, 0.4);
   border-radius: 20px;
   border: 2px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(124, 58, 237, 0.8); /* Brand Purple on Hover */
+  background-color: rgba(124, 58, 237, 0.8);
 }
 
-/* --- PERFORMANCE UTILITIES --- */
-
-/* 1. GPU Acceleration Class */
 .gpu-accelerated {
-  transform: translate3d(0, 0, 0); /* Strict 3D transform for hardware acceleration */
-  will-change: transform, opacity;
+  transform: translateZ(0);
   backface-visibility: hidden;
 }
 
-/* 2. Text Balance (Better Readability for SEO Headlines) */
-.text-balance {
-  text-wrap: balance;
-}
-
-/* 3. Content Visibility (Huge PageSpeed Booster) */
-/* Renders content only when it approaches the viewport */
-.content-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 800px; /* Estimates height to prevent scroll jump */
-}
-
-/* --- ACCESSIBILITY (A11Y) --- */
-/* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
-    animation-duration: 0.01s !important;
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01s !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }

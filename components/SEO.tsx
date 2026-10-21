@@ -27,49 +27,53 @@ const SEO: React.FC<SEOProps> = ({
   author = 'Sagor Ahamed',
   noIndex = false,
   schema,
-  schemaType = 'Person',
+  schemaType = 'Organization',
   faq
 }) => {
-  const siteUrl = 'https://agensys.com';
+  const siteUrl = 'https://cryptowebbuild.com';
   
-  // 1. Default Identity (Broad Authority)
-  const defaultTitle = "agensys | Elite AI Automation & Web3 Agency";
-  const defaultDescription = "Scale your Web3 brand with custom AI agents and elite infrastructure. Claim your 48-hour AI prototype risk-free.";
+  // 1. Unified Brand Identity: CryptoWebBuild by Sagor Ahamed
+  const defaultTitle = "CryptoWebBuild | Full-Stack Web Engineering, Technical SEO & AI Automation";
+  const defaultDescription = "Don't just build a website. Build a high-speed revenue & automation machine. Sub-second E-commerce storefronts, Python/Django & Next.js apps, #1 Technical SEO, and 24/7 AI Agents by Sagor Ahamed.";
   const defaultImage = `${siteUrl}/hero-avatar.webp`;
 
-  // 2. Resolve Final Values
-  const finalTitle = title || defaultTitle;
-  const finalDescription = description || defaultDescription;
-  const finalImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : defaultImage;
+  // 2. Resolve Final Values (Clean any residual CryptoWebBuild references automatically)
+  const rawTitle = title ? title.replace(/CryptoWebBuild/gi, 'CryptoWebBuild') : defaultTitle;
+  const finalTitle = rawTitle.includes('CryptoWebBuild') ? rawTitle : `${rawTitle} | CryptoWebBuild`;
+  const finalDescription = (description || defaultDescription).replace(/CryptoWebBuild/gi, 'CryptoWebBuild');
+  const cleanImage = image ? image.replace(/https?:\/\/CryptoWebBuild\.com/gi, siteUrl) : '';
+  const finalImage = cleanImage ? (cleanImage.startsWith('http') ? cleanImage : `${siteUrl}${cleanImage}`) : defaultImage;
 
-  // 3. Robust Canonical Logic (Prevents Duplicate Content Issues)
+  // 3. Robust Canonical Logic
   const getCanonicalUrl = () => {
     if (canonical) {
-      return canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+      const cleaned = canonical.replace(/https?:\/\/CryptoWebBuild\.com/gi, siteUrl);
+      return cleaned.startsWith('http') ? cleaned : `${siteUrl}${cleaned}`;
     }
-    // Fallback using window (safe for client-side)
     if (typeof window !== 'undefined') {
-      return window.location.href.split('?')[0].split('#')[0]; // Clean URL
+      return `${siteUrl}${window.location.pathname}`;
     }
     return siteUrl;
   };
 
   const fullCanonical = getCanonicalUrl();
 
-  // 4. Keyword Strategy (Anti-Cannibalization)
+  // 4. Comprehensive High-Intent Keywords
   const globalKeywords = [
-    'Full-Stack Developer', 
-    'React Expert', 
-    'Next.js Developer', 
-    'High-Performance Web Design', 
-    'Custom Website Development', 
-    'E-commerce Developer',
-    'Web3 Integration' 
+    'CryptoWebBuild',
+    'Sagor Ahamed',
+    'Full-Stack Product Engineer',
+    'Python Django Developer',
+    'React Next.js Agency',
+    'Technical SEO Optimization',
+    'High-Converting E-Commerce Website',
+    'Custom AI Agents & RAG Automation',
+    'Web3 Infrastructure Architect'
   ];
   
-  const allKeywords = [...new Set([...keywords, ...globalKeywords])];
+  const allKeywords = [...new Set([...keywords.map(k => k.replace(/CryptoWebBuild/gi, 'CryptoWebBuild')), ...globalKeywords])];
 
-  // 5. Advanced Schema (Professional Service + Person + Organization + FAQ + Article)
+  // 5. Structured Data (Schema.org JSON-LD)
   const generateSchema = () => {
     if (schema) return schema;
 
@@ -82,32 +86,43 @@ const SEO: React.FC<SEOProps> = ({
       },
       "description": finalDescription,
       "sameAs": [
-          "https://github.com/agensys",
-          "https://x.com/agensysX",
-          "https://www.youtube.com/@agensys",
-          "https://t.me/agensys"
+        "https://github.com/cryptowebbuild",
+        "https://x.com/CryptoWebBuildX",
+        "https://www.youtube.com/@cryptowebbuild",
+        "https://t.me/cryptowebbuild",
+        "https://wa.me/8801618138820"
       ]
     };
 
     if (schemaType === 'Organization') {
       return {
         ...baseSchema,
-        "@type": "Organization",
-        "name": "agensys",
+        "@type": "ProfessionalService",
+        "name": "CryptoWebBuild",
+        "alternateName": "CryptoWebBuild by Sagor Ahamed",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",
           "url": `${siteUrl}/hero-avatar.webp`
         },
+        "priceRange": "$$-$$$",
+        "telephone": "+8801618138820",
+        "email": "hello@cryptowebbuild.com",
         "founder": {
-           "@type": "Person",
-           "name": "Sagor Ahamed"
+          "@type": "Person",
+          "name": "Sagor Ahamed",
+          "jobTitle": "Founder & Lead Full-Stack Architect",
+          "url": `${siteUrl}/about`
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "hello@agensys.com"
-        }
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+8801618138820",
+            "email": "hello@cryptowebbuild.com",
+            "availableLanguage": ["English", "Bengali"]
+          }
+        ]
       };
     }
 
@@ -118,7 +133,8 @@ const SEO: React.FC<SEOProps> = ({
         "name": finalTitle,
         "provider": {
           "@type": "Organization",
-          "name": "agensys",
+          "name": "CryptoWebBuild",
+          "url": siteUrl,
           "logo": {
             "@type": "ImageObject",
             "url": `${siteUrl}/hero-avatar.webp`
@@ -127,92 +143,89 @@ const SEO: React.FC<SEOProps> = ({
         "areaServed": "Global",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Elite AI & Web3 Services",
+          "name": "Full-Stack Web Engineering, Technical SEO & AI Automation Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Community Guardians" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web3 Growth Funnels" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Autonomous Sales Agents" } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "High-Converting Web & Full-Stack Product Engineering (Python/Django, React, Next.js)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO & Sub-Second Speed Optimization (100/100 PageSpeed)" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom AI Agents & Business Workflow Automation (RAG, WhatsApp, Telegram)" } }
           ]
         }
       };
     }
 
-    // --- 6. Schema Generation (Decoupled Logic) ---
-    // We generate potential schemas independently to allow combination (e.g. Article + FAQ)
-
     let articleSchema: Record<string, any> | null = null;
     let faqSchema: Record<string, any> | null = null;
 
-    // A. Article Schema Logic
     if (schemaType === 'Article' || type === 'article') {
-       articleSchema = {
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": fullCanonical
-          },
-          "headline": finalTitle,
-          "description": finalDescription,
-          "image": finalImage,
-          "author": {
-            "@type": "Person",
-            "name": author,
-            "url": `${siteUrl}/about`
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "agensys",
-            "logo": {
-              "@type": "ImageObject",
-              "url": `${siteUrl}/hero-avatar.webp`
-            }
-          },
-          "datePublished": publishedTime || new Date().toISOString(),
-          "dateModified": publishedTime || new Date().toISOString()
-       };
+      articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": fullCanonical
+        },
+        "headline": finalTitle,
+        "description": finalDescription,
+        "image": finalImage,
+        "author": {
+          "@type": "Person",
+          "name": author,
+          "url": `${siteUrl}/about`
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CryptoWebBuild",
+          "logo": {
+            "@type": "ImageObject",
+            "url": `${siteUrl}/hero-avatar.webp`
+          }
+        },
+        "datePublished": publishedTime || new Date().toISOString(),
+        "dateModified": publishedTime || new Date().toISOString()
+      };
     }
 
-    // B. FAQ Schema Logic
     if (schemaType === 'FAQPage' || (faq && faq.length > 0)) {
-        faqSchema = {
-          ...baseSchema, // Uses base context
-          "@type": "FAQPage",
-          "mainEntity": faq?.map(item => ({
-            "@type": "Question",
-            "name": item.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": item.answer
-            }
-          })) || []
-        };
+      faqSchema = {
+        ...baseSchema,
+        "@type": "FAQPage",
+        "mainEntity": faq?.map(item => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        })) || []
+      };
     }
 
-    // --- 7. Return Final Schema Structure ---
-
-    // If both exist, return them as a graph array (Standard for multiple schemas)
     if (articleSchema && faqSchema) {
       return [articleSchema, faqSchema];
     }
-
-    // If only one exists, return it
     if (articleSchema) return articleSchema;
     if (faqSchema) return faqSchema;
 
-    // Default: Person
     return {
       ...baseSchema,
       "@type": "Person",
       "name": author,
-      "jobTitle": "Senior Full-Stack Architect",
+      "jobTitle": "Full-Stack Product Engineer & AI Automation Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CryptoWebBuild",
+        "url": siteUrl
+      },
       "knowsAbout": [
-        "Web Development",
+        "Python",
+        "Django",
+        "PostgreSQL",
         "React.js",
         "Next.js",
-        "Blockchain Technology",
-        "E-commerce",
-        "Technical SEO"
+        "Technical SEO",
+        "E-Commerce Conversion Optimization",
+        "RAG AI Agents",
+        "Web3 Infrastructure"
       ]
     };
   };
@@ -221,15 +234,12 @@ const SEO: React.FC<SEOProps> = ({
 
   return (
     <Helmet>
-      {/* --- Standard Metadata --- */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
-      <meta name="keywords" content={allKeywords.slice(0, 15).join(', ')} /> {/* Limit to top 15 to avoid spam flags */}
-      {/* Explicitly passing only href to avoid undefined/null attribute injection by some parsers */}
+      <meta name="keywords" content={allKeywords.slice(0, 15).join(', ')} />
       <link rel="canonical" href={fullCanonical} />
       <meta name="author" content={author} />
       
-      {/* --- Robots Control --- */}
       <meta 
         name="robots" 
         content={noIndex 
@@ -238,8 +248,8 @@ const SEO: React.FC<SEOProps> = ({
         } 
       />
 
-      {/* --- Open Graph (Facebook/LinkedIn) --- */}
-      <meta property="og:site_name" content="agensys" />
+      {/* Open Graph */}
+      <meta property="og:site_name" content="CryptoWebBuild" />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={finalTitle} />
@@ -248,15 +258,14 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:alt" content={finalTitle} />
       <meta property="og:locale" content="en_US" />
 
-      {/* --- Twitter Cards (Large Image for better CTR) --- */}
+      {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@agensysX" />
-      <meta name="twitter:creator" content="@agensysX" />
+      <meta name="twitter:site" content="@CryptoWebBuildX" />
+      <meta name="twitter:creator" content="@CryptoWebBuildX" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDescription} />
       <meta name="twitter:image" content={finalImage} />
 
-      {/* --- Article Specific Tags --- */}
       {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
       )}
@@ -264,7 +273,6 @@ const SEO: React.FC<SEOProps> = ({
         <meta property="article:author" content={author} />
       )}
 
-      {/* --- Schema Injection --- */}
       <script type="application/ld+json">
         {JSON.stringify(finalSchema)}
       </script>

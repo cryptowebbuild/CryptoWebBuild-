@@ -1,6 +1,6 @@
-# 🚀 agensys - High-Performance Web3 & Business Architecture
+# 🚀 CryptoWebBuild - High-Performance Web3 & Business Architecture
 
-![agensys Banner](public/hero-avatar.webp)
+![CryptoWebBuild Banner](public/hero-avatar.webp)
 
 [![React](https://img.shields.io/badge/React-18.x-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -8,9 +8,9 @@
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-**agensys** is a cutting-edge portfolio and agency website designed for **Sagor Ahamed**, a Senior Web3 Developer. This project demonstrates extreme performance optimization, advanced SEO strategies, and modern UI/UX principles (Glassmorphism & Neomorphism) tailored for the Crypto, Meme Coin, and E-commerce industries.
+**CryptoWebBuild** is a cutting-edge portfolio and agency website designed for **Sagor Ahamed**, a Senior Web3 Developer. This project demonstrates extreme performance optimization, advanced SEO strategies, and modern UI/UX principles (Glassmorphism & Neomorphism) tailored for the Crypto, Meme Coin, and E-commerce industries.
 
-🌐 **Live Demo:** [https://agensys.com](https://agensys.com)
+🌐 **Live Demo:** [https://cryptowebbuild.com](https://cryptowebbuild.com)
 
 ---
 
@@ -62,7 +62,7 @@ This repository has been upgraded to a full-service Agency Platform.
 ## 📂 Project Structure
 
 ```bash
-agensys/
+CryptoWebBuild/
 ├── public/              # Static assets (images, robots.txt, sitemap.xml)
 ├── src/
 │   ├── components/      # Reusable UI components

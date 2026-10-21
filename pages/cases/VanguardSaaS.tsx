@@ -8,21 +8,21 @@ const VanguardSaaS: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Case Study: Vanguard SaaS - B2B Financial Analytics Platform",
-    "image": "https://agensys.com/vanguard-saas-preview.jpg",
+    "image": "https://cryptowebbuild.com/vanguard-saas-preview.jpg",
     "author": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "agensys",
+      "name": "CryptoWebBuild",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://agensys.com/hero-avatar.webp"
+        "url": "https://cryptowebbuild.com/hero-avatar.webp"
       }
     },
     "description": "Building a high-performance, dark-mode B2B analytics dashboard for institutional investors.",
