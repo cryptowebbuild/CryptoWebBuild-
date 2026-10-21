@@ -52,8 +52,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           height={height}
           referrerPolicy="no-referrer"
           loading={priority ? "eager" : "lazy"}
-          // @ts-ignore
-          fetchPriority={priority ? "high" : "auto"}
+          {...({ fetchpriority: priority ? "high" : "auto" } as React.ImgHTMLAttributes<HTMLImageElement>)}
           decoding="async"
           className={`
             ${!priority && 'transition-all duration-500 ease-out'}
