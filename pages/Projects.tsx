@@ -6,6 +6,7 @@ import SolNovaMockup from '../components/SolNovaMockup';
 import QuackInuMockup from '../components/QuackInuMockup';
 import GigaChadMockup from '../components/GigaChadMockup';
 import ShopFastMockup from '../components/ShopFastMockup';
+import EdelMockup from '../components/EdelMockup';
 import { ArrowUpRight } from 'lucide-react';
 
 const Projects: React.FC = () => {
@@ -49,15 +50,14 @@ const Projects: React.FC = () => {
     },
     {
       id: 'auracommerce',
-      title: 'Aura & Edel Direct Retail',
-      category: 'F-Commerce & Retail',
-      metric: '3.8x ROAS Lift',
+      title: 'Edel Bangladesh Luxury Storefront',
+      category: '1-Click Luxury F-Commerce',
+      metric: '0.4s Load • +240% Sales',
       group: 'commerce',
-      desc: 'Replaced "Inbox for Price" friction with an instant 1-click product funnel, automated Steadfast/Pathao dispatch, and pixel tracking.',
-      tech: ['Next.js', 'Courier API', 'Meta CAPI'],
+      desc: 'Pre-rendered Next.js storefront for Edel Bangladesh bridal churi & jewelry, featuring 1-click bKash/COD checkout and Steadfast courier sync.',
+      tech: ['Next.js', '1-Click bKash/COD', 'Steadfast API', 'Meta CAPI'],
       link: '/auracommerce',
-      img: '/projects/auracommerce.webp',
-      liveUrl: 'https://cryptowebbuild.com/auracommerce',
+      liveUrl: 'https://cryptowebbuild.github.io/edel-bangladesh/',
     },
     {
       id: 'autogithub',
@@ -255,6 +255,8 @@ const Projects: React.FC = () => {
                 <GigaChadMockup className="w-full h-full object-cover" />
               ) : t.id === 'shopfast' ? (
                 <ShopFastMockup className="w-full h-full object-cover" />
+              ) : t.id === 'auracommerce' ? (
+                <EdelMockup className="w-full h-full object-cover" />
               ) : (
                 <img
                   src={t.img || '/hero-avatar.webp'}

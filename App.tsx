@@ -73,6 +73,7 @@ const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazy(() => import('./pages/blog
 const WhyCryptoProjectsAdoptRealTimeAIEngines = lazy(() => import('./pages/blog/WhyCryptoProjectsAdoptRealTimeAIEngines'));
 const WhySubSecondWebsitesCrushWordPress2026 = lazy(() => import('./pages/blog/WhySubSecondWebsitesCrushWordPress2026'));
 const HowToAutomateEcommerceWhatsAppAIAgents = lazy(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
+const BangladeshFCommerceToWebsiteMigrationGuide2026 = lazy(() => import('./pages/blog/BangladeshFCommerceToWebsiteMigrationGuide2026'));
 
 
 
@@ -194,6 +195,7 @@ const App: React.FC = () => {
           <Route path="/blog/why-crypto-projects-adopt-real-time-ai-engines" element={<WhyCryptoProjectsAdoptRealTimeAIEngines />} />
           <Route path="/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026" element={<WhySubSecondWebsitesCrushWordPress2026 />} />
           <Route path="/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents" element={<HowToAutomateEcommerceWhatsAppAIAgents />} />
+          <Route path="/blog/bangladesh-fcommerce-to-website-migration-guide-2026" element={<BangladeshFCommerceToWebsiteMigrationGuide2026 />} />
 
 
 

@@ -18,7 +18,7 @@ const HiddenCostSlowWebsites: React.FC = () => {
       description="Is your service business website losing high-ticket leads? Discover why speed optimization is the ultimate Technical SEO strategy for roofers, dentists, and lawyers."
       publishedTime="2026-04-10"
       category="Business Strategy"
-      image="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+      image="https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&fm=webp&q=80"
       keywords={[
         'website speed optimization',
         'technical seo for local business',

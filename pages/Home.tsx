@@ -19,6 +19,7 @@ import LeakedRevenueCalculator from '../components/LeakedRevenueCalculator';
 import ShopFastMockup from '../components/ShopFastMockup';
 import AutoGitMockup from '../components/AutoGitMockup';
 import SolNovaMockup from '../components/SolNovaMockup';
+import EdelMockup from '../components/EdelMockup';
 import ArchitectureComparison from '../components/ArchitectureComparison';
 import BeforeAfterProof from '../components/BeforeAfterProof';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
@@ -62,14 +63,14 @@ const Home: React.FC = () => {
     },
     {
       id: 'auracommerce',
-      title: 'Aura & Edel Commerce',
-      category: '1-Click F-Commerce Engine',
-      metric: '+240% Mobile Orders',
-      desc: 'Eliminated "Inbox for Price" drop-offs with 1-click checkout, server-side Meta CAPI, and Steadfast/Pathao courier sync.',
-      tech: ['Next.js', 'Courier API', 'Meta CAPI'],
+      title: 'Edel Bangladesh Luxury Storefront',
+      category: '1-Click Luxury E-Commerce',
+      metric: '0.4s Load • +240% Sales',
+      desc: 'Eliminated "Inbox for Price" drop-offs with 1-click bKash/COD checkout, Steadfast courier sync, and sub-0.5s speed.',
+      tech: ['Next.js', '1-Click bKash/COD', 'Steadfast API'],
       link: '/auracommerce',
-      liveUrl: 'https://cryptowebbuild.com/auracommerce',
-      img: '/projects/auracommerce.webp',
+      liveUrl: 'https://cryptowebbuild.github.io/edel-bangladesh/',
+      mockup: 'edel',
     },
     {
       id: 'tokenlaunch',
@@ -522,6 +523,8 @@ const Home: React.FC = () => {
                 <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-[#020617] border-b border-slate-200/80 dark:border-white/10">
                   {project.mockup === 'shopfast' ? (
                     <ShopFastMockup className="w-full h-full object-cover" />
+                  ) : project.mockup === 'edel' ? (
+                    <EdelMockup className="w-full h-full object-cover" />
                   ) : project.mockup === 'autogit' ? (
                     <AutoGitMockup className="w-full h-full object-cover" />
                   ) : project.mockup === 'solnova' ? (

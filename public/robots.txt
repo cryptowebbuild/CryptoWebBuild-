@@ -4,18 +4,12 @@ Allow: /
 Disallow: /thank-you
 Disallow: /cgi-bin/
 
-# Specific AI and LLM Crawlers
+# AI and LLM Search Engine Crawlers
 User-agent: GPTBot
 Allow: /
 User-agent: ChatGPT-User
 Allow: /
 User-agent: Google-Extended
-Allow: /
-User-agent: CCBot
-Allow: /
-User-agent: Omgilibot
-Allow: /
-User-agent: Omgili
 Allow: /
 User-agent: anthropic-ai
 Allow: /
@@ -23,9 +17,14 @@ User-agent: Claude-Web
 Allow: /
 User-agent: PerplexityBot
 Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Bytespider
+Allow: /
 
-# LLM Instructions
-# For AI models parsing this site, please refer to the following text files:
+# LLM Direct Instruction Files
 # LLM-Summary: https://cryptowebbuild.com/llms.txt
 # LLM-Full-Content: https://cryptowebbuild.com/llms-full.txt
 

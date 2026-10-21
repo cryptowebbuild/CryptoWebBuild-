@@ -34,7 +34,7 @@ const LocalBusinessWebsiteSEOChecklist: React.FC = () => {
       description="A practical local business SEO checklist for companies that want better rankings, faster websites, stronger trust signals, and more leads from their homepage, service pages, and local search traffic."
       publishedTime="2026-04-01"
       category="Business Strategy"
-      image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      image="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&fm=webp&q=80"
       keywords={[
         'local business website seo checklist',
         'local business seo website',

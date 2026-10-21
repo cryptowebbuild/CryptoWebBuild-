@@ -19,8 +19,7 @@ const CryptoMarketingGuide: React.FC = () => {
       description="Learn a practical crypto marketing strategy for 2026 using SEO, trust-building, community growth, better website positioning, and lower dependence on hype-based promotion."
       publishedTime="2026-02-10"
       category="Growth & Marketing"
-      // Note: Read time is auto-calculated (~30 min read)
-      image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200" // Growth/Analytics Context
+      image="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&fm=webp&q=80"
       keywords={[
         'crypto marketing strategy 2026', 
         'token launch marketing', 
