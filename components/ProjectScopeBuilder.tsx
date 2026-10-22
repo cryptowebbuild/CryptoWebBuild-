@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Clock, ShieldCheck, MessageSquare, Send, Sparkles } from 'lucide-react';
+import { CheckCircle2, Clock, ShieldCheck, MessageSquare, Send } from 'lucide-react';
 
 interface ScopeModule {
   id: string;
@@ -14,8 +14,8 @@ interface ScopeModule {
 const MODULES: ScopeModule[] = [
   {
     id: 'frontend',
-    name: 'Next.js 15 Sub-0.8s Headless Storefront',
-    description: 'Custom React & Next.js 15 frontend, Tailwind CSS, 100/100 Core Web Vitals, and mobile-first UX.',
+    name: 'Next.js 15 Sub-0.5s Storefront / Web App',
+    description: 'Custom React & Next.js 15 edge architecture with 100/100 Google PageSpeed.',
     days: 2,
     priceUSD: 450,
     priceBDT: 54000,
@@ -23,51 +23,35 @@ const MODULES: ScopeModule[] = [
   },
   {
     id: 'checkout',
-    name: '1-Click Instant Checkout & Payment Gateways',
-    description: 'Stripe, PayPal, bKash, Nagad, SSLCommerz with server-side Meta Conversion API (CAPI) tracking.',
+    name: '1-Click Checkout (Stripe, bKash, Nagad, COD)',
+    description: 'Instant 1-step checkout with Server-Side Meta CAPI & GA4 conversion tracking.',
     days: 1,
     priceUSD: 250,
     priceBDT: 30000,
   },
   {
     id: 'backend',
-    name: 'Python / Django REST API & PostgreSQL DB',
-    description: 'High-concurrency indexed relational backend, JWT authentication, and secure admin control portal.',
+    name: 'Python / Django REST API & PostgreSQL',
+    description: 'High-concurrency database, secure admin dashboard, and role-based access.',
     days: 2,
     priceUSD: 400,
     priceBDT: 48000,
   },
   {
     id: 'seo',
-    name: '100/100 Technical SEO & Programmatic Schema',
-    description: 'Schema.org JSON-LD, automated sitemaps, OpenGraph cards, and AI Search (GEO) readiness.',
+    name: '100/100 Technical SEO & AI Search (GEO)',
+    description: 'Programmatic Schema.org JSON-LD, XML sitemaps, and LLM search indexing.',
     days: 1,
     priceUSD: 200,
     priceBDT: 24000,
   },
   {
     id: 'ai-agent',
-    name: '24/7 Autonomous WhatsApp / Telegram RAG AI Agent',
-    description: 'Trained on your catalog or whitepaper with strict zero-hallucination sales & support guardrails.',
+    name: '24/7 WhatsApp & Web Order Automation',
+    description: 'Automated product inquiry replies, order confirmation, and Steadfast courier sync.',
     days: 2,
-    priceUSD: 350,
-    priceBDT: 42000,
-  },
-  {
-    id: 'courier',
-    name: 'Courier & Automated Logistics Webhook Sync',
-    description: 'Automated 1-click parcel generation for Steadfast, Pathao, RedX, or international courier APIs.',
-    days: 1,
-    priceUSD: 150,
-    priceBDT: 18000,
-  },
-  {
-    id: 'web3',
-    name: 'Web3 Wallet & Smart Contract Integration',
-    description: 'Phantom, Solflare, MetaMask wallet signing, live RPC telemetry, and on-chain verification.',
-    days: 2,
-    priceUSD: 350,
-    priceBDT: 42000,
+    priceUSD: 300,
+    priceBDT: 36000,
   },
 ];
 
@@ -77,7 +61,7 @@ export const ProjectScopeBuilder: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const toggleModule = (id: string) => {
-    if (id === 'frontend') return; // Core module cannot be unchecked
+    if (id === 'frontend') return;
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
@@ -96,14 +80,14 @@ export const ProjectScopeBuilder: React.FC = () => {
     return currency === 'USD' ? `$${amount.toLocaleString()}` : `৳${amount.toLocaleString()}`;
   };
 
-  const briefText = `Hi Sagor, I customized a project scope on CryptoWebBuild.com:
-• Scope Modules: ${selectedModules.map((m) => m.name).join(', ')}
-• Est. Delivery: ${totalDays} Business Days
-• Est. Investment: ${formattedPrice(totalPrice)} (${currency})
-• Terms: 50% Upfront (${formattedPrice(upfront50)}) / 50% upon Live Verification (${formattedPrice(final50)})
-I'd like to claim my 48-hour live prototype for this scope!`;
+  const briefText = `Hi Sagor, I configured my project scope on CryptoWebBuild.com:
+• Modules: ${selectedModules.map((m) => m.name).join(', ')}
+• Est. Timeline: ${totalDays} Business Days
+• Total Estimate: ${formattedPrice(totalPrice)} (${currency})
+• 50/50 Terms: ${formattedPrice(upfront50)} to start / ${formattedPrice(final50)} after live staging test.`;
 
   const whatsappUrl = `https://wa.me/8801618138820?text=${encodeURIComponent(briefText)}`;
+  const telegramUrl = `https://t.me/cryptowebbuild?text=${encodeURIComponent(briefText)}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(briefText);
@@ -112,101 +96,99 @@ I'd like to claim my 48-hour live prototype for this scope!`;
   };
 
   return (
-    <section className="my-24 max-w-7xl mx-auto px-4 sm:px-6">
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-900/30 border border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5" />
-          Interactive Quote &amp; Scope Configurator
+    <section id="pricing" className="max-w-7xl mx-auto px-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">
+            04 · Transparent Scope &amp; Instant Estimate
+          </div>
+          <h2
+            className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight"
+            style={{ textWrap: 'balance' }}
+          >
+            Build Your Scope. Pay 50% Only After Live Test.
+          </h2>
         </div>
-        <h2 className="font-display text-3xl sm:text-5xl font-black text-gray-900 dark:text-white mb-4">
-          Configure Your Custom{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">
-            Project Scope
-          </span>
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-          Select the exact architectural modules your business needs. Get instant estimated delivery timelines, transparent pricing, and 1-click WhatsApp dispatch to Sagor Ahamed.
-        </p>
 
         {/* Currency Switcher */}
-        <div className="mt-6 inline-flex items-center p-1 rounded-2xl bg-gray-100 dark:bg-[#0B1120] border border-gray-200 dark:border-white/10 shadow-sm">
+        <div className="inline-flex items-center p-1 rounded-xl bg-slate-100 dark:bg-[#11131A] border border-slate-200 dark:border-white/[0.08] self-start md:self-auto">
           <button
             type="button"
             onClick={() => setCurrency('USD')}
-            className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 ${
               currency === 'USD'
-                ? 'bg-purple-600 text-white shadow-md'
-                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                ? 'bg-indigo-600 text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            USD ($ International)
+            International ($ USD)
           </button>
           <button
             type="button"
             onClick={() => setCurrency('BDT')}
-            className={`px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 ${
               currency === 'BDT'
-                ? 'bg-purple-600 text-white shadow-md'
-                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                ? 'bg-indigo-600 text-white'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            BDT (৳ Bangladesh)
+            Bangladesh (৳ BDT)
           </button>
         </div>
       </div>
 
       <div className="grid lg:grid-cols-12 gap-8 items-start">
         {/* Module Selection Grid */}
-        <div className="lg:col-span-7 space-y-3.5">
+        <div className="lg:col-span-7 space-y-3">
           {MODULES.map((mod) => {
             const isSelected = selectedIds.includes(mod.id);
             return (
               <div
                 key={mod.id}
                 onClick={() => toggleModule(mod.id)}
-                className={`p-5 rounded-2xl border transition-all cursor-pointer ${
+                className={`p-4 sm:p-5 rounded-2xl border transition-colors cursor-pointer ${
                   isSelected
-                    ? 'glass-panel border-purple-500/60 bg-purple-500/[0.04] shadow-md dark:shadow-purple-900/20'
-                    : 'bg-white dark:bg-[#0B1120] border-gray-200 dark:border-white/5 opacity-80 hover:opacity-100 hover:border-gray-300 dark:hover:border-white/20'
+                    ? 'glass-panel border-indigo-500/60 dark:border-indigo-500/50'
+                    : 'bg-white dark:bg-[#11131A]/60 border-slate-200 dark:border-white/[0.06] opacity-75 hover:opacity-100'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-3.5">
-                    <div className="mt-1">
+                    <div className="mt-0.5">
                       <div
                         className={`w-5 h-5 rounded-md flex items-center justify-center border transition-colors ${
                           isSelected
-                            ? 'bg-purple-600 border-purple-600 text-white'
-                            : 'border-gray-300 dark:border-white/20 bg-transparent'
+                            ? 'bg-indigo-600 border-indigo-600 text-white'
+                            : 'border-slate-300 dark:border-white/20 bg-transparent'
                         }`}
                       >
-                        {isSelected && <CheckCircle2 className="w-4 h-4" />}
+                        {isSelected && <CheckCircle2 className="w-3.5 h-3.5" />}
                       </div>
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-bold text-gray-900 dark:text-white text-base">
+                        <h3 className="font-display font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                           {mod.name}
                         </h3>
                         {mod.isCore && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300">
-                            Core Foundation
+                          <span className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400">
+                            · Core Base
                           </span>
                         )}
                       </div>
-                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
                         {mod.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="text-right shrink-0">
-                    <div className="font-mono font-bold text-gray-900 dark:text-white text-base">
+                  <div className="text-right shrink-0 tabular-nums">
+                    <div className="font-mono font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                       +{formattedPrice(currency === 'USD' ? mod.priceUSD : mod.priceBDT)}
                     </div>
-                    <div className="text-[11px] text-gray-500 dark:text-gray-400 flex items-center justify-end gap-1 mt-0.5">
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-end gap-1 mt-0.5">
                       <Clock className="w-3 h-3" />
-                      +{mod.days} {mod.days === 1 ? 'day' : 'days'}
+                      <span>+{mod.days}d</span>
                     </div>
                   </div>
                 </div>
@@ -216,82 +198,98 @@ I'd like to claim my 48-hour live prototype for this scope!`;
         </div>
 
         {/* Live Estimate & Action Card */}
-        <div className="lg:col-span-5 sticky top-28">
-          <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-purple-200 dark:border-purple-500/30 bg-gradient-to-br from-white via-purple-500/[0.02] to-cyan-500/[0.04] dark:from-[#0B1120] dark:via-[#020617] dark:to-[#0F172A] shadow-xl">
-            <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/10 pb-4 mb-5">
+        <div className="lg:col-span-5">
+          <div className="p-6 sm:p-7 rounded-3xl glass-panel space-y-5 tabular-nums">
+            <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/[0.07] pb-4">
               <div>
-                <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Configured Scope
+                <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                  Selected Scope ({selectedModules.length} Modules)
                 </span>
-                <div className="text-lg font-bold text-gray-900 dark:text-white">
-                  {selectedModules.length} Modules Selected
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
-                <Clock className="w-3.5 h-3.5" />
-                Est. {totalDays} Business Days
-              </div>
-            </div>
-
-            {/* Price Breakdown */}
-            <div className="space-y-3 mb-6">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-gray-600 dark:text-gray-400">Total Investment:</span>
-                <span className="font-mono text-2xl font-black text-gray-900 dark:text-white">
+                <div className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-0.5">
                   {formattedPrice(totalPrice)}
+                </div>
+              </div>
+              <div className="text-right">
+                <span className="text-xs text-slate-500 dark:text-slate-400 block">Delivery</span>
+                <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">
+                  ~{totalDays} Business Days
                 </span>
               </div>
-              <div className="p-3.5 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/5 space-y-2 text-xs">
-                <div className="flex justify-between text-gray-600 dark:text-gray-300">
-                  <span>50% Upfront Deposit:</span>
-                  <span className="font-mono font-bold text-purple-600 dark:text-purple-400">
-                    {formattedPrice(upfront50)}
-                  </span>
+            </div>
+
+            {/* 50/50 Breakdown */}
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200/80 dark:border-white/[0.06] space-y-2.5 text-xs">
+              <div className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+                <span>50% Upfront to Start Build:</span>
+                <span className="font-mono font-bold text-slate-900 dark:text-white">
+                  {formattedPrice(upfront50)}
+                </span>
+              </div>
+              <div className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+                <span>50% After Live Staging Test:</span>
+                <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">
+                  {formattedPrice(final50)}
+                </span>
+              </div>
+            </div>
+
+            {/* 3-Step Visual Onboarding Timeline */}
+            <div className="space-y-2 pt-1">
+              <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Zero-Risk 3-Step Execution
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-[11px]">
+                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200/70 dark:border-white/[0.06]">
+                  <div className="font-mono font-bold text-indigo-600 dark:text-indigo-400">Step 1</div>
+                  <div className="font-semibold text-slate-800 dark:text-slate-200 mt-0.5">50% Kickoff</div>
                 </div>
-                <div className="flex justify-between text-gray-600 dark:text-gray-300">
-                  <span>50% Upon Live Verification:</span>
-                  <span className="font-mono font-bold text-cyan-600 dark:text-cyan-400">
-                    {formattedPrice(final50)}
-                  </span>
+                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200/70 dark:border-white/[0.06]">
+                  <div className="font-mono font-bold text-indigo-600 dark:text-indigo-400">48 Hours</div>
+                  <div className="font-semibold text-slate-800 dark:text-slate-200 mt-0.5">Live Staging</div>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200/70 dark:border-white/[0.06]">
+                  <div className="font-mono font-bold text-emerald-600 dark:text-emerald-400">Day {totalDays}</div>
+                  <div className="font-semibold text-slate-800 dark:text-slate-200 mt-0.5">GitHub + 50%</div>
                 </div>
               </div>
             </div>
 
-            {/* Risk-Reversal Guarantee */}
-            <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800/40 text-purple-800 dark:text-purple-200 text-xs mb-6">
-              <ShieldCheck className="w-4 h-4 shrink-0 text-purple-600 dark:text-purple-400 mt-0.5" />
+            <div className="flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <ShieldCheck className="w-4 h-4 shrink-0 text-emerald-500 mt-0.5" />
               <span>
-                <strong>50/50 Risk-Reversal:</strong> You pay 50% to initiate the architecture. You only pay the final 50% after testing your live sub-second system.
+                Accepts Stripe, Wise, USDT (Global) &amp; bKash, Nagad, Bank Transfer (Bangladesh).
               </span>
             </div>
 
-            {/* Direct WhatsApp Action */}
-            <div className="space-y-3">
+            {/* Direct 1-Click WhatsApp & Telegram Handoff */}
+            <div className="space-y-2.5 pt-1">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2.5 transition-transform hover:scale-[1.02]"
+                className="w-full py-3.5 px-5 rounded-xl neon-button text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap"
               >
-                <MessageSquare className="w-5 h-5" />
-                <span>Dispatch Scope via WhatsApp (01618-138820)</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Send Quote on WhatsApp (01618-138820)</span>
               </a>
 
-              <div className="flex gap-2">
+              <div className="grid grid-cols-2 gap-2">
+                <a
+                  href={telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 text-slate-900 dark:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap"
+                >
+                  <Send className="w-3.5 h-3.5 text-indigo-500" />
+                  <span>Send on Telegram</span>
+                </a>
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="flex-1 py-3 px-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 font-bold text-xs transition-colors text-center"
+                  className="py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-indigo-500/40 text-slate-900 dark:text-white font-semibold text-xs transition-colors whitespace-nowrap"
                 >
-                  {copied ? '✓ Scope Copied!' : 'Copy Structured Brief'}
+                  {copied ? '✓ Scope Copied' : 'Copy Scope Brief'}
                 </button>
-                <a
-                  href="/contact"
-                  className="py-3 px-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 font-bold text-xs transition-colors flex items-center justify-center gap-1.5"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>Email Brief</span>
-                </a>
               </div>
             </div>
           </div>

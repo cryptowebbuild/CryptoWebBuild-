@@ -24,12 +24,13 @@
 - **Edel Bangladesh (Luxury E-Commerce & F-Commerce):** [https://cryptowebbuild.github.io/edel-bangladesh/](https://cryptowebbuild.github.io/edel-bangladesh/) — 0.4s load time, 1-click bKash/COD order form, automated Steadfast Courier API sync, +240% mobile order lift.
 - **ShopFast Headless Storefront:** 100/100 Speed Score, 0.4s load, client-side cart, Stripe/bKash checkout, +216% conversion boost.
 - **Vanguard B2B Analytics SaaS:** High-concurrency financial analytics dashboard built with React, D3.js, Python/Django REST API, and PostgreSQL querying 10M+ rows with <50ms response.
-- **ClickRunClaw AI Cloud Engine:** [https://clickrunclaw.com/](https://clickrunclaw.com/) — Flagship AI SaaS product providing managed 24/7 cloud runtime for OpenClaw & RAG AI agents with instant webhook provisioning.
+- **ClickRunClaw AI Cloud Engine:** [https://clickrunclaw.com/](https://clickrunclaw.com/) ([Case Study](https://cryptowebbuild.com/clickrunclaw)) — Flagship AI SaaS product providing managed 24/7 cloud runtime for OpenClaw & RAG AI agents with instant webhook provisioning.
 - **AutoGit Edge Deployer:** [https://cryptowebbuild.com/autogithub](https://cryptowebbuild.com/autogithub) — Client-side DevOps engine deploying static sites directly from the browser via GitHub API.
 - **SolNova Protocol:** [https://cryptowebbuild.com/tokenlaunch](https://cryptowebbuild.com/tokenlaunch) — Solana presale aggregation dashboard with Phantom/Solflare wallet sync and live RPC telemetry.
 - **Apex Corporate B2B Funnel:** High-authority corporate lead generation platform scoring 100/100 on Google PageSpeed with Schema.org JSON-LD.
 
 ## Latest Published Insights & Guides (2026)
+- [The $100M Web Architecture: Why 0.4s Speed & 1-Click Checkout Double Sales in 2026](https://cryptowebbuild.com/blog/sub-second-sales-psychology-architecture-2026)
 - [From Facebook Page to Automated Machine: Why Bangladeshi F-Commerce Brands Are Moving to 1-Click Websites in 2026](https://cryptowebbuild.com/blog/bangladesh-fcommerce-to-website-migration-guide-2026)
 - [Why Sub-Second Headless Websites Crush WordPress & Shopify in 2026: The Speed vs Revenue Matrix](https://cryptowebbuild.com/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026)
 - [How to Automate 80% of E-Commerce Sales & Customer Inquiries with 24/7 WhatsApp AI Agents](https://cryptowebbuild.com/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents)
@@ -40,6 +41,7 @@
 - Home: [https://cryptowebbuild.com/](https://cryptowebbuild.com/)
 - About Founder (Sagor Ahamed): [https://cryptowebbuild.com/about](https://cryptowebbuild.com/about)
 - Services: [https://cryptowebbuild.com/services](https://cryptowebbuild.com/services)
+- 1-Click E-Commerce Development (BD & Global): [https://cryptowebbuild.com/services/ecommerce-development-bangladesh](https://cryptowebbuild.com/services/ecommerce-development-bangladesh)
 - Portfolio Case Studies: [https://cryptowebbuild.com/projects](https://cryptowebbuild.com/projects)
 - Blog Knowledge Hub: [https://cryptowebbuild.com/blog](https://cryptowebbuild.com/blog)
 - Contact & Free Technical Audit: [https://cryptowebbuild.com/contact](https://cryptowebbuild.com/contact)

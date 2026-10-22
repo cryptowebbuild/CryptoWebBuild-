@@ -88,13 +88,10 @@ const SOCIAL_LINKS = [
 ];
 
 const NAV_LINKS = [
-  { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Videos', path: '/videos' },
+  { label: 'Work', path: '/projects' },
   { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
-  { label: 'FAQ', path: '/faq' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -140,31 +137,31 @@ const StickyHeaderAndScrollButton: React.FC<{
           <nav
             className={`mx-auto max-w-7xl flex items-center justify-between gap-8 px-5 py-3 rounded-2xl transition-shadow duration-150 relative z-50 gpu-accelerated ${
               scrolled
-                ? 'bg-white dark:bg-[#0f172a] shadow-md border border-slate-200/90 dark:border-white/10'
-                : 'bg-white/95 dark:bg-[#0f172a]/95 border border-slate-200/60 dark:border-white/5'
+                ? 'bg-white dark:bg-[#11131A] shadow-md border border-slate-200/90 dark:border-white/[0.08]'
+                : 'bg-white/95 dark:bg-[#11131A]/90 border border-slate-200/60 dark:border-white/[0.06]'
             }`}
             aria-label="Primary Navigation"
           >
-            <Link to="/" className="flex items-center gap-3 group whitespace-nowrap shrink-0" aria-label="CryptoWebBuild Home">
+            <Link to="/" className="flex items-center gap-2.5 group whitespace-nowrap shrink-0" aria-label="CryptoWebBuild Home">
               <div aria-hidden="true">
-                <BrandLogo className="w-9 h-9 text-slate-900 dark:text-white" />
+                <BrandLogo className="w-8 h-8 text-slate-900 dark:text-white" />
               </div>
-              <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+              <span className="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white">
                 CryptoWebBuild
               </span>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-7">
               {NAV_LINKS.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`px-4 py-2 text-sm font-semibold rounded-xl transition-colors ${
+                    className={`text-sm font-medium transition-colors whitespace-nowrap shrink-0 ${
                       isActive
-                        ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400'
-                        : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                        ? 'text-indigo-600 dark:text-white font-semibold'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
                     {item.label}
@@ -173,14 +170,14 @@ const StickyHeaderAndScrollButton: React.FC<{
               })}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={toggleTheme}
-                className="w-10 h-10 flex items-center justify-center rounded-full text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-9 h-9 flex items-center justify-center rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors focus:outline-none"
                 aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
               >
                 {theme === 'dark' ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -189,7 +186,7 @@ const StickyHeaderAndScrollButton: React.FC<{
                     />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -202,14 +199,14 @@ const StickyHeaderAndScrollButton: React.FC<{
 
               <Link
                 to="/contact"
-                className="hidden md:inline-flex items-center justify-center px-5 py-2.5 neon-button text-white font-bold rounded-xl text-sm"
+                className="hidden md:inline-flex items-center justify-center px-4 py-2 neon-button text-white font-semibold rounded-xl text-xs whitespace-nowrap shrink-0"
               >
                 Start Project
               </Link>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-slate-900 dark:text-white focus:outline-none bg-slate-100 dark:bg-white/10 rounded-lg"
+                className="lg:hidden p-2 text-slate-900 dark:text-white focus:outline-none bg-slate-100 dark:bg-white/5 rounded-lg"
                 aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               >
                 <div className="w-5 h-4 flex flex-col justify-between relative">
@@ -235,21 +232,21 @@ const StickyHeaderAndScrollButton: React.FC<{
 
           {/* Mobile Dropdown */}
           <div
-            className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-200 z-40 origin-top ${
+            className={`lg:hidden absolute top-full left-0 right-0 p-4 transition-all duration-150 z-40 origin-top ${
               mobileMenuOpen
                 ? 'opacity-100 scale-y-100 translate-y-0'
                 : 'invisible opacity-0 scale-y-95 -translate-y-2 pointer-events-none'
             }`}
           >
-            <div className="bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 shadow-2xl rounded-3xl p-4 overflow-hidden">
+            <div className="bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/10 shadow-2xl rounded-2xl p-4 overflow-hidden">
               <div className="flex flex-col space-y-1">
                 {NAV_LINKS.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`block px-4 py-3 text-base font-semibold rounded-xl transition-colors ${
+                    className={`block px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors ${
                       location.pathname === item.path
-                        ? 'bg-purple-500/10 text-purple-600 dark:text-purple-400'
+                        ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
@@ -259,23 +256,9 @@ const StickyHeaderAndScrollButton: React.FC<{
                 ))}
               </div>
               <div className="pt-4 mt-4 border-t border-slate-200 dark:border-white/10">
-                <div className="flex justify-center gap-4 mb-4">
-                  {SOCIAL_LINKS.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors p-2"
-                      aria-label={item.label}
-                    >
-                      <SocialIcon d={item.d} />
-                    </a>
-                  ))}
-                </div>
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center w-full px-6 py-3.5 neon-button text-white font-bold rounded-xl text-base"
+                  className="flex items-center justify-center w-full px-6 py-3 neon-button text-white font-semibold rounded-xl text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Start Project
@@ -288,12 +271,12 @@ const StickyHeaderAndScrollButton: React.FC<{
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-24 right-6 z-40 p-3.5 rounded-full bg-purple-600 text-white shadow-lg shadow-purple-500/30 transition-all duration-200 hover:scale-110 hover:bg-purple-500 focus:outline-none ${
+        className={`fixed bottom-24 right-6 z-40 p-3 rounded-full bg-[#11131A] border border-white/10 text-white shadow-lg transition-all duration-150 hover:bg-indigo-600 focus:outline-none ${
           showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
         }`}
         aria-label="Scroll to top"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>
@@ -323,39 +306,34 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-[#F8FAFC] dark:bg-[#020617] text-slate-900 dark:text-slate-50 selection:bg-purple-500 selection:text-white">
+    <div className="min-h-screen flex flex-col relative bg-[#FAFAFA] dark:bg-[#090A0F] text-slate-900 dark:text-slate-50 selection:bg-indigo-500 selection:text-white">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-6 focus:py-3 focus:bg-purple-600 focus:text-white focus:rounded-xl focus:font-bold focus:shadow-2xl"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-6 focus:py-3 focus:bg-indigo-600 focus:text-white focus:rounded-xl focus:font-bold focus:shadow-2xl"
       >
         Skip to content
       </a>
 
-      {/* Zero-Repaint Hardware-Accelerated Ambient Lighting & Subtle Grid */}
+      {/* Calm Deep Obsidian Top Spotlight — Zero Grid Clutter */}
       <div
-        className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+        className="fixed inset-x-0 top-0 h-[520px] z-0 pointer-events-none"
         aria-hidden="true"
         style={{
-          backgroundImage: `
-            radial-gradient(circle at 85% 12%, rgba(124, 58, 237, 0.09) 0%, transparent 45%),
-            radial-gradient(circle at 15% 85%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
-            linear-gradient(var(--grid-color) 1px, transparent 1px),
-            linear-gradient(to right, var(--grid-color) 1px, transparent 1px)
-          `,
-          backgroundSize: '100% 100%, 100% 100%, 64px 64px, 64px 64px',
+          background:
+            'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(99, 102, 241, 0.10), transparent 70%)',
         }}
       />
 
       <StickyHeaderAndScrollButton theme={theme} toggleTheme={toggleTheme} />
 
-      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-24 md:pt-32 pb-24 focus:outline-none">
+      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-24 md:pt-28 pb-20 focus:outline-none">
         {children}
       </main>
 
       <FloatingChatWidget />
 
       {/* Footer */}
-      <footer className="relative z-10 mt-24 bg-white dark:bg-[#0f172a] border-t border-slate-200 dark:border-white/5">
+      <footer className="relative z-10 mt-20 bg-white dark:bg-[#0C0E14] border-t border-slate-200 dark:border-white/[0.06]">
         <div className="container mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4 space-y-5">

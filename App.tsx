@@ -35,6 +35,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 const AIAutomation = lazy(() => import('./pages/services/AIAutomation'));
 const Web3Development = lazy(() => import('./pages/services/Web3Development'));
 const CryptoGrowth = lazy(() => import('./pages/services/CryptoGrowth'));
+const EcommerceDevelopmentBD = lazy(() => import('./pages/services/EcommerceDevelopmentBD'));
 
 // --- Case Studies ---
 const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
@@ -48,6 +49,7 @@ const AuraCommerce = lazy(() => import('./pages/cases/AuraCommerce'));
 const ApexAgency = lazy(() => import('./pages/cases/ApexAgency'));
 const VanguardSaaS = lazy(() => import('./pages/cases/VanguardSaaS'));
 const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
+const ClickRunClawCase = lazy(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
@@ -74,24 +76,15 @@ const WhyCryptoProjectsAdoptRealTimeAIEngines = lazy(() => import('./pages/blog/
 const WhySubSecondWebsitesCrushWordPress2026 = lazy(() => import('./pages/blog/WhySubSecondWebsitesCrushWordPress2026'));
 const HowToAutomateEcommerceWhatsAppAIAgents = lazy(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
 const BangladeshFCommerceToWebsiteMigrationGuide2026 = lazy(() => import('./pages/blog/BangladeshFCommerceToWebsiteMigrationGuide2026'));
-
-
-
+const SubSecondSalesPsychology2026 = lazy(() => import('./pages/blog/SubSecondSalesPsychology2026'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
-  <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-[#020617] transition-colors z-50">
-    <div className="relative w-20 h-20" aria-label="Loading content...">
-      {/* Outer Ring */}
-      <div className="absolute top-0 left-0 w-full h-full border-4 border-purple-200 dark:border-white/10 rounded-full animate-pulse"></div>
-      {/* Inner Spinner */}
-      <div className="absolute top-0 left-0 w-full h-full border-4 border-purple-600 rounded-full border-t-transparent animate-spin"></div>
-      {/* Logo Placeholder */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="w-2 h-2 bg-purple-600 rounded-full"></span>
-      </div>
+  <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAFAFA] dark:bg-[#090A0F] z-50">
+    <div className="relative w-12 h-12" aria-label="Loading content...">
+      <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500/20 rounded-full"></div>
+      <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500 rounded-full border-t-transparent animate-spin"></div>
     </div>
-    <p className="mt-4 text-sm font-bold text-gray-400 uppercase tracking-widest animate-pulse">Loading</p>
   </div>
 );
 
@@ -113,6 +106,7 @@ const App: React.FC = () => {
           <Route path="/services/ai-automation" element={<AIAutomation />} />
           <Route path="/services/web3-development" element={<Web3Development />} />
           <Route path="/services/crypto-growth" element={<CryptoGrowth />} />
+          <Route path="/services/ecommerce-development-bangladesh" element={<EcommerceDevelopmentBD />} />
 
           <Route path="/videos" element={<Videos />} />
           <Route path="/blog" element={<Blog />} />
@@ -136,58 +130,25 @@ const App: React.FC = () => {
           <Route path="/apexagency" element={<ApexAgency />} />
           <Route path="/vanguardsaas" element={<VanguardSaaS />} />
           <Route path="/solananft" element={<SolanaNFT />} />
+          <Route path="/clickrunclaw" element={<ClickRunClawCase />} />
 
           {/* --- BLOG ROUTES (Synchronized with src/data/blogPosts.ts) --- */}
-          
-          {/* 1. Crypto SEO Guide */}
           <Route path="/blog/crypto-seo-guide" element={<CryptoSEO />} />
-
-          {/* 2. Presale Guide (Cleaned URL) */}
           <Route path="/blog/presale-guide" element={<PresaleGuide />} />
-
-          {/* 3. Solana Meme Coin */}
           <Route path="/blog/solana-meme-coin-guide" element={<SolanaMemeCoinGuide />} />
-
-          {/* 4. Crypto Marketing */}
           <Route path="/blog/crypto-marketing-guide" element={<CryptoMarketingGuide />} />
-
-          {/* 5. Best Developer */}
           <Route path="/blog/best-website-developer" element={<BestDeveloper />} />
-
-          {/* 6. Crypto Website Cost */}
           <Route path="/blog/crypto-website-cost" element={<CryptoCost />} />
-
-          {/* 7. Static vs Dynamic */}
           <Route path="/blog/static-vs-dynamic-website" element={<StaticVsDynamic />} />
-
-          {/* 8. Meme Coin Features */}
           <Route path="/blog/meme-coin-website-features" element={<MemeCoinFeatures />} />
-
-          {/* 9. Crypto Project (Cleaned URL) */}
           <Route path="/blog/crypto-project" element={<CryptoProject />} />
-
-          {/* 10. Builder vs Developer */}
           <Route path="/blog/website-builder-vs-developer" element={<WebsiteBuilderVsDeveloper />} />
-
-          {/* 11. Gaming Proxy vs Crypto Nodes */}
           <Route path="/blog/gaming-proxy-vs-crypto-nodes" element={<GamingProxyVsCryptoNodes />} />
-
-          {/* 12. Hidden Cost of Slow Websites */}
           <Route path="/blog/hidden-cost-of-slow-websites" element={<HiddenCostSlowWebsites />} />
-
-          {/* 13. Meme Coin Website Ultimate Guide */}
           <Route path="/blog/meme-coin-website-ultimate-guide" element={<MemeCoinWebsiteUltimateGuide />} />
-
-          {/* 14. Local Business Website SEO Checklist */}
           <Route path="/blog/local-business-website-seo-checklist" element={<LocalBusinessWebsiteSEOChecklist />} />
-
-          {/* 15. Roofing Website Mistakes */}
           <Route path="/blog/roofing-website-mistakes-costing-leads" element={<RoofingWebsiteMistakesCostingLeads />} />
-
-          {/* 16. OpenClaw AI Workflow Automation */}
           <Route path="/blog/openclaw-ai-workflow-automation" element={<OpenClawAIWorkflowAutomation />} />
-
-          {/* 17. AI SEO 2026 */}
           <Route path="/blog/ai-seo-generative-engine-optimization-2026" element={<AISEO2026 />} />
           <Route path="/blog/agi-autonomous-ai-agents-business-future-2026" element={<AGIAutonomousAIAgents />} />
           <Route path="/blog/decentralized-ai-stack-web3-infrastructure-2026" element={<DecentralizedAIStack />} />
@@ -196,9 +157,7 @@ const App: React.FC = () => {
           <Route path="/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026" element={<WhySubSecondWebsitesCrushWordPress2026 />} />
           <Route path="/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents" element={<HowToAutomateEcommerceWhatsAppAIAgents />} />
           <Route path="/blog/bangladesh-fcommerce-to-website-migration-guide-2026" element={<BangladeshFCommerceToWebsiteMigrationGuide2026 />} />
-
-
-
+          <Route path="/blog/sub-second-sales-psychology-architecture-2026" element={<SubSecondSalesPsychology2026 />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />

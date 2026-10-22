@@ -86,7 +86,7 @@ const AuraCommerce: React.FC = () => {
         <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl glass-panel border border-amber-500/30 bg-amber-500/[0.04] mb-12">
           <div>
             <div className="font-bold text-gray-900 dark:text-white text-sm sm:text-base flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
               <span>Inspect the Live Production Showcase:</span>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">

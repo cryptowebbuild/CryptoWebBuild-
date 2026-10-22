@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'sub-second-sales-psychology-architecture-2026',
+    slug: 'sub-second-sales-psychology-architecture-2026',
+    title: 'The $100M Web Architecture: Why 0.4s Speed & 1-Click Checkout Double Sales in 2026',
+    excerpt: 'Learn the exact engineering and sales psychology behind sub-second Next.js & Python/Django websites that achieve 100/100 Google SEO and +240% conversion lift for global and Bangladesh brands.',
+    date: 'Oct 21, 2026',
+    readTime: '8 min read',
+    category: 'Business',
+    image: '/blog/subsecond-sales-psychology-2026.svg',
+    keywords: ['Sub-Second Website Conversion Rate', '1-Click Checkout Sales Psychology', 'Next.js Django E-Commerce Agency', '100/100 Google PageSpeed SEO']
+  },
+  {
     id: 'bangladesh-fcommerce-to-website-migration-guide-2026',
     slug: 'bangladesh-fcommerce-to-website-migration-guide-2026',
     title: 'From Facebook Page to Automated Machine: Why Bangladeshi F-Commerce Brands Are Moving to 1-Click Websites in 2026',

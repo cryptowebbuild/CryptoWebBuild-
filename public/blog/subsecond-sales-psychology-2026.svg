@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#090A0F" />
+  <radialGradient id="glow" cx="50%" cy="20%" r="70%">
+    <stop offset="0%" stop-color="#6366F1" stop-opacity="0.22" />
+    <stop offset="100%" stop-color="#090A0F" stop-opacity="0" />
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Top Header Badge -->
+  <rect x="80" y="56" width="410" height="38" rx="19" fill="#11131A" stroke="#27272A" />
+  <text x="104" y="80" fill="#818CF8" font-family="monospace" font-size="15" font-weight="700">
+    CRYPTOWEBBUILD · 2026 CONVERSION ARCHITECTURE
+  </text>
+
+  <!-- Main Title -->
+  <text x="80" y="155" fill="#F8FAFC" font-family="sans-serif" font-size="46" font-weight="800">
+    0.4s Speed &amp; 1-Click Sales Psychology
+  </text>
+  <text x="80" y="205" fill="#94A3B8" font-family="sans-serif" font-size="22" font-weight="500">
+    Why Custom Next.js + Python/Django Doubles E-Commerce &amp; SaaS Revenue
+  </text>
+
+  <!-- Left Card: Legacy 4.8s Template -->
+  <rect x="80" y="255" width="490" height="300" rx="24" fill="#11131A" stroke="#EF4444" stroke-opacity="0.35" stroke-width="2" />
+  <text x="116" y="305" fill="#F87171" font-family="monospace" font-size="16" font-weight="700">
+    LEGACY WORDPRESS / SHOPIFY THEME
+  </text>
+  <text x="116" y="365" fill="#F8FAFC" font-family="sans-serif" font-size="44" font-weight="800">
+    4.8s Load Time
+  </text>
+  <text x="116" y="410" fill="#94A3B8" font-family="sans-serif" font-size="18">
+    · 62% Paid Ad Clicks Drop Off Before Load
+  </text>
+  <text x="116" y="445" fill="#94A3B8" font-family="sans-serif" font-size="18">
+    · 4-Step Cart Friction &amp; Manual Inbox Replies
+  </text>
+  <text x="116" y="480" fill="#F87171" font-family="monospace" font-size="20" font-weight="700">
+    1.2% Checkout Conversion Rate
+  </text>
+
+  <!-- Right Card: CryptoWebBuild 0.4s Custom Stack -->
+  <rect x="630" y="255" width="490" height="300" rx="24" fill="#11131A" stroke="#10B981" stroke-opacity="0.55" stroke-width="2" />
+  <text x="666" y="305" fill="#34D399" font-family="monospace" font-size="16" font-weight="700">
+    CRYPTOWEBBUILD NEXT.JS 15 + DJANGO
+  </text>
+  <text x="666" y="365" fill="#F8FAFC" font-family="sans-serif" font-size="44" font-weight="800">
+    0.4s Edge Load
+  </text>
+  <text x="666" y="410" fill="#E2E8F0" font-family="sans-serif" font-size="18">
+    · 100/100 Google PageSpeed &amp; Core Web Vitals
+  </text>
+  <text x="666" y="445" fill="#E2E8F0" font-family="sans-serif" font-size="18">
+    · 1-Click Stripe / bKash / Steadfast API
+  </text>
+  <text x="666" y="480" fill="#34D399" font-family="monospace" font-size="20" font-weight="700">
+    3.8%+ Checkout Conversion (+240% Lift)
+  </text>
+</svg>

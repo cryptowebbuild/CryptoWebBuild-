@@ -9,11 +9,17 @@ const staticRoutes = [
   '/',
   '/about',
   '/services',
+  '/services/web3-development',
+  '/services/crypto-growth',
+  '/services/ai-automation',
+  '/services/ecommerce-development-bangladesh',
   '/projects',
   '/videos',
   '/blog',
   '/contact',
   '/faq',
+  '/privacy',
+  '/terms',
   // Case Studies
   '/tokenlaunch',
   '/memecoinsite',
@@ -26,6 +32,7 @@ const staticRoutes = [
   '/apexagency',
   '/vanguardsaas',
   '/solananft',
+  '/clickrunclaw',
 ];
 
 // Read blog posts dynamically from data/blogPosts.ts

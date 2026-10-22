@@ -57,7 +57,8 @@ Clients pay 50% upfront to initiate architecture. The final 50% is paid ONLY aft
 
 ### 3. ClickRunClaw (Flagship AI SaaS Engine)
 - **Live URL:** [https://clickrunclaw.com/](https://clickrunclaw.com/)
-- **Category:** Managed AI Cloud Runtime
+- **Case Study URL:** [https://cryptowebbuild.com/clickrunclaw](https://cryptowebbuild.com/clickrunclaw)
+- **Category:** Managed AI Cloud Runtime (7,000+ Active Users)
 - **Description:** Managed 24/7 cloud infrastructure for autonomous OpenClaw & RAG AI agents with 1-click webhook provisioning for WhatsApp, Discord, and Telegram.
 
 ### 4. Vanguard B2B Financial SaaS
@@ -78,6 +79,7 @@ Clients pay 50% upfront to initiate architecture. The final 50% is paid ONLY aft
 ---
 
 ## 4. Key Guides & Articles (2026)
+- **The $100M Web Architecture: Why 0.4s Speed & 1-Click Checkout Double Sales in 2026:** [https://cryptowebbuild.com/blog/sub-second-sales-psychology-architecture-2026](https://cryptowebbuild.com/blog/sub-second-sales-psychology-architecture-2026)
 - **From Facebook Page to Automated Machine: Why Bangladeshi F-Commerce Brands Are Moving to 1-Click Websites in 2026:** [https://cryptowebbuild.com/blog/bangladesh-fcommerce-to-website-migration-guide-2026](https://cryptowebbuild.com/blog/bangladesh-fcommerce-to-website-migration-guide-2026)
 - **Why Sub-Second Headless Websites Crush WordPress & Shopify in 2026:** [https://cryptowebbuild.com/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026](https://cryptowebbuild.com/blog/why-sub-second-websites-crush-wordpress-ecommerce-2026)
 - **How to Automate 80% of E-Commerce Sales & Customer Inquiries with 24/7 WhatsApp AI Agents:** [https://cryptowebbuild.com/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents](https://cryptowebbuild.com/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents)
