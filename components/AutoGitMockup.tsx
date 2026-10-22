@@ -18,7 +18,6 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
           <div className="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
         </div>
         <div className="ml-4 flex items-center gap-2 px-3 py-0.5 bg-[#1E293B] rounded-full border border-white/5">
-            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
             <span className="text-[10px] text-slate-400 font-mono">deploy.autogit.dev</span>
         </div>
       </div>
@@ -50,10 +49,10 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
                 </div>
                 <div>
                     <div className="text-sm font-bold text-white">portfolio-v3</div>
-                    <div className="text-[10px] text-slate-400 font-mono">production • main • 2m ago</div>
+                    <div className="text-[10px] text-slate-400 font-mono">production · main · 2m ago</div>
                 </div>
                 <div className="ml-auto flex items-center gap-2">
-                    <span className="text-[10px] bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded-full">Active</span>
+                    <span className="text-[10px] text-emerald-400 font-mono font-bold">Active</span>
                 </div>
             </div>
 
@@ -64,7 +63,7 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
                 
                 {/* Step 1 */}
                 <div className="relative z-10 flex flex-col items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-green-500 flex items-center justify-center text-green-500 shadow-[0_0_10px_rgba(34,197,94,0.3)]">
+                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-green-500 flex items-center justify-center text-green-500">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                     </div>
                     <span className="text-[10px] font-bold text-slate-300">Build</span>
@@ -72,7 +71,7 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
 
                 {/* Step 2 */}
                 <div className="relative z-10 flex flex-col items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-blue-500 flex items-center justify-center text-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.3)] animate-pulse">
+                    <div className="w-8 h-8 rounded-full bg-slate-800 border-2 border-blue-500 flex items-center justify-center text-blue-500">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                     </div>
                     <span className="text-[10px] font-bold text-blue-400">Deploy</span>
@@ -96,8 +95,7 @@ const AutoGitMockup: React.FC<AutoGitMockupProps> = ({ className = '' }) => {
                 <p className="text-blue-400">&gt; npm run build</p>
                 <p>&gt; vite build</p>
                 <p className="text-green-400">✓ built in 1.42s</p>
-                <p>&gt; uploading to edge network...</p>
-                <p className="animate-pulse">_</p>
+                <p>&gt; uploaded to edge network</p>
             </div>
         </div>
 

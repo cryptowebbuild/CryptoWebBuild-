@@ -115,39 +115,40 @@ const Home: React.FC = () => {
       />
 
       {/* 1. HERO SECTION — AUTHENTIC ENGINEERING AUTHORITY */}
-      <section className="relative px-6 pt-8 md:pt-14 pb-12">
+      <section className="relative px-6 pt-8 md:pt-14 pb-10">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-              </span>
-              <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
-                Direct Principal Engineer • 2 Build Slots Open
-              </span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-bold tracking-wider uppercase text-purple-600 dark:text-cyan-400">
+              <span>Principal Full-Stack Studio</span>
+              <span aria-hidden="true">·</span>
+              <span>Sagor Ahamed</span>
+              <span aria-hidden="true">·</span>
+              <span className="text-emerald-600 dark:text-emerald-400">2 Build Slots Open</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-[64px] font-black tracking-tight leading-[1.06] text-slate-900 dark:text-white">
+            <h1
+              className="font-display text-4xl sm:text-6xl lg:text-[62px] font-black tracking-tight leading-[1.06] text-slate-900 dark:text-white"
+              style={{ textWrap: 'balance' }}
+            >
               Sub-Second Websites,{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">
-                100/100 SEO &amp; AI Systems
+                100/100 SEO &amp; Custom Systems
               </span>{' '}
               Engineered in Code.
             </h1>
 
             <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-              No bloated page builders or middlemen. I architect custom{' '}
+              No slow page builders, templates, or agency middlemen. I hand-code{' '}
               <strong className="text-slate-900 dark:text-white">Python/Django &amp; Next.js platforms</strong>,{' '}
               <strong className="text-slate-900 dark:text-white">1-click E-Commerce checkouts</strong>, and{' '}
-              <strong className="text-slate-900 dark:text-white">24/7 RAG AI agents</strong> that load in &lt;0.8s and convert traffic into revenue.
+              <strong className="text-slate-900 dark:text-white">automated WhatsApp/Web pipelines</strong> that load in &lt;0.8s and convert visitors into buyers.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto pt-1">
               <Link
                 to="/contact"
-                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto neon-button text-white font-bold rounded-xl text-base"
+                className="group flex items-center justify-center gap-2 px-8 py-4 w-full sm:w-auto neon-button text-white font-bold rounded-xl text-base whitespace-nowrap shrink-0"
               >
                 <Zap className="w-5 h-5" />
                 <span>Claim 48-Hour Prototype</span>
@@ -156,7 +157,7 @@ const Home: React.FC = () => {
                 href="https://wa.me/8801618138820?text=Hi%20Sagor%2C%20I%20visited%20CryptoWebBuild.com%20and%20want%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-7 py-4 w-full sm:w-auto bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-purple-500/40 transition-colors text-base"
+                className="flex items-center justify-center gap-2 px-7 py-4 w-full sm:w-auto bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold rounded-xl hover:border-purple-500/40 transition-colors text-base whitespace-nowrap shrink-0 tabular-nums"
               >
                 <MessageSquare className="w-5 h-5 text-emerald-500" />
                 <span>WhatsApp: 01618-138820</span>
@@ -164,16 +165,16 @@ const Home: React.FC = () => {
             </div>
 
             {/* Concrete Verification Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200 dark:border-white/10 w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200 dark:border-white/10 w-full tabular-nums">
               {[
-                { val: '< 0.8s', label: 'Avg Page Load' },
-                { val: '100/100', label: 'Core Web Vitals' },
-                { val: '100+', label: 'Systems Shipped' },
+                { val: '< 0.8s', label: 'Mobile Edge Load' },
+                { val: '100/100', label: 'Google PageSpeed' },
+                { val: '100%', label: 'GitHub Code Ownership' },
                 { val: '50 / 50', label: 'Pay After Live Test' },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="p-3 rounded-xl bg-white dark:bg-[#0f172a] border border-slate-200/80 dark:border-white/5 text-center lg:text-left"
+                  className="p-3.5 rounded-xl bg-white dark:bg-[#0f172a] border border-slate-200/80 dark:border-white/10 text-center lg:text-left"
                 >
                   <div className="font-display font-black text-xl sm:text-2xl text-slate-900 dark:text-white">
                     {item.val}
@@ -186,10 +187,10 @@ const Home: React.FC = () => {
 
           {/* Right Column (5 cols) — Interactive Production Telemetry Console */}
           <div className="lg:col-span-5 w-full">
-            <div className="rounded-3xl bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden">
+            <div className="rounded-3xl bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
               {/* Console Top Bar */}
               <div className="px-4 py-3 bg-slate-100 dark:bg-[#020617] border-b border-slate-200 dark:border-white/10 flex items-center justify-between gap-2">
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5" aria-hidden="true">
                   <span className="w-3 h-3 rounded-full bg-red-400" />
                   <span className="w-3 h-3 rounded-full bg-amber-400" />
                   <span className="w-3 h-3 rounded-full bg-emerald-400" />
@@ -198,13 +199,13 @@ const Home: React.FC = () => {
                   {[
                     { id: 'stack' as const, label: 'Stack & Code' },
                     { id: 'speed' as const, label: '100/100 SEO' },
-                    { id: 'ai' as const, label: 'RAG AI Live' },
+                    { id: 'ai' as const, label: 'Automation' },
                   ].map((tab) => (
                     <button
                       key={tab.id}
                       type="button"
                       onClick={() => setActiveStudioTab(tab.id)}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors ${
+                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                         activeStudioTab === tab.id
                           ? 'bg-purple-600 text-white'
                           : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -225,13 +226,13 @@ const Home: React.FC = () => {
                         <Terminal className="w-4 h-4 text-purple-500" />
                         production_architecture.py
                       </span>
-                      <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">
+                      <span className="text-emerald-600 dark:text-emerald-400 font-bold">
                         VERIFIED BUILD
                       </span>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-slate-900 text-slate-100 font-mono text-xs leading-relaxed overflow-x-auto border border-slate-800">
-                      <div className="text-slate-400"># Direct Full-Stack + AI Architecture</div>
+                      <div className="text-slate-400"># Custom Full-Stack Production Stack</div>
                       <div>
                         <span className="text-purple-400">stack</span> = &#123;
                       </div>
@@ -245,16 +246,16 @@ const Home: React.FC = () => {
                         <span className="text-cyan-300">&quot;checkout&quot;</span>: <span className="text-emerald-300">&quot;Stripe + bKash + Steadfast API&quot;</span>,
                       </div>
                       <div className="pl-4">
-                        <span className="text-cyan-300">&quot;ai_engine&quot;</span>: <span className="text-emerald-300">&quot;OpenClaw Vector RAG (&lt;0.7s)&quot;</span>
+                        <span className="text-cyan-300">&quot;ownership&quot;</span>: <span className="text-emerald-300">&quot;100% GitHub Repo Transfer&quot;</span>
                       </div>
                       <div>&#125;</div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3 tabular-nums">
                       <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/80 dark:border-white/5">
                         <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">WordPress / Wix</div>
                         <div className="font-display font-bold text-sm text-red-600 dark:text-red-400 mt-0.5">
-                          4.8s Load • 52/100 Score
+                          4.8s Load · 52/100 Score
                         </div>
                       </div>
                       <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
@@ -262,7 +263,7 @@ const Home: React.FC = () => {
                           CryptoWebBuild Custom
                         </div>
                         <div className="font-display font-bold text-sm text-emerald-700 dark:text-emerald-400 mt-0.5">
-                          0.6s Load • 100/100 Score
+                          0.5s Load · 100/100 Score
                         </div>
                       </div>
                     </div>
@@ -270,7 +271,7 @@ const Home: React.FC = () => {
                 )}
 
                 {activeStudioTab === 'speed' && (
-                  <div className="space-y-4">
+                  <div className="space-y-4 tabular-nums">
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-xs font-bold uppercase text-purple-600 dark:text-cyan-400">
@@ -280,7 +281,7 @@ const Home: React.FC = () => {
                           Core Web Vitals &amp; Technical SEO
                         </div>
                       </div>
-                      <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
+                      <span className="text-emerald-600 dark:text-emerald-400 text-sm font-mono font-bold">
                         100 / 100
                       </span>
                     </div>
@@ -309,15 +310,15 @@ const Home: React.FC = () => {
                     <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs space-y-2">
                       <div className="flex justify-between font-bold text-slate-900 dark:text-white">
                         <span>Largest Contentful Paint (LCP)</span>
-                        <span className="text-emerald-600 dark:text-emerald-400">0.5s</span>
+                        <span className="text-emerald-600 dark:text-emerald-400">0.4s</span>
                       </div>
                       <div className="flex justify-between font-bold text-slate-900 dark:text-white">
                         <span>Cumulative Layout Shift (CLS)</span>
-                        <span className="text-emerald-600 dark:text-emerald-400">0.00</span>
+                        <span className="text-emerald-600 dark:text-emerald-400">0.000</span>
                       </div>
                       <div className="flex justify-between font-bold text-slate-900 dark:text-white">
-                        <span>JSON-LD Schema &amp; AI Search (GEO)</span>
-                        <span className="text-emerald-600 dark:text-emerald-400">Active</span>
+                        <span>JSON-LD Schema &amp; Search Indexing</span>
+                        <span className="text-emerald-600 dark:text-emerald-400">Verified</span>
                       </div>
                     </div>
                   </div>
@@ -326,25 +327,22 @@ const Home: React.FC = () => {
                 {activeStudioTab === 'ai' && (
                   <div className="space-y-3.5">
                     <div className="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
-                      <div className="flex items-center gap-2.5">
-                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                        <span className="text-xs font-bold text-slate-900 dark:text-white">
-                          RAG AI Guardian • Web, WhatsApp &amp; Telegram
-                        </span>
-                      </div>
-                      <span className="text-xs font-mono font-bold text-purple-600 dark:text-cyan-400">0.6s reply</span>
+                      <span className="text-xs font-bold text-slate-900 dark:text-white">
+                        24/7 Order &amp; Lead Webhook · WhatsApp &amp; Web
+                      </span>
+                      <span className="text-xs font-mono tabular-nums font-bold text-purple-600 dark:text-cyan-400">0.6s reply</span>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-3 text-xs">
                       <div className="p-3 rounded-xl bg-white dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300">
                         <strong className="text-slate-900 dark:text-white block mb-0.5">Buyer (WhatsApp / Web):</strong>
-                        &ldquo;Is the Pro plan or product available for instant delivery in Dhaka?&rdquo;
+                        &ldquo;Is the bridal combo available for instant delivery in Dhaka?&rdquo;
                       </div>
                       <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-slate-800 dark:text-slate-200">
                         <strong className="text-purple-700 dark:text-purple-300 block mb-0.5">
-                          CryptoWebBuild RAG Agent:
+                          Automated Storefront System:
                         </strong>
-                        &ldquo;Yes, in stock! Click here for 1-click checkout via bKash/Card. Steadfast tracking is sent automatically.&rdquo;
+                        &ldquo;Yes, in stock! Complete 1-click checkout via bKash/COD. Steadfast tracking is generated automatically.&rdquo;
                       </div>
                     </div>
                   </div>
@@ -355,36 +353,92 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. 50/50 RISK-REVERSAL GUARANTEE BAR */}
+      {/* 2. VERIFIED LIVE CLIENT LINKS, GITHUB PROOF & 50/50 PAYMENT GUARANTEE */}
       <section className="px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="p-6 sm:p-8 rounded-3xl glass-panel border-l-4 border-l-purple-600 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-1.5 text-center md:text-left">
-              <div className="text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-cyan-400">
-                50 / 50 Risk-Reversal Engineering Contract
+        <div className="max-w-7xl mx-auto">
+          <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200 dark:border-white/10 space-y-6">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-slate-200/80 dark:border-white/10">
+              <div className="space-y-1.5">
+                <div className="text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-cyan-400">
+                  50 / 50 Risk-Reversal Engineering Contract · 100% Verifiable Proof
+                </div>
+                <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">
+                  Pay 50% to start. Pay the final 50% <span className="underline decoration-purple-500">only</span> after testing your live system on staging.
+                </h2>
               </div>
-              <p className="text-lg sm:text-xl font-display font-bold text-slate-900 dark:text-white">
-                Pay 50% upfront. Pay the final 50% <span className="underline decoration-purple-500">ONLY</span> after you verify your live Website or AI Agent on staging.
-              </p>
+              <div className="flex flex-wrap items-center gap-3 shrink-0">
+                <a
+                  href="https://cryptowebbuild.github.io/edel-bangladesh/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-slate-900 dark:text-white hover:border-purple-500/40 transition-colors inline-flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                >
+                  <span>Inspect Live Client: Edel BD</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-purple-500" />
+                </a>
+                <a
+                  href="https://github.com/cryptowebbuild"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-slate-900 dark:text-white hover:border-purple-500/40 transition-colors inline-flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                >
+                  <span>Verify GitHub (@cryptowebbuild)</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-cyan-500" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="px-5 py-2.5 rounded-xl neon-button text-white font-bold text-xs inline-flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                >
+                  <span>Lock Your Build Slot</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/contact"
-              className="shrink-0 px-6 py-3.5 rounded-xl neon-button text-white font-bold text-sm flex items-center gap-2"
-            >
-              <span>Lock Your Build Slot</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+              {[
+                {
+                  title: '01. Live Staging First',
+                  desc: 'Inspect and click through your working 48-hour live prototype on a staging URL before final sign-off.',
+                },
+                {
+                  title: '02. 100/100 Speed Verified',
+                  desc: 'Every build is benchmarked on Google PageSpeed Insights for <0.8s mobile LCP and zero layout shift.',
+                },
+                {
+                  title: '03. 100% GitHub Ownership',
+                  desc: 'Full source code, database schemas, and deployment pipelines are transferred directly to your GitHub.',
+                },
+                {
+                  title: '04. Direct Principal Engineer',
+                  desc: 'Zero junior outsourcing. You communicate 1-on-1 with Sagor Ahamed via WhatsApp (+880 1618-138820).',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="p-4 rounded-2xl bg-slate-50/80 dark:bg-white/[0.03] border border-slate-200/70 dark:border-white/5"
+                >
+                  <div className="font-display font-bold text-sm text-slate-900 dark:text-white mb-1">
+                    {item.title}
+                  </div>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* 3. THREE CORE ENGINEERING PILLARS (CONCISE, SCANNABLE, ZERO FLUFF) */}
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto px-6 cv-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-purple-50 dark:bg-white/5 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 text-xs font-bold tracking-wider uppercase">
+          <div className="text-xs font-bold tracking-wider uppercase text-purple-600 dark:text-purple-400 mb-3">
             Core Engineering Pillars
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2
+            className="font-display text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4"
+            style={{ textWrap: 'balance' }}
+          >
             One Principal Studio.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">
               Three Revenue Engines.
@@ -399,22 +453,22 @@ const Home: React.FC = () => {
           {[
             {
               icon: Code2,
-              badge: '01 • FULL-STACK & E-COMMERCE',
+              badge: '01. Full-Stack & E-Commerce',
               title: 'Python/Django, Next.js & 1-Click Stores',
               desc: 'Custom full-stack web apps, SaaS dashboards, and 1-click E-Commerce storefronts that replace slow WordPress sites and manual "Inbox for Price" selling.',
               bullets: [
                 'Python, Django REST & PostgreSQL',
                 'React 18 & Next.js Edge Storefronts',
-                'Stripe, bKash, Nagad & Courier APIs',
+                'Stripe, bKash, Nagad & Steadfast APIs',
               ],
               link: '/services/web3-development',
               cta: 'Full-Stack Specs',
             },
             {
               icon: Search,
-              badge: '02 • TECHNICAL SEO & SPEED',
-              title: '100/100 PageSpeed & Search Domination',
-              desc: 'Sub-0.8s load times, Core Web Vitals optimization, and programmatic Schema.org JSON-LD engineered to rank #1 on Google and AI Search (ChatGPT/Perplexity).',
+              badge: '02. Technical SEO & Speed',
+              title: '100/100 PageSpeed & Search Rankings',
+              desc: 'Sub-0.8s load times, Core Web Vitals engineering, and programmatic Schema.org JSON-LD built to rank #1 on Google and Answer Engines.',
               bullets: [
                 'Guaranteed 95–100 PageSpeed Score',
                 'Local & Global Technical SEO Schema',
@@ -425,16 +479,16 @@ const Home: React.FC = () => {
             },
             {
               icon: Bot,
-              badge: '03 • RAG AI & AUTOMATION',
-              title: '24/7 AI Sales & Support Guardians',
-              desc: 'Custom Vector RAG chatbots and OpenClaw workflows trained on your exact catalog, SOPs, or whitepaper—deployed across Web, WhatsApp, Telegram & Discord.',
+              badge: '03. Custom Workflow Automation',
+              title: '24/7 Order, CRM & Messaging Pipelines',
+              desc: 'Custom backend webhooks and automated order/support workflows trained on your exact catalog—connected directly to Web, WhatsApp, and Telegram.',
               bullets: [
-                'Zero-Hallucination Vector RAG',
+                'Automated Order & Courier Dispatch',
                 'WhatsApp, Messenger, Telegram & Web',
-                'Automated Lead & Order Workflows',
+                'Custom Python & API Integrations',
               ],
               link: '/services/ai-automation',
-              cta: 'AI Agent Specs',
+              cta: 'Automation Specs',
             },
           ].map((pillar) => {
             const Icon = pillar.icon;
@@ -448,7 +502,7 @@ const Home: React.FC = () => {
                     <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-slate-500 dark:text-slate-400">
+                    <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400">
                       {pillar.badge}
                     </span>
                   </div>
@@ -487,16 +541,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* 4. ARCHITECTURAL COMPARISON MATRIX: NEXT.JS + DJANGO VS WORDPRESS & SHOPIFY */}
-      <ArchitectureComparison />
+      <div className="cv-auto">
+        <ArchitectureComparison />
+      </div>
 
       {/* 5. SELECTED WORKS & PRODUCTION CASE STUDIES (CLEAN SPLIT CARDS) */}
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto px-6 cv-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-purple-50 dark:bg-white/5 border border-purple-200 dark:border-purple-500/30 text-purple-700 dark:text-purple-400 text-xs font-bold tracking-wider uppercase">
-              Verified Production Proof
+            <div className="text-xs font-bold tracking-wider uppercase text-purple-600 dark:text-purple-400 mb-3">
+              Verified Production Proof · Live Deployments
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white">
+            <h2
+              className="font-display text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white"
+              style={{ textWrap: 'balance' }}
+            >
               Shipped Systems &amp;{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500 dark:from-purple-400 dark:to-cyan-400">
                 Measured Results
@@ -505,7 +564,7 @@ const Home: React.FC = () => {
           </div>
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold text-sm hover:border-purple-500/40 transition-colors self-start md:self-auto"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold text-sm hover:border-purple-500/40 transition-colors self-start md:self-auto whitespace-nowrap shrink-0"
           >
             <span>View All 13+ Case Studies</span>
             <ArrowRight className="w-4 h-4" />
@@ -533,37 +592,33 @@ const Home: React.FC = () => {
                     <img
                       src={project.img}
                       alt={`Preview of ${project.title}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      width={600}
+                      height={360}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                       decoding="async"
                     />
                   )}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
-                    <span className="px-3 py-1 rounded-full bg-slate-900/85 text-white text-[11px] font-bold backdrop-blur-sm">
-                      {project.category}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-emerald-500 text-slate-950 text-[11px] font-extrabold shadow-sm">
-                      {project.metric}
-                    </span>
-                  </div>
                 </div>
 
-                {/* Card Content */}
+                {/* Card Content — Clean Unboxed Metadata */}
                 <div className="p-6">
+                  <div className="flex items-center justify-between gap-2 text-xs font-mono tabular-nums text-slate-500 dark:text-slate-400 mb-2">
+                    <span>{project.category.replace('•', '·')}</span>
+                    <span className="font-bold text-emerald-600 dark:text-emerald-400">{project.metric}</span>
+                  </div>
                   <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-2">
                     {project.title}
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
                     {project.desc}
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 px-2.5 py-1 rounded-lg"
-                      >
-                        {t}
-                      </span>
+                  <div className="flex flex-wrap items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+                    {project.tech.map((t, index) => (
+                      <React.Fragment key={t}>
+                        {index > 0 && <span aria-hidden="true">·</span>}
+                        <span>{t}</span>
+                      </React.Fragment>
                     ))}
                   </div>
                 </div>
@@ -573,7 +628,7 @@ const Home: React.FC = () => {
               <div className="px-6 pb-6 pt-3 border-t border-slate-200/60 dark:border-white/5 flex items-center gap-3">
                 <Link
                   to={project.link}
-                  className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs text-center hover:opacity-90 transition-opacity"
+                  className="flex-1 py-2.5 px-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs text-center hover:opacity-90 transition-opacity whitespace-nowrap"
                 >
                   Read Case Study
                 </Link>
@@ -582,9 +637,9 @@ const Home: React.FC = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-bold text-xs inline-flex items-center gap-1.5 hover:border-purple-500/40 transition-colors"
+                    className="py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-bold text-xs inline-flex items-center gap-1.5 hover:border-purple-500/40 transition-colors whitespace-nowrap shrink-0"
                   >
-                    <span>Live</span>
+                    <span>Live Demo</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
@@ -595,18 +650,22 @@ const Home: React.FC = () => {
       </section>
 
       {/* 6. VERIFIED BENCHMARKS & BEFORE/AFTER PROOF */}
-      <BeforeAfterProof />
+      <div className="cv-auto">
+        <BeforeAfterProof />
+      </div>
 
       {/* 7. INTERACTIVE REVENUE & SPEED CALCULATOR */}
-      <section id="roi-calculator" className="container mx-auto px-6">
+      <section id="roi-calculator" className="container mx-auto px-6 cv-auto">
         <LeakedRevenueCalculator />
       </section>
 
       {/* 8. INTERACTIVE PROJECT SCOPE & QUOTE BUILDER */}
-      <ProjectScopeBuilder />
+      <div className="cv-auto">
+        <ProjectScopeBuilder />
+      </div>
 
       {/* 9. MEET THE PRINCIPAL ARCHITECT (AUTHENTIC CODER AUTHORITY) */}
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto px-6 cv-auto">
         <div className="max-w-6xl mx-auto p-7 sm:p-12 rounded-[32px] glass-panel">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-4 flex flex-col items-center text-center">
@@ -616,28 +675,30 @@ const Home: React.FC = () => {
                   alt="Sagor Ahamed — Founder & Principal Architect at CryptoWebBuild"
                   className="w-full h-full object-cover"
                   fill={true}
-                  priority={false}
+                  priority={true}
                 />
               </div>
               <div className="mt-4">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  Direct Lead Architect
+                <div className="text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                  Direct Lead Architect · Sylhet, BD
                 </div>
-                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-2">
+                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-1">
                   Sagor Ahamed
                 </h3>
                 <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                  Founder, CryptoWebBuild • Full-Stack &amp; AI Engineer
+                  Founder, CryptoWebBuild · Full-Stack Engineer
                 </p>
               </div>
             </div>
 
             <div className="lg:col-span-8 space-y-5 text-center lg:text-left">
               <div className="text-xs font-bold uppercase tracking-widest text-purple-600 dark:text-cyan-400">
-                Zero Subcontracting • Direct Engineering Accountability
+                Zero Subcontracting · Direct Engineering Accountability
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+              <h2
+                className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white leading-tight"
+                style={{ textWrap: 'balance' }}
+              >
                 Work Directly With the Engineer Writing Your Code.
               </h2>
               <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
@@ -645,25 +706,23 @@ const Home: React.FC = () => {
                 <strong className="text-slate-900 dark:text-white">CryptoWebBuild</strong>, I personally architect your backend in{' '}
                 <strong className="text-slate-900 dark:text-white">Python/Django &amp; PostgreSQL</strong>, your frontend in{' '}
                 <strong className="text-slate-900 dark:text-white">React/Next.js</strong>, and your{' '}
-                <strong className="text-slate-900 dark:text-white">RAG AI pipelines</strong>—with 100% GitHub repository ownership transferred to you.
+                <strong className="text-slate-900 dark:text-white">automated conversion pipelines</strong>—with 100% GitHub repository ownership transferred to you.
               </p>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2 pt-1">
+              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 pt-1">
                 {[
                   'Python & Django',
                   'React & Next.js',
                   'TypeScript',
                   'PostgreSQL',
                   '100/100 Technical SEO',
-                  'Vector RAG & OpenClaw',
+                  'WhatsApp & Steadfast APIs',
                   'Solana & Web3',
-                ].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200"
-                  >
-                    {skill}
-                  </span>
+                ].map((skill, idx) => (
+                  <React.Fragment key={skill}>
+                    {idx > 0 && <span className="text-slate-400" aria-hidden="true">·</span>}
+                    <span>{skill}</span>
+                  </React.Fragment>
                 ))}
               </div>
 
@@ -672,7 +731,7 @@ const Home: React.FC = () => {
                   href="https://wa.me/8801618138820?text=Hi%20Sagor%2C%20I%20want%20to%20discuss%20a%20project%20directly%20with%20you."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-sm hover:opacity-95"
+                  className="px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-sm hover:opacity-95 whitespace-nowrap shrink-0 tabular-nums"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>WhatsApp: +880 1618-138820</span>
@@ -681,14 +740,14 @@ const Home: React.FC = () => {
                   href="https://github.com/cryptowebbuild"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs sm:text-sm inline-flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs sm:text-sm inline-flex items-center gap-2 whitespace-nowrap shrink-0"
                 >
                   <span>GitHub (@cryptowebbuild)</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <Link
                   to="/about"
-                  className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-bold text-xs sm:text-sm hover:border-purple-500/40"
+                  className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-bold text-xs sm:text-sm hover:border-purple-500/40 whitespace-nowrap shrink-0"
                 >
                   Full Engineer Bio →
                 </Link>

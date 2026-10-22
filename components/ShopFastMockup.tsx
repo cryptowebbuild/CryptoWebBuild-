@@ -6,10 +6,10 @@ interface ShopFastMockupProps {
 
 const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
   return (
-    <div className={`bg-[#F5F5F7] relative overflow-hidden flex flex-col font-sans select-none ${className}`}>
+    <div className={`bg-[#F5F5F7] relative overflow-hidden flex flex-col font-sans select-none gpu-accelerated ${className}`}>
       {/* Navbar */}
-      <div className="h-14 px-6 flex items-center justify-between bg-white/80 backdrop-blur-md sticky top-0 z-20 border-b border-gray-200">
-        <span className="font-bold text-lg tracking-tight text-black dark:text-gray-100">ShopFast.</span>
+      <div className="h-14 px-6 flex items-center justify-between bg-white sticky top-0 z-20 border-b border-gray-200">
+        <span className="font-bold text-lg tracking-tight text-black">ShopFast.</span>
         <div className="flex gap-5 text-sm font-medium text-gray-600">
             <span>Men</span>
             <span>Women</span>
@@ -17,7 +17,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
         </div>
         <div className="flex gap-3">
             <div className="w-5 h-5 rounded-full border border-gray-300"></div>
-            <div className="w-5 h-5 bg-black text-white text-[8px] flex items-center justify-center rounded-full">2</div>
+            <div className="w-5 h-5 bg-black text-white text-[8px] flex items-center justify-center rounded-full tabular-nums">2</div>
         </div>
       </div>
 
@@ -35,7 +35,7 @@ const ShopFastMockup: React.FC<ShopFastMockupProps> = ({ className = '' }) => {
             </div>
 
             {/* Floating details */}
-            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-[#020617] p-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center animate-bounce" style={{ animationDuration: '3s' }}>
+            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-[#020617] p-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center tabular-nums">
                 <span className="text-xs font-bold text-gray-400 uppercase">Speed Score</span>
                 <span className="text-2xl font-black text-green-500">100/100</span>
             </div>

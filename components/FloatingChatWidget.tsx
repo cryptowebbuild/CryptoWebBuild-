@@ -14,21 +14,20 @@ const FloatingChatWidget: React.FC = () => {
     <div className="fixed bottom-5 right-5 z-50">
       {isOpen && (
         <div
-          className="mb-4 w-[calc(100vw-40px)] sm:w-96 rounded-2xl bg-white/95 dark:bg-[#020617]/95 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(147,51,234,0.2)] overflow-hidden animate-slide-up"
+          className="mb-4 w-[calc(100vw-40px)] sm:w-96 rounded-2xl bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden"
           role="dialog"
           aria-label="CryptoWebBuild Quick Concierge"
         >
-          <div className="px-5 py-4 bg-gradient-to-r from-purple-600/15 to-cyan-500/15 border-b border-gray-200 dark:border-white/10 flex items-center justify-between">
+          <div className="px-5 py-4 bg-slate-50 dark:bg-[#020617] border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-sm shadow-md">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white font-display font-bold text-sm shadow-sm">
                 CW
               </div>
               <div>
-                <div className="font-display font-bold text-sm text-gray-900 dark:text-white flex items-center gap-2">
-                  <span>CryptoWebBuild Studio</span>
-                  <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <div className="font-display font-bold text-sm text-gray-900 dark:text-white">
+                  CryptoWebBuild Direct
                 </div>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Direct Engineer Access • &lt; 2h Reply</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">Sagor Ahamed · &lt; 2h Reply</p>
               </div>
             </div>
             <button

@@ -138,16 +138,16 @@ const StickyHeaderAndScrollButton: React.FC<{
       <header className="fixed top-0 left-0 right-0 z-50 py-3.5">
         <div className="container mx-auto px-4 md:px-6">
           <nav
-            className={`mx-auto max-w-7xl flex items-center justify-between px-5 py-3 rounded-2xl transition-shadow duration-200 relative z-50 ${
+            className={`mx-auto max-w-7xl flex items-center justify-between gap-8 px-5 py-3 rounded-2xl transition-shadow duration-150 relative z-50 gpu-accelerated ${
               scrolled
-                ? 'bg-white/90 dark:bg-[#0f172a]/90 shadow-md backdrop-blur-md border border-slate-200/80 dark:border-white/10'
-                : 'bg-white/60 dark:bg-[#0f172a]/60 backdrop-blur-sm border border-transparent'
+                ? 'bg-white dark:bg-[#0f172a] shadow-md border border-slate-200/90 dark:border-white/10'
+                : 'bg-white/95 dark:bg-[#0f172a]/95 border border-slate-200/60 dark:border-white/5'
             }`}
             aria-label="Primary Navigation"
           >
-            <Link to="/" className="flex items-center gap-3 group" aria-label="CryptoWebBuild Home">
+            <Link to="/" className="flex items-center gap-3 group whitespace-nowrap shrink-0" aria-label="CryptoWebBuild Home">
               <div aria-hidden="true">
-                <BrandLogo className="w-9 h-9 text-slate-900 dark:text-white group-hover:scale-105 transition-transform" />
+                <BrandLogo className="w-9 h-9 text-slate-900 dark:text-white" />
               </div>
               <span className="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">
                 CryptoWebBuild

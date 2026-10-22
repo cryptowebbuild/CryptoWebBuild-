@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency</title>
+    <meta name="theme-color" content="#020617" />
+    <title>CryptoWebBuild | Full-Stack Web, 100/100 SEO &amp; Custom Automation Studio</title>
     <meta
       name="description"
-      content="Scale your business with sub-second full-stack websites (Python/Django &amp; Next.js), #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+      content="Direct Principal Engineering by Sagor Ahamed. Sub-second Python/Django &amp; Next.js websites, 1-click E-Commerce stores, 100/100 Technical SEO, and custom workflow automation."
     />
+
+    <!-- Zero-FOUC Theme Initialization -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Meta Tags for Social Previews (OpenGraph & Twitter Cards) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CryptoWebBuild" />
-    <meta property="og:title" content="CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency" />
+    <meta property="og:url" content="https://cryptowebbuild.com/" />
+    <meta property="og:title" content="CryptoWebBuild | Full-Stack Web, 100/100 SEO &amp; Custom Automation Studio" />
     <meta
       property="og:description"
-      content="Scale your business with sub-second full-stack websites, #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+      content="Direct Principal Engineering by Sagor Ahamed. Sub-second Python/Django &amp; Next.js websites, 1-click E-Commerce stores, and 100/100 Technical SEO."
     />
     <meta property="og:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
     <meta property="og:image:type" content="image/webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@CryptoWebBuildX" />
-    <meta name="twitter:title" content="CryptoWebBuild | Elite Full-Stack Web, SEO &amp; AI Automation Agency" />
+    <meta name="twitter:title" content="CryptoWebBuild | Full-Stack Web, 100/100 SEO &amp; Custom Automation Studio" />
     <meta
       name="twitter:description"
-      content="Scale your business with sub-second full-stack websites, #1 ranking Technical SEO systems, and 24/7 autonomous AI agents by CryptoWebBuild."
+      content="Direct Principal Engineering by Sagor Ahamed. Sub-second Python/Django &amp; Next.js websites, 1-click E-Commerce stores, and 100/100 Technical SEO."
     />
     <meta name="twitter:image" content="https://cryptowebbuild.com/hero-avatar.webp" />
 
@@ -33,11 +49,12 @@
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- Font Preloading -->
+    <!-- Critical Asset & Font Preloading for <0.5s LCP -->
+    <link rel="preload" href="/hero-avatar.webp" as="image" type="image/webp" fetchpriority="high" />
     <link rel="preload" href="/fonts/SpaceGrotesk-Bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin />
   </head>
-  <body class="bg-white dark:bg-[#020617] text-gray-900 dark:text-white antialiased overflow-x-hidden transition-colors duration-300 ease-in-out">
+  <body class="bg-[#F8FAFC] dark:bg-[#020617] text-slate-900 dark:text-slate-50 antialiased overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

@@ -6,19 +6,20 @@ interface SolNovaMockupProps {
 
 const SolNovaMockup: React.FC<SolNovaMockupProps> = ({ className = '' }) => {
   return (
-    <div className={`bg-[#030014] relative overflow-hidden flex flex-col font-sans select-none ${className}`}>
-      {/* Background Ambience */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-purple-600/30 blur-[100px] rounded-full animate-pulse"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-cyan-500/20 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20 mix-blend-overlay"></div>
-      
+    <div
+      className={`bg-[#030014] relative overflow-hidden flex flex-col font-sans select-none gpu-accelerated ${className}`}
+      style={{
+        backgroundImage:
+          'radial-gradient(circle at 15% 15%, rgba(124, 58, 237, 0.22) 0%, transparent 55%), radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.18) 0%, transparent 55%)',
+      }}
+    >
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
 
       {/* Navbar Mockup */}
-      <div className="h-14 border-b border-white/10 flex items-center justify-between px-6 relative z-10 backdrop-blur-md bg-white/5">
+      <div className="h-14 border-b border-white/10 flex items-center justify-between px-6 relative z-10 bg-[#08051b]">
         <div className="flex items-center gap-2">
-           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-purple-500/20">S</div>
+           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">S</div>
            <span className="text-white font-bold tracking-tight text-lg">SolNova</span>
         </div>
         <div className="hidden md:flex gap-6 text-xs text-slate-300 font-medium tracking-wide">
@@ -26,7 +27,7 @@ const SolNovaMockup: React.FC<SolNovaMockupProps> = ({ className = '' }) => {
             <span className="hover:text-cyan-400 cursor-pointer transition-colors">Staking</span>
             <span className="hover:text-cyan-400 cursor-pointer transition-colors">Launchpad</span>
         </div>
-        <div className="px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs font-bold shadow-lg shadow-purple-500/30">
+        <div className="px-4 py-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xs font-bold">
             Connect Wallet
         </div>
       </div>
@@ -36,15 +37,14 @@ const SolNovaMockup: React.FC<SolNovaMockupProps> = ({ className = '' }) => {
         
         {/* Left Text Area */}
         <div className="text-left max-w-xs hidden md:block">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-4">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                <span className="text-[10px] text-green-300 font-bold uppercase tracking-wider">Protocol V2 Live</span>
+            <div className="text-[10px] text-emerald-300 font-mono font-bold uppercase tracking-wider mb-3">
+                Protocol V2 · Mainnet
             </div>
             <h2 className="text-4xl font-bold text-white mb-4 leading-tight">
                 Next Gen <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Yield Aggregator</span>
             </h2>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-6 tabular-nums">
                 <div className="text-center">
                     <div className="text-2xl font-bold text-white">$45M+</div>
                     <div className="text-[10px] text-slate-400 uppercase tracking-widest">TVL Locked</div>
@@ -58,9 +58,7 @@ const SolNovaMockup: React.FC<SolNovaMockupProps> = ({ className = '' }) => {
         </div>
 
         {/* Swap Card UI */}
-        <div className="w-full max-w-[340px] bg-[#0c0c14]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-1 shadow-2xl relative overflow-hidden group">
-             <div className="absolute -inset-1 bg-gradient-to-b from-purple-500/20 to-transparent opacity-50 blur-sm group-hover:opacity-75 transition-opacity duration-700"></div>
-             
+        <div className="w-full max-w-[340px] bg-[#0c0c14] border border-white/10 rounded-3xl p-1 shadow-xl relative overflow-hidden group">
              <div className="bg-[#13131f] rounded-[20px] p-5 relative z-10">
                 <div className="flex justify-between items-center mb-6">
                     <span className="text-white font-bold text-sm">Swap</span>

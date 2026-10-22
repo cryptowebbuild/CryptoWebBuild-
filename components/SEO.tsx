@@ -96,31 +96,89 @@ const SEO: React.FC<SEOProps> = ({
 
     if (schemaType === 'Organization') {
       return {
-        ...baseSchema,
-        "@type": "ProfessionalService",
-        "name": "CryptoWebBuild",
-        "alternateName": "CryptoWebBuild by Sagor Ahamed",
-        "url": siteUrl,
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${siteUrl}/hero-avatar.webp`
-        },
-        "priceRange": "$$-$$$",
-        "telephone": "+8801618138820",
-        "email": "hello@cryptowebbuild.com",
-        "founder": {
-          "@type": "Person",
-          "name": "Sagor Ahamed",
-          "jobTitle": "Founder & Lead Full-Stack Architect",
-          "url": `${siteUrl}/about`
-        },
-        "contactPoint": [
+        "@context": "https://schema.org",
+        "@graph": [
           {
-            "@type": "ContactPoint",
-            "contactType": "sales",
+            "@type": "ProfessionalService",
+            "@id": `${siteUrl}/#organization`,
+            "name": "CryptoWebBuild",
+            "alternateName": "CryptoWebBuild Engineering Studio by Sagor Ahamed",
+            "url": siteUrl,
+            "image": finalImage,
+            "description": finalDescription,
+            "logo": {
+              "@type": "ImageObject",
+              "url": `${siteUrl}/hero-avatar.webp`
+            },
+            "priceRange": "$$-$$$",
             "telephone": "+8801618138820",
             "email": "hello@cryptowebbuild.com",
-            "availableLanguage": ["English", "Bengali"]
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Sylhet",
+              "addressCountry": "BD"
+            },
+            "founder": {
+              "@type": "Person",
+              "@id": `${siteUrl}/#founder`,
+              "name": "Sagor Ahamed",
+              "jobTitle": "Founder & Principal Full-Stack Architect",
+              "url": `${siteUrl}/about`,
+              "sameAs": [
+                "https://github.com/cryptowebbuild",
+                "https://x.com/CryptoWebBuildX",
+                "https://www.youtube.com/@cryptowebbuild"
+              ]
+            },
+            "sameAs": [
+              "https://github.com/cryptowebbuild",
+              "https://x.com/CryptoWebBuildX",
+              "https://www.youtube.com/@cryptowebbuild",
+              "https://t.me/cryptowebbuild",
+              "https://wa.me/8801618138820"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": "+8801618138820",
+                "email": "hello@cryptowebbuild.com",
+                "availableLanguage": ["English", "Bengali"]
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": `${siteUrl}/#website`,
+            "url": siteUrl,
+            "name": "CryptoWebBuild",
+            "publisher": {
+              "@id": `${siteUrl}/#organization`
+            }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Verified Live Client Systems & Case Studies",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Edel Bangladesh — 1-Click Luxury E-Commerce Storefront",
+                "url": "https://cryptowebbuild.github.io/edel-bangladesh/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ClickRunClaw — Cloud Automation SaaS",
+                "url": "https://clickrunclaw.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "ShopFast — Headless Next.js E-Commerce",
+                "url": `${siteUrl}/shopfast`
+              }
+            ]
           }
         ]
       };
