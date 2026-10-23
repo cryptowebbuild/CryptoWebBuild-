@@ -1,6 +1,7 @@
 import React, { useState, useEffect, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import FloatingChatWidget from './FloatingChatWidget';
+import MobileConversionBar from './MobileConversionBar';
 
 export const BrandLogo: React.FC<{ className?: string; idSuffix?: string }> = memo(
   ({ className, idSuffix = 'header' }) => (
@@ -348,6 +349,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </main>
 
       <FloatingChatWidget />
+      <MobileConversionBar />
 
       {/* Footer */}
       <footer className="relative z-10 mt-20 bg-white dark:bg-[#0C0E14] border-t border-slate-200 dark:border-white/[0.06]">

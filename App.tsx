@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import SEO from './components/SEO';
 
@@ -21,7 +21,6 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Projects = lazy(() => import('./pages/Projects'));
-const Videos = lazy(() => import('./pages/Videos'));
 const Blog = lazy(() => import('./pages/Blog'));
 const Contact = lazy(() => import('./pages/Contact'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
@@ -108,7 +107,7 @@ const App: React.FC = () => {
           <Route path="/services/crypto-growth" element={<CryptoGrowth />} />
           <Route path="/services/ecommerce-development-bangladesh" element={<EcommerceDevelopmentBD />} />
 
-          <Route path="/videos" element={<Videos />} />
+          <Route path="/videos" element={<Navigate to="/projects" replace />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />

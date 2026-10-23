@@ -14,7 +14,6 @@ const staticRoutes = [
   '/services/ai-automation',
   '/services/ecommerce-development-bangladesh',
   '/projects',
-  '/videos',
   '/blog',
   '/contact',
   '/faq',

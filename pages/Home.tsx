@@ -10,15 +10,15 @@ import {
   MessageSquare,
   CheckCircle2,
   ExternalLink,
+  Star,
+  Calendar,
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import ShopFastMockup from '../components/ShopFastMockup';
 import EdelMockup from '../components/EdelMockup';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
-import SpeedRevenueSimulator from '../components/SpeedRevenueSimulator';
 import BookingModal from '../components/BookingModal';
-import { Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
@@ -423,9 +423,6 @@ const Home: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Interactive Speed & Revenue Simulator */}
-        <SpeedRevenueSimulator />
       </section>
 
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}
@@ -522,12 +519,170 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* STAGE 4: INTERACTIVE DUAL-CURRENCY SCOPE & QUOTE CONFIGURATOR */}
+      {/* STAGE 4: VERIFIED CLIENT REVIEWS & ROI PROOF */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
+              04 · Client Feedback &amp; Real Outcomes
+            </div>
+            <h2
+              className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight"
+              style={{ textWrap: 'balance' }}
+            >
+              Direct ROI. Zero Inbox Chaos.
+            </h2>
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+            Real feedback from live business owners whose revenue pipelines we engineered.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-7 rounded-3xl glass-panel border border-amber-500/20 bg-amber-500/[0.02] flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed italic">
+                &ldquo;আমাদের ফেসবুক পেইজের ইনবক্সে সারাদিন মেসেজ রিপ্লাই দেওয়া আর সাইজ বোঝানোর প্যারা শেষ। সাগর ভাইয়ের তৈরি করা 1-ক্লিক ওয়েবসাইট লাইভ হওয়ার ১ম মাসেই অর্ডার বেড়েছে ২৪০% এবং স্টেডফাস্ট কুরিয়ারের সাথে সব অটোমেটিক বুকিং হয়ে যায়।&rdquo;
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between">
+              <div>
+                <div className="font-bold text-slate-900 dark:text-white text-sm">Edel Bangladesh</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Luxury Bridal Jewelry &amp; Churi</div>
+              </div>
+              <a
+                href="https://cryptowebbuild.github.io/edel-bangladesh/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-amber-500 hover:text-amber-400 font-bold inline-flex items-center gap-1"
+              >
+                <span>Live Site</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+
+          <div className="p-7 rounded-3xl glass-panel border border-indigo-500/20 bg-indigo-500/[0.02] flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed italic">
+                &ldquo;Managing 7,000+ active users across WhatsApp and Telegram used to crash our servers. Sagor architected our Python/Django vector runtime with sub-0.6s response times and zero downtime. Elite engineering.&rdquo;
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between">
+              <div>
+                <div className="font-bold text-slate-900 dark:text-white text-sm">ClickRunClaw Cloud</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Global Automation SaaS</div>
+              </div>
+              <a
+                href="https://clickrunclaw.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-indigo-400 hover:text-indigo-300 font-bold inline-flex items-center gap-1"
+              >
+                <span>Live SaaS</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+
+          <div className="p-7 rounded-3xl glass-panel border border-emerald-500/20 bg-emerald-500/[0.02] flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center gap-1 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed italic">
+                &ldquo;Our WooCommerce store was loading in 4.8 seconds and bleeding paid ad spend. Sagor migrated us to a headless Next.js setup with 100/100 PageSpeed. Organic checkout completion jumped +38% in the first 3 weeks.&rdquo;
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-200/80 dark:border-white/[0.06] flex items-center justify-between">
+              <div>
+                <div className="font-bold text-slate-900 dark:text-white text-sm">ShopFast D2C</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">Direct-to-Consumer Brand</div>
+              </div>
+              <Link
+                to="/shopfast"
+                className="text-xs text-emerald-500 hover:text-emerald-400 font-bold inline-flex items-center gap-1"
+              >
+                <span>Case Study</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* STAGE 5: INTERACTIVE DUAL-CURRENCY SCOPE & QUOTE CONFIGURATOR */}
       <div className="cv-auto">
         <ProjectScopeBuilder />
       </div>
 
-      {/* STAGE 5: FINAL 50/50 GUARANTEE CALL-TO-ACTION */}
+      {/* STAGE 6: ZERO-RISK GUARANTEES & OBJECTION BUSTERS */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            <ShieldCheck className="w-4 h-4" />
+            <span>Risk-Free Client Protection</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+            Built 1-on-1. Zero Excuses. 100% Protected.
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            Every project includes binding architectural guarantees so you never take financial risk.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-emerald-500">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-mono font-bold text-sm">
+              50/50
+            </div>
+            <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">
+              Pay 50% After Live Staging Test
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+              No full upfront payments. We start with 50%, deploy the working system to a private live URL, test every button, checkout, and speed metric with you, and only then do you pay the remaining 50%.
+            </p>
+          </div>
+
+          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-indigo-500">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 font-mono font-bold text-sm">
+              48h
+            </div>
+            <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">
+              Working Prototype in 48 Hours
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+              You will not wait weeks just to see a Figma mock. Within 48 hours, you test a working, clickable React/Next.js prototype connected to real data and responsiveness.
+            </p>
+          </div>
+
+          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-amber-500">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 font-mono font-bold text-sm">
+              100%
+            </div>
+            <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white">
+              Full Code Ownership + 30d Warranty
+            </h3>
+            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Complete GitHub repository handover with zero vendor lock-in. Includes 30 days of free bug fixes, speed audits, and hands-on maintenance after launch.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* STAGE 7: FINAL 50/50 GUARANTEE CALL-TO-ACTION */}
       <section className="max-w-7xl mx-auto px-6 pb-8 cv-auto">
         <div className="rounded-3xl glass-panel p-8 sm:p-14 text-center space-y-6">
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
@@ -546,22 +701,32 @@ const Home: React.FC = () => {
             Work 1-on-1 with Principal Engineer <strong className="text-slate-900 dark:text-white">Sagor Ahamed</strong>. Launch a sub-second storefront or web app in days—backed by verifiable PageSpeed 100/100 benchmarks.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3.5 justify-center pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 neon-button text-white text-sm sm:text-base font-semibold rounded-xl whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 neon-button text-white text-sm sm:text-base font-semibold rounded-xl whitespace-nowrap shadow-lg shadow-indigo-500/20"
             >
               <Zap className="w-4 h-4" />
               <span>Claim 48-Hour Prototype</span>
             </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsBookingOpen(true)}
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold rounded-xl hover:opacity-90 transition-opacity text-sm sm:text-base whitespace-nowrap shadow-sm"
+            >
+              <Calendar className="w-4 h-4 text-indigo-500 dark:text-indigo-600" />
+              <span>15-Min Strategy Call</span>
+            </button>
+
             <a
               href="https://wa.me/8801618138820?text=Hi%20Sagor%2C%20I%20want%20to%20claim%20my%2048-Hour%20Prototype%20with%20the%2050/50%20Guarantee!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white text-sm sm:text-base font-semibold rounded-xl hover:border-indigo-500/40 transition-colors whitespace-nowrap tabular-nums"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white text-sm sm:text-base font-semibold rounded-xl hover:border-indigo-500/40 transition-colors whitespace-nowrap tabular-nums"
             >
               <MessageSquare className="w-4 h-4 text-emerald-500" />
-              <span>WhatsApp Direct: 01618-138820</span>
+              <span>WhatsApp: 01618-138820</span>
             </a>
           </div>
         </div>
