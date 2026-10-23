@@ -1,44 +1,87 @@
 import React, { useState } from 'react';
-import { ExternalLink, ShoppingBag, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Lock, Smartphone, Monitor, ShieldCheck, Zap, Sparkles } from 'lucide-react';
 
 interface EdelMockupProps {
   className?: string;
+  defaultView?: 'desktop' | 'mobile';
+  showControls?: boolean;
 }
 
-export const EdelMockup: React.FC<EdelMockupProps> = ({ className = '' }) => {
-  const [activeItem, setActiveItem] = useState(0);
-
-  const notifications = [
-    'নুসরাত জাহান (ধানমন্ডি) এইমাত্র ব্রাইডাল চুড়ি সেট অর্ডার করেছেন',
-    'তানজিলা ইসলাম (উত্তরা) রয়্যাল চোকার কম্বো কিনেছেন',
-  ];
+export const EdelMockup: React.FC<EdelMockupProps> = ({
+  className = '',
+  defaultView = 'desktop',
+  showControls = true,
+}) => {
+  const [view, setView] = useState<'desktop' | 'mobile'>(defaultView);
+  const liveUrl = 'https://cryptowebbuild.github.io/edel-bangladesh/';
 
   return (
-    <div className={`relative w-full h-full bg-[#1A0B10] text-[#FFFDF9] overflow-hidden flex flex-col justify-between font-sans select-none gpu-accelerated ${className}`}>
-      {/* Top Rose Gold Royal Header */}
-      <div className="bg-gradient-to-r from-[#8E1B3A] via-[#590D22] to-[#3B0713] px-3.5 py-2.5 border-b border-amber-500/30 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-amber-600 flex items-center justify-center font-serif font-black text-xs text-[#1D1115] shadow-sm border border-amber-200">
-            E
+    <div
+      className={`relative w-full h-full bg-[#08090D] text-slate-100 overflow-hidden flex flex-col font-sans select-none border border-white/[0.08] group ${className}`}
+    >
+      {/* Studio Browser Header / Chrome Bar */}
+      <div className="bg-[#0C0E14] px-3 sm:px-3.5 py-2 border-b border-white/[0.07] flex items-center justify-between shrink-0 z-10 gap-2">
+        {/* Left: Window Controls + View Toggle */}
+        <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
           </div>
-          <div>
-            <div className="flex items-center gap-1.5 leading-none">
-              <span className="font-serif font-extrabold text-sm tracking-wider text-amber-200">EDEL BD</span>
-              <span className="text-[9px] font-bold text-amber-300">· LUXURY</span>
+
+          {showControls && (
+            <div className="hidden sm:flex items-center bg-black/40 rounded-lg p-0.5 border border-white/[0.06] text-[10px]">
+              <button
+                type="button"
+                onClick={() => setView('desktop')}
+                className={`flex items-center gap-1 px-2 py-0.5 rounded transition-all ${
+                  view === 'desktop'
+                    ? 'bg-indigo-600/80 text-white font-semibold shadow-sm'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+                title="Desktop View"
+              >
+                <Monitor className="w-2.5 h-2.5" />
+                <span>Desktop</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setView('mobile')}
+                className={`flex items-center gap-1 px-2 py-0.5 rounded transition-all ${
+                  view === 'mobile'
+                    ? 'bg-indigo-600/80 text-white font-semibold shadow-sm'
+                    : 'text-slate-400 hover:text-white'
+                }`}
+                title="Mobile 1-Click View"
+              >
+                <Smartphone className="w-2.5 h-2.5" />
+                <span>Mobile</span>
+              </button>
             </div>
-            <span className="text-[10px] text-rose-200/80 leading-none">Churi · Bridal · Gift Combos</span>
-          </div>
+          )}
         </div>
 
-        <div className="flex items-center gap-2">
-          <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-300 font-mono tabular-nums font-bold">
+        {/* Center: Real SSL Domain Badge */}
+        <div className="flex items-center gap-1.5 bg-black/50 border border-white/[0.06] rounded-md px-2.5 py-1 text-[11px] font-mono text-slate-300 max-w-[200px] sm:max-w-xs truncate">
+          <Lock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
+          <span className="truncate text-slate-400">
+            edel.<span className="text-white font-semibold">cryptowebbuild.com</span>
+          </span>
+        </div>
+
+        {/* Right: Edge Metric & Direct Live Store Link */}
+        <div className="flex items-center gap-2 shrink-0">
+          <span className="hidden md:inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono font-bold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+            <Zap className="w-2.5 h-2.5" />
             0.4s Edge
           </span>
+
           <a
-            href="https://cryptowebbuild.github.io/edel-bangladesh/"
+            href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[10px] bg-amber-400 hover:bg-amber-300 text-zinc-950 font-extrabold px-2.5 py-1 rounded-md transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap shrink-0"
+            className="text-[10px] bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-zinc-950 font-black px-2.5 py-1 rounded-md transition-all flex items-center gap-1 shadow-sm whitespace-nowrap"
+            title="Open Live Production Store in New Tab"
           >
             <span>Live Demo</span>
             <ExternalLink className="w-2.5 h-2.5" />
@@ -46,73 +89,91 @@ export const EdelMockup: React.FC<EdelMockupProps> = ({ className = '' }) => {
         </div>
       </div>
 
-      {/* Middle Mockup Visual Products */}
-      <div className="p-3.5 grid grid-cols-2 gap-2.5 flex-1 items-center">
-        {/* Product 1 */}
-        <div
-          onClick={() => setActiveItem(0)}
-          className={`p-2.5 rounded-xl border transition-colors cursor-pointer ${
-            activeItem === 0
-              ? 'bg-[#2E121C] border-amber-400/60'
-              : 'bg-[#220D15] border-white/5 opacity-85'
-          }`}
-        >
-          <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-tr from-[#3b0817] to-[#73142e] mb-2 flex items-center justify-center border border-amber-400/20">
-            <span className="font-serif text-amber-200 text-xs font-bold tracking-widest text-center px-1">
-              মিনা কারি চুড়ি
-            </span>
-            <span className="absolute top-1 right-1 bg-amber-400 text-zinc-950 text-[8px] font-black px-1.5 rounded tabular-nums">
-              -25%
-            </span>
-          </div>
-          <div className="text-[11px] font-bold text-white line-clamp-1">রাজকীয় মিনা কারি চুড়ি সেট</div>
-          <div className="flex items-center justify-between mt-1 tabular-nums">
-            <div className="font-mono text-amber-300 font-extrabold text-xs">৳১,৮৫০</div>
-            <div className="text-[9px] line-through text-zinc-400">৳২,৪৫০</div>
-          </div>
-          <div className="mt-1.5 text-[9px] bg-rose-900/60 text-rose-200 py-1 text-center rounded font-semibold flex items-center justify-center gap-1">
-            <ShoppingBag className="w-2.5 h-2.5" />
-            <span>১-ক্লিক অর্ডার</span>
-          </div>
-        </div>
+      {/* Main Screen Showcase Area */}
+      <div className="relative flex-1 w-full bg-[#050608] overflow-hidden flex items-center justify-center">
+        {view === 'desktop' ? (
+          /* Desktop Real Screenshot Showcase */
+          <div className="relative w-full h-full overflow-hidden flex items-start justify-center">
+            <img
+              src="/projects/edel-bangladesh.webp"
+              alt="Live Production Screenshot of Edel Bangladesh Luxury Storefront"
+              width={1600}
+              height={1000}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            />
 
-        {/* Product 2 */}
-        <div
-          onClick={() => setActiveItem(1)}
-          className={`p-2.5 rounded-xl border transition-colors cursor-pointer ${
-            activeItem === 1
-              ? 'bg-[#2E121C] border-amber-400/60'
-              : 'bg-[#220D15] border-white/5 opacity-85'
-          }`}
-        >
-          <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-tr from-[#3b0817] to-[#73142e] mb-2 flex items-center justify-center border border-amber-400/20">
-            <span className="font-serif text-amber-200 text-xs font-bold tracking-widest text-center px-1">
-              ব্রাইডাল চোকার
-            </span>
-            <span className="absolute top-1 right-1 bg-amber-400 text-zinc-950 text-[8px] font-black px-1.5 rounded">
-              TOP
-            </span>
+            {/* Subtle Gradient Vignette to blend into dark frame */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+
+            {/* Floating Live Conversion Pill */}
+            <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex flex-wrap items-center gap-1.5 sm:gap-2 pointer-events-none">
+              <span className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-black/85 backdrop-blur-md text-amber-300 border border-amber-500/30 shadow-lg">
+                <Sparkles className="w-3 h-3 text-amber-400" />
+                <span>Edel Luxury Jewel</span>
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-semibold bg-black/85 backdrop-blur-md text-emerald-300 border border-emerald-500/30 shadow-lg">
+                <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                <span>1-Click bKash &amp; Steadfast</span>
+              </span>
+            </div>
           </div>
-          <div className="text-[11px] font-bold text-white line-clamp-1">রয়্যাল ব্রাইডাল চোকার কম্বো</div>
-          <div className="flex items-center justify-between mt-1 tabular-nums">
-            <div className="font-mono text-amber-300 font-extrabold text-xs">৳৩,৪৫০</div>
-            <div className="text-[9px] line-through text-zinc-400">৳৪,২০০</div>
+        ) : (
+          /* Mobile Frame Real Screenshot Showcase */
+          <div className="relative w-full h-full flex items-center justify-center p-3 bg-gradient-to-b from-[#0F1117] to-[#050608]">
+            <div className="relative w-[190px] sm:w-[220px] md:w-[240px] aspect-[9/19] rounded-[24px] border-[3px] border-slate-700/80 shadow-2xl overflow-hidden bg-black ring-1 ring-white/10 flex flex-col">
+              {/* Dynamic Island / Speaker notch */}
+              <div className="h-4 bg-black w-full flex items-center justify-center shrink-0 z-10">
+                <div className="w-12 h-2.5 bg-zinc-800 rounded-full" />
+              </div>
+
+              {/* Mobile Real Screenshot */}
+              <div className="relative flex-1 overflow-hidden">
+                <img
+                  src="/projects/edel-bangladesh-mobile.webp"
+                  alt="Mobile view of Edel Bangladesh Luxury Store"
+                  width={720}
+                  height={1558}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Mobile View Benefits Legend */}
+            <div className="hidden sm:flex flex-col gap-2 ml-4 text-[11px] text-slate-300 max-w-[160px]">
+              <div className="font-bold text-white text-xs">Mobile-First CRO</div>
+              <div className="flex items-center gap-1.5 text-emerald-400 font-mono text-[10px]">
+                <Zap className="w-3 h-3" />
+                <span>0.4s on 4G LTE</span>
+              </div>
+              <div className="text-slate-400 text-[10px] leading-tight">
+                No inbox back-and-forth. Direct size picker and instant order placement.
+              </div>
+              <button
+                type="button"
+                onClick={() => setView('desktop')}
+                className="mt-1 text-[10px] text-indigo-400 hover:text-indigo-300 underline font-semibold text-left"
+              >
+                &larr; Switch to Desktop
+              </button>
+            </div>
           </div>
-          <div className="mt-1.5 text-[9px] bg-rose-900/60 text-rose-200 py-1 text-center rounded font-semibold flex items-center justify-center gap-1">
-            <ShoppingBag className="w-2.5 h-2.5" />
-            <span>১-ক্লিক অর্ডার</span>
-          </div>
-        </div>
+        )}
       </div>
 
-      {/* Bottom Live Conversion Strip */}
-      <div className="bg-[#12060A] px-3.5 py-2 border-t border-white/10 flex items-center justify-between text-[10px]">
-        <div className="flex items-center gap-1.5 text-zinc-300 truncate max-w-[70%]">
-          <span className="truncate">{notifications[activeItem]}</span>
+      {/* Subtle Bottom Status Strip */}
+      <div className="bg-[#0A0C10] px-3 py-1.5 border-t border-white/[0.06] flex items-center justify-between text-[10px] text-slate-400 shrink-0">
+        <div className="flex items-center gap-2 truncate">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+          <span className="truncate">Production Store: <strong className="text-slate-200">facebook.com/edelbangladesh</strong></span>
         </div>
-        <div className="flex items-center gap-1 text-amber-300 font-bold shrink-0">
-          <ShieldCheck className="w-3 h-3 text-emerald-400" />
-          <span>Steadfast API</span>
+        <div className="font-mono text-slate-300 tabular-nums shrink-0 ml-2">
+          +240% Sales Lift
         </div>
       </div>
     </div>

@@ -78,7 +78,7 @@ const AuraCommerce: React.FC = () => {
         </p>
 
         {/* Interactive Edel Mockup Container */}
-        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 mb-10 h-[360px] sm:h-[440px] md:h-[480px]">
+        <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 mb-10 h-[380px] sm:h-[480px] md:h-[560px]">
           <EdelMockup className="w-full h-full" />
         </div>
 

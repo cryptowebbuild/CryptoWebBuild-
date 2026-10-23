@@ -116,7 +116,7 @@ const EcommerceDevelopmentBD: React.FC = () => {
 
         <div className="lg:col-span-5">
           <div className="rounded-3xl glass-panel overflow-hidden">
-            <div className="h-64 sm:h-72 w-full bg-slate-950 border-b border-slate-200/80 dark:border-white/[0.07]">
+            <div className="h-72 sm:h-80 w-full bg-slate-950 border-b border-slate-200/80 dark:border-white/[0.07]">
               <EdelMockup className="w-full h-full object-cover" />
             </div>
             <div className="p-5 flex items-center justify-between text-xs">
