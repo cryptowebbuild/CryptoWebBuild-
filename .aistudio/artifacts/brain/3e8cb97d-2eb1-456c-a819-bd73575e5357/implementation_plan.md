@@ -1,49 +1,92 @@
-# $100M Agency Aesthetic, High-Conversion Sales Psychology, 60fps Motion Graphics & 100% SEO/GEO Master Plan
+# Ultra-Premium Linear-Style Agency UI/UX & Cal.com Integration Plan
 
-## 1. Executive Vision
-Elevate **CryptoWebBuild** to the visual and psychological standard of a **$100M+ Global Engineering Studio** (inspired by Linear, Stripe, and Vercel)—combining a calm **Deep Obsidian (`#090A0F`)** palette, **60fps hardware-accelerated SVG/CSS motion graphics** (that preserve **100/100 PageSpeed** with zero video bloat), **Dual-Market Sales Psychology** (convincing both International USD SaaS/E-Commerce founders and Bangladesh BDT brands), and **100% Google + AI Search (GEO) Indexing**.
-
----
-
-## 2. Pillar 1: $100M Agency Visual System, Typography & 60fps Motion Graphics
-1. **Deep Obsidian (`#090A0F`) & High-Contrast Light Mode (`#FAFAFA`) (`index.css`, `components/Layout.tsx`)**:
-   - **60% Canvas**: Pure, calm `#090A0F` dark canvas (`#FAFAFA` light canvas) with zero noisy grid clutter or cheap rainbow glows.
-   - **30% Architectural Surfaces**: Precision `#11131A` cards with `1px solid rgba(255,255,255,0.07)` hairline borders and subtle top-edge specular highlights (`inset 0 1px 0 0 rgba(255,255,255,0.08)`).
-   - **10% High-Intent Accent**: Crisp Indigo/Violet (`#6366F1`) for primary conversion actions and Emerald (`#10B981`) strictly for verified live metrics.
-2. **Upgraded $100M Editorial Typography (`index.css`, `pages/Home.tsx`)**:
-   - **Hero & Section Headlines**: Tight editorial tracking (`-0.03em`), balanced line-wrapping (`text-wrap: balance`), and fluid sizing (`clamp(2.5rem, 4.5vw, 4.25rem)`).
-   - **Data & Metrics**: Strict `tabular-nums` monospace formatting for all speed benchmarks, revenue lifts, and pricing figures.
-3. **Zero-Lag 60fps SVG/CSS Motion Graphic Showcase (100% PageSpeed Safe)**:
-   - Instead of heavy `.mp4` files that hurt LCP/PageSpeed, build a **Hardware-Accelerated Interactive Architecture & Founder Authority Showcase** in the Hero right column:
-     - Features Sagor Ahamed’s verified studio portrait alongside a live, GPU-composited (`transform: translate3d`) **Sub-Second Architecture Pipeline Motion Graphic** (`Edge CDN → Next.js 15 / Django → 0.4s Checkout → 100/100 SEO`) and direct clickable links to live client deployments.
+This plan details the upgrade to configure the dev server on port 3000, integrate the official Cal.com link (`https://cal.com/cryptowebbuilddev/15min`), remove temporary video modal components, streamline hero copy to eliminate clutter while maintaining 100% SEO, and polish the visual aesthetic to a Linear-style Deep Obsidian design with 60fps hairline accents and 100% mobile/desktop PageSpeed.
 
 ---
 
-## 3. Pillar 2: High-Conversion Sales Psychology (International USD + Local Bangladesh BDT)
-Structure the homepage (`pages/Home.tsx`) into a **5-Stage Psychological Conversion Funnel** with zero filler text:
+## User Review & Critical Decisions
 
-1. **Stage 1: Hero — Instant Value & Risk Reversal (Above the Fold)**:
-   - **Clear Promise**: *"Engineering Sub-Second Websites & E-Commerce Stores That Multiply Revenue."*
-   - **Dual-Market Proof**: Built for global brands (`Stripe / Next.js / Python SaaS`) and leading Bangladesh businesses (`1-Click bKash / Nagad / Steadfast Courier`).
-   - **Psychological Anchor**: **48-Hour Live Prototype + 50/50 Payment Protection** (Pay 50% to start, and the final 50% only after testing your live system on staging).
-2. **Stage 2: The Cost of Slow Templates vs. Custom Code (Visual Contrast)**:
-   - A clean, scannable 3-column executive comparison showing why `4.8s WordPress/Shopify` loses 60%+ of paid ad traffic while `<0.6s Custom Next.js + Django` doubles checkout conversions with `$0/mo` plugin fees.
-3. **Stage 3: Verifiable Live Client Proof (Click & Inspect Yourself)**:
-   - Curated showcase of **4 Flagship Production Systems** (`Edel Bangladesh 0.4s Luxury Store`, `ClickRunClaw Cloud SaaS`, `ShopFast Headless Store`, `Vanguard Python/Django SaaS`) with real measured outcomes (`+240% Sales`, `7,000+ Users`, `0.4s Load`) and direct `Live Site` + `Case Study` buttons.
-4. **Stage 4: Interactive Dual-Currency Scope & Quote Configurator (`components/ProjectScopeBuilder.tsx`)**:
-   - Instant toggle between **International (`$ USD`)** and **Bangladesh (`৳ BDT`)** pricing.
-   - Real-time calculation of delivery days and **50% Upfront / 50% After Live Test** milestones, with 1-click WhatsApp dispatch to Sagor Ahamed.
-5. **Stage 5: Direct Principal Engineer Authority & 50/50 Guarantee Lock**:
-   - Direct accountability from **Sagor Ahamed** (zero junior outsourcing, 100% GitHub repository ownership handover, and 1-click WhatsApp/audit booking).
+> [!IMPORTANT]
+> The following decisions are confirmed and guide the implementation:
+> 1. **Dev Server Port 3000 Fix**: Configure `server: { port: 3000, host: '0.0.0.0' }` in `vite.config.ts` to ensure instant local dev server boot without port collision or timeout.
+> 2. **Official Cal.com Link**: Updated across all booking touchpoints to `https://cal.com/cryptowebbuilddev/15min`.
+> 3. **Video Removal**: Removed the temporary video demo modal and button from the Hero and codebase as requested, keeping the visual focus strictly on the conversion pipeline and live proof.
+> 4. **Hero Action Hierarchy**:
+>    - Primary Accent: **Claim 48-Hour Prototype** (Neon gradient button)
+>    - Secondary Focus: **Book 15-Min Strategy Call** (Direct Cal.com integration)
+>    - Tertiary / Subtle: **WhatsApp (01618-138820)** (Subdued hairline border style so it doesn't distract or overpower).
+> 5. **Aesthetic & PageSpeed**: Linear-style Deep Obsidian (`#090A0F`), 1px subtle hairline specular highlights, balanced micro-typography, and zero-JS-overhead CSS animations to maintain a verified 100/100 Core Web Vitals score on both mobile and desktop.
 
 ---
 
-## 4. Pillar 3: New 100% SEO + AI-Indexed (GEO) Flagship Blog Post & Full SEO Sync
-1. **New High-Converting Pillar Blog Post (`pages/blog/SubSecondSalesPsychology2026.tsx`)**:
-   - **Topic**: *"The $100M Web Architecture: Why Sub-Second Speed & Frictionless Checkout Double E-Commerce & SaaS Conversions in 2026"* (tailored for both Global & Bangladesh founders).
-   - **Visual Asset**: Dedicated fast-loading WebP/SVG architectural diagram so every blog post has a 100% unique, relevant visual with zero duplicate images.
-   - **SEO & Schema**: Embedded `BlogPosting` + `FAQPage` JSON-LD schema, table of contents, executive takeaways, and internal links to Services and Case Studies.
-2. **100% Search & AI Engine (GEO) Discovery Synchronization**:
-   - Register the new article in `data/blogPosts.ts` and `App.tsx`.
-   - Update and run `scripts/generate-sitemap.js` to refresh `public/sitemap.xml`.
-   - Update `public/robots.txt`, `public/llms.txt`, and `public/llms-full.txt` so ChatGPT, Perplexity, Claude, Gemini, and Google Search index all routes, case studies, pricing, and articles at 100%.
+## 1. Overview & Core Concept
+
+- **What It Delivers**:
+  - **Dev Server Stability**: Explicit Vite port 3000 binding for 100% reliable local development.
+  - **Distraction-Free Copy & 100% SEO**: Concise, balanced 1–2 line value propositions that eliminate walls of text while preserving the semantic H1, keyword density, and pre-rendered SSG metadata for search crawlers.
+  - **Official Cal.com Meeting Booking**: One-click 15-minute Strategy Call booking modal and direct links using `https://cal.com/cryptowebbuilddev/15min`.
+  - **Linear / Vercel Aesthetic**: Deep obsidian backgrounds (`#090A0F`), translucent card surfaces (`#11131A`), hairline borders (`rgba(255,255,255,0.08)`), crisp typography pairing (`Space Grotesk` display + `Inter`/sans body), and 60fps hardware-accelerated SVG conversion animations.
+
+---
+
+## 2. Technical Architecture & Component Mapping
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        VITE CONFIG (PORT 3000)                         │
+│   server: { port: 3000, host: '0.0.0.0' }                              │
+└────────────────────────────────────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                     LINEAR-STYLE DEEP OBSIDIAN UI                      │
+│                                                                        │
+│   ┌────────────────────────────────────────────────────────────────┐   │
+│   │ Hero Section: Clean 1-Line Proposition + 3-Button Flow         │   │
+│   │ [Claim 48h Prototype]  [15-Min Strategy Call]  [WhatsApp (sub)]│   │
+│   └────────────────────────────────────────────────────────────────┘   │
+│                                  │                                     │
+│         ┌────────────────────────┴────────────────────────┐            │
+│         ▼                                                 ▼            │
+│  [BookingModal.tsx]                            [ProjectScopeBuilder]   │
+│  cal.com/cryptowebbuilddev/15min               USD/BDT Instant Quote   │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+### Step 1: Fix Dev Server in `vite.config.ts`
+- Add explicit server configuration:
+  ```ts
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+    strictPort: true,
+  }
+  ```
+- Ensures the server binds directly to port 3000 as expected by the preview environment.
+
+### Step 2: Remove Video Demo Modal & Button
+- Remove `VideoDemoModal.tsx` references from `pages/Home.tsx`.
+- Delete `components/VideoDemoModal.tsx` to keep the bundle clean and eliminate unused code.
+
+### Step 3: Integrate Official Cal.com Link & Booking Modal
+- In `components/BookingModal.tsx`:
+  - Update booking link to `https://cal.com/cryptowebbuilddev/15min`.
+  - Provide both clean iframe embed support and external link fallback.
+- In `components/Layout.tsx`, `components/FloatingChatWidget.tsx`, and `scripts/prerender-ssg.js`:
+  - Update all Cal.com references to `https://cal.com/cryptowebbuilddev/15min`.
+
+### Step 4: Streamline Hero Copy & Action Hierarchy
+- Rebalance Hero section in `pages/Home.tsx`:
+  - **H1**: Bold, balanced, 2-line title (*"Sub-Second Websites & 1-Click Stores That Multiply Revenue."*).
+  - **Copy**: Exactly 2 crisp sentences explaining the 0.4s speed, 1-click checkout, and 50/50 live testing guarantee.
+  - **Action Trio**:
+    1. `Claim 48-Hour Prototype` (Primary CTA)
+    2. `15-Min Strategy Call` (Cal.com modal trigger)
+    3. `WhatsApp` (Subdued secondary hairline button)
+- Remove text clutter across the 3 service cards and projects preview while preserving all technical SEO keywords and Schema.org JSON-LD markup.
+
+### Step 5: Verify 100% PageSpeed & SSG Compilation
+- Run `compile_applet` (`npm run build`) to ensure:
+  - TypeScript passes without error.
+  - All 50+ static HTML routes are pre-rendered with the updated Cal.com link and clean copy.
+  - Restart the dev server to confirm port 3000 is active and responding.

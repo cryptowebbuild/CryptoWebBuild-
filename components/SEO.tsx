@@ -33,14 +33,27 @@ const SEO: React.FC<SEOProps> = ({
   const siteUrl = 'https://cryptowebbuild.com';
   
   // 1. Unified Brand Identity: CryptoWebBuild by Sagor Ahamed
-  const defaultTitle = "CryptoWebBuild | Full-Stack Web Engineering, Technical SEO & AI Automation";
-  const defaultDescription = "Don't just build a website. Build a high-speed revenue & automation machine. Sub-second E-commerce storefronts, Python/Django & Next.js apps, #1 Technical SEO, and 24/7 AI Agents by Sagor Ahamed.";
+  const defaultTitle = "CryptoWebBuild | Sub-Second Web & 100/100 SEO";
+  const defaultDescription = "Sub-second Next.js & Python websites, 1-click E-Commerce checkouts, and 100/100 SEO by Sagor Ahamed. Pay 50% only after live testing.";
   const defaultImage = `${siteUrl}/hero-avatar.webp`;
 
-  // 2. Resolve Final Values (Clean any residual CryptoWebBuild references automatically)
+  // 2. Resolve Final Values with Strict Length Clamping for 100% Ahrefs Health Score
   const rawTitle = title ? title.replace(/CryptoWebBuild/gi, 'CryptoWebBuild') : defaultTitle;
-  const finalTitle = rawTitle.includes('CryptoWebBuild') ? rawTitle : `${rawTitle} | CryptoWebBuild`;
-  const finalDescription = (description || defaultDescription).replace(/CryptoWebBuild/gi, 'CryptoWebBuild');
+  // If rawTitle already contains CryptoWebBuild or is longer than 45 chars, keep as is; otherwise append suffix if under 60 chars
+  let finalTitle = rawTitle;
+  if (!rawTitle.includes('CryptoWebBuild')) {
+    if (rawTitle.length + 18 <= 60) {
+      finalTitle = `${rawTitle} | CryptoWebBuild`;
+    }
+  }
+  if (finalTitle.length > 60) {
+    finalTitle = finalTitle.substring(0, 57) + '...';
+  }
+
+  let finalDescription = (description || defaultDescription).replace(/CryptoWebBuild/gi, 'CryptoWebBuild');
+  if (finalDescription.length > 155) {
+    finalDescription = finalDescription.substring(0, 152) + '...';
+  }
   const cleanImage = image ? image.replace(/https?:\/\/CryptoWebBuild\.com/gi, siteUrl) : '';
   const finalImage = cleanImage ? (cleanImage.startsWith('http') ? cleanImage : `${siteUrl}${cleanImage}`) : defaultImage;
 

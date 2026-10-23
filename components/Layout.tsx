@@ -197,6 +197,15 @@ const StickyHeaderAndScrollButton: React.FC<{
                 )}
               </button>
 
+              <a
+                href="https://cal.com/cryptowebbuilddev/15min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden xl:inline-flex items-center justify-center px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-semibold text-xs hover:border-indigo-500/40 transition-colors whitespace-nowrap shrink-0"
+              >
+                Book Call
+              </a>
+
               <Link
                 to="/contact"
                 className="hidden md:inline-flex items-center justify-center px-4 py-2 neon-button text-white font-semibold rounded-xl text-xs whitespace-nowrap shrink-0"
@@ -255,7 +264,7 @@ const StickyHeaderAndScrollButton: React.FC<{
                   </Link>
                 ))}
               </div>
-              <div className="pt-4 mt-4 border-t border-slate-200 dark:border-white/10">
+              <div className="pt-4 mt-4 border-t border-slate-200 dark:border-white/10 space-y-2">
                 <Link
                   to="/contact"
                   className="flex items-center justify-center w-full px-6 py-3 neon-button text-white font-semibold rounded-xl text-sm"
@@ -263,6 +272,14 @@ const StickyHeaderAndScrollButton: React.FC<{
                 >
                   Start Project
                 </Link>
+                <a
+                  href="https://cal.com/cryptowebbuilddev/15min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full px-6 py-2.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold rounded-xl text-xs"
+                >
+                  Book 15-Min Strategy Call
+                </a>
               </div>
             </div>
           </div>

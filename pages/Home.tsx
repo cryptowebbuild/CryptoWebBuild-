@@ -17,8 +17,12 @@ import ShopFastMockup from '../components/ShopFastMockup';
 import EdelMockup from '../components/EdelMockup';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 import SpeedRevenueSimulator from '../components/SpeedRevenueSimulator';
+import BookingModal from '../components/BookingModal';
+import { Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
+  const [isBookingOpen, setIsBookingOpen] = React.useState(false);
+
   const featuredCases = [
     {
       id: 'auracommerce',
@@ -58,8 +62,8 @@ const Home: React.FC = () => {
   return (
     <div className="space-y-24 md:space-y-32 overflow-hidden">
       <SEO
-        title="CryptoWebBuild | Sub-Second Web, E-Commerce & 100/100 SEO Studio"
-        description="Principal Full-Stack Engineering by Sagor Ahamed. We build sub-second Next.js & Python/Django websites, 1-click E-Commerce checkouts, and 100/100 Technical SEO. Pay 50% only after live testing."
+        title="CryptoWebBuild | Sub-Second Web & 100/100 SEO"
+        description="Sub-second Next.js & Python websites, 1-click E-Commerce checkouts, and 100/100 SEO by Sagor Ahamed. Pay 50% only after live testing."
         keywords={[
           'Full-Stack Web Developer',
           'Python Django Developer',
@@ -101,24 +105,36 @@ const Home: React.FC = () => {
               <strong className="text-slate-900 dark:text-white">100/100 Google SEO</strong>. Pay the final 50% only after testing your live system.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto pt-1">
+            {/* 3 Balanced Hero Actions: Claim 48h, Direct 15-Min Cal.com Call, Subtle WhatsApp */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto pt-1">
               <Link
                 to="/contact"
-                className="flex items-center justify-center gap-2 px-7 py-4 w-full sm:w-auto neon-button text-white font-semibold rounded-xl text-sm sm:text-base whitespace-nowrap shrink-0"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 neon-button text-white font-semibold rounded-xl text-sm whitespace-nowrap shrink-0 shadow-lg shadow-indigo-500/20"
               >
                 <Zap className="w-4 h-4" />
                 <span>Claim 48-Hour Prototype</span>
               </Link>
+              <button
+                type="button"
+                onClick={() => setIsBookingOpen(true)}
+                className="flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold rounded-xl hover:opacity-90 transition-opacity text-sm whitespace-nowrap shrink-0 shadow-sm"
+              >
+                <Calendar className="w-4 h-4 text-indigo-500 dark:text-indigo-600" />
+                <span>15-Min Strategy Call</span>
+              </button>
               <a
                 href="https://wa.me/8801618138820?text=Hi%20Sagor%2C%20I%20visited%20CryptoWebBuild.com%20and%20want%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-4 w-full sm:w-auto bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/[0.08] text-slate-900 dark:text-white font-semibold rounded-xl hover:border-indigo-500/40 transition-colors text-sm sm:text-base whitespace-nowrap shrink-0 tabular-nums"
+                className="flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl border border-slate-200/80 dark:border-white/[0.08] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors text-xs font-semibold whitespace-nowrap shrink-0"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-500" />
-                <span>WhatsApp: 01618-138820</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span>WhatsApp</span>
               </a>
             </div>
+
+            {/* Booking Modal */}
+            <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
 
             {/* 4 Crisp Proof Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200 dark:border-white/[0.07] w-full tabular-nums">
