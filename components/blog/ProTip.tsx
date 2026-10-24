@@ -1,10 +1,12 @@
 import React from 'react';
 
 interface ProTipProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  title?: string;
+  tip?: string;
 }
 
-const ProTip: React.FC<ProTipProps> = ({ children }) => {
+const ProTip: React.FC<ProTipProps> = ({ children, title, tip }) => {
   return (
     <div className="my-12 relative group">
       {/* --- Ambient Glow --- */}
@@ -28,12 +30,12 @@ const ProTip: React.FC<ProTipProps> = ({ children }) => {
         {/* --- Content Section --- */}
         <div className="relative z-10 flex-1">
           <h4 className="flex items-center gap-2 text-sm font-black text-amber-600 dark:text-amber-500 uppercase tracking-widest mb-3">
-            <span>PRO TIP</span>
+            <span>{title || 'PRO TIP'}</span>
             <span className="h-px w-12 bg-amber-300 dark:bg-amber-800"></span>
           </h4>
           
           <div className="text-gray-800 dark:text-gray-200 font-medium text-lg leading-relaxed italic">
-            {children}
+            {children || tip}
           </div>
         </div>
 

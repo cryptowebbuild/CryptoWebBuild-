@@ -70,7 +70,7 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
 
     if (calculatorMetrics) {
       lines.push(
-        `• ROI Diagnostic: ${calculatorMetrics.monthlyVisitors.toLocaleString()} visitors/mo | ${calculatorMetrics.siteStatusLabel} | Est. Leaked Revenue: $${calculatorMetrics.monthlyLeakedRevenue.toLocaleString()}/mo ($${calculatorMetrics.annualRecoveredRevenue.toLocaleString()}/yr)`
+        `• ROI Diagnostic: ${calculatorMetrics.monthlyVisitors.toLocaleString()} visitors/mo | ${calculatorMetrics.statusLabel} | Est. Leaked Revenue: $${calculatorMetrics.monthlyLeakedRevenue.toLocaleString()}/mo ($${calculatorMetrics.annualLeakedRevenue.toLocaleString()}/yr)`
       );
     }
 
@@ -163,7 +163,7 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
             <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between gap-4">
               <div className="text-xs md:text-sm text-slate-800 dark:text-slate-200">
                 <strong className="text-emerald-600 dark:text-emerald-400">ROI Diagnostic Attached:</strong>{' '}
-                Recovering <span className="font-mono font-bold">${calculatorMetrics.monthlyLeakedRevenue.toLocaleString()}/mo</span> ({calculatorMetrics.monthlyVisitors.toLocaleString()} visitors/mo · {calculatorMetrics.siteStatusLabel})
+                Recovering <span className="font-mono font-bold">${calculatorMetrics.monthlyLeakedRevenue.toLocaleString()}/mo</span> ({calculatorMetrics.monthlyVisitors.toLocaleString()} visitors/mo · {calculatorMetrics.statusLabel})
               </div>
               <span className="text-xs font-mono text-emerald-500 shrink-0">✓ Linked</span>
             </div>

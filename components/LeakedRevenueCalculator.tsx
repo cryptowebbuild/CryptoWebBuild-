@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, TrendingUp, AlertTriangle, ArrowRight, MessageSquare, CheckCircle2 } from 'lucide-react';
 
+export type CalculatorMetrics = CalculatorResult;
 export interface CalculatorResult {
   monthlyVisitors: number;
   statusLabel: string;

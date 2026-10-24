@@ -22,12 +22,11 @@ const cloudflareRedirectsPlugin = () => {
       }
 
       const redirectsPath = path.join(dist, '_redirects');
-      // Create the redirects file
       fs.writeFileSync(redirectsPath, '/* /index.html 200');
       console.log('✅ Generated _redirects file for Cloudflare SPA');
     }
-  }
-}
+  };
+};
 
 export default defineConfig({
   server: {
@@ -43,7 +42,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, '.'),
     },
   },
   build: {
@@ -58,17 +57,11 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor-react';
-            }
-            if (id.includes('framer-motion') || id.includes('lucide-react')) {
-              return 'vendor-ui';
-            }
-            return 'vendor-libs';
+            return 'vendor';
           }
         }
       }
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 1200,
   }
 });
