@@ -76,6 +76,7 @@ const WhySubSecondWebsitesCrushWordPress2026 = lazy(() => import('./pages/blog/W
 const HowToAutomateEcommerceWhatsAppAIAgents = lazy(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
 const BangladeshFCommerceToWebsiteMigrationGuide2026 = lazy(() => import('./pages/blog/BangladeshFCommerceToWebsiteMigrationGuide2026'));
 const SubSecondSalesPsychology2026 = lazy(() => import('./pages/blog/SubSecondSalesPsychology2026'));
+const NextJsDjangoArchitecture2026 = lazy(() => import('./pages/blog/NextJsDjangoArchitecture2026'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -157,6 +158,7 @@ const App: React.FC = () => {
           <Route path="/blog/how-to-automate-ecommerce-orders-whatsapp-ai-agents" element={<HowToAutomateEcommerceWhatsAppAIAgents />} />
           <Route path="/blog/bangladesh-fcommerce-to-website-migration-guide-2026" element={<BangladeshFCommerceToWebsiteMigrationGuide2026 />} />
           <Route path="/blog/sub-second-sales-psychology-architecture-2026" element={<SubSecondSalesPsychology2026 />} />
+          <Route path="/blog/nextjs-django-fullstack-architecture-2026" element={<NextJsDjangoArchitecture2026 />} />
 
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />

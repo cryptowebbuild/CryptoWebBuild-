@@ -40,13 +40,13 @@ let blogPosts = [];
 
 try {
   const content = fs.readFileSync(blogPostsPath, 'utf-8');
-  const postRegex = /{\s*id:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*slug:\s*['"]([^'"]+)['"],\s*description:\s*['"]([^'"]+)['"]/g;
+  const postRegex = /{\s*id:\s*['"]([^'"]+)['"],\s*slug:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*excerpt:\s*['"]([^'"]+)['"]/g;
   let match;
   while ((match = postRegex.exec(content)) !== null) {
     blogPosts.push({
       id: match[1],
-      title: match[2],
-      slug: match[3],
+      slug: match[2],
+      title: match[3],
       description: match[4],
     });
   }
