@@ -163,6 +163,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://cryptowebbuild.com/blog/bkash-tokenized-checkout-nextjs-api-integration</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://cryptowebbuild.com/blog/django-celery-redis-ecommerce-order-pipeline</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>

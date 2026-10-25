@@ -52,6 +52,8 @@ const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazy(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const BkashTokenizedCheckoutNextjsApiIntegration = lazy(() => import('./pages/blog/BkashTokenizedCheckoutNextjsApiIntegration'));
+
 const DjangoCeleryRedisEcommerceOrderPipeline = lazy(() => import('./pages/blog/DjangoCeleryRedisEcommerceOrderPipeline'));
 
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
@@ -166,6 +168,7 @@ const App: React.FC = () => {
           <Route path="/blog/nextjs-django-fullstack-architecture-2026" element={<NextJsDjangoArchitecture2026 />} />
 
                     <Route path="/blog/django-celery-redis-ecommerce-order-pipeline" element={<DjangoCeleryRedisEcommerceOrderPipeline />} />
+                    <Route path="/blog/bkash-tokenized-checkout-nextjs-api-integration" element={<BkashTokenizedCheckoutNextjsApiIntegration />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>

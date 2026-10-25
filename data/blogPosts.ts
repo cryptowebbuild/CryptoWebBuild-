@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'bkash-tokenized-checkout-nextjs-api-integration',
+    slug: 'bkash-tokenized-checkout-nextjs-api-integration',
+    title: 'bKash Tokenized Checkout API in Next.js 15: How to Build 1-Click Payments That Triple Conversion Rates',
+    excerpt: 'Complete guide to implementing official bKash Tokenized Checkout API inside Next.js 15 App Router. Save cards, enable 1-click repeat orders, and eliminate checkout drop-offs.',
+    date: 'Oct 25, 2026',
+    readTime: '9 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "bKash Tokenized Checkout Next.js",
+      "Next.js 15 bKash Payment Gateway",
+      "1-Click Payment Bangladesh E-Commerce",
+      "bKash API Server Actions Route Handler",
+      "CryptoWebBuild Sagor Ahamed"
+]
+  },
+
+  {
     id: 'django-celery-redis-ecommerce-order-pipeline',
     slug: 'django-celery-redis-ecommerce-order-pipeline',
     title: 'Django, Celery & Redis: Architecting Asynchronous Order Pipelines That Never Drop Flash-Sale Orders in 2026',
