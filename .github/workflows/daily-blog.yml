@@ -44,7 +44,7 @@ jobs:
             echo "No new blog post generated or already up-to-date."
           else
             git add data/blogPosts.ts pages/blog App.tsx public/sitemap.xml
-            git commit -m "feat(blog): publish automated daily high-intent SEO article [skip ci]"
+            git commit -m "feat(blog): publish automated daily high-intent SEO article"
             git push origin main
             echo "Successfully published new daily blog post to main!"
           fi
