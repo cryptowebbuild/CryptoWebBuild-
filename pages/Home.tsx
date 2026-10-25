@@ -19,6 +19,8 @@ import ShopFastMockup from '../components/ShopFastMockup';
 import EdelMockup from '../components/EdelMockup';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 import BookingModal from '../components/BookingModal';
+import TrustBadges from '../components/TrustBadges';
+import InstantWebsiteAudit from '../components/InstantWebsiteAudit';
 
 const Home: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
@@ -315,6 +317,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* STAGE 1.5: VERIFIED TRUST BADGES & VALUE ASSURANCE */}
+      <TrustBadges />
+
       {/* STAGE 2: 3 CORE ENGINEERING SERVICES + INTERACTIVE SPEED & REVENUE SIMULATOR */}
       <section className="max-w-7xl mx-auto px-6 cv-auto space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -423,6 +428,11 @@ const Home: React.FC = () => {
             );
           })}
         </div>
+      </section>
+
+      {/* STAGE 2.5: FREE REAL-DATA SPEED & REVENUE LEAK AUDIT TOOL */}
+      <section className="cv-auto">
+        <InstantWebsiteAudit />
       </section>
 
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}

@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'django-celery-redis-ecommerce-order-pipeline',
+    slug: 'django-celery-redis-ecommerce-order-pipeline',
+    title: 'Django, Celery & Redis: Architecting Asynchronous Order Pipelines That Never Drop Flash-Sale Orders in 2026',
+    excerpt: 'How we engineer asynchronous order pipelines for high-traffic e-commerce and SaaS. Benchmark results, Redis queue strategies, and zero-downtime database locking patterns.',
+    date: 'Oct 25, 2026',
+    readTime: '10 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Django Celery Redis Order Pipeline",
+      "High Volume Ecommerce Architecture",
+      "Asynchronous Checkout Processing",
+      "PostgreSQL Row Locking Flash Sale",
+      "Sagor Ahamed CryptoWebBuild"
+]
+  },
+
+  {
     id: 'nextjs-django-fullstack-architecture-2026',
     slug: 'nextjs-django-fullstack-architecture-2026',
     title: 'Next.js 15 & Python/Django: The Ultimate Full-Stack Architecture for High-Volume E-Commerce and SaaS in 2026',

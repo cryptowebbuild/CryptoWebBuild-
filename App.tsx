@@ -35,6 +35,7 @@ const AIAutomation = lazy(() => import('./pages/services/AIAutomation'));
 const Web3Development = lazy(() => import('./pages/services/Web3Development'));
 const CryptoGrowth = lazy(() => import('./pages/services/CryptoGrowth'));
 const EcommerceDevelopmentBD = lazy(() => import('./pages/services/EcommerceDevelopmentBD'));
+const FCommerceBangladesh = lazy(() => import('./pages/FCommerceBangladesh'));
 
 // --- Case Studies ---
 const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
@@ -51,6 +52,8 @@ const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazy(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const DjangoCeleryRedisEcommerceOrderPipeline = lazy(() => import('./pages/blog/DjangoCeleryRedisEcommerceOrderPipeline'));
+
 const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
 const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
 const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinWebsiteFeatures'));
@@ -107,6 +110,8 @@ const App: React.FC = () => {
           <Route path="/services/web3-development" element={<Web3Development />} />
           <Route path="/services/crypto-growth" element={<CryptoGrowth />} />
           <Route path="/services/ecommerce-development-bangladesh" element={<EcommerceDevelopmentBD />} />
+          <Route path="/fcommerce" element={<FCommerceBangladesh />} />
+          <Route path="/bangladesh" element={<FCommerceBangladesh />} />
 
           <Route path="/videos" element={<Navigate to="/projects" replace />} />
           <Route path="/blog" element={<Blog />} />
@@ -160,6 +165,7 @@ const App: React.FC = () => {
           <Route path="/blog/sub-second-sales-psychology-architecture-2026" element={<SubSecondSalesPsychology2026 />} />
           <Route path="/blog/nextjs-django-fullstack-architecture-2026" element={<NextJsDjangoArchitecture2026 />} />
 
+                    <Route path="/blog/django-celery-redis-ecommerce-order-pipeline" element={<DjangoCeleryRedisEcommerceOrderPipeline />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>

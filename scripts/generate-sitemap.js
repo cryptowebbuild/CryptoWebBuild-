@@ -13,6 +13,8 @@ const staticRoutes = [
   '/services/crypto-growth',
   '/services/ai-automation',
   '/services/ecommerce-development-bangladesh',
+  '/fcommerce',
+  '/bangladesh',
   '/projects',
   '/blog',
   '/contact',

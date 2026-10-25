@@ -13,6 +13,8 @@ const staticRoutes = [
   '/services/crypto-growth',
   '/services/ai-automation',
   '/services/ecommerce-development-bangladesh',
+  '/fcommerce',
+  '/bangladesh',
   '/projects',
   '/blog',
   '/contact',
@@ -75,6 +77,16 @@ const routeMeta = {
     title: '1-Click E-Commerce Website Development | CryptoWebBuild',
     description: 'Custom 0.4s Next.js e-commerce websites with 1-click bKash/Stripe checkout, Steadfast courier sync, and Server-Side Meta CAPI.',
     h1: '1-Click E-Commerce Website Development & Courier Automation',
+  },
+  '/fcommerce': {
+    title: 'এফ-কমার্স থেকে ১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
+    description: 'ফেসবুক ইনবক্সের ঝামেলা বাদ দিয়ে ০.৪ সেকেন্ড গতির নেক্সট.জেএস ওয়েবসাইট, ১-ক্লিক বিকাশ/ক্যাশ অন ডেলিভারি এবং স্টেডফাস্ট/পাঠাও অটোমেশন।',
+    h1: 'ফেসবুক ইনবক্সের প্যারা বাদ দিয়ে শুরু করুন ১-ক্লিক অর্ডার ওয়েবসাইট',
+  },
+  '/bangladesh': {
+    title: 'এফ-কমার্স থেকে ১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
+    description: 'ফেসবুক ইনবক্সের ঝামেলা বাদ দিয়ে ০.৪ সেকেন্ড গতির নেক্সট.জেএস ওয়েবসাইট, ১-ক্লিক বিকাশ/ক্যাশ অন ডেলিভারি এবং স্টেডফাস্ট/পাঠাও অটোমেশন।',
+    h1: 'ফেসবুক ইনবক্সের প্যারা বাদ দিয়ে শুরু করুন ১-ক্লিক অর্ডার ওয়েবসাইট',
   },
   '/services/ai-automation': {
     title: 'AI Automation & 24/7 Agent Systems | CryptoWebBuild',

@@ -1,0 +1,50 @@
+name: Daily High-Converting Blog Post Automation
+
+on:
+  schedule:
+    # Runs daily at 03:00 UTC (9:00 AM Bangladesh Time)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    # Allows 1-click manual trigger anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  publish-daily-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate High-Converting SEO Blog Article
+        run: node scripts/generate-daily-blog.js
+
+      - name: Build & Pre-Render Static HTML (SSG)
+        run: npm run build
+
+      - name: Commit & Push to Main
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Check if there are changes to commit
+          if git diff --quiet data/blogPosts.ts pages/blog; then
+            echo "No new blog post generated or already up-to-date."
+          else
+            git add data/blogPosts.ts pages/blog App.tsx public/sitemap.xml
+            git commit -m "feat(blog): publish automated daily high-intent SEO article [skip ci]"
+            git push origin main
+            echo "Successfully published new daily blog post to main!"
+          fi
