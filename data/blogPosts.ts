@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'steadfast-courier-api-webhook-integration-nextjs',
+    slug: 'steadfast-courier-api-webhook-integration-nextjs',
+    title: 'Steadfast Courier API Automation: How to Auto-Book Parcel Shipments from Next.js Stores in 0.4 Seconds',
+    excerpt: 'Stop manually copying customer addresses into courier dashboards. Learn how to connect Steadfast Courier API with Next.js and Django for automated consignment booking and real-time tracking.',
+    date: 'Oct 26, 2026',
+    readTime: '8 min read',
+    category: 'Guide',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Steadfast Courier API Next.js",
+      "Automated Courier Dispatch Bangladesh",
+      "Next.js E-Commerce Courier Sync",
+      "Steadfast Consignment Webhook",
+      "Sagor Ahamed CryptoWebBuild"
+]
+  },
+
+  {
     id: 'bkash-tokenized-checkout-nextjs-api-integration',
     slug: 'bkash-tokenized-checkout-nextjs-api-integration',
     title: 'bKash Tokenized Checkout API in Next.js 15: How to Build 1-Click Payments That Triple Conversion Rates',

@@ -52,6 +52,8 @@ const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazy(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const SteadfastCourierApiWebhookIntegrationNextjs = lazy(() => import('./pages/blog/SteadfastCourierApiWebhookIntegrationNextjs'));
+
 const BkashTokenizedCheckoutNextjsApiIntegration = lazy(() => import('./pages/blog/BkashTokenizedCheckoutNextjsApiIntegration'));
 
 const DjangoCeleryRedisEcommerceOrderPipeline = lazy(() => import('./pages/blog/DjangoCeleryRedisEcommerceOrderPipeline'));
@@ -169,6 +171,7 @@ const App: React.FC = () => {
 
                     <Route path="/blog/django-celery-redis-ecommerce-order-pipeline" element={<DjangoCeleryRedisEcommerceOrderPipeline />} />
                     <Route path="/blog/bkash-tokenized-checkout-nextjs-api-integration" element={<BkashTokenizedCheckoutNextjsApiIntegration />} />
+                    <Route path="/blog/steadfast-courier-api-webhook-integration-nextjs" element={<SteadfastCourierApiWebhookIntegrationNextjs />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>
