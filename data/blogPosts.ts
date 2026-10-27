@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'woocommerce-to-headless-nextjs-migration-guide',
+    slug: 'woocommerce-to-headless-nextjs-migration-guide',
+    title: 'Migrating from WooCommerce to Headless Next.js 15: How We Cut TTFB from 3.2s to 0.28s and Gained +38% Conversions',
+    excerpt: 'Step-by-step technical teardown of migrating a sluggish WordPress/WooCommerce store to a headless Next.js edge storefront. Preserve order history, rank #1 on Google, and double checkout velocity.',
+    date: 'Oct 27, 2026',
+    readTime: '11 min read',
+    category: 'Case Study',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "WooCommerce to Next.js Migration",
+      "Headless WordPress Next.js 15",
+      "E-Commerce Speed Optimization 2026",
+      "ShopFast Case Study CryptoWebBuild",
+      "Sagor Ahamed Full Stack Architect"
+]
+  },
+
+  {
     id: 'steadfast-courier-api-webhook-integration-nextjs',
     slug: 'steadfast-courier-api-webhook-integration-nextjs',
     title: 'Steadfast Courier API Automation: How to Auto-Book Parcel Shipments from Next.js Stores in 0.4 Seconds',
