@@ -21,6 +21,9 @@ import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 import BookingModal from '../components/BookingModal';
 import TrustBadges from '../components/TrustBadges';
 import InstantWebsiteAudit from '../components/InstantWebsiteAudit';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import ArchitectureComparisonMatrix from '../components/ArchitectureComparisonMatrix';
+import SpotlightCard from '../components/SpotlightCard';
 
 const Home: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
@@ -320,6 +323,11 @@ const Home: React.FC = () => {
       {/* STAGE 1.5: VERIFIED TRUST BADGES & VALUE ASSURANCE */}
       <TrustBadges />
 
+      {/* STAGE 1.75: INTERACTIVE BEFORE/AFTER SPEED & REVENUE PROOF SLIDER */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto">
+        <BeforeAfterSlider />
+      </section>
+
       {/* STAGE 2: 3 CORE ENGINEERING SERVICES + INTERACTIVE SPEED & REVENUE SIMULATOR */}
       <section className="max-w-7xl mx-auto px-6 cv-auto space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -383,9 +391,9 @@ const Home: React.FC = () => {
           ].map((pillar) => {
             const Icon = pillar.icon;
             return (
-              <div
+              <SpotlightCard
                 key={pillar.title}
-                className="p-6 sm:p-7 rounded-3xl glass-panel hover:border-indigo-500/40 transition-colors flex flex-col justify-between"
+                className="p-6 sm:p-7 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -424,7 +432,7 @@ const Home: React.FC = () => {
                   <span>{pillar.cta}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>
@@ -433,6 +441,11 @@ const Home: React.FC = () => {
       {/* STAGE 2.5: FREE REAL-DATA SPEED & REVENUE LEAK AUDIT TOOL */}
       <section className="cv-auto">
         <InstantWebsiteAudit />
+      </section>
+
+      {/* STAGE 2.75: ARCHITECTURAL COMPARISON MATRIX (TRADITIONAL VS CRYPTOWEBBUILD) */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto">
+        <ArchitectureComparisonMatrix />
       </section>
 
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}
@@ -654,7 +667,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-emerald-500">
+          <SpotlightCard className="p-7 space-y-3 border-t-2 border-emerald-500">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-mono font-bold text-sm">
               50/50
             </div>
@@ -664,9 +677,9 @@ const Home: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               No full upfront payments. We start with 50%, deploy the working system to a private live URL, test every button, checkout, and speed metric with you, and only then do you pay the remaining 50%.
             </p>
-          </div>
+          </SpotlightCard>
 
-          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-indigo-500">
+          <SpotlightCard className="p-7 space-y-3 border-t-2 border-indigo-500">
             <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-500 font-mono font-bold text-sm">
               48h
             </div>
@@ -676,9 +689,9 @@ const Home: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               You will not wait weeks just to see a Figma mock. Within 48 hours, you test a working, clickable React/Next.js prototype connected to real data and responsiveness.
             </p>
-          </div>
+          </SpotlightCard>
 
-          <div className="p-7 rounded-3xl glass-panel space-y-3 border-t-2 border-amber-500">
+          <SpotlightCard className="p-7 space-y-3 border-t-2 border-amber-500">
             <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 font-mono font-bold text-sm">
               100%
             </div>
@@ -688,7 +701,7 @@ const Home: React.FC = () => {
             <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed">
               Complete GitHub repository handover with zero vendor lock-in. Includes 30 days of free bug fixes, speed audits, and hands-on maintenance after launch.
             </p>
-          </div>
+          </SpotlightCard>
         </div>
       </section>
 

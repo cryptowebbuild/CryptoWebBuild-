@@ -10,7 +10,10 @@ import {
   ShieldCheck,
   RefreshCw,
   ExternalLink,
+  Copy,
+  Check,
 } from 'lucide-react';
+import SpotlightCard from './SpotlightCard';
 
 interface AuditResult {
   url: string;
@@ -30,6 +33,13 @@ export const InstantWebsiteAudit: React.FC = () => {
   const [loadingStep, setLoadingStep] = useState('');
   const [result, setResult] = useState<AuditResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const copyWhatsApp = () => {
+    navigator.clipboard.writeText('+8801618138820');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2200);
+  };
 
   const normalizeUrl = (input: string) => {
     let clean = input.trim();
@@ -139,7 +149,7 @@ export const InstantWebsiteAudit: React.FC = () => {
     : `https://wa.me/8801618138820`;
 
   return (
-    <section className="w-full rounded-3xl glass-panel p-6 sm:p-10 border border-slate-200 dark:border-white/10 relative overflow-hidden space-y-8">
+    <SpotlightCard className="w-full rounded-3xl glass-panel p-6 sm:p-10 border border-slate-200 dark:border-white/10 relative overflow-hidden space-y-8">
       {/* Subtle Ambient Radial Highlight */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -234,22 +244,53 @@ export const InstantWebsiteAudit: React.FC = () => {
               </div>
             </div>
 
-            {/* Google Score Circle */}
+            {/* Google Score Gauge Meter */}
             <div className="flex items-center gap-4 self-start sm:self-auto">
-              <div className="text-right">
+              <div className="text-right hidden sm:block">
                 <div className="text-xs text-slate-500 dark:text-slate-400 font-mono">Performance Score</div>
                 <div className="text-[11px] text-slate-400">Google Lighthouse Mobile</div>
               </div>
-              <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center font-display font-black text-2xl border ${
-                  result.score < 50
-                    ? 'bg-red-500/10 text-red-500 border-red-500/30'
-                    : result.score < 85
-                    ? 'bg-amber-500/10 text-amber-500 border-amber-500/30'
-                    : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/30'
-                }`}
-              >
-                {result.score}
+              
+              {/* Radial Progress Meter (60fps SVG) */}
+              <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
+                <svg className="w-full h-full -rotate-90" viewBox="0 0 80 80">
+                  {/* Track Circle */}
+                  <circle
+                    cx="40"
+                    cy="40"
+                    r="32"
+                    className="stroke-slate-200 dark:stroke-white/10"
+                    strokeWidth="6"
+                    fill="transparent"
+                  />
+                  {/* Indicator Circle */}
+                  <circle
+                    cx="40"
+                    cy="40"
+                    r="32"
+                    stroke={result.score < 50 ? '#EF4444' : result.score < 85 ? '#F59E0B' : '#10B981'}
+                    strokeWidth="6"
+                    strokeDasharray={201}
+                    strokeDashoffset={201 - (201 * result.score) / 100}
+                    strokeLinecap="round"
+                    fill="transparent"
+                    className="transition-all duration-1000 ease-out"
+                  />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <span
+                    className={`font-display font-black text-2xl tabular-nums ${
+                      result.score < 50
+                        ? 'text-red-500'
+                        : result.score < 85
+                        ? 'text-amber-500'
+                        : 'text-emerald-500'
+                    }`}
+                  >
+                    {result.score}
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-400 uppercase -mt-1">/100</span>
+                </div>
               </div>
             </div>
           </div>
@@ -288,8 +329,8 @@ export const InstantWebsiteAudit: React.FC = () => {
           </div>
 
           {/* Conversion Diagnosis & 50/50 Solution */}
-          <div className="p-5 rounded-2xl bg-indigo-500/5 border border-indigo-500/20 flex flex-col md:flex-row items-center justify-between gap-5">
-            <div className="space-y-1 text-center md:text-left">
+          <div className="p-5 rounded-2xl bg-indigo-500/5 border border-indigo-500/20 flex flex-col lg:flex-row items-center justify-between gap-5">
+            <div className="space-y-1 text-center lg:text-left">
               <div className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
                 Sagor Ahamed&rsquo;s 50/50 Engineering Guarantee
               </div>
@@ -298,19 +339,40 @@ export const InstantWebsiteAudit: React.FC = () => {
               </p>
             </div>
 
-            <a
-              href={whatsappConsultUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-3 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-emerald-950/20 transition-all shrink-0"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>Claim 48h Prototype on WhatsApp</span>
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+              <button
+                type="button"
+                onClick={copyWhatsApp}
+                className="py-3 px-4 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 hover:border-indigo-500/40 transition-colors"
+                title="Copy WhatsApp Number"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-500" />
+                    <span className="text-emerald-500 font-bold">Copied: 01618-138820</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-slate-400" />
+                    <span>Copy: 01618-138820</span>
+                  </>
+                )}
+              </button>
+
+              <a
+                href={whatsappConsultUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-emerald-950/20 transition-all shrink-0 active:scale-95"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>Claim 48h Prototype on WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
-    </section>
+    </SpotlightCard>
   );
 };
 

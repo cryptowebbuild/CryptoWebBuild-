@@ -152,6 +152,12 @@ const StickyHeaderAndScrollButton: React.FC<{
               </span>
             </Link>
 
+            {/* Live Studio Availability Status Badge */}
+            <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Available for Q4/2026</span>
+            </div>
+
             <div className="hidden lg:flex items-center gap-7">
               {NAV_LINKS.map((item) => {
                 const isActive = location.pathname === item.path;
