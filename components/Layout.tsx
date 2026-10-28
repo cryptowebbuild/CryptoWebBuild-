@@ -1,7 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import FloatingChatWidget from './FloatingChatWidget';
-import MobileConversionBar from './MobileConversionBar';
 
 export const BrandLogo: React.FC<{ className?: string; idSuffix?: string }> = memo(
   ({ className, idSuffix = 'header' }) => (
@@ -295,7 +294,7 @@ const StickyHeaderAndScrollButton: React.FC<{
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-24 right-6 z-40 p-3 rounded-full bg-[#11131A] border border-white/10 text-white shadow-lg transition-all duration-150 hover:bg-indigo-600 focus:outline-none ${
+        className={`fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#11131A] border border-white/10 text-white shadow-lg transition-all duration-150 hover:bg-indigo-600 focus:outline-none ${
           showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
         }`}
         aria-label="Scroll to top"
@@ -350,12 +349,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       <StickyHeaderAndScrollButton theme={theme} toggleTheme={toggleTheme} />
 
-      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-24 md:pt-28 pb-20 focus:outline-none">
+      <main id="main-content" tabIndex={-1} className="relative z-10 flex-grow pt-24 md:pt-28 pb-12 md:pb-16 focus:outline-none">
         {children}
       </main>
 
       <FloatingChatWidget />
-      <MobileConversionBar />
 
       {/* Footer */}
       <footer className="relative z-10 mt-20 bg-white dark:bg-[#0C0E14] border-t border-slate-200 dark:border-white/[0.06]">

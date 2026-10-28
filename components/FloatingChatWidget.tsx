@@ -58,7 +58,7 @@ export const FloatingChatWidget: React.FC = () => {
   )}`;
 
   return (
-    <div className="fixed bottom-20 md:bottom-5 right-4 sm:right-5 z-50">
+    <div className="hidden md:block fixed bottom-6 right-6 z-40">
       {isOpen && (
         <div
           className="mb-4 w-[calc(100vw-36px)] sm:w-96 rounded-3xl bg-white dark:bg-[#0f141f] border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-200"

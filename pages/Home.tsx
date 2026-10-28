@@ -443,11 +443,6 @@ const Home: React.FC = () => {
         <InstantWebsiteAudit />
       </section>
 
-      {/* STAGE 2.75: ARCHITECTURAL COMPARISON MATRIX (TRADITIONAL VS CRYPTOWEBBUILD) */}
-      <section className="max-w-7xl mx-auto px-6 cv-auto">
-        <ArchitectureComparisonMatrix />
-      </section>
-
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}
       <section className="max-w-7xl mx-auto px-6 cv-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
@@ -650,6 +645,11 @@ const Home: React.FC = () => {
       <div className="cv-auto">
         <ProjectScopeBuilder />
       </div>
+
+      {/* STAGE 5.5: ARCHITECTURAL COMPARISON MATRIX (TRADITIONAL VS CRYPTOWEBBUILD) */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto">
+        <ArchitectureComparisonMatrix />
+      </section>
 
       {/* STAGE 6: ZERO-RISK GUARANTEES & OBJECTION BUSTERS */}
       <section className="max-w-7xl mx-auto px-6 cv-auto space-y-8">
