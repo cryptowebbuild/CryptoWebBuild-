@@ -34,6 +34,7 @@ const AIAutomation: React.FC = () => {
             <li>Instant &lt; 0.8s 24/7 responses to customer queries, order lookups, and investor questions.</li>
             <li>Integrated natively into your Website, WhatsApp Business, Telegram, and Discord.</li>
             <li>Automated B2B lead generation and browser workflows powered by Python &amp; OpenClaw.</li>
+            <li>Programmatic video &amp; dynamic ad rendering powered by Remotion (Open-Source Contributor, PR #12652).</li>
             <li>Zero-hallucination guardrails for critical pricing and business data.</li>
           </ul>
         </div>

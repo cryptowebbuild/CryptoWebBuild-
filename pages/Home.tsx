@@ -24,6 +24,7 @@ import InstantWebsiteAudit from '../components/InstantWebsiteAudit';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import ArchitectureComparisonMatrix from '../components/ArchitectureComparisonMatrix';
 import SpotlightCard from '../components/SpotlightCard';
+import RemotionContributionCard from '../components/RemotionContributionCard';
 
 const Home: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
@@ -441,6 +442,11 @@ const Home: React.FC = () => {
       {/* STAGE 2.5: FREE REAL-DATA SPEED & REVENUE LEAK AUDIT TOOL */}
       <section className="cv-auto">
         <InstantWebsiteAudit />
+      </section>
+
+      {/* STAGE 2.75: OPEN-SOURCE CORE ENGINEERING AUTHORITY (REMOTION CONTRIBUTOR) */}
+      <section className="max-w-7xl mx-auto px-6 cv-auto">
+        <RemotionContributionCard />
       </section>
 
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}

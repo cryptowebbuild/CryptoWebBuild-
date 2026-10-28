@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
+import RemotionContributionCard from '../components/RemotionContributionCard';
 
 const About: React.FC = () => {
   const profileSchema = {
@@ -31,6 +32,7 @@ const About: React.FC = () => {
         'Technical SEO',
         'RAG AI Agents',
         'Solana & Web3',
+        'Remotion Programmatic Video',
       ],
     },
   };
@@ -110,7 +112,7 @@ const About: React.FC = () => {
     { name: 'TypeScript', icon: 'TS', desc: 'End-to-End Type Safety' },
     { name: 'PostgreSQL', icon: '🐘', desc: 'Indexed Relational Schemas' },
     { name: 'RAG AI & OpenClaw', icon: '🤖', desc: '24/7 Vector Support & Sales' },
-    { name: 'Cloudflare Edge', icon: '☁️', desc: '100/100 Core Web Vitals' },
+    { name: 'Remotion (30k+ ⭐)', icon: '🎬', desc: 'Core Contributor (PR #12652)' },
   ];
 
   const stats = [
@@ -267,6 +269,11 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Open-Source Core Engineering Authority */}
+      <div className="max-w-7xl mx-auto mb-24">
+        <RemotionContributionCard />
       </div>
 
       {/* Bottom CTA - Harmonized for both Light Mode & Dark Mode */}
