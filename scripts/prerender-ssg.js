@@ -42,16 +42,23 @@ let blogPosts = [];
 
 try {
   const content = fs.readFileSync(blogPostsPath, 'utf-8');
-  const postRegex = /{\s*id:\s*['"]([^'"]+)['"],\s*slug:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*excerpt:\s*['"]([^'"]+)['"]/g;
-  let match;
-  while ((match = postRegex.exec(content)) !== null) {
-    blogPosts.push({
-      id: match[1],
-      slug: match[2],
-      title: match[3],
-      description: match[4],
-    });
+  // Robust block splitter so comments, formatting, or property order don't skip posts
+  const blocks = content.split(/},\s*\n\s*{/);
+  for (const block of blocks) {
+    const slugMatch = block.match(/slug:\s*['"]([^'"]+)['"]/);
+    const titleMatch = block.match(/title:\s*['"]([^'"]+)['"]/);
+    const excerptMatch = block.match(/excerpt:\s*['"]([^'"]+)['"]/);
+    const idMatch = block.match(/id:\s*['"]([^'"]+)['"]/);
+    if (slugMatch && titleMatch) {
+      blogPosts.push({
+        id: idMatch ? idMatch[1] : slugMatch[1],
+        slug: slugMatch[1],
+        title: titleMatch[1],
+        description: excerptMatch ? excerptMatch[1] : '',
+      });
+    }
   }
+  console.log(`✅ SSG Parser extracted ${blogPosts.length} blog posts from data/blogPosts.ts`);
 } catch (e) {
   console.warn('Could not parse blog posts for SSG:', e.message);
 }
