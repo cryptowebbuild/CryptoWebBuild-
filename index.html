@@ -24,6 +24,48 @@
       })();
     </script>
 
+    <!-- Automatic Self-Healing for Stale Browser Cache & Service Worker -->
+    <script>
+      (function () {
+        window.addEventListener('DOMContentLoaded', function () {
+          var test = document.createElement('div');
+          test.className = 'hidden';
+          document.body.appendChild(test);
+          var isCssLoaded = window.getComputedStyle(test).display === 'none';
+          document.body.removeChild(test);
+
+          if (!isCssLoaded) {
+            console.warn('Stylesheet not applied. Auto-purging stale cache & unregistering SW...');
+            if (!sessionStorage.getItem('css_purged_reload')) {
+              sessionStorage.setItem('css_purged_reload', 'true');
+              var promises = [];
+              if ('serviceWorker' in navigator) {
+                promises.push(
+                  navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                    return Promise.all(registrations.map(function (r) { return r.unregister(); }));
+                  })
+                );
+              }
+              if ('caches' in window) {
+                promises.push(
+                  caches.keys().then(function (names) {
+                    return Promise.all(names.map(function (n) { return caches.delete(n); }));
+                  })
+                );
+              }
+              Promise.all(promises).then(function () {
+                window.location.reload();
+              }).catch(function () {
+                window.location.reload();
+              });
+            }
+          } else {
+            sessionStorage.removeItem('css_purged_reload');
+          }
+        });
+      })();
+    </script>
+
     <!-- Meta Tags for Social Previews (OpenGraph & Twitter Cards) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="CryptoWebBuild" />
