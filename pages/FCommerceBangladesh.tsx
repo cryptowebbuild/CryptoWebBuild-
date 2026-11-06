@@ -34,7 +34,7 @@ const FCommerceBangladesh: React.FC = () => {
   return (
     <div className="space-y-16 md:space-y-24 py-8">
       <SEO
-        title="১-ক্লিক ই-কমার্স ও স্টেডফাস্ট অটোমেশন ওয়েবসাইট | CryptoWebBuild"
+        title="১-ক্লিক ওয়েবসাইট ও স্টেডফাস্ট কুরিয়ার অটোমেশন | CryptoWebBuild"
         description="ফেসবুক পেইজে 'Inbox for Price' বলে আর কাস্টমার হারাবেন না। ০.৪ সেকেন্ডের 1-ক্লিক ওয়েবসাইট, বিকাশ/ক্যাশ-অন-ডেলিভারি এবং অটোমেটিক স্টেডফাস্ট কুরিয়ার বুকিং।"
         keywords={[
           'Bangladesh F-Commerce Website Development',

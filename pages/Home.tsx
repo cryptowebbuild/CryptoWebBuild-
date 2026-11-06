@@ -158,42 +158,156 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column (5 cols) — High-Status Interactive Showcase (Edel Bangladesh 0.4s Storefront) */}
+          {/* Right Column (5 cols) — Clean Founder Portrait + 60fps SVG Motion Graphic & 1-Line Live Proof */}
           <div className="lg:col-span-5 w-full">
-            <div className="space-y-3.5">
-              <EdelMockup />
+            <div className="rounded-3xl glass-panel p-5 sm:p-6 space-y-5 gpu-accelerated">
+              {/* Top Founder Identity & Live Portrait */}
+              <div className="flex items-center gap-4">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/15 shrink-0 bg-slate-900">
+                  <OptimizedImage
+                    src="/hero-avatar.webp"
+                    alt="Sagor Ahamed — Founder & Principal Architect at CryptoWebBuild"
+                    className="w-full h-full object-cover"
+                    fill={true}
+                    priority={true}
+                  />
+                </div>
+                <div className="space-y-1 min-w-0">
+                  <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    Direct Lead Engineer · Zero Outsourcing
+                  </div>
+                  <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-900 dark:text-white truncate">
+                    Sagor Ahamed
+                  </h2>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">
+                    Python/Django · Next.js 15 · 100/100 SEO
+                  </p>
+                </div>
+              </div>
 
-              {/* Minimal Founder Signature & Direct Verification Bar */}
-              <div className="p-3 rounded-2xl bg-white dark:bg-[#11131A] border border-slate-200/80 dark:border-white/[0.08] flex items-center justify-between gap-3 shadow-sm">
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-200 dark:border-white/20 shrink-0 bg-slate-900">
-                    <OptimizedImage
-                      src="/hero-avatar.webp"
-                      alt="Sagor Ahamed — Founder & Principal Architect at CryptoWebBuild"
-                      className="w-full h-full object-cover"
-                      fill={true}
-                      priority={true}
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold text-slate-900 dark:text-white truncate">
-                      Sagor Ahamed
-                    </div>
-                    <div className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 truncate">
-                      Direct 1-on-1 · Zero Outsourcing
-                    </div>
-                  </div>
+              {/* 60fps Hardware-Accelerated SVG Architecture Motion Graphic (Zero Video Bloat) */}
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200/80 dark:border-white/[0.06] space-y-3">
+                <div className="flex items-center justify-between text-xs font-mono tabular-nums">
+                  <span className="text-slate-600 dark:text-slate-400 font-semibold">
+                    Live Conversion Pipeline
+                  </span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">
+                    LCP 0.4s · CLS 0.000
+                  </span>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
+                <svg
+                  viewBox="0 0 380 76"
+                  className="w-full h-auto overflow-visible"
+                  role="img"
+                  aria-label="Sub-second Next.js and Django conversion pipeline diagram"
+                >
+                  {/* Base Connection Track */}
+                  <line
+                    x1="55"
+                    y1="38"
+                    x2="325"
+                    y2="38"
+                    stroke="rgba(99, 102, 241, 0.2)"
+                    strokeWidth="2"
+                  />
+                  {/* 60fps GPU Signal Stream */}
+                  <line
+                    x1="55"
+                    y1="38"
+                    x2="325"
+                    y2="38"
+                    stroke="#6366F1"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    className="animate-signal-flow"
+                  />
+
+                  {/* Node 1: Edge */}
+                  <g transform="translate(8, 12)">
+                    <rect
+                      width="94"
+                      height="52"
+                      rx="10"
+                      fill="#11131A"
+                      stroke="rgba(255,255,255,0.12)"
+                    />
+                    <text x="47" y="23" textAnchor="middle" fill="#F8FAFC" fontSize="10" fontWeight="700" fontFamily="monospace">
+                      Next.js Edge
+                    </text>
+                    <text x="47" y="39" textAnchor="middle" fill="#10B981" fontSize="10" fontWeight="700" fontFamily="monospace">
+                      0.4s Load
+                    </text>
+                  </g>
+
+                  {/* Node 2: Checkout / API */}
+                  <g transform="translate(143, 12)">
+                    <rect
+                      width="94"
+                      height="52"
+                      rx="10"
+                      fill="#11131A"
+                      stroke="rgba(99, 102, 241, 0.45)"
+                    />
+                    <text x="47" y="23" textAnchor="middle" fill="#F8FAFC" fontSize="10" fontWeight="700" fontFamily="monospace">
+                      1-Click Pay
+                    </text>
+                    <text x="47" y="39" textAnchor="middle" fill="#818CF8" fontSize="9.5" fontWeight="700" fontFamily="monospace">
+                      Stripe · bKash
+                    </text>
+                  </g>
+
+                  {/* Node 3: Revenue Outcome */}
+                  <g transform="translate(278, 12)">
+                    <rect
+                      width="94"
+                      height="52"
+                      rx="10"
+                      fill="#11131A"
+                      stroke="rgba(16, 185, 129, 0.45)"
+                    />
+                    <text x="47" y="23" textAnchor="middle" fill="#F8FAFC" fontSize="10" fontWeight="700" fontFamily="monospace">
+                      100/100 SEO
+                    </text>
+                    <text x="47" y="39" textAnchor="middle" fill="#10B981" fontSize="10" fontWeight="700" fontFamily="monospace">
+                      +240% Sales
+                    </text>
+                  </g>
+                </svg>
+              </div>
+
+              {/* 1-Line Live Client & GitHub Verification Bar */}
+              <div className="pt-1 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span className="text-slate-500 dark:text-slate-400 font-medium">
+                  Inspect Live Proof:
+                </span>
+                <div className="flex flex-wrap items-center gap-2">
                   <a
                     href="https://cryptowebbuild.github.io/edel-bangladesh/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold text-xs hover:border-indigo-500/40 transition-colors inline-flex items-center gap-1"
+                    className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold hover:border-indigo-500/40 transition-colors inline-flex items-center gap-1 whitespace-nowrap shrink-0"
                   >
                     <span>Edel BD Live</span>
                     <ExternalLink className="w-3 h-3 text-indigo-500" />
+                  </a>
+                  <a
+                    href="https://clickrunclaw.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold hover:border-indigo-500/40 transition-colors inline-flex items-center gap-1 whitespace-nowrap shrink-0"
+                  >
+                    <span>ClickRunClaw</span>
+                    <ExternalLink className="w-3 h-3 text-indigo-500" />
+                  </a>
+                  <a
+                    href="https://github.com/cryptowebbuild"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold hover:border-indigo-500/40 transition-colors inline-flex items-center gap-1 whitespace-nowrap shrink-0"
+                  >
+                    <span>GitHub</span>
+                    <ExternalLink className="w-3 h-3 text-emerald-500" />
                   </a>
                 </div>
               </div>
