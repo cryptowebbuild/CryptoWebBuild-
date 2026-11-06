@@ -179,18 +179,22 @@ export const InstantWebsiteAudit: React.FC = () => {
             value={urlInput}
             onChange={(e) => setUrlInput(e.target.value)}
             placeholder="e.g. yourstore.com or https://example.com"
-            className="w-full pl-11 pr-4 py-4 rounded-2xl bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all shadow-sm"
+            id="audit-website-url"
+            name="website_url"
+            autoComplete="url"
+            aria-label="Website or store URL for instant speed & SEO audit"
+            className="w-full pl-11 pr-4 py-4 rounded-2xl bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus-visible:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-indigo-500 transition-colors shadow-sm"
           />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="py-4 px-8 neon-button text-white font-bold rounded-2xl text-sm whitespace-nowrap shadow-lg shadow-indigo-500/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
+          className="min-h-[48px] py-4 px-8 neon-button text-white font-bold rounded-2xl text-sm whitespace-nowrap shadow-lg shadow-indigo-500/20 hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shrink-0 disabled:opacity-50"
         >
           {loading ? (
             <>
               <RefreshCw className="w-4 h-4 animate-spin" />
-              <span>Auditing...</span>
+              <span>Auditing…</span>
             </>
           ) : (
             <>
@@ -206,7 +210,7 @@ export const InstantWebsiteAudit: React.FC = () => {
         <div className="p-6 rounded-2xl bg-slate-100 dark:bg-[#11131A] border border-slate-200 dark:border-white/10 space-y-3 animate-pulse">
           <div className="flex items-center gap-3 text-xs font-mono text-indigo-600 dark:text-indigo-400">
             <RefreshCw className="w-4 h-4 animate-spin text-indigo-500" />
-            <span>{loadingStep || 'Connecting to Google Lighthouse Edge servers...'}</span>
+            <span>{loadingStep || 'Connecting to Google Lighthouse Edge servers…'}</span>
           </div>
           <div className="w-full bg-slate-200 dark:bg-white/10 h-1.5 rounded-full overflow-hidden">
             <div className="bg-gradient-to-r from-indigo-500 to-emerald-500 h-full w-2/3 animate-progress" />

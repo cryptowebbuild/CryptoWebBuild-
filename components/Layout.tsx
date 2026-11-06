@@ -179,7 +179,7 @@ const StickyHeaderAndScrollButton: React.FC<{
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={toggleTheme}
-                className="w-9 h-9 flex items-center justify-center rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors focus:outline-none"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
                 aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
               >
                 {theme === 'dark' ? (
@@ -221,7 +221,7 @@ const StickyHeaderAndScrollButton: React.FC<{
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-slate-900 dark:text-white focus:outline-none bg-slate-100 dark:bg-white/5 rounded-lg"
+                className="lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-900 dark:text-white focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none bg-slate-100 dark:bg-white/5 rounded-xl transition-colors"
                 aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               >
                 <div className="w-5 h-4 flex flex-col justify-between relative">
@@ -259,7 +259,7 @@ const StickyHeaderAndScrollButton: React.FC<{
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`block px-4 py-2.5 text-sm font-semibold rounded-xl transition-colors ${
+                    className={`flex items-center px-4 py-2.5 min-h-[44px] text-sm font-semibold rounded-xl transition-colors ${
                       location.pathname === item.path
                         ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'
@@ -273,7 +273,7 @@ const StickyHeaderAndScrollButton: React.FC<{
               <div className="pt-4 mt-4 border-t border-slate-200 dark:border-white/10 space-y-2">
                 <Link
                   to="/contact"
-                  className="flex items-center justify-center w-full px-6 py-3 neon-button text-white font-semibold rounded-xl text-sm"
+                  className="flex items-center justify-center w-full min-h-[48px] px-6 py-3 neon-button text-white font-semibold rounded-xl text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Start Project
@@ -282,7 +282,7 @@ const StickyHeaderAndScrollButton: React.FC<{
                   href="https://cal.com/cryptowebbuilddev/15min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full px-6 py-2.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold rounded-xl text-xs"
+                  className="flex items-center justify-center w-full min-h-[44px] px-6 py-2.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-semibold rounded-xl text-xs"
                 >
                   Book 15-Min Strategy Call
                 </a>
@@ -294,7 +294,7 @@ const StickyHeaderAndScrollButton: React.FC<{
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#11131A] border border-white/10 text-white shadow-lg transition-all duration-150 hover:bg-indigo-600 focus:outline-none ${
+        className={`fixed bottom-6 right-6 z-40 w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-3 rounded-full bg-[#11131A] border border-white/10 text-white shadow-lg transition-transform transition-opacity transition-colors duration-150 hover:bg-indigo-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none ${
           showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
         }`}
         aria-label="Scroll to top"

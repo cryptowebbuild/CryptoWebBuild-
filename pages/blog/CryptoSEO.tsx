@@ -259,7 +259,7 @@ export default function HowToBuy({ params }) {
   "sameAs": [
     "https://twitter.com/mytoken",
     "https://coinmarketcap.com/currencies/mytoken",
-    "https://etherscan.io/token/0x..."
+    "https://etherscan.io/token/0xYOUR_CONTRACT_ADDRESS"
   ]
 }
 </script>`}

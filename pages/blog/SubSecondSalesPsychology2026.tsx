@@ -81,6 +81,7 @@ const SubSecondSalesPsychology2026: React.FC = () => {
       <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 mb-12 bg-[#090A0F]">
         <img
           src="/blog/subsecond-sales-psychology-2026.svg"
+          loading="lazy"
           alt="Comparison between 4.8s Legacy Template and 0.4s CryptoWebBuild Next.js + Django Architecture"
           width={1200}
           height={630}

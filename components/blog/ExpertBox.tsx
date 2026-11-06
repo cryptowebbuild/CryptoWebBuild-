@@ -66,7 +66,7 @@ const ExpertBox: React.FC<ExpertBoxProps> = ({
             <h4 className={`text-lg font-black uppercase tracking-wider ${currentStyle.title}`}>{title}</h4>
             {author && (
               <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-                {avatar && <img src={avatar} alt={author} className="w-5 h-5 rounded-full object-cover" />}
+                {avatar && <img src={avatar} alt={author} width={20} height={20} loading="lazy" className="w-5 h-5 rounded-full object-cover" />}
                 <span className="font-semibold text-slate-700 dark:text-slate-300">{author}</span>
                 {role && <span>· {role}</span>}
               </div>

@@ -58,6 +58,8 @@ const FreeAuditCTA: React.FC = () => {
                 type="text"
                 name="name"
                 id="audit-name"
+                autoComplete="name"
+                aria-label="Your Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -73,6 +75,8 @@ const FreeAuditCTA: React.FC = () => {
                 type="email"
                 name="email"
                 id="audit-email"
+                autoComplete="email"
+                aria-label="Work Email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -90,6 +94,8 @@ const FreeAuditCTA: React.FC = () => {
               type="url"
               name="url"
               id="audit-url"
+              autoComplete="url"
+              aria-label="Website URL"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"

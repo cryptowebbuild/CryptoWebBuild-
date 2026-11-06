@@ -27,7 +27,7 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
     <div
       ref={divRef}
       onMouseMove={handleMouseMove}
-      className={`relative rounded-3xl glass-panel overflow-hidden group transition-all duration-300 ${className}`}
+      className={`relative rounded-3xl glass-panel overflow-hidden group transition-colors duration-300 ${className}`}
       {...props}
     >
       {/* 60fps GPU-Composited Linear Mouse-Follow Spotlight Border & Surface */}

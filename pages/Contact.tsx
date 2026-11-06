@@ -198,6 +198,8 @@ const Contact: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
+                  aria-label="Your Name or Brand"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -217,6 +219,8 @@ const Contact: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
+                  aria-label="Email Address"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -308,7 +312,7 @@ const Contact: React.FC = () => {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Describe your current store/app, website URL, target timeline, and specific bottlenecks..."
+                  placeholder="Describe your current store/app, website URL, target timeline, and specific bottlenecks…"
                   className="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-3.5 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-sm"
                 />
               </div>
@@ -319,7 +323,7 @@ const Contact: React.FC = () => {
                   disabled={submitting}
                   className="flex-1 py-4 px-6 neon-button text-white font-bold rounded-xl shadow-lg text-sm hover:opacity-90 transition-all disabled:opacity-50"
                 >
-                  {submitting ? 'Transmitting Brief...' : 'Claim 48-Hour Staging Prototype'}
+                  {submitting ? 'Transmitting Brief…' : 'Claim 48-Hour Staging Prototype'}
                 </button>
                 <a
                   href={whatsappDirectUrl}

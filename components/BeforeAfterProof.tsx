@@ -124,9 +124,9 @@ export const BeforeAfterProof: React.FC = () => {
               key={item.id}
               type="button"
               onClick={() => setActiveTab(item.id)}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-colors duration-150 ${
                 activeTab === item.id
-                  ? 'bg-gradient-to-r from-purple-600 to-cyan-500 text-white shadow-md'
+                  ? 'bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white shadow-md'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
               }`}
             >

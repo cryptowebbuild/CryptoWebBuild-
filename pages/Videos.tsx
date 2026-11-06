@@ -58,7 +58,7 @@ const Videos: React.FC = () => {
 
         <section className="max-w-7xl mx-auto mb-32">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-purple-500/20">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-purple-500/30 shadow-xl transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-purple-500/20">
               <div className="w-16 h-16 rounded-2xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
                 <Database size={32} />
               </div>
@@ -68,7 +68,7 @@ const Videos: React.FC = () => {
               </p>
             </div>
 
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-cyan-500/20 md:translate-y-8">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 shadow-xl transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-cyan-500/20 md:translate-y-8">
               <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
                 <Cpu size={32} />
               </div>
@@ -80,7 +80,7 @@ const Videos: React.FC = () => {
               </p>
             </div>
 
-            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-blue-500/20">
+            <div className="group p-8 rounded-[32px] bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 shadow-xl transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-blue-500/20">
               <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                 <Shield size={32} />
               </div>
@@ -150,7 +150,7 @@ const Videos: React.FC = () => {
 
               <div className="p-4 bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-white/5">
                 <div className="bg-gray-100 dark:bg-white/5 glass-panel rounded-xl px-4 py-3 flex items-center justify-between text-gray-400">
-                  <span className="text-sm">Ask CryptoWebBuild AI Guardian...</span>
+                  <span className="text-sm">Ask CryptoWebBuild AI Guardian…</span>
                   <Send size={20} />
                 </div>
               </div>

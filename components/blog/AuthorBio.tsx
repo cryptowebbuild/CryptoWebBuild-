@@ -3,9 +3,9 @@ import { MessageSquare } from 'lucide-react';
 
 const AuthorBio: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-8 p-8 bg-white dark:bg-[#1e293b] rounded-[32px] border border-gray-200 dark:border-white/5 shadow-xl relative overflow-hidden transition-all hover:shadow-2xl hover:border-purple-500/20">
-      <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/10 blur-[50px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 blur-[40px] rounded-full pointer-events-none" />
+    <div className="flex flex-col md:flex-row items-center gap-8 p-8 bg-white dark:bg-[#11131A] rounded-[32px] border border-gray-200 dark:border-white/5 shadow-xl relative overflow-hidden transition-colors transition-shadow duration-200 hover:shadow-2xl hover:border-indigo-500/20">
+      <div className="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 blur-[50px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-cyan-500/10 blur-[40px] rounded-full pointer-events-none" />
 
       <div className="shrink-0 relative group">
         <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-[4px] border-white dark:border-[#0f172a] shadow-lg ring-2 ring-purple-100 dark:ring-purple-900/30">
@@ -29,7 +29,7 @@ const AuthorBio: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-3 mb-3">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white m-0 tracking-tight">
             Written by{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-indigo-600 to-cyan-500 dark:from-indigo-400 dark:via-cyan-300 dark:to-indigo-300 font-extrabold">
               Sagor Ahamed
             </span>
           </h3>

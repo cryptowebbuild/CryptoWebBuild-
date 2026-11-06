@@ -249,7 +249,10 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
                 <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
                   id="brief-name"
+                  name="name"
                   type="text"
+                  autoComplete="name"
+                  aria-label="Your Name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -267,7 +270,10 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
                 <Globe className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
                   id="brief-url"
+                  name="website_url"
                   type="text"
+                  autoComplete="url"
+                  aria-label="Website or Page URL"
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder="yourbrand.com or FB Page"
@@ -284,11 +290,14 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
                 <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <input
                   id="brief-contact"
+                  name="contact_info"
                   type="text"
+                  autoComplete="email tel"
+                  aria-label="WhatsApp or Email"
                   required
                   value={contactInfo}
                   onChange={(e) => setContactInfo(e.target.value)}
-                  placeholder="+880... or you@company.com"
+                  placeholder="+880… or you@company.com"
                   className="w-full rounded-xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200 dark:border-white/10 pl-10 pr-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500"
                 />
               </div>
@@ -305,7 +314,7 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
               rows={3}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="e.g., Need a sub-second E-commerce site with 1-click WhatsApp ordering, or a Python/Django SaaS MVP..."
+              placeholder="e.g., Need a sub-second E-commerce site with 1-click WhatsApp ordering, or a Python/Django SaaS MVP…"
               className="w-full rounded-xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200 dark:border-white/10 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-emerald-500 resize-none"
             />
           </div>
@@ -344,7 +353,7 @@ const ProjectDiscoveryFunnel: React.FC<ProjectDiscoveryFunnelProps> = ({ calcula
               className="py-4 px-5 rounded-xl indigo-button text-white font-bold text-sm flex items-center justify-center gap-2 whitespace-nowrap disabled:opacity-50"
             >
               <Send className="w-4 h-4" />
-              <span>{isSubmitting ? 'Submitting Brief...' : 'Submit Official Audit Request'}</span>
+              <span>{isSubmitting ? 'Submitting Brief…' : 'Submit Official Audit Request'}</span>
             </button>
           </div>
         </form>

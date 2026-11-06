@@ -106,9 +106,9 @@ const SolNovaMockup: React.FC<SolNovaMockupProps> = ({ className = '' }) => {
                 </div>
 
                 {/* Main Action */}
-                <div className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-purple-900/40 hover:shadow-purple-900/60 hover:scale-[1.02] active:scale-95 transition-all cursor-pointer">
+                <button type="button" className="w-full py-3.5 bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-indigo-900/40 hover:shadow-indigo-900/60 hover:scale-[1.02] active:scale-95 transition-transform transition-shadow duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none">
                     Connect Wallet
-                </div>
+                </button>
              </div>
         </div>
 

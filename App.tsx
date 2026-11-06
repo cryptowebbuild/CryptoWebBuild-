@@ -90,7 +90,7 @@ const NextJsDjangoArchitecture2026 = lazy(() => import('./pages/blog/NextJsDjang
 // --- Optimized Loader ---
 const PageLoader = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAFAFA] dark:bg-[#090A0F] z-50">
-    <div className="relative w-12 h-12" aria-label="Loading content...">
+    <div className="relative w-12 h-12" aria-label="Loading content…">
       <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500/20 rounded-full"></div>
       <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500 rounded-full border-t-transparent animate-spin"></div>
     </div>
