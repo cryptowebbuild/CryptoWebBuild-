@@ -16,76 +16,98 @@ const ScrollToTop = () => {
   return null;
 };
 
-// --- Lazy Load Pages ---
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const Services = lazy(() => import('./pages/Services'));
-const Projects = lazy(() => import('./pages/Projects'));
-const Blog = lazy(() => import('./pages/Blog'));
-const Contact = lazy(() => import('./pages/Contact'));
-const ThankYou = lazy(() => import('./pages/ThankYou'));
-const FAQ = lazy(() => import('./pages/FAQ'));
-const Privacy = lazy(() => import('./pages/Privacy'));
-const Terms = lazy(() => import('./pages/Terms'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+// --- Chunk Load Auto-Recovery Wrapper (Fixes White Screen on New Deployments) ---
+function lazyWithRetry<T extends React.ComponentType<any>>(
+  factory: () => Promise<{ default: T }>
+): React.LazyExoticComponent<T> {
+  return lazy(async () => {
+    try {
+      return await factory();
+    } catch (error: any) {
+      const isChunkError =
+        error?.message?.includes('Failed to fetch dynamically imported module') ||
+        error?.message?.includes('Importing a module script failed') ||
+        error?.name === 'ChunkLoadError';
 
+      const alreadyRefreshed = sessionStorage.getItem('chunk_retry_refreshed');
+
+      if (isChunkError && !alreadyRefreshed) {
+        sessionStorage.setItem('chunk_retry_refreshed', 'true');
+        window.location.reload();
+        return new Promise<{ default: T }>(() => {}); // Hold until browser reload
+      }
+
+      sessionStorage.removeItem('chunk_retry_refreshed');
+      throw error;
+    }
+  });
+}
+
+// --- Lazy Load Pages ---
+const Home = lazyWithRetry(() => import('./pages/Home'));
+const About = lazyWithRetry(() => import('./pages/About'));
+const Services = lazyWithRetry(() => import('./pages/Services'));
+const Projects = lazyWithRetry(() => import('./pages/Projects'));
+const Blog = lazyWithRetry(() => import('./pages/Blog'));
+const Contact = lazyWithRetry(() => import('./pages/Contact'));
+const ThankYou = lazyWithRetry(() => import('./pages/ThankYou'));
+const FAQ = lazyWithRetry(() => import('./pages/FAQ'));
+const Privacy = lazyWithRetry(() => import('./pages/Privacy'));
+const Terms = lazyWithRetry(() => import('./pages/Terms'));
+const NotFound = lazyWithRetry(() => import('./pages/NotFound'));
 
 // --- Service Landing Pages ---
-const AIAutomation = lazy(() => import('./pages/services/AIAutomation'));
-const Web3Development = lazy(() => import('./pages/services/Web3Development'));
-const CryptoGrowth = lazy(() => import('./pages/services/CryptoGrowth'));
-const EcommerceDevelopmentBD = lazy(() => import('./pages/services/EcommerceDevelopmentBD'));
-const FCommerceBangladesh = lazy(() => import('./pages/FCommerceBangladesh'));
+const AIAutomation = lazyWithRetry(() => import('./pages/services/AIAutomation'));
+const Web3Development = lazyWithRetry(() => import('./pages/services/Web3Development'));
+const CryptoGrowth = lazyWithRetry(() => import('./pages/services/CryptoGrowth'));
+const EcommerceDevelopmentBD = lazyWithRetry(() => import('./pages/services/EcommerceDevelopmentBD'));
+const FCommerceBangladesh = lazyWithRetry(() => import('./pages/FCommerceBangladesh'));
 
 // --- Case Studies ---
-const TokenLaunch = lazy(() => import('./pages/cases/TokenLaunch'));
-const MemeCoinSite = lazy(() => import('./pages/cases/MemeCoinSite'));
-const ShopFast = lazy(() => import('./pages/cases/ShopFast'));
-const AutoGitHub = lazy(() => import('./pages/cases/AutoGitHub'));
-const GigaSolana = lazy(() => import('./pages/cases/GigaSolana'));
-const NewsPhotoCard = lazy(() => import('./pages/cases/NewsPhotoCard'));
-const NexusWeb3 = lazy(() => import('./pages/cases/NexusWeb3'));
-const AuraCommerce = lazy(() => import('./pages/cases/AuraCommerce'));
-const ApexAgency = lazy(() => import('./pages/cases/ApexAgency'));
-const VanguardSaaS = lazy(() => import('./pages/cases/VanguardSaaS'));
-const SolanaNFT = lazy(() => import('./pages/cases/SolanaNFT'));
-const ClickRunClawCase = lazy(() => import('./pages/cases/ClickRunClawCase'));
+const TokenLaunch = lazyWithRetry(() => import('./pages/cases/TokenLaunch'));
+const MemeCoinSite = lazyWithRetry(() => import('./pages/cases/MemeCoinSite'));
+const ShopFast = lazyWithRetry(() => import('./pages/cases/ShopFast'));
+const AutoGitHub = lazyWithRetry(() => import('./pages/cases/AutoGitHub'));
+const GigaSolana = lazyWithRetry(() => import('./pages/cases/GigaSolana'));
+const NewsPhotoCard = lazyWithRetry(() => import('./pages/cases/NewsPhotoCard'));
+const NexusWeb3 = lazyWithRetry(() => import('./pages/cases/NexusWeb3'));
+const AuraCommerce = lazyWithRetry(() => import('./pages/cases/AuraCommerce'));
+const ApexAgency = lazyWithRetry(() => import('./pages/cases/ApexAgency'));
+const VanguardSaaS = lazyWithRetry(() => import('./pages/cases/VanguardSaaS'));
+const SolanaNFT = lazyWithRetry(() => import('./pages/cases/SolanaNFT'));
+const ClickRunClawCase = lazyWithRetry(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
-const WoocommerceToHeadlessNextjsMigrationGuide = lazy(() => import('./pages/blog/WoocommerceToHeadlessNextjsMigrationGuide'));
-
-const SteadfastCourierApiWebhookIntegrationNextjs = lazy(() => import('./pages/blog/SteadfastCourierApiWebhookIntegrationNextjs'));
-
-const BkashTokenizedCheckoutNextjsApiIntegration = lazy(() => import('./pages/blog/BkashTokenizedCheckoutNextjsApiIntegration'));
-
-const DjangoCeleryRedisEcommerceOrderPipeline = lazy(() => import('./pages/blog/DjangoCeleryRedisEcommerceOrderPipeline'));
-
-const BestDeveloper = lazy(() => import('./pages/blog/BestDeveloper'));
-const CryptoProject = lazy(() => import('./pages/blog/CryptoProject'));
-const MemeCoinFeatures = lazy(() => import('./pages/blog/MemeCoinWebsiteFeatures'));
-const CryptoCost = lazy(() => import('./pages/blog/CryptoCost'));
-const StaticVsDynamic = lazy(() => import('./pages/blog/StaticVsDynamic'));
-const WebsiteBuilderVsDeveloper = lazy(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
-const CryptoMarketingGuide = lazy(() => import('./pages/blog/CryptoMarketingGuide'));
-const SolanaMemeCoinGuide = lazy(() => import('./pages/blog/SolanaMemeCoinGuide'));
-const CryptoSEO = lazy(() => import('./pages/blog/CryptoSEO'));
-const PresaleGuide = lazy(() => import('./pages/blog/PresaleGuide'));
-const GamingProxyVsCryptoNodes = lazy(() => import('./pages/blog/GamingProxyVsCryptoNodes'));
-const HiddenCostSlowWebsites = lazy(() => import('./pages/blog/HiddenCostSlowWebsites'));
-const MemeCoinWebsiteUltimateGuide = lazy(() => import('./pages/blog/MemeCoinWebsiteUltimateGuide'));
-const LocalBusinessWebsiteSEOChecklist = lazy(() => import('./pages/blog/local-business-website-seo-checklist'));
-const RoofingWebsiteMistakesCostingLeads = lazy(() => import('./pages/blog/roofing-website-mistakes-costing-leads'));
-const OpenClawAIWorkflowAutomation = lazy(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
-const AISEO2026 = lazy(() => import('./pages/blog/AISEO2026'));
-const AGIAutonomousAIAgents = lazy(() => import('./pages/blog/AGIAutonomousAIAgents'));
-const DecentralizedAIStack = lazy(() => import('./pages/blog/DecentralizedAIStack'));
-const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazy(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
-const WhyCryptoProjectsAdoptRealTimeAIEngines = lazy(() => import('./pages/blog/WhyCryptoProjectsAdoptRealTimeAIEngines'));
-const WhySubSecondWebsitesCrushWordPress2026 = lazy(() => import('./pages/blog/WhySubSecondWebsitesCrushWordPress2026'));
-const HowToAutomateEcommerceWhatsAppAIAgents = lazy(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
-const BangladeshFCommerceToWebsiteMigrationGuide2026 = lazy(() => import('./pages/blog/BangladeshFCommerceToWebsiteMigrationGuide2026'));
-const SubSecondSalesPsychology2026 = lazy(() => import('./pages/blog/SubSecondSalesPsychology2026'));
-const NextJsDjangoArchitecture2026 = lazy(() => import('./pages/blog/NextJsDjangoArchitecture2026'));
+const WoocommerceToHeadlessNextjsMigrationGuide = lazyWithRetry(() => import('./pages/blog/WoocommerceToHeadlessNextjsMigrationGuide'));
+const SteadfastCourierApiWebhookIntegrationNextjs = lazyWithRetry(() => import('./pages/blog/SteadfastCourierApiWebhookIntegrationNextjs'));
+const BkashTokenizedCheckoutNextjsApiIntegration = lazyWithRetry(() => import('./pages/blog/BkashTokenizedCheckoutNextjsApiIntegration'));
+const DjangoCeleryRedisEcommerceOrderPipeline = lazyWithRetry(() => import('./pages/blog/DjangoCeleryRedisEcommerceOrderPipeline'));
+const BestDeveloper = lazyWithRetry(() => import('./pages/blog/BestDeveloper'));
+const CryptoProject = lazyWithRetry(() => import('./pages/blog/CryptoProject'));
+const MemeCoinFeatures = lazyWithRetry(() => import('./pages/blog/MemeCoinWebsiteFeatures'));
+const CryptoCost = lazyWithRetry(() => import('./pages/blog/CryptoCost'));
+const StaticVsDynamic = lazyWithRetry(() => import('./pages/blog/StaticVsDynamic'));
+const WebsiteBuilderVsDeveloper = lazyWithRetry(() => import('./pages/blog/WebsiteBuilderVsDeveloper'));
+const CryptoMarketingGuide = lazyWithRetry(() => import('./pages/blog/CryptoMarketingGuide'));
+const SolanaMemeCoinGuide = lazyWithRetry(() => import('./pages/blog/SolanaMemeCoinGuide'));
+const CryptoSEO = lazyWithRetry(() => import('./pages/blog/CryptoSEO'));
+const PresaleGuide = lazyWithRetry(() => import('./pages/blog/PresaleGuide'));
+const GamingProxyVsCryptoNodes = lazyWithRetry(() => import('./pages/blog/GamingProxyVsCryptoNodes'));
+const HiddenCostSlowWebsites = lazyWithRetry(() => import('./pages/blog/HiddenCostSlowWebsites'));
+const MemeCoinWebsiteUltimateGuide = lazyWithRetry(() => import('./pages/blog/MemeCoinWebsiteUltimateGuide'));
+const LocalBusinessWebsiteSEOChecklist = lazyWithRetry(() => import('./pages/blog/local-business-website-seo-checklist'));
+const RoofingWebsiteMistakesCostingLeads = lazyWithRetry(() => import('./pages/blog/roofing-website-mistakes-costing-leads'));
+const OpenClawAIWorkflowAutomation = lazyWithRetry(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
+const AISEO2026 = lazyWithRetry(() => import('./pages/blog/AISEO2026'));
+const AGIAutonomousAIAgents = lazyWithRetry(() => import('./pages/blog/AGIAutonomousAIAgents'));
+const DecentralizedAIStack = lazyWithRetry(() => import('./pages/blog/DecentralizedAIStack'));
+const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazyWithRetry(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
+const WhyCryptoProjectsAdoptRealTimeAIEngines = lazyWithRetry(() => import('./pages/blog/WhyCryptoProjectsAdoptRealTimeAIEngines'));
+const WhySubSecondWebsitesCrushWordPress2026 = lazyWithRetry(() => import('./pages/blog/WhySubSecondWebsitesCrushWordPress2026'));
+const HowToAutomateEcommerceWhatsAppAIAgents = lazyWithRetry(() => import('./pages/blog/HowToAutomateEcommerceWhatsAppAIAgents'));
+const BangladeshFCommerceToWebsiteMigrationGuide2026 = lazyWithRetry(() => import('./pages/blog/BangladeshFCommerceToWebsiteMigrationGuide2026'));
+const SubSecondSalesPsychology2026 = lazyWithRetry(() => import('./pages/blog/SubSecondSalesPsychology2026'));
+const NextJsDjangoArchitecture2026 = lazyWithRetry(() => import('./pages/blog/NextJsDjangoArchitecture2026'));
 
 // --- Optimized Loader ---
 const PageLoader = () => (
@@ -171,10 +193,10 @@ const App: React.FC = () => {
           <Route path="/blog/sub-second-sales-psychology-architecture-2026" element={<SubSecondSalesPsychology2026 />} />
           <Route path="/blog/nextjs-django-fullstack-architecture-2026" element={<NextJsDjangoArchitecture2026 />} />
 
-                    <Route path="/blog/django-celery-redis-ecommerce-order-pipeline" element={<DjangoCeleryRedisEcommerceOrderPipeline />} />
-                    <Route path="/blog/bkash-tokenized-checkout-nextjs-api-integration" element={<BkashTokenizedCheckoutNextjsApiIntegration />} />
-                    <Route path="/blog/steadfast-courier-api-webhook-integration-nextjs" element={<SteadfastCourierApiWebhookIntegrationNextjs />} />
-                    <Route path="/blog/woocommerce-to-headless-nextjs-migration-guide" element={<WoocommerceToHeadlessNextjsMigrationGuide />} />
+          <Route path="/blog/django-celery-redis-ecommerce-order-pipeline" element={<DjangoCeleryRedisEcommerceOrderPipeline />} />
+          <Route path="/blog/bkash-tokenized-checkout-nextjs-api-integration" element={<BkashTokenizedCheckoutNextjsApiIntegration />} />
+          <Route path="/blog/steadfast-courier-api-webhook-integration-nextjs" element={<SteadfastCourierApiWebhookIntegrationNextjs />} />
+          <Route path="/blog/woocommerce-to-headless-nextjs-migration-guide" element={<WoocommerceToHeadlessNextjsMigrationGuide />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>

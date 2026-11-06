@@ -1,34 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteCompression from 'vite-plugin-compression';
-import fs from 'fs';
 import path from 'path';
 
-// --- PLUGIN: Fix Cloudflare 404 & Directory Error ---
-const cloudflareRedirectsPlugin = () => {
-  let outDir = 'dist';
-  return {
-    name: 'cloudflare-redirects',
-    configResolved(config: any) {
-      outDir = config.build.outDir;
-    },
-    closeBundle() {
-      const dist = path.resolve(outDir);
-      
-      // Ensure output directory exists before writing _redirects
-      if (!fs.existsSync(dist)) {
-        fs.mkdirSync(dist, { recursive: true });
-        console.log(`📁 Created ${outDir} directory manually`);
-      }
-
-      const redirectsPath = path.join(dist, '_redirects');
-      fs.writeFileSync(redirectsPath, '/* /index.html 200');
-      console.log('✅ Generated _redirects file for Cloudflare SPA');
-    }
-  };
-};
-
 export default defineConfig({
+  base: '/',
   server: {
     port: 3000,
     host: '0.0.0.0',
@@ -36,7 +12,6 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    cloudflareRedirectsPlugin(),
     viteCompression({ algorithm: 'gzip', ext: '.gz' }),
     viteCompression({ algorithm: 'brotliCompress', ext: '.br' })
   ],
@@ -55,6 +30,9 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             return 'vendor';
