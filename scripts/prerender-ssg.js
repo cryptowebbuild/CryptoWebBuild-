@@ -86,12 +86,12 @@ const routeMeta = {
     h1: '1-Click E-Commerce Website Development & Courier Automation',
   },
   '/fcommerce': {
-    title: 'এফ-কমার্স থেকে ১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
+    title: '১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
     description: 'ফেসবুক ইনবক্সের ঝামেলা বাদ দিয়ে ০.৪ সেকেন্ড গতির নেক্সট.জেএস ওয়েবসাইট, ১-ক্লিক বিকাশ/ক্যাশ অন ডেলিভারি এবং স্টেডফাস্ট/পাঠাও অটোমেশন।',
     h1: 'ফেসবুক ইনবক্সের প্যারা বাদ দিয়ে শুরু করুন ১-ক্লিক অর্ডার ওয়েবসাইট',
   },
   '/bangladesh': {
-    title: 'এফ-কমার্স থেকে ১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
+    title: '১-ক্লিক ওয়েবসাইট ও কুরিয়ার অটোমেশন | CryptoWebBuild',
     description: 'ফেসবুক ইনবক্সের ঝামেলা বাদ দিয়ে ০.৪ সেকেন্ড গতির নেক্সট.জেএস ওয়েবসাইট, ১-ক্লিক বিকাশ/ক্যাশ অন ডেলিভারি এবং স্টেডফাস্ট/পাঠাও অটোমেশন।',
     h1: 'ফেসবুক ইনবক্সের প্যারা বাদ দিয়ে শুরু করুন ১-ক্লিক অর্ডার ওয়েবসাইট',
   },
@@ -185,9 +185,28 @@ const runSSG = () => {
   const allRoutes = [...staticRoutes];
   blogPosts.forEach((post) => {
     allRoutes.push(`/blog/${post.slug}`);
+    
+    // Intelligent SEO Title Clamping (Max 60 chars, no clipped words)
+    let smartTitle = post.title;
+    if (smartTitle.length + 18 <= 60) {
+      smartTitle = `${smartTitle} | CryptoWebBuild`;
+    } else if (smartTitle.length > 60) {
+      const cutoff = smartTitle.substring(0, 57);
+      const lastSpace = cutoff.lastIndexOf(' ');
+      smartTitle = (lastSpace > 35 ? cutoff.substring(0, lastSpace) : cutoff) + '...';
+    }
+
+    // Intelligent SEO Meta Description Clamping (Max 155 chars, no clipped words)
+    let smartDesc = (post.description || 'In-depth guide by Sagor Ahamed on sub-second web architecture, technical SEO, and conversion engineering.').trim();
+    if (smartDesc.length > 155) {
+      const cutoff = smartDesc.substring(0, 152);
+      const lastSpace = cutoff.lastIndexOf(' ');
+      smartDesc = (lastSpace > 110 ? cutoff.substring(0, lastSpace) : cutoff) + '...';
+    }
+
     routeMeta[`/blog/${post.slug}`] = {
-      title: `${post.title.substring(0, 42)} | CryptoWebBuild`.substring(0, 60),
-      description: (post.description || 'In-depth guide by Sagor Ahamed on sub-second web architecture, technical SEO, and conversion engineering.').substring(0, 152) + '...',
+      title: smartTitle,
+      description: smartDesc,
       h1: post.title,
       isArticle: true,
     };
