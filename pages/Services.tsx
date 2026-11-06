@@ -104,7 +104,7 @@ const Services: React.FC = () => {
 
         {/* Card 2: High-Speed E-Commerce & Growth Funnels */}
         <div
-          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10"
+          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-cyan-500/50 transition-colors transition-shadow duration-300 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10"
           style={{ animationDelay: '0.2s' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -170,7 +170,7 @@ const Services: React.FC = () => {
 
         {/* Card 3: Technical SEO & Local Business Domination */}
         <div
-          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-blue-500/10"
+          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-blue-500/50 transition-colors transition-shadow duration-300 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-blue-500/10"
           style={{ animationDelay: '0.3s' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -238,7 +238,7 @@ const Services: React.FC = () => {
 
         {/* Card 4: Python/Django SaaS & Web3 Platforms */}
         <div
-          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-pink-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-pink-500/10"
+          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-pink-500/50 transition-colors transition-shadow duration-300 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-pink-500/10"
           style={{ animationDelay: '0.4s' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -305,7 +305,7 @@ const Services: React.FC = () => {
 
         {/* Card 5: OpenClaw AI Workflow & Full-Stack Automation (Full Width) */}
         <div
-          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-all duration-500 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2"
+          className="group relative rounded-[32px] p-8 md:p-12 overflow-hidden bg-white dark:bg-[#020617] glass-panel border border-gray-200 dark:border-white/5 hover:border-emerald-500/50 transition-colors transition-shadow duration-300 gpu-accelerated animate-slide-up shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 lg:col-span-2"
           style={{ animationDelay: '0.5s' }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -362,7 +362,7 @@ const Services: React.FC = () => {
       <div className="mt-20 text-center">
         <Link
           to="/contact"
-          className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-all duration-200 neon-button rounded-xl hover:scale-105 shadow-xl shadow-purple-500/20"
+          className="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white transition-transform transition-shadow duration-200 neon-button rounded-xl hover:scale-105 shadow-xl shadow-indigo-500/20"
         >
           Claim Your 48-Hour Prototype
         </Link>

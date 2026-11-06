@@ -214,7 +214,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
               <div className="text-center mt-6">
                 <Link
                   to="/contact"
-                  className="inline-block px-8 py-3 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 text-gray-900 dark:text-white font-bold transition-all shadow-sm"
+                  className="inline-block px-8 py-3 rounded-xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/10 text-gray-900 dark:text-white font-bold transition-colors duration-150 shadow-sm"
                 >
                   Or contact us directly
                 </Link>

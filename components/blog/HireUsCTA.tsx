@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const HireUsCTA: React.FC = () => {
   return (
     <div className="my-20 w-full max-w-full relative group">
-      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[40px] blur opacity-20 dark:opacity-40 group-hover:opacity-40 dark:group-hover:opacity-60 transition duration-1000 group-hover:duration-200" />
+      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 rounded-[40px] blur opacity-20 dark:opacity-40 group-hover:opacity-40 dark:group-hover:opacity-60 transition duration-1000 group-hover:duration-200" />
       <div className="relative p-8 md:p-14 rounded-[40px] bg-white dark:bg-[#0f172a] border border-gray-100 dark:border-white/10 shadow-2xl dark:shadow-none overflow-hidden isolate transition-colors duration-300">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-96 h-96 bg-purple-500/10 dark:bg-purple-500/20 blur-[80px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-80 h-80 bg-blue-500/10 dark:bg-blue-500/20 blur-[80px] rounded-full pointer-events-none" />
@@ -20,7 +20,7 @@ const HireUsCTA: React.FC = () => {
 
           <h3 className="font-display text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
             Stop Losing Customers to <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 dark:from-indigo-400 dark:via-cyan-300 dark:to-indigo-300">
               Slow, Low-Converting Websites.
             </span>
           </h3>
@@ -33,15 +33,15 @@ const HireUsCTA: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center w-full">
             <Link
               to="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-slate-900 font-black text-lg rounded-2xl hover:scale-105 transition-all shadow-xl shadow-purple-500/20 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto min-h-[48px] px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-slate-900 font-black text-lg rounded-2xl hover:scale-105 transition-transform transition-shadow duration-200 shadow-xl shadow-indigo-500/20 flex items-center justify-center gap-2"
             >
-              <span>🚀</span> Book a Strategy Call
+              Book a Strategy Call
             </Link>
             <a
               href="https://wa.me/8801618138820?text=Hi%20Sagor%2C%20I%27m%20reading%20your%20CryptoWebBuild%20blog%20and%20want%20to%20discuss%20a%20project!"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold text-lg rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all flex items-center justify-center"
+              className="w-full sm:w-auto min-h-[48px] px-8 py-4 bg-transparent border-2 border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold text-lg rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-200 flex items-center justify-center"
             >
               WhatsApp: 01618-138820
             </a>

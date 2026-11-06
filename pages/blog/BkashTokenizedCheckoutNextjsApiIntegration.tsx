@@ -95,11 +95,7 @@ const BkashTokenizedCheckoutNextjsApiIntegration: React.FC = () => {
         {/* Lead Engineer Metadata */}
         <div className="flex items-center gap-3 pt-4 border-t border-slate-200/80 dark:border-white/[0.08]">
           <div className="w-11 h-11 rounded-full overflow-hidden border border-slate-200 dark:border-white/20 shrink-0">
-            <img
-              src="/hero-avatar.webp"
-              alt="Sagor Ahamed"
-              className="w-full h-full object-cover"
-            />
+            <img src="/hero-avatar.webp" alt="Sagor Ahamed" width={44} height={44} loading="lazy" decoding="async" className="w-full h-full object-cover" />
           </div>
           <div>
             <div className="font-bold text-sm text-slate-900 dark:text-white">

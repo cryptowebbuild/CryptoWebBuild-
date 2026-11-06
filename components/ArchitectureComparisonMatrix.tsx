@@ -58,60 +58,112 @@ export const ArchitectureComparisonMatrix: React.FC = () => {
         </p>
       </div>
 
-      <SpotlightCard className="p-0 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse min-w-[620px]">
-            <thead>
-              <tr className="border-b border-slate-200 dark:border-white/10 bg-slate-50/80 dark:bg-white/[0.02]">
-                <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-slate-500 dark:text-slate-400 w-1/4">
-                  Feature
-                </th>
-                <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-red-500 dark:text-red-400 w-3/8">
-                  Typical Agency / WordPress
-                </th>
-                <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-emerald-600 dark:text-emerald-400 bg-indigo-500/[0.04] dark:bg-indigo-500/[0.08] w-3/8">
-                  CryptoWebBuild (Sagor Ahamed)
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200/80 dark:divide-white/[0.06] text-xs sm:text-sm">
-              {comparisonItems.map((item, index) => (
-                <tr
-                  key={item.feature}
-                  className={`hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors ${
-                    index % 2 === 0 ? 'bg-transparent' : 'bg-slate-50/20 dark:bg-white/[0.01]'
-                  }`}
-                >
-                  <td className="py-3.5 px-5 font-bold text-slate-900 dark:text-white align-middle">
-                    <div>{item.feature}</div>
-                    <span className="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400">
-                      {item.badge}
-                    </span>
-                  </td>
+      {/* MOBILE-NATIVE CARD VIEW (Screen < md) — Zero Horizontal Overflow */}
+      <div className="md:hidden space-y-4">
+        {comparisonItems.map((item) => (
+          <div
+            key={item.feature}
+            className="p-5 rounded-2xl bg-white dark:bg-[#11131A] border border-slate-200/80 dark:border-white/[0.08] space-y-3.5"
+          >
+            <div className="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-white/[0.06] pb-2.5">
+              <span className="font-display font-bold text-sm text-slate-900 dark:text-white">
+                {item.feature}
+              </span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                {item.badge}
+              </span>
+            </div>
 
-                  <td className="py-3.5 px-5 text-slate-500 dark:text-slate-400 align-middle">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0">
-                        <X className="w-3 h-3" />
-                      </div>
-                      <span>{item.traditional}</span>
-                    </div>
-                  </td>
+            {/* CryptoWebBuild Standard */}
+            <div className="p-3 rounded-xl bg-emerald-500/[0.04] dark:bg-emerald-500/[0.08] border border-emerald-500/20 flex items-start gap-2.5">
+              <div className="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <Check className="w-2.5 h-2.5 stroke-[3]" />
+              </div>
+              <div>
+                <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                  CryptoWebBuild
+                </div>
+                <div className="text-xs font-semibold text-slate-900 dark:text-white mt-0.5 leading-snug">
+                  {item.cryptoWebBuild}
+                </div>
+              </div>
+            </div>
 
-                  <td className="py-3.5 px-5 text-slate-900 dark:text-white font-medium bg-indigo-500/[0.02] dark:bg-indigo-500/[0.04] align-middle">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
-                        <Check className="w-3 h-3" />
-                      </div>
-                      <span>{item.cryptoWebBuild}</span>
-                    </div>
-                  </td>
+            {/* Traditional Agency Flaw */}
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200/60 dark:border-white/[0.04] flex items-start gap-2.5">
+              <div className="w-4 h-4 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 mt-0.5">
+                <X className="w-2.5 h-2.5 stroke-[3]" />
+              </div>
+              <div>
+                <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Typical Agency
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-snug">
+                  {item.traditional}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* DESKTOP TABLE VIEW (Screen >= md) */}
+      <div className="hidden md:block">
+        <SpotlightCard className="p-0 border border-slate-200 dark:border-white/10 shadow-xl overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-white/10 bg-slate-50/80 dark:bg-white/[0.02]">
+                  <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-slate-500 dark:text-slate-400 w-1/4">
+                    Feature
+                  </th>
+                  <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-red-500 dark:text-red-400 w-3/8">
+                    Typical Agency / WordPress
+                  </th>
+                  <th className="py-3.5 px-5 text-xs font-mono uppercase font-bold text-emerald-600 dark:text-emerald-400 bg-indigo-500/[0.04] dark:bg-indigo-500/[0.08] w-3/8">
+                    CryptoWebBuild (Sagor Ahamed)
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </SpotlightCard>
+              </thead>
+              <tbody className="divide-y divide-slate-200/80 dark:divide-white/[0.06] text-xs sm:text-sm">
+                {comparisonItems.map((item, index) => (
+                  <tr
+                    key={item.feature}
+                    className={`hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors ${
+                      index % 2 === 0 ? 'bg-transparent' : 'bg-slate-50/20 dark:bg-white/[0.01]'
+                    }`}
+                  >
+                    <td className="py-3.5 px-5 font-bold text-slate-900 dark:text-white align-middle">
+                      <div>{item.feature}</div>
+                      <span className="inline-block mt-0.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400">
+                        {item.badge}
+                      </span>
+                    </td>
+
+                    <td className="py-3.5 px-5 text-slate-500 dark:text-slate-400 align-middle">
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center shrink-0">
+                          <X className="w-3 h-3" />
+                        </div>
+                        <span>{item.traditional}</span>
+                      </div>
+                    </td>
+
+                    <td className="py-3.5 px-5 text-slate-900 dark:text-white font-medium bg-indigo-500/[0.02] dark:bg-indigo-500/[0.04] align-middle">
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                          <Check className="w-3 h-3" />
+                        </div>
+                        <span>{item.cryptoWebBuild}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </SpotlightCard>
+      </div>
     </section>
   );
 };

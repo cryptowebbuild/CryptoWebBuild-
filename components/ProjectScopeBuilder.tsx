@@ -267,7 +267,7 @@ export const ProjectScopeBuilder: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-5 rounded-xl neon-button text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap"
+                className="w-full min-h-[48px] py-3.5 px-5 rounded-xl neon-button text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Send Quote on WhatsApp (01618-138820)</span>

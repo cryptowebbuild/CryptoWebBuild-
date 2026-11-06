@@ -235,7 +235,8 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
             </div>
             {currency === 'USD' ? (
               <input
-                id="calc-aov"
+                aria-label="Average Order or Client Value in USD"
+                id="calc-aov-usd"
                 type="range"
                 min={10}
                 max={1000}
@@ -246,7 +247,8 @@ const LeakedRevenueCalculator: React.FC<LeakedRevenueCalculatorProps> = ({ onApp
               />
             ) : (
               <input
-                id="calc-aov"
+                aria-label="Average Order or Client Value in USD"
+                id="calc-aov-usd"
                 type="range"
                 min={500}
                 max={30000}
