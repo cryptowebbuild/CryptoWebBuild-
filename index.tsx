@@ -5,6 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
+// Auto-recover from chunk hash mismatches during/after new deployments
+window.addEventListener('vite:preloadError', (event) => {
+  event.preventDefault();
+  window.location.reload();
+});
+
 const rootElement = document.getElementById('root');
 if (!rootElement) {
   throw new Error("Fatal: Could not find root element to mount the application.");
