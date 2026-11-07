@@ -30,6 +30,8 @@ jobs:
 
       - name: Generate High-Converting SEO Blog Article
         run: node scripts/generate-daily-blog.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Build & Pre-Render Static HTML (SSG)
         run: npm run build

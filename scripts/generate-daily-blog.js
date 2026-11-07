@@ -1,272 +1,540 @@
 import fs from 'fs';
 import path from 'path';
 
-// --- TOPIC REPOSITORY (High-Intent, High-Ticket Client Search Queries) ---
-const TOPICS = [
+// --- CURATED TOPIC MATRIX (High-Ticket, High-Intent Client Search Queries) ---
+export const CURATED_TOPICS = [
   {
-    id: 'django-celery-redis-ecommerce-order-pipeline',
-    slug: 'django-celery-redis-ecommerce-order-pipeline',
-    title: 'Django, Celery & Redis: Architecting Asynchronous Order Pipelines That Never Drop Flash-Sale Orders in 2026',
-    excerpt: 'How we engineer asynchronous order pipelines for high-traffic e-commerce and SaaS. Benchmark results, Redis queue strategies, and zero-downtime database locking patterns.',
-    category: 'Tech',
-    readTime: '10 min read',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&fm=webp&q=80',
-    keywords: [
-      'Django Celery Redis Order Pipeline',
-      'High Volume Ecommerce Architecture',
-      'Asynchronous Checkout Processing',
-      'PostgreSQL Row Locking Flash Sale',
-      'Sagor Ahamed CryptoWebBuild'
-    ],
-    summaryHeading: 'The 10,000 Concurrent Order Problem: Why Synchronous Checkouts Kill E-Commerce Stores',
-    hookStory: 'During Eid or Black Friday flash sales, ordinary WooCommerce or monolithic Node.js stores freeze because checkout requests lock the database synchronously. Customers get 504 Gateway Timeouts, duplicate charges happen, and thousands of dollars in ad spend bleed out within minutes. Here is the exact asynchronous architecture we implement to process thousands of orders per minute in under 300ms.',
-    benchmarkMetrics: [
-      { label: 'Synchronous PHP/Node', value: '4.8s / 504 Crashes', desc: 'Direct database lock per request' },
-      { label: 'Django + Celery Queue', value: '0.28s Instant Ack', desc: 'Redis queue + background workers' },
-      { label: 'Order Failure Rate', value: '0.00% Zero Drops', desc: 'Atomic database transactions' }
-    ],
-    technicalDeepDive: `### How The Asynchronous Pipeline Works
-
-When a buyer clicks "Confirm Order", the Next.js 15 Edge storefront does not wait for courier webhooks or inventory deductions. Instead:
-
-1. **Edge Request Validation (50ms):** Next.js sanitizes payload and passes request to Django REST API over HTTP/2.
-2. **Redis Ingestion (12ms):** Django creates an atomic transaction token and pushes the order payload directly into an in-memory Redis cluster.
-3. **Instant 200 OK Response (80ms):** The buyer immediately sees the confirmation screen with order tracking ID in under 300ms.
-4. **Celery Worker Execution (Background):** A pool of Celery workers verifies stock levels using \`SELECT FOR UPDATE\` row locks, charges payment via bKash/Stripe, and pushes order details to Steadfast/Pathao courier APIs asynchronously.`,
-    faqs: [
-      {
-        question: 'Why not process orders synchronously inside the HTTP request?',
-        answer: 'Synchronous requests force the buyer to wait for database locks, payment gateway handshakes, and courier webhooks. If any external API takes 3 seconds, your web server worker pool is held hostage, leading to cascading 504 timeouts under traffic spikes.'
-      },
-      {
-        question: 'How do you handle out-of-stock scenarios in an asynchronous queue?',
-        answer: 'We use Redis atomic counters (\`DECRBY\`) at the moment of queue entry. If inventory reaches zero, subsequent requests are rejected before touching PostgreSQL or queuing tasks, ensuring zero overselling.'
-      },
-      {
-        question: 'Can this architecture integrate with local Bangladesh couriers like Steadfast and Pathao?',
-        answer: 'Yes. Celery workers execute courier booking webhooks in the background with exponential backoff retries, ensuring 100% of orders get tracking codes even if courier servers experience temporary latency.'
-      },
-      {
-        question: 'How long does CryptoWebBuild take to deploy this system?',
-        answer: 'Principal Engineer Sagor Ahamed provides a working, clickable staging prototype within 48 hours under our 50/50 guarantee—you test live before paying the final milestone.'
-      }
-    ]
-  },
-  {
-    id: 'bkash-tokenized-checkout-nextjs-api-integration',
-    slug: 'bkash-tokenized-checkout-nextjs-api-integration',
-    title: 'bKash Tokenized Checkout API in Next.js 15: How to Build 1-Click Payments That Triple Conversion Rates',
-    excerpt: 'Complete guide to implementing official bKash Tokenized Checkout API inside Next.js 15 App Router. Save cards, enable 1-click repeat orders, and eliminate checkout drop-offs.',
+    id: 'meta-capi-server-side-nextjs15-conversion-boost',
+    slug: 'meta-capi-server-side-nextjs15-conversion-boost',
+    title: 'Meta Conversions API (CAPI) in Next.js 15: How to Recover 35% Lost Ad Conversions Bypassing iOS 14 Tracking Blockers',
+    excerpt: 'Client-side Meta Pixel drops up to 35% of purchase events due to ad-blockers and iOS privacy. Learn how to engineer direct Server-Side Meta CAPI inside Next.js 15 Route Handlers with 100% event deduplication.',
     category: 'Tech',
     readTime: '9 min read',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&fm=webp&q=80',
     keywords: [
-      'bKash Tokenized Checkout Next.js',
-      'Next.js 15 bKash Payment Gateway',
-      '1-Click Payment Bangladesh E-Commerce',
-      'bKash API Server Actions Route Handler',
-      'CryptoWebBuild Sagor Ahamed'
+      'Meta Conversions API Next.js 15',
+      'Facebook CAPI Server Side Tracking',
+      'Meta Pixel Deduplication Event ID',
+      'Next.js 15 Route Handler CAPI',
+      'Sagor Ahamed CryptoWebBuild'
     ],
-    summaryHeading: 'Why Manual bKash "Send Money" Destroys 40% of Your Sales',
-    hookStory: 'When an eager customer decides to buy on your store, forcing them to manually copy a Personal bKash number, open their bKash app, calculate transaction fees, and paste back a TrxID causes up to 40% checkout abandonment. Tokenized bKash Checkout lets verified buyers pay in 1 single tap without re-entering PINs or leaving the website.',
+    summaryHeading: 'The iOS Tracking Blindspot: Why 35% of Your Paid Ad Sales Never Reach Ads Manager',
+    hookStory: 'If you run Facebook or Instagram Ads for your e-commerce store, browser ad-blockers, Brave shields, and Apple iOS 14.5+ ATT privacy prompts silently discard more than a third of your purchase signals. Meta Ads Manager thinks your campaigns are underperforming, driving up your Customer Acquisition Cost (CAC) by 40%. The only fix is moving event tracking from the fragile client browser to a server-side Next.js 15 Node/Edge pipeline.',
     benchmarkMetrics: [
-      { label: 'Manual "Send Money"', value: '4–6 Minutes', desc: 'High drop-off and TrxID fraud' },
-      { label: 'bKash Tokenized 1-Click', value: '1.2 Seconds', desc: 'Instant automated reconciliation' },
-      { label: 'Conversion Lift', value: '+310% Completed', desc: 'Zero buyer friction' }
+      { label: 'Client-Side Pixel Only', value: '62% Match Rate', desc: 'Severely degraded by browser ad blockers' },
+      { label: 'Next.js Server-Side CAPI', value: '98.4% Match Rate', desc: 'Direct secure server-to-Meta API handshake' },
+      { label: 'Reported ROAS Lift', value: '+35% Tracked', desc: 'Immediate ad algorithm targeting recovery' }
     ],
-    technicalDeepDive: `### The Next.js 15 Route Handler Architecture
+    technicalDeepDive: `### Server-Side CAPI Implementation in Next.js 15
 
-To protect bKash credentials and prevent client-side token tampering:
+When a customer completes a checkout, your server generates a unique \`event_id\` and sends the payload to Meta's Graph API asynchronously:
 
 \`\`\`typescript
-// app/api/bkash/create-payment/route.ts
+// app/api/tracking/meta-capi/route.ts
 import { NextResponse } from 'next/server';
+import crypto from 'crypto';
+
+function hashData(val: string): string {
+  return crypto.createHash('sha256').update(val.trim().toLowerCase()).digest('hex');
+}
 
 export async function POST(req: Request) {
-  const { amount, orderId } = await req.json();
-  
-  // 1. Fetch grant token from bKash OAuth
-  const tokenRes = await fetch(process.env.BKASH_TOKEN_URL!, {
-    method: 'POST',
-    headers: {
-      'app_key': process.env.BKASH_APP_KEY!,
-      'app_secret': process.env.BKASH_APP_SECRET!,
-    },
-    body: JSON.stringify({
-      app_key: process.env.BKASH_APP_KEY,
-      app_secret: process.env.BKASH_APP_SECRET,
-    })
-  });
-  const { id_token } = await tokenRes.json();
+  const { eventId, eventName, customerEmail, customerPhone, value, currency } = await req.json();
 
-  // 2. Create payment agreement & tokenized checkout URL
-  const payment = await fetch(process.env.BKASH_CREATE_URL!, {
-    method: 'POST',
-    headers: {
-      'Authorization': id_token,
-      'X-APP-Key': process.env.BKASH_APP_KEY!,
-    },
-    body: JSON.stringify({
-      mode: '0011',
-      payerReference: orderId,
-      callbackURL: \`\${process.env.NEXT_PUBLIC_BASE_URL}/api/bkash/callback\`,
-      amount,
-      currency: 'BDT',
-      intent: 'sale',
-    })
-  });
+  const payload = {
+    data: [
+      {
+        event_name: eventName || 'Purchase',
+        event_time: Math.floor(Date.now() / 1000),
+        event_id: eventId, // Critical for client & server deduplication
+        action_source: 'website',
+        user_data: {
+          em: customerEmail ? [hashData(customerEmail)] : [],
+          ph: customerPhone ? [hashData(customerPhone)] : [],
+          client_user_agent: req.headers.get('user-agent') || '',
+        },
+        custom_data: {
+          currency: currency || 'BDT',
+          value: Number(value),
+        },
+      },
+    ],
+  };
 
-  return NextResponse.json(await payment.json());
+  const response = await fetch(
+    \`https://graph.facebook.com/v19.0/\${process.env.META_PIXEL_ID}/events?access_token=\${process.env.META_CAPI_ACCESS_TOKEN}\`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }
+  );
+
+  return NextResponse.json(await response.json());
 }
 \`\`\``,
     faqs: [
       {
-        question: 'What is the difference between bKash Checkout and Tokenized Checkout?',
-        answer: 'Standard checkout requires entering phone number, OTP, and PIN on every single purchase. Tokenized checkout creates a secure payment agreement token, allowing repeat customers to check out in 1 tap without repeated verification.'
+        question: 'Why do we need Event ID deduplication between Pixel and CAPI?',
+        answer: 'When both browser Pixel and Server CAPI fire for the same order, Meta uses the identical event_id to recognize it as a single conversion, preventing duplicate counting while ensuring 100% signal capture.'
       },
       {
-        question: 'Is server-side token storage secure with Next.js 15?',
-        answer: 'Yes. All secrets (\`BKASH_APP_SECRET\`, private certificates) reside strictly in server runtime environment variables and are never bundled into client-side JS.'
+        question: 'Does server-side tracking slow down the customer checkout experience?',
+        answer: 'No. The CAPI dispatch runs asynchronously in background edge workers after the 200 OK checkout confirmation is already sent to the buyer.'
       },
       {
-        question: 'Does this also support Nagad and Card payments?',
-        answer: 'Yes. Our checkout component seamlessly bundles bKash Tokenized, Nagad Direct, SSLCommerz/AamarPay card rails, and Cash-on-Delivery in a single unified UI.'
+        question: 'Can this be integrated with local payment gateways like bKash and Cash on Delivery?',
+        answer: 'Yes. CAPI fires automatically upon successful bKash webhook confirmation or COD order dispatch, ensuring COD purchases are recorded accurately in Ads Manager.'
       },
       {
-        question: 'How do you prevent duplicate order bookings on bKash callback?',
-        answer: 'We implement idempotent webhook handlers with unique \`paymentID\` database constraints and Redis lock mutexes so a callback is never processed more than once.'
+        question: 'How quickly can CryptoWebBuild deploy server-side CAPI on our store?',
+        answer: 'Principal Engineer Sagor Ahamed deploys and verifies server-side CAPI within 48 hours under our 50/50 terms.'
       }
     ]
   },
   {
-    id: 'steadfast-courier-api-webhook-integration-nextjs',
-    slug: 'steadfast-courier-api-webhook-integration-nextjs',
-    title: 'Steadfast Courier API Automation: How to Auto-Book Parcel Shipments from Next.js Stores in 0.4 Seconds',
-    excerpt: 'Stop manually copying customer addresses into courier dashboards. Learn how to connect Steadfast Courier API with Next.js and Django for automated consignment booking and real-time tracking.',
+    id: 'pathao-courier-dynamic-consignment-nextjs',
+    slug: 'pathao-courier-dynamic-consignment-nextjs',
+    title: 'Pathao Courier API Automation: Dynamic Delivery Fee Calculation and Instant Parcel Consignment in Next.js 15',
+    excerpt: 'Complete guide to connecting Pathao Courier API with Next.js 15 and Django. Auto-calculate city zones, generate parcel consignments in 0.3s, and sync webhook delivery statuses.',
     category: 'Guide',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&fm=webp&q=80',
     keywords: [
-      'Steadfast Courier API Next.js',
-      'Automated Courier Dispatch Bangladesh',
-      'Next.js E-Commerce Courier Sync',
-      'Steadfast Consignment Webhook',
-      'Sagor Ahamed CryptoWebBuild'
+      'Pathao Courier API Next.js',
+      'Automated Parcel Booking Bangladesh',
+      'Pathao Merchant API Integration',
+      'Next.js 15 Courier Webhook Sync',
+      'CryptoWebBuild Sagor Ahamed'
     ],
-    summaryHeading: 'The 2-Hour Daily Data Entry Tax: Why Manual Courier Booking Strangles Growth',
-    hookStory: 'If your store ships 50 to 200 orders a day, copying names, phone numbers, delivery addresses, and COD amounts from your website into Steadfast or Pathao dashboards wastes 2 to 3 hours every afternoon. Even worse, typos in phone numbers lead to failed delivery attempts and costly return shipping fees. Automated API consignment creation eliminates manual typing entirely.',
+    summaryHeading: 'Stop Manual Parcel Entry: Why Real-Time Courier Sync Multiplies Delivery Velocity',
+    hookStory: 'Fulfillment delays kill repeat customers. When an e-commerce business relies on spreadsheet data-entry or manual merchant panel copy-pasting, shipping mistakes skyrocket. With direct Pathao API integration, the second a customer taps "Place Order", city zones are resolved, consignment tracking numbers are booked in under 0.3 seconds, and the customer receives instant live tracking via SMS.',
     benchmarkMetrics: [
-      { label: 'Manual Dashboard Entry', value: '3.5 Minutes / Order', desc: 'Frequent typo and address errors' },
-      { label: 'Automated API Sync', value: '0.4 Seconds Total', desc: 'Instant consignment code generated' },
-      { label: 'Return Parcel Rate', value: '-65% Reduction', desc: 'Automated phone & address validation' }
+      { label: 'Manual Panel Entry', value: '4 Minutes / Order', desc: 'Typos and shipping address delays' },
+      { label: 'Pathao API Automated', value: '0.34s Total', desc: 'Instant merchant consignment generated' },
+      { label: 'Parcel Return Rate', value: '-55% Drop', desc: 'Pre-validated delivery zones and phone numbers' }
     ],
-    technicalDeepDive: `### The Automated Consignment Architecture
-
-When an order is confirmed, our backend executes the Steadfast consignment endpoint:
+    technicalDeepDive: `### Pathao Courier Consignment Dispatch Architecture
 
 \`\`\`python
-# services/courier_service.py
+# services/pathao_service.py
 import requests
 from django.conf import settings
 
-def book_steadfast_parcel(order):
-    url = f"{settings.STEADFAST_BASE_URL}/create_order"
+def create_pathao_order(order):
+    token = get_pathao_access_token()
+    url = f"{settings.PATHAO_BASE_URL}/aladdin/api/v1/orders"
+    
     headers = {
-        "Api-Key": settings.STEADFAST_API_KEY,
-        "Secret-Key": settings.STEADFAST_SECRET_KEY,
-        "Content-Type": "application/json"
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
     }
+    
     payload = {
-        "invoice": order.invoice_number,
+        "store_id": settings.PATHAO_STORE_ID,
+        "merchant_order_id": order.order_number,
         "recipient_name": order.customer_name,
         "recipient_phone": order.customer_phone,
         "recipient_address": order.delivery_address,
-        "cod_amount": float(order.cod_amount),
-        "note": order.special_instructions or "Handle with care"
+        "recipient_city": order.city_id,
+        "recipient_zone": order.zone_id,
+        "delivery_type": 48, # 48 hours delivery
+        "item_type": 1, # Parcel
+        "special_instruction": order.note or "Handle with care",
+        "item_quantity": 1,
+        "item_weight": 0.5,
+        "amount_to_collect": float(order.total_amount) if order.is_cod else 0
     }
     
-    response = requests.post(url, json=payload, headers=headers, timeout=5)
-    data = response.json()
-    
-    if data.get("status") == 200:
-        consignment = data["consignment"]
-        order.tracking_code = consignment["tracking_code"]
-        order.consignment_id = consignment["consignment_id"]
-        order.status = "dispatched"
-        order.save(update_fields=["tracking_code", "consignment_id", "status"])
-        return order.tracking_code
-    else:
-        raise Exception(f"Steadfast error: {data.get('errors')}")
+    res = requests.post(url, json=payload, headers=headers, timeout=5)
+    data = res.json()
+    if data.get("type") == "success":
+        order.tracking_number = data["data"]["consignment_id"]
+        order.save(update_fields=["tracking_number"])
+        return order.tracking_number
+    raise Exception(f"Pathao Dispatch Failed: {data}")
 \`\`\``,
     faqs: [
       {
-        question: 'Does the customer receive SMS tracking automatically?',
-        answer: 'Yes. As soon as the consignment code is generated by the API, our system triggers an automated branded SMS to the customer with their live tracking link.'
+        question: 'Does the system automatically update order status when Pathao delivers?',
+        answer: 'Yes. Pathao webhooks securely push status updates (In Transit, Delivered, Returned) to our Django/Next.js API endpoint, updating your dashboard in real-time.'
       },
       {
-        question: 'Can the system calculate delivery charges dynamically (Dhaka vs Outside Dhaka)?',
-        answer: 'Yes. Our checkout detects district selection instantly (e.g. ৳60 Inside Dhaka, ৳120 Outside Dhaka) and adds it to the COD amount before generating the courier consignment.'
+        question: 'Can both Pathao and Steadfast be integrated simultaneously?',
+        answer: 'Yes. We build intelligent courier failover—orders can default to Pathao and automatically fallback to Steadfast if coverage zones require it.'
       },
       {
-        question: 'What happens if Steadfast API goes down during checkout?',
-        answer: 'The order is safely saved in PostgreSQL, and an asynchronous Celery task retries consignment generation every 60 seconds until successful, so no order is ever stranded.'
+        question: 'How do you handle Pathao OAuth token expiration?',
+        answer: 'Access tokens and refresh tokens are cached in Redis with TTLs and refreshed proactively in the background, ensuring zero latency during customer checkouts.'
       },
       {
-        question: 'Can I integrate both Steadfast and Pathao at the same time?',
-        answer: 'Yes. We build intelligent routing that defaults to your primary courier and automatically falls back to secondary couriers if coverage or service requires it.'
+        question: 'What is the staging guarantee for this deployment?',
+        answer: 'You test live courier consignment generation in staging within 48 hours, paying 50% only after full satisfaction.'
       }
     ]
   },
   {
-    id: 'woocommerce-to-headless-nextjs-migration-guide',
-    slug: 'woocommerce-to-headless-nextjs-migration-guide',
-    title: 'Migrating from WooCommerce to Headless Next.js 15: How We Cut TTFB from 3.2s to 0.28s and Gained +38% Conversions',
-    excerpt: 'Step-by-step technical teardown of migrating a sluggish WordPress/WooCommerce store to a headless Next.js edge storefront. Preserve order history, rank #1 on Google, and double checkout velocity.',
-    category: 'Case Study',
-    readTime: '11 min read',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    id: 'nagad-merchant-api-tokenized-checkout-nextjs',
+    slug: 'nagad-merchant-api-tokenized-checkout-nextjs',
+    title: 'Nagad Merchant PG Integration in Next.js 15: Public-Key Cryptography & Instant 1-Click Payments',
+    excerpt: 'Step-by-step technical teardown of integrating Nagad Merchant Payment Gateway with RSA private/public key cryptography in Next.js 15 App Router. Zero manual TrxID friction.',
+    category: 'Tech',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1200&fm=webp&q=80',
     keywords: [
-      'WooCommerce to Next.js Migration',
-      'Headless WordPress Next.js 15',
-      'E-Commerce Speed Optimization 2026',
-      'ShopFast Case Study CryptoWebBuild',
-      'Sagor Ahamed Full Stack Architect'
+      'Nagad Payment Gateway Next.js 15',
+      'Nagad Merchant API Integration',
+      'RSA Cryptography Payment Gateway',
+      'Nagad Direct Checkout Bangladesh',
+      'CryptoWebBuild Sagor Ahamed'
     ],
-    summaryHeading: 'The Plugin Bloat Trap: Why WordPress Cannot Compete in 2026 E-Commerce',
-    hookStory: 'WooCommerce is fine for hobby stores. But as soon as you add Elementor, 40 marketing plugins, multi-currency modules, and payment gateways, your database query count explodes. Every page load triggers 120 SQL queries, driving Mobile PageSpeed into the red (24/100) and causing mobile shoppers to bounce within 3 seconds. Headless architecture separates the slow backend from an instant, static-edge frontend.',
+    summaryHeading: 'Why Modern E-Commerce Cannot Depend Solely on One Payment Rail',
+    hookStory: 'Offering only bKash or only Cash on Delivery leaves up to 28% of qualified buyers stranded. Nagad has over 80 million registered accounts in Bangladesh. Implementing direct Nagad Merchant PG with RSA public-key signatures gives your customers an instant, professional checkout experience while completely automating accounting reconciliation.',
     benchmarkMetrics: [
-      { label: 'WooCommerce Monolith', value: '3.8s TTFB / 28 PageSpeed', desc: '42 active plugins & SQL bottlenecks' },
-      { label: 'Headless Next.js Edge', value: '0.28s TTFB / 100 PageSpeed', desc: 'Edge CDN HTML + cached JSON' },
-      { label: 'Checkout Abandonment', value: '-44% Drop', desc: '1-click checkout with zero lag' }
+      { label: 'Manual "Nagad Personal"', value: '6–8 Minutes', desc: 'Frequent fake TrxID scams and lost sales' },
+      { label: 'Nagad Direct PG', value: '1.4 Seconds', desc: 'Automated cryptographic callback verification' },
+      { label: 'Checkout Completion', value: '+270% Velocity', desc: 'Zero friction mobile payment' }
     ],
-    technicalDeepDive: `### The Migration Blueprint
+    technicalDeepDive: `### Nagad Cryptographic Signature Verification
 
-1. **Catalog Export & Cleanse:** Sanitize all product variants, attributes, and image WebP conversions.
-2. **Edge Storefront Generation:** Build Next.js 15 App Router with Incremental Static Regeneration (ISR). Catalog pages render in 50ms from Cloudflare Edge.
-3. **Checkout Decoupling:** Replace slow WooCommerce PHP checkout with a client-side React form communicating directly with Django/Node microservices.
-4. **301 Redirect Mapping:** 100% preservation of historical WordPress URL structures so organic Google rankings jump rather than drop.`,
+Nagad requires encrypting payloads with Nagad's Public Key and signing with your Merchant Private Key:
+
+\`\`\`typescript
+// lib/nagad-crypto.ts
+import crypto from 'crypto';
+
+export function signWithPrivateKey(data: string, privateKeyPem: string): string {
+  const signer = crypto.createSign('SHA256');
+  signer.update(data);
+  return signer.sign(privateKeyPem, 'base64');
+}
+
+export function encryptWithPublicKey(data: string, publicKeyPem: string): string {
+  const buffer = Buffer.from(data, 'utf8');
+  const encrypted = crypto.publicEncrypt(
+    {
+      key: publicKeyPem,
+      padding: crypto.constants.RSA_PKCS1_PADDING,
+    },
+    buffer
+  );
+  return encrypted.toString('base64');
+}
+\`\`\``,
     faqs: [
       {
-        question: 'Do I lose my existing Google search rankings when migrating away from WordPress?',
-        answer: 'No. By executing strict 1-to-1 301 redirects, schema markup parity, and preserving URL slugs, Google typically rewards the site with higher rankings due to massive Core Web Vitals improvements.'
+        question: 'Why does Nagad use RSA cryptography instead of simple API tokens?',
+        answer: 'RSA asymmetric key cryptography guarantees that neither party can forge transaction requests or manipulate order amounts between the browser and bank.'
       },
       {
-        question: 'Can my non-technical staff still add products easily?',
-        answer: 'Yes. We provide a clean, modern administrative dashboard where products, inventory, and banner images can be managed with 1 click without touching code.'
+        question: 'Where should RSA private keys be stored in Next.js 15?',
+        answer: 'Strictly in server-side environment variables or Cloudflare Secrets, never exposed to client-side code bundles.'
       },
       {
-        question: 'How long does a headless migration take?',
-        answer: 'Most stores are fully migrated, tested on staging, and deployed within 7 to 10 days. A working 48-hour prototype is delivered at the start.'
+        question: 'Can we offer bKash, Nagad, and Cards in a single unified checkout UI?',
+        answer: 'Yes. Our 1-Click checkout component bundles bKash, Nagad, VISA/Mastercard, and Cash on Delivery seamlessly in a sub-second tabbed interface.'
       },
       {
-        question: 'What is the risk-free guarantee?',
-        answer: 'With CryptoWebBuild 50/50 terms, you pay 50% upfront, test the migrated store on live staging, verify 98–100 PageSpeed scores, and pay the remaining 50% only when 100% satisfied.'
+        question: 'What is CryptoWebBuild’s delivery timeframe for payment integrations?',
+        answer: 'A fully functional staging test environment is delivered in 48 hours under our 50/50 risk-free milestone model.'
+      }
+    ]
+  },
+  {
+    id: 'solana-anchor-sub-second-rpc-dapp',
+    slug: 'solana-anchor-sub-second-rpc-dapp',
+    title: 'Solana Anchor & React: Engineering Sub-0.3s DEX Swaps & Presale Mints with Zero RPC Throttling',
+    excerpt: 'High-throughput Web3 engineering guide: How to build sub-second Solana dApps with Anchor, priority fee dynamic estimation, and private WebSocket RPC clusters.',
+    category: 'Tech',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      'Solana Anchor Web3 DApp',
+      'Sub-Second Solana DEX Swap',
+      'Dynamic Priority Fees Solana',
+      'Solana RPC WebSocket Clusters',
+      'Sagor Ahamed Full Stack Web3'
+    ],
+    summaryHeading: 'The 429 Throttle Nightmare: Why Public RPCs Destroy Web3 Presales',
+    hookStory: 'When a meme coin presale or NFT mint launches, public RPC endpoints drop up to 80% of transaction signatures due to rate limits and network congestion. Buyers get frustrated, hype evaporates, and capital moves elsewhere. We architect Web3 interfaces with private dedicated RPC load balancing, dynamic micro-lamport priority fee estimators, and sub-0.3s local wallet signing.',
+    benchmarkMetrics: [
+      { label: 'Public RPC Node', value: '4.2s / 68% Failure', desc: 'Rate throttled under 50+ concurrent requests' },
+      { label: 'Private Cluster + Priority Fees', value: '0.24s / 99.9% Land', desc: 'Direct transaction forwarding to leaders' },
+      { label: 'Presale Completion', value: '3x Faster Mints', desc: 'Zero dropped transactions during surges' }
+    ],
+    technicalDeepDive: `### Dynamic Priority Fee Optimization in Solana
+
+\`\`\`typescript
+import { Connection, ComputeBudgetProgram, TransactionMessage, VersionedTransaction } from '@solana/web3.js';
+
+export async function createOptimizedTransaction(
+  connection: Connection,
+  instructions: any[],
+  payerKey: any
+) {
+  // 1. Fetch real-time recent priority fees from validator leaders
+  const fees = await connection.getRecentPrioritizationFees();
+  const medianFee = fees.length ? Math.median(fees.map(f => f.prioritizationFee)) : 50_000;
+
+  // 2. Prepend compute budget instructions
+  const computeUnitLimit = ComputeBudgetProgram.setComputeUnitLimit({ units: 250_000 });
+  const computeUnitPrice = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: medianFee + 10_000 });
+
+  const latestBlockhash = await connection.getLatestBlockhash('confirmed');
+  
+  const messageV0 = new TransactionMessage({
+    payerKey,
+    recentBlockhash: latestBlockhash.blockhash,
+    instructions: [computeUnitLimit, computeUnitPrice, ...instructions]
+  }).compileToV0Message();
+
+  return new VersionedTransaction(messageV0);
+}
+\`\`\``,
+    faqs: [
+      {
+        question: 'Why are priority fees mandatory on modern Solana launches?',
+        answer: 'Since the Solana stake-weighted QoS upgrade, transactions without dynamic priority fees are heavily deprioritized by block-producing leaders during traffic bursts.'
+      },
+      {
+        question: 'How do you handle Phantom, Solflare, and Backpack wallet bridges?',
+        answer: 'We implement the standard Solana Mobile Wallet Adapter and unified React wallet-adapter with auto-reconnect and session persistence.'
+      },
+      {
+        question: 'Can you build custom Anchor smart contracts as well as frontends?',
+        answer: 'Yes. Principal Engineer Sagor Ahamed builds both the Rust Anchor program and the sub-second React/Next.js frontend directly.'
+      },
+      {
+        question: 'What is the staging timeline?',
+        answer: 'Live testnet/devnet staging prototype in 48 hours under our 50/50 payment model.'
+      }
+    ]
+  },
+  {
+    id: 'redis-rate-limiter-anti-bot-web3-presale',
+    slug: 'redis-rate-limiter-anti-bot-web3-presale',
+    title: 'Redis Token Bucket Rate Limiting: Stopping Sniper Bots & Presale Drainers in 2026 Web3 Launches',
+    excerpt: 'Protect token launches and flash-sales from automated sniper bots. Implement sliding-window Redis rate limiters and Cloudflare Turnstile verification with zero latency.',
+    category: 'Tech',
+    readTime: '9 min read',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      'Redis Token Bucket Rate Limiter',
+      'Anti-Bot Protection Web3 Presale',
+      'Cloudflare Turnstile Next.js 15',
+      'DDoS Protection High Volume E-Commerce',
+      'Sagor Ahamed CryptoWebBuild'
+    ],
+    summaryHeading: 'How Sniper Bots Drain Web3 Allocations in Under 2 Seconds',
+    hookStory: 'Unprotected presale smart contracts and website checkout forms get slammed by automated bot scripts that consume all early bird allocations within milliseconds. Real community members and retail buyers get left out, causing community backlash. We deploy dual-layer defense: Cloudflare Turnstile cryptographic challenges at the edge and Redis sliding-window token buckets at the API layer.',
+    benchmarkMetrics: [
+      { label: 'Unprotected Endpoint', value: '100% Bot Drain', desc: 'Scripted bots overwhelm real buyers' },
+      { label: 'Redis Sliding-Window', value: '0.00% Bot Penetration', desc: 'Strict IP & wallet rate limiting' },
+      { label: 'Legitimate User Overhead', value: '< 15ms Latency', desc: 'Seamless non-intrusive verification' }
+    ],
+    technicalDeepDive: `### Sliding Window Rate Limiter in Redis Lua
+
+\`\`\`lua
+-- Sliding window rate limiting in pure Redis Lua script (atomic)
+local key = KEYS[1]
+local now = tonumber(ARGV[1])
+local window = tonumber(ARGV[2])
+local limit = tonumber(ARGV[3])
+local clearBefore = now - window
+
+redis.call('ZREMRANGEBYSCORE', key, 0, clearBefore)
+local currentRequests = redis.call('ZCARD', key)
+
+if currentRequests < limit then
+    redis.call('ZADD', key, now, now)
+    redis.call('EXPIRE', key, window)
+    return 1 -- Allowed
+else
+    return 0 -- Rate limited
+end
+\`\`\``,
+    faqs: [
+      {
+        question: 'Why use Redis Lua scripts instead of standard backend middleware?',
+        answer: 'Lua scripts execute atomically inside Redis memory, eliminating race conditions even when thousands of bot threads fire at the exact same millisecond.'
+      },
+      {
+        question: 'Does this interfere with real human buyers on mobile devices?',
+        answer: 'No. Legitimate buyers easily pass within the allowed token window, and Cloudflare Turnstile verifies humans silently in 0.1s without annoying CAPTCHAs.'
+      },
+      {
+        question: 'Can this protect e-commerce flash sales as well?',
+        answer: 'Yes. The same sliding window prevents inventory hoarding and checkout bot manipulation during high-demand product drops.'
+      },
+      {
+        question: 'How fast can this be deployed?',
+        answer: 'Prototype and security audit in 48 hours under our 50/50 milestone guarantee.'
+      }
+    ]
+  },
+  {
+    id: 'core-web-vitals-crushing-inp-under-50ms',
+    slug: 'core-web-vitals-crushing-inp-under-50ms',
+    title: 'Crushing Interaction to Next Paint (INP) Under 50ms: The Deep React 18 Concurrent Rendering Playbook',
+    excerpt: 'Google officially replaced FID with INP in Core Web Vitals. Discover how we eliminate main-thread JavaScript freezing, optimize React 18 transitions, and maintain 100/100 PageSpeed scores.',
+    category: 'Case Study',
+    readTime: '10 min read',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      'Interaction to Next Paint INP',
+      'Core Web Vitals 2026 Optimization',
+      'React 18 Concurrent Transitions',
+      'Sub-Second JavaScript Execution',
+      'Sagor Ahamed CryptoWebBuild'
+    ],
+    summaryHeading: 'The Hidden INP Trap: Why Fast LCP Still Results in Poor Google Rankings',
+    hookStory: 'Many web agencies brag about fast initial loading (LCP), but when a mobile user clicks "Add to Cart" or taps a navigation menu, the screen freezes for 300ms while heavy React bundles block the CPU. Google Core Web Vitals measures this delay as Interaction to Next Paint (INP). High INP scores directly hurt organic Google search ranking and cause frustrating mobile UI stutter.',
+    benchmarkMetrics: [
+      { label: 'Standard WordPress/Shopify', value: '280ms–450ms INP (Poor)', desc: 'Heavy unoptimized JS bundles choke main thread' },
+      { label: 'CryptoWebBuild Next.js', value: '38ms INP (Good)', desc: 'Non-blocking concurrent transitions & Web Workers' },
+      { label: 'Mobile Conversion Lift', value: '+32% Completed', desc: 'Instant tactile feedback on every click' }
+    ],
+    technicalDeepDive: `### Eliminating Main-Thread Freezes with React 18 \`startTransition\`
+
+\`\`\`typescript
+import { useState, useTransition } from 'react';
+
+export function HighThroughputProductFilter({ products }: { products: any[] }) {
+  const [filter, setFilter] = useState('');
+  const [filteredList, setFilteredList] = useState(products);
+  const [isPending, startTransition] = useTransition();
+
+  function handleFilterChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const val = e.target.value;
+    // 1. Immediate urgent update: keeps input typing at 60fps (0ms INP lag)
+    setFilter(val);
+
+    // 2. Non-urgent background computation: yield to browser paint events
+    startTransition(() => {
+      const filtered = products.filter(p => p.name.toLowerCase().includes(val.toLowerCase()));
+      setFilteredList(filtered);
+    });
+  }
+
+  return (
+    <div>
+      <input type="text" value={filter} onChange={handleFilterChange} placeholder="Search catalog..." />
+      {isPending && <span className="text-xs text-indigo-400">Filtering...</span>}
+      <ProductGrid items={filteredList} />
+    </div>
+  );
+}
+\`\`\``,
+    faqs: [
+      {
+        question: 'What is a "Good" INP score according to Google?',
+        answer: 'Google requires an INP score of 200 milliseconds or less for a "Good" rating. At CryptoWebBuild, our engineered sites consistently clock under 50ms.'
+      },
+      {
+        question: 'Does third-party tracking scripts (Pixel, Analytics) worsen INP?',
+        answer: 'Yes, heavily. We offload heavy analytics scripts to Cloudflare Workers or run them via Partytown in background Web Workers, keeping the main thread free.'
+      },
+      {
+        question: 'How do you verify INP before launching to production?',
+        answer: 'We test across throttled mobile CPUs using Playwright and Google Lighthouse performance profiling in real network environments.'
+      },
+      {
+        question: 'What is CryptoWebBuild’s speed guarantee?',
+        answer: 'We guarantee 95–100 Mobile PageSpeed scores. You test the live staging build before paying the remaining 50% milestone.'
       }
     ]
   }
 ];
 
-function generatePostComponent(topic) {
+// --- AI TOPIC GENERATOR VIA GEMINI API ---
+async function fetchGeminiGeneratedTopic(existingSlugs) {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+  if (!apiKey) {
+    console.log('ℹ️ No GEMINI_API_KEY found in environment. Using curated high-ticket topic matrix.');
+    return null;
+  }
+
+  console.log('⚡ Querying Gemini AI to craft an original high-converting architectural article...');
+
+  const systemPrompt = `You are Sagor Ahamed, Principal Full-Stack Architect at CryptoWebBuild (cryptowebbuild.com).
+You specialize in 0.4s sub-second Next.js 15, Python/Django & Celery asynchronous pipelines, 1-click bKash/Nagad/Stripe checkouts, Steadfast/Pathao courier automations, Web3 Solana/EVM high-throughput dApps, and 100/100 Core Web Vitals.
+Your target audience: Serious business owners, e-commerce brands, and Web3 founders looking for custom engineering with 50/50 milestone terms.
+
+Generate ONE brand-new, original, deeply technical architectural teardown article that has NOT been written yet.
+The following slugs have ALREADY been published and MUST NOT be repeated:
+${JSON.stringify(existingSlugs)}
+
+Return ONLY valid JSON with this exact schema (no markdown, no extra commentary):
+{
+  "id": "slug-name-hyphenated",
+  "slug": "slug-name-hyphenated",
+  "title": "Compelling Title (under 65 chars)",
+  "excerpt": "Meta description explaining problem, technical solution, and metric lift (140-155 chars)",
+  "category": "Tech", // Must be one of: 'Tech', 'Guide', 'Case Study', 'Business'
+  "readTime": "9 min read",
+  "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&fm=webp&q=80",
+  "keywords": ["Keyword 1", "Keyword 2", "Keyword 3", "Keyword 4", "Sagor Ahamed CryptoWebBuild"],
+  "summaryHeading": "Punchy Problem Statement Heading",
+  "hookStory": "Engaging real-world hook paragraph explaining client pain points and why ordinary approaches fail...",
+  "benchmarkMetrics": [
+    { "label": "Legacy Approach", "value": "Slow / Crashes", "desc": "Technical bottleneck description" },
+    { "label": "CryptoWebBuild Architecture", "value": "0.3s Instant", "desc": "Optimized architecture description" },
+    { "label": "Business Outcome", "value": "+240% Lift", "desc": "Concrete revenue or conversion impact" }
+  ],
+  "technicalDeepDive": "Detailed technical explanation including code snippets (TypeScript or Python) demonstrating the production architecture.",
+  "faqs": [
+    { "question": "Technical question 1?", "answer": "Clear, authoritative answer." },
+    { "question": "Question 2?", "answer": "Clear, authoritative answer." },
+    { "question": "Question 3?", "answer": "Clear, authoritative answer." },
+    { "question": "How fast can CryptoWebBuild deploy this?", "answer": "Principal Engineer Sagor Ahamed provides a working staging prototype in 48 hours under our 50/50 terms." }
+  ]
+}`;
+
+  const models = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+
+  for (const model of models) {
+    try {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: systemPrompt }] }],
+          generationConfig: {
+            temperature: 0.7,
+            responseMimeType: 'application/json'
+          }
+        })
+      });
+
+      if (!response.ok) {
+        console.warn(`Gemini API model ${model} responded with status: ${response.status}`);
+        continue;
+      }
+
+      const result = await response.json();
+      const rawText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!rawText) continue;
+
+      const parsed = JSON.parse(rawText.replace(/```json\s*|```/g, '').trim());
+
+      if (parsed && parsed.slug && parsed.title && parsed.excerpt && !existingSlugs.includes(parsed.slug)) {
+        if (!['Tech', 'Guide', 'Case Study', 'Business'].includes(parsed.category)) {
+          parsed.category = 'Tech';
+        }
+        console.log(`✨ Successfully generated AI article via Gemini (${model}): "${parsed.title}"`);
+        return parsed;
+      }
+    } catch (err) {
+      console.warn(`Failed with model ${model}:`, err.message);
+    }
+  }
+
+  return null;
+}
+
+export function generatePostComponent(topic) {
   const componentName = topic.slug
     .split('-')
     .map(w => w.charAt(0).toUpperCase() + w.slice(1))
@@ -276,18 +544,11 @@ function generatePostComponent(topic) {
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  CheckCircle2,
-  Zap,
   ShieldCheck,
   ExternalLink,
   MessageSquare,
-  Server,
-  Code2,
-  Database,
-  Cpu,
   ArrowRight,
   TrendingUp,
-  AlertTriangle,
   Clock,
   Sparkles,
 } from 'lucide-react';
@@ -300,6 +561,7 @@ const ${componentName}: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
 
   const faqData = ${JSON.stringify(topic.faqs, null, 4)};
+  const technicalDeepDiveCode = ${JSON.stringify(topic.technicalDeepDive)};
 
   return (
     <article className="max-w-4xl mx-auto px-6 py-8 md:py-12">
@@ -355,6 +617,10 @@ const ${componentName}: React.FC = () => {
             <img
               src="/hero-avatar.webp"
               alt="Sagor Ahamed"
+              width={44}
+              height={44}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>
@@ -421,13 +687,9 @@ const ${componentName}: React.FC = () => {
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-slate-900 text-slate-200 border border-white/10 font-mono text-xs sm:text-sm overflow-x-auto space-y-2">
-          <div className="text-emerald-400 font-bold mb-2">// Verified Production Configuration</div>
-          <div>Next.js 15 (Edge SSR) ───[ HTTP/2 JSON ]───&gt; Python Django REST</div>
-          <div className="pl-6 text-slate-400">│</div>
-          <div className="pl-6 text-slate-400">├──&gt; Redis In-Memory Token Lock (12ms)</div>
-          <div className="pl-6 text-slate-400">├──&gt; PostgreSQL Transaction Isolation (Atomic)</div>
-          <div className="pl-6 text-slate-400">└──&gt; Celery Workers ──&gt; Steadfast / Pathao / bKash APIs</div>
+        <div className="p-6 rounded-2xl bg-slate-900 text-slate-200 border border-white/10 font-mono text-xs sm:text-sm overflow-x-auto space-y-2 whitespace-pre-wrap">
+          <div className="text-emerald-400 font-bold mb-2">// Verified Production Configuration &amp; Implementation</div>
+          <div>{technicalDeepDiveCode}</div>
         </div>
       </section>
 
@@ -539,7 +801,7 @@ export default ${componentName};
 `;
 }
 
-export function runDailyBlogGenerator() {
+export async function runDailyBlogGenerator() {
   console.log('🤖 Running Automated Daily Blog Generator...');
 
   const blogPostsFile = path.resolve('data/blogPosts.ts');
@@ -555,11 +817,16 @@ export function runDailyBlogGenerator() {
     existingSlugs.push(m[1]);
   }
 
-  // Find the next topic that hasn't been written
-  const nextTopic = TOPICS.find(t => !existingSlugs.includes(t.slug));
+  // 1. Try Gemini AI Generation first if API key is provided
+  let nextTopic = await fetchGeminiGeneratedTopic(existingSlugs);
+
+  // 2. If AI not used or returned null, use Curated Topic Matrix
+  if (!nextTopic) {
+    nextTopic = CURATED_TOPICS.find(t => !existingSlugs.includes(t.slug));
+  }
 
   if (!nextTopic) {
-    console.log('ℹ️ All topics in current queue have already been published!');
+    console.log('ℹ️ All topics in current matrix have already been published!');
     return null;
   }
 
@@ -599,7 +866,7 @@ export function runDailyBlogGenerator() {
 
   // 3. Register route in App.tsx
   let appContent = fs.readFileSync(appFile, 'utf-8').replace(/\r\n/g, '\n');
-  const lazyImport = `const ${componentName} = lazy(() => import('./pages/blog/${componentName}'));\n`;
+  const lazyImport = `const ${componentName} = lazyWithRetry(() => import('./pages/blog/${componentName}'));\n`;
   const routeLine = `          <Route path="/blog/${nextTopic.slug}" element={<${componentName} />} />\n`;
 
   // Insert lazy import right before PageLoader or after last blog import
@@ -611,12 +878,12 @@ export function runDailyBlogGenerator() {
   appContent = appContent.replace(routeAnchor, `${routeLine}          ${routeAnchor}`);
 
   fs.writeFileSync(appFile, appContent, 'utf-8');
-  console.log('✅ Registered lazy import and Route in App.tsx');
+  console.log('✅ Registered lazyWithRetry import and Route in App.tsx');
 
   return nextTopic;
 }
 
 // Execute when invoked directly
 if (process.argv[1] && process.argv[1].endsWith('generate-daily-blog.js')) {
-  runDailyBlogGenerator();
+  runDailyBlogGenerator().catch(console.error);
 }

@@ -78,6 +78,8 @@ const SolanaNFT = lazyWithRetry(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazyWithRetry(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const MetaCapiServerSideNextjs15ConversionBoost = lazyWithRetry(() => import('./pages/blog/MetaCapiServerSideNextjs15ConversionBoost'));
+
 const WoocommerceToHeadlessNextjsMigrationGuide = lazyWithRetry(() => import('./pages/blog/WoocommerceToHeadlessNextjsMigrationGuide'));
 const SteadfastCourierApiWebhookIntegrationNextjs = lazyWithRetry(() => import('./pages/blog/SteadfastCourierApiWebhookIntegrationNextjs'));
 const BkashTokenizedCheckoutNextjsApiIntegration = lazyWithRetry(() => import('./pages/blog/BkashTokenizedCheckoutNextjsApiIntegration'));
@@ -197,6 +199,7 @@ const App: React.FC = () => {
           <Route path="/blog/bkash-tokenized-checkout-nextjs-api-integration" element={<BkashTokenizedCheckoutNextjsApiIntegration />} />
           <Route path="/blog/steadfast-courier-api-webhook-integration-nextjs" element={<SteadfastCourierApiWebhookIntegrationNextjs />} />
           <Route path="/blog/woocommerce-to-headless-nextjs-migration-guide" element={<WoocommerceToHeadlessNextjsMigrationGuide />} />
+                    <Route path="/blog/meta-capi-server-side-nextjs15-conversion-boost" element={<MetaCapiServerSideNextjs15ConversionBoost />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>

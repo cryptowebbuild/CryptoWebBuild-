@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'meta-capi-server-side-nextjs15-conversion-boost',
+    slug: 'meta-capi-server-side-nextjs15-conversion-boost',
+    title: 'Meta Conversions API (CAPI) in Next.js 15: How to Recover 35% Lost Ad Conversions Bypassing iOS 14 Tracking Blockers',
+    excerpt: 'Client-side Meta Pixel drops up to 35% of purchase events due to ad-blockers and iOS privacy. Learn how to engineer direct Server-Side Meta CAPI inside Next.js 15 Route Handlers with 100% event deduplication.',
+    date: 'Nov 7, 2026',
+    readTime: '9 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Meta Conversions API Next.js 15",
+      "Facebook CAPI Server Side Tracking",
+      "Meta Pixel Deduplication Event ID",
+      "Next.js 15 Route Handler CAPI",
+      "Sagor Ahamed CryptoWebBuild"
+]
+  },
+
+  {
     id: 'woocommerce-to-headless-nextjs-migration-guide',
     slug: 'woocommerce-to-headless-nextjs-migration-guide',
     title: 'Migrating from WooCommerce to Headless Next.js 15: How We Cut TTFB from 3.2s to 0.28s and Gained +38% Conversions',
