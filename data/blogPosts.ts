@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'pathao-courier-dynamic-consignment-nextjs',
+    slug: 'pathao-courier-dynamic-consignment-nextjs',
+    title: 'Pathao Courier API Automation: Dynamic Delivery Fee Calculation and Instant Parcel Consignment in Next.js 15',
+    excerpt: 'Complete guide to connecting Pathao Courier API with Next.js 15 and Django. Auto-calculate city zones, generate parcel consignments in 0.3s, and sync webhook delivery statuses.',
+    date: 'Nov 8, 2026',
+    readTime: '8 min read',
+    category: 'Guide',
+    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Pathao Courier API Next.js",
+      "Automated Parcel Booking Bangladesh",
+      "Pathao Merchant API Integration",
+      "Next.js 15 Courier Webhook Sync",
+      "CryptoWebBuild Sagor Ahamed"
+]
+  },
+
+  {
     id: 'meta-capi-server-side-nextjs15-conversion-boost',
     slug: 'meta-capi-server-side-nextjs15-conversion-boost',
     title: 'Meta Conversions API (CAPI) in Next.js 15: How to Recover 35% Lost Ad Conversions Bypassing iOS 14 Tracking Blockers',

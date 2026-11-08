@@ -78,6 +78,8 @@ const SolanaNFT = lazyWithRetry(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazyWithRetry(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const PathaoCourierDynamicConsignmentNextjs = lazyWithRetry(() => import('./pages/blog/PathaoCourierDynamicConsignmentNextjs'));
+
 const MetaCapiServerSideNextjs15ConversionBoost = lazyWithRetry(() => import('./pages/blog/MetaCapiServerSideNextjs15ConversionBoost'));
 
 const WoocommerceToHeadlessNextjsMigrationGuide = lazyWithRetry(() => import('./pages/blog/WoocommerceToHeadlessNextjsMigrationGuide'));
@@ -200,6 +202,7 @@ const App: React.FC = () => {
           <Route path="/blog/steadfast-courier-api-webhook-integration-nextjs" element={<SteadfastCourierApiWebhookIntegrationNextjs />} />
           <Route path="/blog/woocommerce-to-headless-nextjs-migration-guide" element={<WoocommerceToHeadlessNextjsMigrationGuide />} />
                     <Route path="/blog/meta-capi-server-side-nextjs15-conversion-boost" element={<MetaCapiServerSideNextjs15ConversionBoost />} />
+                    <Route path="/blog/pathao-courier-dynamic-consignment-nextjs" element={<PathaoCourierDynamicConsignmentNextjs />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>
