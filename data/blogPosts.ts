@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'nagad-merchant-api-tokenized-checkout-nextjs',
+    slug: 'nagad-merchant-api-tokenized-checkout-nextjs',
+    title: 'Nagad Merchant PG Integration in Next.js 15: Public-Key Cryptography & Instant 1-Click Payments',
+    excerpt: 'Step-by-step technical teardown of integrating Nagad Merchant Payment Gateway with RSA private/public key cryptography in Next.js 15 App Router. Zero manual TrxID friction.',
+    date: 'Nov 9, 2026',
+    readTime: '9 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Nagad Payment Gateway Next.js 15",
+      "Nagad Merchant API Integration",
+      "RSA Cryptography Payment Gateway",
+      "Nagad Direct Checkout Bangladesh",
+      "CryptoWebBuild Sagor Ahamed"
+]
+  },
+
+  {
     id: 'pathao-courier-dynamic-consignment-nextjs',
     slug: 'pathao-courier-dynamic-consignment-nextjs',
     title: 'Pathao Courier API Automation: Dynamic Delivery Fee Calculation and Instant Parcel Consignment in Next.js 15',
