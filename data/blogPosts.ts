@@ -12,6 +12,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'solana-anchor-sub-second-rpc-dapp',
+    slug: 'solana-anchor-sub-second-rpc-dapp',
+    title: 'Solana Anchor & React: Engineering Sub-0.3s DEX Swaps & Presale Mints with Zero RPC Throttling',
+    excerpt: 'High-throughput Web3 engineering guide: How to build sub-second Solana dApps with Anchor, priority fee dynamic estimation, and private WebSocket RPC clusters.',
+    date: 'Nov 10, 2026',
+    readTime: '10 min read',
+    category: 'Tech',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    keywords: [
+      "Solana Anchor Web3 DApp",
+      "Sub-Second Solana DEX Swap",
+      "Dynamic Priority Fees Solana",
+      "Solana RPC WebSocket Clusters",
+      "Sagor Ahamed Full Stack Web3"
+]
+  },
+
+  {
     id: 'nagad-merchant-api-tokenized-checkout-nextjs',
     slug: 'nagad-merchant-api-tokenized-checkout-nextjs',
     title: 'Nagad Merchant PG Integration in Next.js 15: Public-Key Cryptography & Instant 1-Click Payments',

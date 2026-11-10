@@ -78,6 +78,8 @@ const SolanaNFT = lazyWithRetry(() => import('./pages/cases/SolanaNFT'));
 const ClickRunClawCase = lazyWithRetry(() => import('./pages/cases/ClickRunClawCase'));
 
 // --- Blog Posts Imports ---
+const SolanaAnchorSubSecondRpcDapp = lazyWithRetry(() => import('./pages/blog/SolanaAnchorSubSecondRpcDapp'));
+
 const NagadMerchantApiTokenizedCheckoutNextjs = lazyWithRetry(() => import('./pages/blog/NagadMerchantApiTokenizedCheckoutNextjs'));
 
 const PathaoCourierDynamicConsignmentNextjs = lazyWithRetry(() => import('./pages/blog/PathaoCourierDynamicConsignmentNextjs'));
@@ -206,6 +208,7 @@ const App: React.FC = () => {
                     <Route path="/blog/meta-capi-server-side-nextjs15-conversion-boost" element={<MetaCapiServerSideNextjs15ConversionBoost />} />
                     <Route path="/blog/pathao-courier-dynamic-consignment-nextjs" element={<PathaoCourierDynamicConsignmentNextjs />} />
                     <Route path="/blog/nagad-merchant-api-tokenized-checkout-nextjs" element={<NagadMerchantApiTokenizedCheckoutNextjs />} />
+                    <Route path="/blog/solana-anchor-sub-second-rpc-dapp" element={<SolanaAnchorSubSecondRpcDapp />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
         </Routes>
