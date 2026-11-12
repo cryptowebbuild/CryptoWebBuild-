@@ -144,24 +144,33 @@ const Services: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
+              <div className="flex flex-wrap gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
                 <Link
-                  to="/shopfast"
+                  to="/services/ecommerce-development-bangladesh"
                   className="flex items-center text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors"
                 >
                   <span className="bg-cyan-100 dark:bg-cyan-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">
-                    Case Study
+                    Service
                   </span>
-                  ShopFast Store →
+                  1-Click E-Commerce →
                 </Link>
                 <Link
-                  to="/blog/static-vs-dynamic-website"
+                  to="/fcommerce"
+                  className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition-colors"
+                >
+                  <span className="bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">
+                    F-Commerce
+                  </span>
+                  BD 1-Click Funnel →
+                </Link>
+                <Link
+                  to="/shopfast"
                   className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   <span className="bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded mr-2 text-xs uppercase">
-                    Guide
+                    Case Study
                   </span>
-                  Why Sub-Second Wins →
+                  ShopFast Store →
                 </Link>
               </div>
             </div>
@@ -212,12 +221,21 @@ const Services: React.FC = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
+              <div className="flex flex-wrap gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
                 <Link
-                  to="/blog/local-business-website-seo-checklist"
+                  to="/services/crypto-growth"
                   className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-500 transition-colors"
                 >
                   <span className="bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">
+                    Service
+                  </span>
+                  Technical SEO Architecture →
+                </Link>
+                <Link
+                  to="/blog/local-business-website-seo-checklist"
+                  className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  <span className="bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded mr-2 text-xs uppercase">
                     Checklist
                   </span>
                   Local SEO Blueprint →

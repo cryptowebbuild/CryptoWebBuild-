@@ -147,7 +147,7 @@ const App: React.FC = () => {
           <Route path="/services/crypto-growth" element={<CryptoGrowth />} />
           <Route path="/services/ecommerce-development-bangladesh" element={<EcommerceDevelopmentBD />} />
           <Route path="/fcommerce" element={<FCommerceBangladesh />} />
-          <Route path="/bangladesh" element={<FCommerceBangladesh />} />
+          <Route path="/bangladesh" element={<Navigate to="/fcommerce" replace />} />
 
           <Route path="/videos" element={<Navigate to="/projects" replace />} />
           <Route path="/blog" element={<Blog />} />
