@@ -7,7 +7,8 @@ const NotFound: React.FC = () => {
     <div className="container mx-auto px-6 py-20 text-center min-h-[60vh] flex flex-col justify-center items-center">
       <SEO
         title="404 - Page Not Found | CryptoWebBuild"
-        description="The page you are looking for does not exist."
+        description="The requested page does not exist or has moved. Explore CryptoWebBuild full-stack web engineering, Technical SEO, and AI automation services."
+        canonical="/404"
         noIndex={true}
       />
 

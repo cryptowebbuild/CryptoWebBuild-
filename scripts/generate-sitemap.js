@@ -14,7 +14,6 @@ const staticRoutes = [
   '/services/ai-automation',
   '/services/ecommerce-development-bangladesh',
   '/fcommerce',
-  '/bangladesh',
   '/projects',
   '/blog',
   '/contact',
@@ -79,7 +78,7 @@ const generateSitemap = () => {
 ${routes
   .map((route) => {
     return `  <url>
-    <loc>${BASE_URL}${route === '/' ? '' : route}</loc>
+    <loc>${BASE_URL}${route === '/' ? '/' : route}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <changefreq>${route === '/' ? 'weekly' : 'monthly'}</changefreq>
     <priority>${route === '/' ? '1.0' : '0.8'}</priority>

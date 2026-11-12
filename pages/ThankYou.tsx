@@ -6,8 +6,9 @@ const ThankYou: React.FC = () => {
   return (
     <div className="container mx-auto px-6 py-20 text-center min-h-[60vh] flex flex-col justify-center items-center">
       <SEO
-        title="Thank You | CryptoWebBuild"
-        description="Thank you for contacting CryptoWebBuild. We have received your message and will respond shortly."
+        title="Message Received — Thank You | CryptoWebBuild"
+        description="Thank you for contacting CryptoWebBuild. Principal Full-Stack Engineer Sagor Ahamed has received your brief and will respond within 24 hours."
+        canonical="/thank-you"
         noIndex={true}
       />
 

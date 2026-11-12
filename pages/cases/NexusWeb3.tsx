@@ -33,7 +33,7 @@ const NexusWeb3: React.FC = () => {
     <div className="container mx-auto px-6 ">
       <SEO
         title="Nexus Web3 Protocol | DeFi Staking Dashboard UI"
-        description="See how we designed and developed a high-performance, neon-themed Web3 staking and analytics dashboard."
+        description="Case study: Designing and engineering a sub-second, neon-themed Web3 staking and DeFi analytics dashboard with real-time on-chain wallet telemetry."
         keywords={['DeFi Dashboard', 'Web3 UI', 'Crypto Staking Interface', 'React Web3 Dashboard', 'Dark Mode Crypto UI']}
         type="article"
         publishedTime="2025-10-25"
