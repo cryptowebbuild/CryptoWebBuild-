@@ -17,6 +17,24 @@ function safeJsonLd(obj) {
   return JSON.stringify(obj).replace(/</g, '\\u003c');
 }
 
+const MONTH_MAP = {
+  jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+  jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12',
+};
+
+function toIsoDate(dateStr = '') {
+  const s = String(dateStr).trim();
+  if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s.slice(0, 10);
+  const m = s.match(/^([A-Za-z]{3})\s+(\d{1,2}),?\s+(\d{4})$/);
+  if (m) {
+    const mon = MONTH_MAP[m[1].toLowerCase()];
+    if (mon) return `${m[3]}-${mon}-${m[2].padStart(2, '0')}`;
+  }
+  const ts = Date.parse(`${s} UTC`);
+  if (!Number.isNaN(ts)) return new Date(ts).toISOString().slice(0, 10);
+  return '2026-11-10';
+}
+
 // Read static routes & blog post slugs
 const staticRoutes = [
   '/',
@@ -479,26 +497,32 @@ const runSSG = () => {
     // Inject static crawlable shell inside #root
     routeHtml = routeHtml.replace('<div id="root"></div>', `<div id="root">${crawlableShell}</div>`);
 
-    // Enforce HTML-escaped metadata, exact canonical, robots noIndex, and Schema.org JSON-LD in raw HTML
+    // Enforce HTML-escaped metadata with data-rh="true" so react-helmet-async reconciles without DOM duplicates
     routeHtml = routeHtml
       .replace(/<title>[\s\S]*?<\/title>/i, `<title>${safeTitle}</title>`)
-      .replace(/<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="description" content="${safeDesc}" />`)
-      .replace(/<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:title" content="${safeTitle}" />`)
-      .replace(/<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:description" content="${safeDesc}" />`)
-      .replace(/<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta property="og:url" content="${canonicalUrl}" />`)
-      .replace(/<meta\s+name="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:title" content="${safeTitle}" />`)
-      .replace(/<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta name="twitter:description" content="${safeDesc}" />`);
+      .replace(/<meta\s+name="description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" name="description" content="${safeDesc}" />`)
+      .replace(/<meta\s+property="og:type"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" property="og:type" content="$1" />`)
+      .replace(/<meta\s+property="og:site_name"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" property="og:site_name" content="$1" />`)
+      .replace(/<meta\s+property="og:image"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" property="og:image" content="$1" />`)
+      .replace(/<meta\s+name="twitter:card"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" name="twitter:card" content="$1" />`)
+      .replace(/<meta\s+name="twitter:site"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" name="twitter:site" content="$1" />`)
+      .replace(/<meta\s+name="twitter:image"\s+content="([^"]*)"\s*\/?>/i, `<meta data-rh="true" name="twitter:image" content="$1" />`)
+      .replace(/<meta\s+property="og:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" property="og:title" content="${safeTitle}" />`)
+      .replace(/<meta\s+property="og:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" property="og:description" content="${safeDesc}" />`)
+      .replace(/<meta\s+property="og:url"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" property="og:url" content="${canonicalUrl}" />`)
+      .replace(/<meta\s+name="twitter:title"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" name="twitter:title" content="${safeTitle}" />`)
+      .replace(/<meta\s+name="twitter:description"\s+content="[\s\S]*?"\s*\/?>/i, `<meta data-rh="true" name="twitter:description" content="${safeDesc}" />`);
 
     if (meta.noIndex) {
-      routeHtml = routeHtml.replace(/<link\s+rel="canonical"[\s\S]*?\/>/gi, '');
-      routeHtml = routeHtml.replace(/<meta\s+name="robots"[\s\S]*?\/>/gi, '');
-      routeHtml = routeHtml.replace(/<\/head>/i, `  <meta name="robots" content="noindex, nofollow" />\n</head>`);
+      routeHtml = routeHtml.replace(/<link\s+[^>]*rel="canonical"[\s\S]*?\/>/gi, '');
+      routeHtml = routeHtml.replace(/<meta\s+[^>]*name="robots"[\s\S]*?\/>/gi, '');
+      routeHtml = routeHtml.replace(/<\/head>/i, `  <meta data-rh="true" name="robots" content="noindex, nofollow" />\n</head>`);
     } else {
-      const hasCanon = /<link\s+rel="canonical"/i.test(routeHtml);
+      const hasCanon = /<link\s+[^>]*rel="canonical"/i.test(routeHtml);
       if (hasCanon) {
-        routeHtml = routeHtml.replace(/<link\s+rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}" />`);
+        routeHtml = routeHtml.replace(/<link\s+[^>]*rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link data-rh="true" rel="canonical" href="${canonicalUrl}" />`);
       } else {
-        routeHtml = routeHtml.replace(/<\/head>/i, `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
+        routeHtml = routeHtml.replace(/<\/head>/i, `  <link data-rh="true" rel="canonical" href="${canonicalUrl}" />\n</head>`);
       }
     }
 
@@ -559,8 +583,8 @@ const runSSG = () => {
           '@id': `${canonicalUrl}#article`,
           headline: matchedPost.title,
           description: pageDesc,
-          datePublished: matchedPost.date,
-          dateModified: matchedPost.date,
+          datePublished: toIsoDate(matchedPost.date),
+          dateModified: toIsoDate(matchedPost.date),
           image: postImage,
           url: canonicalUrl,
           mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
@@ -603,7 +627,7 @@ const runSSG = () => {
             '@type': 'BlogPosting',
             headline: p.title,
             url: `${BASE_URL}/blog/${p.slug}`,
-            datePublished: p.date,
+            datePublished: toIsoDate(p.date),
             author: { '@id': personId },
           })),
         };
@@ -659,7 +683,7 @@ const runSSG = () => {
       }
 
       const schemaPayload = safeJsonLd({ '@context': 'https://schema.org', '@graph': graph });
-      routeHtml = routeHtml.replace(/<\/head>/i, `  <script type="application/ld+json">${schemaPayload}</script>\n</head>`);
+      routeHtml = routeHtml.replace(/<\/head>/i, `  <script data-rh="true" type="application/ld+json">${schemaPayload}</script>\n</head>`);
     }
 
     // Write flat .html files so Cloudflare Pages serves /route at 200 OK with zero 308 redirects
