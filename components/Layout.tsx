@@ -90,6 +90,7 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
   { label: 'Services', path: '/services' },
   { label: 'Work', path: '/projects' },
+  { label: 'Pricing', path: '/pricing' },
   { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
@@ -154,7 +155,7 @@ const StickyHeaderAndScrollButton: React.FC<{
             {/* Live Studio Availability Status Badge */}
             <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Available for Q4/2026</span>
+              <span>Available for December 2026</span>
             </div>
 
             <div className="hidden lg:flex items-center gap-7">
@@ -310,8 +311,12 @@ const StickyHeaderAndScrollButton: React.FC<{
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') return saved;
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') return saved;
+      } catch {
+        /* storage blocked */
+      }
     }
     return 'dark';
   });
@@ -323,7 +328,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      /* storage blocked */
+    }
   }, [theme]);
 
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
@@ -434,6 +443,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <li>
                   <Link to="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                     Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    FAQ
                   </Link>
                 </li>
                 <li>

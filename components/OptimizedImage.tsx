@@ -25,10 +25,20 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(priority);
   const [hasError, setHasError] = useState(false);
 
-  const separator = src.includes('?') ? '&' : '?';
-  const optimizedSrc = src.includes('images.unsplash.com') && !src.includes('fm=webp')
-    ? `${src}${separator}fm=webp&q=75`
-    : src;
+  let optimizedSrc = src;
+  if (src.includes('images.unsplash.com')) {
+    try {
+      const u = new URL(src);
+      u.searchParams.set('w', '800');
+      u.searchParams.set('h', '500');
+      u.searchParams.set('fit', 'crop');
+      u.searchParams.set('fm', 'webp');
+      u.searchParams.set('q', '75');
+      optimizedSrc = u.toString();
+    } catch {
+      optimizedSrc = src;
+    }
+  }
 
   const aspectRatioStyle = (!fill && (aspectRatio || (width && height)))
     ? { aspectRatio: aspectRatio || `${width} / ${height}` }

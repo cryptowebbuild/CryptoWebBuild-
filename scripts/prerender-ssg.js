@@ -40,6 +40,7 @@ const staticRoutes = [
   '/',
   '/about',
   '/services',
+  '/pricing',
   '/services/web3-development',
   '/services/crypto-growth',
   '/services/ai-automation',
@@ -125,8 +126,8 @@ try {
 // Route metadata dictionary for pre-rendering
 const routeMeta = {
   '/': {
-    title: 'CryptoWebBuild | Sub-Second Web & 100/100 SEO',
-    description: 'Sub-second Next.js & Python websites, 1-click E-Commerce checkouts, and 100/100 SEO by Sagor Ahamed. Pay 50% only after live testing.',
+    title: 'Sub-Second Web Engineering | CryptoWebBuild',
+    description: 'Sub-second Next.js storefronts, Django backends, and technical SEO. Public builds, public numbers, and full source handover by Sagor Ahamed.',
     h1: 'Sub-Second Websites & 1-Click Stores That Multiply Revenue.',
   },
   '/about': {
@@ -287,23 +288,15 @@ const runSSG = () => {
   blogPosts.forEach((post) => {
     allRoutes.push(`/blog/${post.slug}`);
     
-    // Intelligent SEO Title Clamping (Max 60 chars, no clipped words)
+    // Keep the authored title complete. Google truncates visually; a broken
+    // "How to..." or "&..." in the static head is worse than a long title.
     let smartTitle = post.title;
     if (smartTitle.length + 18 <= 60) {
       smartTitle = `${smartTitle} | CryptoWebBuild`;
-    } else if (smartTitle.length > 60) {
-      const cutoff = smartTitle.substring(0, 57);
-      const lastSpace = cutoff.lastIndexOf(' ');
-      smartTitle = (lastSpace > 35 ? cutoff.substring(0, lastSpace) : cutoff) + '...';
     }
 
-    // Intelligent SEO Meta Description Clamping (Max 155 chars, no clipped words)
-    let smartDesc = (post.description || 'In-depth guide by Sagor Ahamed on sub-second web architecture, technical SEO, and conversion engineering.').trim();
-    if (smartDesc.length > 155) {
-      const cutoff = smartDesc.substring(0, 152);
-      const lastSpace = cutoff.lastIndexOf(' ');
-      smartDesc = (lastSpace > 110 ? cutoff.substring(0, lastSpace) : cutoff) + '...';
-    }
+    // Keep the authored description complete for the same reason.
+    const smartDesc = (post.description || 'In-depth guide by Sagor Ahamed on sub-second web architecture, technical SEO, and conversion engineering.').trim();
 
     routeMeta[`/blog/${post.slug}`] = {
       title: smartTitle,
@@ -319,8 +312,8 @@ const runSSG = () => {
 
   allRoutes.forEach((route) => {
     const meta = routeMeta[route] || {
-      title: 'CryptoWebBuild | Sub-Second Web & 100/100 SEO',
-      description: 'Sub-second Next.js & Python websites, 1-click E-Commerce checkouts, and 100/100 SEO by Sagor Ahamed. Pay 50% only after live testing.',
+      title: 'Sub-Second Web Engineering | CryptoWebBuild',
+      description: 'Sub-second Next.js storefronts, Django backends, and technical SEO. Public builds, public numbers, and full source handover by Sagor Ahamed.',
       h1: 'Sub-Second Web & Full-Stack Engineering Studio',
     };
 
@@ -522,7 +515,7 @@ const runSSG = () => {
       if (hasCanon) {
         routeHtml = routeHtml.replace(/<link\s+[^>]*rel="canonical"\s+href="[\s\S]*?"\s*\/?>/i, `<link data-rh="true" rel="canonical" href="${canonicalUrl}" />`);
       } else {
-        routeHtml = routeHtml.replace(/<\/head>/i, `  <link data-rh="true" rel="canonical" href="${canonicalUrl}" />\n</head>`);
+        routeHtml = routeHtml.replace(/<\/head>/i, `  <link data-rh="true" rel="canonical" href="${canonicalUrl}" />\n  <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n</head>`);
       }
     }
 
@@ -651,7 +644,7 @@ const runSSG = () => {
         };
       } else {
         pageEntity = {
-          '@type': route === '/about' ? 'AboutPage' : route === '/contact' ? 'ContactPage' : route === '/faq' ? 'FAQPage' : 'WebPage',
+          '@type': route === '/about' ? 'AboutPage' : route === '/contact' ? 'ContactPage' : 'WebPage',
           '@id': `${canonicalUrl}#webpage`,
           name: pageTitle,
           description: pageDesc,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MessageSquare,
@@ -20,6 +20,14 @@ import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import TrustBadges from '../components/TrustBadges';
 
 const FCommerceBangladesh: React.FC = () => {
+  useEffect(() => {
+    const previous = document.documentElement.lang;
+    document.documentElement.lang = 'bn';
+    return () => {
+      document.documentElement.lang = previous || 'en';
+    };
+  }, []);
+
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [dailyOrders, setDailyOrders] = useState(25);
 

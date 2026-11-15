@@ -131,7 +131,7 @@ const Home: React.FC = () => {
             {/* Subtle WhatsApp & Availability Status */}
             <div className="flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-500 dark:text-slate-400 font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>Direct WhatsApp: <strong className="text-slate-800 dark:text-slate-200">01618-138820</strong> · Available for Q4 2026</span>
+              <span>Direct WhatsApp: <strong className="text-slate-800 dark:text-slate-200">01618-138820</strong> · Available for December 2026</span>
             </div>
 
             {/* Booking Modal */}
@@ -356,7 +356,7 @@ const Home: React.FC = () => {
               badge: '02 · Speed & Technical SEO',
               title: 'Technical SEO & Google #1 Ranking',
               desc: 'Core Web Vitals engineering, Schema.org JSON-LD, and AI Search (GEO) indexing that capture high-intent buyers organically.',
-              tech: ['Guaranteed 100/100 PageSpeed', 'JSON-LD Structured Data', 'Meta CAPI & GA4'],
+              tech: ['Engineered for 100/100 PageSpeed', 'JSON-LD Structured Data', 'Meta CAPI & GA4'],
               link: '/services/crypto-growth',
               cta: 'Explore SEO System',
             },
@@ -441,7 +441,7 @@ const Home: React.FC = () => {
             to="/projects"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/[0.08] text-slate-900 dark:text-white font-semibold text-xs hover:border-indigo-500/40 transition-colors self-start md:self-auto whitespace-nowrap shrink-0"
           >
-            <span>View All 13+ Case Studies</span>
+            <span>View All 12 Case Studies</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -554,7 +554,7 @@ const Home: React.FC = () => {
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed italic">
+              <p lang="bn" className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed italic">
                 &ldquo;আমাদের ফেসবুক পেইজের ইনবক্সে সারাদিন মেসেজ রিপ্লাই দেওয়া আর সাইজ বোঝানোর প্যারা শেষ। সাগর ভাইয়ের তৈরি করা 1-ক্লিক ওয়েবসাইট লাইভ হওয়ার ১ম মাসেই অর্ডার বেড়েছে ২৪০% এবং স্টেডফাস্ট কুরিয়ারের সাথে সব অটোমেটিক বুকিং হয়ে যায়।&rdquo;
               </p>
             </div>
@@ -646,13 +646,13 @@ const Home: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
             <ShieldCheck className="w-4 h-4" />
-            <span>04 · Risk-Free Client Protection</span>
+            <span>05 · Risk-Free Client Protection</span>
           </div>
           <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
             Built 1-on-1. Zero Excuses. 100% Protected.
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            Every project includes binding architectural guarantees so you never take financial risk.
+            Every project includes written guarantees. The final 50% is only due after you test the staging build, and the repository is handed over at launch.
           </p>
         </div>
 

@@ -35,10 +35,14 @@ export const InstantWebsiteAudit: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  const copyWhatsApp = () => {
-    navigator.clipboard.writeText('+8801618138820');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
+  const copyWhatsApp = async () => {
+    try {
+      await navigator.clipboard.writeText('+8801618138820');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      setCopied(false);
+    }
   };
 
   const normalizeUrl = (input: string) => {
@@ -120,22 +124,10 @@ export const InstantWebsiteAudit: React.FC = () => {
         throw new Error('Google API rate limit or target unreachable');
       }
     } catch (err: any) {
-      console.warn('Google API fallback to benchmark calculation:', err.message);
-      // Realistic benchmark engine if user tests a local/intranet domain or API rate-limited
-      setLoadingStep('Calculating benchmark diagnostic against 2026 Core Web Vitals...');
-      await new Promise((r) => setTimeout(r, 800));
-
-      setResult({
-        url: targetUrl,
-        score: 42,
-        lcp: '4.4s',
-        fcp: '2.6s',
-        cls: '0.18',
-        estimatedLossPercent: 54,
-        estimatedBounceRate: 58,
-        status: 'critical',
-        source: 'benchmark-engine',
-      });
+      console.warn('PageSpeed lookup failed:', err?.message || err);
+      setError(
+        'Google PageSpeed could not reach that URL right now. Check the address and try again, or send it on WhatsApp for a manual audit.'
+      );
     } finally {
       setLoading(false);
       setLoadingStep('');
@@ -199,7 +191,7 @@ export const InstantWebsiteAudit: React.FC = () => {
           ) : (
             <>
               <Zap className="w-4 h-4" />
-              <span>Run Live 3-Sec Audit</span>
+              <span>Run Live PageSpeed Audit</span>
             </>
           )}
         </button>
@@ -218,6 +210,24 @@ export const InstantWebsiteAudit: React.FC = () => {
         </div>
       )}
 
+      {/* Error State */}
+      {error && (
+        <div role="alert" className="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/25 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{error}</p>
+          </div>
+          <a
+            href="https://wa.me/8801618138820"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 whitespace-nowrap"
+          >
+            Send the URL on WhatsApp &rarr;
+          </a>
+        </div>
+      )}
+
       {/* Live Results Card */}
       {result && (
         <div className="rounded-2xl p-6 sm:p-8 bg-slate-50 dark:bg-[#07090E] border border-slate-200 dark:border-white/10 space-y-6 animate-in fade-in zoom-in-95 duration-300">
@@ -225,7 +235,7 @@ export const InstantWebsiteAudit: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-white/10">
             <div>
               <div className="text-xs font-mono text-slate-500 dark:text-slate-400 truncate max-w-md">
-                Verified Diagnostic for: <strong className="text-slate-900 dark:text-white">{result.url}</strong>
+                Verified PageSpeed result for: <strong className="text-slate-900 dark:text-white">{result.url}</strong>
               </div>
               <div className="flex items-center gap-2 mt-1">
                 <span
@@ -243,7 +253,7 @@ export const InstantWebsiteAudit: React.FC = () => {
                   <span>{result.status === 'critical' ? 'Critical Speed Bottleneck' : result.status === 'warning' ? 'Moderate Friction' : 'Optimal Architecture'}</span>
                 </span>
                 <span className="text-[11px] font-mono text-slate-400">
-                  {result.source === 'google-realtime' ? '✓ Google API Verified' : '✓ Lighthouse Benchmark'}
+                  Google PageSpeed API
                 </span>
               </div>
             </div>

@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       id: 'shopfast',
       title: 'ShopFast Headless Storefront',
       category: '1-Click E-Commerce',
-      metric: '0.4s Load • +240% Sales',
+      metric: '0.4s Load • +38% Lift',
       group: 'commerce',
       desc: 'Sub-second headless storefront with 1-click checkout (Stripe/bKash), server-side Meta CAPI, and automated courier tracking.',
       tech: ['Next.js 15', 'Stripe / bKash', '100/100 CWV'],

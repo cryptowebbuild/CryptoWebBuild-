@@ -15,7 +15,7 @@ const Terms: React.FC = () => {
           Terms of Service
         </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-8 font-bold uppercase tracking-wider">
-          Last Updated: January 2026 • CryptoWebBuild
+          Last Updated: November 2026 • CryptoWebBuild
         </p>
 
         <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 space-y-6">
@@ -30,7 +30,23 @@ const Terms: React.FC = () => {
           <p>
             Upon receipt of final milestone payment, 100% of custom source code, GitHub repositories, database schemas, and deployment configurations are transferred directly to the client with zero vendor lock-in.
           </p>
-          <h2>3. Contact</h2>
+          <h2>3. 48-Hour Prototype &amp; Delivery</h2>
+          <p>
+            The 48-hour prototype is the first clickable staging build, measured from kickoff and receipt of the deposit, for projects that have supplied the required content and access. Full delivery timelines are confirmed in the written scope and typically range from 3 to 7 business days.
+          </p>
+          <h2>4. 30-Day Warranty</h2>
+          <p>
+            Every launch includes 30 days of bug fixes for defects in the delivered scope, starting on the launch date. The warranty does not cover new features, third-party service changes, content edits, or issues caused by code or plugins added by others after handover.
+          </p>
+          <h2>5. Refunds, Cancellation &amp; Liability</h2>
+          <p>
+            The 50% deposit covers architecture and build time and is non-refundable after kickoff, except where CryptoWebBuild misses the agreed staging date by more than five business days. If the project is cancelled before kickoff, any amount paid is refunded in full. Our total liability for any claim is limited to the fees paid for the affected project. We are not liable for indirect or consequential loss.
+          </p>
+          <h2>6. Governing Law</h2>
+          <p>
+            These terms are governed by the laws of Bangladesh. The courts of Dhaka have exclusive jurisdiction, unless a separate written agreement says otherwise.
+          </p>
+          <h2>7. Contact</h2>
           <p>
             For contract or service questions, reach us at{' '}
             <a href="mailto:hello@cryptowebbuild.com">hello@cryptowebbuild.com</a> or WhatsApp{' '}

@@ -114,6 +114,7 @@ export const ProjectScopeBuilder: React.FC = () => {
         <div className="inline-flex items-center p-1 rounded-xl bg-slate-100 dark:bg-[#11131A] border border-slate-200 dark:border-white/[0.08] self-start md:self-auto">
           <button
             type="button"
+            aria-pressed={currency === 'USD'}
             onClick={() => setCurrency('USD')}
             className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 ${
               currency === 'USD'
@@ -125,6 +126,7 @@ export const ProjectScopeBuilder: React.FC = () => {
           </button>
           <button
             type="button"
+            aria-pressed={currency === 'BDT'}
             onClick={() => setCurrency('BDT')}
             className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 ${
               currency === 'BDT'
@@ -145,7 +147,17 @@ export const ProjectScopeBuilder: React.FC = () => {
             return (
               <div
                 key={mod.id}
+                role="checkbox"
+                aria-checked={isSelected}
+                aria-disabled={mod.isCore || undefined}
+                tabIndex={0}
                 onClick={() => toggleModule(mod.id)}
+                onKeyDown={(e) => {
+                  if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    toggleModule(mod.id);
+                  }
+                }}
                 className={`p-4 sm:p-5 rounded-2xl border transition-colors cursor-pointer ${
                   isSelected
                     ? 'glass-panel border-indigo-500/60 dark:border-indigo-500/50'
@@ -205,7 +217,7 @@ export const ProjectScopeBuilder: React.FC = () => {
                 <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                   Selected Scope ({selectedModules.length} Modules)
                 </span>
-                <div className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-0.5">
+                <div aria-live="polite" className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-0.5">
                   {formattedPrice(totalPrice)}
                 </div>
               </div>
@@ -267,7 +279,7 @@ export const ProjectScopeBuilder: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full min-h-[48px] py-3.5 px-5 rounded-xl neon-button text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-nowrap"
+                className="w-full min-h-[48px] py-3.5 px-5 rounded-xl neon-button text-white font-semibold text-sm flex items-center justify-center gap-2 whitespace-normal sm:whitespace-nowrap text-center"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Send Quote on WhatsApp (01618-138820)</span>

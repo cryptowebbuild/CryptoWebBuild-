@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import SEO from './components/SEO';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // --- Scroll To Top Component (UX Fix) ---
 const ScrollToTop = () => {
@@ -29,15 +30,31 @@ function lazyWithRetry<T extends React.ComponentType<any>>(
         error?.message?.includes('Importing a module script failed') ||
         error?.name === 'ChunkLoadError';
 
-      const alreadyRefreshed = sessionStorage.getItem('chunk_retry_refreshed');
+      let alreadyRefreshed = null;
+      try {
+        alreadyRefreshed = sessionStorage.getItem('chunk_retry_refreshed');
+      } catch {
+        /* storage blocked */
+      }
 
       if (isChunkError && !alreadyRefreshed) {
-        sessionStorage.setItem('chunk_retry_refreshed', 'true');
+        try {
+          sessionStorage.setItem('chunk_retry_refreshed', 'true');
+        } catch {
+          /* storage blocked */
+        }
         window.location.reload();
         return new Promise<{ default: T }>(() => {}); // Hold until browser reload
       }
 
-      sessionStorage.removeItem('chunk_retry_refreshed');
+      // Keep the flag until a successful mount; a failed retry must not re-arm.
+      if (!isChunkError) {
+        try {
+          sessionStorage.removeItem('chunk_retry_refreshed');
+        } catch {
+          /* storage blocked */
+        }
+      }
       throw error;
     }
   });
@@ -47,6 +64,7 @@ function lazyWithRetry<T extends React.ComponentType<any>>(
 const Home = lazyWithRetry(() => import('./pages/Home'));
 const About = lazyWithRetry(() => import('./pages/About'));
 const Services = lazyWithRetry(() => import('./pages/Services'));
+const Pricing = lazyWithRetry(() => import('./pages/Pricing'));
 const Projects = lazyWithRetry(() => import('./pages/Projects'));
 const Blog = lazyWithRetry(() => import('./pages/Blog'));
 const Contact = lazyWithRetry(() => import('./pages/Contact'));
@@ -120,7 +138,7 @@ const NextJsDjangoArchitecture2026 = lazyWithRetry(() => import('./pages/blog/Ne
 // --- Optimized Loader ---
 const PageLoader = () => (
   <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAFAFA] dark:bg-[#090A0F] z-50">
-    <div className="relative w-12 h-12" aria-label="Loading content…">
+    <div className="relative w-12 h-12" role="status" aria-label="Loading content…">
       <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500/20 rounded-full"></div>
       <div className="absolute top-0 left-0 w-full h-full border-2 border-indigo-500 rounded-full border-t-transparent animate-spin"></div>
     </div>
@@ -134,12 +152,14 @@ const App: React.FC = () => {
       {/* Default Global SEO (Can be overridden by pages) */}
       <SEO />
       
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
+      <ErrorBoundary>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
           {/* --- Main Pages --- */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<Projects />} />
           {/* --- Service Landing Pages --- */}
           <Route path="/services/ai-automation" element={<AIAutomation />} />
@@ -211,8 +231,9 @@ const App: React.FC = () => {
                     <Route path="/blog/solana-anchor-sub-second-rpc-dapp" element={<SolanaAnchorSubSecondRpcDapp />} />
           {/* --- 404 Catch-All --- */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+          </Routes>
+        </Suspense>
+      </ErrorBoundary>
     </Layout>
   );
 };

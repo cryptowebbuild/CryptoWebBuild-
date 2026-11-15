@@ -33,27 +33,19 @@ const SEO: React.FC<SEOProps> = ({
   const siteUrl = 'https://cryptowebbuild.com';
   
   // 1. Unified Brand Identity: CryptoWebBuild by Sagor Ahamed
-  const defaultTitle = "CryptoWebBuild | Sub-Second Web & 100/100 SEO";
-  const defaultDescription = "Sub-second Next.js & Python websites, 1-click E-Commerce checkouts, and 100/100 SEO by Sagor Ahamed. Pay 50% only after live testing.";
-  const defaultImage = `${siteUrl}/hero-avatar.webp`;
+  const defaultTitle = "Sub-Second Web Engineering | CryptoWebBuild";
+  const defaultDescription = "Sub-second Next.js storefronts, Django backends, and technical SEO. Public builds, public numbers, and full source handover by Sagor Ahamed.";
+  const defaultImage = `${siteUrl}/og-default.png`;
 
   // 2. Resolve Final Values with Strict Length Clamping for 100% Ahrefs Health Score
   const rawTitle = title ? title.replace(/CryptoWebBuild/gi, 'CryptoWebBuild') : defaultTitle;
   // If rawTitle already contains CryptoWebBuild or is longer than 45 chars, keep as is; otherwise append suffix if under 60 chars
   let finalTitle = rawTitle;
-  if (!rawTitle.includes('CryptoWebBuild')) {
-    if (rawTitle.length + 18 <= 60) {
-      finalTitle = `${rawTitle} | CryptoWebBuild`;
-    }
-  }
-  if (finalTitle.length > 60) {
-    finalTitle = finalTitle.substring(0, 57) + '...';
+  if (!rawTitle.includes('CryptoWebBuild') && rawTitle.length + 18 <= 60) {
+    finalTitle = `${rawTitle} | CryptoWebBuild`;
   }
 
-  let finalDescription = (description || defaultDescription).replace(/CryptoWebBuild/gi, 'CryptoWebBuild');
-  if (finalDescription.length > 155) {
-    finalDescription = finalDescription.substring(0, 152) + '...';
-  }
+  const finalDescription = (description || defaultDescription).replace(/CryptoWebBuild/gi, 'CryptoWebBuild');
   const cleanImage = image ? image.replace(/https?:\/\/CryptoWebBuild\.com/gi, siteUrl) : '';
   const finalImage = cleanImage ? (cleanImage.startsWith('http') ? cleanImage : `${siteUrl}${cleanImage}`) : defaultImage;
 
@@ -307,7 +299,6 @@ const SEO: React.FC<SEOProps> = ({
     <Helmet>
       <title>{finalTitle}</title>
       <meta name="description" content={finalDescription} />
-      <meta name="keywords" content={allKeywords.slice(0, 15).join(', ')} />
       <link rel="canonical" href={fullCanonical} />
       <meta name="author" content={author} />
       
@@ -326,6 +317,9 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
       <meta property="og:image" content={finalImage} />
+      <meta property="og:image:type" content={finalImage.endsWith('.png') ? 'image/png' : 'image/webp'} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={finalTitle} />
       <meta property="og:locale" content="en_US" />
 
