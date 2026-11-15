@@ -222,6 +222,11 @@ const routeMeta = {
     description: 'Start your project with Principal Engineer Sagor Ahamed. 48-hour live staging prototype. Pay 50% only after live testing.',
     h1: 'Claim Your 48-Hour Live Staging Prototype',
   },
+  '/pricing': {
+    title: 'Pricing and Instant Estimate | CryptoWebBuild',
+    description: 'Module pricing in USD and BDT for Next.js storefronts, checkout, Django, SEO, and automation. Fixed quote after a 15-minute scope call.',
+    h1: 'Price it before you talk to me.',
+  },
   '/faq': {
     title: 'Frequently Asked Questions | CryptoWebBuild',
     description: 'Answers on 50/50 milestone payments, 48-hour prototypes, 100% source code handover, and sub-second Next.js architecture.',
@@ -517,6 +522,10 @@ const runSSG = () => {
       } else {
         routeHtml = routeHtml.replace(/<\/head>/i, `  <link data-rh="true" rel="canonical" href="${canonicalUrl}" />\n  <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n</head>`);
       }
+    }
+
+    if (!meta.noIndex && !/<meta[^>]+name="robots"/i.test(routeHtml)) {
+      routeHtml = routeHtml.replace(/<\/head>/i, `  <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n</head>`);
     }
 
     if (!meta.noIndex) {

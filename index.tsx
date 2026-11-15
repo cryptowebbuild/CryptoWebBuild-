@@ -44,3 +44,23 @@ root.render(
     </ErrorBoundary>
   </StrictMode>
 );
+
+
+// The previous build registered a service worker that could serve stale HTML.
+// Remove it once per session, then leave the site network-only.
+if ('serviceWorker' in navigator) {
+  try {
+    const CLEAN_KEY = 'cwb_sw_cleanup';
+    if (!sessionStorage.getItem(CLEAN_KEY)) {
+      sessionStorage.setItem(CLEAN_KEY, '1');
+      navigator.serviceWorker.getRegistrations().then((regs) => {
+        regs.forEach((reg) => reg.unregister());
+      }).catch(() => {});
+      if ('caches' in window) {
+        caches.keys().then((keys) => keys.forEach((key) => caches.delete(key))).catch(() => {});
+      }
+    }
+  } catch {
+    /* storage blocked */
+  }
+}
