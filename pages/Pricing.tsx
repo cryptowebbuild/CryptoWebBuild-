@@ -4,7 +4,7 @@ import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 
 const Pricing: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-10 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-8">
       <SEO
         title="Pricing and Instant Estimate | CryptoWebBuild"
         description="Module pricing in USD and BDT for Next.js storefronts, checkout, Django, SEO, and automation. Fixed quote after a 15-minute scope call. 50% due after staging."

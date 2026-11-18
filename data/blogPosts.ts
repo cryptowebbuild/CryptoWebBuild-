@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 9, 2026',
     readTime: '9 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/projects/edel-bangladesh.webp',
     keywords: [
       "Nagad Payment Gateway Next.js 15",
       "Nagad Merchant API Integration",
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 21, 2026',
     readTime: '9 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=1200&q=80',
+    image: '/projects/clickrunclaw.webp',
     keywords: ['Sub-Second Website Speed', 'Headless E-Commerce 2026', 'Next.js vs WordPress', '1-Click Checkout', 'Core Web Vitals']
   },
   {

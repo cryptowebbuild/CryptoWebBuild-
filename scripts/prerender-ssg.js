@@ -524,6 +524,10 @@ const runSSG = () => {
       }
     }
 
+    if (route === '/fcommerce') {
+      routeHtml = routeHtml.replace('<html lang="en"', '<html lang="bn"');
+    }
+
     if (!meta.noIndex && !/<meta[^>]+name="robots"/i.test(routeHtml)) {
       routeHtml = routeHtml.replace(/<\/head>/i, `  <meta data-rh="true" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n</head>`);
     }

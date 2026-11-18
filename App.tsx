@@ -1,7 +1,6 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
-import SEO from './components/SEO';
 import ErrorBoundary from './components/ErrorBoundary';
 
 // --- Scroll To Top Component (UX Fix) ---
@@ -149,8 +148,6 @@ const App: React.FC = () => {
   return (
     <Layout>
       <ScrollToTop />
-      {/* Default Global SEO (Can be overridden by pages) */}
-      <SEO />
       
       <ErrorBoundary>
         <Suspense fallback={<PageLoader />}>
