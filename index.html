@@ -96,8 +96,50 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- LCP is the hero heading; do not preload a 35KB avatar or 115KB of TTF into the critical path. -->
+    <!-- Branded boot screen: covers the crawlable SSG shell until React paints. -->
+    <style>
+      #boot {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; align-items: center; justify-content: center;
+        background: #090A0F; color: #F8FAFC;
+      }
+      #boot .boot-inner {
+        display: flex; flex-direction: column; align-items: center; gap: 14px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      #boot svg { width: 36px; height: 36px; }
+      #boot .boot-name { font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+      #boot .boot-line {
+        width: 128px; height: 2px; border-radius: 2px; overflow: hidden;
+        background: rgba(255,255,255,.12);
+      }
+      #boot .boot-line i {
+        display: block; width: 42%; height: 100%; background: #818CF8;
+        animation: boot-slide 1.15s cubic-bezier(.4,0,.2,1) infinite;
+      }
+      body.app-ready #boot { display: none; }
+      @keyframes boot-slide {
+        0% { transform: translateX(-110%); }
+        100% { transform: translateX(350%); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot .boot-line i { animation: none; width: 62%; }
+      }
+    </style>
+    <noscript><style>#boot { display: none !important; }</style></noscript>
   </head>
   <body class="bg-[#FAFAFA] dark:bg-[#090A0F] text-slate-900 dark:text-slate-50 antialiased overflow-x-hidden">
+    <div id="boot" aria-hidden="true">
+      <div class="boot-inner">
+        <svg viewBox="0 0 128 128" fill="none" aria-hidden="true">
+          <path d="M44 34C44 34 27 49 27 64C27 79 44 94 44 94" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M84 34C84 34 101 49 101 64C101 79 84 94 84 94" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M49 64H79" stroke="#818CF8" stroke-width="10" stroke-linecap="round"/>
+        </svg>
+        <span class="boot-name">CryptoWebBuild</span>
+        <span class="boot-line"><i></i></span>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

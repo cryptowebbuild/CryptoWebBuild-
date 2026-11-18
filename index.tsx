@@ -45,6 +45,30 @@ root.render(
   </StrictMode>
 );
 
+// Keep the branded boot screen until the real page has painted.
+// The crawler-only SSG shell is covered by #boot, so a new visitor never
+// sees a text-only page before the design.
+const markAppReady = () => document.body.classList.add('app-ready');
+const appRoot = document.getElementById('root');
+if (appRoot && 'MutationObserver' in window) {
+  const checkReady = () => {
+    const main = document.querySelector('main');
+    const shell = document.getElementById('ssg-prerender');
+    const spinner = document.querySelector('.animate-spin');
+    if (main && !shell && !spinner && (main.innerText || '').trim().length > 80) {
+      markAppReady();
+      observer.disconnect();
+    }
+  };
+  const observer = new MutationObserver(checkReady);
+  observer.observe(appRoot, { childList: true, subtree: true, characterData: true });
+  window.setTimeout(() => {
+    observer.disconnect();
+    checkReady();
+  }, 6000);
+}
+window.setTimeout(markAppReady, 8000);
+
 
 // The previous build registered a service worker that could serve stale HTML.
 // Remove it once per session, then leave the site network-only.
