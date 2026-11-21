@@ -182,6 +182,12 @@ const SEO: React.FC<SEOProps> = ({
                 "position": 3,
                 "name": "ShopFast — Headless Next.js E-Commerce",
                 "url": `${siteUrl}/shopfast`
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Just Imagine Heating - Local Service SEO & Lead Capture",
+                "url": `${siteUrl}/justimagine`
               }
             ]
           }

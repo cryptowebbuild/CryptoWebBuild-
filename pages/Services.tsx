@@ -223,8 +223,17 @@ const Services: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-4 text-sm font-bold mt-8 pt-6 border-t border-gray-100 dark:border-white/10">
                 <Link
-                  to="/services/crypto-growth"
+                  to="/justimagine"
                   className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-500 transition-colors"
+                >
+                  <span className="bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">
+                    Case Study
+                  </span>
+                  Just Imagine Heating
+                </Link>
+                <Link
+                  to="/services/crypto-growth"
+                  className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   <span className="bg-blue-100 dark:bg-blue-900/30 px-2 py-0.5 rounded mr-2 text-xs uppercase">
                     Service

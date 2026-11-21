@@ -37,6 +37,48 @@ const CryptoGrowth: React.FC = () => {
           </ul>
         </div>
 
+        <div className="bg-white dark:bg-[#1e293b] rounded-[32px] border border-gray-200 dark:border-white/10 overflow-hidden mb-12 shadow-xl">
+          <div className="grid md:grid-cols-2">
+            <div className="bg-gray-100 dark:bg-[#020617] border-b md:border-b-0 md:border-r border-gray-200 dark:border-white/10">
+              <img
+                src="/projects/justimagine-services.webp"
+                alt="Service cards on the Just Imagine Heating website, one per boiler and plumbing job type"
+                width={1600}
+                height={1000}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <div className="text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-3">
+                Recent local build
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                Just Imagine Heating, Rugby
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+                A Gas Safe engineer with six services and eight service areas. Every town gets its own page, every
+                service gets its own page, and the call button sits above the fold on mobile.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6 text-xs font-mono">
+                {['20+ pages', '8 areas', '6 services', 'Schema.org'].map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 rounded-lg border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <Link
+                to="/justimagine"
+                className="inline-flex items-center gap-2 text-sm font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 transition-colors"
+              >
+                Read the case study
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-wrap gap-4">
           <Link
             to="/contact"

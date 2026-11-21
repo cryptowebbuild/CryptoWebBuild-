@@ -14,16 +14,12 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
-import ShopFastMockup from '../components/ShopFastMockup';
 import EdelMockup from '../components/EdelMockup';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 import BookingModal from '../components/BookingModal';
 import TrustBadges from '../components/TrustBadges';
 import InstantWebsiteAudit from '../components/InstantWebsiteAudit';
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import ArchitectureComparisonMatrix from '../components/ArchitectureComparisonMatrix';
 import SpotlightCard from '../components/SpotlightCard';
-import RemotionContributionCard from '../components/RemotionContributionCard';
 
 const Home: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = React.useState(false);
@@ -60,7 +56,7 @@ const Home: React.FC = () => {
       tech: ['Next.js', 'Stripe / bKash', '100/100 SEO'],
       link: '/shopfast',
       liveUrl: 'https://cryptowebbuild.com/shopfast',
-      mockup: 'shopfast',
+      img: '/projects/shopfast.webp',
     },
   ];
 
@@ -418,11 +414,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* STAGE 2.5: INTERACTIVE SPEED & REVENUE PROOF SLIDER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto">
-        <BeforeAfterSlider />
-      </section>
-
       {/* STAGE 3: TOP 3 VERIFIED PRODUCTION PROJECTS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
@@ -453,11 +444,9 @@ const Home: React.FC = () => {
               className="group rounded-3xl glass-panel overflow-hidden flex flex-col justify-between hover:border-indigo-500/40 transition-colors"
             >
               <div>
-                <div className="relative h-52 overflow-hidden bg-slate-100 dark:bg-[#090A0F] border-b border-slate-200/80 dark:border-white/[0.06]">
-                  {project.mockup === 'shopfast' ? (
-                    <ShopFastMockup className="w-full h-full object-cover" />
-                  ) : project.mockup === 'edel' ? (
-                    <EdelMockup className="w-full h-full object-cover" />
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-[#090A0F] border-b border-slate-200/80 dark:border-white/[0.06]">
+                  {project.mockup === 'edel' ? (
+                    <EdelMockup className="w-full h-full object-cover" showControls={false} hideBadges />
                   ) : (
                     <img
                       src={project.img}
@@ -472,7 +461,7 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center justify-between gap-2 text-xs font-mono tabular-nums text-slate-500 dark:text-slate-400 mb-2">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2 text-xs font-mono tabular-nums text-slate-500 dark:text-slate-400 mb-2">
                     <span>{project.category}</span>
                     <span className="font-bold text-emerald-600 dark:text-emerald-400">{project.metric}</span>
                   </div>
@@ -515,16 +504,80 @@ const Home: React.FC = () => {
             </article>
           ))}
         </div>
+
+        {/* LOCAL SERVICE FEATURE — FULL-WIDTH CARD */}
+        <article className="mt-6 rounded-3xl glass-panel overflow-hidden group hover:border-indigo-500/40 transition-colors">
+          <div className="grid lg:grid-cols-12">
+            <div className="lg:col-span-5 relative bg-slate-100 dark:bg-[#090A0F] border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-white/[0.06]">
+              <img
+                src="/projects/justimagine.webp"
+                alt="Just Imagine Heating homepage with a Gas Safe registration, engineer photo and emergency call button"
+                width={1600}
+                height={1000}
+                className="w-full h-full min-h-[220px] sm:min-h-[280px] object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between gap-6">
+              <div>
+                <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                  <span className="px-2.5 py-1 rounded-full bg-slate-900/[0.04] dark:bg-white/5 border border-slate-200 dark:border-white/10 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+                    Local Service / SEO
+                  </span>
+                  <span className="text-xs font-mono text-slate-500 dark:text-slate-400">Rugby, UK</span>
+                </div>
+                <div className="text-xs font-mono font-bold mb-1 text-emerald-600 dark:text-emerald-400">
+                  Local SEO · Call-first funnel
+                </div>
+                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mt-2 mb-2">
+                  Just Imagine Heating
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-2xl">
+                  A Gas Safe heating and plumbing site built to win local searches: six service pages, eight town
+                  pages, trust-first proof above the fold, and three ways to start a conversation.
+                </p>
+
+                <div className="grid grid-cols-3 gap-3 mt-5 max-w-md tabular-nums">
+                  {[
+                    { v: '20+', l: 'Pages' },
+                    { v: '8', l: 'Areas' },
+                    { v: '6', l: 'Services' },
+                  ].map((m) => (
+                    <div key={m.l} className="rounded-xl border border-slate-200/80 dark:border-white/[0.06] px-3 py-2">
+                      <div className="font-display font-bold text-lg text-slate-900 dark:text-white">{m.v}</div>
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">{m.l}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2.5">
+                <Link
+                  to="/justimagine"
+                  className="flex-1 sm:flex-none py-2.5 px-5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-xs text-center hover:opacity-90 transition-opacity whitespace-nowrap"
+                >
+                  Case Study
+                </Link>
+                <a
+                  href="https://cryptowebbuild.github.io/justimagine-preview/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-semibold text-xs inline-flex items-center gap-1.5 hover:border-indigo-500/40 transition-colors whitespace-nowrap"
+                >
+                  <span>Live Site</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
 
       {/* STAGE 3.5: FREE INSTANT SPEED AUDIT TOOL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto">
         <InstantWebsiteAudit />
-      </section>
-
-      {/* STAGE 3.75: OPEN-SOURCE CORE ENGINEERING (REMOTION PR) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto">
-        <RemotionContributionCard />
       </section>
 
       {/* STAGE 4: VERIFIED CLIENT REVIEWS & ROI OUTCOMES */}
@@ -631,9 +684,57 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* STAGE 5: ARCHITECTURAL COMPARISON (DUAL-MODE: CARDS ON MOBILE, TABLE ON DESKTOP) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto">
-        <ArchitectureComparisonMatrix />
+      {/* STAGE 4.5: HOW A BUILD RUNS — FOUR STEPS, NO SURPRISES */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 cv-auto space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">
+              How a Build Runs
+            </div>
+            <h2
+              className="font-display text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight"
+              style={{ textWrap: 'balance' }}
+            >
+              Four steps. No surprises.
+            </h2>
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+            The same sequence on every project, from a single storefront to a multi-role web app.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              step: '01',
+              title: 'Scope in writing',
+              desc: 'One call or a WhatsApp thread is enough. You get a fixed scope, a fixed price, and the milestones in writing before anything starts.',
+            },
+            {
+              step: '02',
+              title: 'Working prototype in 48h',
+              desc: 'A clickable Next.js build on a private URL, not a Figma file. You test the real pages and the real checkout flow.',
+            },
+            {
+              step: '03',
+              title: 'Visible weekly builds',
+              desc: 'Staging updates as work lands. Every button, form, and payment path is testable on your own phone while the build is still open.',
+            },
+            {
+              step: '04',
+              title: 'Test, pay the final 50%, own the code',
+              desc: 'You test every flow on staging first. Then the final milestone is due and the full repository transfers to your GitHub.',
+            },
+          ].map((item) => (
+            <div key={item.step} className="rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#11131A] p-6">
+              <div className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 mb-3">{item.step}</div>
+              <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">
+                {item.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* STAGE 5.5: DUAL-CURRENCY SCOPE & QUOTE CONFIGURATOR */}

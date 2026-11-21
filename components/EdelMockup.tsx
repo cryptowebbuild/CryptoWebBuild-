@@ -5,12 +5,14 @@ interface EdelMockupProps {
   className?: string;
   defaultView?: 'desktop' | 'mobile';
   showControls?: boolean;
+  hideBadges?: boolean;
 }
 
 export const EdelMockup: React.FC<EdelMockupProps> = ({
   className = '',
   defaultView = 'desktop',
   showControls = true,
+  hideBadges = false,
 }) => {
   const [view, setView] = useState<'desktop' | 'mobile'>(defaultView);
   const liveUrl = 'https://cryptowebbuild.github.io/edel-bangladesh/';
@@ -62,10 +64,15 @@ export const EdelMockup: React.FC<EdelMockupProps> = ({
         </div>
 
         {/* Center: Real SSL Domain Badge */}
-        <div className="flex items-center gap-1.5 bg-black/50 border border-white/[0.06] rounded-md px-2.5 py-1 text-[11px] font-mono text-slate-300 max-w-[200px] sm:max-w-xs truncate">
+        <div
+          className={`items-center gap-1.5 bg-black/50 border border-white/[0.06] rounded-md px-2.5 py-1 text-[11px] font-mono text-slate-300 max-w-[200px] sm:max-w-[280px] ${
+            hideBadges ? 'hidden' : 'hidden sm:flex'
+          }`}
+          title="cryptowebbuild.github.io/edel-bangladesh"
+        >
           <Lock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
           <span className="truncate text-slate-400">
-            edel.<span className="text-white font-semibold">cryptowebbuild.com</span>
+            cryptowebbuild.github.io/<span className="text-white font-semibold">edel-bangladesh</span>
           </span>
         </div>
 
@@ -109,7 +116,11 @@ export const EdelMockup: React.FC<EdelMockupProps> = ({
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
             {/* Floating Live Conversion Pill */}
-            <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex flex-wrap items-center gap-1.5 sm:gap-2 pointer-events-none">
+            <div
+              className={`absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 flex flex-wrap items-center gap-1.5 sm:gap-2 pointer-events-none ${
+                hideBadges ? 'hidden' : ''
+              }`}
+            >
               <span className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-black/85 backdrop-blur-md text-amber-300 border border-amber-500/30 shadow-lg">
                 <Sparkles className="w-3 h-3 text-amber-400" />
                 <span>Edel Luxury Jewel</span>
