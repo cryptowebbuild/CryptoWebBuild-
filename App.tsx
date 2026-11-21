@@ -64,6 +64,7 @@ const Home = lazyWithRetry(() => import('./pages/Home'));
 const About = lazyWithRetry(() => import('./pages/About'));
 const Services = lazyWithRetry(() => import('./pages/Services'));
 const Pricing = lazyWithRetry(() => import('./pages/Pricing'));
+const JustImagine = lazyWithRetry(() => import('./pages/JustImagine'));
 const Projects = lazyWithRetry(() => import('./pages/Projects'));
 const Blog = lazyWithRetry(() => import('./pages/Blog'));
 const Contact = lazyWithRetry(() => import('./pages/Contact'));
@@ -157,6 +158,7 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/justimagine" element={<JustImagine />} />
           <Route path="/projects" element={<Projects />} />
           {/* --- Service Landing Pages --- */}
           <Route path="/services/ai-automation" element={<AIAutomation />} />

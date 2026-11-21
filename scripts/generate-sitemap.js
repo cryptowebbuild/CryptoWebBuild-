@@ -16,6 +16,7 @@ const staticRoutes = [
   '/services/ecommerce-development-bangladesh',
   '/fcommerce',
   '/projects',
+  '/justimagine',
   '/blog',
   '/contact',
   '/faq',

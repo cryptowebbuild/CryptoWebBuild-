@@ -47,6 +47,7 @@ const staticRoutes = [
   '/services/ecommerce-development-bangladesh',
   '/fcommerce',
   '/projects',
+  '/justimagine',
   '/blog',
   '/contact',
   '/thank-you',
@@ -216,6 +217,11 @@ const routeMeta = {
     title: 'Verified Case Studies & Portfolio | CryptoWebBuild',
     description: 'Inspect live production platforms: Edel Bangladesh, ClickRunClaw (7,000+ users), ShopFast, Vanguard SaaS, and AutoGit DevOps.',
     h1: 'Shipped Systems & Verified Production Deployments',
+  },
+  '/justimagine': {
+    title: 'Just Imagine Heating case study | CryptoWebBuild',
+    description: 'A 20-page local service site for a Gas Safe heating and plumbing engineer in Rugby: six services, eight area pages, FAQs, and a call-first conversion funnel.',
+    h1: 'Just Imagine Heating: built to turn local searches into calls.',
   },
   '/contact': {
     title: 'Claim 48-Hour Prototype | CryptoWebBuild',

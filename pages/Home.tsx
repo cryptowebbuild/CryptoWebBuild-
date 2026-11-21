@@ -441,7 +441,7 @@ const Home: React.FC = () => {
             to="/projects"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-[#11131A] border border-slate-200 dark:border-white/[0.08] text-slate-900 dark:text-white font-semibold text-xs hover:border-indigo-500/40 transition-colors self-start md:self-auto whitespace-nowrap shrink-0"
           >
-            <span>View All 12 Case Studies</span>
+            <span>View All 13 Case Studies</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

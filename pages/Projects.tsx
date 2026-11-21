@@ -14,6 +14,18 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
+      id: 'justimagine',
+      title: 'Just Imagine Heating',
+      category: 'Local Service / SEO',
+      metric: '20+ Pages • Call-First UX',
+      group: 'commerce',
+      desc: 'A Gas Safe heating and plumbing site for Rugby with six service pages, eight area pages, FAQs, and a call/WhatsApp-first funnel.',
+      tech: ['Static HTML', 'Local SEO', 'Schema.org', 'CRO'],
+      link: '/justimagine',
+      img: '/projects/justimagine.webp',
+      liveUrl: 'https://cryptowebbuild.github.io/justimagine-preview/',
+    },
+    {
       id: 'clickrunclaw',
       title: 'ClickRunClaw: 1-Click Cloud Engine',
       category: 'Flagship Cloud SaaS',
