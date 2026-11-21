@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       desc: 'A Gas Safe heating and plumbing site for Rugby with six service pages, eight area pages, FAQs, and a call/WhatsApp-first funnel.',
       tech: ['Static HTML', 'Local SEO', 'Schema.org', 'CRO'],
       link: '/justimagine',
-      img: '/projects/justimagine.webp',
+      img: '/projects/justimagine-hero.webp',
       liveUrl: 'https://cryptowebbuild.github.io/justimagine-preview/',
     },
     {

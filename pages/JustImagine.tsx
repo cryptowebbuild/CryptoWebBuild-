@@ -17,7 +17,7 @@ const JustImagine: React.FC = () => {
         title="Just Imagine Heating case study | CryptoWebBuild"
         description="A 20-page local service site for a Gas Safe heating and plumbing engineer in Rugby: six services, eight area pages, FAQs, and a call-first conversion funnel."
         canonical="/justimagine"
-        image="/projects/justimagine.webp"
+        image="/projects/justimagine-hero.webp"
         type="article"
         publishedTime="2026-11-21"
         schemaType="Article"
@@ -80,7 +80,7 @@ const JustImagine: React.FC = () => {
 
       <figure className="mt-10 rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#11131A]">
         <OptimizedImage
-          src="/projects/justimagine.webp"
+          src="/projects/justimagine-hero.webp"
           alt="Just Imagine Heating homepage with a Gas Safe registered badge, boiler engineer photo, and call to action"
           width={1600}
           height={1000}
@@ -147,7 +147,7 @@ const JustImagine: React.FC = () => {
         </figure>
         <figure className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#11131A] flex items-center justify-center p-6">
           <OptimizedImage
-            src="/projects/justimagine-mobile.webp"
+            src="/projects/justimagine-mobile-v2.webp"
             alt="Mobile view of the Just Imagine Heating homepage with the Gas Safe badge and call button"
             width={720}
             height={1500}

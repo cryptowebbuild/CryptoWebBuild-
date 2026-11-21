@@ -510,7 +510,7 @@ const Home: React.FC = () => {
           <div className="grid lg:grid-cols-12">
             <div className="lg:col-span-5 relative bg-slate-100 dark:bg-[#090A0F] border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-white/[0.06]">
               <img
-                src="/projects/justimagine.webp"
+                src="/projects/justimagine-hero.webp"
                 alt="Just Imagine Heating homepage with a Gas Safe registration, engineer photo and emergency call button"
                 width={1600}
                 height={1000}
