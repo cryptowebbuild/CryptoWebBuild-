@@ -280,6 +280,118 @@ const routeMeta = {
   },
 };
 
+// Pull readable headings and paragraphs out of a post's TSX so crawlers that
+// do not execute JavaScript still receive the article body.
+const BLOG_DIR = path.resolve('pages/blog');
+
+const decodeEntities = (value) =>
+  value
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+    .replace(/&rsquo;/g, "'")
+    .replace(/&rarr;/g, '->')
+    .replace(/&middot;/g, '-');
+
+const stripTags = (value) => value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+function findPostSource(slug) {
+  try {
+    for (const file of fs.readdirSync(BLOG_DIR)) {
+      if (!file.endsWith('.tsx')) continue;
+      const source = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8');
+      if (source.includes(`canonical="/blog/${slug}"`)) return source;
+    }
+  } catch (error) {
+    return null;
+  }
+  return null;
+}
+
+function extractArticleBlocks(source) {
+  if (!source) return [];
+  const start = source.indexOf('<BlogPostLayout');
+  const end = source.lastIndexOf('</BlogPostLayout>');
+  if (start === -1 || end === -1) return [];
+
+  let body = source.slice(start, end);
+  const openTagEnd = body.indexOf('>');
+  if (openTagEnd === -1) return [];
+  body = body.slice(openTagEnd + 1);
+  body = body.replace(/\{\/\*[\s\S]*?\*\/\}/g, ' ');
+
+  const blocks = [];
+  const pattern = /<(h2|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/g;
+  let match;
+  while ((match = pattern.exec(body)) !== null) {
+    const tag = match[1];
+    const inner = match[2];
+    if (/[{}]/.test(inner)) continue;
+    const text = decodeEntities(stripTags(inner));
+    if (!text) continue;
+    if (tag !== 'h2' && tag !== 'h3' && text.length < 45) continue;
+    if (text.length > 900) continue;
+    blocks.push({ tag, text });
+    if (blocks.length >= 45) break;
+  }
+  return blocks;
+}
+
+function renderArticleBlocks(blocks) {
+  if (!blocks || blocks.length < 3) return '';
+
+  // Drop headings that are followed by another heading or nothing at all.
+  const cleaned = blocks.filter((block, index) => {
+    if (block.tag !== 'h2' && block.tag !== 'h3') return true;
+    const next = blocks[index + 1];
+    return Boolean(next) && next.tag !== 'h2' && next.tag !== 'h3';
+  });
+
+  if (cleaned.length < 3) return '';
+
+  const parts = [];
+  let listBuffer = [];
+
+  const flushList = () => {
+    if (listBuffer.length === 0) return;
+    parts.push(
+      `<ul class="list-disc pl-6 space-y-2 text-slate-600 dark:text-slate-300">${listBuffer
+        .map((item) => `<li>${item}</li>`)
+        .join('')}</ul>`
+    );
+    listBuffer = [];
+  };
+
+  cleaned.forEach((block) => {
+    const text = escapeHtml(block.text);
+    if (block.tag === 'li') {
+      listBuffer.push(text);
+      return;
+    }
+
+    flushList();
+
+    if (block.tag === 'h2') {
+      parts.push(`<h2 class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-8">${text}</h2>`);
+    } else if (block.tag === 'h3') {
+      parts.push(`<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-6">${text}</h3>`);
+    } else {
+      parts.push(`<p class="text-slate-600 dark:text-slate-300 leading-relaxed">${text}</p>`);
+    }
+  });
+
+  flushList();
+
+  return `<section class="mt-8 space-y-4" aria-label="Article summary">${parts.join('\n            ')}</section>`;
+}
+
+
 const runSSG = () => {
   if (!fs.existsSync(DIST_DIR)) {
     console.error('❌ dist directory not found. Please run vite build first.');
@@ -336,6 +448,7 @@ const runSSG = () => {
 
     // Ensure description is 120-155 chars
     let pageDesc = meta.description;
+    const fullDesc = pageDesc;
     if (pageDesc.length > 155) {
       pageDesc = pageDesc.substring(0, 152) + '...';
     }
@@ -343,6 +456,7 @@ const runSSG = () => {
     const canonicalUrl = `${BASE_URL}${route === '/' ? '/' : route}`;
     const safeTitle = escapeHtml(pageTitle);
     const safeDesc = escapeHtml(pageDesc);
+    const safeFullDesc = escapeHtml(fullDesc);
     const safeH1 = escapeHtml(meta.h1 || pageTitle);
 
     const isBlogIndex = route === '/blog';
@@ -406,7 +520,12 @@ const runSSG = () => {
     }
 
     // Generate crawlable static pre-render shell inside <div id="root">
-    const crawlableShell = `
+        const articleBlocksHtml =
+      isBlogPost && matchedPost
+        ? renderArticleBlocks(extractArticleBlocks(findPostSource(matchedPost.slug)))
+        : '';
+
+const crawlableShell = `
       <div id="ssg-prerender" class="max-w-7xl mx-auto px-6 py-12">
         <header class="border-b border-slate-200 dark:border-white/10 pb-6 mb-8 flex flex-wrap items-center justify-between gap-4">
           <a href="/" class="font-display font-black text-2xl tracking-tight text-slate-900 dark:text-white">
@@ -431,8 +550,9 @@ const runSSG = () => {
               ${safeH1}
             </h1>
             <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
-              ${safeDesc}
+              ${safeFullDesc}
             </p>
+            ${articleBlocksHtml}
             <div class="pt-6 border-t border-slate-200 dark:border-white/10 flex flex-wrap gap-4 text-xs">
               <a href="https://wa.me/8801618138820" class="font-bold underline">WhatsApp: 01618-138820</a>
               <span>·</span>
