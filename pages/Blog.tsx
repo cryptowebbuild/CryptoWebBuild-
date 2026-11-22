@@ -98,6 +98,8 @@ const Blog: React.FC = () => {
           </p>
         </div>
 
+        <h2 className="sr-only">All engineering guides</h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((t, r) => (
             <Link
@@ -109,7 +111,7 @@ const Blog: React.FC = () => {
               <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 dark:bg-[#0f172a]">
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 z-10" />
                 <OptimizedImage
-                  src={t.image}
+                  src={t.image.startsWith('/blog/covers/') ? t.image.replace('.webp', '-800.webp') : t.image}
                   alt={t.title}
                   fill={true}
                   priority={r < 3}
@@ -133,9 +135,9 @@ const Blog: React.FC = () => {
                   <span>{t.readTime}</span>
                 </div>
 
-                <h2 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-[1.2] line-clamp-2">
+                <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-[1.2] line-clamp-2">
                   {t.title}
-                </h2>
+                </h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm mb-8 line-clamp-3 flex-1 font-medium">
                   {t.desc}
                 </p>

@@ -13,6 +13,7 @@ interface SEOProps {
   noIndex?: boolean;
   schema?: Record<string, any>;
   schemaType?: 'Person' | 'Organization' | 'Service' | 'FAQPage' | 'Article';
+  breadcrumb?: Array<{ name: string; path: string }>;
   faq?: Array<{ question: string; answer: string }>;
 }
 
@@ -28,6 +29,7 @@ const SEO: React.FC<SEOProps> = ({
   noIndex = false,
   schema,
   schemaType = 'Organization',
+  breadcrumb,
   faq
 }) => {
   const siteUrl = 'https://cryptowebbuild.com';
@@ -99,8 +101,10 @@ const SEO: React.FC<SEOProps> = ({
       ]
     };
 
+    let organizationSchema: Record<string, any> | null = null;
+
     if (schemaType === 'Organization') {
-      return {
+      organizationSchema = {
         "@context": "https://schema.org",
         "@graph": [
           {
@@ -193,6 +197,9 @@ const SEO: React.FC<SEOProps> = ({
           }
         ]
       };
+
+      // Keep the entity graph when a page also carries an FAQ block.
+      if (!(faq && faq.length > 0)) return organizationSchema;
     }
 
     if (schemaType === 'Service') {
@@ -269,11 +276,41 @@ const SEO: React.FC<SEOProps> = ({
       };
     }
 
-    if (articleSchema && faqSchema) {
-      return [articleSchema, faqSchema];
+    // Breadcrumb trail: explicit prop wins, otherwise derive from the canonical path.
+    let breadcrumbSchema: Record<string, any> | null = null;
+    const trail =
+      breadcrumb && breadcrumb.length > 0
+        ? breadcrumb
+        : canonical && canonical.startsWith('/blog/')
+        ? [
+            { name: 'Home', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: finalTitle, path: canonical },
+          ]
+        : null;
+
+    if (trail && trail.length > 0) {
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "itemListElement": trail.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": item.name,
+          "item": item.path.startsWith('http') ? item.path : `${siteUrl}${item.path}`,
+        })),
+      };
     }
-    if (articleSchema) return articleSchema;
-    if (faqSchema) return faqSchema;
+
+    const organizationParts =
+      organizationSchema && Array.isArray((organizationSchema as Record<string, any>)['@graph'])
+        ? ((organizationSchema as Record<string, any>)['@graph'] as Record<string, any>[])
+        : organizationSchema
+        ? [organizationSchema]
+        : [];
+
+    const parts = [articleSchema, faqSchema, breadcrumbSchema, ...organizationParts].filter(Boolean) as Record<string, any>[];
+    if (parts.length === 1) return parts[0];
+    if (parts.length > 1) return parts;
 
     return {
       ...baseSchema,

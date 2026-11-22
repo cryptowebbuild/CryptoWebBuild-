@@ -128,6 +128,8 @@ const AISEO2026 = lazyWithRetry(() => import('./pages/blog/AISEO2026'));
 const AiSearchCitationsGeoPlaybook = lazyWithRetry(() => import('./pages/blog/AiSearchCitationsGeoPlaybook'));
 const LocalServiceWebsiteThatBooksJobs = lazyWithRetry(() => import('./pages/blog/LocalServiceWebsiteThatBooksJobs'));
 const WebsiteCostBangladesh2026 = lazyWithRetry(() => import('./pages/blog/WebsiteCostBangladesh2026'));
+const ShopifyVsCustomNextjs2026 = lazyWithRetry(() => import('./pages/blog/ShopifyVsCustomNextjs2026'));
+const AgencyVsDirectEngineer2026 = lazyWithRetry(() => import('./pages/blog/AgencyVsDirectEngineer2026'));
 const AGIAutonomousAIAgents = lazyWithRetry(() => import('./pages/blog/AGIAutonomousAIAgents'));
 const DecentralizedAIStack = lazyWithRetry(() => import('./pages/blog/DecentralizedAIStack'));
 const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazyWithRetry(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
@@ -216,6 +218,8 @@ const App: React.FC = () => {
           <Route path="/blog/ai-search-citations-geo-playbook" element={<AiSearchCitationsGeoPlaybook />} />
           <Route path="/blog/local-service-website-that-books-jobs" element={<LocalServiceWebsiteThatBooksJobs />} />
           <Route path="/blog/website-cost-bangladesh-2026" element={<WebsiteCostBangladesh2026 />} />
+          <Route path="/blog/shopify-vs-custom-nextjs-2026" element={<ShopifyVsCustomNextjs2026 />} />
+          <Route path="/blog/agency-vs-direct-engineer-2026" element={<AgencyVsDirectEngineer2026 />} />
           <Route path="/blog/agi-autonomous-ai-agents-business-future-2026" element={<AGIAutonomousAIAgents />} />
           <Route path="/blog/decentralized-ai-stack-web3-infrastructure-2026" element={<DecentralizedAIStack />} />
           <Route path="/blog/why-web3-projects-replace-human-mods-with-rag-ai" element={<WhyWeb3ProjectsReplaceHumanModsWithRAGAI />} />

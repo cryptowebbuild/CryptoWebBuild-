@@ -47,7 +47,7 @@ const LocalServiceWebsiteThatBooksJobs: React.FC = () => {
   return (
     <BlogPostLayout
       title="The Local Service Website That Books Jobs: 2026 Blueprint for Trades"
-      description="How plumbers, heating engineers and other local trades turn searches into booked jobs: page structure, service page templates, area pages that are not thin, mobile conversion details and local schema."
+      description="How plumbers and heating engineers turn local searches into calls: service pages, area pages, mobile call paths and local schema."
       publishedTime="2026-11-22T10:00:00.000Z"
       modifiedTime="2026-11-22T10:00:00.000Z"
       category="Guide"

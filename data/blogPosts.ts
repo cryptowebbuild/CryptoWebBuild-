@@ -12,15 +12,49 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'agency-vs-direct-engineer-2026',
+    slug: 'agency-vs-direct-engineer-2026',
+    title: 'Agency vs Direct Engineer: What You Pay For in 2026',
+    excerpt:
+      'A line by line comparison of agency and direct engineer pricing: coordination overhead, delivery risk, handover, and the five questions that reveal which model you are buying.',
+    date: 'Nov 22, 2026',
+    readTime: '8 min read',
+    category: 'Business',
+    image: '/blog/covers/agency-vs-direct-engineer-2026.webp',
+    keywords: [
+      'agency vs freelancer',
+      'hire web developer vs agency',
+      'web design agency cost',
+      'how to compare web development quotes',
+    ],
+  },
+  {
+    id: 'shopify-vs-custom-nextjs-2026',
+    slug: 'shopify-vs-custom-nextjs-2026',
+    title: 'Shopify vs Custom Next.js Storefront: 2026 Costs',
+    excerpt:
+      'An honest comparison for 2026: what Shopify really costs over 24 months, where a custom Next.js storefront wins, and the checklist before you migrate either way.',
+    date: 'Nov 22, 2026',
+    readTime: '9 min read',
+    category: 'Business',
+    image: '/projects/shopfast.webp',
+    keywords: [
+      'Shopify vs custom website',
+      'Shopify vs Next.js storefront',
+      'headless commerce 2026',
+      'Shopify total cost of ownership',
+    ],
+  },
+  {
     id: 'ai-search-citations-geo-playbook',
     slug: 'ai-search-citations-geo-playbook',
-    title: 'AI Search Citations: How to Get Quoted by ChatGPT, Perplexity and AI Overviews',
+    title: 'AI Search Citations: Get Quoted by ChatGPT and AI Overviews',
     excerpt:
       'The practical GEO playbook for 2026: answer-first passages, entity consistency, schema, crawler access, the content formats that get quoted, and how to measure AI referrals honestly.',
     date: 'Nov 22, 2026',
     readTime: '9 min read',
     category: 'Tech',
-    image: '/og-default.png',
+    image: '/blog/covers/ai-search-citations-geo-playbook.webp',
     keywords: [
       'AI SEO 2026',
       'generative engine optimization',
@@ -50,7 +84,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 'website-cost-bangladesh-2026',
     slug: 'website-cost-bangladesh-2026',
-    title: 'What a Website Really Costs in Bangladesh in 2026 (Honest Price Breakdown)',
+    title: 'What a Website Really Costs in Bangladesh in 2026',
     excerpt:
       'BDT 42,000 for a launch page, BDT 84,000 for a storefront with 1-click bKash and COD, BDT 1,92,000 for the full system. Published module prices, what to refuse to pay for, and how to structure payments.',
     date: 'Nov 22, 2026',
@@ -73,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 10, 2026',
     readTime: '10 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/solana-anchor-sub-second-rpc-dapp.webp',
     keywords: [
       "Solana Anchor Web3 DApp",
       "Sub-Second Solana DEX Swap",
@@ -109,7 +143,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 8, 2026',
     readTime: '8 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/pathao-courier-dynamic-consignment-nextjs.webp',
     keywords: [
       "Pathao Courier API Next.js",
       "Automated Parcel Booking Bangladesh",
@@ -127,7 +161,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 7, 2026',
     readTime: '9 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/meta-capi-server-side-nextjs15-conversion-boost.webp',
     keywords: [
       "Meta Conversions API Next.js 15",
       "Facebook CAPI Server Side Tracking",
@@ -145,7 +179,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 27, 2026',
     readTime: '11 min read',
     category: 'Case Study',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/woocommerce-to-headless-nextjs-migration-guide.webp',
     keywords: [
       "WooCommerce to Next.js Migration",
       "Headless WordPress Next.js 15",
@@ -163,7 +197,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 26, 2026',
     readTime: '8 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/steadfast-courier-api-webhook-integration-nextjs.webp',
     keywords: [
       "Steadfast Courier API Next.js",
       "Automated Courier Dispatch Bangladesh",
@@ -181,7 +215,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 25, 2026',
     readTime: '9 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/bkash-tokenized-checkout-nextjs-api-integration.webp',
     keywords: [
       "bKash Tokenized Checkout Next.js",
       "Next.js 15 bKash Payment Gateway",
@@ -199,7 +233,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 25, 2026',
     readTime: '10 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/django-celery-redis-ecommerce-order-pipeline.webp',
     keywords: [
       "Django Celery Redis Order Pipeline",
       "High Volume Ecommerce Architecture",
@@ -217,7 +251,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 24, 2026',
     readTime: '11 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/nextjs-django-fullstack-architecture-2026.webp',
     keywords: [
       'Next.js 15 Python Django Architecture',
       'High-Volume E-Commerce Backend',
@@ -246,7 +280,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 21, 2026',
     readTime: '9 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/bangladesh-fcommerce-to-website-migration-guide-2026.webp',
     keywords: ['Bangladesh F-Commerce Website', '1-Click Checkout bKash', 'Steadfast Courier API', 'Edel Bangladesh Case Study']
   },
   {
@@ -268,7 +302,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Oct 21, 2026',
     readTime: '8 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    image: '/blog/covers/how-to-automate-ecommerce-orders-whatsapp-ai-agents.webp',
     keywords: ['WhatsApp AI Agent', 'RAG AI Automation', 'Autonomous Customer Support', 'WhatsApp Business API', 'E-Commerce Automation']
   },
   {
@@ -279,7 +313,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Sep 20, 2026',
     readTime: '7 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7',
+    image: '/blog/covers/why-crypto-projects-adopt-real-time-ai-engines.webp',
     keywords: ['Web3 smart contract security', 'real-time threat monitoring', 'autonomous AI guardians', 'CryptoWebBuild infrastructure']
   },
   {
@@ -290,7 +324,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Aug 15, 2026',
     readTime: '8 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+    image: '/blog/covers/why-web3-projects-replace-human-mods-with-rag-ai.webp',
     keywords: ['Web3 community automation', 'RAG AI agents', 'autonomous Telegram guards', 'CryptoWebBuild infrastructure', 'Web3 moderation']
   },
   {
@@ -301,7 +335,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Jun 25, 2026',
     readTime: '15 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a',
+    image: '/blog/covers/decentralized-ai-stack-web3-infrastructure-2026.webp',
     keywords: ['Decentralized AI Stack', 'Web3 Infrastructure', 'Autonomous AI Agents', 'Sovereign AI', 'Tech Founders 2026', 'AI Smart Contracts']
   },
   {
@@ -312,7 +346,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Jun 15, 2026',
     readTime: '14 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485',
+    image: '/blog/covers/agi-autonomous-ai-agents-business-future-2026.webp',
     keywords: ['AGI 2026', 'Autonomous AI Agents', 'OpenClaw AI', 'Business Automation Future', 'AI Agents SaaS', 'Artificial General Intelligence']
   },
   {
@@ -323,7 +357,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 10, 2026',
     readTime: '12 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995',
+    image: '/blog/covers/ai-seo-generative-engine-optimization-2026.webp',
     keywords: ['AI SEO 2026', 'Generative Engine Optimization', 'GEO', 'AI Overviews', 'Web3 SEO', 'SaaS SEO', 'Technical SEO']
   },
   {
@@ -334,7 +368,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Apr 25, 2026',
     readTime: '12 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b',
+    image: '/blog/covers/openclaw-ai-workflow-automation.webp',
     keywords: ['OpenClaw AI', 'AI workflow automation', 'business automation', 'local AI agents', 'lead generation automation']
   },
   {
@@ -345,7 +379,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 20, 2024',
     readTime: '15 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247',
+    image: '/blog/covers/meme-coin-website-ultimate-guide.webp',
     keywords: ['meme coin website development', 'how to build a crypto presale website', 'Web3 website design agency']
   },
   {
@@ -356,7 +390,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     readTime: '25 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1652337036505-6f5052a69b70',
+    image: '/blog/covers/crypto-seo-guide.webp',
     keywords: ['Crypto SEO', 'Token Ranking', 'Programmatic SEO']
   },
   {
@@ -367,7 +401,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 15, 2026',
     readTime: '30 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0',
+    image: '/blog/covers/presale-guide.webp',
     keywords: ['Presale DApp', 'Smart Contract', 'Fundraising']
   },
   {
@@ -378,7 +412,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 22, 2026',
     readTime: '35 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1642104704074-907c0698cbd9',
+    image: '/blog/covers/solana-meme-coin-guide.webp',
     keywords: ['Solana Meme Coin', 'Token-2022', 'Web3 Development']
   },
   {
@@ -389,7 +423,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Dec 24, 2025',
     readTime: '15 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4',
+    image: '/blog/covers/crypto-marketing-guide.webp',
     keywords: ['Crypto Marketing', 'Token Strategy', 'Community']
   },
   {
@@ -400,7 +434,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Nov 16, 2025',
     readTime: '12 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095',
+    image: '/blog/covers/best-website-developer.webp',
     keywords: ['Hire Developer', 'Blockchain Agency', 'Freelancer Guide']
   },
   {
@@ -411,7 +445,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Dec 26, 2025',
     readTime: '10 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c',
+    image: '/blog/covers/crypto-website-cost.webp',
     keywords: ['Website Cost', 'Web Development Pricing', 'Budgeting']
   },
   {
@@ -422,7 +456,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 28, 2026',
     readTime: '20 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c',
+    image: '/blog/covers/static-vs-dynamic-website.webp',
     keywords: ['Website Security', 'Static vs Dynamic', 'WordPress Risks']
   },
   {
@@ -433,7 +467,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 20, 2026',
     readTime: '18 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1636587224433-3cd253788c40',
+    image: '/blog/covers/meme-coin-website-features.webp',
     keywords: ['Meme Coin Features', 'Web Design', 'Conversion Rate']
   },
   {
@@ -444,7 +478,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Feb 01, 2026',
     readTime: '40 min read',
     category: 'Guide',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+    image: '/blog/covers/crypto-project.webp',
     keywords: ['Launch Strategy', 'Tokenomics', 'Project Management']
   },
   {
@@ -455,7 +489,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mar 01, 2026',
     readTime: '25 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c',
+    image: '/blog/covers/website-builder-vs-developer.webp',
     keywords: ['Wix vs React', 'Custom Development', 'Business Strategy']
   },
   {
@@ -466,7 +500,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Mar 05, 2026',
     readTime: '15 min read',
     category: 'Tech',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e',
+    image: '/blog/covers/gaming-proxy-vs-crypto-nodes.webp',
     keywords: ['gaming proxy', 'free fire proxy server', 'web3 infrastructure', 'zero latency']
   },
   {
@@ -477,7 +511,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Apr 10, 2026',
     readTime: '15 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&fm=webp&q=80',
+    image: '/blog/covers/hidden-cost-of-slow-websites.webp',
     keywords: ['website speed optimization', 'technical seo for local business', 'roofer marketing', 'dentist seo', 'core web vitals']
   },
   {
@@ -488,7 +522,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Apr 01, 2026',
     readTime: '18 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216',
+    image: '/blog/covers/local-business-website-seo-checklist.webp',
     keywords: ['local business website seo checklist', 'local business seo website', 'website seo audit checklist for local business']
   },
   {
@@ -499,7 +533,7 @@ export const blogPosts: BlogPost[] = [
     date: 'Apr 03, 2026',
     readTime: '14 min read',
     category: 'Business',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd',
+    image: '/blog/covers/roofing-website-mistakes-costing-leads.webp',
     keywords: ['roofing website mistakes', 'roofing company website seo', 'roofing website conversion optimization']
   }
 ];

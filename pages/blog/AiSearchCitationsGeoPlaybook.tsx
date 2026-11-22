@@ -46,8 +46,8 @@ const AiSearchCitationsGeoPlaybook: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="AI Search Citations: How to Get Quoted by ChatGPT, Perplexity and AI Overviews"
-      description="A practical GEO playbook for 2026: passage-level answers, entity consistency, schema, crawler access, comparison content and how to measure AI referrals without guessing."
+      title="AI Search Citations: Get Quoted by ChatGPT and AI Overviews"
+      description="A practical GEO playbook: answer-first passages, entity consistency, schema, crawler access and how to measure AI referrals honestly."
       publishedTime="2026-11-22T11:00:00.000Z"
       modifiedTime="2026-11-22T11:00:00.000Z"
       category="Tech"

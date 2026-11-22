@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-sitemap.js && vite build && node scripts/prerender-ssg.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.0",

@@ -51,8 +51,8 @@ const WebsiteCostBangladesh2026: React.FC = () => {
 
   return (
     <BlogPostLayout
-      title="What a Website Really Costs in Bangladesh in 2026 (Honest Price Breakdown)"
-      description="Real 2026 website prices in Bangladesh: BDT 42,000 launch page, BDT 84,000 storefront with 1-click bKash and COD, BDT 1,92,000 full system. See the module prices and what to refuse to pay for."
+      title="What a Website Really Costs in Bangladesh in 2026"
+      description="Real 2026 prices: BDT 42,000 launch page, BDT 84,000 storefront with 1-click bKash and COD, BDT 1,92,000 full system. Every module listed."
       publishedTime="2026-11-22T09:00:00.000Z"
       modifiedTime="2026-11-22T09:00:00.000Z"
       category="Business"

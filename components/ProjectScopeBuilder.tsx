@@ -55,7 +55,7 @@ const MODULES: ScopeModule[] = [
   },
 ];
 
-export const ProjectScopeBuilder: React.FC = () => {
+export const ProjectScopeBuilder: React.FC<{ hideStep?: boolean }> = ({ hideStep = false }) => {
   const [currency, setCurrency] = useState<'USD' | 'BDT'>('USD');
   const [selectedIds, setSelectedIds] = useState<string[]>(['frontend', 'checkout', 'seo']);
   const [copied, setCopied] = useState(false);
@@ -100,7 +100,7 @@ export const ProjectScopeBuilder: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
           <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">
-            04 · Transparent Scope &amp; Instant Estimate
+            {hideStep ? '' : '04 · '}Transparent Scope &amp; Instant Estimate
           </div>
           <h2
             className="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight"

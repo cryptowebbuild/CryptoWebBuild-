@@ -5,6 +5,7 @@ import OptimizedImage from '../OptimizedImage';
 import TableOfContents from './TableOfContents';
 import AuthorBio from './AuthorBio';
 import FreeAuditCTA from './FreeAuditCTA';
+import RelatedReads from './RelatedReads';
 
 interface BlogPostLayoutProps {
   title: string;
@@ -232,6 +233,12 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                 </Link>
               </div>
             </div>
+
+            <RelatedReads
+              currentSlug={canonical.replace('/blog/', '')}
+              keywords={keywords}
+              category={category}
+            />
 
             {/* Footer Section */}
             <div className="mt-20 pt-12 border-t border-gray-200 dark:border-white/10">

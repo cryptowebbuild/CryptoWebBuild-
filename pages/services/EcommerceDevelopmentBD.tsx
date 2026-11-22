@@ -59,8 +59,8 @@ const EcommerceDevelopmentBD: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 space-y-20">
       <SEO
-        title="Custom 1-Click E-Commerce Website Development (Bangladesh & Global) | CryptoWebBuild"
-        description="Replace slow WordPress stores and manual Facebook inbox selling with a 0.4s Next.js e-commerce website. 1-Click bKash/Stripe checkout, Steadfast Courier API & Meta CAPI."
+        title="1-Click E-Commerce Development | CryptoWebBuild"
+        description="Replace slow WordPress stores and inbox selling with a 0.4s Next.js storefront: 1-click bKash and Stripe checkout, Steadfast courier API, Meta CAPI."
         keywords={[
           'E-Commerce Website Development Bangladesh',
           '1-Click Checkout Website bKash',
