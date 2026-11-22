@@ -208,6 +208,9 @@ const JustImagine: React.FC = () => {
               <Link to="/services/crypto-growth" className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
                 Technical SEO service <span aria-hidden="true">→</span>
               </Link>
+              <Link to="/blog/local-service-website-that-books-jobs" className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                The local service blueprint <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
           <div className="lg:col-span-5 rounded-2xl bg-slate-50 dark:bg-[#090A0F] border border-slate-200 dark:border-white/10 p-5">

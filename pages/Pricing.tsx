@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import ProjectScopeBuilder from '../components/ProjectScopeBuilder';
 
@@ -24,6 +25,25 @@ const Pricing: React.FC = () => {
       </div>
 
       <ProjectScopeBuilder />
+
+      <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#11131A] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <div className="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-2">
+            Before you configure
+          </div>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+            Not sure which modules you actually need? Read the 2026 breakdown of what a website costs in Bangladesh,
+            including the line items most quotes hide.
+          </p>
+        </div>
+        <Link
+          to="/blog/website-cost-bangladesh-2026"
+          className="inline-flex items-center gap-2 shrink-0 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+        >
+          Read the cost breakdown
+          <span aria-hidden="true">&rarr;</span>
+        </Link>
+      </div>
     </div>
   );
 };
