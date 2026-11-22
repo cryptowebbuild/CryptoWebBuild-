@@ -125,6 +125,9 @@ const LocalBusinessWebsiteSEOChecklist = lazyWithRetry(() => import('./pages/blo
 const RoofingWebsiteMistakesCostingLeads = lazyWithRetry(() => import('./pages/blog/roofing-website-mistakes-costing-leads'));
 const OpenClawAIWorkflowAutomation = lazyWithRetry(() => import('./pages/blog/OpenClawAIWorkflowAutomation'));
 const AISEO2026 = lazyWithRetry(() => import('./pages/blog/AISEO2026'));
+const AiSearchCitationsGeoPlaybook = lazyWithRetry(() => import('./pages/blog/AiSearchCitationsGeoPlaybook'));
+const LocalServiceWebsiteThatBooksJobs = lazyWithRetry(() => import('./pages/blog/LocalServiceWebsiteThatBooksJobs'));
+const WebsiteCostBangladesh2026 = lazyWithRetry(() => import('./pages/blog/WebsiteCostBangladesh2026'));
 const AGIAutonomousAIAgents = lazyWithRetry(() => import('./pages/blog/AGIAutonomousAIAgents'));
 const DecentralizedAIStack = lazyWithRetry(() => import('./pages/blog/DecentralizedAIStack'));
 const WhyWeb3ProjectsReplaceHumanModsWithRAGAI = lazyWithRetry(() => import('./pages/blog/WhyWeb3ProjectsReplaceHumanModsWithRAGAI'));
@@ -210,6 +213,9 @@ const App: React.FC = () => {
           <Route path="/blog/roofing-website-mistakes-costing-leads" element={<RoofingWebsiteMistakesCostingLeads />} />
           <Route path="/blog/openclaw-ai-workflow-automation" element={<OpenClawAIWorkflowAutomation />} />
           <Route path="/blog/ai-seo-generative-engine-optimization-2026" element={<AISEO2026 />} />
+          <Route path="/blog/ai-search-citations-geo-playbook" element={<AiSearchCitationsGeoPlaybook />} />
+          <Route path="/blog/local-service-website-that-books-jobs" element={<LocalServiceWebsiteThatBooksJobs />} />
+          <Route path="/blog/website-cost-bangladesh-2026" element={<WebsiteCostBangladesh2026 />} />
           <Route path="/blog/agi-autonomous-ai-agents-business-future-2026" element={<AGIAutonomousAIAgents />} />
           <Route path="/blog/decentralized-ai-stack-web3-infrastructure-2026" element={<DecentralizedAIStack />} />
           <Route path="/blog/why-web3-projects-replace-human-mods-with-rag-ai" element={<WhyWeb3ProjectsReplaceHumanModsWithRAGAI />} />

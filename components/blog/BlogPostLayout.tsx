@@ -92,6 +92,17 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
 
+  const displayDate = (() => {
+    const parsed = new Date(publishedTime);
+    if (Number.isNaN(parsed.getTime())) return publishedTime;
+    return parsed.toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'UTC',
+    });
+  })();
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -100,6 +111,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
         keywords={keywords}
         canonical={canonical}
         type="article"
+        schemaType="Article"
         publishedTime={publishedTime}
         image={finalImage}
         author="Sagor Ahamed"
@@ -158,7 +170,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
               <span className="text-slate-900 dark:text-slate-200 font-bold">Sagor Ahamed</span>
             </div>
             <span className="opacity-30">•</span>
-            <span>{publishedTime}</span>
+            <span>{displayDate}</span>
             <span className="opacity-30">•</span>
             <span className="flex items-center gap-1.5 text-purple-600 dark:text-purple-400 font-bold bg-purple-50 dark:bg-purple-900/10 px-3 py-1 rounded-full text-xs uppercase tracking-wide">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

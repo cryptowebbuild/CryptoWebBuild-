@@ -12,6 +12,60 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'ai-search-citations-geo-playbook',
+    slug: 'ai-search-citations-geo-playbook',
+    title: 'AI Search Citations: How to Get Quoted by ChatGPT, Perplexity and AI Overviews',
+    excerpt:
+      'The practical GEO playbook for 2026: answer-first passages, entity consistency, schema, crawler access, the content formats that get quoted, and how to measure AI referrals honestly.',
+    date: 'Nov 22, 2026',
+    readTime: '9 min read',
+    category: 'Tech',
+    image: '/og-default.png',
+    keywords: [
+      'AI SEO 2026',
+      'generative engine optimization',
+      'get cited by ChatGPT',
+      'AI Overviews optimization',
+      'Perplexity SEO',
+    ],
+  },
+  {
+    id: 'local-service-website-that-books-jobs',
+    slug: 'local-service-website-that-books-jobs',
+    title: 'The Local Service Website That Books Jobs: 2026 Blueprint for Trades',
+    excerpt:
+      'Page structure, service page templates and area pages that are not thin. How plumbers, heating engineers and roofers turn local searches into calls, with the Just Imagine build as the example.',
+    date: 'Nov 22, 2026',
+    readTime: '8 min read',
+    category: 'Guide',
+    image: '/projects/justimagine-hero.webp',
+    keywords: [
+      'local service website design',
+      'plumber website that generates leads',
+      'heating engineer website',
+      'service area pages SEO',
+      'local business website structure',
+    ],
+  },
+  {
+    id: 'website-cost-bangladesh-2026',
+    slug: 'website-cost-bangladesh-2026',
+    title: 'What a Website Really Costs in Bangladesh in 2026 (Honest Price Breakdown)',
+    excerpt:
+      'BDT 42,000 for a launch page, BDT 84,000 for a storefront with 1-click bKash and COD, BDT 1,92,000 for the full system. Published module prices, what to refuse to pay for, and how to structure payments.',
+    date: 'Nov 22, 2026',
+    readTime: '7 min read',
+    category: 'Business',
+    image: '/projects/shopfast.webp',
+    keywords: [
+      'website cost in Bangladesh',
+      'ecommerce website cost Bangladesh',
+      'web development price Bangladesh 2026',
+      'bKash checkout website cost',
+      'website design price Dhaka',
+    ],
+  },
+  {
     id: 'solana-anchor-sub-second-rpc-dapp',
     slug: 'solana-anchor-sub-second-rpc-dapp',
     title: 'Solana Anchor & React: Engineering Sub-0.3s DEX Swaps & Presale Mints with Zero RPC Throttling',

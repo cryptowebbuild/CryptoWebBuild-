@@ -345,7 +345,17 @@ const SEO: React.FC<SEOProps> = ({
       )}
 
       <script type="application/ld+json">
-        {JSON.stringify(finalSchema)}
+        {JSON.stringify(
+          Array.isArray(finalSchema)
+            ? {
+                '@context': 'https://schema.org',
+                '@graph': finalSchema.map((entry: any) => {
+                  const { '@context': _ignored, ...rest } = entry;
+                  return rest;
+                }),
+              }
+            : finalSchema
+        )}
       </script>
     </Helmet>
   );
